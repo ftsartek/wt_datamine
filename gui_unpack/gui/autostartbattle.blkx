@@ -1,0 +1,126 @@
+{
+  "frame": {
+    "display": "hide",
+    "flow": "vertical",
+    "id": "autoStartQueueWnd",
+    "pos": "0.5pw-0.5w, 0.3ph",
+    "position": "relative",
+    "tdiv": [
+      {
+        "id": "waiting_time"
+      },
+      {
+        "width": "pw"
+      },
+      {
+        "padding": "14*@sf/@pf"
+      },
+      {
+        "flow": "vertical"
+      },
+      {
+        "tdiv": {
+          "centerBlock": {
+            "activeText": {
+              "smallFont": "yes",
+              "style": "color:@commonMenuButtonColor;",
+              "text": "#multiplayer/currentWaitTime"
+            },
+            "flow": "vertical",
+            "pos": "50%pw-50%w, 50%ph-50%h",
+            "position": "absolute",
+            "textAreaCentered": {
+              "class": "active",
+              "id": "msgText",
+              "pos": "50%pw-50%w,0",
+              "position": "relative",
+              "text": "0:00",
+              "titleFont": "yes"
+            }
+          },
+          "pos": "pw/2-w/2, 0",
+          "position": "relative",
+          "size": "180@sf/@pf, 180@sf/@pf",
+          "tdiv": {
+            "id": "queue_wait_icon_block",
+            "position": "absolute",
+            "size": "pw, ph"
+          }
+        }
+      },
+      {
+        "tdiv": [
+          {
+            "margin-top": "14@sf/@pf"
+          },
+          {
+            "flow": "horizontal"
+          },
+          {
+            "width": "pw"
+          },
+          {
+            "height": "0.02@sf"
+          },
+          {
+            "tdiv": {
+              "bgcolor": "#0E1114",
+              "position": "absolute",
+              "size": "0.35pw, 3@sf/@pf",
+              "top": "0.5ph-0.5h"
+            }
+          },
+          {
+            "tdiv": {
+              "bgcolor": "#0E1114",
+              "position": "absolute",
+              "right": "0",
+              "size": "0.35pw, 3@sf/@pf",
+              "top": "0.5ph-0.5h"
+            }
+          },
+          {
+            "activeText": {
+              "commonButtonColor": "yes",
+              "pos": "0.5pw-0.5w, 0.5ph-0.5h",
+              "position": "absolute",
+              "smallFont": "yes",
+              "text": "#multiplayer/hint"
+            }
+          }
+        ]
+      },
+      {
+        "loadingTip": {
+          "behaviour": "bhvLoadingTip",
+          "id": "queue_tip",
+          "loadingHint": {
+            "behaviour": "bhvHint",
+            "commonTextColor": "yes",
+            "id": "tip_hint",
+            "isWrapInRowAllowed": "yes",
+            "smallFont": "yes",
+            "width": "pw"
+          },
+          "padding": "0, 0.5*@scrn_tgt/100.0",
+          "width": "pw"
+        }
+      }
+    ],
+    "text-halign": "center",
+    "textAreaCentered": {
+      "id": "queue_for_battle",
+      "pos": "50%pw-50%w, 6@sf/@pf",
+      "position": "relative",
+      "smallFont": "no",
+      "text": "#mainmenu/queue_for_battle"
+    },
+    "width": "((1@slotbarCountries $max 6) + 1) * 1@queueTableColumnWidth"
+  },
+  "hangarControlTracking": [],
+  "timer": {
+    "id": "queue_timeout_time",
+    "timer_handler_func": "onTimer",
+    "timer_interval_msec": "500"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "DamageEffects": {
+    "part": [
+      {
+        "name": "body"
+      },
+      {
+        "onHit": {
+          "damage": 5.0,
+          "expl": 0.1,
+          "fHitCritical": true,
+          "fire": 0.9
+        }
+      },
+      {
+        "onHit": {
+          "damage": 15.0,
+          "expl": 0.2,
+          "fHitCritical": true,
+          "fire": 0.8
+        }
+      },
+      {
+        "onKill": {
+          "expl": 0.4,
+          "fHitCritical": true,
+          "fire": 0.6
+        }
+      }
+    ]
+  },
+  "DamageParts": {
+    "body": {
+      "armorClass": "tank_structural_steel",
+      "armorThickness": 1.0,
+      "hp": 30.0
+    }
+  },
+  "bulletType": "smoke_grenade_tank",
+  "explodeOnRendinst": true,
+  "fresnel": [0.23,0.1,2.0],
+  "fuseOnWater": true,
+  "fuseOnWaterProbability": 1.0,
+  "groundRicochetPreset": "he",
+  "modelName": "tank_bullet_he",
+  "normalizationPreset": "heat",
+  "ricochetPreset": "he",
+  "secondaryShattersPreset": "ap",
+  "slopeEffectPreset": "ap",
+  "stabilityCaliberToArmorThreshold": 5.0,
+  "stabilityReductionAfterPenetration": 0.15,
+  "stabilityReductionAfterRicochet": 0.3,
+  "stabilityRicochetModifier": {
+    "mod1": [0.0,0.5],
+    "mod2": [15.0,0.7],
+    "mod3": [30.0,0.99]
+  },
+  "stabilityThreshold": 0.5
+}

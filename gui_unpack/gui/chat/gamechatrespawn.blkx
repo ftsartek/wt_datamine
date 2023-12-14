@@ -1,0 +1,106 @@
+{
+  "tdiv": {
+    "EditBoxBG": {
+      "auto-scroll": "yes",
+      "chatLog": {
+        "id": "chat_log",
+        "on_link_click": "onChatLinkClick",
+        "on_link_rclick": "onChatLinkRClick",
+        "text": "",
+        "width": "pw"
+      },
+      "height": "fh",
+      "overflow-y": "auto",
+      "padding": "0.5*@scrn_tgt/100.0",
+      "position": "relative",
+      "width": "pw"
+    },
+    "HorizontalListBox": [
+      {
+        "id": "chat_tabs"
+      },
+      {
+        "width": "pw"
+      },
+      {
+        "class": "tabs"
+      },
+      {
+        "smallFont": "yes"
+      },
+      {
+        "navigatorShortcuts": "yes"
+      },
+      {
+        "on_select": "onChatTabChange"
+      },
+      {
+        "shopFilter": {
+          "id": "mpchat",
+          "shopFilterText": {
+            "text": "#mainmenu/chat"
+          }
+        }
+      },
+      {
+        "shopFilter": {
+          "id": "battlelog",
+          "shopFilterText": {
+            "text": "#options/_Bttl"
+          }
+        }
+      }
+    ],
+    "div": {
+      "Button_text": {
+        "_on_click": "onChatSend",
+        "id": "btn_send",
+        "noMargin": "yes",
+        "pos": "1@blockInterval, ph/2-h/2",
+        "position": "relative",
+        "showConsoleImage": "no",
+        "style": "padding-left:1*@scrn_tgt/100.0; min-width:15*@scrn_tgt/100.0;",
+        "text": "#chat/send",
+        "width": "15*@scrn_tgt/100.0"
+      },
+      "EditBox": {
+        "id": "chat_input",
+        "max-len": "250",
+        "on_activate": "onChatEntered",
+        "on_cancel_edit": "onChatCancel",
+        "on_change_value": "onChatChanged",
+        "pos": "1@blockInterval, ph/2-h/2",
+        "position": "relative",
+        "text": "",
+        "width": "pw -30@scrn_tgt/100.0 -2@blockInterval"
+      },
+      "display": "show",
+      "flow": "horizontal",
+      "id": "chat_input_back",
+      "margin-top": "1@blockInterval",
+      "position": "relative",
+      "size": "pw, @buttonHeight",
+      "tdiv": {
+        "Button_text": {
+          "_on_click": "onChatMode",
+          "accesskey": "Tab",
+          "id": "chat_prompt",
+          "noMargin": "yes",
+          "pos": "0, ph/2-h/2",
+          "position": "relative",
+          "showConsoleImage": "no",
+          "style": "padding-left:1*@scrn_tgt/100.0; min-width:15*@scrn_tgt/100.0;",
+          "text": "",
+          "width": "15*@scrn_tgt/100.0"
+        },
+        "id": "chat_prompt_place"
+      }
+    },
+    "flow": "vertical",
+    "height": "fh",
+    "id": "chat",
+    "pos": "1,1",
+    "position": "relative",
+    "width": "pw"
+  }
+}

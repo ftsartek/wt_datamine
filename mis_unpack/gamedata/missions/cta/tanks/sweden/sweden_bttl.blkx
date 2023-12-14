@@ -1,0 +1,579 @@
+{
+  "airfields": [],
+  "areas": {
+    "briefing_bttl_battle_area": {
+      "objLayer": 4,
+      "props": [],
+      "tm": [
+        [-9.72258e-05,0.0,1500.0],
+        [0.0,400.0,0.0],
+        [-1500.0,0.0,-9.72258e-05],
+        [-158.1,14.3499,-94.4]
+      ],
+      "type": "Box"
+    },
+    "briefing_t1_capturezone": {
+      "objLayer": 0,
+      "props": [],
+      "tm": [
+        [-9.0801,0.0,0.942317],
+        [0.0,1.0,0.0],
+        [-0.68861,0.0,-6.63541],
+        [59.53,6.67511,-298.501]
+      ],
+      "type": "Point"
+    },
+    "briefing_t1_resp01": {
+      "objLayer": 0,
+      "props": [],
+      "tm": [
+        [-0.173648,0.0,-0.984808],
+        [0.0,1.0,0.0],
+        [0.984808,0.0,-0.173648],
+        [106.334,9.14999,-692.246]
+      ],
+      "type": "Point"
+    },
+    "briefing_t2_capturezone": {
+      "objLayer": 0,
+      "props": [],
+      "tm": [
+        [-5.46519,0.0,0.567164],
+        [0.0,1.0,0.0],
+        [-0.414461,0.0,-3.99376],
+        [-277.267,4.1438,161.658]
+      ],
+      "type": "Point"
+    },
+    "briefing_t2_resp01": {
+      "objLayer": 0,
+      "props": [],
+      "tm": [
+        [-0.173648,0.0,-0.984808],
+        [0.0,1.0,0.0],
+        [0.984808,0.0,-0.173648],
+        [-413.315,9.0,542.838]
+      ],
+      "type": "Point"
+    }
+  },
+  "bin_dump_file": "",
+  "dialogs": [],
+  "effects": [],
+  "imports": [
+    {
+      "import_record": {
+        "excludes": [],
+        "file": "gameData/missions/cta/tanks/sweden/battleareas/template_sweden_exclude_battleareas.blk",
+        "importAreas": true,
+        "importMissionObjectives": true,
+        "importTriggers": true,
+        "importUnits": true,
+        "importWayPoints": true,
+        "showAreas": true,
+        "showMissionObjectives": true,
+        "showTriggers": true,
+        "showUnits": true,
+        "showWayPoints": true
+      }
+    },
+    {
+      "import_record": {
+        "excludes": [],
+        "file": "gameData/missions/templates/tank_templates/tank_base_logic_template.blk",
+        "importAreas": true,
+        "importMissionObjectives": true,
+        "importTriggers": true,
+        "importUnits": true,
+        "importWayPoints": true,
+        "showAreas": true,
+        "showMissionObjectives": true,
+        "showTriggers": true,
+        "showUnits": true,
+        "showWayPoints": true
+      }
+    },
+    {
+      "import_record": {
+        "excludes": [],
+        "file": "gameData/missions/cta/tanks/sweden/template_sweden_air_spawns.blk",
+        "importAreas": true,
+        "importMissionObjectives": true,
+        "importTriggers": true,
+        "importUnits": true,
+        "importWayPoints": true,
+        "showAreas": true,
+        "showMissionObjectives": true,
+        "showTriggers": true,
+        "showUnits": true,
+        "showWayPoints": true
+      }
+    },
+    {
+      "import_record": {
+        "excludes": [],
+        "file": "gameData/missions/cta/tanks/sweden/battleareas/template_sweden_Bttl_battlearea.blk",
+        "importAreas": true,
+        "importMissionObjectives": true,
+        "importTriggers": true,
+        "importUnits": true,
+        "importWayPoints": true,
+        "showAreas": true,
+        "showMissionObjectives": true,
+        "showTriggers": true,
+        "showUnits": true,
+        "showWayPoints": true
+      }
+    },
+    {
+      "import_record": {
+        "excludes": [],
+        "file": "gameData/missions/templates/tank_templates/bttl_template.blk",
+        "importAreas": true,
+        "importMissionObjectives": true,
+        "importTriggers": true,
+        "importUnits": true,
+        "importWayPoints": true,
+        "showAreas": true,
+        "showMissionObjectives": true,
+        "showTriggers": true,
+        "showUnits": true,
+        "showWayPoints": true
+      }
+    }
+  ],
+  "mission_objectives": {
+    "isCategory": true,
+    "is_enabled": true
+  },
+  "mission_settings": {
+    "briefing": {
+      "date_loc": "",
+      "music": "action_01",
+      "objective_loc": "",
+      "part": {
+        "event": "",
+        "minTime": 0,
+        "slide": [
+          {
+            "map": true
+          },
+          {
+            "minTime": 4
+          },
+          {
+            "picture": ""
+          },
+          {
+            "showAirMap": false
+          },
+          {
+            "icon": {
+              "icontype": "tank",
+              "side": "ally",
+              "target": "briefing_t1_resp01"
+            }
+          },
+          {
+            "icon": {
+              "icontype": "tank",
+              "side": "enemy",
+              "target": "briefing_t2_resp01"
+            }
+          },
+          {
+            "icon": {
+              "icontype": "basezone_A",
+              "side": "ally",
+              "target": "briefing_t1_capturezone"
+            }
+          },
+          {
+            "icon": {
+              "icontype": "basezone_B",
+              "side": "enemy",
+              "target": "briefing_t2_capturezone"
+            }
+          },
+          {
+            "battleArea": {
+              "target": "briefing_bttl_battle_area"
+            }
+          }
+        ]
+      },
+      "place_loc": ""
+    },
+    "mission": [
+      {
+        "level": "levels/avg_sweden.bin"
+      },
+      {
+        "type": "domination"
+      },
+      {
+        "environment": "Day"
+      },
+      {
+        "weather": "clear"
+      },
+      {
+        "locName": "missions/_Bttl;sweden/name"
+      },
+      {
+        "locDesc": "sweden/desc;missions/_Bttl/desc"
+      },
+      {
+        "scoreLimit": 10000
+      },
+      {
+        "timeLimit": 25
+      },
+      {
+        "deathPenaltyMul": 1.0
+      },
+      {
+        "postfix": "_Bttl"
+      },
+      {
+        "ctaCaptureZoneEqualPenaltyMul": 0.5
+      },
+      {
+        "useAlternativeMapCoord": false
+      },
+      {
+        "allowedKillStreaks": true
+      },
+      {
+        "randomSpawnTeams": false
+      },
+      {
+        "remapAiTankModels": true
+      },
+      {
+        "battleAreaColorPreset": "battleArea"
+      },
+      {
+        "country_axis": "germany"
+      },
+      {
+        "country_allies": "ussr"
+      },
+      {
+        "restoreType": "attempts"
+      },
+      {
+        "optionalTakeOff": false
+      },
+      {
+        "showTacticalMapCellSize": true
+      },
+      {
+        "allowedUnitTypes": {
+          "isAirplanesAllowed": true,
+          "isHelicoptersAllowed": true,
+          "isShipsAllowed": false,
+          "isTanksAllowed": true
+        }
+      },
+      {
+        "mission": {
+          "difficulty": "arcade",
+          "randomSpawnTeams": false,
+          "remapAiTankModels": true,
+          "scoreLimit": 6000,
+          "useAlternativeMapCoord": false
+        }
+      },
+      {
+        "mission": {
+          "difficulty": "realistic",
+          "randomSpawnTeams": true,
+          "remapAiTankModels": true,
+          "scoreLimit": 6000,
+          "useAlternativeMapCoord": false
+        }
+      },
+      {
+        "mission": {
+          "difficulty": "hardcore",
+          "randomSpawnTeams": true,
+          "remapAiTankModels": true,
+          "scoreLimit": 6000,
+          "useAlternativeMapCoord": false
+        }
+      }
+    ],
+    "player": [
+      {
+        "army": 1
+      },
+      {
+        "wing": "t1_player01"
+      },
+      {
+        "wing": "t1_player02"
+      },
+      {
+        "wing": "t1_player03"
+      },
+      {
+        "wing": "t1_player04"
+      },
+      {
+        "wing": "t1_player05"
+      },
+      {
+        "wing": "t1_player06"
+      },
+      {
+        "wing": "t1_player07"
+      },
+      {
+        "wing": "t1_player08"
+      },
+      {
+        "wing": "t1_player09"
+      },
+      {
+        "wing": "t1_player10"
+      },
+      {
+        "wing": "t1_player11"
+      },
+      {
+        "wing": "t1_player12"
+      },
+      {
+        "wing": "t1_player13"
+      },
+      {
+        "wing": "t1_player14"
+      },
+      {
+        "wing": "t1_player15"
+      },
+      {
+        "wing": "t1_player16"
+      },
+      {
+        "wing": "t1_player17"
+      },
+      {
+        "wing": "t1_player18"
+      },
+      {
+        "wing": "t1_player19"
+      },
+      {
+        "wing": "t1_player20"
+      },
+      {
+        "wing": "t1_player21"
+      },
+      {
+        "wing": "t1_player22"
+      },
+      {
+        "wing": "t1_player23"
+      },
+      {
+        "wing": "t1_player24"
+      },
+      {
+        "wing": "t1_player25"
+      },
+      {
+        "wing": "t1_player26"
+      },
+      {
+        "wing": "t1_player27"
+      },
+      {
+        "wing": "t1_player28"
+      },
+      {
+        "wing": "t1_player29"
+      },
+      {
+        "wing": "t1_player30"
+      },
+      {
+        "wing": "t1_player31"
+      },
+      {
+        "wing": "t1_player32"
+      }
+    ],
+    "player_teamB": [
+      {
+        "army": 2
+      },
+      {
+        "wing": "t2_player01"
+      },
+      {
+        "wing": "t2_player02"
+      },
+      {
+        "wing": "t2_player03"
+      },
+      {
+        "wing": "t2_player04"
+      },
+      {
+        "wing": "t2_player05"
+      },
+      {
+        "wing": "t2_player06"
+      },
+      {
+        "wing": "t2_player07"
+      },
+      {
+        "wing": "t2_player08"
+      },
+      {
+        "wing": "t2_player09"
+      },
+      {
+        "wing": "t2_player10"
+      },
+      {
+        "wing": "t2_player11"
+      },
+      {
+        "wing": "t2_player12"
+      },
+      {
+        "wing": "t2_player13"
+      },
+      {
+        "wing": "t2_player14"
+      },
+      {
+        "wing": "t2_player15"
+      },
+      {
+        "wing": "t2_player16"
+      },
+      {
+        "wing": "t2_player17"
+      },
+      {
+        "wing": "t2_player18"
+      },
+      {
+        "wing": "t2_player19"
+      },
+      {
+        "wing": "t2_player20"
+      },
+      {
+        "wing": "t2_player21"
+      },
+      {
+        "wing": "t2_player22"
+      },
+      {
+        "wing": "t2_player23"
+      },
+      {
+        "wing": "t2_player24"
+      },
+      {
+        "wing": "t2_player25"
+      },
+      {
+        "wing": "t2_player26"
+      },
+      {
+        "wing": "t2_player27"
+      },
+      {
+        "wing": "t2_player28"
+      },
+      {
+        "wing": "t2_player29"
+      },
+      {
+        "wing": "t2_player30"
+      },
+      {
+        "wing": "t2_player31"
+      },
+      {
+        "wing": "t2_player32"
+      },
+      {
+        "wing": "t2_player33"
+      }
+    ],
+    "spectator_points": []
+  },
+  "objLayers": [
+    {
+      "layer": {
+        "enabled": true
+      }
+    },
+    {
+      "layer": {
+        "enabled": true
+      }
+    },
+    {
+      "layer": {
+        "enabled": true
+      }
+    },
+    {
+      "layer": {
+        "enabled": false
+      }
+    }
+  ],
+  "selected_tag": "",
+  "triggers": {
+    "isCategory": true,
+    "is_enabled": true
+  },
+  "units": {
+    "tankModels": {
+      "bullets0": "",
+      "bullets1": "",
+      "bullets2": "",
+      "bullets3": "",
+      "bulletsCount0": 0,
+      "bulletsCount1": 0,
+      "bulletsCount2": 0,
+      "bulletsCount3": 0,
+      "closed_waypoints": false,
+      "isShipSpline": false,
+      "name": "t1_player01",
+      "objLayer": 1,
+      "props": {
+        "army": 2,
+        "attack_type": "fire_at_will",
+        "count": 1,
+        "formation_div": 3,
+        "formation_noise": [0.1,0.1],
+        "formation_step": [2.5,2.0],
+        "formation_type": "rows",
+        "uniqueName": ""
+      },
+      "shipTurnRadius": 100.0,
+      "tm": [
+        [-0.173648,0.0,-0.984808],
+        [0.0,1.0,0.0],
+        [0.984808,0.0,-0.173648],
+        [92.2051,112.808,59.9476]
+      ],
+      "unit_class": "aaa_dummy",
+      "way": [],
+      "weapons": ""
+    }
+  },
+  "variables": [],
+  "wayPoints": []
+}

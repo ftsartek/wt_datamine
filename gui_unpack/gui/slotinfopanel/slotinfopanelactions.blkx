@@ -1,0 +1,120 @@
+[
+  {
+    "HorizontalListBox": [
+      {
+        "id": "air_info_dmviewer_listbox"
+      },
+      {
+        "width": "pw"
+      },
+      {
+        "type": "transparent"
+      },
+      {
+        "on_select": "onAirInfoToggleDMViewer"
+      },
+      {
+        "withImages": "yes"
+      },
+      {
+        "padding-top": "1@blockInterval"
+      },
+      {
+        "padding-bottom": "1@blockInterval"
+      },
+      {
+        "smallFont": "yes"
+      },
+      {
+        "move-only-hover": "yes"
+      },
+      {
+        "navigatorShortcuts": "yes"
+      },
+      {
+        "shopFilter": {
+          "shopFilterImg": {
+            "background-image": "#ui/gameuiskin#btn_dm_viewer_none.svg"
+          },
+          "shopFilterText": {
+            "text": "#mainmenu/listbox_dm_viewer_none"
+          },
+          "tooltip": "#mainmenu/viewDamageModel/tooltip_none",
+          "width": "fw"
+        }
+      },
+      {
+        "shopFilter": {
+          "id": "air_info_dmviewer_armor",
+          "shopFilterImg": {
+            "background-image": "#ui/gameuiskin#btn_dm_viewer_armor.svg"
+          },
+          "shopFilterText": {
+            "text": "#mainmenu/listbox_dm_viewer_armor"
+          },
+          "tooltip": "#mainmenu/viewDamageModel/tooltip_armor",
+          "width": "fw"
+        }
+      },
+      {
+        "shopFilter": {
+          "id": "air_info_dmviewer_xray",
+          "shopFilterImg": {
+            "background-image": "#ui/gameuiskin#btn_dm_viewer_xray.svg"
+          },
+          "shopFilterText": {
+            "text": "#mainmenu/listbox_dm_viewer_xray"
+          },
+          "tooltip": "#mainmenu/viewDamageModel/tooltip_xray",
+          "width": "fw"
+        }
+      }
+    ]
+  },
+  {
+    "CheckBox": {
+      "CheckBoxImg": [],
+      "display": "hide",
+      "id": "dmviewer_show_external_dm",
+      "margin-bottom": "3@dp",
+      "on_change_value": "onShowExternalDmPartsChange",
+      "text": "#mainmenu/btnShowExternalDmParts",
+      "tooltip": "#mainmenu/btnShowExternalDmParts",
+      "value": "yes",
+      "width": "pw"
+    }
+  },
+  {
+    "CheckBox": {
+      "CheckBoxImg": [],
+      "display": "hide",
+      "id": "dmviewer_show_extra_xray",
+      "margin-bottom": "3@dp",
+      "on_change_value": "onShowHiddenXrayPartsChange",
+      "text": "#mainmenu/btnShowExtraXrayParts",
+      "tooltip": "#mainmenu/btnShowExtraXrayParts",
+      "value": "yes",
+      "width": "pw"
+    }
+  },
+  {
+    "CheckBox": {
+      "CheckBoxImg": [],
+      "display": "hide",
+      "id": "dmviewer_show_extended_hints",
+      "margin-bottom": "3@dp",
+      "on_change_value": "onShowExtendedHintsChange",
+      "text": "#mainmenu/btnShowExtendedHints",
+      "tooltip": "#mainmenu/btnShowExtendedHints",
+      "value": "yes",
+      "width": "pw"
+    }
+  },
+  {
+    "tdiv": {
+      "flow": "vertical",
+      "id": "buttons_place",
+      "width": "pw"
+    }
+  }
+]

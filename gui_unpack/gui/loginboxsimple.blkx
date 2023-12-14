@@ -1,0 +1,186 @@
+{
+  "img": {
+    "background-image": "#ui/gameuiskin#optionlist_background_down",
+    "pos": "-sw,sh-h-1@bh",
+    "position": "absolute",
+    "size": "3sw - 3sw*@isInVr, sh/3+1"
+  },
+  "root": [
+    {
+      "tdiv": {
+        "background-color": "@black",
+        "id": "bg_picture_container",
+        "position": "root",
+        "size": "sw, sh",
+        "tdiv": [
+          {
+            "pos": "50%sw-50%w,50%sh-50%h"
+          },
+          {
+            "position": "absolute"
+          },
+          {
+            "size": "2.333sh, sh"
+          },
+          {
+            "overflow": "hidden"
+          },
+          {
+            "tdiv": {
+              "behaviour": "multiLayerImage",
+              "blend-time": "500",
+              "id": "animated_bg_picture",
+              "pos": "pw/2-w/2, ph/2-h/2",
+              "position": "absolute",
+              "size": "2.5sh, sh"
+            }
+          },
+          {
+            "tdiv": {
+              "background-color": "@black",
+              "background-image": "!ui/gameuiskin#debriefing_bg_grad@@ss",
+              "pos": "-w/2, 0",
+              "position": "absolute",
+              "size": "0.333sh, sh"
+            }
+          },
+          {
+            "tdiv": {
+              "background-color": "@black",
+              "background-image": "!ui/gameuiskin#debriefing_bg_grad@@ss",
+              "pos": "pw -w/2, 0",
+              "position": "absolute",
+              "size": "0.333sh, sh"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "tdiv": [
+        {
+          "id": "authorization_block"
+        },
+        {
+          "pos": "50%sw-50%w, 80%sh - 50%h"
+        },
+        {
+          "position": "absolute"
+        },
+        {
+          "flow": "vertical"
+        },
+        {
+          "textAreaCentered": {
+            "caption": "yes",
+            "hideEmptyText": "yes",
+            "id": "xbox_active_usertag",
+            "margin-bottom": "1@blockInterval",
+            "pos": "50%pw-50%w, 0",
+            "position": "relative",
+            "shadeStyle": "shadowed",
+            "text": ""
+          }
+        },
+        {
+          "textAreaCentered": {
+            "hideEmptyText": "yes",
+            "id": "user_notify_text",
+            "margin-top": "1@blockInterval",
+            "max-width": "50%sw",
+            "pos": "50%pw-50%w, 0",
+            "position": "relative",
+            "shadeStyle": "shadowed",
+            "text": ""
+          }
+        },
+        {
+          "authorizationBlock": {
+            "flow": "vertical",
+            "id": "authorization_button_place",
+            "pos": "50%pw-50%w, 0",
+            "position": "relative"
+          }
+        }
+      ]
+    },
+    {
+      "TopMenuPanel": {
+        "TopMenuPanelBGPlace": {
+          "TopMenuPanelBg": {
+            "Red_shadow_light": {
+              "pos": "50%pw-50%w, 0",
+              "position": "absolute",
+              "size": "50%pw, ph"
+            },
+            "tdiv": {
+              "GameLogoPlate": {
+                "Shadow": {
+                  "redPlate": {
+                    "pattern": {
+                      "img": {
+                        "background-image": "ui/title128.ddsx",
+                        "id": "titleLogo",
+                        "size": "256*@loginLogoScale,128*@loginLogoScale"
+                      },
+                      "padding-top": "0.5@bh - 0.5@bhInVr",
+                      "type": "dark_diag_lines"
+                    }
+                  }
+                },
+                "id": "gamercard_logo"
+              },
+              "padding": "1@titleLogoPlatePadding",
+              "pos": "50%pw-50%w, -0.5@bh + 0.5@bhInVr",
+              "position": "absolute",
+              "tdiv": {
+                "pos": "pw, 1@topBarHeight",
+                "position": "absolute",
+                "versionText": {
+                  "padding-left": "0.02@scrn_tgt"
+                }
+              }
+            },
+            "width": "pw"
+          },
+          "id": "top_gamercard_bg",
+          "tdiv": {
+            "Button_close": {
+              "_on_click": "goBack",
+              "display": "hide",
+              "enable": "no",
+              "id": "button_exit",
+              "relative": "yes"
+            },
+            "pos": "pw-w, ph-h",
+            "position": "absolute"
+          }
+        },
+        "shadowSafeArea": []
+      }
+    },
+    {
+      "BottomMenuPanel": {
+        "CompanyLogo": {
+          "pos": "pw-w-1@bw -1@companyLogoPadW, -h -1@companyLogoPadH",
+          "position": "absolute"
+        },
+        "line": [],
+        "pattern": {
+          "type": "bright_texture"
+        },
+        "shadowSafeArea": [],
+        "tdiv": {
+          "behavior": "bhvUpdater",
+          "copyright": {
+            "id": "copyright_text"
+          },
+          "css-hier-invalidate": "yes",
+          "pos": "pw-w-1@bw, 50%ph - 50%h",
+          "position": "absolute",
+          "value": "{\"viewId\": \"COPYRIGHT_TEXT\"}"
+        }
+      }
+    }
+  ]
+}

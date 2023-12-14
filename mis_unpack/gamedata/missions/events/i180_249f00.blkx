@@ -1,0 +1,272 @@
+{
+  "airfields": [],
+  "areas": {
+    "airfield00": {
+      "props": [],
+      "tm": [
+        [-18.382,0.0,229.565],
+        [0.0,230.3,0.0],
+        [-229.565,0.0,-18.382],
+        [8172.95,210.5,10492.0]
+      ],
+      "type": "Sphere"
+    },
+    "airfield01": {
+      "props": [],
+      "tm": [
+        [-18.382,0.0,229.565],
+        [0.0,230.3,0.0],
+        [-229.565,0.0,-18.382],
+        [8557.4,210.5,11224.0]
+      ],
+      "type": "Sphere"
+    },
+    "spawnpoint": {
+      "props": [],
+      "tm": [
+        [-6.10606,0.0,76.2559],
+        [0.0,76.5,0.0],
+        [-76.2559,0.0,-6.10606],
+        [8169.8,210.45,10492.4]
+      ],
+      "type": "Sphere"
+    }
+  },
+  "bin_dump_file": "",
+  "dialogs": [],
+  "effects": [],
+  "imports": {
+    "import_record": {
+      "excludes": [],
+      "file": "gameData/missions/events/i180_examination.blk",
+      "importAreas": false,
+      "importMissionObjectives": true,
+      "importTriggers": true,
+      "importUnits": false,
+      "importWayPoints": true,
+      "showAreas": true,
+      "showMissionObjectives": true,
+      "showTriggers": true,
+      "showUnits": true,
+      "showWayPoints": true
+    }
+  },
+  "mission_objectives": {
+    "isCategory": true,
+    "is_enabled": true
+  },
+  "mission_settings": {
+    "briefing": {
+      "date_loc": "",
+      "music": "action_01",
+      "objective_loc": "",
+      "part": {
+        "event": "",
+        "minTime": 0,
+        "slide": [
+          {
+            "map": true
+          },
+          {
+            "minTime": 4
+          },
+          {
+            "picture": ""
+          },
+          {
+            "showAirMap": false
+          },
+          {
+            "icon": {
+              "icontype": "fighter",
+              "lookAt": "airfield01",
+              "side": "player",
+              "target": "airfield00"
+            }
+          },
+          {
+            "icon": {
+              "icontype": "airfield",
+              "side": "ally",
+              "target": "airfield01"
+            }
+          }
+        ]
+      },
+      "place_loc": ""
+    },
+    "mission": {
+      "difficulty": "custom",
+      "environment": "Day",
+      "hideDamageFromPlayer": true,
+      "level": "levels/krymsk.bin",
+      "locDesc": "missions/i180_examination/desc",
+      "locName": "missions/i180_examination",
+      "netDifficultyBlk": {
+        "airToAirMissileDetection": false,
+        "aircraftFriendlyFireForBanOnly": false,
+        "aircraftHelpers": true,
+        "allowControlHelpers": 0,
+        "baseDifficulty": 1,
+        "bombAssaultFuseTimeOverride": false,
+        "checkTreesForIndicators": false,
+        "collectiveDetection": true,
+        "crewHealingOnlyOnCaptureZone": true,
+        "ctaCaptureMul": 1,
+        "damageModel": 1,
+        "distDetection": 0,
+        "drawShipBulletFallIndicator": false,
+        "engineControl": 1,
+        "flutter": true,
+        "forceInstructor": false,
+        "hudAimPrediction": false,
+        "hudAircraftMarkersMaxDist": 0,
+        "hudDamageIndicator": false,
+        "hudDamageModel": 1,
+        "hudIndicators": false,
+        "hudLargeAwardMessages": false,
+        "hudMapAircraftMarkers": 2,
+        "hudMapGroundMarkers": 2,
+        "hudMarkerArrows": false,
+        "hudMarkers": 0,
+        "hudMarkersBlink": false,
+        "hudOutline": false,
+        "hudRadar": true,
+        "hudShowEnemyDamageLog": false,
+        "hudShowSpeedVector": false,
+        "hudShowTankDistance": false,
+        "hudSpawnShotMarkers": false,
+        "hudTankRangefinder": 1,
+        "hudWarnings": false,
+        "ignoreReplenishment": false,
+        "limitViews": 0,
+        "limitedBombsMissiles": true,
+        "manualTrimming": false,
+        "mortalPilots": true,
+        "noArcadeBoost": 0,
+        "noRespawns": false,
+        "noviceDM": false,
+        "playerTurretDeviation": 1,
+        "realDamageModels": true,
+        "realGunnery": 1,
+        "redOuts": true,
+        "respDifficulty": 1,
+        "setDifficulty": 3,
+        "showBombSight": false,
+        "showShipBulletTimer": true,
+        "stallsAndSpins": true,
+        "torqueAndGyro": false,
+        "visibleNotTraceableIndicators": true
+      },
+      "optionalTakeOff": false,
+      "reqFeature": "i180Spring2019DiagnosticsPreset04",
+      "requiredPackage": "pkg_main",
+      "restoreType": "manual",
+      "type": "singleMission",
+      "weather": "good",
+      "windDirection": [1.0,0.0,0.0]
+    },
+    "player": {
+      "army": 1,
+      "wing": "armada_01"
+    },
+    "player_teamB": {
+      "army": 2
+    },
+    "spectator_points": []
+  },
+  "objLayers": [
+    {
+      "layer": {
+        "enabled": true
+      }
+    },
+    {
+      "layer": {
+        "enabled": true
+      }
+    },
+    {
+      "layer": {
+        "enabled": true
+      }
+    },
+    {
+      "layer": {
+        "enabled": true
+      }
+    }
+  ],
+  "selected_tag": "",
+  "triggers": {
+    "isCategory": true,
+    "is_enabled": true,
+    "set_presed_id": {
+      "actions": {
+        "varSetInt": {
+          "value": 4,
+          "var": "preset_id"
+        }
+      },
+      "comments": "",
+      "conditions": [],
+      "else_actions": [],
+      "events": {
+        "initMission": []
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    }
+  },
+  "units": {
+    "armada": {
+      "bullets0": "",
+      "bullets1": "",
+      "bullets2": "",
+      "bullets3": "",
+      "bulletsCount0": 0,
+      "bulletsCount1": 0,
+      "bulletsCount2": 0,
+      "bulletsCount3": 0,
+      "closed_waypoints": false,
+      "isShipSpline": false,
+      "name": "armada_01",
+      "props": {
+        "altLimit": 6000.0,
+        "army": 1,
+        "attack_type": "fire_at_will",
+        "count": 1,
+        "floating_distance": 50.0,
+        "free_distance": 70.0,
+        "minimum_distance_to_earth": 20.0,
+        "plane": {
+          "ai_skill": "NORMAL",
+          "col_distances": 1.5,
+          "row_distances": 1.5,
+          "super_col_distances": 1.5,
+          "super_formation": "Diamond",
+          "super_row_distances": 1.5,
+          "task": "FLY_WAYPOINT",
+          "wing_formation": "Diamond"
+        },
+        "skill": 4
+      },
+      "shipTurnRadius": 100.0,
+      "tm": [
+        [0.488996,0.0,0.872286],
+        [0.0,1.0,0.0],
+        [-0.872286,0.0,0.488996],
+        [8171.85,212.2,10492.3]
+      ],
+      "unit_class": "i_180",
+      "way": [],
+      "weapons": ""
+    }
+  },
+  "variables": [],
+  "wayPoints": []
+}

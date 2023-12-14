@@ -1,0 +1,4381 @@
+{
+  "airfields": [],
+  "areas": [],
+  "bin_dump_file": "",
+  "dialogs": [],
+  "effects": [],
+  "imports": [],
+  "mission_objectives": {
+    "isCategory": true,
+    "is_enabled": true,
+    "pt_t1_assist_convoy": {
+      "comments": "",
+      "is_enabled": false,
+      "onFailed": [],
+      "onSuccess": [],
+      "props": {
+        "isPrimary": true,
+        "team": "A",
+        "timeLimit": 10800
+      },
+      "type": "abstractMissionObjective"
+    },
+    "pt_t1_attack_convoy": {
+      "comments": "",
+      "is_enabled": false,
+      "onFailed": [],
+      "onSuccess": [],
+      "props": {
+        "isPrimary": true,
+        "team": "A",
+        "timeLimit": 10800
+      },
+      "type": "abstractMissionObjective"
+    },
+    "pt_t2_assist_convoy": {
+      "comments": "",
+      "is_enabled": false,
+      "onFailed": [],
+      "onSuccess": [],
+      "props": {
+        "isPrimary": true,
+        "team": "B",
+        "timeLimit": 10800
+      },
+      "type": "abstractMissionObjective"
+    },
+    "pt_t2_attack_convoy": {
+      "comments": "",
+      "is_enabled": false,
+      "onFailed": [],
+      "onSuccess": [],
+      "props": {
+        "isPrimary": true,
+        "team": "B",
+        "timeLimit": 10800
+      },
+      "type": "abstractMissionObjective"
+    }
+  },
+  "mission_settings": {
+    "mission": {
+      "environment": "Day",
+      "level": "levels/water.bin",
+      "optionalTakeOff": false,
+      "restoreType": "attempts",
+      "type": "singleMission",
+      "weather": "hazy"
+    },
+    "player": {
+      "army": 1,
+      "wing": ""
+    },
+    "player_teamB": {
+      "army": 2
+    },
+    "spectator_points": []
+  },
+  "objLayers": [
+    {
+      "layer": {
+        "enabled": true
+      }
+    },
+    {
+      "layer": {
+        "enabled": true
+      }
+    },
+    {
+      "layer": {
+        "enabled": true
+      }
+    },
+    {
+      "layer": {
+        "enabled": true
+      }
+    }
+  ],
+  "selected_tag": "",
+  "triggers": {
+    "isCategory": true,
+    "is_enabled": true,
+    "scnv_army_check_activity": {
+      "actions": {
+        "triggerEnable": {
+          "target": "scnv_army_check_prepare"
+        },
+        "varSetInt": {
+          "input_var": "@scnv_army_var_name",
+          "value": 0,
+          "var": "scnv_last_army_idx"
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "varCompareInt": {
+          "comparasion_func": "notEqual",
+          "value": 0,
+          "var_value": "scnv_last_army_idx",
+          "var_value_other": "@scnv_army_var_name"
+        }
+      },
+      "else_actions": {
+        "comment": {
+          "value": "idem dal'she po ciklu"
+        },
+        "triggerEnable": {
+          "target": "scnv_rotator"
+        }
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "scnv_army_check_prepare": {
+      "actions": {
+        "comment": {
+          "value": "port armii A. proveryaem aktivnost'"
+        },
+        "triggerEnable": {
+          "target": "scnv_t1_army_check_activity"
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "varCompareInt": {
+          "comparasion_func": "equal",
+          "value": 1,
+          "var_value": "@scnv_army_var_name"
+        }
+      },
+      "else_actions": {
+        "comment": {
+          "value": "port armii B. proveryaem aktivnost'"
+        },
+        "triggerEnable": {
+          "target": "scnv_t2_army_check_activity"
+        }
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "scnv_checking_army": {
+      "actions": {
+        "comment": {
+          "value": "port armii A. spavnim korabli"
+        },
+        "triggerEnable": {
+          "target": "scnv_t1_spawn_ship_head"
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "varCompareInt": {
+          "comparasion_func": "equal",
+          "value": 1,
+          "var_value": "@scnv_army_var_name"
+        }
+      },
+      "else_actions": {
+        "comment": {
+          "value": "port armii B. spavnim korabli"
+        },
+        "triggerEnable": {
+          "target": "scnv_t2_spawn_ship_head"
+        }
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "scnv_init": {
+      "actions": {
+        "triggerEnable": {
+          "target": "scnv_start"
+        },
+        "unitLoadBehTree": {
+          "name": "shipMissionUnit",
+          "objects": "scnv_all_convoys_squad"
+        },
+        "wait": {
+          "time": 30.0
+        }
+      },
+      "comments": "",
+      "conditions": [],
+      "else_actions": [],
+      "events": {
+        "initMission": []
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "scnv_rotator": {
+      "actions": [
+        {
+          "comment": {
+            "value": "indeks vnutri diapazona - rabotaem"
+          }
+        },
+        {
+          "comment": {
+            "value": "sozdaem imya peremennoj s tajmerom porta"
+          }
+        },
+        {
+          "comment": {
+            "value": "peremennaya armii"
+          }
+        },
+        {
+          "comment": {
+            "value": "proveryaem znachenie tajmera"
+          }
+        },
+        {
+          "varSetRandomInt": {
+            "from": 1,
+            "to_not_including": 10,
+            "var": "scnv_port_idx",
+            "var_to_not_including": "scnv_ports_num_for_randomizer"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "pt_port_",
+            "var": "scnv_var_name"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "pt_port_",
+            "var": "scnv_army_var_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 2,
+            "value": "@scnv_port_idx",
+            "var": "scnv_var_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 0,
+            "value": "_timer",
+            "var": "scnv_var_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 2,
+            "value": "@scnv_port_idx",
+            "var": "scnv_army_var_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 2,
+            "value": "_army",
+            "var": "scnv_army_var_name"
+          }
+        },
+        {
+          "triggerEnable": {
+            "target": "scnv_army_check_activity"
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": {
+        "varCompareBool": {
+          "comparasion_func": "equal",
+          "value": false,
+          "var_value": "scnv_is_active"
+        },
+        "varCompareInt": {
+          "comparasion_func": "less",
+          "value": 0,
+          "var_value": "scnv_port_idx",
+          "var_value_other": "pt_port_max_num"
+        }
+      },
+      "else_actions": {
+        "comment": {
+          "value": "indeks vyshel za predel dzhiapazona. restartim rotaciyu"
+        },
+        "triggerEnable": {
+          "target": "scnv_start"
+        }
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "scnv_start": {
+      "actions": [
+        {
+          "comment": {
+            "value": "obnulyaem znachenie indeksa porta"
+          }
+        },
+        {
+          "comment": {
+            "value": "znachenie porta dlya randomajzera"
+          }
+        },
+        {
+          "comment": {
+            "value": "zapuskaem rotaciyu"
+          }
+        },
+        {
+          "varSetInt": {
+            "value": 0,
+            "var": "scnv_port_idx"
+          }
+        },
+        {
+          "varSetInt": {
+            "input_var": "pt_port_max_num",
+            "value": 0,
+            "var": "scnv_ports_num_for_randomizer"
+          }
+        },
+        {
+          "varModify": {
+            "operator": "add",
+            "value": 1.0,
+            "var": "scnv_ports_num_for_randomizer"
+          }
+        },
+        {
+          "triggerEnable": {
+            "target": "scnv_rotator"
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": {
+        "varCompareBool": {
+          "comparasion_func": "equal",
+          "value": false,
+          "var_value": "scnv_is_active"
+        }
+      },
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "scnv_t1_army_check_activity": {
+      "actions": {
+        "comment": {
+          "value": "mozhno rabotat'"
+        },
+        "triggerEnable": {
+          "target": "scnv_checking_army"
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "varCompareBool": {
+          "comparasion_func": "equal",
+          "value": false,
+          "var_value": "scnv_t1_is_active"
+        }
+      },
+      "else_actions": {
+        "comment": {
+          "value": "idem dal'she po ciklu"
+        },
+        "triggerEnable": {
+          "target": "scnv_rotator"
+        }
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "scnv_t1_assist_objective_check": {
+      "actions": {
+        "moSetObjectiveStatus": {
+          "object_marking": 0,
+          "object_type": "isUnitVar",
+          "object_var_comp_op": "equal",
+          "object_var_name": "reinforcement_forces",
+          "object_var_value": 1,
+          "status": 1,
+          "target": "pt_t1_assist_convoy",
+          "team": "A",
+          "unit_or_area": "@scnv_t1_squad_name"
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "misObjStatus": {
+          "status": "inProgress",
+          "target": "pt_t1_assist_convoy"
+        }
+      },
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": true
+      }
+    },
+    "scnv_t1_attack_objective_check": {
+      "actions": {
+        "moSetObjectiveStatus": {
+          "object_marking": 0,
+          "object_type": "isUnitVar",
+          "object_var_comp_op": "equal",
+          "object_var_name": "reinforcement_forces",
+          "object_var_value": 1,
+          "status": 1,
+          "target": "pt_t1_attack_convoy",
+          "team": "A",
+          "unit_or_area": "@scnv_t2_squad_name"
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "misObjStatus": {
+          "status": "inProgress",
+          "target": "pt_t1_attack_convoy"
+        }
+      },
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": true
+      }
+    },
+    "scnv_t1_close_spawns": {
+      "actions": [
+        {
+          "missionMarkAsRespawnPoint": {
+            "backupZone": "@scnv_t1_spawn_name",
+            "canSpawnOnNeutral": false,
+            "forceCreate": true,
+            "ignoreTeamsOnReuse": false,
+            "isAirfield": false,
+            "isIndividual": false,
+            "isStrictSpawn": false,
+            "isUnit": true,
+            "loc_name": "missions/t1_our_cargo_fleet_spawn",
+            "object_type": "any",
+            "offset": [-3000.0,0.0,0.0],
+            "onlyOnePlayerPerSpawnPoint": false,
+            "radius": -1.0,
+            "removeAreas": false,
+            "replaceAreas": true,
+            "resetStrictSpawnIndex": false,
+            "showOnMap": false,
+            "spawnEffect": false,
+            "tags": {
+              "none_can_spawn": true
+            },
+            "target": "@scnv_t1_squad_name",
+            "team": "A",
+            "useExisting": true
+          }
+        },
+        {
+          "missionMarkAsRespawnPoint": {
+            "canSpawnOnNeutral": false,
+            "forceCreate": true,
+            "ignoreTeamsOnReuse": false,
+            "isAirfield": false,
+            "isIndividual": false,
+            "isStrictSpawn": false,
+            "isUnit": false,
+            "loc_name": "missions/t2_enemy_cargo_fleet_spawn",
+            "onlyOnePlayerPerSpawnPoint": false,
+            "radius": -1.0,
+            "removeAreas": false,
+            "replaceAreas": true,
+            "resetStrictSpawnIndex": false,
+            "showOnMap": false,
+            "spawnEffect": false,
+            "tags": {
+              "none_can_spawn": true
+            },
+            "target": "@scnv_t1_enemy_spawn_ship_name",
+            "team": "B",
+            "useExisting": true
+          }
+        },
+        {
+          "missionMarkAsRespawnPoint": {
+            "canSpawnOnNeutral": false,
+            "forceCreate": true,
+            "ignoreTeamsOnReuse": false,
+            "isAirfield": false,
+            "isIndividual": false,
+            "isStrictSpawn": false,
+            "isUnit": false,
+            "loc_name": "missions/t2_enemy_cargo_fleet_spawn_for_boats",
+            "onlyOnePlayerPerSpawnPoint": false,
+            "radius": -1.0,
+            "removeAreas": false,
+            "replaceAreas": true,
+            "resetStrictSpawnIndex": false,
+            "showOnMap": false,
+            "spawnEffect": false,
+            "tags": {
+              "none_can_spawn": true
+            },
+            "target": "@scnv_t1_enemy_spawn_boat_name",
+            "team": "B",
+            "useExisting": true
+          }
+        },
+        {
+          "__missionMarkAsRespawnPoint": {
+            "backupZone": "@scnv_t1_spawn_name",
+            "canSpawnOnNeutral": false,
+            "forceCreate": true,
+            "ignoreTeamsOnReuse": false,
+            "isAirfield": false,
+            "isIndividual": false,
+            "isStrictSpawn": false,
+            "isUnit": true,
+            "loc_name": "missions/t1_our_cargo_fleet_spawn_for_planes",
+            "object_type": "any",
+            "offset": [-7000.0,2000.0,0.0],
+            "onlyOnePlayerPerSpawnPoint": false,
+            "radius": -1.0,
+            "removeAreas": false,
+            "replaceAreas": true,
+            "resetStrictSpawnIndex": false,
+            "showOnMap": false,
+            "spawnEffect": false,
+            "tags": {
+              "none_can_spawn": true
+            },
+            "target": "@scnv_t1_squad_name",
+            "team": "A",
+            "useExisting": true
+          }
+        },
+        {
+          "__missionMarkAsRespawnPoint": {
+            "canSpawnOnNeutral": false,
+            "forceCreate": true,
+            "ignoreTeamsOnReuse": false,
+            "isAirfield": false,
+            "isIndividual": false,
+            "isStrictSpawn": false,
+            "isUnit": false,
+            "loc_name": "missions/t2_enemy_cargo_fleet_spawn_for_planes",
+            "onlyOnePlayerPerSpawnPoint": false,
+            "radius": -1.0,
+            "removeAreas": false,
+            "replaceAreas": true,
+            "resetStrictSpawnIndex": false,
+            "showOnMap": false,
+            "spawnEffect": false,
+            "spawnOffset": [0.0,2000.0,0.0],
+            "tags": {
+              "none_can_spawn": true
+            },
+            "target": "@scnv_t1_enemy_spawn_ship_name",
+            "team": "B",
+            "useExisting": true
+          }
+        },
+        {
+          "triggerDisable": {
+            "target": "scnv_t1_enemy_spawn_restart"
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": {
+        "varCompareBool": {
+          "comparasion_func": "equal",
+          "value": true,
+          "var_value": "pt_ship_spawn_enable"
+        }
+      },
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "scnv_t1_destroyed": {
+      "actions": [
+        {
+          "triggerDisable": {
+            "target": "scnv_t1_reach_destination"
+          }
+        },
+        {
+          "moSetObjectiveStatus": {
+            "extendedEnding": true,
+            "object_marking": 0,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "status": 2,
+            "target": "pt_t2_attack_convoy",
+            "team": "B"
+          }
+        },
+        {
+          "moSetObjectiveStatus": {
+            "extendedEnding": true,
+            "object_marking": 0,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "status": 3,
+            "target": "pt_t1_assist_convoy",
+            "team": "A"
+          }
+        },
+        {
+          "moSetObjectiveStatus": {
+            "object_marking": 0,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "status": 0,
+            "target": "pt_t2_attack_convoy",
+            "team": "B"
+          }
+        },
+        {
+          "moSetObjectiveStatus": {
+            "object_marking": 0,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "status": 0,
+            "target": "pt_t1_assist_convoy",
+            "team": "A"
+          }
+        },
+        {
+          "unitSetIndication": {
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "object_var_value": 0,
+            "set": false,
+            "target": "@scnv_t1_squad_name",
+            "target_marking": 0
+          }
+        },
+        {
+          "triggerEnable": {
+            "target": "t2_moderate_task_completed"
+          }
+        },
+        {
+          "triggerEnable": {
+            "target": "scnv_t1_timer_reset"
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "wait": {
+            "time": 1.0
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": {
+        "unitWhenCountMatches": {
+          "func": "less",
+          "object": "@scnv_t1_squad_name",
+          "object_marking": 0,
+          "object_type": "isUnitVar",
+          "object_var_comp_op": "equal",
+          "object_var_name": "reinforcement_forces",
+          "object_var_value": 1,
+          "value": 1
+        }
+      },
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "scnv_t1_enemy_spawn_check_create": {
+      "actions": {
+        "triggerEnable": {
+          "target": "scnv_t1_enemy_spawn_create"
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "varCompareBool": {
+          "comparasion_func": "equal",
+          "value": true,
+          "var_value": "scnv_first_time_create_spawn_for_convoy"
+        }
+      },
+      "else_actions": [
+        {
+          "triggerEnable": [
+            {
+              "target": "scnv_t1_enemy_spawn_end_ship_spawn"
+            },
+            {
+              "target": "scnv_t1_enemy_spawn_end_boat_spawn"
+            }
+          ]
+        },
+        {
+          "triggerEnable": {
+            "target": "scnv_t1_enemy_spawn_restart"
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        }
+      ],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "scnv_t1_enemy_spawn_create": {
+      "actions": [
+        {
+          "missionMarkAsRespawnPoint": {
+            "PosRecalcDelay": 120.0,
+            "canSpawnOnNeutral": false,
+            "forceCreate": true,
+            "ignoreTeamsOnReuse": false,
+            "isAirfield": false,
+            "isIndividual": false,
+            "isStrictSpawn": false,
+            "isUnit": false,
+            "loc_name": "missions/t2_enemy_cargo_fleet_spawn",
+            "onlyOnePlayerPerSpawnPoint": false,
+            "radius": -1.0,
+            "removeAreas": false,
+            "replaceAreas": true,
+            "resetStrictSpawnIndex": false,
+            "showOnMap": true,
+            "spawnArrangeTo": "@scnv_t1_squad_name",
+            "spawnEffect": false,
+            "tags": {
+              "artillery": false,
+              "boat": false,
+              "helicopter": false,
+              "ship": true,
+              "tank": false,
+              "type_assault": false,
+              "type_battlecruiser": true,
+              "type_battleship": true,
+              "type_bomber": false,
+              "type_destroyer": true,
+              "type_fighter": false,
+              "type_heavy_cruiser": true,
+              "type_light_cruiser": true
+            },
+            "target": "@scnv_t1_enemy_spawn_ship_name",
+            "team": "B",
+            "useExisting": true
+          }
+        },
+        {
+          "missionMarkAsRespawnPoint": {
+            "PosRecalcDelay": 120.0,
+            "canSpawnOnNeutral": false,
+            "forceCreate": true,
+            "ignoreTeamsOnReuse": false,
+            "isAirfield": false,
+            "isIndividual": false,
+            "isStrictSpawn": false,
+            "isUnit": false,
+            "loc_name": "missions/t2_enemy_cargo_fleet_spawn_for_boats",
+            "onlyOnePlayerPerSpawnPoint": false,
+            "radius": -1.0,
+            "removeAreas": false,
+            "replaceAreas": true,
+            "resetStrictSpawnIndex": false,
+            "showOnMap": true,
+            "spawnArrangeTo": "@scnv_t1_squad_name",
+            "spawnEffect": false,
+            "tags": {
+              "artillery": false,
+              "boat": true,
+              "helicopter": false,
+              "ship": true,
+              "tank": false,
+              "type_assault": false,
+              "type_battlecruiser": false,
+              "type_battleship": false,
+              "type_bomber": false,
+              "type_destroyer": false,
+              "type_fighter": false,
+              "type_heavy_cruiser": false,
+              "type_light_cruiser": false
+            },
+            "target": "@scnv_t1_enemy_spawn_boat_name",
+            "team": "B",
+            "useExisting": true
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "triggerEnable": [
+            {
+              "target": "scnv_t1_enemy_spawn_end_ship_spawn"
+            },
+            {
+              "target": "scnv_t1_enemy_spawn_end_boat_spawn"
+            }
+          ]
+        },
+        {
+          "triggerEnable": {
+            "target": "scnv_t1_enemy_spawn_restart"
+          }
+        },
+        {
+          "varSetBool": {
+            "value": false,
+            "var": "scnv_first_time_create_spawn_for_convoy"
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": [
+        {
+          "objectExists": {
+            "target": "@scnv_t1_enemy_spawn_ship_name",
+            "type": "area"
+          }
+        },
+        {
+          "objectExists": {
+            "target": "@scnv_t1_enemy_spawn_boat_name",
+            "type": "area"
+          }
+        }
+      ],
+      "else_actions": {
+        "triggerEnable": {
+          "target": "scnv_t1_enemy_spawn_restart"
+        }
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "scnv_t1_enemy_spawn_end_boat_spawn": {
+      "actions": [
+        {
+          "comment": {
+            "value": "distanciya najdena"
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "__missionMarkAsRespawnPoint": {
+            "PosRecalcDelay": 120.0,
+            "canSpawnOnNeutral": false,
+            "forceCreate": true,
+            "ignoreTeamsOnReuse": false,
+            "isAirfield": false,
+            "isIndividual": false,
+            "isStrictSpawn": false,
+            "isUnit": false,
+            "loc_name": "missions/t2_enemy_cargo_fleet_spawn_for_boats",
+            "onlyOnePlayerPerSpawnPoint": false,
+            "radius": -1.0,
+            "removeAreas": false,
+            "replaceAreas": true,
+            "resetStrictSpawnIndex": false,
+            "showOnMap": true,
+            "spawnArrangeTo": "@scnv_t1_squad_name",
+            "spawnEffect": false,
+            "tags": {
+              "artillery": false,
+              "boat": true,
+              "helicopter": false,
+              "ship": true,
+              "tank": false,
+              "type_assault": false,
+              "type_battlecruiser": false,
+              "type_battleship": false,
+              "type_bomber": false,
+              "type_destroyer": false,
+              "type_fighter": false,
+              "type_heavy_cruiser": false,
+              "type_light_cruiser": false
+            },
+            "target": "@scnv_t1_enemy_spawn_boat_name",
+            "team": "B",
+            "useExisting": true
+          }
+        },
+        {
+          "moveRespawnBase": {
+            "isAirfield": false,
+            "loc_name": "missions/t2_enemy_cargo_fleet_spawn_for_boats",
+            "target": "@scnv_t1_enemy_spawn_boat_name",
+            "team": "B"
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": {
+        "objectExists": {
+          "target": "@scnv_t1_enemy_spawn_boat_name",
+          "type": "area"
+        }
+      },
+      "else_actions": {
+        "comment": {
+          "value": "spavn ne najden"
+        },
+        "systemLog": {
+          "logtype": "screen_and_log",
+          "value": "enemy boat spawn for t1 reinforcement doesnt exist"
+        }
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 0.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "scnv_t1_enemy_spawn_end_ship_spawn": {
+      "actions": [
+        {
+          "comment": {
+            "value": "distanciya najdena"
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "__missionMarkAsRespawnPoint": {
+            "PosRecalcDelay": 120.0,
+            "canSpawnOnNeutral": false,
+            "forceCreate": true,
+            "ignoreTeamsOnReuse": false,
+            "isAirfield": false,
+            "isIndividual": false,
+            "isStrictSpawn": false,
+            "isUnit": false,
+            "loc_name": "missions/t2_enemy_cargo_fleet_spawn",
+            "onlyOnePlayerPerSpawnPoint": false,
+            "radius": -1.0,
+            "removeAreas": false,
+            "replaceAreas": true,
+            "resetStrictSpawnIndex": false,
+            "showOnMap": true,
+            "spawnArrangeTo": "@scnv_t1_squad_name",
+            "spawnEffect": false,
+            "tags": {
+              "artillery": false,
+              "boat": false,
+              "helicopter": false,
+              "ship": true,
+              "tank": false,
+              "type_assault": false,
+              "type_battlecruiser": true,
+              "type_battleship": true,
+              "type_bomber": false,
+              "type_destroyer": true,
+              "type_fighter": false,
+              "type_heavy_cruiser": true,
+              "type_light_cruiser": true
+            },
+            "target": "@scnv_t1_enemy_spawn_ship_name",
+            "team": "B",
+            "useExisting": true
+          }
+        },
+        {
+          "moveRespawnBase": {
+            "isAirfield": false,
+            "loc_name": "missions/t2_enemy_cargo_fleet_spawn",
+            "target": "@scnv_t1_enemy_spawn_ship_name",
+            "team": "B"
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": {
+        "objectExists": {
+          "target": "@scnv_t1_enemy_spawn_ship_name",
+          "type": "area"
+        }
+      },
+      "else_actions": {
+        "comment": {
+          "value": "spavn ne najden"
+        },
+        "systemLog": {
+          "logtype": "screen_and_log",
+          "value": "enemy ship spawn for t1 reinforcement doesnt exist"
+        }
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 0.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "scnv_t1_enemy_spawn_restart": {
+      "actions": {
+        "comment": {
+          "value": ""
+        },
+        "triggerEnable": {
+          "target": "scnv_t1_enemy_spawn_start"
+        }
+      },
+      "comments": "",
+      "conditions": [],
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 60.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "scnv_t1_enemy_spawn_start": {
+      "actions": [
+        {
+          "varSetReal": [
+            {
+              "value": 100000.0
+            },
+            {
+              "var": "scnv_t1_enemy_spawn_ship_distance"
+            },
+            {
+              "var": "scnv_t1_enemy_spawn_boat_distance"
+            },
+            {
+              "var": "scnv_t1_enemy_spawn_plane_distance"
+            }
+          ]
+        },
+        {
+          "varSetInt": [
+            {
+              "value": 0
+            },
+            {
+              "var": "scnv_t1_enemy_spawn_ship_idx"
+            },
+            {
+              "var": "scnv_t1_enemy_spawn_boat_idx"
+            }
+          ]
+        },
+        {
+          "varSetInt": {
+            "value": 0,
+            "var": "scnv_t1_enemy_spawn_cur_idx"
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "getNearestAreaByMask": {
+            "areas": "pt_sea_spawn_areas_squad",
+            "avoidExistingSpawns": true,
+            "avoid_team": "Both",
+            "dist_max_value": 10000.0,
+            "dist_min_value": 3000.0,
+            "out_var": "scnv_t1_enemy_spawn_boat_name",
+            "spawns_distance_value": 3000.0,
+            "target": "@scnv_t1_squad_name"
+          }
+        },
+        {
+          "getNearestAreaByMask": {
+            "areas": "pt_sea_spawn_areas_squad",
+            "avoidExistingSpawns": true,
+            "avoid_team": "Both",
+            "dist_max_value": 25000.0,
+            "dist_min_value": 12000.0,
+            "out_var": "scnv_t1_enemy_spawn_ship_name",
+            "spawns_distance_value": 7000.0,
+            "target": "@scnv_t1_squad_name"
+          }
+        },
+        {
+          "triggerEnable": {
+            "target": "scnv_t1_enemy_spawn_check_create"
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": [],
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "scnv_t1_reach_destination": {
+      "actions": [
+        {
+          "triggerDisable": {
+            "target": "scnv_t1_destroyed"
+          }
+        },
+        {
+          "unitSetVar": {
+            "object": "@scnv_t1_squad_name",
+            "object_var_name": "reinforcement_forces",
+            "object_var_value": 0
+          }
+        },
+        {
+          "moSetObjectiveStatus": {
+            "extendedEnding": true,
+            "object_marking": 0,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "status": 3,
+            "target": "pt_t2_attack_convoy",
+            "team": "B"
+          }
+        },
+        {
+          "moSetObjectiveStatus": {
+            "extendedEnding": true,
+            "object_marking": 0,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "status": 2,
+            "target": "pt_t1_assist_convoy",
+            "team": "A"
+          }
+        },
+        {
+          "moSetObjectiveStatus": {
+            "object_marking": 0,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "status": 0,
+            "target": "pt_t2_attack_convoy",
+            "team": "B"
+          }
+        },
+        {
+          "moSetObjectiveStatus": {
+            "object_marking": 0,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "status": 0,
+            "target": "pt_t1_assist_convoy",
+            "team": "A"
+          }
+        },
+        {
+          "triggerEnable": {
+            "target": "t1_moderate_task_completed"
+          }
+        },
+        {
+          "triggerEnable": {
+            "target": "scnv_t1_timer_reset"
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "wait": {
+            "time": 20.0
+          }
+        },
+        {
+          "unitSetIndication": {
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "object_var_value": 0,
+            "set": false,
+            "target": "@scnv_t1_squad_name",
+            "target_marking": 0
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": {
+        "unitWhenInArea": {
+          "check_objects": "any",
+          "math": "2D",
+          "object": "@scnv_t1_squad_name",
+          "object_marking": 0,
+          "object_type": "isUnitVar",
+          "object_var_comp_op": "equal",
+          "object_var_name": "reinforcement_forces",
+          "object_var_value": 1,
+          "target": "@scnv_t1_port_area_name"
+        }
+      },
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 10.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "scnv_t1_setting_route": {
+      "actions": [
+        {
+          "comment": {
+            "value": "sozdaem imya dinamicheskogo skvada"
+          }
+        },
+        {
+          "comment": {
+            "value": "dobavlyaem korabli v skvad"
+          }
+        },
+        {
+          "comment": {
+            "value": "markiruem korabli"
+          }
+        },
+        {
+          "comment": {
+            "value": "est' korabli dlya naznacheniya routa"
+          }
+        },
+        {
+          "comment": {
+            "value": "sozdaem imya porta naznacheniya"
+          }
+        },
+        {
+          "comment": {
+            "value": "idem dal'she po ciklu"
+          }
+        },
+        {
+          "comment": {
+            "value": "vklyuchaem kvest na unichtozhenie korablej"
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "varModify": {
+            "operator": "add",
+            "value": 1.0,
+            "var": "scnv_t1_squad_idx"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "reinfocement_t1_squad_",
+            "var": "scnv_t1_squad_name"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "port_",
+            "var": "scnv_t1_port_area_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 2,
+            "value": "@scnv_t1_squad_idx",
+            "var": "scnv_t1_squad_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 2,
+            "value": "@scnv_port_idx",
+            "var": "scnv_t1_port_area_name"
+          }
+        },
+        {
+          "makeSquadFromUnits": [
+            {
+              "name": "@scnv_t1_squad_name"
+            },
+            {
+              "object_marking": 0
+            },
+            {
+              "object": "scnv_t1_cruisers_squad"
+            },
+            {
+              "object": "scnv_t1_cargoships_squad"
+            },
+            {
+              "object": "scnv_t1_destroyers_squad"
+            },
+            {
+              "object_var_name": ""
+            },
+            {
+              "object_var_comp_op": "equal"
+            },
+            {
+              "object_var_value": 0
+            },
+            {
+              "useForTriggerFiltered": true
+            }
+          ]
+        },
+        {
+          "setHeadSquad": [
+            {
+              "name": "@scnv_t1_squad_name"
+            },
+            {
+              "removeOnKill": true
+            },
+            {
+              "followLowestSpeed": true
+            },
+            {
+              "useCurrentFormation": true
+            },
+            {
+              "object": "scnv_t1_cruisers_squad"
+            },
+            {
+              "object": "scnv_t1_cargoships_squad"
+            },
+            {
+              "object": "scnv_t1_destroyers_squad"
+            },
+            {
+              "useForTriggerFiltered": true
+            }
+          ]
+        },
+        {
+          "unitSetVar": {
+            "input_var": "scnv_port_idx",
+            "object": "@scnv_t1_squad_name",
+            "object_var_name": "home_port"
+          }
+        },
+        {
+          "unitSetVar": {
+            "object": "@scnv_t1_squad_name",
+            "object_var_name": "reinforcement_forces",
+            "object_var_value": 1
+          }
+        },
+        {
+          "unitSetRoute": {
+            "object": "@scnv_t1_squad_name",
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "pos": "@scnv_t1_spawn_name",
+            "route": "@scnv_t1_route_name",
+            "teleportToStart": false
+          }
+        },
+        {
+          "unitSetProperties": {
+            "advancedCollisionAvoidance": true,
+            "enableShipCollisionAvoidance": true,
+            "fireRandom": true,
+            "object": "@scnv_t1_squad_name",
+            "object_marking": 0,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "object_var_value": 0,
+            "shipTurnRadius": 500.0,
+            "targetChangeInterval": 5.0,
+            "targetChangeProb": 0.25
+          }
+        },
+        {
+          "unitSetProperties": {
+            "accuracy": 0.1,
+            "airEffShootingRate": 0.1,
+            "effShootingRate": 0.1,
+            "fireRandom": true,
+            "object": "@scnv_t1_squad_name",
+            "object_marking": 0,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "object_var_value": 0,
+            "targetChangeInterval": 5.0,
+            "targetChangeProb": 0.25
+          }
+        },
+        {
+          "triggerEnable": {
+            "target": "scnv_rotator"
+          }
+        },
+        {
+          "triggerEnable": {
+            "target": "scnv_t1_destroyed"
+          }
+        },
+        {
+          "triggerEnable": {
+            "target": "scnv_t1_reach_destination"
+          }
+        },
+        {
+          "triggerEnable": {
+            "target": "scnv_t1_setting_spawns"
+          }
+        },
+        {
+          "moAddMissionObjective": {
+            "object_marking": 0,
+            "object_type": "isUnitVar",
+            "object_var_comp_op": "equal",
+            "object_var_name": "reinforcement_forces",
+            "object_var_value": 1,
+            "target": "pt_t2_attack_convoy",
+            "unit_or_area": "@scnv_t1_squad_name"
+          }
+        },
+        {
+          "moAddMissionObjective": {
+            "object_marking": 0,
+            "object_type": "isUnitVar",
+            "object_var_comp_op": "equal",
+            "object_var_name": "reinforcement_forces",
+            "object_var_value": 1,
+            "target": "pt_t1_assist_convoy",
+            "unit_or_area": "@scnv_t1_squad_name"
+          }
+        },
+        {
+          "varSetBool": {
+            "value": true,
+            "var": "scnv_first_time_create_spawn_for_convoy"
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": {
+        "unitWhenInArea": {
+          "check_objects": "any",
+          "math": "2D",
+          "object": "scnv_t1_convoys_squad",
+          "object_marking": 1,
+          "object_type": "isActive",
+          "object_var_comp_op": "equal",
+          "object_var_name": "home_port",
+          "target": "@scnv_t1_base_area"
+        }
+      },
+      "else_actions": {
+        "comment": {
+          "value": "net korablej dlya routa. idem dal'she po ciklu"
+        },
+        "triggerEnable": {
+          "target": "scnv_rotator"
+        },
+        "varSetBool": {
+          "value": true,
+          "var": "scnv_is_active"
+        }
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 3.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "scnv_t1_setting_spawns": {
+      "actions": [
+        {
+          "unitSetProperties": {
+            "airEffShootingRate": 0.6,
+            "effShootingRate": 0.6,
+            "fireRandom": true,
+            "object": "@scnv_t1_squad_name",
+            "object_marking": 0,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "object_var_value": 0,
+            "targetChangeInterval": 5.0,
+            "targetChangeProb": 0.25
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "missionMarkAsRespawnPoint": {
+            "PosRecalcDelay": 120.0,
+            "backupZone": "@scnv_t1_spawn_name",
+            "canSpawnOnNeutral": false,
+            "forceCreate": true,
+            "ignoreTeamsOnReuse": false,
+            "isAirfield": false,
+            "isIndividual": false,
+            "isStrictSpawn": false,
+            "isUnit": true,
+            "loc_name": "missions/t1_our_cargo_fleet_spawn",
+            "offset": [-2000.0,0.0,0.0],
+            "onlyOnePlayerPerSpawnPoint": false,
+            "radius": -1.0,
+            "removeAreas": false,
+            "replaceAreas": true,
+            "resetStrictSpawnIndex": false,
+            "showOnMap": true,
+            "spawnArrangeTo": "@scnv_t1_squad_name",
+            "spawnEffect": false,
+            "tags": {
+              "artillery": false,
+              "boat": true,
+              "helicopter": false,
+              "ship": true,
+              "tank": false
+            },
+            "target": "@scnv_t1_squad_name",
+            "team": "A",
+            "useExisting": true
+          }
+        },
+        {
+          "triggerEnable": {
+            "target": "scnv_t1_enemy_spawn_start"
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": {
+        "varCompareBool": {
+          "comparasion_func": "equal",
+          "value": true,
+          "var_value": "pt_ship_spawn_enable"
+        }
+      },
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 3.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "scnv_t1_spawn_ship_end": {
+      "actions": [
+        {
+          "comment": {
+            "value": "sozdaem imya tret'ego spavna"
+          }
+        },
+        {
+          "comment": {
+            "value": "spavnim tret'i korabli "
+          }
+        },
+        {
+          "comment": {
+            "value": "naznachaem route"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "scnv_t1_spawn_",
+            "var": "scnv_t1_spawn_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 2,
+            "value": "@scnv_spawn_idx",
+            "var": "scnv_t1_spawn_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 0,
+            "value": "_port_",
+            "var": "scnv_t1_spawn_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 2,
+            "value": "@scnv_port_idx",
+            "var": "scnv_t1_spawn_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 0,
+            "value": "@scnv_t1_spawn_postfix",
+            "var": "scnv_t1_spawn_name"
+          }
+        },
+        {
+          "unitRespawn": {
+            "delay": 0.0,
+            "formation": {
+              "formation_div": 1,
+              "formation_noise": [0.2,0.3],
+              "formation_step": [24.0,6.0],
+              "formation_type": "rows"
+            },
+            "needStopOnRespawn": true,
+            "object": "scnv_t1_destroyers_squad",
+            "object_type": "isInactive",
+            "offset": [0.0,0.0,0.0],
+            "randomObjectsCount": 2,
+            "resetFormation": true,
+            "target": "@scnv_t1_spawn_name"
+          }
+        },
+        {
+          "triggerEnable": {
+            "target": "scnv_t1_setting_route"
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": [],
+      "else_actions": {
+        "comment": {
+          "value": "idem dal'she po ciklu"
+        },
+        "triggerEnable": {
+          "target": "scnv_rotator"
+        }
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "scnv_t1_spawn_ship_end_count_additional_ships": {
+      "actions": [
+        {
+          "varSetInt": {
+            "input_var": "scnv_ports_players_t1_count",
+            "value": 1,
+            "var": "scnv_ports_reindorcement_t1_additional_ships"
+          }
+        },
+        {
+          "varModify": {
+            "operator": "divAB",
+            "value": 5.0,
+            "var": "scnv_ports_reindorcement_t1_additional_ships"
+          }
+        },
+        {
+          "varModify": {
+            "operator": "add",
+            "use_variable": true,
+            "value": 1.0,
+            "var": "scnv_t1_spawn_count",
+            "var_value": "scnv_ports_reindorcement_t1_additional_ships"
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "triggerEnable": {
+            "target": "scnv_t1_spawn_ship_end"
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": {
+        "varCompareInt": {
+          "comparasion_func": "more",
+          "value": 0,
+          "var_value": "scnv_ports_players_t1_count"
+        }
+      },
+      "else_actions": {
+        "triggerEnable": {
+          "target": "scnv_t1_spawn_ship_end"
+        }
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ANY",
+        "enableAfterComplete": false
+      }
+    },
+    "scnv_t1_spawn_ship_end_count_check": {
+      "actions": {
+        "triggerEnable": {
+          "target": "scnv_t1_spawn_ship_end_count_additional_ships"
+        },
+        "varSetInt": {
+          "value": 5,
+          "var": "scnv_t1_spawn_count"
+        }
+      },
+      "comments": "",
+      "conditions": [
+        {
+          "varCompareInt": {
+            "comparasion_func": "more",
+            "value": 7,
+            "var_value": "scnv_t1_spawn_count"
+          }
+        },
+        {
+          "varCompareInt": {
+            "comparasion_func": "less",
+            "value": 3,
+            "var_value": "scnv_t1_spawn_count"
+          }
+        }
+      ],
+      "else_actions": {
+        "triggerEnable": {
+          "target": "scnv_t1_spawn_ship_end_count_additional_ships"
+        }
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ANY",
+        "enableAfterComplete": false
+      }
+    },
+    "scnv_t1_spawn_ship_head": {
+      "actions": [
+        {
+          "comment": {
+            "value": "sozdaem indeks spavna"
+          }
+        },
+        {
+          "comment": {
+            "value": "sozdaem imya dorogi"
+          }
+        },
+        {
+          "comment": {
+            "value": "sozdaem imya spavna pervogo spavna"
+          }
+        },
+        {
+          "comment": {
+            "value": "spavnim pervye korabli "
+          }
+        },
+        {
+          "comment": {
+            "value": "vychislyaem kolichestvo korablej"
+          }
+        },
+        {
+          "comment": {
+            "value": "govorim chto reinforsment v processe"
+          }
+        },
+        {
+          "comment": {
+            "value": "sozdaem imya bazovoj zony vnutri kotorjo vse spavny"
+          }
+        },
+        {
+          "comment": {
+            "value": "naznachaem route"
+          }
+        },
+        {
+          "varSetRandomInt": {
+            "from": 1,
+            "to_not_including": 3,
+            "var": "scnv_spawn_idx"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "scnv_t1_spawn_",
+            "var": "scnv_t1_route_name"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "scnv_t1_spawn_",
+            "var": "scnv_t1_spawn_name"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "scnv_t1_spawn_",
+            "var": "scnv_t1_base_area"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 2,
+            "value": "@scnv_spawn_idx",
+            "var": "scnv_t1_route_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 0,
+            "value": "_port_",
+            "var": "scnv_t1_route_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 2,
+            "value": "@scnv_port_idx",
+            "var": "scnv_t1_route_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 2,
+            "value": "@scnv_spawn_idx",
+            "var": "scnv_t1_spawn_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 0,
+            "value": "_port_",
+            "var": "scnv_t1_spawn_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 2,
+            "value": "@scnv_port_idx",
+            "var": "scnv_t1_spawn_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 0,
+            "value": "_spawn_start",
+            "var": "scnv_t1_spawn_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 2,
+            "value": "@scnv_spawn_idx",
+            "var": "scnv_t1_base_area"
+          }
+        },
+        {
+          "unitRespawn": {
+            "delay": 0.0,
+            "formation": {
+              "formation_div": 1,
+              "formation_noise": [0.2,0.3],
+              "formation_step": [16.0,4.0],
+              "formation_type": "rows"
+            },
+            "needStopOnRespawn": true,
+            "object": "scnv_t1_cruisers_squad",
+            "object_type": "isInactive",
+            "offset": [0.0,0.0,0.0],
+            "randomObjectsCount": 1,
+            "resetFormation": true,
+            "target": "@scnv_t1_spawn_name"
+          }
+        },
+        {
+          "varSetInt": {
+            "value": 11,
+            "var": "scnv_t1_spawn_count"
+          }
+        },
+        {
+          "varModify": {
+            "operator": "subAB",
+            "use_variable": true,
+            "value": 1.0,
+            "var": "scnv_t1_spawn_count",
+            "var_value": "@scnv_size_var_name"
+          }
+        },
+        {
+          "varModify": {
+            "operator": "add",
+            "value": -1.0,
+            "var": "scnv_t1_spawn_count"
+          }
+        },
+        {
+          "varSetBool": [
+            {
+              "value": true
+            },
+            {
+              "var": "scnv_t1_is_active"
+            },
+            {
+              "var": "scnv_is_active"
+            }
+          ]
+        },
+        {
+          "triggerEnable": {
+            "target": "scnv_t1_spawn_ship_middle"
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": {
+        "varCompareBool": {
+          "comparasion_func": "equal",
+          "value": false,
+          "var_value": "scnv_t1_is_active"
+        }
+      },
+      "else_actions": {
+        "comment": {
+          "value": "idem dal'she po ciklu"
+        },
+        "triggerEnable": {
+          "target": "scnv_rotator"
+        }
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "scnv_t1_spawn_ship_middle": {
+      "actions": [
+        {
+          "comment": {
+            "value": "sozdaem imya vtorogo spavna"
+          }
+        },
+        {
+          "comment": {
+            "value": "cargo ships_spawn"
+          }
+        },
+        {
+          "comment": {
+            "value": "naznachaem route"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "scnv_t1_spawn_",
+            "var": "scnv_t1_spawn_name"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "_spawn_end",
+            "var": "scnv_t1_spawn_postfix"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 2,
+            "value": "@scnv_spawn_idx",
+            "var": "scnv_t1_spawn_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 0,
+            "value": "_port_",
+            "var": "scnv_t1_spawn_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 2,
+            "value": "@scnv_port_idx",
+            "var": "scnv_t1_spawn_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 0,
+            "value": "_spawn_middle",
+            "var": "scnv_t1_spawn_name"
+          }
+        },
+        {
+          "unitRespawn": {
+            "delay": 0.0,
+            "formation": {
+              "formation_div": 2,
+              "formation_noise": [0.2,0.3],
+              "formation_step": [24.0,6.0],
+              "formation_type": "rows"
+            },
+            "needStopOnRespawn": true,
+            "object": "scnv_t1_cargoships_squad",
+            "object_type": "isInactive",
+            "offset": [0.0,0.0,0.0],
+            "randomObjectsCount": 4,
+            "resetFormation": true,
+            "target": "@scnv_t1_spawn_name"
+          }
+        },
+        {
+          "triggerEnable": {
+            "target": "scnv_t1_spawn_ship_end_count_check"
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": {
+        "varCompareBool": {
+          "comparasion_func": "equal",
+          "value": true,
+          "var_value": "scnv_t1_spawn_cargo_ships"
+        }
+      },
+      "else_actions": {
+        "comment": {
+          "value": "idem dal'she po ciklu"
+        },
+        "triggerEnable": {
+          "target": "scnv_t1_spawn_ship_end_count_check"
+        },
+        "varSetString": {
+          "value": "_spawn_middle",
+          "var": "scnv_t1_spawn_postfix"
+        }
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "scnv_t1_timer_reset": {
+      "actions": {
+        "triggerEnable": [
+          {
+            "target": "scnv_t1_close_spawns"
+          },
+          {
+            "target": "scnv_t1_timer_reset_with_delay"
+          }
+        ]
+      },
+      "comments": "",
+      "conditions": [],
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "scnv_t1_timer_reset_with_delay": {
+      "actions": {
+        "triggerEnable": {
+          "target": "scnv_start"
+        },
+        "varSetBool": [
+          {
+            "value": false
+          },
+          {
+            "var": "scnv_t1_is_active"
+          },
+          {
+            "var": "scnv_is_active"
+          }
+        ]
+      },
+      "comments": "",
+      "conditions": [],
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 240.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "scnv_t2_army_check_activity": {
+      "actions": {
+        "comment": {
+          "value": "mozhno rabotat'"
+        },
+        "triggerEnable": {
+          "target": "scnv_checking_army"
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "varCompareBool": {
+          "comparasion_func": "equal",
+          "value": false,
+          "var_value": "scnv_t2_is_active"
+        }
+      },
+      "else_actions": {
+        "comment": {
+          "value": "idem dal'she po ciklu"
+        },
+        "triggerEnable": {
+          "target": "scnv_rotator"
+        }
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "scnv_t2_assist_objective_check": {
+      "actions": {
+        "moSetObjectiveStatus": {
+          "object_marking": 0,
+          "object_type": "isUnitVar",
+          "object_var_comp_op": "equal",
+          "object_var_name": "reinforcement_forces",
+          "object_var_value": 1,
+          "status": 1,
+          "target": "pt_t2_assist_convoy",
+          "team": "B",
+          "unit_or_area": "@scnv_t2_squad_name"
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "misObjStatus": {
+          "status": "inProgress",
+          "target": "pt_t2_assist_convoy"
+        }
+      },
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": true
+      }
+    },
+    "scnv_t2_attack_objective_check": {
+      "actions": {
+        "moSetObjectiveStatus": {
+          "object_marking": 0,
+          "object_type": "isUnitVar",
+          "object_var_comp_op": "equal",
+          "object_var_name": "reinforcement_forces",
+          "object_var_value": 1,
+          "status": 1,
+          "target": "pt_t2_attack_convoy",
+          "team": "B",
+          "unit_or_area": "@scnv_t1_squad_name"
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "misObjStatus": {
+          "status": "inProgress",
+          "target": "pt_t2_attack_convoy"
+        }
+      },
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": true
+      }
+    },
+    "scnv_t2_close_spawns": {
+      "actions": [
+        {
+          "missionMarkAsRespawnPoint": {
+            "backupZone": "@scnv_t2_spawn_name",
+            "canSpawnOnNeutral": false,
+            "forceCreate": true,
+            "ignoreTeamsOnReuse": false,
+            "isAirfield": false,
+            "isIndividual": false,
+            "isStrictSpawn": false,
+            "isUnit": true,
+            "loc_name": "missions/t2_our_cargo_fleet_spawn",
+            "object_type": "any",
+            "offset": [-3000.0,0.0,0.0],
+            "onlyOnePlayerPerSpawnPoint": false,
+            "radius": -1.0,
+            "removeAreas": false,
+            "replaceAreas": true,
+            "resetStrictSpawnIndex": false,
+            "showOnMap": false,
+            "spawnEffect": false,
+            "tags": {
+              "none_can_spawn": true
+            },
+            "target": "@scnv_t2_squad_name",
+            "team": "B",
+            "useExisting": true
+          }
+        },
+        {
+          "missionMarkAsRespawnPoint": {
+            "canSpawnOnNeutral": false,
+            "forceCreate": true,
+            "ignoreTeamsOnReuse": false,
+            "isAirfield": false,
+            "isIndividual": false,
+            "isStrictSpawn": false,
+            "isUnit": false,
+            "loc_name": "missions/t1_enemy_cargo_fleet_spawn",
+            "onlyOnePlayerPerSpawnPoint": false,
+            "radius": -1.0,
+            "removeAreas": false,
+            "replaceAreas": true,
+            "resetStrictSpawnIndex": false,
+            "showOnMap": false,
+            "spawnEffect": false,
+            "tags": {
+              "none_can_spawn": true
+            },
+            "target": "@scnv_t2_enemy_spawn_ship_name",
+            "team": "A",
+            "useExisting": true
+          }
+        },
+        {
+          "missionMarkAsRespawnPoint": {
+            "canSpawnOnNeutral": false,
+            "forceCreate": true,
+            "ignoreTeamsOnReuse": false,
+            "isAirfield": false,
+            "isIndividual": false,
+            "isStrictSpawn": false,
+            "isUnit": false,
+            "loc_name": "missions/t1_enemy_cargo_fleet_spawn_for_boats",
+            "onlyOnePlayerPerSpawnPoint": false,
+            "radius": -1.0,
+            "removeAreas": false,
+            "replaceAreas": true,
+            "resetStrictSpawnIndex": false,
+            "showOnMap": false,
+            "spawnEffect": false,
+            "tags": {
+              "none_can_spawn": true
+            },
+            "target": "@scnv_t2_enemy_spawn_boat_name",
+            "team": "A",
+            "useExisting": true
+          }
+        },
+        {
+          "__missionMarkAsRespawnPoint": {
+            "backupZone": "@scnv_t2_spawn_name",
+            "canSpawnOnNeutral": false,
+            "forceCreate": true,
+            "ignoreTeamsOnReuse": false,
+            "isAirfield": false,
+            "isIndividual": false,
+            "isStrictSpawn": false,
+            "isUnit": true,
+            "loc_name": "missions/t2_our_cargo_fleet_spawn_for_planes",
+            "object_type": "any",
+            "offset": [-7000.0,2000.0,0.0],
+            "onlyOnePlayerPerSpawnPoint": false,
+            "radius": -1.0,
+            "removeAreas": false,
+            "replaceAreas": true,
+            "resetStrictSpawnIndex": false,
+            "showOnMap": false,
+            "spawnEffect": false,
+            "tags": {
+              "none_can_spawn": true
+            },
+            "target": "@scnv_t2_squad_name",
+            "team": "B",
+            "useExisting": true
+          }
+        },
+        {
+          "__missionMarkAsRespawnPoint": {
+            "canSpawnOnNeutral": false,
+            "forceCreate": true,
+            "ignoreTeamsOnReuse": false,
+            "isAirfield": false,
+            "isIndividual": false,
+            "isStrictSpawn": false,
+            "isUnit": false,
+            "loc_name": "missions/t1_enemy_cargo_fleet_spawn_for_planes",
+            "onlyOnePlayerPerSpawnPoint": false,
+            "radius": -1.0,
+            "removeAreas": false,
+            "replaceAreas": true,
+            "resetStrictSpawnIndex": false,
+            "showOnMap": false,
+            "spawnEffect": false,
+            "spawnOffset": [0.0,2000.0,0.0],
+            "tags": {
+              "none_can_spawn": true
+            },
+            "target": "@scnv_t2_enemy_spawn_ship_name",
+            "team": "A",
+            "useExisting": true
+          }
+        },
+        {
+          "triggerDisable": {
+            "target": "scnv_t2_enemy_spawn_restart"
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": {
+        "varCompareBool": {
+          "comparasion_func": "equal",
+          "value": true,
+          "var_value": "pt_ship_spawn_enable"
+        }
+      },
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "scnv_t2_destroyed": {
+      "actions": [
+        {
+          "triggerDisable": {
+            "target": "scnv_t2_reach_destination"
+          }
+        },
+        {
+          "moSetObjectiveStatus": {
+            "extendedEnding": true,
+            "object_marking": 0,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "status": 2,
+            "target": "pt_t1_attack_convoy",
+            "team": "A"
+          }
+        },
+        {
+          "moSetObjectiveStatus": {
+            "extendedEnding": true,
+            "object_marking": 0,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "status": 3,
+            "target": "pt_t2_assist_convoy",
+            "team": "B"
+          }
+        },
+        {
+          "moSetObjectiveStatus": {
+            "object_marking": 0,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "status": 0,
+            "target": "pt_t1_attack_convoy",
+            "team": "B"
+          }
+        },
+        {
+          "moSetObjectiveStatus": {
+            "object_marking": 0,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "status": 0,
+            "target": "pt_t2_assist_convoy",
+            "team": "B"
+          }
+        },
+        {
+          "unitSetIndication": {
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "object_var_value": 0,
+            "set": false,
+            "target": "@scnv_t2_squad_name",
+            "target_marking": 0
+          }
+        },
+        {
+          "triggerEnable": {
+            "target": "t1_moderate_task_completed"
+          }
+        },
+        {
+          "triggerEnable": {
+            "target": "scnv_t2_timer_reset"
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "wait": {
+            "time": 1.0
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": {
+        "unitWhenCountMatches": {
+          "func": "less",
+          "object": "@scnv_t2_squad_name",
+          "object_marking": 0,
+          "object_type": "isUnitVar",
+          "object_var_comp_op": "equal",
+          "object_var_name": "reinforcement_forces",
+          "object_var_value": 1,
+          "value": 1
+        }
+      },
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "scnv_t2_enemy_spawn_check_create": {
+      "actions": {
+        "triggerEnable": {
+          "target": "scnv_t2_enemy_spawn_create"
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "varCompareBool": {
+          "comparasion_func": "equal",
+          "value": true,
+          "var_value": "scnv_first_time_create_spawn_for_convoy"
+        }
+      },
+      "else_actions": [
+        {
+          "triggerEnable": [
+            {
+              "target": "scnv_t2_enemy_spawn_end_ship_spawn"
+            },
+            {
+              "target": "scnv_t2_enemy_spawn_end_boat_spawn"
+            }
+          ]
+        },
+        {
+          "triggerEnable": {
+            "target": "scnv_t2_enemy_spawn_restart"
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        }
+      ],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "scnv_t2_enemy_spawn_create": {
+      "actions": [
+        {
+          "missionMarkAsRespawnPoint": {
+            "PosRecalcDelay": 120.0,
+            "canSpawnOnNeutral": false,
+            "forceCreate": true,
+            "ignoreTeamsOnReuse": false,
+            "isAirfield": false,
+            "isIndividual": false,
+            "isStrictSpawn": false,
+            "isUnit": false,
+            "loc_name": "missions/t1_enemy_cargo_fleet_spawn",
+            "onlyOnePlayerPerSpawnPoint": false,
+            "radius": -1.0,
+            "removeAreas": false,
+            "replaceAreas": true,
+            "resetStrictSpawnIndex": false,
+            "showOnMap": true,
+            "spawnArrangeTo": "@scnv_t2_squad_name",
+            "spawnEffect": false,
+            "tags": {
+              "artillery": false,
+              "boat": false,
+              "helicopter": false,
+              "ship": true,
+              "tank": false,
+              "type_assault": false,
+              "type_battlecruiser": true,
+              "type_battleship": true,
+              "type_bomber": false,
+              "type_destroyer": true,
+              "type_fighter": false,
+              "type_heavy_cruiser": true,
+              "type_light_cruiser": true
+            },
+            "target": "@scnv_t2_enemy_spawn_ship_name",
+            "team": "A",
+            "useExisting": true
+          }
+        },
+        {
+          "missionMarkAsRespawnPoint": {
+            "PosRecalcDelay": 120.0,
+            "canSpawnOnNeutral": false,
+            "forceCreate": true,
+            "ignoreTeamsOnReuse": false,
+            "isAirfield": false,
+            "isIndividual": false,
+            "isStrictSpawn": false,
+            "isUnit": false,
+            "loc_name": "missions/t1_enemy_cargo_fleet_spawn_for_boats",
+            "onlyOnePlayerPerSpawnPoint": false,
+            "radius": -1.0,
+            "removeAreas": false,
+            "replaceAreas": true,
+            "resetStrictSpawnIndex": false,
+            "showOnMap": true,
+            "spawnArrangeTo": "@scnv_t2_squad_name",
+            "spawnEffect": false,
+            "tags": {
+              "artillery": false,
+              "boat": true,
+              "helicopter": false,
+              "ship": true,
+              "tank": false,
+              "type_assault": false,
+              "type_battlecruiser": false,
+              "type_battleship": false,
+              "type_bomber": false,
+              "type_destroyer": false,
+              "type_fighter": false,
+              "type_heavy_cruiser": false,
+              "type_light_cruiser": false
+            },
+            "target": "@scnv_t2_enemy_spawn_boat_name",
+            "team": "A",
+            "useExisting": true
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "triggerEnable": [
+            {
+              "target": "scnv_t2_enemy_spawn_end_ship_spawn"
+            },
+            {
+              "target": "scnv_t2_enemy_spawn_end_boat_spawn"
+            }
+          ]
+        },
+        {
+          "triggerEnable": {
+            "target": "scnv_t2_enemy_spawn_restart"
+          }
+        },
+        {
+          "varSetBool": {
+            "value": false,
+            "var": "scnv_first_time_create_spawn_for_convoy"
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": [
+        {
+          "objectExists": {
+            "target": "@scnv_t2_enemy_spawn_ship_name",
+            "type": "area"
+          }
+        },
+        {
+          "objectExists": {
+            "target": "@scnv_t2_enemy_spawn_boat_name",
+            "type": "area"
+          }
+        }
+      ],
+      "else_actions": {
+        "triggerEnable": {
+          "target": "scnv_t2_enemy_spawn_restart"
+        }
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "scnv_t2_enemy_spawn_end_boat_spawn": {
+      "actions": [
+        {
+          "comment": {
+            "value": "distanciya najdena"
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "__missionMarkAsRespawnPoint": {
+            "PosRecalcDelay": 120.0,
+            "canSpawnOnNeutral": false,
+            "forceCreate": true,
+            "ignoreTeamsOnReuse": false,
+            "isAirfield": false,
+            "isIndividual": false,
+            "isStrictSpawn": false,
+            "isUnit": false,
+            "loc_name": "missions/t1_enemy_cargo_fleet_spawn_for_boats",
+            "onlyOnePlayerPerSpawnPoint": false,
+            "radius": -1.0,
+            "removeAreas": false,
+            "replaceAreas": true,
+            "resetStrictSpawnIndex": false,
+            "showOnMap": true,
+            "spawnArrangeTo": "@scnv_t2_squad_name",
+            "spawnEffect": false,
+            "tags": {
+              "artillery": false,
+              "boat": true,
+              "helicopter": false,
+              "ship": true,
+              "tank": false,
+              "type_assault": false,
+              "type_battlecruiser": false,
+              "type_battleship": false,
+              "type_bomber": false,
+              "type_destroyer": false,
+              "type_fighter": false,
+              "type_heavy_cruiser": false,
+              "type_light_cruiser": false
+            },
+            "target": "@scnv_t2_enemy_spawn_boat_name",
+            "team": "A",
+            "useExisting": true
+          }
+        },
+        {
+          "moveRespawnBase": {
+            "isAirfield": false,
+            "loc_name": "missions/t1_enemy_cargo_fleet_spawn_for_boats",
+            "target": "@scnv_t2_enemy_spawn_boat_name",
+            "team": "A"
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": {
+        "objectExists": {
+          "target": "@scnv_t2_enemy_spawn_boat_name",
+          "type": "area"
+        }
+      },
+      "else_actions": {
+        "comment": {
+          "value": "spavn ne najden"
+        },
+        "systemLog": {
+          "logtype": "screen_and_log",
+          "value": "enemy boat spawn for t2 reinforcement doesnt exist"
+        }
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 0.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "scnv_t2_enemy_spawn_end_ship_spawn": {
+      "actions": [
+        {
+          "comment": {
+            "value": "distanciya najdena"
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "__missionMarkAsRespawnPoint": {
+            "PosRecalcDelay": 120.0,
+            "canSpawnOnNeutral": false,
+            "forceCreate": true,
+            "ignoreTeamsOnReuse": false,
+            "isAirfield": false,
+            "isIndividual": false,
+            "isStrictSpawn": false,
+            "isUnit": false,
+            "loc_name": "missions/t1_enemy_cargo_fleet_spawn",
+            "onlyOnePlayerPerSpawnPoint": false,
+            "radius": -1.0,
+            "removeAreas": false,
+            "replaceAreas": true,
+            "resetStrictSpawnIndex": false,
+            "showOnMap": true,
+            "spawnArrangeTo": "@scnv_t2_squad_name",
+            "spawnEffect": false,
+            "tags": {
+              "artillery": false,
+              "boat": false,
+              "helicopter": false,
+              "ship": true,
+              "tank": false,
+              "type_assault": false,
+              "type_battlecruiser": true,
+              "type_battleship": true,
+              "type_bomber": false,
+              "type_destroyer": true,
+              "type_fighter": false,
+              "type_heavy_cruiser": true,
+              "type_light_cruiser": true
+            },
+            "target": "@scnv_t2_enemy_spawn_ship_name",
+            "team": "A",
+            "useExisting": true
+          }
+        },
+        {
+          "moveRespawnBase": {
+            "isAirfield": false,
+            "loc_name": "missions/t1_enemy_cargo_fleet_spawn",
+            "target": "@scnv_t2_enemy_spawn_ship_name",
+            "team": "A"
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": {
+        "objectExists": {
+          "target": "@scnv_t2_enemy_spawn_ship_name",
+          "type": "area"
+        }
+      },
+      "else_actions": {
+        "comment": {
+          "value": "spavn ne najden"
+        },
+        "systemLog": {
+          "logtype": "screen_and_log",
+          "value": "enemy ship spawn for t2 reinforcement doesnt exist"
+        }
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 0.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "scnv_t2_enemy_spawn_restart": {
+      "actions": {
+        "comment": {
+          "value": ""
+        },
+        "triggerEnable": {
+          "target": "scnv_t2_enemy_spawn_start"
+        }
+      },
+      "comments": "",
+      "conditions": [],
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 60.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "scnv_t2_enemy_spawn_start": {
+      "actions": [
+        {
+          "varSetReal": [
+            {
+              "value": 100000.0
+            },
+            {
+              "var": "scnv_t2_enemy_spawn_ship_distance"
+            },
+            {
+              "var": "scnv_t2_enemy_spawn_boat_distance"
+            },
+            {
+              "var": "scnv_t2_enemy_spawn_plane_distance"
+            }
+          ]
+        },
+        {
+          "varSetInt": [
+            {
+              "value": 0
+            },
+            {
+              "var": "scnv_t2_enemy_spawn_ship_idx"
+            },
+            {
+              "var": "scnv_t2_enemy_spawn_boat_idx"
+            }
+          ]
+        },
+        {
+          "varSetInt": {
+            "value": 0,
+            "var": "scnv_t2_enemy_spawn_cur_idx"
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "getNearestAreaByMask": {
+            "areas": "pt_sea_spawn_areas_squad",
+            "avoidExistingSpawns": true,
+            "avoid_team": "Both",
+            "dist_max_value": 10000.0,
+            "dist_min_value": 3000.0,
+            "out_var": "scnv_t2_enemy_spawn_boat_name",
+            "spawns_distance_value": 3000.0,
+            "target": "@scnv_t2_squad_name"
+          }
+        },
+        {
+          "getNearestAreaByMask": {
+            "areas": "pt_sea_spawn_areas_squad",
+            "avoidExistingSpawns": true,
+            "avoid_team": "Both",
+            "dist_max_value": 25000.0,
+            "dist_min_value": 12000.0,
+            "out_var": "scnv_t2_enemy_spawn_ship_name",
+            "spawns_distance_value": 7000.0,
+            "target": "@scnv_t2_squad_name"
+          }
+        },
+        {
+          "triggerEnable": {
+            "target": "scnv_t2_enemy_spawn_check_create"
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": [],
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "scnv_t2_reach_destination": {
+      "actions": [
+        {
+          "triggerDisable": {
+            "target": "scnv_t2_destroyed"
+          }
+        },
+        {
+          "unitSetVar": {
+            "object": "@scnv_t2_squad_name",
+            "object_var_name": "reinforcement_forces",
+            "object_var_value": 0
+          }
+        },
+        {
+          "moSetObjectiveStatus": {
+            "extendedEnding": true,
+            "object_marking": 0,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "status": 3,
+            "target": "pt_t1_attack_convoy",
+            "team": "A"
+          }
+        },
+        {
+          "moSetObjectiveStatus": {
+            "extendedEnding": true,
+            "object_marking": 0,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "status": 2,
+            "target": "pt_t2_assist_convoy",
+            "team": "B"
+          }
+        },
+        {
+          "moSetObjectiveStatus": {
+            "object_marking": 0,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "status": 0,
+            "target": "pt_t1_attack_convoy",
+            "team": "A"
+          }
+        },
+        {
+          "moSetObjectiveStatus": {
+            "object_marking": 0,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "status": 0,
+            "target": "pt_t2_assist_convoy",
+            "team": "B"
+          }
+        },
+        {
+          "triggerEnable": {
+            "target": "t2_moderate_task_completed"
+          }
+        },
+        {
+          "triggerEnable": {
+            "target": "scnv_t2_timer_reset"
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "wait": {
+            "time": 20.0
+          }
+        },
+        {
+          "unitSetIndication": {
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "object_var_value": 0,
+            "set": false,
+            "target": "@scnv_t2_squad_name",
+            "target_marking": 0
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": {
+        "unitWhenInArea": {
+          "check_objects": "any",
+          "math": "2D",
+          "object": "@scnv_t2_squad_name",
+          "object_marking": 0,
+          "object_type": "isUnitVar",
+          "object_var_comp_op": "equal",
+          "object_var_name": "reinforcement_forces",
+          "object_var_value": 1,
+          "target": "@scnv_t2_port_area_name"
+        }
+      },
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 10.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "scnv_t2_setting_route": {
+      "actions": [
+        {
+          "comment": {
+            "value": "sozdaem imya dinamicheskogo skvada"
+          }
+        },
+        {
+          "comment": {
+            "value": "dobavlyaem korabli v skvad"
+          }
+        },
+        {
+          "comment": {
+            "value": "markiruem korabli"
+          }
+        },
+        {
+          "comment": {
+            "value": "est' korabli dlya naznacheniya routa"
+          }
+        },
+        {
+          "comment": {
+            "value": "sozdaem imya porta naznacheniya"
+          }
+        },
+        {
+          "comment": {
+            "value": "idem dal'she po ciklu"
+          }
+        },
+        {
+          "comment": {
+            "value": "vklyuchaem kvest na unichtozhenie korablej"
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "varModify": {
+            "operator": "add",
+            "value": 1.0,
+            "var": "scnv_t2_squad_idx"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "reinfocement_t2_squad_",
+            "var": "scnv_t2_squad_name"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "port_",
+            "var": "scnv_t2_port_area_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 2,
+            "value": "@scnv_t2_squad_idx",
+            "var": "scnv_t2_squad_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 2,
+            "value": "@scnv_port_idx",
+            "var": "scnv_t2_port_area_name"
+          }
+        },
+        {
+          "makeSquadFromUnits": [
+            {
+              "name": "@scnv_t2_squad_name"
+            },
+            {
+              "object_marking": 0
+            },
+            {
+              "object": "scnv_t2_cruisers_squad"
+            },
+            {
+              "object": "scnv_t2_cargoships_squad"
+            },
+            {
+              "object": "scnv_t2_destroyers_squad"
+            },
+            {
+              "object_var_name": ""
+            },
+            {
+              "object_var_comp_op": "equal"
+            },
+            {
+              "object_var_value": 0
+            },
+            {
+              "useForTriggerFiltered": true
+            }
+          ]
+        },
+        {
+          "setHeadSquad": [
+            {
+              "name": "@scnv_t2_squad_name"
+            },
+            {
+              "removeOnKill": true
+            },
+            {
+              "followLowestSpeed": true
+            },
+            {
+              "useCurrentFormation": true
+            },
+            {
+              "object": "scnv_t2_cruisers_squad"
+            },
+            {
+              "object": "scnv_t2_cargoships_squad"
+            },
+            {
+              "object": "scnv_t2_destroyers_squad"
+            },
+            {
+              "useForTriggerFiltered": true
+            }
+          ]
+        },
+        {
+          "unitSetVar": {
+            "input_var": "scnv_port_idx",
+            "object": "@scnv_t2_squad_name",
+            "object_var_name": "home_port"
+          }
+        },
+        {
+          "unitSetVar": {
+            "object": "@scnv_t2_squad_name",
+            "object_var_name": "reinforcement_forces",
+            "object_var_value": 1
+          }
+        },
+        {
+          "unitSetRoute": {
+            "object": "@scnv_t2_squad_name",
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "pos": "@scnv_t2_spawn_name",
+            "route": "@scnv_t2_route_name",
+            "teleportToStart": false
+          }
+        },
+        {
+          "unitSetProperties": {
+            "advancedCollisionAvoidance": true,
+            "enableShipCollisionAvoidance": true,
+            "fireRandom": true,
+            "object": "@scnv_t2_squad_name",
+            "object_marking": 0,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "object_var_value": 0,
+            "shipTurnRadius": 500.0,
+            "targetChangeInterval": 5.0,
+            "targetChangeProb": 0.25
+          }
+        },
+        {
+          "triggerEnable": {
+            "target": "scnv_rotator"
+          }
+        },
+        {
+          "triggerEnable": {
+            "target": "scnv_t2_destroyed"
+          }
+        },
+        {
+          "triggerEnable": {
+            "target": "scnv_t2_reach_destination"
+          }
+        },
+        {
+          "triggerEnable": {
+            "target": "scnv_t2_setting_spawns"
+          }
+        },
+        {
+          "moAddMissionObjective": {
+            "object_marking": 0,
+            "object_type": "isUnitVar",
+            "object_var_comp_op": "equal",
+            "object_var_name": "reinforcement_forces",
+            "object_var_value": 1,
+            "target": "pt_t1_attack_convoy",
+            "unit_or_area": "@scnv_t2_squad_name"
+          }
+        },
+        {
+          "moAddMissionObjective": {
+            "object_marking": 0,
+            "object_type": "isUnitVar",
+            "object_var_comp_op": "equal",
+            "object_var_name": "reinforcement_forces",
+            "object_var_value": 1,
+            "target": "pt_t2_assist_convoy",
+            "unit_or_area": "@scnv_t2_squad_name"
+          }
+        },
+        {
+          "unitSetIndication": {
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "object_var_value": 0,
+            "set": true,
+            "target": "@scnv_t2_squad_name",
+            "target_marking": 0
+          }
+        },
+        {
+          "varSetBool": {
+            "value": true,
+            "var": "scnv_first_time_create_spawn_for_convoy"
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": {
+        "unitWhenInArea": {
+          "check_objects": "any",
+          "math": "2D",
+          "object": "scnv_t2_convoys_squad",
+          "object_marking": 1,
+          "object_type": "isActive",
+          "object_var_comp_op": "equal",
+          "object_var_name": "home_port",
+          "target": "@scnv_t2_base_area"
+        }
+      },
+      "else_actions": {
+        "comment": {
+          "value": "net korablej dlya routa. idem dal'she po ciklu"
+        },
+        "triggerEnable": {
+          "target": "scnv_rotator"
+        },
+        "varSetBool": {
+          "value": true,
+          "var": "scnv_is_active"
+        }
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 3.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "scnv_t2_setting_spawns": {
+      "actions": [
+        {
+          "unitSetProperties": {
+            "airEffShootingRate": 0.6,
+            "effShootingRate": 0.6,
+            "fireRandom": true,
+            "object": "@scnv_t2_squad_name",
+            "object_marking": 0,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "object_var_value": 0,
+            "targetChangeInterval": 5.0,
+            "targetChangeProb": 0.25
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "missionMarkAsRespawnPoint": {
+            "PosRecalcDelay": 120.0,
+            "backupZone": "@scnv_t2_spawn_name",
+            "canSpawnOnNeutral": false,
+            "forceCreate": true,
+            "ignoreTeamsOnReuse": false,
+            "isAirfield": false,
+            "isIndividual": false,
+            "isStrictSpawn": false,
+            "isUnit": true,
+            "loc_name": "missions/t2_our_cargo_fleet_spawn",
+            "offset": [-2000.0,0.0,0.0],
+            "onlyOnePlayerPerSpawnPoint": false,
+            "radius": -1.0,
+            "removeAreas": false,
+            "replaceAreas": true,
+            "resetStrictSpawnIndex": false,
+            "showOnMap": true,
+            "spawnArrangeTo": "@scnv_t2_squad_name",
+            "spawnEffect": false,
+            "tags": {
+              "artillery": false,
+              "boat": true,
+              "helicopter": false,
+              "ship": true,
+              "tank": false
+            },
+            "target": "@scnv_t2_squad_name",
+            "team": "B",
+            "useExisting": true
+          }
+        },
+        {
+          "triggerEnable": {
+            "target": "scnv_t2_enemy_spawn_start"
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": {
+        "varCompareBool": {
+          "comparasion_func": "equal",
+          "value": true,
+          "var_value": "pt_ship_spawn_enable"
+        }
+      },
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 3.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "scnv_t2_spawn_ship_end": {
+      "actions": [
+        {
+          "comment": {
+            "value": "sozdaem imya tret'ego spavna"
+          }
+        },
+        {
+          "comment": {
+            "value": "spavnim tret'i korabli"
+          }
+        },
+        {
+          "comment": {
+            "value": "naznachaem route"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "scnv_t2_spawn_",
+            "var": "scnv_t2_spawn_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 2,
+            "value": "@scnv_spawn_idx",
+            "var": "scnv_t2_spawn_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 0,
+            "value": "_port_",
+            "var": "scnv_t2_spawn_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 2,
+            "value": "@scnv_port_idx",
+            "var": "scnv_t2_spawn_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 0,
+            "value": "@scnv_t2_spawn_postfix",
+            "var": "scnv_t2_spawn_name"
+          }
+        },
+        {
+          "unitRespawn": {
+            "delay": 0.0,
+            "formation": {
+              "formation_div": 1,
+              "formation_noise": [0.2,0.3],
+              "formation_step": [24.0,6.0],
+              "formation_type": "rows"
+            },
+            "needStopOnRespawn": true,
+            "object": "scnv_t2_destroyers_squad",
+            "object_type": "isInactive",
+            "offset": [0.0,0.0,0.0],
+            "randomObjectsCount": 2,
+            "resetFormation": true,
+            "target": "@scnv_t2_spawn_name"
+          }
+        },
+        {
+          "triggerEnable": {
+            "target": "scnv_t2_setting_route"
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": [],
+      "else_actions": {
+        "comment": {
+          "value": "idem dal'she po ciklu"
+        },
+        "triggerEnable": {
+          "target": "scnv_rotator"
+        }
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "scnv_t2_spawn_ship_end_count_additional_ships": {
+      "actions": [
+        {
+          "varSetInt": {
+            "input_var": "scnv_ports_players_t2_count",
+            "value": 1,
+            "var": "scnv_ports_reindorcement_t2_additional_ships"
+          }
+        },
+        {
+          "varModify": {
+            "operator": "divAB",
+            "value": 5.0,
+            "var": "scnv_ports_reindorcement_t2_additional_ships"
+          }
+        },
+        {
+          "varModify": {
+            "operator": "add",
+            "use_variable": true,
+            "value": 1.0,
+            "var": "scnv_t2_spawn_count",
+            "var_value": "scnv_ports_reindorcement_t2_additional_ships"
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "triggerEnable": {
+            "target": "scnv_t2_spawn_ship_end"
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": {
+        "varCompareInt": {
+          "comparasion_func": "more",
+          "value": 0,
+          "var_value": "scnv_ports_players_t2_count"
+        }
+      },
+      "else_actions": {
+        "triggerEnable": {
+          "target": "scnv_t2_spawn_ship_end"
+        }
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ANY",
+        "enableAfterComplete": false
+      }
+    },
+    "scnv_t2_spawn_ship_end_count_check": {
+      "actions": {
+        "triggerEnable": {
+          "target": "scnv_t2_spawn_ship_end_count_additional_ships"
+        },
+        "varSetInt": {
+          "value": 5,
+          "var": "scnv_t2_spawn_count"
+        }
+      },
+      "comments": "",
+      "conditions": [
+        {
+          "varCompareInt": {
+            "comparasion_func": "more",
+            "value": 7,
+            "var_value": "scnv_t2_spawn_count"
+          }
+        },
+        {
+          "varCompareInt": {
+            "comparasion_func": "less",
+            "value": 3,
+            "var_value": "scnv_t2_spawn_count"
+          }
+        }
+      ],
+      "else_actions": {
+        "triggerEnable": {
+          "target": "scnv_t2_spawn_ship_end_count_additional_ships"
+        }
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ANY",
+        "enableAfterComplete": false
+      }
+    },
+    "scnv_t2_spawn_ship_head": {
+      "actions": [
+        {
+          "comment": {
+            "value": "sozdaem indeks spavna"
+          }
+        },
+        {
+          "comment": {
+            "value": "sozdaem imya dorogi"
+          }
+        },
+        {
+          "comment": {
+            "value": "sozdaem imya pervogo spavna"
+          }
+        },
+        {
+          "comment": {
+            "value": "spavnim pervye korabli"
+          }
+        },
+        {
+          "comment": {
+            "value": "vychislyaem kolichestvo korablej"
+          }
+        },
+        {
+          "comment": {
+            "value": "govorim chto reinforsment v processe"
+          }
+        },
+        {
+          "comment": {
+            "value": "sozdaem imya bazovoj zony vnutri kotorjo vse spavny"
+          }
+        },
+        {
+          "comment": {
+            "value": "naznachaem route"
+          }
+        },
+        {
+          "varSetRandomInt": {
+            "from": 1,
+            "to_not_including": 3,
+            "var": "scnv_spawn_idx"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "scnv_t2_spawn_",
+            "var": "scnv_t2_route_name"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "scnv_t2_spawn_",
+            "var": "scnv_t2_spawn_name"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "scnv_t2_spawn_",
+            "var": "scnv_t2_base_area"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 2,
+            "value": "@scnv_spawn_idx",
+            "var": "scnv_t2_route_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 0,
+            "value": "_port_",
+            "var": "scnv_t2_route_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 2,
+            "value": "@scnv_port_idx",
+            "var": "scnv_t2_route_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 2,
+            "value": "@scnv_spawn_idx",
+            "var": "scnv_t2_spawn_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 0,
+            "value": "_port_",
+            "var": "scnv_t2_spawn_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 2,
+            "value": "@scnv_port_idx",
+            "var": "scnv_t2_spawn_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 0,
+            "value": "_spawn_start",
+            "var": "scnv_t2_spawn_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 2,
+            "value": "@scnv_spawn_idx",
+            "var": "scnv_t2_base_area"
+          }
+        },
+        {
+          "unitRespawn": {
+            "delay": 0.0,
+            "formation": {
+              "formation_div": 1,
+              "formation_noise": [0.2,0.3],
+              "formation_step": [16.0,4.0],
+              "formation_type": "rows"
+            },
+            "needStopOnRespawn": true,
+            "object": "scnv_t2_cruisers_squad",
+            "object_type": "isInactive",
+            "offset": [0.0,0.0,0.0],
+            "randomObjectsCount": 1,
+            "resetFormation": true,
+            "target": "@scnv_t2_spawn_name"
+          }
+        },
+        {
+          "varSetInt": {
+            "value": 11,
+            "var": "scnv_t2_spawn_count"
+          }
+        },
+        {
+          "varModify": {
+            "operator": "subAB",
+            "use_variable": true,
+            "value": 1.0,
+            "var": "scnv_t2_spawn_count",
+            "var_value": "@scnv_size_var_name"
+          }
+        },
+        {
+          "varModify": {
+            "operator": "add",
+            "use_variable": true,
+            "value": -1.0,
+            "var": "scnv_t2_spawn_count"
+          }
+        },
+        {
+          "varSetBool": [
+            {
+              "value": true
+            },
+            {
+              "var": "scnv_t2_is_active"
+            },
+            {
+              "var": "scnv_is_active"
+            }
+          ]
+        },
+        {
+          "triggerEnable": {
+            "target": "scnv_t2_spawn_ship_middle"
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": {
+        "varCompareBool": {
+          "comparasion_func": "equal",
+          "value": false,
+          "var_value": "scnv_t2_is_active"
+        }
+      },
+      "else_actions": {
+        "comment": {
+          "value": "idem dal'she po ciklu"
+        },
+        "triggerEnable": {
+          "target": "scnv_rotator"
+        }
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "scnv_t2_spawn_ship_middle": {
+      "actions": [
+        {
+          "comment": {
+            "value": "sozdaem imya vtorogo spavna"
+          }
+        },
+        {
+          "comment": {
+            "value": "spavnim vtorye korabli"
+          }
+        },
+        {
+          "comment": {
+            "value": "naznachaem route"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "scnv_t2_spawn_",
+            "var": "scnv_t2_spawn_name"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "_spawn_end",
+            "var": "scnv_t2_spawn_postfix"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 2,
+            "value": "@scnv_spawn_idx",
+            "var": "scnv_t2_spawn_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 0,
+            "value": "_port_",
+            "var": "scnv_t2_spawn_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 2,
+            "value": "@scnv_port_idx",
+            "var": "scnv_t2_spawn_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 0,
+            "value": "_spawn_middle",
+            "var": "scnv_t2_spawn_name"
+          }
+        },
+        {
+          "unitRespawn": {
+            "delay": 0.0,
+            "formation": {
+              "formation_div": 2,
+              "formation_noise": [0.2,0.3],
+              "formation_step": [24.0,6.0],
+              "formation_type": "rows"
+            },
+            "needStopOnRespawn": true,
+            "object": "scnv_t2_cargoships_squad",
+            "object_type": "isInactive",
+            "offset": [0.0,0.0,0.0],
+            "randomObjectsCount": 4,
+            "resetFormation": true,
+            "target": "@scnv_t2_spawn_name"
+          }
+        },
+        {
+          "triggerEnable": {
+            "target": "scnv_t2_spawn_ship_end_count_check"
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": {
+        "varCompareBool": {
+          "comparasion_func": "equal",
+          "value": true,
+          "var_value": "scnv_t2_spawn_cargo_ships"
+        }
+      },
+      "else_actions": {
+        "comment": {
+          "value": "idem dal'she po ciklu"
+        },
+        "triggerEnable": {
+          "target": "scnv_t2_spawn_ship_end_count_check"
+        },
+        "varSetString": {
+          "value": "_spawn_middle",
+          "var": "scnv_t2_spawn_postfix"
+        }
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "scnv_t2_timer_reset": {
+      "actions": {
+        "triggerEnable": [
+          {
+            "target": "scnv_t2_close_spawns"
+          },
+          {
+            "target": "scnv_t2_timer_reset_with_delay"
+          }
+        ]
+      },
+      "comments": "",
+      "conditions": [],
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "scnv_t2_timer_reset_with_delay": {
+      "actions": {
+        "triggerEnable": {
+          "target": "scnv_start"
+        },
+        "varSetBool": [
+          {
+            "value": false
+          },
+          {
+            "var": "scnv_t2_is_active"
+          },
+          {
+            "var": "scnv_is_active"
+          }
+        ]
+      },
+      "comments": "",
+      "conditions": [],
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 240.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    }
+  },
+  "units": [],
+  "variables": {
+    "scnv_army_var_name": "",
+    "scnv_attack_port_capture_t1_air_spawns_loc_string": "",
+    "scnv_attack_port_capture_t1_air_spawns_name": "",
+    "scnv_attack_port_capture_t2_air_spawns_loc_string": "",
+    "scnv_attack_port_capture_t2_air_spawns_name": "",
+    "scnv_enemy_spawn_t1_cur_port_army_var_name": "",
+    "scnv_enemy_spawn_t1_cur_port_idx": 0,
+    "scnv_enemy_spawn_t1_cur_port_name": "",
+    "scnv_enemy_spawn_t2_cur_port_army_var_name": "",
+    "scnv_enemy_spawn_t2_cur_port_idx": 0,
+    "scnv_enemy_spawn_t2_cur_port_name": "",
+    "scnv_first_time_create_spawn_for_convoy": false,
+    "scnv_generate_capture_area_name": "",
+    "scnv_generate_spawn_loc_string_air": "",
+    "scnv_generate_spawns_port_air_name": "",
+    "scnv_is_active": false,
+    "scnv_last_army_idx": 0,
+    "scnv_new_value": 0,
+    "scnv_port_idx": 0,
+    "scnv_ports_num_for_randomizer": 0,
+    "scnv_ports_players_t1_count": 0,
+    "scnv_ports_players_t2_count": 0,
+    "scnv_ports_reindorcement_t1_additional_ships": 0,
+    "scnv_ports_reindorcement_t2_additional_ships": 0,
+    "scnv_rand_value": 0,
+    "scnv_size_var_name": "",
+    "scnv_spawn_idx": 0,
+    "scnv_t1_base_area": "",
+    "scnv_t1_enemy_spawn_boat_distance": 0.0,
+    "scnv_t1_enemy_spawn_boat_idx": 0,
+    "scnv_t1_enemy_spawn_boat_name": "",
+    "scnv_t1_enemy_spawn_cur_distance": 0.0,
+    "scnv_t1_enemy_spawn_cur_idx": 0,
+    "scnv_t1_enemy_spawn_cur_name": "",
+    "scnv_t1_enemy_spawn_plane_distance": 0.0,
+    "scnv_t1_enemy_spawn_plane_idx": 0,
+    "scnv_t1_enemy_spawn_plane_name": "",
+    "scnv_t1_enemy_spawn_ship_distance": 0.0,
+    "scnv_t1_enemy_spawn_ship_idx": 0,
+    "scnv_t1_enemy_spawn_ship_name": "",
+    "scnv_t1_is_active": false,
+    "scnv_t1_port_area_name": "",
+    "scnv_t1_route_name": "",
+    "scnv_t1_spawn_cargo_ships": true,
+    "scnv_t1_spawn_count": 0,
+    "scnv_t1_spawn_name": "",
+    "scnv_t1_spawn_postfix": "",
+    "scnv_t1_squad_idx": 0,
+    "scnv_t1_squad_name": "",
+    "scnv_t2_base_area": "",
+    "scnv_t2_enemy_spawn_boat_distance": 0.0,
+    "scnv_t2_enemy_spawn_boat_idx": 0,
+    "scnv_t2_enemy_spawn_boat_name": "",
+    "scnv_t2_enemy_spawn_cur_distance": 0.0,
+    "scnv_t2_enemy_spawn_cur_idx": 0,
+    "scnv_t2_enemy_spawn_cur_name": "",
+    "scnv_t2_enemy_spawn_plane_distance": 0.0,
+    "scnv_t2_enemy_spawn_plane_idx": 0,
+    "scnv_t2_enemy_spawn_plane_name": "",
+    "scnv_t2_enemy_spawn_ship_distance": 0.0,
+    "scnv_t2_enemy_spawn_ship_idx": 0,
+    "scnv_t2_enemy_spawn_ship_name": "",
+    "scnv_t2_is_active": false,
+    "scnv_t2_port_area_name": "",
+    "scnv_t2_route_name": "",
+    "scnv_t2_spawn_cargo_ships": true,
+    "scnv_t2_spawn_count": 0,
+    "scnv_t2_spawn_name": "",
+    "scnv_t2_spawn_postfix": "",
+    "scnv_t2_squad_idx": 0,
+    "scnv_t2_squad_name": "",
+    "scnv_turning_capture_area_name": "",
+    "scnv_turning_spawns_army_idx": 0,
+    "scnv_turning_spawns_army_var_name": "",
+    "scnv_turning_spawns_cur_idx": 0,
+    "scnv_turning_spawns_loc_string": "",
+    "scnv_turning_spawns_loc_string_air": "",
+    "scnv_turning_spawns_port_air_name": "",
+    "scnv_turning_spawns_port_var_name": "",
+    "scnv_turning_spawns_squad_name": "",
+    "scnv_var_name": ""
+  },
+  "wayPoints": []
+}

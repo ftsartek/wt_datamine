@@ -1,0 +1,2107 @@
+{
+  "airfields": [],
+  "areas": {
+    "vehicles_area": {
+      "props": [],
+      "tm": [
+        [1211.6,0.0,0.0],
+        [0.0,1211.6,0.0],
+        [0.0,0.0,1211.6],
+        [813.55,62.85,-17471.8]
+      ],
+      "type": "Sphere"
+    },
+    "wakeUp01": {
+      "props": [],
+      "tm": [
+        [2658.6,0.0,0.0],
+        [0.0,1038.8,0.0],
+        [0.0,0.0,100.0],
+        [-4494.1,366.3,-24601.3]
+      ],
+      "type": "Box"
+    },
+    "wakeUp02": {
+      "props": [],
+      "tm": [
+        [2595.58,0.0,575.426],
+        [0.0,1038.8,0.0],
+        [-21.644,0.0,97.6296],
+        [-4879.25,366.3,-23183.4]
+      ],
+      "type": "Box"
+    },
+    "wakeUp03": {
+      "props": [],
+      "tm": [
+        [2618.21,0.0,-461.662],
+        [0.0,1038.8,0.0],
+        [17.3648,0.0,98.4808],
+        [-6365.7,168.25,-21602.7]
+      ],
+      "type": "Box"
+    },
+    "wakeUp04": {
+      "props": [],
+      "tm": [
+        [1524.91,0.0,-2177.8],
+        [0.0,1038.8,0.0],
+        [81.9152,0.0,57.3576],
+        [-5387.85,160.3,-19507.7]
+      ],
+      "type": "Box"
+    },
+    "wakeUp05": {
+      "props": [],
+      "tm": [
+        [1708.91,0.0,-2036.6],
+        [0.0,1038.8,0.0],
+        [76.6045,0.0,64.2787],
+        [-2644.35,-16.15,-19114.6]
+      ],
+      "type": "Box"
+    },
+    "wakeUp06": {
+      "props": [],
+      "tm": [
+        [909.294,0.0,-2498.27],
+        [0.0,1038.8,0.0],
+        [93.9693,0.0,34.202],
+        [-747.3,-72.4,-18179.7]
+      ],
+      "type": "Box"
+    }
+  },
+  "bin_dump_file": "",
+  "dialogs": [],
+  "effects": [],
+  "imports": [],
+  "mission_objectives": {
+    "isCategory": true,
+    "is_enabled": true,
+    "single_guadalcanal_m01_att00": {
+      "comments": "",
+      "is_enabled": true,
+      "onFailed": [],
+      "onSuccess": [],
+      "props": {
+        "isPrimary": true,
+        "scoreConst": 100,
+        "scoreTime": 400,
+        "timeLimit": 1800
+      },
+      "type": "abstractMissionObjective"
+    }
+  },
+  "mission_settings": {
+    "atmosphere": {
+      "pressure": 760.0,
+      "temperature": 0.0
+    },
+    "briefing": {
+      "date_loc": "",
+      "music": "japan_main_theme",
+      "objective_loc": "",
+      "part": {
+        "event": "",
+        "minTime": 0,
+        "slide": [
+          {
+            "map": true
+          },
+          {
+            "minTime": 4
+          },
+          {
+            "picture": ""
+          },
+          {
+            "arrow": [
+              {
+                "width": 1
+              },
+              {
+                "side": "player"
+              },
+              {
+                "point": "player"
+              },
+              {
+                "point": "target_vehicles"
+              }
+            ]
+          },
+          {
+            "arrow": [
+              {
+                "width": 1
+              },
+              {
+                "side": "enemy"
+              },
+              {
+                "point": "target_vehicles"
+              },
+              {
+                "point": "vehicles_area"
+              }
+            ]
+          },
+          {
+            "icon": {
+              "icontype": "fighter",
+              "lookAt": "target_vehicles",
+              "side": "player",
+              "target": "player"
+            }
+          },
+          {
+            "icon": {
+              "icontype": "truck",
+              "lookAt": "vehicles_area",
+              "side": "enemy",
+              "target": "target_vehicles"
+            }
+          }
+        ]
+      },
+      "place_loc": ""
+    },
+    "mission": {
+      "environment": "Evening",
+      "gt_cooperative": false,
+      "level": "levels/guadalcanal.bin",
+      "optionalTakeOff": false,
+      "restoreType": "attempts",
+      "type": "singleMission",
+      "weather": "hazy",
+      "windDirection": [1.0,0.0,0.0]
+    },
+    "player": {
+      "army": 1,
+      "wing": "player"
+    },
+    "player_teamB": {
+      "army": 2
+    }
+  },
+  "selected_tag": "",
+  "triggers": {
+    "count_vehicles": {
+      "actions": {
+        "missionSetTargetsIndicator": {
+          "delta": 0,
+          "icon": "truck",
+          "icon army": 2,
+          "set": true,
+          "target": "target_vehicles",
+          "target_marking": 0,
+          "target_type": "isAlive"
+        }
+      },
+      "comments": "",
+      "conditions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": true
+      }
+    },
+    "event01": {
+      "actions": {
+        "unitAttackTarget": {
+          "object": "lonelyFriend01",
+          "playerAttracted": false,
+          "target": "target_vehicles"
+        },
+        "unitSetProperties": {
+          "effShootingRate": 0.01,
+          "object": "lonelyFriend01"
+        },
+        "unitWakeUp": {
+          "target": "lonelyFriend01"
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "unitWhenInArea": {
+          "check_objects": "any",
+          "math": "2D",
+          "object": "player",
+          "object_marking": 0,
+          "object_type": "isAlive",
+          "target": "wakeUp01"
+        }
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 0.01
+        }
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "event02": {
+      "actions": [
+        {
+          "unitWakeUp": [
+            {
+              "target": "lonelyFriend02"
+            },
+            {
+              "target": "lonelyEnemy02"
+            }
+          ]
+        },
+        {
+          "unitSetProperties": [
+            {
+              "object": "lonelyFriend02"
+            },
+            {
+              "object": "lonelyEnemy02"
+            },
+            {
+              "effShootingRate": 0.01
+            }
+          ]
+        },
+        {
+          "unitAttackTarget": {
+            "object": "lonelyEnemy02",
+            "playerAttracted": false,
+            "target": "player"
+          }
+        },
+        {
+          "unitAttackTarget": {
+            "object": "lonelyFriend02",
+            "playerAttracted": false,
+            "target": "lonelyEnemy02"
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": {
+        "unitWhenInArea": {
+          "check_objects": "any",
+          "math": "2D",
+          "object": "player",
+          "object_marking": 0,
+          "object_type": "isAlive",
+          "target": "wakeUp02"
+        }
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 0.01
+        }
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "event03": {
+      "actions": [
+        {
+          "unitWakeUp": {
+            "target": "lonelyFriend03"
+          }
+        },
+        {
+          "unitSetProperties": {
+            "effShootingRate": 0.01,
+            "object": "lonelyFriend03"
+          }
+        },
+        {
+          "unitAttackTarget": {
+            "object": "lonelyFriend03",
+            "playerAttracted": false,
+            "target": "target_vehicles"
+          }
+        },
+        {
+          "wait": {
+            "time": 10.0
+          }
+        },
+        {
+          "unitDamage": {
+            "part": 3,
+            "power": 1.0,
+            "target": "lonelyFriend03"
+          }
+        },
+        {
+          "unitDamage": {
+            "part": 5,
+            "power": 1.0,
+            "target": "lonelyFriend03"
+          }
+        },
+        {
+          "unitDamage": {
+            "part": 15,
+            "power": 1.0,
+            "target": "lonelyFriend03"
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": {
+        "unitWhenInArea": {
+          "check_objects": "any",
+          "math": "2D",
+          "object": "player",
+          "object_marking": 0,
+          "object_type": "isAlive",
+          "target": "wakeUp03"
+        }
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 0.01
+        }
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "event04": {
+      "actions": {
+        "unitSetProperties": {
+          "effShootingRate": 0.01,
+          "object": "lonelyFriend04"
+        },
+        "unitWakeUp": {
+          "target": "lonelyFriend04"
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "unitWhenInArea": {
+          "check_objects": "any",
+          "math": "2D",
+          "object": "player",
+          "object_marking": 0,
+          "object_type": "isAlive",
+          "target": "wakeUp04"
+        }
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 0.01
+        }
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "event05": {
+      "actions": {
+        "unitAttackTarget": {
+          "object": "lonelyFriend05",
+          "playerAttracted": false,
+          "target": "target_vehicles"
+        },
+        "unitSetProperties": {
+          "effShootingRate": 0.01,
+          "object": "lonelyFriend05"
+        },
+        "unitWakeUp": {
+          "target": "lonelyFriend05"
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "unitWhenInArea": {
+          "check_objects": "any",
+          "math": "2D",
+          "object": "player",
+          "object_marking": 0,
+          "object_type": "isAlive",
+          "target": "wakeUp05"
+        }
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 0.01
+        }
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "event06": {
+      "actions": [
+        {
+          "unitWakeUp": [
+            {
+              "target": "lonelyEnemy06"
+            },
+            {
+              "target": "lonelyFriend06"
+            }
+          ]
+        },
+        {
+          "unitSetProperties": [
+            {
+              "object": "lonelyFriend06"
+            },
+            {
+              "object": "lonelyEnemy06"
+            },
+            {
+              "effShootingRate": 0.01
+            }
+          ]
+        },
+        {
+          "unitAttackTarget": {
+            "object": "lonelyEnemy06",
+            "playerAttracted": false,
+            "target": "player"
+          }
+        },
+        {
+          "unitAttackTarget": {
+            "object": "lonelyFriend06",
+            "playerAttracted": false,
+            "target": "lonelyEnemy06"
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": {
+        "unitWhenInArea": {
+          "check_objects": "any",
+          "math": "2D",
+          "object": "player",
+          "object_marking": 0,
+          "object_type": "isAlive",
+          "target": "wakeUp06"
+        }
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 0.01
+        }
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "initial": {
+      "actions": [
+        {
+          "unitSetIndication": {
+            "set": true,
+            "target": "target_vehicles"
+          }
+        },
+        {
+          "unitSetProperties": {
+            "effShootingRate": 0.1,
+            "object": "target_vehicles"
+          }
+        },
+        {
+          "unitSetProperties": {
+            "effShootingRate": 0.01,
+            "object": "lonelyFriend00"
+          }
+        },
+        {
+          "unitAttackTarget": {
+            "object": "lonelyFriend00",
+            "playerAttracted": false,
+            "target": "target_vehicles"
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": [],
+      "events": {
+        "initMission": []
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "isCategory": true,
+    "is_enabled": true,
+    "mission_completed": {
+      "actions": {
+        "missionCompleted": {
+          "debriefingTimer": 2,
+          "timer": false
+        },
+        "moSetObjectiveStatus": {
+          "status": 2,
+          "target": "single_guadalcanal_m01_att00"
+        },
+        "triggerDisable": {
+          "target": "mission_failed"
+        },
+        "wait": {
+          "time": 2.0
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "unitWhenStatus": {
+          "check_objects": "all",
+          "object": "target_vehicles",
+          "object_marking": 0,
+          "object_type": "isKilled"
+        }
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 0.01
+        }
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "mission_failed": {
+      "actions": {
+        "missionFailed": [],
+        "missionSetTargetsIndicator": {
+          "delta": 0,
+          "icon": "tank",
+          "icon army": 2,
+          "set": false,
+          "target": "target_vehicles",
+          "target_marking": 0,
+          "target_type": "isAlive"
+        },
+        "moSetObjectiveStatus": {
+          "status": 3,
+          "target": "single_guadalcanal_m01_att00"
+        },
+        "triggerDisable": {
+          "target": "mission_completed"
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "unitWhenInArea": {
+          "check_objects": "any",
+          "math": "2D",
+          "object": "target_vehicles",
+          "object_marking": 0,
+          "object_type": "isAlive",
+          "target": "vehicles_area"
+        }
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    }
+  },
+  "units": [
+    {
+      "armada": {
+        "closed_waypoints": false,
+        "name": "player",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 1,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "minimum_distance_to_earth": 20.0,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 1.5,
+            "row_distances": 1.5,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "skill": 4
+        },
+        "tm": [
+          [-0.953717,0.0,0.300706],
+          [0.0,1.0,0.0],
+          [-0.300706,0.0,-0.953717],
+          [-853.55,903.5,-27093.9]
+        ],
+        "unit_class": "ki_61_1a_ko",
+        "way": [],
+        "weapons": "ki_61_ko_default"
+      }
+    },
+    {
+      "armada": {
+        "closed_waypoints": false,
+        "name": "lonelyFriend01",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 1,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "isDelayed": true,
+          "minimum_distance_to_earth": 20.0,
+          "numInWing": 1,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "skill": 4
+        },
+        "tm": [
+          [-0.92388,0.0,0.382683],
+          [0.0,1.0,0.0],
+          [-0.382683,0.0,-0.92388],
+          [-2631.85,816.35,-24081.9]
+        ],
+        "unit_class": "ki_61_1a_ko",
+        "way": [],
+        "weapons": "ki_61_ko_default"
+      }
+    },
+    {
+      "armada": {
+        "closed_waypoints": false,
+        "name": "lonelyFriend02",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 1,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "isDelayed": true,
+          "minimum_distance_to_earth": 20.0,
+          "numInWing": 1,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "skill": 4
+        },
+        "tm": [
+          [0.991445,0.0,0.130526],
+          [0.0,1.0,0.0],
+          [-0.130526,0.0,0.991445],
+          [-6100.75,743.45,-23163.2]
+        ],
+        "unit_class": "ki_61_1a_ko",
+        "way": [],
+        "weapons": "ki_61_ko_default"
+      }
+    },
+    {
+      "armada": {
+        "closed_waypoints": false,
+        "name": "lonelyFriend03",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 1,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "isDelayed": true,
+          "minimum_distance_to_earth": 20.0,
+          "numInWing": 1,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "skill": 4
+        },
+        "tm": [
+          [-0.793353,0.0,0.608762],
+          [0.0,1.0,0.0],
+          [-0.608762,0.0,-0.793353],
+          [-5749.6,291.75,-20851.6]
+        ],
+        "unit_class": "ki_61_1a_ko",
+        "way": [],
+        "weapons": "ki_61_ko_default"
+      }
+    },
+    {
+      "armada": {
+        "closed_waypoints": false,
+        "name": "lonelyFriend04",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 1,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "isDelayed": true,
+          "minimum_distance_to_earth": 20.0,
+          "numInWing": 1,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "skill": 4
+        },
+        "tm": [
+          [0.382683,0.0,-0.92388],
+          [0.0,1.0,0.0],
+          [0.92388,0.0,0.382683],
+          [-5933.85,875.7,-19056.1]
+        ],
+        "unit_class": "ki_61_1a_ko",
+        "way": {
+          "lonelyFriend04_wp_01": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 300.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-5017.6,451.5,-18639.6]
+            ],
+            "type": "normal"
+          },
+          "lonelyFriend04_wp_02": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 300.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-4012.75,63.4,-19683.5]
+            ],
+            "type": "normal"
+          }
+        },
+        "weapons": "ki_61_ko_default"
+      }
+    },
+    {
+      "armada": {
+        "closed_waypoints": false,
+        "name": "lonelyFriend05",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 1,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "isDelayed": true,
+          "minimum_distance_to_earth": 20.0,
+          "numInWing": 1,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "skill": 4
+        },
+        "tm": [
+          [0.819152,0.0,0.573576],
+          [0.0,1.0,0.0],
+          [-0.573576,0.0,0.819152],
+          [-2736.48,2245.0,-19660.8]
+        ],
+        "unit_class": "ki_61_1a_ko",
+        "way": [],
+        "weapons": "ki_61_ko_default"
+      }
+    },
+    {
+      "armada": {
+        "closed_waypoints": false,
+        "name": "lonelyFriend06",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 1,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "isDelayed": true,
+          "minimum_distance_to_earth": 20.0,
+          "numInWing": 1,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "skill": 4
+        },
+        "tm": [
+          [0.173649,0.0,0.984808],
+          [0.0,1.0,0.0],
+          [-0.984808,0.0,0.173649],
+          [747.549,436.15,-18739.0]
+        ],
+        "unit_class": "ki_61_1a_ko",
+        "way": [],
+        "weapons": "ki_61_ko_default"
+      }
+    },
+    {
+      "armada": {
+        "closed_waypoints": false,
+        "name": "lonelyFriend00",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 1,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "minimum_distance_to_earth": 20.0,
+          "numInWing": 1,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "skill": 4
+        },
+        "tm": [
+          [-0.92388,0.0,0.382683],
+          [0.0,1.0,0.0],
+          [-0.382683,0.0,-0.92388],
+          [-4164.6,1169.55,-27652.8]
+        ],
+        "unit_class": "ki_61_1a_ko",
+        "way": [],
+        "weapons": "ki_61_ko_default"
+      }
+    },
+    {
+      "armada": {
+        "closed_waypoints": false,
+        "name": "lonelyEnemy06",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "isDelayed": true,
+          "minimum_distance_to_earth": 20.0,
+          "numInWing": 1,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "skill": 4
+        },
+        "tm": [
+          [0.300705,0.0,-0.953718],
+          [0.0,1.0,0.0],
+          [0.953718,0.0,0.300705],
+          [470.65,436.15,-16725.2]
+        ],
+        "unit_class": "f6f-3",
+        "way": [],
+        "weapons": "f6f-5_default"
+      }
+    },
+    {
+      "armada": {
+        "closed_waypoints": false,
+        "name": "lonelyEnemy02",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "minimum_distance_to_earth": 20.0,
+          "numInWing": 1,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "skill": 4
+        },
+        "tm": [
+          [0.991445,0.0,0.130526],
+          [0.0,1.0,0.0],
+          [-0.130526,0.0,0.991445],
+          [-4630.45,899.25,-23651.2]
+        ],
+        "unit_class": "f6f-3",
+        "way": [],
+        "weapons": "f6f-5_default"
+      }
+    },
+    {
+      "wheeled_vehicles": {
+        "closed_waypoints": false,
+        "name": "target_vehicles",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 10,
+          "formation_div": 1,
+          "formation_noise": [0.3,0.3],
+          "formation_step": [2.5,5.0],
+          "formation_type": "cols",
+          "uniqueName": ""
+        },
+        "tm": [
+          [0.0436197,0.0,0.999048],
+          [0.0,1.0,0.0],
+          [-0.999048,0.0,0.0436197],
+          [-3849.45,507.804,-26443.3]
+        ],
+        "unit_class": "us_m8_greyhound",
+        "way": {
+          "target_vehicles_wp_05": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 300.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-3869.95,486.3,-26321.5]
+            ],
+            "type": "normal"
+          },
+          "target_vehicles_wp_06": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 300.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-3713.5,472.3,-26234.7]
+            ],
+            "type": "normal"
+          },
+          "target_vehicles_wp_07": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 300.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-3595.15,461.1,-26051.6]
+            ],
+            "type": "normal"
+          },
+          "target_vehicles_wp_08": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 300.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-3814.95,416.65,-25735.8]
+            ],
+            "type": "normal"
+          },
+          "target_vehicles_wp_09": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 300.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-3855.0,403.6,-25513.8]
+            ],
+            "type": "normal"
+          },
+          "target_vehicles_wp_10": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 300.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-3817.85,383.5,-25338.8]
+            ],
+            "type": "normal"
+          },
+          "target_vehicles_wp_11": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 300.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-4030.7,375.85,-25143.3]
+            ],
+            "type": "normal"
+          },
+          "target_vehicles_wp_12": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 300.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-3967.55,382.5,-25027.8]
+            ],
+            "type": "normal"
+          },
+          "target_vehicles_wp_13": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 300.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-3993.5,370.95,-24918.9]
+            ],
+            "type": "normal"
+          },
+          "target_vehicles_wp_14": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 300.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-4149.45,355.5,-24849.5]
+            ],
+            "type": "normal"
+          },
+          "target_vehicles_wp_15": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 300.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-4305.1,334.5,-24596.4]
+            ],
+            "type": "normal"
+          },
+          "target_vehicles_wp_16": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 300.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-4324.5,327.6,-24470.5]
+            ],
+            "type": "normal"
+          },
+          "target_vehicles_wp_17": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 300.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-4397.95,325.85,-24377.5]
+            ],
+            "type": "normal"
+          },
+          "target_vehicles_wp_18": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 300.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-4403.3,303.25,-24161.7]
+            ],
+            "type": "normal"
+          },
+          "target_vehicles_wp_19": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 300.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-4508.1,292.85,-23846.8]
+            ],
+            "type": "normal"
+          },
+          "target_vehicles_wp_20": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 300.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-4624.4,289.4,-23642.1]
+            ],
+            "type": "normal"
+          },
+          "target_vehicles_wp_21": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 300.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-4650.95,288.25,-23349.8]
+            ],
+            "type": "normal"
+          },
+          "target_vehicles_wp_22": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 300.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-4849.65,258.2,-23175.3]
+            ],
+            "type": "normal"
+          },
+          "target_vehicles_wp_23": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 300.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-4970.95,228.8,-22768.1]
+            ],
+            "type": "normal"
+          },
+          "target_vehicles_wp_24": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 300.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-5358.5,192.4,-22583.7]
+            ],
+            "type": "normal"
+          },
+          "target_vehicles_wp_25": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 300.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-5473.65,204.15,-22608.1]
+            ],
+            "type": "normal"
+          },
+          "target_vehicles_wp_26": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 300.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-5577.55,207.5,-22695.9]
+            ],
+            "type": "normal"
+          },
+          "target_vehicles_wp_27": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 300.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-5734.9,189.75,-22660.8]
+            ],
+            "type": "normal"
+          },
+          "target_vehicles_wp_28": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 300.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-5845.45,175.4,-22568.3]
+            ],
+            "type": "normal"
+          },
+          "target_vehicles_wp_29": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 300.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-6088.15,151.8,-22522.6]
+            ],
+            "type": "normal"
+          },
+          "target_vehicles_wp_30": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 300.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-6205.6,156.8,-22310.7]
+            ],
+            "type": "normal"
+          },
+          "target_vehicles_wp_31": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 300.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-6182.15,153.8,-21995.8]
+            ],
+            "type": "normal"
+          },
+          "target_vehicles_wp_32": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 300.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-6199.4,138.7,-21871.8]
+            ],
+            "type": "normal"
+          },
+          "target_vehicles_wp_33": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 300.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-6290.35,146.85,-21775.8]
+            ],
+            "type": "normal"
+          },
+          "target_vehicles_wp_34": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 300.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-6322.3,136.1,-21583.6]
+            ],
+            "type": "normal"
+          },
+          "target_vehicles_wp_35": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 300.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-6548.05,123.85,-21348.7]
+            ],
+            "type": "normal"
+          },
+          "target_vehicles_wp_36": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 300.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-6540.75,149.2,-21210.8]
+            ],
+            "type": "normal"
+          },
+          "target_vehicles_wp_37": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 300.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-6475.25,131.85,-21011.3]
+            ],
+            "type": "normal"
+          },
+          "target_vehicles_wp_38": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 300.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-6600.9,80.7,-20822.4]
+            ],
+            "type": "normal"
+          },
+          "target_vehicles_wp_39": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 300.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-6682.1,90.25,-20509.4]
+            ],
+            "type": "normal"
+          },
+          "target_vehicles_wp_40": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 300.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-6641.55,130.6,-20342.4]
+            ],
+            "type": "normal"
+          },
+          "target_vehicles_wp_41": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 300.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-6573.65,129.55,-20317.3]
+            ],
+            "type": "normal"
+          },
+          "target_vehicles_wp_42": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 300.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-6308.65,90.9,-20412.2]
+            ],
+            "type": "normal"
+          },
+          "target_vehicles_wp_43": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 300.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-6004.35,88.95,-20371.9]
+            ],
+            "type": "normal"
+          },
+          "target_vehicles_wp_44": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 300.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-5861.1,90.35,-20110.9]
+            ],
+            "type": "normal"
+          },
+          "target_vehicles_wp_45": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 300.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-5685.1,83.85,-19701.9]
+            ],
+            "type": "normal"
+          },
+          "target_vehicles_wp_46": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 300.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-5326.5,74.05,-19403.0]
+            ],
+            "type": "normal"
+          },
+          "target_vehicles_wp_47": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 300.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-5305.65,71.45,-19130.5]
+            ],
+            "type": "normal"
+          },
+          "target_vehicles_wp_48": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 300.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-4964.75,83.95,-18891.1]
+            ],
+            "type": "normal"
+          },
+          "target_vehicles_wp_49": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 300.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-4693.3,70.15,-18915.4]
+            ],
+            "type": "normal"
+          },
+          "target_vehicles_wp_50": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 300.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-4481.85,67.9,-19052.2]
+            ],
+            "type": "normal"
+          },
+          "target_vehicles_wp_51": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 300.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-4248.65,63.95,-19530.1]
+            ],
+            "type": "normal"
+          },
+          "target_vehicles_wp_52": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 300.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-4144.8,68.45,-19822.0]
+            ],
+            "type": "normal"
+          },
+          "target_vehicles_wp_53": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 300.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-3935.8,58.05,-19884.8]
+            ],
+            "type": "normal"
+          },
+          "target_vehicles_wp_54": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 300.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-3756.9,53.0,-19775.9]
+            ],
+            "type": "normal"
+          },
+          "target_vehicles_wp_55": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 300.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-3528.8,54.4,-19587.5]
+            ],
+            "type": "normal"
+          },
+          "target_vehicles_wp_56": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 300.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-3325.65,54.3,-19588.7]
+            ],
+            "type": "normal"
+          },
+          "target_vehicles_wp_57": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 300.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-3150.7,54.65,-19788.5]
+            ],
+            "type": "normal"
+          },
+          "target_vehicles_wp_58": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 300.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-2836.85,70.7,-19740.9]
+            ],
+            "type": "normal"
+          },
+          "target_vehicles_wp_59": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 300.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-2642.4,59.8,-19500.3]
+            ],
+            "type": "normal"
+          },
+          "target_vehicles_wp_60": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 300.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-2445.35,57.7,-19176.8]
+            ],
+            "type": "normal"
+          },
+          "target_vehicles_wp_61": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 300.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-2319.95,51.05,-18601.3]
+            ],
+            "type": "normal"
+          },
+          "target_vehicles_wp_62": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 300.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-1951.75,52.7,-18183.7]
+            ],
+            "type": "normal"
+          },
+          "target_vehicles_wp_63": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 300.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-1454.9,41.2,-17795.4]
+            ],
+            "type": "normal"
+          },
+          "target_vehicles_wp_64": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 300.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-1218.7,45.55,-17695.3]
+            ],
+            "type": "normal"
+          },
+          "target_vehicles_wp_65": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 300.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-1008.8,44.65,-17709.9]
+            ],
+            "type": "normal"
+          },
+          "target_vehicles_wp_66": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 300.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-877.0,55.4,-17818.3]
+            ],
+            "type": "normal"
+          },
+          "target_vehicles_wp_67": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 300.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-707.6,57.75,-17826.7]
+            ],
+            "type": "normal"
+          },
+          "target_vehicles_wp_68": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 300.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-650.2,107.8,-17937.1]
+            ],
+            "type": "normal"
+          },
+          "target_vehicles_wp_69": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 300.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-640.3,102.5,-18141.1]
+            ],
+            "type": "normal"
+          },
+          "target_vehicles_wp_70": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 300.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-648.55,57.25,-18411.1]
+            ],
+            "type": "normal"
+          },
+          "target_vehicles_wp_71": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 300.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-529.9,49.85,-18453.7]
+            ],
+            "type": "normal"
+          },
+          "target_vehicles_wp_72": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 300.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-397.05,42.4,-18442.3]
+            ],
+            "type": "normal"
+          },
+          "target_vehicles_wp_73": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 300.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-318.25,55.65,-18321.0]
+            ],
+            "type": "normal"
+          },
+          "target_vehicles_wp_74": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 300.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-186.6,46.85,-18109.7]
+            ],
+            "type": "normal"
+          },
+          "target_vehicles_wp_75": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 300.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-88.6,41.25,-17954.1]
+            ],
+            "type": "normal"
+          },
+          "target_vehicles_wp_76": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 300.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [61.2,44.55,-17896.6]
+            ],
+            "type": "normal"
+          },
+          "target_vehicles_wp_77": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 300.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [190.55,41.45,-17971.0]
+            ],
+            "type": "normal"
+          },
+          "target_vehicles_wp_78": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 300.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [365.25,29.15,-18081.9]
+            ],
+            "type": "normal"
+          },
+          "target_vehicles_wp_79": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 300.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [531.3,41.55,-18121.0]
+            ],
+            "type": "normal"
+          },
+          "target_vehicles_wp_80": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 300.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [647.25,46.35,-18046.3]
+            ],
+            "type": "normal"
+          },
+          "target_vehicles_wp_81": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 300.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [729.95,36.75,-17799.4]
+            ],
+            "type": "normal"
+          },
+          "target_vehicles_wp_82": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 300.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [768.4,35.6,-17657.2]
+            ],
+            "type": "normal"
+          },
+          "target_vehicles_wp_83": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 300.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [930.15,47.75,-17425.7]
+            ],
+            "type": "normal"
+          },
+          "target_vehicles_wp_84": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 300.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [1211.5,33.2,-17297.9]
+            ],
+            "type": "normal"
+          }
+        },
+        "weapons": ""
+      }
+    }
+  ],
+  "variables": []
+}

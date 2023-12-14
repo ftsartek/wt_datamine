@@ -1,0 +1,397 @@
+{
+  "airfields": [],
+  "areas": [],
+  "bin_dump_file": "",
+  "dialogs": [],
+  "effects": [],
+  "imports": [],
+  "mission_objectives": {
+    "isCategory": true,
+    "is_enabled": true
+  },
+  "mission_settings": {
+    "mission": {
+      "deathPenaltyMulRounds": 0.0,
+      "environment": "Day",
+      "level": "levels/peleliu.bin",
+      "type": "domination",
+      "weather": "clear"
+    },
+    "player": {
+      "army": 1
+    },
+    "player_teamB": {
+      "army": 2
+    }
+  },
+  "objLayers": [],
+  "selected_tag": "",
+  "triggers": {
+    "carriers_init_low": {
+      "actions": [
+        {
+          "missionMarkAsRespawnPoint": [
+            {
+              "loc_name": "missions/carriers_spawn"
+            },
+            {
+              "spawnEffect": false
+            },
+            {
+              "isAirfield": true
+            },
+            {
+              "isUnit": false
+            },
+            {
+              "radius": -1.0
+            },
+            {
+              "isStrictSpawn": false
+            },
+            {
+              "destructionAwardMultiplier": 1.0
+            },
+            {
+              "useExisting": false
+            },
+            {
+              "isIndividual": false
+            },
+            {
+              "removeAreas": false
+            },
+            {
+              "canSpawnOnNeutral": false
+            },
+            {
+              "showOnMap": true
+            },
+            {
+              "onlyOnePlayerPerSpawnPoint": false
+            },
+            {
+              "resetStrictSpawnIndex": false
+            },
+            {
+              "replaceAreas": false
+            },
+            {
+              "forceCreate": false
+            },
+            {
+              "target": "t1_carrier01"
+            },
+            {
+              "target": "t1_carrier02"
+            },
+            {
+              "team": "A"
+            },
+            {
+              "object": "t1_carrier_sq"
+            },
+            {
+              "awardByBodyHp": false
+            },
+            {
+              "tags": {
+                "carrier_take_off": true,
+                "tank": false,
+                "type_aa_fighter": false,
+                "type_assault": false,
+                "type_frontline_bomber": false,
+                "type_interceptor": false,
+                "type_longrange_bomber": false
+              }
+            }
+          ]
+        },
+        {
+          "missionMarkAsRespawnPoint": [
+            {
+              "loc_name": "missions/carriers_spawn"
+            },
+            {
+              "spawnEffect": false
+            },
+            {
+              "isAirfield": true
+            },
+            {
+              "isUnit": false
+            },
+            {
+              "radius": -1.0
+            },
+            {
+              "isStrictSpawn": false
+            },
+            {
+              "destructionAwardMultiplier": 1.0
+            },
+            {
+              "useExisting": false
+            },
+            {
+              "isIndividual": false
+            },
+            {
+              "removeAreas": false
+            },
+            {
+              "canSpawnOnNeutral": false
+            },
+            {
+              "showOnMap": true
+            },
+            {
+              "onlyOnePlayerPerSpawnPoint": false
+            },
+            {
+              "resetStrictSpawnIndex": false
+            },
+            {
+              "replaceAreas": false
+            },
+            {
+              "forceCreate": false
+            },
+            {
+              "target": "t2_carrier01"
+            },
+            {
+              "target": "t2_carrier02"
+            },
+            {
+              "team": "B"
+            },
+            {
+              "object": "t2_carrier_sq"
+            },
+            {
+              "awardByBodyHp": false
+            },
+            {
+              "tags": {
+                "carrier_take_off": true,
+                "tank": false,
+                "type_aa_fighter": false,
+                "type_assault": false,
+                "type_frontline_bomber": false,
+                "type_interceptor": false,
+                "type_longrange_bomber": false
+              }
+            }
+          ]
+        }
+      ],
+      "comments": "",
+      "conditions": [],
+      "else_actions": [],
+      "events": {
+        "initMission": []
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "isCategory": true,
+    "is_enabled": true
+  },
+  "units": [
+    {
+      "ships": {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "t1_carrier01",
+        "props": {
+          "army": 1,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [-0.422618,0.0,0.906308],
+          [0.0,1.0,0.0],
+          [-0.906308,0.0,-0.422618],
+          [3203.75,52.8,-20191.7]
+        ],
+        "unit_class": "uss_cv_lexington",
+        "way": [],
+        "weapons": ""
+      }
+    },
+    {
+      "ships": {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "t1_carrier02",
+        "props": {
+          "army": 1,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [-0.34202,0.0,0.939693],
+          [0.0,1.0,0.0],
+          [-0.939693,0.0,-0.34202],
+          [3458.33,52.8,-20055.0]
+        ],
+        "unit_class": "uss_cv_enterprise",
+        "way": [],
+        "weapons": ""
+      }
+    },
+    {
+      "ships": {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "t2_carrier01",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [0.737277,0.0,-0.67559],
+          [0.0,1.0,0.0],
+          [0.67559,0.0,0.737277],
+          [-8018.8,100.3,-3885.8]
+        ],
+        "unit_class": "ijn_cv_hiryu",
+        "way": [],
+        "weapons": ""
+      }
+    },
+    {
+      "ships": {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "t2_carrier02",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [0.67559,0.0,-0.737278],
+          [0.0,1.0,0.0],
+          [0.737278,0.0,0.67559],
+          [-8201.69,100.3,-4109.51]
+        ],
+        "unit_class": "ijn_cv_soryu",
+        "way": [],
+        "weapons": ""
+      }
+    },
+    {
+      "squad": {
+        "name": "t1_carrier_sq",
+        "props": [
+          {
+            "object_marking": 0
+          },
+          {
+            "squad_members": "t1_carrier01"
+          },
+          {
+            "squad_members": "t1_carrier02"
+          }
+        ],
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [3849.0,1.0,-20573.3]
+        ]
+      }
+    },
+    {
+      "squad": {
+        "name": "t2_carrier_sq",
+        "props": [
+          {
+            "object_marking": 0
+          },
+          {
+            "squad_members": "t2_carrier01"
+          },
+          {
+            "squad_members": "t2_carrier02"
+          }
+        ],
+        "tm": [
+          [-0.92388,0.0,-0.382683],
+          [0.0,1.0,0.0],
+          [0.382683,0.0,-0.92388],
+          [-8760.97,48.5,-3780.17]
+        ]
+      }
+    }
+  ],
+  "variables": [],
+  "wayPoints": []
+}

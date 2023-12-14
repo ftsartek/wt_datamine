@@ -1,0 +1,73 @@
+{
+  "background-color": "@shadeBackgroundColor",
+  "behaviour": "ControlsInput",
+  "border": "no",
+  "button0": "",
+  "button1": "",
+  "button2": "",
+  "button3": "",
+  "check_analog": "0",
+  "device0": "",
+  "device1": "",
+  "device2": "",
+  "device3": "",
+  "id": "controls_input_root",
+  "img": {
+    "background-image": "#ui/gameuiskin#optionlist_background_down",
+    "pos": "-sw,sh-h-1@bh",
+    "position": "absolute",
+    "size": "3sw - 3sw*@isInVr, sh/3+1"
+  },
+  "navBar": {
+    "navRight": {
+      "Button_text": {
+        "ButtonImg": [],
+        "_on_click": "onCancelButtonInput",
+        "btnName": "start",
+        "id": "btn_cancel",
+        "text": "#msgbox/btn_cancel"
+      }
+    }
+  },
+  "on_cancel_edit": "onCancelButtonInput",
+  "on_change_value": "onButtonAdded",
+  "on_end_edit": "onButtonEntered",
+  "options_container": {
+    "center": "0,0",
+    "input-transparent": "yes",
+    "padding": "20",
+    "position": "absolute",
+    "size": "sw, 0.4*@scrn_tgt",
+    "tdiv": [
+      {
+        "pos": "50%pw-50%w, 50%ph-50%h"
+      },
+      {
+        "position": "absolute"
+      },
+      {
+        "activeText": {
+          "id": "press_key",
+          "left": "(sw)/2",
+          "style": "font:@fontMedium;",
+          "text": "#hotkeys/msg/press_a_key"
+        }
+      },
+      {
+        "activeText": {
+          "id": "txt_current_button",
+          "left": "50%pw-50%w",
+          "position": "relative",
+          "style": "font:@fontMedium;",
+          "text": "?"
+        }
+      },
+      {
+        "_newline": []
+      }
+    ]
+  },
+  "position": "absolute",
+  "shortcutCancel": "Esc | J:Start",
+  "size": "sw, sh"
+}

@@ -1,0 +1,480 @@
+{
+  "airfields": [],
+  "areas": {
+    "battlearea": {
+      "objLayer": 3,
+      "props": [],
+      "tm": [
+        [5745.31,0.0,-65.4884],
+        [0.0,712.125,0.0],
+        [65.4884,0.0,5745.31],
+        [650.767,0.0,735.499]
+      ],
+      "type": "Box"
+    },
+    "spawn01": {
+      "objLayer": 0,
+      "props": [],
+      "tm": [
+        [8.65757,0.0,39.0518],
+        [0.0,40.0,0.0],
+        [-39.0518,0.0,8.65757],
+        [662.413,3.8147e-06,-7.76569]
+      ],
+      "type": "Sphere"
+    },
+    "wp_for_plane": {
+      "objLayer": 0,
+      "props": [],
+      "tm": [
+        [0.393189,0.0,0.919458],
+        [0.0,1.0,0.0],
+        [-0.919458,0.0,0.393189],
+        [662.4,500.0,-7.7]
+      ],
+      "type": "Point"
+    }
+  },
+  "bin_dump_file": "",
+  "dialogs": [],
+  "effects": [],
+  "imports": [],
+  "mission_objectives": {
+    "isCategory": true,
+    "is_enabled": true
+  },
+  "mission_settings": {
+    "briefing": {
+      "date_loc": "",
+      "music": "action_01",
+      "objective_loc": "",
+      "place_loc": ""
+    },
+    "mission": {
+      "environment": "Day",
+      "level": "levels/avn_fiji.bin",
+      "locName": "missions/testSail",
+      "optionalTakeOff": false,
+      "restoreType": "manual",
+      "type": "testFlight",
+      "weather": "good",
+      "windDirection": [1.0,0.0,0.0]
+    },
+    "player": {
+      "army": 1,
+      "wing": "t1_player01"
+    },
+    "player_teamB": {
+      "army": 2
+    },
+    "spectator_points": []
+  },
+  "objLayers": [
+    {
+      "layer": {
+        "enabled": true
+      }
+    },
+    {
+      "layer": {
+        "enabled": true
+      }
+    },
+    {
+      "layer": {
+        "enabled": true
+      }
+    },
+    {
+      "layer": {
+        "enabled": false
+      }
+    }
+  ],
+  "selected_tag": "",
+  "triggers": {
+    "end": {
+      "actions": {
+        "unitRespawn": {
+          "delay": 1.0,
+          "object": "t1_player01",
+          "offset": [0.0,0.0,0.0],
+          "target": "spawn01"
+        },
+        "wait": {
+          "time": 3.0
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "playersWhenStatus": {
+          "check_players": "any",
+          "players": "isKilled"
+        }
+      },
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": true
+      }
+    },
+    "init": {
+      "actions": [
+        {
+          "unitMoveTo": {
+            "follow_target": false,
+            "horizontalDirectionForTeleport": true,
+            "object": "ai_plane",
+            "object_marking": 0,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "object_var_value": 0,
+            "recalculatePathDist": -1.0,
+            "shouldKeepFormation": false,
+            "target": "wp_for_plane",
+            "target_marking": 0,
+            "teleportHeightType": "absolute",
+            "teleportHeightValue": 1000.0,
+            "useUnitHeightForTele": false,
+            "waypointReachedDist": 10.0
+          }
+        },
+        {
+          "missionBattleArea": {
+            "air": true,
+            "area": "battlearea",
+            "detectionArea": false,
+            "ground": true,
+            "killArea": false,
+            "killOutOfBattleArea": true,
+            "mapArea": true,
+            "newGridHorizontalCellCount": 0,
+            "target": "battlearea"
+          }
+        },
+        {
+          "unitSetProperties": [
+            {
+              "object_marking": 0
+            },
+            {
+              "object_var_name": ""
+            },
+            {
+              "object_var_comp_op": "equal"
+            },
+            {
+              "object_var_value": 0
+            },
+            {
+              "object": "ai_ship02"
+            },
+            {
+              "object": "ai_ship01"
+            },
+            {
+              "object": "ai_ship"
+            },
+            {
+              "object": "ai_plane"
+            },
+            {
+              "forceVisibleOnMap": true
+            }
+          ]
+        },
+        {
+          "unitSetProperties": {
+            "lockSpeed": true,
+            "object": "ai_ship02",
+            "object_marking": 0,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "object_var_value": 0,
+            "speed": 90.0
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": [],
+      "else_actions": [],
+      "events": {
+        "initMission": []
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "isCategory": true,
+    "is_enabled": true
+  },
+  "units": [
+    {
+      "ships": {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 1000,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "t1_player01",
+        "props": {
+          "army": 1,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [0.382684,0.0,0.92388],
+          [0.0,1.0,0.0],
+          [-0.92388,0.0,0.382684],
+          [662.422,-9.99976,-7.73108]
+        ],
+        "unit_class": "uk_dark_class",
+        "way": [],
+        "weapons": ""
+      }
+    },
+    {
+      "ships": {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 1000,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "ai_ship",
+        "objLayer": 1,
+        "props": {
+          "army": 2,
+          "attack_type": "dont_aim",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [-0.834158,0.0,0.551525],
+          [0.0,1.0,0.0],
+          [-0.551525,0.0,-0.834158],
+          [919.442,0.000103951,716.59]
+        ],
+        "unit_class": "germ_s38",
+        "way": [],
+        "weapons": ""
+      }
+    },
+    {
+      "ships": {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 1000,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "ai_ship01",
+        "objLayer": 1,
+        "props": {
+          "army": 2,
+          "attack_type": "dont_aim",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [-0.917257,0.0,0.398296],
+          [0.0,1.0,0.0],
+          [-0.398296,0.0,-0.917257],
+          [1324.71,0.0,2925.29]
+        ],
+        "unit_class": "germ_destroyer_class1936_z20",
+        "way": [],
+        "weapons": ""
+      }
+    },
+    {
+      "ships": {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 1000,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": true,
+        "isShipSpline": false,
+        "name": "ai_ship02",
+        "objLayer": 1,
+        "props": {
+          "army": 2,
+          "attack_type": "dont_aim",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [-0.999644,0.0,-0.0266706],
+          [0.0,1.0,0.0],
+          [0.0266706,0.0,-0.999644],
+          [2420.69,-0.000976563,1447.03]
+        ],
+        "unit_class": "germ_s38",
+        "way": {
+          "ai_ship02_wp_01": {
+            "props": {
+              "canUsePathFinder": false,
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 300.0,
+              "tas": false
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [2004.93,-0.000976563,1443.16]
+            ],
+            "type": "normal"
+          },
+          "ai_ship02_wp_02": {
+            "props": {
+              "canUsePathFinder": false,
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 300.0,
+              "tas": false
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [1390.5,-6.72632,1502.71]
+            ],
+            "type": "normal"
+          },
+          "ai_ship02_wp_03": {
+            "props": {
+              "canUsePathFinder": false,
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 300.0,
+              "tas": false
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [1009.68,0.00012207,2148.58]
+            ],
+            "type": "normal"
+          },
+          "ai_ship02_wp_04": {
+            "props": {
+              "canUsePathFinder": false,
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 300.0,
+              "tas": false
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [2329.7,0.0,2342.44]
+            ],
+            "type": "normal"
+          }
+        },
+        "weapons": ""
+      }
+    },
+    {
+      "armada": {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 1000,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "dontOverrideHeight": true,
+        "isShipSpline": false,
+        "name": "ai_plane",
+        "objLayer": 1,
+        "props": {
+          "altLimit": 6000.0,
+          "army": 2,
+          "attack_type": "hold_fire",
+          "count": 1,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "minimum_distance_to_earth": 20.0,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [0.00754631,0.0,-0.999972],
+          [0.0,1.0,0.0],
+          [0.999972,0.0,0.00754631],
+          [1231.35,500.0,3380.11]
+        ],
+        "unit_class": "ju-88c-6",
+        "way": [],
+        "weapons": ""
+      }
+    }
+  ],
+  "variables": [],
+  "wayPoints": []
+}

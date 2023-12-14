@@ -1,0 +1,97 @@
+[
+  {
+    "hideNodes": [
+      {
+        "node": "depth_charge_01"
+      },
+      {
+        "node": "depth_charge_02"
+      },
+      {
+        "node": "depth_charge_03"
+      },
+      {
+        "node": "depth_charge_04"
+      },
+      {
+        "node": "depth_charge_05"
+      },
+      {
+        "node": "depth_charge_06"
+      },
+      {
+        "node": "ammunition_storage_10"
+      }
+    ]
+  },
+  {
+    "Weapon": {
+      "allowableDelta": 40.0,
+      "ammoDpGenFmt": "torpedo_%02d_dm",
+      "barrelDP": "tt_01_dm",
+      "blk": "gameData/Weapons/torpedoes/de_533mm_g7a_torpedo.blk",
+      "brokenBarrelAllowShoot": false,
+      "bullets": 3,
+      "emitter": "bone_torpedo_01",
+      "emitterGenFmt": "bone_torpedo_%02d",
+      "emitterGenRange": [1,3],
+      "enableCourseCorrection": false,
+      "external": true,
+      "limits": {
+        "pitch": [0.0,0.0],
+        "yaw": [-143.0,143.0]
+      },
+      "limitsDeadzone": {
+        "pitch": [0.0,0.0],
+        "yaw": [-40.0,40.0]
+      },
+      "startFx": "start_torpedo",
+      "startFxOffset": [4.0,0.0,0.0],
+      "startSpeed": 18.0,
+      "trigger": "gunner12",
+      "triggerGroup": "torpedoes",
+      "turret": {
+        "gun": "tt_01",
+        "gunnerDm": "tt_02_dm",
+        "head": "tt_head_01"
+      },
+      "useEmitter": true,
+      "useStartSpeed": true
+    }
+  },
+  {
+    "Weapon": {
+      "allowableDelta": 40.0,
+      "ammoDpGenFmt": "torpedo_%02d_dm",
+      "barrelDP": "tt_02_dm",
+      "blk": "gameData/Weapons/torpedoes/de_533mm_g7a_torpedo.blk",
+      "brokenBarrelAllowShoot": false,
+      "bullets": 3,
+      "emitter": "bone_torpedo_04",
+      "emitterGenFmt": "bone_torpedo_%02d",
+      "emitterGenRange": [4,6],
+      "enableCourseCorrection": false,
+      "external": true,
+      "limits": {
+        "pitch": [0.0,0.0],
+        "yaw": [-143.0,143.0]
+      },
+      "limitsDeadzone": {
+        "pitch": [0.0,0.0],
+        "yaw": [-50.0,50.0]
+      },
+      "startFx": "start_torpedo",
+      "startFxOffset": [4.0,0.0,0.0],
+      "startSpeed": 18.0,
+      "trigger": "gunner13",
+      "triggerGroup": "torpedoes",
+      "turret": {
+        "gun": "tt_02",
+        "gunnerDm": "tt_02_dm",
+        "head": "tt_head_02"
+      },
+      "useEmitter": true,
+      "useStartSpeed": true
+    }
+  }
+]

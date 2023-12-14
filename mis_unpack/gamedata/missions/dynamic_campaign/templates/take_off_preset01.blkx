@@ -1,0 +1,539 @@
+{
+  "airfields": [],
+  "areas": {
+    "player_lookAt_point": {
+      "props": [],
+      "tm": [
+        [1.0,0.0,0.0],
+        [0.0,1.0,0.0],
+        [0.0,0.0,1.0],
+        [-58.1,0.0,133.4]
+      ],
+      "type": "Point"
+    },
+    "player_start_point": {
+      "props": [],
+      "tm": [
+        [1.0,0.0,0.0],
+        [0.0,1.0,0.0],
+        [0.0,0.0,1.0],
+        [-127.0,0.0,96.5]
+      ],
+      "type": "Point"
+    },
+    "rendezvous_point": {
+      "props": [],
+      "tm": [
+        [1.0,0.0,0.0],
+        [0.0,1.0,0.0],
+        [0.0,0.0,1.0],
+        [-48.3,0.0,-79.05]
+      ],
+      "type": "Point"
+    }
+  },
+  "bin_dump_file": "",
+  "dialogs": [],
+  "effects": [],
+  "imports": [],
+  "mission_objectives": {
+    "isCategory": true,
+    "is_enabled": true,
+    "mo_dynamic_takeOff": {
+      "comments": "",
+      "is_enabled": false,
+      "onFailed": [],
+      "onSuccess": [],
+      "props": {
+        "isPrimary": true,
+        "scoreConst": 100,
+        "scoreTime": 400,
+        "timeLimit": 1800
+      },
+      "type": "abstractMissionObjective"
+    }
+  },
+  "mission_settings": {
+    "aiParams": {
+      "aiEffectivenessViscosity": 90.0,
+      "effectivenessDistances": [2500.0,7000.0]
+    },
+    "atmosphere": {
+      "pressure": 760.0,
+      "temperature": 0.0
+    },
+    "briefing": {
+      "date_loc": "",
+      "music": "action_01",
+      "objective_loc": "",
+      "part": {
+        "event": "",
+        "minTime": 0,
+        "slide": {
+          "icon": {
+            "icontype": "airfield",
+            "side": "ally",
+            "target": ""
+          },
+          "map": true,
+          "minTime": 4,
+          "picture": ""
+        }
+      },
+      "place_loc": ""
+    },
+    "cover_points": [],
+    "mission": {
+      "campaign": "pacific",
+      "environment": "Day",
+      "level": "levels/guadalcanal.bin",
+      "missionBriefing": "",
+      "missionDebriefing": "",
+      "name": "take_off",
+      "optionalTakeOff": false,
+      "restoreType": "attempts",
+      "tags": [],
+      "type": "campaign",
+      "weather": "hazy"
+    },
+    "player": {
+      "army": 1,
+      "wing": ""
+    },
+    "player_teamB": {
+      "army": 2
+    }
+  },
+  "objLayers": [
+    {
+      "layer": {
+        "enabled": true
+      }
+    },
+    {
+      "layer": {
+        "enabled": true
+      }
+    },
+    {
+      "layer": {
+        "enabled": true
+      }
+    },
+    {
+      "layer": {
+        "enabled": true
+      }
+    }
+  ],
+  "selected_tag": "",
+  "triggers": {
+    "isCategory": true,
+    "is_enabled": true,
+    "take_off_end": {
+      "actions": [
+        {
+          "moSetObjectiveStatus": {
+            "status": 2,
+            "target": "mo_dynamic_takeOff"
+          }
+        },
+        {
+          "missionMarkAsWaypoint": {
+            "ignoreDifficulty": false,
+            "oriented": false,
+            "primary": true,
+            "scale": 1.0,
+            "target": "rendezvous_point",
+            "visible": false
+          }
+        },
+        {
+          "missionSetFade": {
+            "color": [0.0,0.0,0.0],
+            "mode": "fadeOut",
+            "time": 1.0
+          }
+        },
+        {
+          "missionSetFade": {
+            "color": [1.0,1.0,1.0],
+            "mode": "fadeIn",
+            "time": 1.0
+          }
+        },
+        {
+          "wait": {
+            "time": 1.0
+          }
+        },
+        {
+          "unitMoveTo": {
+            "follow_target": false,
+            "horizontalDirectionForTeleport": true,
+            "lookat": "player_lookAt_point",
+            "move_type": "teleport",
+            "object": "#player_sq",
+            "object_marking": 0,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "object_var_value": 0,
+            "recalculatePathDist": -1.0,
+            "shouldKeepFormation": true,
+            "target": "player_start_point",
+            "target_marking": 0,
+            "teleportHeightType": "target",
+            "teleportHeightValue": 0.0,
+            "useUnitHeightForTele": false,
+            "velocity": 250.0,
+            "waypointReachedDist": 10.0
+          }
+        },
+        {
+          "unitRestore": {
+            "fullRestore": true,
+            "ressurectIfDead": false,
+            "target": "#player_sq"
+          }
+        },
+        {
+          "triggerEnable": {
+            "target": "miss_start"
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": {
+        "playersDistanceBetween": {
+          "check_players": "any",
+          "check_targets": "any",
+          "math": "2D",
+          "players": "isAlive",
+          "target": "rendezvous_point",
+          "target_type": "isAlive",
+          "value": 500.0
+        }
+      },
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "take_off_quick_start": {
+      "actions": {
+        "missionMarkAsWaypoint": {
+          "ignoreDifficulty": false,
+          "oriented": false,
+          "primary": true,
+          "scale": 1.0,
+          "target": "rendezvous_point",
+          "visible": true
+        },
+        "moAddMissionObjective": {
+          "target": "mo_dynamic_takeOff"
+        },
+        "triggerEnable": {
+          "target": "take_off_end"
+        }
+      },
+      "comments": "",
+      "conditions": [
+        {
+          "varCompareBool": {
+            "comparasion_func": "equal",
+            "value": false,
+            "var_value": "take_off_real"
+          }
+        },
+        {
+          "varCompareBool": {
+            "comparasion_func": "equal",
+            "value": false,
+            "var_value": "is_free_flight_preset02"
+          }
+        }
+      ],
+      "else_actions": [],
+      "events": {
+        "timeExpires": {
+          "time": 0.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "take_off_real_end": {
+      "actions": [
+        {
+          "moSetObjectiveStatus": {
+            "status": 2,
+            "target": "mo_dynamic_takeOff"
+          }
+        },
+        {
+          "missionMarkAsWaypoint": {
+            "ignoreDifficulty": false,
+            "oriented": false,
+            "primary": true,
+            "scale": 1.0,
+            "target": "player_start_point",
+            "visible": false
+          }
+        },
+        {
+          "wait": {
+            "time": 2.0
+          }
+        },
+        {
+          "wait": {
+            "time": 1.0
+          }
+        },
+        {
+          "triggerEnable": {
+            "target": "battle_start"
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": {
+        "unitDistanceBetween": {
+          "check_objects": "any",
+          "check_targets": "any",
+          "math": "2D",
+          "object": "#player_sq",
+          "object_marking": 0,
+          "object_type": "isAlive",
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "object_var_value": 0,
+          "target": "player_start_point",
+          "target_marking": 0,
+          "target_type": "isAlive",
+          "value": 2000.0
+        }
+      },
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "take_off_real_start": {
+      "actions": [
+        {
+          "unitWakeUp": {
+            "target": "ally_all"
+          }
+        },
+        {
+          "unitMoveTo": {
+            "follow_target": false,
+            "horizontalDirectionForTeleport": true,
+            "lookat": "player_start_point",
+            "move_type": "teleport",
+            "object": "ally_all",
+            "object_marking": 0,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "object_var_value": 0,
+            "recalculatePathDist": -1.0,
+            "shouldKeepFormation": true,
+            "target": "#player_sq",
+            "target_marking": 0,
+            "teleportHeightType": "target",
+            "teleportHeightValue": 0.0,
+            "useUnitHeightForTele": true,
+            "velocity": 250.0,
+            "waypointReachedDist": 10.0
+          }
+        },
+        {
+          "unitMoveTo": {
+            "follow_target": false,
+            "horizontalDirectionForTeleport": true,
+            "object": "ally_all",
+            "object_marking": 0,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "object_var_value": 0,
+            "recalculatePathDist": -1.0,
+            "shouldKeepFormation": true,
+            "target": "player_start_point",
+            "target_marking": 0,
+            "teleportHeightType": "absolute",
+            "teleportHeightValue": 0.0,
+            "useUnitHeightForTele": true,
+            "waypointReachedDist": 10.0
+          }
+        },
+        {
+          "wait": {
+            "time": 2.0
+          }
+        },
+        {
+          "moAddMissionObjective": {
+            "target": "mo_dynamic_takeOff"
+          }
+        },
+        {
+          "missionMarkAsWaypoint": {
+            "ignoreDifficulty": false,
+            "oriented": false,
+            "primary": true,
+            "scale": 1.0,
+            "target": "player_start_point",
+            "visible": true
+          }
+        },
+        {
+          "triggerEnable": {
+            "target": "take_off_real_end"
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": [
+        {
+          "varCompareBool": {
+            "comparasion_func": "equal",
+            "value": true,
+            "var_value": "take_off_real"
+          }
+        },
+        {
+          "varCompareBool": {
+            "comparasion_func": "equal",
+            "value": false,
+            "var_value": "is_free_flight_preset02"
+          }
+        }
+      ],
+      "else_actions": [],
+      "events": {
+        "timeExpires": {
+          "time": 0.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "take_off_skip": {
+      "actions": {
+        "triggerDisable": {
+          "target": "take_off_start"
+        },
+        "triggerEnable": {
+          "target": "miss_start"
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "varCompareBool": {
+          "comparasion_func": "equal",
+          "value": true,
+          "var_value": "take_off_skip"
+        }
+      },
+      "else_actions": [],
+      "events": {
+        "timeExpires": {
+          "time": 0.0
+        }
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "take_off_start": {
+      "actions": {
+        "addAirfield": {
+          "army": 1,
+          "runwayEnd": "",
+          "runwayStart": "",
+          "runwayWidth": 10.0
+        },
+        "spawnOnAirfield": {
+          "objects": "#player_sq",
+          "runwayName": ""
+        },
+        "triggerEnable": [
+          {
+            "target": "take_off_quick_start"
+          },
+          {
+            "target": "take_off_real_start"
+          }
+        ],
+        "wait": {
+          "time": 1.0
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "varCompareBool": {
+          "comparasion_func": "equal",
+          "value": false,
+          "var_value": "take_off_skip"
+        }
+      },
+      "else_actions": [],
+      "events": {
+        "initMission": []
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    }
+  },
+  "units": {
+    "squad": {
+      "name": "#player_sq",
+      "props": {
+        "squad_members": ""
+      },
+      "tm": [
+        [1.0,0.0,0.0],
+        [0.0,1.0,0.0],
+        [0.0,0.0,1.0],
+        [-138.65,0.0,-80.7]
+      ]
+    }
+  },
+  "variables": {
+    "take_off_real": false,
+    "take_off_skip": false
+  },
+  "wayPoints": []
+}

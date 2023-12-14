@@ -1,0 +1,66 @@
+{
+  "tdiv": [
+    {
+      "size": "pw, ph"
+    },
+    {
+      "flow": "vertical"
+    },
+    {
+      "chatBlock": {
+        "auto-scroll": "yes",
+        "flow": "vertical",
+        "id": "custom_chat_text_block",
+        "overflow-y": "auto",
+        "size": "pw, fh",
+        "style": "overflow-y:auto;"
+      }
+    },
+    {
+      "tdiv": {
+        "Button_text": {
+          "enable": "no",
+          "id": "btn_send",
+          "noMargin": "yes",
+          "on_click": "onChatSend",
+          "pos": "0.5*@scrn_tgt/100.0, 50%ph-50%h",
+          "position": "relative",
+          "showConsoleImage": "no",
+          "text": "#chat/send"
+        },
+        "EditBox": {
+          "_customRoomId": "",
+          "enable": "no",
+          "font": "@fontSmall",
+          "id": "menuchat_input",
+          "max-len": "250",
+          "on_activate": "onChatEntered",
+          "on_cancel_edit": "onChatCancel",
+          "selected": "yes",
+          "text": "",
+          "width": "fw"
+        },
+        "id": "chat_input_place",
+        "pos": "0, 0.5*@scrn_tgt/100.0",
+        "position": "relative",
+        "size": "pw, @buttonHeight"
+      }
+    },
+    {
+      "dummy": {
+        "accessKey": "Alt Up",
+        "behaviour": "accesskey",
+        "id": "btn_prevMsg",
+        "on_click": "onPrevMsg"
+      }
+    },
+    {
+      "dummy": {
+        "accessKey": "Alt Down",
+        "behaviour": "accesskey",
+        "id": "btn_nextMsg",
+        "on_click": "onNextMsg"
+      }
+    }
+  ]
+}

@@ -1,0 +1,3071 @@
+{
+  "airfields": [],
+  "areas": [],
+  "bin_dump_file": "",
+  "dialogs": [],
+  "effects": [],
+  "imports": [],
+  "mission_objectives": {
+    "isCategory": true,
+    "is_enabled": true
+  },
+  "mission_settings": {
+    "mission": {
+      "environment": "Day",
+      "level": "levels/air_israel.bin",
+      "type": "domination",
+      "weather": "hazy"
+    },
+    "player": {
+      "army": 1
+    },
+    "player_teamB": {
+      "army": 2
+    }
+  },
+  "objLayers": [
+    {
+      "layer": {
+        "enabled": true
+      }
+    },
+    {
+      "layer": {
+        "enabled": true
+      }
+    },
+    {
+      "layer": {
+        "enabled": true
+      }
+    },
+    {
+      "layer": {
+        "enabled": true
+      }
+    },
+    {
+      "layer": {
+        "enabled": false
+      }
+    }
+  ],
+  "selected_tag": "",
+  "triggers": {
+    "isCategory": true,
+    "is_enabled": true,
+    "mu_init": {
+      "actions": {
+        "triggerEnable": [
+          {
+            "target": "mu_t1_create_names"
+          },
+          {
+            "target": "mu_t2_create_names"
+          }
+        ]
+      },
+      "comments": "",
+      "conditions": [],
+      "else_actions": [],
+      "events": {
+        "initMission": []
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "mu_t1_acars_spawn_01": {
+      "actions": {
+        "comment": {
+          "value": ""
+        },
+        "triggerEnable": {
+          "target": "mu_t1_trucks_spawn_01"
+        },
+        "unitRespawn": {
+          "delay": 0.0,
+          "formation": {
+            "formation_div": 3,
+            "formation_noise": [0.3,0.4],
+            "formation_step": [6.0,6.0],
+            "formation_type": "rows"
+          },
+          "object": "@mu_t1_acar_01_name",
+          "offset": [0.0,0.0,0.0],
+          "resetFormation": true,
+          "shouldKeepFormation": true,
+          "target": "@mu_t1_acar_spawn_01_name"
+        },
+        "unitSetRoute": {
+          "object": "@mu_t1_acar_01_name",
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "route": "@mu_t1_road_01_name",
+          "teleportToStart": false
+        }
+      },
+      "comments": "",
+      "conditions": [
+        {
+          "objectExists": {
+            "target": "@mu_t1_acar_01_name",
+            "type": "unit"
+          }
+        },
+        {
+          "objectExists": {
+            "target": "@mu_t1_acar_spawn_01_name",
+            "type": "area"
+          }
+        }
+      ],
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "mu_t1_acars_spawn_02": {
+      "actions": {
+        "comment": {
+          "value": ""
+        },
+        "triggerEnable": {
+          "target": "mu_t1_trucks_spawn_02"
+        },
+        "unitRespawn": {
+          "delay": 0.0,
+          "formation": {
+            "formation_div": 3,
+            "formation_noise": [0.3,0.4],
+            "formation_step": [6.0,6.0],
+            "formation_type": "rows"
+          },
+          "object": "@mu_t1_acar_02_name",
+          "offset": [0.0,0.0,0.0],
+          "resetFormation": true,
+          "shouldKeepFormation": true,
+          "target": "@mu_t1_acar_spawn_02_name"
+        },
+        "unitSetRoute": {
+          "object": "@mu_t1_acar_02_name",
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "route": "@mu_t1_road_02_name",
+          "teleportToStart": false
+        }
+      },
+      "comments": "",
+      "conditions": [
+        {
+          "objectExists": {
+            "target": "@mu_t1_acar_02_name",
+            "type": "unit"
+          }
+        },
+        {
+          "objectExists": {
+            "target": "@mu_t1_acar_spawn_02_name",
+            "type": "area"
+          }
+        }
+      ],
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "mu_t1_acars_spawn_03": {
+      "actions": {
+        "comment": {
+          "value": ""
+        },
+        "triggerEnable": {
+          "target": "mu_t1_trucks_spawn_03"
+        },
+        "unitRespawn": {
+          "delay": 0.0,
+          "formation": {
+            "formation_div": 3,
+            "formation_noise": [0.3,0.4],
+            "formation_step": [6.0,6.0],
+            "formation_type": "rows"
+          },
+          "object": "@mu_t1_acar_03_name",
+          "offset": [0.0,0.0,0.0],
+          "resetFormation": true,
+          "shouldKeepFormation": true,
+          "target": "@mu_t1_acar_spawn_03_name"
+        },
+        "unitSetRoute": {
+          "object": "@mu_t1_acar_03_name",
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "route": "@mu_t1_road_03_name",
+          "teleportToStart": false
+        }
+      },
+      "comments": "",
+      "conditions": [
+        {
+          "objectExists": {
+            "target": "@mu_t1_acar_03_name",
+            "type": "unit"
+          }
+        },
+        {
+          "objectExists": {
+            "target": "@mu_t1_acar_spawn_03_name",
+            "type": "area"
+          }
+        }
+      ],
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "mu_t1_acars_spawn_04": {
+      "actions": {
+        "comment": {
+          "value": ""
+        },
+        "triggerEnable": {
+          "target": "mu_t1_trucks_spawn_04"
+        },
+        "unitRespawn": {
+          "delay": 0.0,
+          "formation": {
+            "formation_div": 3,
+            "formation_noise": [0.3,0.4],
+            "formation_step": [6.0,6.0],
+            "formation_type": "rows"
+          },
+          "object": "@mu_t1_acar_04_name",
+          "offset": [0.0,0.0,0.0],
+          "resetFormation": true,
+          "shouldKeepFormation": true,
+          "target": "@mu_t1_acar_spawn_04_name"
+        },
+        "unitSetRoute": {
+          "object": "@mu_t1_acar_04_name",
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "route": "@mu_t1_road_04_name",
+          "teleportToStart": false
+        }
+      },
+      "comments": "",
+      "conditions": [
+        {
+          "objectExists": {
+            "target": "@mu_t1_acar_04_name",
+            "type": "unit"
+          }
+        },
+        {
+          "objectExists": {
+            "target": "@mu_t1_acar_spawn_04_name",
+            "type": "area"
+          }
+        }
+      ],
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "mu_t1_acars_spawn_05": {
+      "actions": {
+        "comment": {
+          "value": ""
+        },
+        "triggerEnable": {
+          "target": "mu_t1_trucks_spawn_05"
+        },
+        "unitRespawn": {
+          "delay": 0.0,
+          "formation": {
+            "formation_div": 3,
+            "formation_noise": [0.3,0.4],
+            "formation_step": [6.0,6.0],
+            "formation_type": "rows"
+          },
+          "object": "@mu_t1_acar_05_name",
+          "offset": [0.0,0.0,0.0],
+          "resetFormation": true,
+          "shouldKeepFormation": true,
+          "target": "@mu_t1_acar_spawn_05_name"
+        },
+        "unitSetRoute": {
+          "object": "@mu_t1_acar_05_name",
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "route": "@mu_t1_road_05_name",
+          "teleportToStart": false
+        }
+      },
+      "comments": "",
+      "conditions": [
+        {
+          "objectExists": {
+            "target": "@mu_t1_acar_05_name",
+            "type": "unit"
+          }
+        },
+        {
+          "objectExists": {
+            "target": "@mu_t1_acar_spawn_05_name",
+            "type": "area"
+          }
+        }
+      ],
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "mu_t1_create_names": {
+      "actions": [
+        {
+          "comment": {
+            "value": "road_01 name"
+          }
+        },
+        {
+          "comment": {
+            "value": "road_02 name"
+          }
+        },
+        {
+          "comment": {
+            "value": "road_03 name"
+          }
+        },
+        {
+          "comment": {
+            "value": "road_04 name"
+          }
+        },
+        {
+          "comment": {
+            "value": "road_05 name"
+          }
+        },
+        {
+          "comment": {
+            "value": "tank_01 spawn name"
+          }
+        },
+        {
+          "comment": {
+            "value": "acar_01 spawn name"
+          }
+        },
+        {
+          "comment": {
+            "value": "truck_01 spawn name"
+          }
+        },
+        {
+          "comment": {
+            "value": "tank_02 spawn name"
+          }
+        },
+        {
+          "comment": {
+            "value": "acar_02 spawn name"
+          }
+        },
+        {
+          "comment": {
+            "value": "truck_02 spawn name"
+          }
+        },
+        {
+          "comment": {
+            "value": "tank_03 spawn name"
+          }
+        },
+        {
+          "comment": {
+            "value": "acar_03 spawn name"
+          }
+        },
+        {
+          "comment": {
+            "value": "truck_03 spawn name"
+          }
+        },
+        {
+          "comment": {
+            "value": "tank_04 spawn name"
+          }
+        },
+        {
+          "comment": {
+            "value": "acar_04 spawn name"
+          }
+        },
+        {
+          "comment": {
+            "value": "truck_04 spawn name"
+          }
+        },
+        {
+          "comment": {
+            "value": "tank_05 spawn name"
+          }
+        },
+        {
+          "comment": {
+            "value": "acar_05 spawn name"
+          }
+        },
+        {
+          "comment": {
+            "value": "truck_05 spawn name"
+          }
+        },
+        {
+          "comment": {
+            "value": "tank_01 name"
+          }
+        },
+        {
+          "comment": {
+            "value": "acar_01 name"
+          }
+        },
+        {
+          "comment": {
+            "value": "truck_01 name"
+          }
+        },
+        {
+          "comment": {
+            "value": "tank_02 name"
+          }
+        },
+        {
+          "comment": {
+            "value": "acar_02 name"
+          }
+        },
+        {
+          "comment": {
+            "value": "truck_02 name"
+          }
+        },
+        {
+          "comment": {
+            "value": "tank_03 name"
+          }
+        },
+        {
+          "comment": {
+            "value": "acar_03 name"
+          }
+        },
+        {
+          "comment": {
+            "value": "truck_03 name"
+          }
+        },
+        {
+          "comment": {
+            "value": "tank_04 name"
+          }
+        },
+        {
+          "comment": {
+            "value": "acar_04 name"
+          }
+        },
+        {
+          "comment": {
+            "value": "truck_04 name"
+          }
+        },
+        {
+          "comment": {
+            "value": "tank_05 name"
+          }
+        },
+        {
+          "comment": {
+            "value": "acar_05 name"
+          }
+        },
+        {
+          "comment": {
+            "value": "truck_05 name"
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "varSetString": {
+            "value": "t1_road_",
+            "var": "mu_t1_road_01_name"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "t1_road_",
+            "var": "mu_t1_road_02_name"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "t1_road_",
+            "var": "mu_t1_road_03_name"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "t1_road_",
+            "var": "mu_t1_road_04_name"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "t1_road_",
+            "var": "mu_t1_road_05_name"
+          }
+        },
+        {
+          "varSetString": {
+            "input_var": "mu_t1_road_01_name",
+            "value": "",
+            "var": "mu_t1_tank_spawn_01_name"
+          }
+        },
+        {
+          "varSetString": {
+            "input_var": "mu_t1_road_01_name",
+            "value": "",
+            "var": "mu_t1_acar_spawn_01_name"
+          }
+        },
+        {
+          "varSetString": {
+            "input_var": "mu_t1_road_01_name",
+            "value": "",
+            "var": "mu_t1_truck_spawn_01_name"
+          }
+        },
+        {
+          "varSetString": {
+            "input_var": "mu_t1_road_02_name",
+            "value": "",
+            "var": "mu_t1_tank_spawn_02_name"
+          }
+        },
+        {
+          "varSetString": {
+            "input_var": "mu_t1_road_02_name",
+            "value": "",
+            "var": "mu_t1_acar_spawn_02_name"
+          }
+        },
+        {
+          "varSetString": {
+            "input_var": "mu_t1_road_02_name",
+            "value": "",
+            "var": "mu_t1_truck_spawn_02_name"
+          }
+        },
+        {
+          "varSetString": {
+            "input_var": "mu_t1_road_03_name",
+            "value": "",
+            "var": "mu_t1_tank_spawn_03_name"
+          }
+        },
+        {
+          "varSetString": {
+            "input_var": "mu_t1_road_03_name",
+            "value": "",
+            "var": "mu_t1_acar_spawn_03_name"
+          }
+        },
+        {
+          "varSetString": {
+            "input_var": "mu_t1_road_03_name",
+            "value": "",
+            "var": "mu_t1_truck_spawn_03_name"
+          }
+        },
+        {
+          "varSetString": {
+            "input_var": "mu_t1_road_04_name",
+            "value": "",
+            "var": "mu_t1_tank_spawn_04_name"
+          }
+        },
+        {
+          "varSetString": {
+            "input_var": "mu_t1_road_04_name",
+            "value": "",
+            "var": "mu_t1_acar_spawn_04_name"
+          }
+        },
+        {
+          "varSetString": {
+            "input_var": "mu_t1_road_04_name",
+            "value": "",
+            "var": "mu_t1_truck_spawn_04_name"
+          }
+        },
+        {
+          "varSetString": {
+            "input_var": "mu_t1_road_05_name",
+            "value": "",
+            "var": "mu_t1_tank_spawn_05_name"
+          }
+        },
+        {
+          "varSetString": {
+            "input_var": "mu_t1_road_05_name",
+            "value": "",
+            "var": "mu_t1_acar_spawn_05_name"
+          }
+        },
+        {
+          "varSetString": {
+            "input_var": "mu_t1_road_05_name",
+            "value": "",
+            "var": "mu_t1_truck_spawn_05_name"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "t1_tank_01",
+            "var": "mu_t1_tank_01_name"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "t1_acar_01",
+            "var": "mu_t1_acar_01_name"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "t1_truck_01",
+            "var": "mu_t1_truck_01_name"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "t1_tank_02",
+            "var": "mu_t1_tank_02_name"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "t1_acar_02",
+            "var": "mu_t1_acar_02_name"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "t1_truck_02",
+            "var": "mu_t1_truck_02_name"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "t1_tank_03",
+            "var": "mu_t1_tank_03_name"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "t1_acar_03",
+            "var": "mu_t1_acar_03_name"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "t1_truck_03",
+            "var": "mu_t1_truck_03_name"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "t1_tank_04",
+            "var": "mu_t1_tank_04_name"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "t1_acar_04",
+            "var": "mu_t1_acar_04_name"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "t1_truck_04",
+            "var": "mu_t1_truck_04_name"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "t1_tank_05",
+            "var": "mu_t1_tank_05_name"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "t1_acar_05",
+            "var": "mu_t1_acar_05_name"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "t1_truck_05",
+            "var": "mu_t1_truck_05_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 0,
+            "value": "@mu_name_suffix",
+            "var": "mu_t1_road_01_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 0,
+            "value": "01",
+            "var": "mu_t1_road_01_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 0,
+            "value": "@mu_name_suffix",
+            "var": "mu_t1_road_02_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 0,
+            "value": "02",
+            "var": "mu_t1_road_02_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 0,
+            "value": "@mu_name_suffix",
+            "var": "mu_t1_road_03_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 0,
+            "value": "03",
+            "var": "mu_t1_road_03_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 0,
+            "value": "@mu_name_suffix",
+            "var": "mu_t1_road_04_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 0,
+            "value": "04",
+            "var": "mu_t1_road_04_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 0,
+            "value": "@mu_name_suffix",
+            "var": "mu_t1_road_05_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 0,
+            "value": "05",
+            "var": "mu_t1_road_05_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 0,
+            "value": "_spawn_tank",
+            "var": "mu_t1_tank_spawn_01_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 0,
+            "value": "_spawn_acar",
+            "var": "mu_t1_acar_spawn_01_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 0,
+            "value": "_spawn_truck",
+            "var": "mu_t1_truck_spawn_01_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 0,
+            "value": "_spawn_tank",
+            "var": "mu_t1_tank_spawn_02_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 0,
+            "value": "_spawn_acar",
+            "var": "mu_t1_acar_spawn_02_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 0,
+            "value": "_spawn_truck",
+            "var": "mu_t1_truck_spawn_02_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 0,
+            "value": "_spawn_tank",
+            "var": "mu_t1_tank_spawn_03_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 0,
+            "value": "_spawn_acar",
+            "var": "mu_t1_acar_spawn_03_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 0,
+            "value": "_spawn_truck",
+            "var": "mu_t1_truck_spawn_03_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 0,
+            "value": "_spawn_tank",
+            "var": "mu_t1_tank_spawn_04_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 0,
+            "value": "_spawn_acar",
+            "var": "mu_t1_acar_spawn_04_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 0,
+            "value": "_spawn_truck",
+            "var": "mu_t1_truck_spawn_04_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 0,
+            "value": "_spawn_tank",
+            "var": "mu_t1_tank_spawn_05_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 0,
+            "value": "_spawn_acar",
+            "var": "mu_t1_acar_spawn_05_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 0,
+            "value": "_spawn_truck",
+            "var": "mu_t1_truck_spawn_05_name"
+          }
+        },
+        {
+          "triggerEnable": [
+            {
+              "target": "mu_t1_tanks_spawn_01"
+            },
+            {
+              "target": "mu_t1_tanks_spawn_02"
+            },
+            {
+              "target": "mu_t1_tanks_spawn_03"
+            },
+            {
+              "target": "mu_t1_tanks_spawn_04"
+            },
+            {
+              "target": "mu_t1_tanks_spawn_05"
+            }
+          ]
+        }
+      ],
+      "comments": "",
+      "conditions": [],
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "mu_t1_tanks_spawn_01": {
+      "actions": {
+        "comment": {
+          "value": ""
+        },
+        "triggerEnable": {
+          "target": "mu_t1_acars_spawn_01"
+        },
+        "unitRespawn": {
+          "delay": 0.0,
+          "formation": {
+            "formation_div": 3,
+            "formation_noise": [0.3,0.4],
+            "formation_step": [6.0,6.0],
+            "formation_type": "rows"
+          },
+          "object": "@mu_t1_tank_01_name",
+          "offset": [0.0,0.0,0.0],
+          "resetFormation": true,
+          "shouldKeepFormation": true,
+          "target": "@mu_t1_tank_spawn_01_name"
+        },
+        "unitSetRoute": {
+          "object": "@mu_t1_tank_01_name",
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "route": "@mu_t1_road_01_name",
+          "teleportToStart": false
+        }
+      },
+      "comments": "",
+      "conditions": [
+        {
+          "objectExists": {
+            "target": "@mu_t1_tank_01_name",
+            "type": "unit"
+          }
+        },
+        {
+          "objectExists": {
+            "target": "@mu_t1_tank_spawn_01_name",
+            "type": "area"
+          }
+        }
+      ],
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "mu_t1_tanks_spawn_02": {
+      "actions": {
+        "comment": {
+          "value": ""
+        },
+        "triggerEnable": {
+          "target": "mu_t1_acars_spawn_02"
+        },
+        "unitRespawn": {
+          "delay": 0.0,
+          "formation": {
+            "formation_div": 3,
+            "formation_noise": [0.3,0.4],
+            "formation_step": [6.0,6.0],
+            "formation_type": "rows"
+          },
+          "object": "@mu_t1_tank_02_name",
+          "offset": [0.0,0.0,0.0],
+          "resetFormation": true,
+          "shouldKeepFormation": true,
+          "target": "@mu_t1_tank_spawn_02_name"
+        },
+        "unitSetRoute": {
+          "object": "@mu_t1_tank_02_name",
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "route": "@mu_t1_road_02_name",
+          "teleportToStart": false
+        }
+      },
+      "comments": "",
+      "conditions": [
+        {
+          "objectExists": {
+            "target": "@mu_t1_tank_02_name",
+            "type": "unit"
+          }
+        },
+        {
+          "objectExists": {
+            "target": "@mu_t1_tank_spawn_02_name",
+            "type": "area"
+          }
+        }
+      ],
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "mu_t1_tanks_spawn_03": {
+      "actions": {
+        "comment": {
+          "value": ""
+        },
+        "triggerEnable": {
+          "target": "mu_t1_acars_spawn_03"
+        },
+        "unitRespawn": {
+          "delay": 0.0,
+          "formation": {
+            "formation_div": 3,
+            "formation_noise": [0.3,0.4],
+            "formation_step": [6.0,6.0],
+            "formation_type": "rows"
+          },
+          "object": "@mu_t1_tank_03_name",
+          "offset": [0.0,0.0,0.0],
+          "resetFormation": true,
+          "shouldKeepFormation": true,
+          "target": "@mu_t1_tank_spawn_03_name"
+        },
+        "unitSetRoute": {
+          "object": "@mu_t1_tank_03_name",
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "route": "@mu_t1_road_03_name",
+          "teleportToStart": false
+        }
+      },
+      "comments": "",
+      "conditions": [
+        {
+          "objectExists": {
+            "target": "@mu_t1_tank_03_name",
+            "type": "unit"
+          }
+        },
+        {
+          "objectExists": {
+            "target": "@mu_t1_tank_spawn_03_name",
+            "type": "area"
+          }
+        }
+      ],
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "mu_t1_tanks_spawn_04": {
+      "actions": {
+        "comment": {
+          "value": ""
+        },
+        "triggerEnable": {
+          "target": "mu_t1_acars_spawn_04"
+        },
+        "unitRespawn": {
+          "delay": 0.0,
+          "formation": {
+            "formation_div": 3,
+            "formation_noise": [0.3,0.4],
+            "formation_step": [6.0,6.0],
+            "formation_type": "rows"
+          },
+          "object": "@mu_t1_tank_04_name",
+          "offset": [0.0,0.0,0.0],
+          "resetFormation": true,
+          "shouldKeepFormation": true,
+          "target": "@mu_t1_tank_spawn_04_name"
+        },
+        "unitSetRoute": {
+          "object": "@mu_t1_tank_04_name",
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "route": "@mu_t1_road_04_name",
+          "teleportToStart": false
+        }
+      },
+      "comments": "",
+      "conditions": [
+        {
+          "objectExists": {
+            "target": "@mu_t1_tank_04_name",
+            "type": "unit"
+          }
+        },
+        {
+          "objectExists": {
+            "target": "@mu_t1_tank_spawn_04_name",
+            "type": "area"
+          }
+        }
+      ],
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "mu_t1_tanks_spawn_05": {
+      "actions": {
+        "comment": {
+          "value": ""
+        },
+        "triggerEnable": {
+          "target": "mu_t1_acars_spawn_05"
+        },
+        "unitRespawn": {
+          "delay": 0.0,
+          "formation": {
+            "formation_div": 3,
+            "formation_noise": [0.3,0.4],
+            "formation_step": [6.0,6.0],
+            "formation_type": "rows"
+          },
+          "object": "@mu_t1_tank_05_name",
+          "offset": [0.0,0.0,0.0],
+          "resetFormation": true,
+          "shouldKeepFormation": true,
+          "target": "@mu_t1_tank_spawn_05_name"
+        },
+        "unitSetRoute": {
+          "object": "@mu_t1_tank_05_name",
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "route": "@mu_t1_road_05_name",
+          "teleportToStart": false
+        }
+      },
+      "comments": "",
+      "conditions": [
+        {
+          "objectExists": {
+            "target": "@mu_t1_tank_05_name",
+            "type": "unit"
+          }
+        },
+        {
+          "objectExists": {
+            "target": "@mu_t1_tank_spawn_05_name",
+            "type": "area"
+          }
+        }
+      ],
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "mu_t1_trucks_spawn_01": {
+      "actions": {
+        "unitRespawn": {
+          "delay": 0.0,
+          "formation": {
+            "formation_div": 4,
+            "formation_noise": [0.3,0.4],
+            "formation_step": [6.0,6.0],
+            "formation_type": "rows"
+          },
+          "object": "@mu_t1_truck_01_name",
+          "offset": [0.0,0.0,0.0],
+          "resetFormation": true,
+          "shouldKeepFormation": true,
+          "target": "@mu_t1_truck_spawn_01_name"
+        },
+        "unitSetRoute": {
+          "object": "@mu_t1_truck_01_name",
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "route": "@mu_t1_road_01_name",
+          "teleportToStart": false
+        }
+      },
+      "comments": "",
+      "conditions": [
+        {
+          "objectExists": {
+            "target": "@mu_t1_truck_01_name",
+            "type": "unit"
+          }
+        },
+        {
+          "objectExists": {
+            "target": "@mu_t1_truck_spawn_01_name",
+            "type": "area"
+          }
+        }
+      ],
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "mu_t1_trucks_spawn_02": {
+      "actions": {
+        "unitRespawn": {
+          "delay": 0.0,
+          "formation": {
+            "formation_div": 4,
+            "formation_noise": [0.3,0.4],
+            "formation_step": [6.0,6.0],
+            "formation_type": "rows"
+          },
+          "object": "@mu_t1_truck_02_name",
+          "offset": [0.0,0.0,0.0],
+          "resetFormation": true,
+          "shouldKeepFormation": true,
+          "target": "@mu_t1_truck_spawn_02_name"
+        },
+        "unitSetRoute": {
+          "object": "@mu_t1_truck_02_name",
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "route": "@mu_t1_road_02_name",
+          "teleportToStart": false
+        }
+      },
+      "comments": "",
+      "conditions": [
+        {
+          "objectExists": {
+            "target": "@mu_t1_truck_02_name",
+            "type": "unit"
+          }
+        },
+        {
+          "objectExists": {
+            "target": "@mu_t1_truck_spawn_02_name",
+            "type": "area"
+          }
+        }
+      ],
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "mu_t1_trucks_spawn_03": {
+      "actions": {
+        "unitRespawn": {
+          "delay": 0.0,
+          "formation": {
+            "formation_div": 4,
+            "formation_noise": [0.3,0.4],
+            "formation_step": [6.0,6.0],
+            "formation_type": "rows"
+          },
+          "object": "@mu_t1_truck_03_name",
+          "offset": [0.0,0.0,0.0],
+          "resetFormation": true,
+          "shouldKeepFormation": true,
+          "target": "@mu_t1_truck_spawn_03_name"
+        },
+        "unitSetRoute": {
+          "object": "@mu_t1_truck_03_name",
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "route": "@mu_t1_road_03_name",
+          "teleportToStart": false
+        }
+      },
+      "comments": "",
+      "conditions": [
+        {
+          "objectExists": {
+            "target": "@mu_t1_truck_03_name",
+            "type": "unit"
+          }
+        },
+        {
+          "objectExists": {
+            "target": "@mu_t1_truck_spawn_03_name",
+            "type": "area"
+          }
+        }
+      ],
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "mu_t1_trucks_spawn_04": {
+      "actions": {
+        "unitRespawn": {
+          "delay": 0.0,
+          "formation": {
+            "formation_div": 4,
+            "formation_noise": [0.3,0.4],
+            "formation_step": [6.0,6.0],
+            "formation_type": "rows"
+          },
+          "object": "@mu_t1_truck_04_name",
+          "offset": [0.0,0.0,0.0],
+          "resetFormation": true,
+          "shouldKeepFormation": true,
+          "target": "@mu_t1_truck_spawn_04_name"
+        },
+        "unitSetRoute": {
+          "object": "@mu_t1_truck_04_name",
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "route": "@mu_t1_road_04_name",
+          "teleportToStart": false
+        }
+      },
+      "comments": "",
+      "conditions": [
+        {
+          "objectExists": {
+            "target": "@mu_t1_truck_04_name",
+            "type": "unit"
+          }
+        },
+        {
+          "objectExists": {
+            "target": "@mu_t1_truck_spawn_04_name",
+            "type": "area"
+          }
+        }
+      ],
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "mu_t1_trucks_spawn_05": {
+      "actions": {
+        "unitRespawn": {
+          "delay": 0.0,
+          "formation": {
+            "formation_div": 4,
+            "formation_noise": [0.3,0.4],
+            "formation_step": [6.0,6.0],
+            "formation_type": "rows"
+          },
+          "object": "@mu_t1_truck_05_name",
+          "offset": [0.0,0.0,0.0],
+          "resetFormation": true,
+          "shouldKeepFormation": true,
+          "target": "@mu_t1_truck_spawn_05_name"
+        },
+        "unitSetRoute": {
+          "object": "@mu_t1_truck_05_name",
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "route": "@mu_t1_road_05_name",
+          "teleportToStart": false
+        }
+      },
+      "comments": "",
+      "conditions": [
+        {
+          "objectExists": {
+            "target": "@mu_t1_truck_05_name",
+            "type": "unit"
+          }
+        },
+        {
+          "objectExists": {
+            "target": "@mu_t1_truck_spawn_05_name",
+            "type": "area"
+          }
+        }
+      ],
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "mu_t2_acars_spawn_01": {
+      "actions": {
+        "comment": {
+          "value": ""
+        },
+        "triggerEnable": {
+          "target": "mu_t2_trucks_spawn_01"
+        },
+        "unitRespawn": {
+          "delay": 0.0,
+          "formation": {
+            "formation_div": 3,
+            "formation_noise": [0.3,0.4],
+            "formation_step": [6.0,6.0],
+            "formation_type": "rows"
+          },
+          "object": "@mu_t2_acar_01_name",
+          "offset": [0.0,0.0,0.0],
+          "resetFormation": true,
+          "shouldKeepFormation": true,
+          "target": "@mu_t2_acar_spawn_01_name"
+        },
+        "unitSetRoute": {
+          "object": "@mu_t2_acar_01_name",
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "route": "@mu_t2_road_01_name",
+          "teleportToStart": false
+        }
+      },
+      "comments": "",
+      "conditions": [
+        {
+          "objectExists": {
+            "target": "@mu_t2_acar_01_name",
+            "type": "unit"
+          }
+        },
+        {
+          "objectExists": {
+            "target": "@mu_t2_acar_spawn_01_name",
+            "type": "area"
+          }
+        }
+      ],
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "mu_t2_acars_spawn_02": {
+      "actions": {
+        "comment": {
+          "value": ""
+        },
+        "triggerEnable": {
+          "target": "mu_t2_trucks_spawn_02"
+        },
+        "unitRespawn": {
+          "delay": 0.0,
+          "formation": {
+            "formation_div": 3,
+            "formation_noise": [0.3,0.4],
+            "formation_step": [6.0,6.0],
+            "formation_type": "rows"
+          },
+          "object": "@mu_t2_acar_02_name",
+          "offset": [0.0,0.0,0.0],
+          "resetFormation": true,
+          "shouldKeepFormation": true,
+          "target": "@mu_t2_acar_spawn_02_name"
+        },
+        "unitSetRoute": {
+          "object": "@mu_t2_acar_02_name",
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "route": "@mu_t2_road_02_name",
+          "teleportToStart": false
+        }
+      },
+      "comments": "",
+      "conditions": [
+        {
+          "objectExists": {
+            "target": "@mu_t2_acar_02_name",
+            "type": "unit"
+          }
+        },
+        {
+          "objectExists": {
+            "target": "@mu_t2_acar_spawn_02_name",
+            "type": "area"
+          }
+        }
+      ],
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "mu_t2_acars_spawn_03": {
+      "actions": {
+        "comment": {
+          "value": ""
+        },
+        "triggerEnable": {
+          "target": "mu_t2_trucks_spawn_03"
+        },
+        "unitRespawn": {
+          "delay": 0.0,
+          "formation": {
+            "formation_div": 3,
+            "formation_noise": [0.3,0.4],
+            "formation_step": [6.0,6.0],
+            "formation_type": "rows"
+          },
+          "object": "@mu_t2_acar_03_name",
+          "offset": [0.0,0.0,0.0],
+          "resetFormation": true,
+          "shouldKeepFormation": true,
+          "target": "@mu_t2_acar_spawn_03_name"
+        },
+        "unitSetRoute": {
+          "object": "@mu_t2_acar_03_name",
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "route": "@mu_t2_road_03_name",
+          "teleportToStart": false
+        }
+      },
+      "comments": "",
+      "conditions": [
+        {
+          "objectExists": {
+            "target": "@mu_t2_acar_03_name",
+            "type": "unit"
+          }
+        },
+        {
+          "objectExists": {
+            "target": "@mu_t2_acar_spawn_03_name",
+            "type": "area"
+          }
+        }
+      ],
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "mu_t2_acars_spawn_04": {
+      "actions": {
+        "comment": {
+          "value": ""
+        },
+        "triggerEnable": {
+          "target": "mu_t2_trucks_spawn_04"
+        },
+        "unitRespawn": {
+          "delay": 0.0,
+          "formation": {
+            "formation_div": 3,
+            "formation_noise": [0.3,0.4],
+            "formation_step": [6.0,6.0],
+            "formation_type": "rows"
+          },
+          "object": "@mu_t2_acar_04_name",
+          "offset": [0.0,0.0,0.0],
+          "resetFormation": true,
+          "shouldKeepFormation": true,
+          "target": "@mu_t2_acar_spawn_04_name"
+        },
+        "unitSetRoute": {
+          "object": "@mu_t2_acar_04_name",
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "route": "@mu_t2_road_04_name",
+          "teleportToStart": false
+        }
+      },
+      "comments": "",
+      "conditions": [
+        {
+          "objectExists": {
+            "target": "@mu_t2_acar_04_name",
+            "type": "unit"
+          }
+        },
+        {
+          "objectExists": {
+            "target": "@mu_t2_acar_spawn_04_name",
+            "type": "area"
+          }
+        }
+      ],
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "mu_t2_acars_spawn_05": {
+      "actions": {
+        "comment": {
+          "value": ""
+        },
+        "triggerEnable": {
+          "target": "mu_t2_trucks_spawn_05"
+        },
+        "unitRespawn": {
+          "delay": 0.0,
+          "formation": {
+            "formation_div": 3,
+            "formation_noise": [0.3,0.4],
+            "formation_step": [6.0,6.0],
+            "formation_type": "rows"
+          },
+          "object": "@mu_t2_acar_05_name",
+          "offset": [0.0,0.0,0.0],
+          "resetFormation": true,
+          "shouldKeepFormation": true,
+          "target": "@mu_t2_acar_spawn_05_name"
+        },
+        "unitSetRoute": {
+          "object": "@mu_t2_acar_05_name",
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "route": "@mu_t2_road_05_name",
+          "teleportToStart": false
+        }
+      },
+      "comments": "",
+      "conditions": [
+        {
+          "objectExists": {
+            "target": "@mu_t2_acar_05_name",
+            "type": "unit"
+          }
+        },
+        {
+          "objectExists": {
+            "target": "@mu_t2_acar_spawn_05_name",
+            "type": "area"
+          }
+        }
+      ],
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "mu_t2_create_names": {
+      "actions": [
+        {
+          "comment": {
+            "value": "road_01 name"
+          }
+        },
+        {
+          "comment": {
+            "value": "road_02 name"
+          }
+        },
+        {
+          "comment": {
+            "value": "road_03 name"
+          }
+        },
+        {
+          "comment": {
+            "value": "road_04 name"
+          }
+        },
+        {
+          "comment": {
+            "value": "road_05 name"
+          }
+        },
+        {
+          "comment": {
+            "value": "tank_01 spawn name"
+          }
+        },
+        {
+          "comment": {
+            "value": "acar_01 spawn name"
+          }
+        },
+        {
+          "comment": {
+            "value": "truck_01 spawn name"
+          }
+        },
+        {
+          "comment": {
+            "value": "tank_02 spawn name"
+          }
+        },
+        {
+          "comment": {
+            "value": "acar_02 spawn name"
+          }
+        },
+        {
+          "comment": {
+            "value": "truck_02 spawn name"
+          }
+        },
+        {
+          "comment": {
+            "value": "tank_03 spawn name"
+          }
+        },
+        {
+          "comment": {
+            "value": "acar_03 spawn name"
+          }
+        },
+        {
+          "comment": {
+            "value": "truck_03 spawn name"
+          }
+        },
+        {
+          "comment": {
+            "value": "tank_04 spawn name"
+          }
+        },
+        {
+          "comment": {
+            "value": "acar_04 spawn name"
+          }
+        },
+        {
+          "comment": {
+            "value": "truck_04 spawn name"
+          }
+        },
+        {
+          "comment": {
+            "value": "tank_05 spawn name"
+          }
+        },
+        {
+          "comment": {
+            "value": "acar_05 spawn name"
+          }
+        },
+        {
+          "comment": {
+            "value": "truck_05 spawn name"
+          }
+        },
+        {
+          "comment": {
+            "value": "tank_01 name"
+          }
+        },
+        {
+          "comment": {
+            "value": "acar_01 name"
+          }
+        },
+        {
+          "comment": {
+            "value": "truck_01 name"
+          }
+        },
+        {
+          "comment": {
+            "value": "tank_02 name"
+          }
+        },
+        {
+          "comment": {
+            "value": "acar_02 name"
+          }
+        },
+        {
+          "comment": {
+            "value": "truck_02 name"
+          }
+        },
+        {
+          "comment": {
+            "value": "tank_03 name"
+          }
+        },
+        {
+          "comment": {
+            "value": "acar_03 name"
+          }
+        },
+        {
+          "comment": {
+            "value": "truck_03 name"
+          }
+        },
+        {
+          "comment": {
+            "value": "tank_04 name"
+          }
+        },
+        {
+          "comment": {
+            "value": "acar_04 name"
+          }
+        },
+        {
+          "comment": {
+            "value": "truck_04 name"
+          }
+        },
+        {
+          "comment": {
+            "value": "tank_05 name"
+          }
+        },
+        {
+          "comment": {
+            "value": "acar_05 name"
+          }
+        },
+        {
+          "comment": {
+            "value": "truck_05 name"
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "varSetString": {
+            "value": "t2_road_",
+            "var": "mu_t2_road_01_name"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "t2_road_",
+            "var": "mu_t2_road_02_name"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "t2_road_",
+            "var": "mu_t2_road_03_name"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "t2_road_",
+            "var": "mu_t2_road_04_name"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "t2_road_",
+            "var": "mu_t2_road_05_name"
+          }
+        },
+        {
+          "varSetString": {
+            "input_var": "mu_t2_road_01_name",
+            "value": "",
+            "var": "mu_t2_tank_spawn_01_name"
+          }
+        },
+        {
+          "varSetString": {
+            "input_var": "mu_t2_road_01_name",
+            "value": "",
+            "var": "mu_t2_acar_spawn_01_name"
+          }
+        },
+        {
+          "varSetString": {
+            "input_var": "mu_t2_road_01_name",
+            "value": "",
+            "var": "mu_t2_truck_spawn_01_name"
+          }
+        },
+        {
+          "varSetString": {
+            "input_var": "mu_t2_road_02_name",
+            "value": "",
+            "var": "mu_t2_tank_spawn_02_name"
+          }
+        },
+        {
+          "varSetString": {
+            "input_var": "mu_t2_road_02_name",
+            "value": "",
+            "var": "mu_t2_acar_spawn_02_name"
+          }
+        },
+        {
+          "varSetString": {
+            "input_var": "mu_t2_road_02_name",
+            "value": "",
+            "var": "mu_t2_truck_spawn_02_name"
+          }
+        },
+        {
+          "varSetString": {
+            "input_var": "mu_t2_road_03_name",
+            "value": "",
+            "var": "mu_t2_tank_spawn_03_name"
+          }
+        },
+        {
+          "varSetString": {
+            "input_var": "mu_t2_road_03_name",
+            "value": "",
+            "var": "mu_t2_acar_spawn_03_name"
+          }
+        },
+        {
+          "varSetString": {
+            "input_var": "mu_t2_road_03_name",
+            "value": "",
+            "var": "mu_t2_truck_spawn_03_name"
+          }
+        },
+        {
+          "varSetString": {
+            "input_var": "mu_t2_road_04_name",
+            "value": "",
+            "var": "mu_t2_tank_spawn_04_name"
+          }
+        },
+        {
+          "varSetString": {
+            "input_var": "mu_t2_road_04_name",
+            "value": "",
+            "var": "mu_t2_acar_spawn_04_name"
+          }
+        },
+        {
+          "varSetString": {
+            "input_var": "mu_t2_road_04_name",
+            "value": "",
+            "var": "mu_t2_truck_spawn_04_name"
+          }
+        },
+        {
+          "varSetString": {
+            "input_var": "mu_t2_road_05_name",
+            "value": "",
+            "var": "mu_t2_tank_spawn_05_name"
+          }
+        },
+        {
+          "varSetString": {
+            "input_var": "mu_t2_road_05_name",
+            "value": "",
+            "var": "mu_t2_acar_spawn_05_name"
+          }
+        },
+        {
+          "varSetString": {
+            "input_var": "mu_t2_road_05_name",
+            "value": "",
+            "var": "mu_t2_truck_spawn_05_name"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "t2_tank_01",
+            "var": "mu_t2_tank_01_name"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "t2_acar_01",
+            "var": "mu_t2_acar_01_name"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "t2_truck_01",
+            "var": "mu_t2_truck_01_name"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "t2_tank_02",
+            "var": "mu_t2_tank_02_name"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "t2_acar_02",
+            "var": "mu_t2_acar_02_name"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "t2_truck_02",
+            "var": "mu_t2_truck_02_name"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "t2_tank_03",
+            "var": "mu_t2_tank_03_name"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "t2_acar_03",
+            "var": "mu_t2_acar_03_name"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "t2_truck_03",
+            "var": "mu_t2_truck_03_name"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "t2_tank_04",
+            "var": "mu_t2_tank_04_name"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "t2_acar_04",
+            "var": "mu_t2_acar_04_name"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "t2_truck_04",
+            "var": "mu_t2_truck_04_name"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "t2_tank_05",
+            "var": "mu_t2_tank_05_name"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "t2_acar_05",
+            "var": "mu_t2_acar_05_name"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "t2_truck_05",
+            "var": "mu_t2_truck_05_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 0,
+            "value": "@mu_name_suffix",
+            "var": "mu_t2_road_01_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 0,
+            "value": "01",
+            "var": "mu_t2_road_01_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 0,
+            "value": "@mu_name_suffix",
+            "var": "mu_t2_road_02_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 0,
+            "value": "02",
+            "var": "mu_t2_road_02_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 0,
+            "value": "@mu_name_suffix",
+            "var": "mu_t2_road_03_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 0,
+            "value": "03",
+            "var": "mu_t2_road_03_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 0,
+            "value": "@mu_name_suffix",
+            "var": "mu_t2_road_04_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 0,
+            "value": "04",
+            "var": "mu_t2_road_04_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 0,
+            "value": "@mu_name_suffix",
+            "var": "mu_t2_road_05_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 0,
+            "value": "05",
+            "var": "mu_t2_road_05_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 0,
+            "value": "_spawn_tank",
+            "var": "mu_t2_tank_spawn_01_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 0,
+            "value": "_spawn_acar",
+            "var": "mu_t2_acar_spawn_01_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 0,
+            "value": "_spawn_truck",
+            "var": "mu_t2_truck_spawn_01_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 0,
+            "value": "_spawn_tank",
+            "var": "mu_t2_tank_spawn_02_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 0,
+            "value": "_spawn_acar",
+            "var": "mu_t2_acar_spawn_02_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 0,
+            "value": "_spawn_truck",
+            "var": "mu_t2_truck_spawn_02_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 0,
+            "value": "_spawn_tank",
+            "var": "mu_t2_tank_spawn_03_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 0,
+            "value": "_spawn_acar",
+            "var": "mu_t2_acar_spawn_03_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 0,
+            "value": "_spawn_truck",
+            "var": "mu_t2_truck_spawn_03_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 0,
+            "value": "_spawn_tank",
+            "var": "mu_t2_tank_spawn_04_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 0,
+            "value": "_spawn_acar",
+            "var": "mu_t2_acar_spawn_04_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 0,
+            "value": "_spawn_truck",
+            "var": "mu_t2_truck_spawn_04_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 0,
+            "value": "_spawn_tank",
+            "var": "mu_t2_tank_spawn_05_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 0,
+            "value": "_spawn_acar",
+            "var": "mu_t2_acar_spawn_05_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 0,
+            "value": "_spawn_truck",
+            "var": "mu_t2_truck_spawn_05_name"
+          }
+        },
+        {
+          "triggerEnable": [
+            {
+              "target": "mu_t2_tanks_spawn_01"
+            },
+            {
+              "target": "mu_t2_tanks_spawn_02"
+            },
+            {
+              "target": "mu_t2_tanks_spawn_03"
+            },
+            {
+              "target": "mu_t2_tanks_spawn_04"
+            },
+            {
+              "target": "mu_t2_tanks_spawn_05"
+            }
+          ]
+        }
+      ],
+      "comments": "",
+      "conditions": [],
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "mu_t2_tanks_spawn_01": {
+      "actions": {
+        "comment": {
+          "value": ""
+        },
+        "triggerEnable": {
+          "target": "mu_t2_acars_spawn_01"
+        },
+        "unitRespawn": {
+          "delay": 0.0,
+          "formation": {
+            "formation_div": 3,
+            "formation_noise": [0.3,0.4],
+            "formation_step": [6.0,6.0],
+            "formation_type": "rows"
+          },
+          "object": "@mu_t2_tank_01_name",
+          "offset": [0.0,0.0,0.0],
+          "resetFormation": true,
+          "shouldKeepFormation": true,
+          "target": "@mu_t2_tank_spawn_01_name"
+        },
+        "unitSetRoute": {
+          "object": "@mu_t2_tank_01_name",
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "route": "@mu_t2_road_01_name",
+          "teleportToStart": false
+        }
+      },
+      "comments": "",
+      "conditions": [
+        {
+          "objectExists": {
+            "target": "@mu_t2_tank_01_name",
+            "type": "unit"
+          }
+        },
+        {
+          "objectExists": {
+            "target": "@mu_t2_tank_spawn_01_name",
+            "type": "area"
+          }
+        }
+      ],
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "mu_t2_tanks_spawn_02": {
+      "actions": {
+        "comment": {
+          "value": ""
+        },
+        "triggerEnable": {
+          "target": "mu_t2_acars_spawn_02"
+        },
+        "unitRespawn": {
+          "delay": 0.0,
+          "formation": {
+            "formation_div": 3,
+            "formation_noise": [0.3,0.4],
+            "formation_step": [6.0,6.0],
+            "formation_type": "rows"
+          },
+          "object": "@mu_t2_tank_02_name",
+          "offset": [0.0,0.0,0.0],
+          "resetFormation": true,
+          "shouldKeepFormation": true,
+          "target": "@mu_t2_tank_spawn_02_name"
+        },
+        "unitSetRoute": {
+          "object": "@mu_t2_tank_02_name",
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "route": "@mu_t2_road_02_name",
+          "teleportToStart": false
+        }
+      },
+      "comments": "",
+      "conditions": [
+        {
+          "objectExists": {
+            "target": "@mu_t2_tank_02_name",
+            "type": "unit"
+          }
+        },
+        {
+          "objectExists": {
+            "target": "@mu_t2_tank_spawn_02_name",
+            "type": "area"
+          }
+        }
+      ],
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "mu_t2_tanks_spawn_03": {
+      "actions": {
+        "comment": {
+          "value": ""
+        },
+        "triggerEnable": {
+          "target": "mu_t2_acars_spawn_03"
+        },
+        "unitRespawn": {
+          "delay": 0.0,
+          "formation": {
+            "formation_div": 3,
+            "formation_noise": [0.3,0.4],
+            "formation_step": [6.0,6.0],
+            "formation_type": "rows"
+          },
+          "object": "@mu_t2_tank_03_name",
+          "offset": [0.0,0.0,0.0],
+          "resetFormation": true,
+          "shouldKeepFormation": true,
+          "target": "@mu_t2_tank_spawn_03_name"
+        },
+        "unitSetRoute": {
+          "object": "@mu_t2_tank_03_name",
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "route": "@mu_t2_road_03_name",
+          "teleportToStart": false
+        }
+      },
+      "comments": "",
+      "conditions": [
+        {
+          "objectExists": {
+            "target": "@mu_t2_tank_03_name",
+            "type": "unit"
+          }
+        },
+        {
+          "objectExists": {
+            "target": "@mu_t2_tank_spawn_03_name",
+            "type": "area"
+          }
+        }
+      ],
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "mu_t2_tanks_spawn_04": {
+      "actions": {
+        "comment": {
+          "value": ""
+        },
+        "triggerEnable": {
+          "target": "mu_t2_acars_spawn_04"
+        },
+        "unitRespawn": {
+          "delay": 0.0,
+          "formation": {
+            "formation_div": 3,
+            "formation_noise": [0.3,0.4],
+            "formation_step": [6.0,6.0],
+            "formation_type": "rows"
+          },
+          "object": "@mu_t2_tank_04_name",
+          "offset": [0.0,0.0,0.0],
+          "resetFormation": true,
+          "shouldKeepFormation": true,
+          "target": "@mu_t2_tank_spawn_04_name"
+        },
+        "unitSetRoute": {
+          "object": "@mu_t2_tank_04_name",
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "route": "@mu_t2_road_04_name",
+          "teleportToStart": false
+        }
+      },
+      "comments": "",
+      "conditions": [
+        {
+          "objectExists": {
+            "target": "@mu_t2_tank_04_name",
+            "type": "unit"
+          }
+        },
+        {
+          "objectExists": {
+            "target": "@mu_t2_tank_spawn_04_name",
+            "type": "area"
+          }
+        }
+      ],
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "mu_t2_tanks_spawn_05": {
+      "actions": {
+        "comment": {
+          "value": ""
+        },
+        "triggerEnable": {
+          "target": "mu_t2_acars_spawn_05"
+        },
+        "unitRespawn": {
+          "delay": 0.0,
+          "formation": {
+            "formation_div": 3,
+            "formation_noise": [0.3,0.4],
+            "formation_step": [6.0,6.0],
+            "formation_type": "rows"
+          },
+          "object": "@mu_t2_tank_05_name",
+          "offset": [0.0,0.0,0.0],
+          "resetFormation": true,
+          "shouldKeepFormation": true,
+          "target": "@mu_t2_tank_spawn_05_name"
+        },
+        "unitSetRoute": {
+          "object": "@mu_t2_tank_05_name",
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "route": "@mu_t2_road_05_name",
+          "teleportToStart": false
+        }
+      },
+      "comments": "",
+      "conditions": [
+        {
+          "objectExists": {
+            "target": "@mu_t2_tank_05_name",
+            "type": "unit"
+          }
+        },
+        {
+          "objectExists": {
+            "target": "@mu_t2_tank_spawn_05_name",
+            "type": "area"
+          }
+        }
+      ],
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "mu_t2_trucks_spawn_01": {
+      "actions": {
+        "unitRespawn": {
+          "delay": 0.0,
+          "formation": {
+            "formation_div": 4,
+            "formation_noise": [0.3,0.4],
+            "formation_step": [6.0,6.0],
+            "formation_type": "rows"
+          },
+          "object": "@mu_t2_truck_01_name",
+          "offset": [0.0,0.0,0.0],
+          "resetFormation": true,
+          "shouldKeepFormation": true,
+          "target": "@mu_t2_truck_spawn_01_name"
+        },
+        "unitSetRoute": {
+          "object": "@mu_t2_truck_01_name",
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "route": "@mu_t2_road_01_name",
+          "teleportToStart": false
+        }
+      },
+      "comments": "",
+      "conditions": [
+        {
+          "objectExists": {
+            "target": "@mu_t2_truck_01_name",
+            "type": "unit"
+          }
+        },
+        {
+          "objectExists": {
+            "target": "@mu_t2_truck_spawn_01_name",
+            "type": "area"
+          }
+        }
+      ],
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "mu_t2_trucks_spawn_02": {
+      "actions": {
+        "unitRespawn": {
+          "delay": 0.0,
+          "formation": {
+            "formation_div": 4,
+            "formation_noise": [0.3,0.4],
+            "formation_step": [6.0,6.0],
+            "formation_type": "rows"
+          },
+          "object": "@mu_t2_truck_02_name",
+          "offset": [0.0,0.0,0.0],
+          "resetFormation": true,
+          "shouldKeepFormation": true,
+          "target": "@mu_t2_truck_spawn_02_name"
+        },
+        "unitSetRoute": {
+          "object": "@mu_t2_truck_02_name",
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "route": "@mu_t2_road_02_name",
+          "teleportToStart": false
+        }
+      },
+      "comments": "",
+      "conditions": [
+        {
+          "objectExists": {
+            "target": "@mu_t2_truck_02_name",
+            "type": "unit"
+          }
+        },
+        {
+          "objectExists": {
+            "target": "@mu_t2_truck_spawn_02_name",
+            "type": "area"
+          }
+        }
+      ],
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "mu_t2_trucks_spawn_03": {
+      "actions": {
+        "unitRespawn": {
+          "delay": 0.0,
+          "formation": {
+            "formation_div": 4,
+            "formation_noise": [0.3,0.4],
+            "formation_step": [6.0,6.0],
+            "formation_type": "rows"
+          },
+          "object": "@mu_t2_truck_03_name",
+          "offset": [0.0,0.0,0.0],
+          "resetFormation": true,
+          "shouldKeepFormation": true,
+          "target": "@mu_t2_truck_spawn_03_name"
+        },
+        "unitSetRoute": {
+          "object": "@mu_t2_truck_03_name",
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "route": "@mu_t2_road_03_name",
+          "teleportToStart": false
+        }
+      },
+      "comments": "",
+      "conditions": [
+        {
+          "objectExists": {
+            "target": "@mu_t2_truck_03_name",
+            "type": "unit"
+          }
+        },
+        {
+          "objectExists": {
+            "target": "@mu_t2_truck_spawn_03_name",
+            "type": "area"
+          }
+        }
+      ],
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "mu_t2_trucks_spawn_04": {
+      "actions": {
+        "unitRespawn": {
+          "delay": 0.0,
+          "formation": {
+            "formation_div": 4,
+            "formation_noise": [0.3,0.4],
+            "formation_step": [6.0,6.0],
+            "formation_type": "rows"
+          },
+          "object": "@mu_t2_truck_04_name",
+          "offset": [0.0,0.0,0.0],
+          "resetFormation": true,
+          "shouldKeepFormation": true,
+          "target": "@mu_t2_truck_spawn_04_name"
+        },
+        "unitSetRoute": {
+          "object": "@mu_t2_truck_04_name",
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "route": "@mu_t2_road_04_name",
+          "teleportToStart": false
+        }
+      },
+      "comments": "",
+      "conditions": [
+        {
+          "objectExists": {
+            "target": "@mu_t2_truck_04_name",
+            "type": "unit"
+          }
+        },
+        {
+          "objectExists": {
+            "target": "@mu_t2_truck_spawn_04_name",
+            "type": "area"
+          }
+        }
+      ],
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "mu_t2_trucks_spawn_05": {
+      "actions": {
+        "unitRespawn": {
+          "delay": 0.0,
+          "formation": {
+            "formation_div": 4,
+            "formation_noise": [0.3,0.4],
+            "formation_step": [6.0,6.0],
+            "formation_type": "rows"
+          },
+          "object": "@mu_t2_truck_05_name",
+          "offset": [0.0,0.0,0.0],
+          "resetFormation": true,
+          "shouldKeepFormation": true,
+          "target": "@mu_t2_truck_spawn_05_name"
+        },
+        "unitSetRoute": {
+          "object": "@mu_t2_truck_05_name",
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "route": "@mu_t2_road_05_name",
+          "teleportToStart": false
+        }
+      },
+      "comments": "",
+      "conditions": [
+        {
+          "objectExists": {
+            "target": "@mu_t2_truck_05_name",
+            "type": "unit"
+          }
+        },
+        {
+          "objectExists": {
+            "target": "@mu_t2_truck_spawn_05_name",
+            "type": "area"
+          }
+        }
+      ],
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    }
+  },
+  "units": [],
+  "variables": {
+    "mu_name_suffix": "",
+    "mu_t1_acar_01_name": "",
+    "mu_t1_acar_02_name": "",
+    "mu_t1_acar_03_name": "",
+    "mu_t1_acar_04_name": "",
+    "mu_t1_acar_05_name": "",
+    "mu_t1_acar_spawn_01_name": "",
+    "mu_t1_acar_spawn_02_name": "",
+    "mu_t1_acar_spawn_03_name": "",
+    "mu_t1_acar_spawn_04_name": "",
+    "mu_t1_acar_spawn_05_name": "",
+    "mu_t1_road_01_name": "",
+    "mu_t1_road_02_name": "",
+    "mu_t1_road_03_name": "",
+    "mu_t1_road_04_name": "",
+    "mu_t1_road_05_name": "",
+    "mu_t1_tank_01_name": "",
+    "mu_t1_tank_02_name": "",
+    "mu_t1_tank_03_name": "",
+    "mu_t1_tank_04_name": "",
+    "mu_t1_tank_05_name": "",
+    "mu_t1_tank_spawn_01_name": "",
+    "mu_t1_tank_spawn_02_name": "",
+    "mu_t1_tank_spawn_03_name": "",
+    "mu_t1_tank_spawn_04_name": "",
+    "mu_t1_tank_spawn_05_name": "",
+    "mu_t1_truck_01_name": "",
+    "mu_t1_truck_02_name": "",
+    "mu_t1_truck_03_name": "",
+    "mu_t1_truck_04_name": "",
+    "mu_t1_truck_05_name": "",
+    "mu_t1_truck_spawn_01_name": "",
+    "mu_t1_truck_spawn_02_name": "",
+    "mu_t1_truck_spawn_03_name": "",
+    "mu_t1_truck_spawn_04_name": "",
+    "mu_t1_truck_spawn_05_name": "",
+    "mu_t2_acar_01_name": "",
+    "mu_t2_acar_02_name": "",
+    "mu_t2_acar_03_name": "",
+    "mu_t2_acar_04_name": "",
+    "mu_t2_acar_05_name": "",
+    "mu_t2_acar_spawn_01_name": "",
+    "mu_t2_acar_spawn_02_name": "",
+    "mu_t2_acar_spawn_03_name": "",
+    "mu_t2_acar_spawn_04_name": "",
+    "mu_t2_acar_spawn_05_name": "",
+    "mu_t2_road_01_name": "",
+    "mu_t2_road_02_name": "",
+    "mu_t2_road_03_name": "",
+    "mu_t2_road_04_name": "",
+    "mu_t2_road_05_name": "",
+    "mu_t2_tank_01_name": "",
+    "mu_t2_tank_02_name": "",
+    "mu_t2_tank_03_name": "",
+    "mu_t2_tank_04_name": "",
+    "mu_t2_tank_05_name": "",
+    "mu_t2_tank_spawn_01_name": "",
+    "mu_t2_tank_spawn_02_name": "",
+    "mu_t2_tank_spawn_03_name": "",
+    "mu_t2_tank_spawn_04_name": "",
+    "mu_t2_tank_spawn_05_name": "",
+    "mu_t2_truck_01_name": "",
+    "mu_t2_truck_02_name": "",
+    "mu_t2_truck_03_name": "",
+    "mu_t2_truck_04_name": "",
+    "mu_t2_truck_05_name": "",
+    "mu_t2_truck_spawn_01_name": "",
+    "mu_t2_truck_spawn_02_name": "",
+    "mu_t2_truck_spawn_03_name": "",
+    "mu_t2_truck_spawn_04_name": "",
+    "mu_t2_truck_spawn_05_name": ""
+  },
+  "wayPoints": []
+}

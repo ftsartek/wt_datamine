@@ -1,0 +1,312 @@
+{
+  "airfields": [],
+  "areas": {
+    "airfield00": {
+      "props": [],
+      "tm": [
+        [155.588,0.0,169.795],
+        [0.0,230.3,0.0],
+        [-169.795,0.0,155.588],
+        [980.001,809.95,-1605.25]
+      ],
+      "type": "Sphere"
+    },
+    "airfield01": {
+      "props": [],
+      "tm": [
+        [155.588,0.0,169.795],
+        [0.0,230.3,0.0],
+        [-169.795,0.0,155.588],
+        [1536.17,809.95,-1030.49]
+      ],
+      "type": "Sphere"
+    },
+    "spawnpoint": {
+      "props": [],
+      "tm": [
+        [51.6827,0.0,56.4017],
+        [0.0,76.5,0.0],
+        [-56.4017,0.0,51.6827],
+        [957.004,809.95,-1620.8]
+      ],
+      "type": "Sphere"
+    }
+  },
+  "bin_dump_file": "",
+  "dialogs": [],
+  "effects": [],
+  "imports": [],
+  "mission_objectives": {
+    "isCategory": true,
+    "is_enabled": true
+  },
+  "mission_settings": {
+    "briefing": {
+      "date_loc": "",
+      "music": "action_01",
+      "objective_loc": "",
+      "part": {
+        "event": "",
+        "minTime": 0,
+        "slide": {
+          "icon": {
+            "icontype": "fighter",
+            "side": "player",
+            "target": "armada_01"
+          },
+          "map": true,
+          "minTime": 4,
+          "picture": ""
+        }
+      },
+      "place_loc": ""
+    },
+    "mission": {
+      "environment": "Day",
+      "level": "levels/stalingrad.bin",
+      "locName": "missions/testFlight",
+      "optionalTakeOff": false,
+      "restoreType": "manual",
+      "type": "testFlight",
+      "weather": "good",
+      "windDirection": [1.0,0.0,0.0]
+    },
+    "player": {
+      "army": 1,
+      "wing": "armada_01"
+    },
+    "player_teamB": {
+      "army": 2
+    }
+  },
+  "objLayers": [
+    {
+      "layer": {
+        "enabled": true
+      }
+    },
+    {
+      "layer": {
+        "enabled": true
+      }
+    },
+    {
+      "layer": {
+        "enabled": true
+      }
+    },
+    {
+      "layer": {
+        "enabled": true
+      }
+    }
+  ],
+  "selected_tag": "",
+  "triggers": {
+    "end": {
+      "actions": {
+        "spawnOnAirfield": {
+          "objects": "armada_01",
+          "runwayName": "airfield00"
+        },
+        "wait": {
+          "time": 3.0
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "playersWhenStatus": {
+          "check_players": "any",
+          "players": "isKilled"
+        }
+      },
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": true
+      }
+    },
+    "init": {
+      "actions": {
+        "unitMoveTo": {
+          "follow_target": false,
+          "horizontalDirectionForTeleport": true,
+          "lookat": "airfield01",
+          "move_type": "teleport",
+          "object": "armada_01",
+          "shouldKeepFormation": true,
+          "target": "airfield00",
+          "teleportHeightType": "target",
+          "teleportHeightValue": 1000.0,
+          "useUnitHeightForTele": false,
+          "velocity": 400.0
+        }
+      },
+      "comments": "",
+      "conditions": [],
+      "events": {
+        "initMission": []
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "isCategory": true,
+    "is_enabled": true
+  },
+  "units": [
+    {
+      "armada": {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "name": "armada_01",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 1,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "minimum_distance_to_earth": 20.0,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 1.5,
+            "row_distances": 1.5,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "skill": 4
+        },
+        "tm": [
+          [0.67559,0.0,0.737277],
+          [0.0,1.0,0.0],
+          [-0.737277,0.0,0.67559],
+          [830.9,767.8,-1784.25]
+        ],
+        "unit_class": "me-163b",
+        "way": [],
+        "weapons": "ME_163B_default"
+      }
+    },
+    {
+      "structures": {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "name": "structures_01",
+        "props": {
+          "army": 1,
+          "attack_type": "fire_at_will",
+          "count": 3,
+          "formation_div": 1,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "tm": [
+          [0.737277,0.0,-0.67559],
+          [0.0,1.0,0.0],
+          [0.67559,0.0,0.737277],
+          [1350.7,59.5,-771.95]
+        ],
+        "unit_class": "germ_50mm_pak38",
+        "way": [],
+        "weapons": ""
+      }
+    },
+    {
+      "structures": {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "name": "structures_02",
+        "props": {
+          "army": 1,
+          "attack_type": "fire_at_will",
+          "count": 3,
+          "formation_div": 1,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "tm": [
+          [-0.766044,0.0,0.642788],
+          [0.0,1.0,0.0],
+          [-0.642788,0.0,-0.766044],
+          [1314.85,76.1,-1987.55]
+        ],
+        "unit_class": "germ_50mm_pak38",
+        "way": [],
+        "weapons": ""
+      }
+    },
+    {
+      "structures": {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "name": "structures_03",
+        "props": {
+          "army": 1,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 1,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "tm": [
+          [-0.766044,0.0,0.642788],
+          [0.0,1.0,0.0],
+          [-0.642788,0.0,-0.766044],
+          [2109.15,76.1,-364.55]
+        ],
+        "unit_class": "germ_50mm_pak38",
+        "way": [],
+        "weapons": ""
+      }
+    }
+  ],
+  "variables": []
+}

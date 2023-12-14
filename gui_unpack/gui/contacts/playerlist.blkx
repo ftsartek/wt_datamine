@@ -1,0 +1,175 @@
+{
+  "cardAvatar": {
+    "id": "pilotIconImg",
+    "value": ""
+  },
+  "contactStatusImg": {
+    "background-color": "@transparent",
+    "background-image": "",
+    "id": "statusImg",
+    "pos": "pw - w, ph/2 - h/2",
+    "position": "absolute"
+  },
+  "contact_buttons_contact_uid": "",
+  "contact_buttons_holder": [
+    {
+      "id": "contact_buttons_holder"
+    },
+    {
+      "position": "absolute"
+    },
+    {
+      "pos": "pw - w - @sIco, 0.5ph-0.5h"
+    },
+    {
+      "display": "hide"
+    },
+    {
+      "Button_text": {
+        "class": "image",
+        "id": "btn_friendAdd",
+        "img": {
+          "background-image": "#ui/gameuiskin#btn_friend_add.svg"
+        },
+        "imgSize": "small",
+        "input-transparent": "yes",
+        "on_click": "onFriendAdd",
+        "showConsoleImage": "no",
+        "tooltip": "#contacts/friendlist/add"
+      }
+    },
+    {
+      "Button_text": {
+        "class": "image",
+        "id": "btn_friendRemove",
+        "img": {
+          "background-image": "#ui/gameuiskin#btn_friend_remove.svg"
+        },
+        "imgSize": "small",
+        "input-transparent": "yes",
+        "on_click": "onFriendRemove",
+        "showConsoleImage": "no",
+        "tooltip": "#contacts/friendlist/remove"
+      }
+    },
+    {
+      "Button_text": {
+        "class": "image",
+        "id": "btn_blacklistAdd",
+        "img": {
+          "background-image": "#ui/gameuiskin#btn_blacklist_add.svg"
+        },
+        "imgSize": "small",
+        "input-transparent": "yes",
+        "on_click": "onBlacklistAdd",
+        "showConsoleImage": "no",
+        "tooltip": "#contacts/blacklist/add"
+      }
+    },
+    {
+      "Button_text": {
+        "class": "image",
+        "id": "btn_blacklistRemove",
+        "img": {
+          "background-image": "#ui/gameuiskin#btn_blacklist_remove.svg"
+        },
+        "imgSize": "small",
+        "input-transparent": "yes",
+        "on_click": "onBlacklistRemove",
+        "showConsoleImage": "no",
+        "tooltip": "#contacts/blacklist/remove"
+      }
+    },
+    {
+      "Button_text": {
+        "class": "image",
+        "enable": "no",
+        "id": "btn_message",
+        "img": {
+          "background-image": "#ui/gameuiskin#btn_send_private_message.svg"
+        },
+        "imgSize": "small",
+        "input-transparent": "yes",
+        "on_click": "onPlayerMsg",
+        "showConsoleImage": "no",
+        "tooltip": "#contacts/message"
+      }
+    },
+    {
+      "Button_text": {
+        "class": "image",
+        "enable": "no",
+        "id": "btn_squadInvite",
+        "img": {
+          "background-image": "#ui/gameuiskin#btn_invite.svg"
+        },
+        "imgSize": "small",
+        "input-transparent": "yes",
+        "on_click": "onSquadInvite",
+        "showConsoleImage": "no",
+        "tooltip": "#contacts/invite"
+      }
+    },
+    {
+      "Button_text": {
+        "class": "image",
+        "enable": "no",
+        "id": "btn_usercard",
+        "img": {
+          "background-image": "#ui/gameuiskin#btn_usercard.svg"
+        },
+        "imgSize": "small",
+        "input-transparent": "yes",
+        "on_click": "onUsercard",
+        "showConsoleImage": "no",
+        "tooltip": "#mainmenu/btnUserCard"
+      }
+    },
+    {
+      "Button_text": {
+        "btnText": {
+          "pos": "0.5pw-0.5w, 0.5ph-0.5h",
+          "position": "absolute",
+          "style": "font:@fontSmall",
+          "text": "#icon/worldWar"
+        },
+        "class": "image",
+        "display": "hide",
+        "enable": "no",
+        "id": "btn_ww_invite",
+        "imgSize": "small",
+        "input-transparent": "yes",
+        "on_click": "onWwOperationInvite",
+        "showConsoleImage": "no",
+        "tooltip": "#worldwar/inviteToOperation"
+      }
+    }
+  ],
+  "on_click": "onPlayerRClick",
+  "on_r_click": "onPlayerRClick",
+  "tdiv": {
+    "flow": "vertical",
+    "position": "relative",
+    "text": {
+      "id": "contactName",
+      "input-transparent": "yes",
+      "playerName": "yes"
+    },
+    "textareaNoTab": {
+      "contact_presence": "yes",
+      "id": "contactPresence",
+      "input-transparent": "yes",
+      "padding-left": "6",
+      "playerPresence": "yes"
+    },
+    "top": "ph/2 - h/2"
+  },
+  "title": "$tooltipObj",
+  "tooltipObj": {
+    "display": "hide",
+    "id": "tooltip",
+    "on_tooltip_close": "onTooltipObjClose",
+    "on_tooltip_open": "onContactTooltipOpen",
+    "uid": ""
+  }
+}

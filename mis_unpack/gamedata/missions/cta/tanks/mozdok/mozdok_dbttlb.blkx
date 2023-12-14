@@ -1,0 +1,514 @@
+{
+  "airfields": [],
+  "areas": {
+    "briefing_dbttl_t1_spawn_01": {
+      "objLayer": 0,
+      "props": [],
+      "tm": [
+        [-0.766044,0.0,-0.642788],
+        [0.0,1.0,0.0],
+        [0.642788,0.0,-0.766044],
+        [2707.73,18.3499,2463.87]
+      ],
+      "type": "Point"
+    },
+    "briefing_dbttl_t1_spawn_02": {
+      "objLayer": 0,
+      "props": [],
+      "tm": [
+        [-0.766044,0.0,-0.642788],
+        [0.0,1.0,0.0],
+        [0.642788,0.0,-0.766044],
+        [2876.25,18.3495,2924.12]
+      ],
+      "type": "Point"
+    },
+    "briefing_dbttl_t2_capture_area": {
+      "objLayer": 0,
+      "props": [],
+      "tm": [
+        [32.696,0.0,-25.0885],
+        [0.0,75.0,0.0],
+        [25.0885,0.0,32.696],
+        [1481.03,21.3499,3386.21]
+      ],
+      "type": "Point"
+    },
+    "briefing_dbttl_t2_spawn_01": {
+      "objLayer": 0,
+      "props": [],
+      "tm": [
+        [0.819152,0.0,0.573577],
+        [0.0,1.0,0.0],
+        [-0.573577,0.0,0.819152],
+        [1117.05,35.1738,3469.47]
+      ],
+      "type": "Point"
+    },
+    "briefing_dbttl_t2_spawn_02": {
+      "objLayer": 0,
+      "props": [],
+      "tm": [
+        [0.819152,0.0,0.573577],
+        [0.0,1.0,0.0],
+        [-0.573577,0.0,0.819152],
+        [1484.26,23.8069,3674.38]
+      ],
+      "type": "Point"
+    },
+    "t1_briefing_airspawn": {
+      "objLayer": 0,
+      "props": [],
+      "tm": [
+        [-0.186653,0.0,-0.982426],
+        [0.0,1.0,0.0],
+        [0.982426,0.0,-0.186653],
+        [3807.99,62.9727,1032.84]
+      ],
+      "type": "Point"
+    },
+    "t2_briefing_airspawn": {
+      "objLayer": 0,
+      "props": [],
+      "tm": [
+        [-0.198457,0.0,0.98011],
+        [0.0,1.0,0.0],
+        [-0.98011,0.0,-0.198457],
+        [497.881,294.68,3767.0]
+      ],
+      "type": "Point"
+    }
+  },
+  "bin_dump_file": "",
+  "dialogs": [],
+  "effects": [],
+  "imports": [
+    {
+      "import_record": {
+        "excludes": [],
+        "file": "gameData/missions/cta/tanks/mozdok/template_mozdok_Dbttl.blk",
+        "importAreas": true,
+        "importMissionObjectives": true,
+        "importTriggers": true,
+        "importUnits": true,
+        "importWayPoints": true,
+        "showAreas": true,
+        "showMissionObjectives": true,
+        "showTriggers": true,
+        "showUnits": true,
+        "showWayPoints": true
+      }
+    },
+    {
+      "import_record": {
+        "excludes": [],
+        "file": "gameData/missions/templates/tank_templates/tank_base_logic_template.blk",
+        "importAreas": true,
+        "importMissionObjectives": true,
+        "importTriggers": true,
+        "importUnits": true,
+        "importWayPoints": true,
+        "showAreas": true,
+        "showMissionObjectives": true,
+        "showTriggers": true,
+        "showUnits": true,
+        "showWayPoints": true
+      }
+    },
+    {
+      "import_record": {
+        "excludes": [],
+        "file": "gameData/missions/cta/tanks/mozdok/template_mozdok_air_spawn.blk",
+        "importAreas": true,
+        "importMissionObjectives": true,
+        "importTriggers": true,
+        "importUnits": true,
+        "importWayPoints": true,
+        "showAreas": true,
+        "showMissionObjectives": true,
+        "showTriggers": true,
+        "showUnits": true,
+        "showWayPoints": true
+      }
+    },
+    {
+      "import_record": {
+        "excludes": [],
+        "file": "gameData/missions/templates/tank_templates/ai_base_defense_template.blk",
+        "importAreas": true,
+        "importMissionObjectives": true,
+        "importTriggers": true,
+        "importUnits": true,
+        "importWayPoints": true,
+        "showAreas": true,
+        "showMissionObjectives": true,
+        "showTriggers": true,
+        "showUnits": true,
+        "showWayPoints": true
+      }
+    },
+    {
+      "import_record": {
+        "excludes": [],
+        "file": "gameData/missions/templates/ww_no_attackers_template.blk",
+        "importAreas": true,
+        "importMissionObjectives": true,
+        "importTriggers": true,
+        "importUnits": true,
+        "importWayPoints": true,
+        "showAreas": true,
+        "showMissionObjectives": true,
+        "showTriggers": true,
+        "showUnits": true,
+        "showWayPoints": true
+      }
+    }
+  ],
+  "mission_objectives": {
+    "isCategory": true,
+    "is_enabled": true
+  },
+  "mission_settings": {
+    "briefing": {
+      "date_loc": "",
+      "music": "action_01",
+      "objective_loc": "",
+      "part": {
+        "event": "",
+        "minTime": 0,
+        "slide": [
+          {
+            "map": true
+          },
+          {
+            "minTime": 4
+          },
+          {
+            "picture": ""
+          },
+          {
+            "showAirMap": false
+          },
+          {
+            "icon": {
+              "icontype": "basezone_A",
+              "side": "enemy",
+              "target": "briefing_dbttl_t2_capture_area"
+            }
+          },
+          {
+            "icon": {
+              "icontype": "tank",
+              "side": "ally",
+              "target": "briefing_dbttl_t1_spawn_01"
+            }
+          },
+          {
+            "icon": {
+              "icontype": "tank",
+              "side": "ally",
+              "target": "briefing_dbttl_t1_spawn_02"
+            }
+          },
+          {
+            "icon": {
+              "icontype": "tank",
+              "side": "enemy",
+              "target": "briefing_dbttl_t2_spawn_01"
+            }
+          },
+          {
+            "icon": {
+              "icontype": "tank",
+              "side": "enemy",
+              "target": "briefing_dbttl_t2_spawn_02"
+            }
+          },
+          {
+            "icon": {
+              "icontype": "fighter",
+              "lookAt": "t2_briefing_airspawn",
+              "side": "ally",
+              "target": "t1_briefing_airspawn"
+            }
+          },
+          {
+            "icon": {
+              "icontype": "fighter",
+              "lookAt": "t1_briefing_airspawn",
+              "side": "enemy",
+              "target": "t2_briefing_airspawn"
+            }
+          }
+        ]
+      },
+      "place_loc": ""
+    },
+    "mission": {
+      "allowedKillStreaks": true,
+      "allowedUnitTypes": {
+        "isAirplanesAllowed": true,
+        "isHelicoptersAllowed": true,
+        "isShipsAllowed": false,
+        "isTanksAllowed": true
+      },
+      "country_allies": "ussr",
+      "country_axis": "germany",
+      "ctaCaptureZoneEqualPenaltyMul": 0.0,
+      "deathPenaltyMul": 0.0,
+      "environment": "Day",
+      "level": "levels/avg_mozdok.bin",
+      "locDesc": "mozdok/desc;missions/_DBttl/desc",
+      "locName": "missions/_DBttlB;mozdok/name",
+      "optionalTakeOff": false,
+      "postfix": "_DBttlB",
+      "randomSpawnTeams": false,
+      "remapAiTankModels": true,
+      "restoreType": "attempts",
+      "scoreLimit": 6000,
+      "showTacticalMapCellSize": true,
+      "timeLimit": 25,
+      "type": "domination",
+      "useAlternativeMapCoord": false,
+      "weather": "clear"
+    },
+    "player": [
+      {
+        "army": 1
+      },
+      {
+        "wing": "t1_player01"
+      },
+      {
+        "wing": "t1_player02"
+      },
+      {
+        "wing": "t1_player03"
+      },
+      {
+        "wing": "t1_player04"
+      },
+      {
+        "wing": "t1_player05"
+      },
+      {
+        "wing": "t1_player06"
+      },
+      {
+        "wing": "t1_player07"
+      },
+      {
+        "wing": "t1_player08"
+      },
+      {
+        "wing": "t1_player09"
+      },
+      {
+        "wing": "t1_player10"
+      },
+      {
+        "wing": "t1_player11"
+      },
+      {
+        "wing": "t1_player12"
+      },
+      {
+        "wing": "t1_player13"
+      },
+      {
+        "wing": "t1_player14"
+      },
+      {
+        "wing": "t1_player15"
+      },
+      {
+        "wing": "t1_player16"
+      },
+      {
+        "wing": "t1_player17"
+      },
+      {
+        "wing": "t1_player18"
+      },
+      {
+        "wing": "t1_player19"
+      },
+      {
+        "wing": "t1_player20"
+      },
+      {
+        "wing": "t1_player21"
+      },
+      {
+        "wing": "t1_player22"
+      },
+      {
+        "wing": "t1_player23"
+      },
+      {
+        "wing": "t1_player24"
+      },
+      {
+        "wing": "t1_player25"
+      },
+      {
+        "wing": "t1_player26"
+      },
+      {
+        "wing": "t1_player27"
+      },
+      {
+        "wing": "t1_player28"
+      },
+      {
+        "wing": "t1_player29"
+      },
+      {
+        "wing": "t1_player30"
+      },
+      {
+        "wing": "t1_player31"
+      },
+      {
+        "wing": "t1_player32"
+      }
+    ],
+    "player_teamB": [
+      {
+        "army": 2
+      },
+      {
+        "wing": "t2_player01"
+      },
+      {
+        "wing": "t2_player02"
+      },
+      {
+        "wing": "t2_player03"
+      },
+      {
+        "wing": "t2_player04"
+      },
+      {
+        "wing": "t2_player05"
+      },
+      {
+        "wing": "t2_player06"
+      },
+      {
+        "wing": "t2_player07"
+      },
+      {
+        "wing": "t2_player08"
+      },
+      {
+        "wing": "t2_player09"
+      },
+      {
+        "wing": "t2_player10"
+      },
+      {
+        "wing": "t2_player11"
+      },
+      {
+        "wing": "t2_player12"
+      },
+      {
+        "wing": "t2_player13"
+      },
+      {
+        "wing": "t2_player14"
+      },
+      {
+        "wing": "t2_player15"
+      },
+      {
+        "wing": "t2_player16"
+      },
+      {
+        "wing": "t2_player17"
+      },
+      {
+        "wing": "t2_player18"
+      },
+      {
+        "wing": "t2_player19"
+      },
+      {
+        "wing": "t2_player20"
+      },
+      {
+        "wing": "t2_player21"
+      },
+      {
+        "wing": "t2_player22"
+      },
+      {
+        "wing": "t2_player23"
+      },
+      {
+        "wing": "t2_player24"
+      },
+      {
+        "wing": "t2_player25"
+      },
+      {
+        "wing": "t2_player26"
+      },
+      {
+        "wing": "t2_player27"
+      },
+      {
+        "wing": "t2_player28"
+      },
+      {
+        "wing": "t2_player29"
+      },
+      {
+        "wing": "t2_player30"
+      },
+      {
+        "wing": "t2_player31"
+      },
+      {
+        "wing": "t2_player32"
+      },
+      {
+        "wing": "t2_player33"
+      }
+    ],
+    "spectator_points": []
+  },
+  "objLayers": [
+    {
+      "layer": {
+        "enabled": true
+      }
+    },
+    {
+      "layer": {
+        "enabled": true
+      }
+    },
+    {
+      "layer": {
+        "enabled": true
+      }
+    },
+    {
+      "layer": {
+        "enabled": true
+      }
+    }
+  ],
+  "selected_tag": "",
+  "triggers": {
+    "isCategory": true,
+    "is_enabled": true
+  },
+  "units": [],
+  "variables": {
+    "defenseMissionTeam": "teamB"
+  },
+  "wayPoints": []
+}

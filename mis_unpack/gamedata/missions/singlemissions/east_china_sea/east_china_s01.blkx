@@ -1,0 +1,1892 @@
+{
+  "airfields": [],
+  "areas": {
+    "ijn_fleet_waypoint": {
+      "props": [],
+      "tm": [
+        [4498.4,0.0,0.0],
+        [0.0,4498.4,0.0],
+        [0.0,0.0,4498.4],
+        [-56524.2,0.0,89624.4]
+      ],
+      "type": "Sphere"
+    }
+  },
+  "bin_dump_file": "",
+  "dialogs": [],
+  "effects": [],
+  "imports": [],
+  "mission_objectives": {
+    "isCategory": true,
+    "is_enabled": true,
+    "single_east_china_m01_att00": {
+      "comments": "",
+      "is_enabled": true,
+      "onFailed": [],
+      "onSuccess": [],
+      "props": {
+        "isPrimary": true,
+        "scoreConst": 100,
+        "scoreTime": 400,
+        "timeLimit": 1800
+      },
+      "type": "abstractMissionObjective"
+    }
+  },
+  "mission_settings": {
+    "atmosphere": {
+      "pressure": 760.0,
+      "temperature": 0.0
+    },
+    "briefing": {
+      "date_loc": "",
+      "music": "usa_main_theme",
+      "objective_loc": "",
+      "part": {
+        "event": "",
+        "minTime": 0,
+        "slide": [
+          {
+            "map": true
+          },
+          {
+            "minTime": 4
+          },
+          {
+            "picture": ""
+          },
+          {
+            "showAirMap": false
+          },
+          {
+            "arrow": [
+              {
+                "width": 1
+              },
+              {
+                "side": "player"
+              },
+              {
+                "point": "player"
+              },
+              {
+                "point": "jpn_battleship_yamato"
+              }
+            ]
+          },
+          {
+            "icon": {
+              "icontype": "bomber",
+              "lookAt": "jpn_battleship_yamato",
+              "side": "player",
+              "target": "player"
+            }
+          },
+          {
+            "icon": {
+              "icontype": "destroyer",
+              "side": "enemy",
+              "target": "jpn_battleship_yamato"
+            }
+          }
+        ]
+      },
+      "place_loc": "",
+      "viewAreaScale": 2.0
+    },
+    "mission": {
+      "environment": "Day",
+      "gt_cooperative": false,
+      "gt_reload_explosives": true,
+      "level": "levels/water.bin",
+      "locationName": "water_east_china_sea",
+      "optionalTakeOff": false,
+      "restoreType": "tactical control",
+      "type": "singleMission",
+      "weather": "hazy",
+      "windDirection": [1.0,0.0,0.0]
+    },
+    "player": {
+      "army": 1,
+      "wing": "player"
+    },
+    "player_teamB": {
+      "army": 2
+    },
+    "spectator_points": []
+  },
+  "objLayers": [
+    {
+      "layer": {
+        "enabled": true
+      }
+    },
+    {
+      "layer": {
+        "enabled": true
+      }
+    },
+    {
+      "layer": {
+        "enabled": true
+      }
+    },
+    {
+      "layer": {
+        "enabled": true
+      }
+    }
+  ],
+  "selected_tag": "",
+  "triggers": {
+    "damage_yamato": {
+      "actions": {
+        "unitDamage": {
+          "countEffects": 1,
+          "delay": [1.0,1.0],
+          "offset": [0.0,0.0,0.0],
+          "part": 0,
+          "power": 0.86,
+          "radiusOffset": [10.0,15.0],
+          "target": "jpn_battleship_yamato",
+          "useEffect": false
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "unitDistanceBetween": {
+          "check_objects": "any",
+          "check_targets": "any",
+          "math": "2D",
+          "object": "player",
+          "object_marking": 0,
+          "object_type": "any",
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "object_var_value": 0,
+          "target": "jpn_battleship_yamato",
+          "target_marking": 0,
+          "target_type": "isAlive",
+          "value": 4000.0
+        }
+      },
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "fire_effective": {
+      "actions": {
+        "triggerEnable": {
+          "target": "fire_not_effective"
+        },
+        "unitAttackTarget": {
+          "fireRandom": true,
+          "object": "jpn_navy",
+          "playerAttracted": true,
+          "target": "player"
+        },
+        "unitSetProperties": {
+          "accuracy": 1.0,
+          "effShootingRate": 0.9,
+          "object": "jpn_navy",
+          "object_marking": 0,
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "object_var_value": 0
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "unitWhenReachHeight": {
+          "absolute_value": false,
+          "check_objects": "any",
+          "comparasion_func": "more",
+          "object": "player_himself",
+          "object_marking": 0,
+          "object_type": "isAlive",
+          "value": 300.0
+        }
+      },
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "fire_not_effective": {
+      "actions": {
+        "triggerEnable": {
+          "target": "fire_effective"
+        },
+        "unitSetProperties": {
+          "accuracy": 0.1,
+          "attack_type": "fire_at_will",
+          "effShootingRate": 0.5,
+          "object": "jpn_navy",
+          "object_marking": 0,
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "object_var_value": 0
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "unitWhenReachHeight": {
+          "absolute_value": false,
+          "check_objects": "all",
+          "comparasion_func": "less",
+          "object": "player_himself",
+          "object_marking": 0,
+          "object_type": "isAlive",
+          "value": 300.0
+        }
+      },
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "initial": {
+      "actions": [
+        {
+          "unitMoveTo": {
+            "follow_target": false,
+            "horizontalDirectionForTeleport": true,
+            "move_type": "zigzag_move",
+            "object": "jpn_navy",
+            "object_marking": 0,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "object_var_value": 0,
+            "recalculatePathDist": -1.0,
+            "shouldKeepFormation": true,
+            "speed": 100.0,
+            "target": "ijn_fleet_waypoint",
+            "target_marking": 0,
+            "teleportHeightType": "absolute",
+            "teleportHeightValue": 1000.0,
+            "useUnitHeightForTele": true,
+            "waypointReachedDist": 10.0,
+            "zzAmp": 200.0,
+            "zzPeriod": 5.0
+          }
+        },
+        {
+          "unitSetProperties": {
+            "effShootingRate": 0.2,
+            "object": "jpn_navy",
+            "object_marking": 0,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "object_var_value": 0,
+            "speed": 300.0
+          }
+        },
+        {
+          "unitSetProperties": {
+            "effShootingRate": 0.5,
+            "object": "armada",
+            "object_marking": 0,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "object_var_value": 0,
+            "plane": [
+              {
+                "targetDeviation": {
+                  "defaultVal": 1.0,
+                  "limits": [0.5,4.0],
+                  "trigger": "machine gun"
+                }
+              },
+              {
+                "targetDeviation": {
+                  "defaultVal": 3.0,
+                  "limits": [1.0,4.0],
+                  "trigger": "cannon"
+                }
+              },
+              {
+                "targetDeviation": {
+                  "defaultVal": 3.0,
+                  "limits": [0.5,4.0],
+                  "trigger": "gunner"
+                }
+              },
+              {
+                "targetDeviation": {
+                  "defaultVal": 3.0,
+                  "limits": [0.5,4.0],
+                  "trigger": "torpedoes"
+                }
+              },
+              {
+                "targetDeviation": {
+                  "defaultVal": 1.0,
+                  "limits": [0.5,4.0],
+                  "trigger": "bombs"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "unitSetProperties": [
+            {
+              "object_marking": 0
+            },
+            {
+              "object_var_name": ""
+            },
+            {
+              "object_var_comp_op": "equal"
+            },
+            {
+              "object_var_value": 0
+            },
+            {
+              "object": "bombers00"
+            },
+            {
+              "object": "bombers01"
+            },
+            {
+              "effShootingRate": 0.0
+            }
+          ]
+        },
+        {
+          "unitSetIndication": {
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "object_var_value": 0,
+            "set": true,
+            "target": "jpn_battleship_yamato",
+            "target_marking": 0
+          }
+        },
+        {
+          "unitAttackTarget": [
+            {
+              "playerAttracted": true
+            },
+            {
+              "object": "jpn_navy"
+            },
+            {
+              "target": "player"
+            },
+            {
+              "target": "attackers01"
+            },
+            {
+              "target": "attackers02"
+            },
+            {
+              "fireRandom": true
+            }
+          ]
+        },
+        {
+          "unitAttackTarget": [
+            {
+              "playerAttracted": true
+            },
+            {
+              "object": "jp_fighters00"
+            },
+            {
+              "object": "jp_fighters01"
+            },
+            {
+              "target": "fighters00"
+            },
+            {
+              "target": "fighters01"
+            },
+            {
+              "target": "player"
+            },
+            {
+              "fireRandom": true
+            },
+            {
+              "playerAttractedCount": 2
+            },
+            {
+              "playerAttractedEffRate": 0.2
+            }
+          ]
+        },
+        {
+          "unitAttackTarget": [
+            {
+              "playerAttracted": false
+            },
+            {
+              "object": "fighters00"
+            },
+            {
+              "object": "fighters01"
+            },
+            {
+              "target": "jp_fighters00"
+            },
+            {
+              "target": "jp_fighters01"
+            },
+            {
+              "fireRandom": true
+            }
+          ]
+        },
+        {
+          "unitAttackTarget": [
+            {
+              "playerAttracted": false
+            },
+            {
+              "object": "attackers01"
+            },
+            {
+              "object": "attackers02"
+            },
+            {
+              "target": "jpn_destroyer00"
+            },
+            {
+              "target": "jpn_destroyer01"
+            },
+            {
+              "target": "jpn_destroyer02"
+            }
+          ]
+        },
+        {
+          "unitAttackTarget": [
+            {
+              "playerAttracted": false
+            },
+            {
+              "object": "bombers00"
+            },
+            {
+              "object": "bombers01"
+            },
+            {
+              "target": "jpn_battleship_yamato"
+            }
+          ]
+        },
+        {
+          "unitAttackTarget": [
+            {
+              "playerAttracted": false
+            },
+            {
+              "object": "bombers02"
+            },
+            {
+              "object": "bombers03"
+            },
+            {
+              "target": "jpn_cruiser_yahagi"
+            }
+          ]
+        },
+        {
+          "unitAttackTarget": [
+            {
+              "playerAttracted": false
+            },
+            {
+              "object": "attackers03"
+            },
+            {
+              "object": "attackers04"
+            },
+            {
+              "target": "jpn_destroyer04"
+            },
+            {
+              "target": "jpn_destroyer05"
+            }
+          ]
+        }
+      ],
+      "comments": "",
+      "conditions": [],
+      "else_actions": [],
+      "events": {
+        "initMission": []
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "initial_offline": {
+      "actions": [
+        {
+          "unitSetProperties": {
+            "object": "player",
+            "object_marking": 0,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "object_var_value": 0,
+            "targetableByAi": false
+          }
+        },
+        {
+          "unitSetProperties": {
+            "object": "player_himself",
+            "object_marking": 0,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "object_var_value": 0,
+            "targetableByAi": true
+          }
+        },
+        {
+          "wait": {
+            "time": 1.0
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": [],
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 10.0
+        }
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": true
+      }
+    },
+    "isCategory": true,
+    "is_enabled": true,
+    "mission_completed": {
+      "actions": [
+        {
+          "moSetObjectiveStatus": {
+            "status": 2,
+            "target": "single_east_china_m01_att00"
+          }
+        },
+        {
+          "wait": {
+            "time": 1.0
+          }
+        },
+        {
+          "wait": {
+            "time": 1.0
+          }
+        },
+        {
+          "wait": {
+            "time": 2.0
+          }
+        },
+        {
+          "wait": {
+            "time": 5.0
+          }
+        },
+        {
+          "unitLoadBehTree": {
+            "loadType": "tree",
+            "name": "instructorBeh",
+            "objects": "player"
+          }
+        },
+        {
+          "showSmartCutscene": {
+            "allowDeadUnits": true,
+            "allowTeleportAttackers": false,
+            "changeCameras": false,
+            "delayPlayer": false,
+            "duration": 10.0,
+            "fadeIn": false,
+            "fadeOut": false,
+            "inverseCameraDirection": false,
+            "object": "player_himself",
+            "sceneType": "two_units",
+            "startSubTypeArea": "",
+            "startSubTypeFlyBy": "",
+            "startSubTypeGroundUnits": "",
+            "startSubTypeOnTheMarch": "",
+            "startSubTypeTakeoff": "",
+            "startSubTypeTwoUnits": "object",
+            "startSubTypeUnitAttackUnit": "",
+            "startSubTypeUnitMoveToUnit": "",
+            "target": "jpn_battleship_yamato",
+            "teleportAllAttackers": false,
+            "wait": false
+          }
+        },
+        {
+          "unitDamage": {
+            "countEffects": 1,
+            "delay": [1.0,1.0],
+            "doExplosion": true,
+            "offset": [0.0,0.0,0.0],
+            "part": 0,
+            "power": 1.0,
+            "radiusOffset": [10.0,15.0],
+            "target": "jpn_battleship_yamato",
+            "useEffect": false
+          }
+        },
+        {
+          "unitPlayEffect": {
+            "attach": false,
+            "delay": [1.0,1.0],
+            "effect": "ship_model_expl",
+            "effect_type": "specify",
+            "loop": false,
+            "loopSpawn": true,
+            "offset": [0.0,0.0,0.0],
+            "radiusOffset": [0.0,0.0],
+            "scale": 3.0,
+            "show": true,
+            "target": "jpn_battleship_yamato"
+          }
+        },
+        {
+          "missionCompleted": {
+            "debriefingTimer": 1,
+            "timer": false
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": {
+        "unitWhenPartHp": [
+          {
+            "func": "less"
+          },
+          {
+            "check_objects": "all"
+          },
+          {
+            "check_parts": "any"
+          },
+          {
+            "value": 0.9
+          },
+          {
+            "object": "jpn_battleship_yamato"
+          },
+          {
+            "partNo": 0
+          },
+          {
+            "partNo": 1
+          },
+          {
+            "partNo": 2
+          },
+          {
+            "partNo": 3
+          },
+          {
+            "partNo": 4
+          },
+          {
+            "partNo": 5
+          },
+          {
+            "partNo": 6
+          }
+        ]
+      },
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 0.01
+        }
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "permanent_attack": {
+      "actions": {
+        "unitAttackTarget": [
+          {
+            "playerAttracted": true
+          },
+          {
+            "object": "jp_fighters00"
+          },
+          {
+            "object": "jp_fighters01"
+          },
+          {
+            "target": "fighters00"
+          },
+          {
+            "target": "fighters01"
+          },
+          {
+            "target": "player"
+          },
+          {
+            "fireRandom": true
+          },
+          {
+            "playerAttractedCount": 2
+          },
+          {
+            "playerAttractedEffRate": 0.2
+          }
+        ]
+      },
+      "comments": "",
+      "conditions": [],
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 10.0
+        }
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    }
+  },
+  "units": [
+    {
+      "armada": {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "player",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 1,
+          "attack_type": "fire_at_will",
+          "count": 4,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "minimum_distance_to_earth": 20.0,
+          "numInWing": 2,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 2.0,
+            "row_distances": 2.0,
+            "super_col_distances": 2.0,
+            "super_formation": "Diamond",
+            "super_row_distances": 2.0,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "skill": 4,
+          "targetableByAi": false
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [-37235.7,1064.85,-8280.95]
+        ],
+        "unit_class": "tbf-1c",
+        "way": [],
+        "weapons": "tbf_1c_mk13_torpedo_weak"
+      }
+    },
+    {
+      "armada": {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "attackers01",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 1,
+          "attack_type": "fire_at_will",
+          "count": 6,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "minimum_distance_to_earth": 20.0,
+          "numInWing": 2,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 2.0,
+            "row_distances": 2.0,
+            "super_col_distances": 2.0,
+            "super_formation": "Diamond",
+            "super_row_distances": 2.0,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [0.906308,0.0,0.422618],
+          [0.0,1.0,0.0],
+          [-0.422618,0.0,0.906308],
+          [-37223.9,329.1,-13747.8]
+        ],
+        "unit_class": "tbf-1c",
+        "way": [],
+        "weapons": "tbf_1c_mk13_torpedo"
+      }
+    },
+    {
+      "armada": {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "attackers02",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 1,
+          "attack_type": "fire_at_will",
+          "count": 6,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "minimum_distance_to_earth": 20.0,
+          "numInWing": 2,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 2.0,
+            "row_distances": 2.0,
+            "super_col_distances": 2.0,
+            "super_formation": "Diamond",
+            "super_row_distances": 2.0,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [0.906308,0.0,0.422618],
+          [0.0,1.0,0.0],
+          [-0.422618,0.0,0.906308],
+          [-34695.1,329.1,-14353.4]
+        ],
+        "unit_class": "tbf-1c",
+        "way": [],
+        "weapons": "tbf_1c_mk13_torpedo"
+      }
+    },
+    {
+      "armada": {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "bombers00",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 1,
+          "attack_type": "fire_at_will",
+          "count": 6,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "minimum_distance_to_earth": 20.0,
+          "numInWing": 2,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 2.0,
+            "row_distances": 2.0,
+            "super_col_distances": 2.0,
+            "super_formation": "Diamond",
+            "super_row_distances": 2.0,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [0.906308,0.0,0.422618],
+          [0.0,1.0,0.0],
+          [-0.422618,0.0,0.906308],
+          [-28825.9,2706.0,-8502.15]
+        ],
+        "unit_class": "sbd-3",
+        "way": [],
+        "weapons": "sbd_3_default"
+      }
+    },
+    {
+      "armada": {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "bombers01",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 1,
+          "attack_type": "fire_at_will",
+          "count": 6,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "minimum_distance_to_earth": 20.0,
+          "numInWing": 2,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 2.0,
+            "row_distances": 2.0,
+            "super_col_distances": 2.0,
+            "super_formation": "Diamond",
+            "super_row_distances": 2.0,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [0.258819,0.0,-0.965926],
+          [0.0,1.0,0.0],
+          [0.965926,0.0,0.258819],
+          [-28124.1,2706.0,-6810.7]
+        ],
+        "unit_class": "sbd-3",
+        "way": [],
+        "weapons": "sbd_3_default"
+      }
+    },
+    {
+      "armada": {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "bombers02",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 1,
+          "attack_type": "fire_at_will",
+          "count": 6,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "minimum_distance_to_earth": 20.0,
+          "numInWing": 2,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 2.0,
+            "row_distances": 2.0,
+            "super_col_distances": 2.0,
+            "super_formation": "Diamond",
+            "super_row_distances": 2.0,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [0.0436194,0.0,0.999048],
+          [0.0,1.0,0.0],
+          [-0.999048,0.0,0.0436194],
+          [-32762.8,2706.0,-31630.4]
+        ],
+        "unit_class": "sbd-3",
+        "way": [],
+        "weapons": "sbd_3_default"
+      }
+    },
+    {
+      "armada": {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "bombers03",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 1,
+          "attack_type": "fire_at_will",
+          "count": 6,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "minimum_distance_to_earth": 20.0,
+          "numInWing": 2,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 2.0,
+            "row_distances": 2.0,
+            "super_col_distances": 2.0,
+            "super_formation": "Diamond",
+            "super_row_distances": 2.0,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [0.0436194,0.0,0.999048],
+          [0.0,1.0,0.0],
+          [-0.999048,0.0,0.0436194],
+          [-33120.6,2706.0,-32908.5]
+        ],
+        "unit_class": "sbd-3",
+        "way": [],
+        "weapons": "sbd_3_default"
+      }
+    },
+    {
+      "armada": {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "attackers03",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 1,
+          "attack_type": "fire_at_will",
+          "count": 6,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "minimum_distance_to_earth": 20.0,
+          "numInWing": 2,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 2.0,
+            "row_distances": 2.0,
+            "super_col_distances": 2.0,
+            "super_formation": "Diamond",
+            "super_row_distances": 2.0,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [0.999048,0.0,-0.0436194],
+          [0.0,1.0,0.0],
+          [0.0436194,0.0,0.999048],
+          [-53422.1,329.1,2152.24]
+        ],
+        "unit_class": "tbf-1c",
+        "way": [],
+        "weapons": "tbf_1c_mk13_torpedo"
+      }
+    },
+    {
+      "armada": {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "attackers04",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 1,
+          "attack_type": "fire_at_will",
+          "count": 6,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "minimum_distance_to_earth": 20.0,
+          "numInWing": 2,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 2.0,
+            "row_distances": 2.0,
+            "super_col_distances": 2.0,
+            "super_formation": "Diamond",
+            "super_row_distances": 2.0,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [0.999048,0.0,-0.0436194],
+          [0.0,1.0,0.0],
+          [0.0436194,0.0,0.999048],
+          [-51567.0,329.1,1866.5]
+        ],
+        "unit_class": "tbf-1c",
+        "way": [],
+        "weapons": "tbf_1c_mk13_torpedo"
+      }
+    },
+    {
+      "armada": {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "fighters00",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 1,
+          "attack_type": "fire_at_will",
+          "count": 6,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "minimum_distance_to_earth": 20.0,
+          "numInWing": 2,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 2.0,
+            "row_distances": 2.0,
+            "super_col_distances": 2.0,
+            "super_formation": "Diamond",
+            "super_row_distances": 2.0,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [0.906308,0.0,0.422618],
+          [0.0,1.0,0.0],
+          [-0.422618,0.0,0.906308],
+          [-28757.6,1508.35,-11658.8]
+        ],
+        "unit_class": "f4u-1d",
+        "way": [],
+        "weapons": "f4u-1d_default"
+      }
+    },
+    {
+      "armada": {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "fighters01",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 1,
+          "attack_type": "fire_at_will",
+          "count": 6,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "minimum_distance_to_earth": 20.0,
+          "numInWing": 2,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 2.0,
+            "row_distances": 2.0,
+            "super_col_distances": 2.0,
+            "super_formation": "Diamond",
+            "super_row_distances": 2.0,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [0.906308,0.0,0.422618],
+          [0.0,1.0,0.0],
+          [-0.422618,0.0,0.906308],
+          [-29716.9,1508.35,-13340.2]
+        ],
+        "unit_class": "f4u-1d",
+        "way": [],
+        "weapons": "f4u-1d_default"
+      }
+    },
+    {
+      "armada": {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "jp_fighters00",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 8,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "minimum_distance_to_earth": 20.0,
+          "numInWing": 2,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 2.0,
+            "row_distances": 2.0,
+            "super_col_distances": 2.0,
+            "super_formation": "Diamond",
+            "super_row_distances": 2.0,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [-0.965926,0.0,0.258819],
+          [0.0,1.0,0.0],
+          [-0.258819,0.0,-0.965926],
+          [-26118.3,1508.35,-13033.2]
+        ],
+        "unit_class": "a6m5_zero",
+        "way": [],
+        "weapons": "a6m5_default"
+      }
+    },
+    {
+      "armada": {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "jp_fighters01",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 8,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "minimum_distance_to_earth": 20.0,
+          "numInWing": 2,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 2.0,
+            "row_distances": 2.0,
+            "super_col_distances": 2.0,
+            "super_formation": "Diamond",
+            "super_row_distances": 2.0,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [-0.965926,0.0,0.258819],
+          [0.0,1.0,0.0],
+          [-0.258819,0.0,-0.965926],
+          [-25858.7,1508.35,-11229.1]
+        ],
+        "unit_class": "a6m5_zero",
+        "way": [],
+        "weapons": "a6m5_default"
+      }
+    },
+    {
+      "ships": {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "jpn_battleship_yamato",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [7.54979e-08,0.0,1.0],
+          [0.0,1.0,0.0],
+          [-1.0,0.0,7.54979e-08],
+          [-27944.3,0.0,-10373.5]
+        ],
+        "unit_class": "ijn_bb_yamato",
+        "way": [],
+        "weapons": ""
+      }
+    },
+    {
+      "ships": {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "jpn_cruiser_yahagi",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [7.54979e-08,0.0,1.0],
+          [0.0,1.0,0.0],
+          [-1.0,0.0,7.54979e-08],
+          [-26492.9,0.0,-8529.4]
+        ],
+        "unit_class": "ijn_ca_nagara",
+        "way": [],
+        "weapons": ""
+      }
+    },
+    {
+      "ships": {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "jpn_destroyer00",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [7.54979e-08,0.0,1.0],
+          [0.0,1.0,0.0],
+          [-1.0,0.0,7.54979e-08],
+          [-27467.1,0.0,-9425.65]
+        ],
+        "unit_class": "ijn_dd_shiratsuyu",
+        "way": [],
+        "weapons": ""
+      }
+    },
+    {
+      "ships": {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "jpn_destroyer01",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [7.54979e-08,0.0,1.0],
+          [0.0,1.0,0.0],
+          [-1.0,0.0,7.54979e-08],
+          [-28825.8,0.0,-9058.4]
+        ],
+        "unit_class": "ijn_dd_shiratsuyu",
+        "way": [],
+        "weapons": ""
+      }
+    },
+    {
+      "ships": {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "jpn_destroyer02",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [7.54979e-08,0.0,1.0],
+          [0.0,1.0,0.0],
+          [-1.0,0.0,7.54979e-08],
+          [-27987.5,0.0,-12964.9]
+        ],
+        "unit_class": "ijn_dd_shiratsuyu",
+        "way": [],
+        "weapons": ""
+      }
+    },
+    {
+      "ships": {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "jpn_destroyer03",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [7.54979e-08,0.0,1.0],
+          [0.0,1.0,0.0],
+          [-1.0,0.0,7.54979e-08],
+          [-27292.9,0.0,-12700.4]
+        ],
+        "unit_class": "ijn_dd_shiratsuyu",
+        "way": [],
+        "weapons": ""
+      }
+    },
+    {
+      "ships": {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "jpn_destroyer04",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [7.54979e-08,0.0,1.0],
+          [0.0,1.0,0.0],
+          [-1.0,0.0,7.54979e-08],
+          [-28799.9,0.0,-12568.5]
+        ],
+        "unit_class": "ijn_dd_shiratsuyu",
+        "way": [],
+        "weapons": ""
+      }
+    },
+    {
+      "ships": {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "jpn_destroyer05",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [7.54979e-08,0.0,1.0],
+          [0.0,1.0,0.0],
+          [-1.0,0.0,7.54979e-08],
+          [-27191.8,0.0,-11178.3]
+        ],
+        "unit_class": "ijn_dd_shiratsuyu",
+        "way": [],
+        "weapons": ""
+      }
+    },
+    {
+      "ships": {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "jpn_destroyer06",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [7.54979e-08,0.0,1.0],
+          [0.0,1.0,0.0],
+          [-1.0,0.0,7.54979e-08],
+          [-28289.0,0.0,-8059.0]
+        ],
+        "unit_class": "ijn_dd_shiratsuyu",
+        "way": [],
+        "weapons": ""
+      }
+    },
+    {
+      "ships": {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "jpn_destroyer07",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [7.54979e-08,0.0,1.0],
+          [0.0,1.0,0.0],
+          [-1.0,0.0,7.54979e-08],
+          [-29987.0,0.0,-9884.1]
+        ],
+        "unit_class": "ijn_dd_shiratsuyu",
+        "way": [],
+        "weapons": ""
+      }
+    },
+    {
+      "squad": {
+        "name": "jpn_navy",
+        "props": [
+          {
+            "squad_members": "jpn_battleship_yamato"
+          },
+          {
+            "squad_members": "jpn_cruiser_yahagi"
+          },
+          {
+            "squad_members": "jpn_destroyer00"
+          },
+          {
+            "squad_members": "jpn_destroyer01"
+          },
+          {
+            "squad_members": "jpn_destroyer02"
+          },
+          {
+            "squad_members": "jpn_destroyer03"
+          },
+          {
+            "squad_members": "jpn_destroyer04"
+          },
+          {
+            "squad_members": "jpn_destroyer05"
+          },
+          {
+            "squad_members": "jpn_destroyer06"
+          },
+          {
+            "squad_members": "jpn_destroyer07"
+          }
+        ],
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [-25016.2,0.0,-10119.4]
+        ]
+      }
+    },
+    {
+      "squad": {
+        "name": "armada",
+        "props": [
+          {
+            "squad_members": "attackers01"
+          },
+          {
+            "squad_members": "attackers02"
+          },
+          {
+            "squad_members": "bombers00"
+          },
+          {
+            "squad_members": "bombers01"
+          },
+          {
+            "squad_members": "bombers02"
+          },
+          {
+            "squad_members": "attackers03"
+          },
+          {
+            "squad_members": "attackers04"
+          },
+          {
+            "squad_members": "fighters00"
+          },
+          {
+            "squad_members": "fighters01"
+          },
+          {
+            "squad_members": "jp_fighters00"
+          },
+          {
+            "squad_members": "jp_fighters01"
+          }
+        ],
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [-31349.8,0.0,-12543.8]
+        ]
+      }
+    },
+    {
+      "squad": {
+        "name": "player_himself",
+        "props": {
+          "object_type": "isPlayer",
+          "squad_members": "player"
+        },
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [-36591.0,0.0,-4054.75]
+        ]
+      }
+    },
+    {
+      "squad": {
+        "name": "fr_armada",
+        "props": [
+          {
+            "squad_members": "attackers01"
+          },
+          {
+            "squad_members": "attackers02"
+          },
+          {
+            "squad_members": "bombers00"
+          },
+          {
+            "squad_members": "bombers01"
+          },
+          {
+            "squad_members": "bombers02"
+          },
+          {
+            "squad_members": "attackers03"
+          },
+          {
+            "squad_members": "attackers04"
+          },
+          {
+            "squad_members": "fighters00"
+          },
+          {
+            "squad_members": "fighters01"
+          }
+        ],
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [-31092.8,0.0,-13571.0]
+        ]
+      }
+    }
+  ],
+  "variables": [],
+  "wayPoints": []
+}

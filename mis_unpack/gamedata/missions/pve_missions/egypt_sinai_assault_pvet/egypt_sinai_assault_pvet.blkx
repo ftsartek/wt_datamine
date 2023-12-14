@@ -1,0 +1,448 @@
+{
+  "airfields": [],
+  "areas": {
+    "briefing_battle_area": {
+      "objLayer": 0,
+      "props": [],
+      "tm": [
+        [1444.68,0.0,0.0],
+        [0.0,232.983,0.0],
+        [0.0,0.0,3220.67],
+        [1989.75,632.4,2559.45]
+      ],
+      "type": "Box"
+    },
+    "briefing_stage1_capzone": {
+      "objLayer": 0,
+      "props": [],
+      "tm": [
+        [1.0,0.0,0.0],
+        [0.0,1.0,0.0],
+        [0.0,0.0,1.0],
+        [2272.75,646.3,1404.3]
+      ],
+      "type": "Point"
+    },
+    "briefing_stage1_spawn": {
+      "objLayer": 0,
+      "props": [],
+      "tm": [
+        [1.0,0.0,0.0],
+        [0.0,1.0,0.0],
+        [0.0,0.0,1.0],
+        [1556.1,645.75,1449.85]
+      ],
+      "type": "Point"
+    },
+    "briefing_stage2_eliminate": {
+      "objLayer": 0,
+      "props": [],
+      "tm": [
+        [1.0,0.0,0.0],
+        [0.0,1.0,0.0],
+        [0.0,0.0,1.0],
+        [2074.0,643.2,2373.25]
+      ],
+      "type": "Point"
+    },
+    "briefing_stage3_advance_01": {
+      "objLayer": 0,
+      "props": [],
+      "tm": [
+        [1.0,0.0,0.0],
+        [0.0,1.0,0.0],
+        [0.0,0.0,1.0],
+        [1655.75,647.5,2819.25]
+      ],
+      "type": "Point"
+    },
+    "briefing_stage3_advance_02": {
+      "objLayer": 0,
+      "props": [],
+      "tm": [
+        [1.0,0.0,0.0],
+        [0.0,1.0,0.0],
+        [0.0,0.0,1.0],
+        [1599.05,637.45,3245.25]
+      ],
+      "type": "Point"
+    },
+    "briefing_stage3_advance_03": {
+      "objLayer": 0,
+      "props": [],
+      "tm": [
+        [1.0,0.0,0.0],
+        [0.0,1.0,0.0],
+        [0.0,0.0,1.0],
+        [1632.1,638.6,3794.8]
+      ],
+      "type": "Point"
+    },
+    "briefing_stage3_defend": {
+      "objLayer": 0,
+      "props": [],
+      "tm": [
+        [1.0,0.0,0.0],
+        [0.0,1.0,0.0],
+        [0.0,0.0,1.0],
+        [2418.5,639.35,3215.0]
+      ],
+      "type": "Point"
+    }
+  },
+  "bin_dump_file": "",
+  "dialogs": [],
+  "effects": [],
+  "imports": [
+    {
+      "import_record": {
+        "excludes": [],
+        "file": "gameData/missions/templates/tank_arcade_streaks_template.blk",
+        "importAreas": true,
+        "importMissionObjectives": true,
+        "importTriggers": true,
+        "importUnits": true,
+        "importWayPoints": true,
+        "showAreas": true,
+        "showMissionObjectives": true,
+        "showTriggers": true,
+        "showUnits": true,
+        "showWayPoints": true
+      }
+    },
+    {
+      "import_record": {
+        "excludes": [],
+        "file": "gameData/missions/pve_missions/egypt_sinai_assault_pvet/template_egypt_sinai_assault_pvet_logic.blk",
+        "importAreas": true,
+        "importMissionObjectives": true,
+        "importTriggers": true,
+        "importUnits": true,
+        "importWayPoints": true,
+        "showAreas": true,
+        "showMissionObjectives": true,
+        "showTriggers": true,
+        "showUnits": true,
+        "showWayPoints": true
+      }
+    }
+  ],
+  "mission_objectives": {
+    "isCategory": true,
+    "is_enabled": true
+  },
+  "mission_settings": {
+    "atmosphere": {
+      "pressure": 760.0,
+      "temperature": 15.0
+    },
+    "briefing": {
+      "date_loc": "",
+      "music": "action_01",
+      "objective_loc": "",
+      "part": {
+        "event": "",
+        "minTime": 0,
+        "slide": [
+          {
+            "map": true
+          },
+          {
+            "minTime": 4
+          },
+          {
+            "picture": ""
+          },
+          {
+            "showAirMap": false
+          },
+          {
+            "arrow": [
+              {
+                "width": 1
+              },
+              {
+                "side": "player"
+              },
+              {
+                "point": "briefing_stage1_spawn"
+              },
+              {
+                "point": "briefing_stage1_capzone"
+              }
+            ]
+          },
+          {
+            "arrow": [
+              {
+                "width": 1
+              },
+              {
+                "side": "player"
+              },
+              {
+                "point": "briefing_stage1_capzone"
+              },
+              {
+                "point": "briefing_stage2_eliminate"
+              }
+            ]
+          },
+          {
+            "arrow": [
+              {
+                "width": 1
+              },
+              {
+                "side": "player"
+              },
+              {
+                "point": "briefing_stage2_eliminate"
+              },
+              {
+                "point": "briefing_stage3_defend"
+              }
+            ]
+          },
+          {
+            "arrow": [
+              {
+                "width": 1
+              },
+              {
+                "side": "enemy"
+              },
+              {
+                "point": "briefing_stage3_advance_01"
+              },
+              {
+                "point": "briefing_stage3_defend"
+              }
+            ]
+          },
+          {
+            "arrow": [
+              {
+                "width": 1
+              },
+              {
+                "side": "enemy"
+              },
+              {
+                "point": "briefing_stage3_advance_02"
+              },
+              {
+                "point": "briefing_stage3_defend"
+              }
+            ]
+          },
+          {
+            "arrow": [
+              {
+                "width": 1
+              },
+              {
+                "side": "enemy"
+              },
+              {
+                "point": "briefing_stage3_advance_03"
+              },
+              {
+                "point": "briefing_stage3_defend"
+              }
+            ]
+          },
+          {
+            "icon": {
+              "icontype": "tank",
+              "side": "player",
+              "target": "briefing_stage1_spawn"
+            }
+          },
+          {
+            "icon": {
+              "icontype": "basezone",
+              "side": "enemy",
+              "target": "briefing_stage1_capzone"
+            }
+          },
+          {
+            "icon": {
+              "icontype": "tank",
+              "side": "enemy",
+              "target": "briefing_stage2_eliminate"
+            }
+          },
+          {
+            "icon": {
+              "icontype": "basezone",
+              "side": "player",
+              "target": "briefing_stage3_defend"
+            }
+          },
+          {
+            "icon": {
+              "icontype": "tank",
+              "side": "enemy",
+              "target": "briefing_stage3_advance_01"
+            }
+          },
+          {
+            "icon": {
+              "icontype": "tank",
+              "side": "enemy",
+              "target": "briefing_stage3_advance_02"
+            }
+          },
+          {
+            "icon": {
+              "icontype": "tank",
+              "side": "enemy",
+              "target": "briefing_stage3_advance_03"
+            }
+          },
+          {
+            "battleArea": {
+              "target": "briefing_battle_area"
+            }
+          }
+        ]
+      },
+      "place_loc": ""
+    },
+    "mission": {
+      "allowEmptyTeams": true,
+      "deathPenaltyMul": 0.0,
+      "environment": "Day",
+      "level": "levels/avg_egypt_sinai.bin",
+      "locName": "missions/middle_east_1973",
+      "timeLimit": 30,
+      "type": "domination",
+      "weather": "clear"
+    },
+    "player": [
+      {
+        "army": 1
+      },
+      {
+        "wing": "player_01"
+      },
+      {
+        "wing": "player_02"
+      },
+      {
+        "wing": "player_03"
+      },
+      {
+        "wing": "player_04"
+      },
+      {
+        "wing": "player_05"
+      },
+      {
+        "wing": "player_06"
+      },
+      {
+        "wing": "player_07"
+      },
+      {
+        "wing": "player_08"
+      },
+      {
+        "wing": "player_09"
+      },
+      {
+        "wing": "player_10"
+      },
+      {
+        "wing": "player_11"
+      },
+      {
+        "wing": "player_12"
+      },
+      {
+        "wing": "player_13"
+      },
+      {
+        "wing": "player_14"
+      },
+      {
+        "wing": "player_15"
+      },
+      {
+        "wing": "player_16"
+      },
+      {
+        "wing": "player_17"
+      },
+      {
+        "wing": "player_18"
+      },
+      {
+        "wing": "player_19"
+      },
+      {
+        "wing": "player_20"
+      },
+      {
+        "wing": "player_21"
+      },
+      {
+        "wing": "player_22"
+      },
+      {
+        "wing": "player_23"
+      },
+      {
+        "wing": "player_24"
+      },
+      {
+        "wing": "player_25"
+      },
+      {
+        "wing": "player_26"
+      },
+      {
+        "wing": "player_27"
+      },
+      {
+        "wing": "player_28"
+      },
+      {
+        "wing": "player_29"
+      },
+      {
+        "wing": "player_30"
+      },
+      {
+        "wing": "player_31"
+      },
+      {
+        "wing": "player_32"
+      }
+    ],
+    "player_teamB": {
+      "army": 2
+    }
+  },
+  "objLayers": [
+    {
+      "layer": {
+        "enabled": true
+      }
+    },
+    {
+      "layer": {
+        "enabled": true
+      }
+    }
+  ],
+  "selected_tag": "",
+  "triggers": {
+    "isCategory": true,
+    "is_enabled": true
+  },
+  "units": [],
+  "variables": [],
+  "wayPoints": []
+}

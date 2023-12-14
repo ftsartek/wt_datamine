@@ -1,0 +1,340 @@
+{
+  "airfields": [],
+  "areas": {
+    "airfield00": {
+      "props": [],
+      "tm": [
+        [230.3,0.0,0.0],
+        [0.0,230.3,0.0],
+        [0.0,0.0,230.3],
+        [12033.8,-1.90735e-06,12565.3]
+      ],
+      "type": "Sphere"
+    },
+    "airfield01": {
+      "props": [],
+      "tm": [
+        [230.3,0.0,0.0],
+        [0.0,230.3,0.0],
+        [0.0,0.0,230.3],
+        [12833.3,-1.90735e-06,12543.5]
+      ],
+      "type": "Sphere"
+    },
+    "spawnpoint": {
+      "props": [],
+      "tm": [
+        [76.5,0.0,0.0],
+        [0.0,76.5,0.0],
+        [0.0,0.0,76.5],
+        [12006.8,-1.90735e-06,12571.7]
+      ],
+      "type": "Sphere"
+    }
+  },
+  "bin_dump_file": "",
+  "dialogs": [],
+  "effects": [],
+  "imports": [],
+  "mission_objectives": {
+    "isCategory": true,
+    "is_enabled": true
+  },
+  "mission_settings": {
+    "briefing": {
+      "date_loc": "",
+      "music": "action_01",
+      "objective_loc": "",
+      "part": {
+        "event": "",
+        "minTime": 0,
+        "slide": [
+          {
+            "map": true
+          },
+          {
+            "minTime": 4
+          },
+          {
+            "picture": ""
+          },
+          {
+            "icon": {
+              "icontype": "fighter",
+              "lookAt": "airfield01",
+              "side": "player",
+              "target": "airfield00"
+            }
+          },
+          {
+            "icon": {
+              "icontype": "airfield",
+              "side": "ally",
+              "target": "airfield01"
+            }
+          },
+          {
+            "icon": {
+              "icontype": "transport",
+              "side": "ally",
+              "target": "ships_01"
+            }
+          },
+          {
+            "icon": {
+              "icontype": "destroyer",
+              "side": "ally",
+              "target": "ships_02"
+            }
+          }
+        ]
+      },
+      "place_loc": ""
+    },
+    "mission": {
+      "environment": "Day",
+      "level": "levels/guadalcanal.bin",
+      "locName": "missions/testFlight",
+      "optionalTakeOff": false,
+      "restoreType": "manual",
+      "type": "testFlight",
+      "weather": "good",
+      "windDirection": [1.0,0.0,0.0]
+    },
+    "player": {
+      "army": 1,
+      "wing": "armada_01"
+    },
+    "player_teamB": {
+      "army": 2
+    }
+  },
+  "objLayers": [
+    {
+      "layer": {
+        "enabled": true
+      }
+    },
+    {
+      "layer": {
+        "enabled": true
+      }
+    },
+    {
+      "layer": {
+        "enabled": true
+      }
+    },
+    {
+      "layer": {
+        "enabled": true
+      }
+    }
+  ],
+  "selected_tag": "",
+  "triggers": {
+    "end": {
+      "actions": {
+        "spawnOnAirfield": {
+          "objects": "armada_01",
+          "runwayName": "airfield00"
+        },
+        "wait": {
+          "time": 3.0
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "playersWhenStatus": {
+          "check_players": "any",
+          "players": "isKilled"
+        }
+      },
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": true
+      }
+    },
+    "init": {
+      "actions": {
+        "addAirfield": {
+          "army": 1,
+          "runwayEnd": "airfield01",
+          "runwayStart": "airfield00",
+          "runwayWidth": 50.0,
+          "spawnPoint": "spawnpoint"
+        },
+        "spawnOnAirfield": {
+          "objects": "armada_01",
+          "runwayName": "airfield00"
+        }
+      },
+      "comments": "",
+      "conditions": [],
+      "events": {
+        "initMission": []
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "isCategory": true,
+    "is_enabled": true
+  },
+  "units": [
+    {
+      "armada": {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "name": "armada_01",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 1,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "minimum_distance_to_earth": 20.0,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 1.5,
+            "row_distances": 1.5,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "skill": 4
+        },
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [11801.1,-319.9,12554.3]
+        ],
+        "unit_class": "pby-5",
+        "way": [],
+        "weapons": ""
+      }
+    },
+    {
+      "ships": {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "name": "ships_01",
+        "props": {
+          "army": 1,
+          "attack_type": "fire_at_will",
+          "count": 2,
+          "formation_div": 1,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [15.0,14.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "tm": [
+          [-0.0436193,0.0,-0.999048],
+          [0.0,1.0,0.0],
+          [0.999048,0.0,-0.0436193],
+          [13277.5,0.0,13278.0]
+        ],
+        "unit_class": "hms_cargo_ship",
+        "way": [],
+        "weapons": ""
+      }
+    },
+    {
+      "ships": {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "name": "ships_02",
+        "props": {
+          "army": 1,
+          "attack_type": "fire_at_will",
+          "count": 3,
+          "formation_div": 1,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [15.0,6.0],
+          "formation_type": "cols",
+          "uniqueName": ""
+        },
+        "tm": [
+          [-0.0436193,0.0,-0.999048],
+          [0.0,1.0,0.0],
+          [0.999048,0.0,-0.0436193],
+          [13217.7,0.0,9986.8]
+        ],
+        "unit_class": "uss_dd_sims",
+        "way": [],
+        "weapons": ""
+      }
+    },
+    {
+      "ships": {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "name": "ships_03",
+        "props": {
+          "army": 1,
+          "attack_type": "fire_at_will",
+          "count": 4,
+          "formation_div": 1,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [15.0,14.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "tm": [
+          [-0.0436193,0.0,-0.999048],
+          [0.0,1.0,0.0],
+          [0.999048,0.0,-0.0436193],
+          [14525.9,0.0,13168.2]
+        ],
+        "unit_class": "fishboat2",
+        "way": [],
+        "weapons": ""
+      }
+    }
+  ],
+  "variables": []
+}

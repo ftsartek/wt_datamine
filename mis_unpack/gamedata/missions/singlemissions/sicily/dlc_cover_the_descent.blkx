@@ -1,0 +1,6836 @@
+{
+  "airfields": [],
+  "areas": {
+    "descent_landing_point": {
+      "props": [],
+      "tm": [
+        [1.0,0.0,0.0],
+        [0.0,1.0,0.0],
+        [0.0,0.0,1.0],
+        [23382.2,-112.25,-18391.5]
+      ],
+      "type": "Point"
+    },
+    "evacuate_point": {
+      "props": [],
+      "tm": [
+        [1.0,0.0,0.0],
+        [0.0,1.0,0.0],
+        [0.0,0.0,1.0],
+        [-11902.8,824.9,-22917.5]
+      ],
+      "type": "Point"
+    },
+    "tanks_spawn_point": {
+      "props": [],
+      "tm": [
+        [1.0,0.0,0.0],
+        [0.0,1.0,0.0],
+        [0.0,0.0,1.0],
+        [23160.3,6.8,-18361.0]
+      ],
+      "type": "Point"
+    }
+  },
+  "bin_dump_file": "",
+  "dialogs": [],
+  "effects": [],
+  "imports": {
+    "import_record": {
+      "excludes": [],
+      "file": "gameData/missions/bridges/sicily_bridges.blk",
+      "importAreas": true,
+      "importMissionObjectives": true,
+      "importTriggers": true,
+      "importUnits": true,
+      "importWayPoints": true,
+      "showAreas": true,
+      "showMissionObjectives": true,
+      "showTriggers": true,
+      "showUnits": true,
+      "showWayPoints": true
+    }
+  },
+  "mission_objectives": {
+    "dlc_cover_the_descent_bots": {
+      "comments": "",
+      "is_enabled": false,
+      "onFailed": [],
+      "onSuccess": [],
+      "props": {
+        "isPrimary": true,
+        "scoreConst": 100,
+        "scoreTime": 400,
+        "timeLimit": 1800
+      },
+      "type": "abstractMissionObjective"
+    },
+    "dlc_cover_the_descent_tanks": {
+      "comments": "",
+      "is_enabled": false,
+      "onFailed": [],
+      "onSuccess": [],
+      "props": {
+        "isPrimary": true,
+        "scoreConst": 100,
+        "scoreTime": 400,
+        "timeLimit": 1800
+      },
+      "type": "abstractMissionObjective"
+    },
+    "isCategory": true,
+    "is_enabled": true
+  },
+  "mission_settings": {
+    "atmosphere": {
+      "pressure": 772.0,
+      "temperature": 26.0
+    },
+    "briefing": {
+      "date_loc": "",
+      "music": "action_01",
+      "objective_loc": "",
+      "part": {
+        "event": "",
+        "minTime": 0,
+        "slide": [
+          {
+            "map": true
+          },
+          {
+            "minTime": 4
+          },
+          {
+            "picture": ""
+          },
+          {
+            "showAirMap": false
+          },
+          {
+            "arrow": [
+              {
+                "width": 1
+              },
+              {
+                "side": "ally"
+              },
+              {
+                "point": "descent_bots"
+              },
+              {
+                "point": "descent_landing_point"
+              },
+              {
+                "point": "descent_landing_point"
+              }
+            ]
+          },
+          {
+            "icon": {
+              "icontype": "transport",
+              "side": "ally",
+              "target": "descent_bots"
+            }
+          },
+          {
+            "icon": {
+              "icontype": "fighter",
+              "lookAt": "descent_bots",
+              "side": "player",
+              "target": "player_wing"
+            }
+          }
+        ]
+      },
+      "place_loc": ""
+    },
+    "mission": {
+      "environment": "Day",
+      "level": "levels/sicily.bin",
+      "optionalTakeOff": false,
+      "restoreType": "attempts",
+      "stars": {
+        "day": 9,
+        "month": 7,
+        "year": 1943
+      },
+      "type": "singleMission",
+      "weather": "cloudy",
+      "windDirectionDeg": [304.0,307.0],
+      "windSpeed": [4.0,7.0]
+    },
+    "player": {
+      "army": 1,
+      "wing": "player_wing"
+    },
+    "player_teamB": {
+      "army": 2
+    },
+    "spectator_points": []
+  },
+  "objLayers": [
+    {
+      "layer": {
+        "enabled": true
+      }
+    },
+    {
+      "layer": {
+        "enabled": true
+      }
+    },
+    {
+      "layer": {
+        "enabled": true
+      }
+    },
+    {
+      "layer": {
+        "enabled": true
+      }
+    },
+    {
+      "layer": {
+        "enabled": true
+      }
+    }
+  ],
+  "selected_tag": "",
+  "triggers": {
+    "bf109_01_attack_bots": {
+      "actions": [
+        {
+          "unitAttackTarget": [
+            {
+              "playerAttracted": false
+            },
+            {
+              "object": "british_big_ships_squad"
+            },
+            {
+              "target": "germ_sea_cannon_01"
+            },
+            {
+              "target": "germ_sea_cannon_02"
+            },
+            {
+              "target": "germ_sea_cannon_03"
+            },
+            {
+              "target": "germany_planes"
+            },
+            {
+              "fireRandom": true
+            },
+            {
+              "targetDistMax": 7000.0
+            }
+          ]
+        },
+        {
+          "unitAttackTarget": {
+            "delayForObjects": [1.0,2.0],
+            "fireRandom": true,
+            "object": "bf109_01",
+            "playerAttracted": false,
+            "target": "descent_bots"
+          }
+        },
+        {
+          "wait": {
+            "time": 30.0
+          }
+        },
+        {
+          "triggerEnable": {
+            "target": "bf109_02_start_up"
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": {
+        "unitDistanceBetween": {
+          "check_objects": "any",
+          "check_targets": "any",
+          "math": "2D",
+          "object": "bf109_01",
+          "object_marking": 0,
+          "object_type": "isAlive",
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "target": "descent_bots",
+          "target_marking": 0,
+          "target_type": "isAlive",
+          "value": 5500.0
+        }
+      },
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ANY",
+        "enableAfterComplete": false
+      }
+    },
+    "bf109_02_attack_bots": {
+      "actions": [
+        {
+          "unitAttackTarget": [
+            {
+              "playerAttracted": false
+            },
+            {
+              "object": "british_big_ships_squad"
+            },
+            {
+              "target": "germ_sea_cannon_01"
+            },
+            {
+              "target": "germ_sea_cannon_02"
+            },
+            {
+              "target": "germ_sea_cannon_03"
+            },
+            {
+              "target": "germany_planes"
+            },
+            {
+              "fireRandom": true
+            },
+            {
+              "targetDistMax": 7000.0
+            }
+          ]
+        },
+        {
+          "unitAttackTarget": {
+            "delayForObjects": [1.0,2.0],
+            "fireRandom": true,
+            "object": "bf109_02",
+            "playerAttracted": false,
+            "target": "descent_bots"
+          }
+        },
+        {
+          "wait": {
+            "time": 30.0
+          }
+        },
+        {
+          "triggerEnable": {
+            "target": "bf109_03_start_up"
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": {
+        "unitDistanceBetween": {
+          "check_objects": "any",
+          "check_targets": "any",
+          "math": "2D",
+          "object": "bf109_02",
+          "object_marking": 0,
+          "object_type": "isAlive",
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "target": "descent_bots",
+          "target_marking": 0,
+          "target_type": "isAlive",
+          "value": 5500.0
+        }
+      },
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ANY",
+        "enableAfterComplete": false
+      }
+    },
+    "bf109_02_start_up": {
+      "actions": [
+        {
+          "unitWakeUp": [
+            {
+              "target": "bf109_02"
+            },
+            {
+              "target": "bf109_02_add"
+            }
+          ]
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "unitMoveTo": {
+            "destTimeMode": false,
+            "fastClimb": false,
+            "follow_offset": [-150.0,2000.0,20.0],
+            "follow_target": true,
+            "horizontalDirectionForTeleport": true,
+            "object": "bf109_02",
+            "object_marking": 0,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "object_var_value": 0,
+            "recalculatePathDist": -1.0,
+            "shouldKeepFormation": true,
+            "speed": 250.0,
+            "target": "descent_bots",
+            "target_marking": 0,
+            "target_var_comp_op": "equal",
+            "target_var_name": "",
+            "target_var_value": 0,
+            "teleportHeightType": "absolute",
+            "teleportHeightValue": 1000.0,
+            "useUnitHeightForTele": true,
+            "velocity": 250.0,
+            "waypointReachedDist": 10.0
+          }
+        },
+        {
+          "unitMoveTo": {
+            "destTimeMode": false,
+            "fastClimb": false,
+            "follow_offset": [0.0,250.0,0.0],
+            "follow_target": true,
+            "horizontalDirectionForTeleport": true,
+            "object": "bf109_02_add",
+            "object_marking": 0,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "object_var_value": 0,
+            "recalculatePathDist": -1.0,
+            "shouldKeepFormation": true,
+            "target": "bf109_02",
+            "target_marking": 0,
+            "target_type": "isActive",
+            "target_var_comp_op": "equal",
+            "target_var_name": "",
+            "target_var_value": 0,
+            "teleportHeightType": "absolute",
+            "teleportHeightValue": 1000.0,
+            "useUnitHeightForTele": true,
+            "waypointReachedDist": 10.0
+          }
+        },
+        {
+          "unitAttackTarget": {
+            "anchorTarget": "bf109_02",
+            "attackAltRange": [250.0,7000.0],
+            "fireRandom": true,
+            "keepDeadUnitsInTargetList": true,
+            "maxNumAttackersPerTarget": 1,
+            "object": "bf109_02_add",
+            "playerAttracted": false,
+            "resetObjectToFollow": false,
+            "target": "british_planes",
+            "targetDistMax": 4000.0,
+            "targetToAnchorDist": [3000.0,4000.0],
+            "target_marking": 0
+          }
+        },
+        {
+          "unitSetIndication": [
+            {
+              "set": true
+            },
+            {
+              "target_marking": 0
+            },
+            {
+              "object_var_name": ""
+            },
+            {
+              "object_var_comp_op": "equal"
+            },
+            {
+              "object_var_value": 0
+            },
+            {
+              "target": "bf109_02"
+            },
+            {
+              "target": "bf109_02_add"
+            }
+          ]
+        },
+        {
+          "triggerEnable": {
+            "target": "bf109_02_attack_bots"
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": {
+        "unitWhenCountMatches": [
+          {
+            "object_type": "isAlive"
+          },
+          {
+            "object_marking": 0
+          },
+          {
+            "func": "less"
+          },
+          {
+            "value": 12
+          },
+          {
+            "object_var_name": ""
+          },
+          {
+            "object_var_comp_op": "equal"
+          },
+          {
+            "object": "bf109_01"
+          },
+          {
+            "object": "bf109_01_add"
+          }
+        ]
+      },
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "bf109_03_attack_bots": {
+      "actions": [
+        {
+          "unitAttackTarget": [
+            {
+              "playerAttracted": false
+            },
+            {
+              "object": "british_big_ships_squad"
+            },
+            {
+              "target": "germ_sea_cannon_01"
+            },
+            {
+              "target": "germ_sea_cannon_02"
+            },
+            {
+              "target": "germ_sea_cannon_03"
+            },
+            {
+              "target": "germany_planes"
+            },
+            {
+              "fireRandom": true
+            },
+            {
+              "targetDistMax": 7000.0
+            }
+          ]
+        },
+        {
+          "unitAttackTarget": {
+            "delayForObjects": [1.0,2.0],
+            "fireRandom": true,
+            "object": "bf109_02",
+            "playerAttracted": false,
+            "target": "descent_bots"
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": {
+        "unitDistanceBetween": {
+          "check_objects": "any",
+          "check_targets": "any",
+          "math": "2D",
+          "object": "bf109_02",
+          "object_marking": 0,
+          "object_type": "isAlive",
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "target": "descent_bots",
+          "target_marking": 0,
+          "target_type": "isAlive",
+          "value": 5500.0
+        }
+      },
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ANY",
+        "enableAfterComplete": false
+      }
+    },
+    "bf109_03_start_up": {
+      "actions": [
+        {
+          "unitWakeUp": [
+            {
+              "target": "bf109_03"
+            },
+            {
+              "target": "bf109_03_add"
+            }
+          ]
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "unitMoveTo": {
+            "destTimeMode": false,
+            "fastClimb": false,
+            "follow_offset": [-150.0,2000.0,20.0],
+            "follow_target": true,
+            "horizontalDirectionForTeleport": true,
+            "object": "bf109_03",
+            "object_marking": 0,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "object_var_value": 0,
+            "recalculatePathDist": -1.0,
+            "shouldKeepFormation": true,
+            "speed": 250.0,
+            "target": "descent_bots",
+            "target_marking": 0,
+            "target_var_comp_op": "equal",
+            "target_var_name": "",
+            "target_var_value": 0,
+            "teleportHeightType": "absolute",
+            "teleportHeightValue": 1000.0,
+            "useUnitHeightForTele": true,
+            "velocity": 250.0,
+            "waypointReachedDist": 10.0
+          }
+        },
+        {
+          "unitMoveTo": {
+            "destTimeMode": false,
+            "fastClimb": false,
+            "follow_offset": [0.0,250.0,0.0],
+            "follow_target": true,
+            "horizontalDirectionForTeleport": true,
+            "object": "bf109_03_add",
+            "object_marking": 0,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "object_var_value": 0,
+            "recalculatePathDist": -1.0,
+            "shouldKeepFormation": true,
+            "target": "bf109_03",
+            "target_marking": 0,
+            "target_type": "isActive",
+            "target_var_comp_op": "equal",
+            "target_var_name": "",
+            "target_var_value": 0,
+            "teleportHeightType": "absolute",
+            "teleportHeightValue": 1000.0,
+            "useUnitHeightForTele": true,
+            "waypointReachedDist": 10.0
+          }
+        },
+        {
+          "unitAttackTarget": {
+            "anchorTarget": "bf109_03",
+            "attackAltRange": [250.0,7000.0],
+            "fireRandom": true,
+            "keepDeadUnitsInTargetList": true,
+            "maxNumAttackersPerTarget": 1,
+            "object": "bf109_03_add",
+            "playerAttracted": false,
+            "resetObjectToFollow": false,
+            "target": "british_planes",
+            "targetDistMax": 4000.0,
+            "targetToAnchorDist": [3000.0,4000.0],
+            "target_marking": 0
+          }
+        },
+        {
+          "unitSetIndication": [
+            {
+              "set": true
+            },
+            {
+              "target_marking": 0
+            },
+            {
+              "object_var_name": ""
+            },
+            {
+              "object_var_comp_op": "equal"
+            },
+            {
+              "object_var_value": 0
+            },
+            {
+              "target": "bf109_03"
+            },
+            {
+              "target": "bf109_03_add"
+            }
+          ]
+        },
+        {
+          "triggerEnable": {
+            "target": "bf109_03_attack_bots"
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": {
+        "unitWhenCountMatches": {
+          "func": "less",
+          "object": "bf109_02",
+          "object_marking": 0,
+          "object_type": "isAlive",
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "value": 6
+        }
+      },
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "bots_detstroyed": {
+      "actions": {
+        "missionFailed": [],
+        "moSetObjectiveStatus": {
+          "object_marking": 0,
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "status": 3,
+          "target": "dlc_cover_the_descent_bots"
+        },
+        "triggerDisable": [
+          {
+            "target": "bots_near_landing_point"
+          },
+          {
+            "target": "landing_successful"
+          }
+        ],
+        "wait": {
+          "time": 3.0
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "unitWhenCountMatches": {
+          "func": "less",
+          "object": "descent_bots",
+          "object_marking": 0,
+          "object_type": "isAlive",
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "value": 5
+        }
+      },
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "bots_near_landing_point": {
+      "actions": {
+        "triggerDisable": [
+          {
+            "target": "check_for_cheat"
+          },
+          {
+            "target": "bots_detstroyed"
+          }
+        ],
+        "unitSetProperties": {
+          "lockSpeed": true,
+          "object": "descent_bots",
+          "object_marking": 0,
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "object_var_value": 0,
+          "speed": 0.0,
+          "useForTriggerFiltered": true
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "unitDistanceBetween": {
+          "check_objects": "any",
+          "check_targets": "any",
+          "math": "2D",
+          "object": "descent_bots",
+          "object_marking": 0,
+          "object_type": "isAlive",
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "target": "descent_landing_point",
+          "target_marking": 0,
+          "target_type": "isAlive",
+          "value": 70.0
+        }
+      },
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": true
+      }
+    },
+    "check_for_cheat": {
+      "actions": {
+        "unitSetProperties": {
+          "accuracy": 1.0,
+          "effShootingRate": 1.0,
+          "object": "germ_air_defence_01",
+          "object_marking": 0,
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "object_var_value": 0
+        }
+      },
+      "comments": "",
+      "conditions": [
+        {
+          "unitWhenStatus": {
+            "check_objects": "any",
+            "check_period": 1.0,
+            "object": "germ_artillery",
+            "object_marking": 0,
+            "object_type": "damaged",
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "object_var_value": 0,
+            "target_type": "isAlive"
+          }
+        },
+        {
+          "unitWhenStatus": {
+            "check_objects": "any",
+            "check_period": 1.0,
+            "object": "germ_artillery",
+            "object_marking": 0,
+            "object_type": "isKilled",
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "object_var_value": 0,
+            "target_type": "isAlive"
+          }
+        }
+      ],
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ANY",
+        "enableAfterComplete": false
+      }
+    },
+    "complete_mission": {
+      "actions": [
+        {
+          "triggerDisable": {
+            "target": "tanks_destroyed"
+          }
+        },
+        {
+          "moSetObjectiveStatus": {
+            "object_marking": 0,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "status": 2,
+            "target": "dlc_cover_the_descent_tanks"
+          }
+        },
+        {
+          "wait": {
+            "time": 3.0
+          }
+        },
+        {
+          "wait": {
+            "time": 3.0
+          }
+        },
+        {
+          "missionCompleted": {
+            "timer": false
+          }
+        },
+        {
+          "missionDebriefing": []
+        }
+      ],
+      "comments": "",
+      "conditions": {
+        "unitWhenCountMatches": {
+          "func": "less",
+          "object": "germ_artillery",
+          "object_marking": 0,
+          "object_type": "isAlive",
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "value": 1
+        }
+      },
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 10.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "destroy_tank": {
+      "actions": {
+        "unitDamage": {
+          "countEffects": 1,
+          "delay": [1.0,1.0],
+          "offset": [0.0,0.0,0.0],
+          "part": 0,
+          "power": 1.0,
+          "radiusOffset": [10.0,15.0],
+          "randomTargetsCount": 1,
+          "target": "usa_tanks_squad",
+          "useEffect": false
+        },
+        "varModify": {
+          "operator": "add",
+          "value": -1.0,
+          "var": "bots_alive_count"
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "unitWhenCountMatches": {
+          "func": "less",
+          "object": "descent_bots",
+          "object_marking": 0,
+          "object_type": "isAlive",
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "value": 1,
+          "var": "bots_alive_count"
+        }
+      },
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": true
+      }
+    },
+    "isCategory": true,
+    "is_enabled": true,
+    "landing_successful": {
+      "actions": [
+        {
+          "triggerDisable": [
+            {
+              "target": "bots_detstroyed"
+            },
+            {
+              "target": "update_indicator_bots"
+            }
+          ]
+        },
+        {
+          "triggerEnable": [
+            {
+              "target": "tanks_destroyed"
+            },
+            {
+              "target": "complete_mission"
+            }
+          ]
+        },
+        {
+          "triggerEnable": {
+            "target": "update_indicator_tanks"
+          }
+        },
+        {
+          "triggerEnable": {
+            "target": "update_indicator_atillery"
+          }
+        },
+        {
+          "moSetObjectiveStatus": {
+            "object_marking": 0,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "status": 2,
+            "target": "dlc_cover_the_descent_bots"
+          }
+        },
+        {
+          "unitMoveTo": {
+            "delayForObjects": [1.0,1.5],
+            "destTimeMode": false,
+            "fastClimb": false,
+            "follow_target": false,
+            "horizontalDirectionForTeleport": true,
+            "move_type": "teleport",
+            "object": "usa_tanks_squad",
+            "object_marking": 0,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "object_var_value": 0,
+            "recalculatePathDist": -1.0,
+            "shouldKeepFormation": false,
+            "target": "tanks_spawn_point",
+            "target_marking": 0,
+            "target_var_comp_op": "equal",
+            "target_var_name": "",
+            "target_var_value": 0,
+            "teleportHeightType": "relative",
+            "teleportHeightValue": 100.0,
+            "useUnitHeightForTele": true,
+            "waypointReachedDist": 10.0
+          }
+        },
+        {
+          "unitMoveTo": [
+            {
+              "target": "evacuate_point"
+            },
+            {
+              "follow_target": false
+            },
+            {
+              "teleportHeightType": "absolute"
+            },
+            {
+              "useUnitHeightForTele": true
+            },
+            {
+              "shouldKeepFormation": false
+            },
+            {
+              "teleportHeightValue": 1000.0
+            },
+            {
+              "horizontalDirectionForTeleport": true
+            },
+            {
+              "object_marking": 0
+            },
+            {
+              "object_var_name": ""
+            },
+            {
+              "object_var_comp_op": "equal"
+            },
+            {
+              "object_var_value": 0
+            },
+            {
+              "target_marking": 0
+            },
+            {
+              "waypointReachedDist": 10.0
+            },
+            {
+              "recalculatePathDist": -1.0
+            },
+            {
+              "fastClimb": false
+            },
+            {
+              "destTimeMode": false
+            },
+            {
+              "target_var_name": ""
+            },
+            {
+              "target_var_comp_op": "equal"
+            },
+            {
+              "target_var_value": 0
+            },
+            {
+              "object": "bf109_01"
+            },
+            {
+              "object": "bf109_01_add"
+            },
+            {
+              "object": "bf109_02"
+            },
+            {
+              "object": "bf109_02_add"
+            },
+            {
+              "object": "bf109_03"
+            },
+            {
+              "object": "bf109_03_add"
+            }
+          ]
+        },
+        {
+          "wait": {
+            "time": 3.0
+          }
+        },
+        {
+          "wait": {
+            "time": 30.0
+          }
+        },
+        {
+          "wait": {
+            "time": 3.0
+          }
+        },
+        {
+          "unitSetProperties": {
+            "attack_type": "fire_at_will",
+            "effShootingRate": 0.05,
+            "object": "usa_tanks_squad",
+            "object_marking": 0,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "object_var_value": 0,
+            "speed": 5.0,
+            "stealthRadius": 5500.0
+          }
+        },
+        {
+          "unitSetProperties": {
+            "attack_type": "fire_at_will",
+            "effShootingRate": 0.5,
+            "object": "germ_artillery",
+            "object_marking": 0,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "object_var_value": 0,
+            "stealthRadius": 3500.0
+          }
+        },
+        {
+          "unitSetProperties": {
+            "attack_type": "fire_at_will",
+            "effShootingRate": 0.05,
+            "object": "usa_tanks_squad",
+            "object_marking": 0,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "object_var_value": 0,
+            "speed": 20.0,
+            "stealthRadius": 5500.0
+          }
+        },
+        {
+          "unitSetIndication": [
+            {
+              "set": false
+            },
+            {
+              "target_marking": 0
+            },
+            {
+              "object_var_name": ""
+            },
+            {
+              "object_var_comp_op": "equal"
+            },
+            {
+              "object_var_value": 0
+            },
+            {
+              "target": "bf109_01"
+            },
+            {
+              "target": "bf109_01_add"
+            },
+            {
+              "target": "bf109_02"
+            },
+            {
+              "target": "bf109_02_add"
+            },
+            {
+              "target": "bf109_03"
+            },
+            {
+              "target": "bf109_03_add"
+            },
+            {
+              "target": "descent_bots"
+            }
+          ]
+        },
+        {
+          "unitSetIndication": {
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "object_var_value": 0,
+            "set": true,
+            "target": "germ_artillery",
+            "target_marking": 0
+          }
+        },
+        {
+          "missionSetTargetsIndicator": {
+            "delta": 0,
+            "icon": "ship",
+            "icon army": 1,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "object_var_value": 0,
+            "set": false,
+            "target": "descent_bots",
+            "target_marking": 0,
+            "target_type": "isAlive"
+          }
+        },
+        {
+          "moAddMissionObjective": {
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "target": "dlc_cover_the_descent_tanks"
+          }
+        },
+        {
+          "unitWakeUp": {
+            "target": "bf109_for_cannons"
+          }
+        },
+        {
+          "unitAttackTarget": [
+            {
+              "playerAttracted": false
+            },
+            {
+              "object": "allies"
+            },
+            {
+              "object": "player_wing"
+            },
+            {
+              "target": "bf109_for_cannons"
+            },
+            {
+              "target": "germ_air_defence_01"
+            },
+            {
+              "target": "germ_air_defence_02"
+            },
+            {
+              "target": "germ_air_defence_03"
+            },
+            {
+              "target": "germ_air_defence_04"
+            },
+            {
+              "target": "germ_air_defence_05"
+            },
+            {
+              "fireRandom": true
+            }
+          ]
+        },
+        {
+          "unitAttackTarget": [
+            {
+              "playerAttracted": true
+            },
+            {
+              "object": "bf109_for_cannons"
+            },
+            {
+              "target": "player_wing"
+            },
+            {
+              "target": "allies"
+            },
+            {
+              "fireRandom": true
+            },
+            {
+              "playerAttractedCount": 2
+            }
+          ]
+        }
+      ],
+      "comments": "",
+      "conditions": [],
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "simulator_diff": {
+      "actions": {
+        "unitPutToSleep": {
+          "numToSleep": 6,
+          "order": "fromEnd",
+          "target": "germ_artillery"
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "gameWhenDifficulty": {
+          "difficulty": "simulator",
+          "is": "equal"
+        }
+      },
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "start_mission": {
+      "actions": [
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "unitLoadBehTree": {
+            "name": "shipMissionUnit",
+            "objects": "british_big_ships_squad"
+          }
+        },
+        {
+          "unitLoadBehTree": [
+            {
+              "name": "missionFighter"
+            },
+            {
+              "objects": "germany_planes"
+            },
+            {
+              "objects": "allies"
+            }
+          ]
+        },
+        {
+          "unitPutToSleep": [
+            {
+              "target": "bf109_01"
+            },
+            {
+              "target": "bf109_01_add"
+            },
+            {
+              "target": "bf109_02"
+            },
+            {
+              "target": "bf109_02_add"
+            },
+            {
+              "target": "bf109_03"
+            },
+            {
+              "target": "bf109_03_add"
+            },
+            {
+              "target": "bf109_for_cannons"
+            }
+          ]
+        },
+        {
+          "unitSetProperties": [
+            {
+              "object": "germ_artillery"
+            },
+            {
+              "object": "usa_tanks_squad"
+            },
+            {
+              "object_marking": 0
+            },
+            {
+              "object_var_name": ""
+            },
+            {
+              "object_var_comp_op": "equal"
+            },
+            {
+              "object_var_value": 0
+            },
+            {
+              "stealthRadius": -1.0
+            },
+            {
+              "attack_type": "hold_fire"
+            }
+          ]
+        },
+        {
+          "unitSetProperties": [
+            {
+              "object": "bf109_01"
+            },
+            {
+              "object": "bf109_01_add"
+            },
+            {
+              "object": "bf109_02"
+            },
+            {
+              "object": "bf109_02_add"
+            },
+            {
+              "object": "bf109_03"
+            },
+            {
+              "object": "bf109_03_add"
+            },
+            {
+              "object_marking": 0
+            },
+            {
+              "object_var_name": ""
+            },
+            {
+              "object_var_comp_op": "equal"
+            },
+            {
+              "object_var_value": 0
+            },
+            {
+              "accuracy": 1.0
+            },
+            {
+              "effShootingRate": 1.0
+            },
+            {
+              "plane": [
+                {
+                  "ai_skill": "ROOKIE"
+                },
+                {
+                  "targetDeviation": {
+                    "defaultVal": 0.2,
+                    "limits": [0.2,0.8],
+                    "trigger": "machine gun"
+                  }
+                },
+                {
+                  "targetDeviation": {
+                    "defaultVal": 0.2,
+                    "limits": [0.2,0.6],
+                    "trigger": "bombs"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "unitSetProperties": [
+            {
+              "object": "usa_tanks_squad"
+            },
+            {
+              "object": "germ_artillery"
+            },
+            {
+              "object_marking": 0
+            },
+            {
+              "object_var_name": ""
+            },
+            {
+              "object_var_comp_op": "equal"
+            },
+            {
+              "object_var_value": 0
+            },
+            {
+              "effShootingRate": 0.2
+            }
+          ]
+        },
+        {
+          "unitSetProperties": {
+            "airAccuracy": 0.1,
+            "effShootingRate": 0.1,
+            "object": "germ_town_aaa_01",
+            "object_marking": 0,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "object_var_value": 0
+          }
+        },
+        {
+          "unitSetProperties": {
+            "effShootingRate": 0.4,
+            "object": "allies",
+            "object_marking": 0,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "object_var_value": 0,
+            "plane": {
+              "targetDeviation": {
+                "defaultVal": 1.0,
+                "limits": [1.0,2.0],
+                "trigger": "machine gun"
+              }
+            }
+          }
+        },
+        {
+          "unitSetProperties": [
+            {
+              "object": "germ_air_defence_01"
+            },
+            {
+              "object": "germ_air_defence_02"
+            },
+            {
+              "object": "germ_air_defence_03"
+            },
+            {
+              "object": "germ_air_defence_04"
+            },
+            {
+              "object": "germ_air_defence_05"
+            },
+            {
+              "object_marking": 0
+            },
+            {
+              "object_var_name": ""
+            },
+            {
+              "object_var_comp_op": "equal"
+            },
+            {
+              "object_var_value": 0
+            },
+            {
+              "accuracy": 0.1
+            },
+            {
+              "effShootingRate": 0.1
+            },
+            {
+              "fireRandom": true
+            },
+            {
+              "targetChangeInterval": 5.0
+            },
+            {
+              "targetChangeProb": 0.25
+            }
+          ]
+        },
+        {
+          "unitSetProperties": {
+            "effShootingRate": 0.6,
+            "object": "bf109_for_cannons",
+            "object_marking": 0,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "object_var_value": 0,
+            "plane": {
+              "targetDeviation": {
+                "defaultVal": 0.4,
+                "limits": [0.4,1.6],
+                "trigger": "machine gun"
+              }
+            }
+          }
+        },
+        {
+          "unitSetProperties": {
+            "accuracy": 1.0,
+            "airAccuracy": 0.3,
+            "fireRandom": true,
+            "object": "british_big_ships_squad",
+            "object_marking": 0,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "object_var_value": 0,
+            "targetChangeInterval": 5.0,
+            "targetChangeProb": 0.25
+          }
+        },
+        {
+          "unitAttackTarget": [
+            {
+              "playerAttracted": false
+            },
+            {
+              "object": "germ_sea_cannon_01"
+            },
+            {
+              "object": "germ_sea_cannon_02"
+            },
+            {
+              "object": "germ_sea_cannon_03"
+            },
+            {
+              "target": "british_ships_squad"
+            },
+            {
+              "fireRandom": true
+            }
+          ]
+        },
+        {
+          "unitAttackTarget": {
+            "anchorTarget": "player_wing",
+            "attackAltRange": [250.0,7000.0],
+            "fireRandom": true,
+            "keepDeadUnitsInTargetList": true,
+            "maxNumAttackersPerTarget": 1,
+            "object": "allies",
+            "playerAttracted": false,
+            "resetObjectToFollow": false,
+            "target": "germany_planes",
+            "targetDistMax": 4000.0,
+            "targetToAnchorDist": [3000.0,4000.0],
+            "target_marking": 0
+          }
+        },
+        {
+          "unitAttackTarget": [
+            {
+              "playerAttracted": false
+            },
+            {
+              "object": "british_big_ships_squad"
+            },
+            {
+              "target": "germ_sea_cannon_01"
+            },
+            {
+              "target": "germ_sea_cannon_02"
+            },
+            {
+              "target": "germ_sea_cannon_03"
+            },
+            {
+              "fireRandom": true
+            },
+            {
+              "targetDistMax": 7000.0
+            }
+          ]
+        },
+        {
+          "unitAttackTarget": {
+            "anchorTarget": "bf109_01",
+            "attackAltRange": [250.0,7000.0],
+            "fireRandom": true,
+            "keepDeadUnitsInTargetList": true,
+            "maxNumAttackersPerTarget": 1,
+            "object": "bf109_01_add",
+            "playerAttracted": false,
+            "resetObjectToFollow": false,
+            "target": "british_planes",
+            "targetDistMax": 4000.0,
+            "targetToAnchorDist": [3000.0,4000.0],
+            "target_marking": 0
+          }
+        },
+        {
+          "unitMoveTo": {
+            "destTimeMode": false,
+            "fastClimb": false,
+            "follow_offset": [0.0,250.0,0.0],
+            "follow_target": true,
+            "horizontalDirectionForTeleport": true,
+            "object": "allies",
+            "object_marking": 0,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "object_var_value": 0,
+            "recalculatePathDist": -1.0,
+            "shouldKeepFormation": true,
+            "target": "player_wing",
+            "target_marking": 0,
+            "target_type": "isActive",
+            "target_var_comp_op": "equal",
+            "target_var_name": "",
+            "target_var_value": 0,
+            "teleportHeightType": "absolute",
+            "teleportHeightValue": 1000.0,
+            "useUnitHeightForTele": true,
+            "waypointReachedDist": 10.0
+          }
+        },
+        {
+          "unitMoveTo": {
+            "destTimeMode": false,
+            "fastClimb": false,
+            "follow_offset": [-150.0,1600.0,20.0],
+            "follow_target": true,
+            "horizontalDirectionForTeleport": true,
+            "object": "bf109_01",
+            "object_marking": 0,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "object_var_value": 0,
+            "recalculatePathDist": -1.0,
+            "shouldKeepFormation": true,
+            "speed": 350.0,
+            "target": "descent_bots",
+            "target_marking": 0,
+            "target_var_comp_op": "equal",
+            "target_var_name": "",
+            "target_var_value": 0,
+            "teleportHeightType": "absolute",
+            "teleportHeightValue": 1000.0,
+            "useUnitHeightForTele": true,
+            "velocity": 250.0,
+            "waypointReachedDist": 10.0
+          }
+        },
+        {
+          "unitMoveTo": {
+            "destTimeMode": false,
+            "fastClimb": false,
+            "follow_offset": [0.0,250.0,0.0],
+            "follow_target": true,
+            "horizontalDirectionForTeleport": true,
+            "object": "bf109_01_add",
+            "object_marking": 0,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "object_var_value": 0,
+            "recalculatePathDist": -1.0,
+            "shouldKeepFormation": true,
+            "target": "bf109_01",
+            "target_marking": 0,
+            "target_type": "isActive",
+            "target_var_comp_op": "equal",
+            "target_var_name": "",
+            "target_var_value": 0,
+            "teleportHeightType": "absolute",
+            "teleportHeightValue": 1000.0,
+            "useUnitHeightForTele": true,
+            "waypointReachedDist": 10.0
+          }
+        },
+        {
+          "moAddMissionObjective": {
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "target": "dlc_cover_the_descent_bots"
+          }
+        },
+        {
+          "unitWakeUp": [
+            {
+              "target": "bf109_01"
+            },
+            {
+              "target": "bf109_01_add"
+            }
+          ]
+        },
+        {
+          "unitSetIndication": [
+            {
+              "set": true
+            },
+            {
+              "target_marking": 0
+            },
+            {
+              "object_var_name": ""
+            },
+            {
+              "object_var_comp_op": "equal"
+            },
+            {
+              "object_var_value": 0
+            },
+            {
+              "target": "bf109_01"
+            },
+            {
+              "target": "bf109_01_add"
+            }
+          ]
+        },
+        {
+          "unitSetIndication": {
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "object_var_value": 0,
+            "set": true,
+            "target": "descent_bots",
+            "target_marking": 0
+          }
+        },
+        {
+          "triggerEnable": {
+            "target": "update_indicator_bots"
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": [],
+      "else_actions": [],
+      "events": {
+        "initMission": []
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "tanks_destroyed": {
+      "actions": {
+        "missionFailed": [],
+        "moSetObjectiveStatus": {
+          "object_marking": 0,
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "status": 3,
+          "target": "dlc_cover_the_descent_tanks"
+        },
+        "triggerDisable": {
+          "target": "complete_mission"
+        },
+        "wait": {
+          "time": 3.0
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "unitWhenCountMatches": {
+          "func": "less",
+          "object": "usa_tanks_squad",
+          "object_marking": 0,
+          "object_type": "isAlive",
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "value": 4
+        }
+      },
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "update_indicator_atillery": {
+      "actions": {
+        "missionSetTargetsIndicator": {
+          "delta": 0,
+          "icon": "cannon",
+          "icon army": 2,
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "object_var_value": 0,
+          "set": true,
+          "target": "germ_artillery",
+          "target_marking": 0,
+          "target_type": "isAlive"
+        }
+      },
+      "comments": "",
+      "conditions": [],
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": true
+      }
+    },
+    "update_indicator_bots": {
+      "actions": {
+        "missionSetTargetsIndicator": {
+          "delta": 0,
+          "icon": "ship",
+          "icon army": 1,
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "object_var_value": 0,
+          "set": true,
+          "target": "descent_bots",
+          "target_marking": 0,
+          "target_type": "isAlive"
+        }
+      },
+      "comments": "",
+      "conditions": [],
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": true
+      }
+    },
+    "update_indicator_tanks": {
+      "actions": {
+        "missionSetTargetsIndicator": {
+          "delta": 0,
+          "icon": "tank",
+          "icon army": 1,
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "object_var_value": 0,
+          "set": true,
+          "target": "usa_tanks_squad",
+          "target_marking": 0,
+          "target_type": "isAlive"
+        }
+      },
+      "comments": "",
+      "conditions": [],
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": true
+      }
+    }
+  },
+  "units": [
+    {
+      "armada": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "player_wing",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 1,
+          "attack_type": "fire_at_will",
+          "count": 4,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "minimum_distance_to_earth": 20.0,
+          "numInWing": 4,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "player": true,
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [0.21644,0.0,-0.976296],
+          [0.0,1.0,0.0],
+          [0.976296,0.0,0.21644],
+          [28342.6,350.0,-8891.66]
+        ],
+        "unit_class": "spitfire_ix",
+        "way": [],
+        "weapons": "SpitfireIX_default"
+      }
+    },
+    {
+      "armada": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "bf109_01",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 6,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "minimum_distance_to_earth": 20.0,
+          "numInWing": 2,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [0.920494,0.0,0.390757],
+          [0.0,1.0,0.0],
+          [-0.390757,0.0,0.920494],
+          [12797.5,1600.0,-20073.9]
+        ],
+        "unit_class": "bf-109f-4",
+        "way": [],
+        "weapons": "Bf-109F-4_SC250"
+      }
+    },
+    {
+      "armada": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "bf109_01_add",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 4,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "minimum_distance_to_earth": 20.0,
+          "numInWing": 2,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [0.920494,0.0,0.390757],
+          [0.0,1.0,0.0],
+          [-0.390757,0.0,0.920494],
+          [12547.9,1600.0,-20178.8]
+        ],
+        "unit_class": "bf-109f-4",
+        "way": [],
+        "weapons": "Bf-109F-4_SC250"
+      }
+    },
+    {
+      "armada": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "bf109_02",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 6,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "minimum_distance_to_earth": 20.0,
+          "numInWing": 2,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [0.707107,0.0,0.707107],
+          [0.0,1.0,0.0],
+          [-0.707107,0.0,0.707107],
+          [10981.4,1600.0,-30347.8]
+        ],
+        "unit_class": "bf-109f-4",
+        "way": [],
+        "weapons": "Bf-109F-4_SC250"
+      }
+    },
+    {
+      "armada": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "bf109_03",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 6,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "minimum_distance_to_earth": 20.0,
+          "numInWing": 2,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [0.843929,0.0,0.536456],
+          [0.0,1.0,0.0],
+          [-0.536456,0.0,0.843929],
+          [3230.3,1600.0,-14985.5]
+        ],
+        "unit_class": "bf-109f-4",
+        "way": [],
+        "weapons": "Bf-109F-4_SC250"
+      }
+    },
+    {
+      "armada": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "bf109_02_add",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 4,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "minimum_distance_to_earth": 20.0,
+          "numInWing": 2,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [0.707107,0.0,0.707107],
+          [0.0,1.0,0.0],
+          [-0.707107,0.0,0.707107],
+          [10915.9,1800.0,-30347.8]
+        ],
+        "unit_class": "bf-109g-2",
+        "way": [],
+        "weapons": "Bf-109G-2_default"
+      }
+    },
+    {
+      "armada": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "bf109_03_add",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 4,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "minimum_distance_to_earth": 20.0,
+          "numInWing": 2,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [0.843929,0.0,0.536456],
+          [0.0,1.0,0.0],
+          [-0.536456,0.0,0.843929],
+          [3105.66,1800.0,-14957.7]
+        ],
+        "unit_class": "bf-109f-4",
+        "way": [],
+        "weapons": "Bf-109F-4_SC250"
+      }
+    },
+    {
+      "armada": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "allies",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 1,
+          "attack_type": "fire_at_will",
+          "count": 8,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "minimum_distance_to_earth": 20.0,
+          "numInWing": 2,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [0.21644,0.0,-0.976296],
+          [0.0,1.0,0.0],
+          [0.976296,0.0,0.21644],
+          [28342.6,350.0,-8763.86]
+        ],
+        "unit_class": "spitfire_ix",
+        "way": [],
+        "weapons": "SpitfireIX_default"
+      }
+    },
+    {
+      "armada": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "bf109_for_cannons",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 4,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "minimum_distance_to_earth": 20.0,
+          "numInWing": 2,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [21555.4,1470.1,-22119.7]
+        ],
+        "unit_class": "bf-109f-4",
+        "way": [],
+        "weapons": "Bf-109F-4_default"
+      }
+    },
+    {
+      "ships": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "usa_navy_ship_01",
+        "props": {
+          "army": 1,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "effShootingRate": 0.05,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [-0.422618,0.0,-0.906308],
+          [0.0,1.0,0.0],
+          [0.906308,0.0,-0.422618],
+          [29294.3,-122.5,-10604.4]
+        ],
+        "unit_class": "uk_destroyer_clemson_churchill_EC",
+        "way": {
+          "usa_navy_ship_01_wp_01": {
+            "props": {
+              "canUsePathFinder": false,
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 20.0,
+              "tas": false
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [29200.8,-121.75,-10821.7]
+            ],
+            "type": "normal"
+          },
+          "usa_navy_ship_01_wp_02": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [26333.5,0.0,-17106.0]
+            ],
+            "type": "normal"
+          },
+          "usa_navy_ship_01_wp_03": {
+            "props": {
+              "moveType": "HALT",
+              "speed": 0.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [25621.0,0.0,-18029.5]
+            ],
+            "type": "normal"
+          }
+        },
+        "weapons": ""
+      }
+    },
+    {
+      "ships": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "usa_navy_ship_02",
+        "props": {
+          "army": 1,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "effShootingRate": 0.05,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [-0.422618,0.0,-0.906308],
+          [0.0,1.0,0.0],
+          [0.906308,0.0,-0.422618],
+          [29408.4,-122.5,-10956.0]
+        ],
+        "unit_class": "uk_cruiser_leander_EC",
+        "way": {
+          "usa_navy_ship_02_wp_01": {
+            "props": {
+              "canUsePathFinder": false,
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 20.0,
+              "tas": false
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [29328.8,-121.75,-11146.0]
+            ],
+            "type": "normal"
+          },
+          "usa_navy_ship_02_wp_02": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [26423.8,0.0,-18108.0]
+            ],
+            "type": "normal"
+          },
+          "usa_navy_ship_02_wp_03": {
+            "props": {
+              "moveType": "HALT",
+              "speed": 0.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [25600.0,0.0,-19092.2]
+            ],
+            "type": "normal"
+          }
+        },
+        "weapons": ""
+      }
+    },
+    {
+      "ships": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "usa_navy_ship_03",
+        "props": {
+          "army": 1,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "effShootingRate": 0.05,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [-0.422618,0.0,-0.906308],
+          [0.0,1.0,0.0],
+          [0.906308,0.0,-0.422618],
+          [29973.7,-122.5,-10675.1]
+        ],
+        "unit_class": "uk_destroyer_clemson_churchill_EC",
+        "way": {
+          "usa_navy_ship_03_wp_01": {
+            "props": {
+              "canUsePathFinder": false,
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 20.0,
+              "tas": false
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [29846.7,-122.3,-10868.8]
+            ],
+            "type": "normal"
+          },
+          "usa_navy_ship_03_wp_02": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [28002.8,0.0,-16756.2]
+            ],
+            "type": "normal"
+          },
+          "usa_navy_ship_03_wp_03": {
+            "props": {
+              "moveType": "HALT",
+              "speed": 0.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [27330.8,0.0,-18169.8]
+            ],
+            "type": "normal"
+          }
+        },
+        "weapons": ""
+      }
+    },
+    {
+      "ships": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "usa_navy_ship_04",
+        "props": {
+          "army": 1,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "effShootingRate": 0.05,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [-0.422618,0.0,-0.906308],
+          [0.0,1.0,0.0],
+          [0.906308,0.0,-0.422618],
+          [29621.7,-122.5,-10130.3]
+        ],
+        "unit_class": "uk_destroyer_clemson_churchill_EC",
+        "way": {
+          "usa_navy_ship_04_wp_01": {
+            "props": {
+              "canUsePathFinder": false,
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 20.0,
+              "tas": false
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [29533.2,-121.8,-10313.8]
+            ],
+            "type": "normal"
+          },
+          "usa_navy_ship_04_wp_02": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [26682.1,0.0,-16919.8]
+            ],
+            "type": "normal"
+          },
+          "usa_navy_ship_04_wp_03": {
+            "props": {
+              "moveType": "HALT",
+              "speed": 0.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [26010.7,0.0,-18140.0]
+            ],
+            "type": "normal"
+          }
+        },
+        "weapons": ""
+      }
+    },
+    {
+      "ships": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "usa_navy_ship_05",
+        "props": {
+          "army": 1,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "effShootingRate": 0.05,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [-0.422618,0.0,-0.906308],
+          [0.0,1.0,0.0],
+          [0.906308,0.0,-0.422618],
+          [30023.6,-122.5,-10247.0]
+        ],
+        "unit_class": "uk_destroyer_clemson_churchill_EC",
+        "way": {
+          "usa_navy_ship_05_wp_01": {
+            "props": {
+              "canUsePathFinder": false,
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 20.0,
+              "tas": false
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [29914.2,-121.85,-10404.8]
+            ],
+            "type": "normal"
+          },
+          "usa_navy_ship_05_wp_02": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [27890.5,0.0,-16249.8]
+            ],
+            "type": "normal"
+          },
+          "usa_navy_ship_05_wp_03": {
+            "props": {
+              "moveType": "HALT",
+              "speed": 0.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [27303.2,0.0,-17301.4]
+            ],
+            "type": "normal"
+          }
+        },
+        "weapons": ""
+      }
+    },
+    {
+      "ships": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "descent_bots",
+        "props": {
+          "army": 1,
+          "attack_type": "fire_at_will",
+          "count": 24,
+          "formation_div": 3,
+          "formation_noise": [0.3,0.4],
+          "formation_step": [36.0,6.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [-0.608761,0.0,-0.793353],
+          [0.0,1.0,0.0],
+          [0.793353,0.0,-0.608761],
+          [29139.8,0.0,-11937.8]
+        ],
+        "unit_class": "uss_lcvp_lite",
+        "way": {
+          "descent_bots_wp_01": {
+            "props": {
+              "canUsePathFinder": false,
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 30.0,
+              "tas": false
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [28792.2,-122.45,-12167.6]
+            ],
+            "type": "normal"
+          },
+          "descent_bots_wp_02": {
+            "props": {
+              "canUsePathFinder": false,
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 30.0,
+              "tas": false
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [25019.1,-121.85,-16867.8]
+            ],
+            "type": "normal"
+          },
+          "descent_bots_wp_03": {
+            "props": {
+              "canUsePathFinder": false,
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 30.0,
+              "tas": false
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [23669.3,-113.3,-18488.5]
+            ],
+            "type": "normal"
+          },
+          "descent_bots_wp_04": {
+            "props": {
+              "moveType": "USE_SPLINES",
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [23045.0,0.0,-18334.6]
+            ],
+            "type": "normal"
+          }
+        },
+        "weapons": ""
+      }
+    },
+    {
+      "ships": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "usa_cazrgo_ship_01",
+        "props": {
+          "army": 1,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "effShootingRate": 0.05,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [-0.422618,0.0,-0.906308],
+          [0.0,1.0,0.0],
+          [0.906308,0.0,-0.422618],
+          [30045.2,-122.5,-11806.7]
+        ],
+        "unit_class": "uk_cargo_ship_liberty_EC",
+        "way": {
+          "usa_cazrgo_ship_01_wp_01": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [30080.1,0.0,-12410.7]
+            ],
+            "type": "normal"
+          },
+          "usa_cazrgo_ship_03_wp_01": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 10.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [30014.4,0.0,-11903.9]
+            ],
+            "type": "normal"
+          },
+          "usa_cazrgo_ship_03_wp_02": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 10.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [30951.3,0.0,-13797.7]
+            ],
+            "type": "normal"
+          }
+        },
+        "weapons": ""
+      }
+    },
+    {
+      "ships": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "usa_cazrgo_ship_02",
+        "props": {
+          "army": 1,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "effShootingRate": 0.05,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [-0.422618,0.0,-0.906308],
+          [0.0,1.0,0.0],
+          [0.906308,0.0,-0.422618],
+          [29847.8,-122.5,-11541.2]
+        ],
+        "unit_class": "uk_cargo_ship_liberty_EC",
+        "way": {
+          "usa_cazrgo_ship_02_wp_01": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 10.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [29818.3,0.0,-11689.4]
+            ],
+            "type": "normal"
+          },
+          "usa_cazrgo_ship_02_wp_02": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 10.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [30672.4,0.0,-14282.5]
+            ],
+            "type": "normal"
+          },
+          "usa_cazrgo_ship_02_wp_03": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [29714.7,0.0,-12140.7]
+            ],
+            "type": "normal"
+          }
+        },
+        "weapons": ""
+      }
+    },
+    {
+      "ships": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "usa_cazrgo_ship_03",
+        "props": {
+          "army": 1,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "effShootingRate": 0.05,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [-0.422618,0.0,-0.906308],
+          [0.0,1.0,0.0],
+          [0.906308,0.0,-0.422618],
+          [30105.0,-122.5,-11556.4]
+        ],
+        "unit_class": "uk_cargo_ship_liberty_EC",
+        "way": {
+          "usa_cazrgo_ship_03_wp_03": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 10.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [30038.7,0.0,-11718.6]
+            ],
+            "type": "normal"
+          },
+          "usa_cazrgo_ship_03_wp_04": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 10.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [30660.2,0.0,-13925.8]
+            ],
+            "type": "normal"
+          },
+          "usa_cazrgo_ship_03_wp_05": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [29862.8,0.0,-12241.9]
+            ],
+            "type": "normal"
+          }
+        },
+        "weapons": ""
+      }
+    },
+    {
+      "ships": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "usa_cazrgo_ship_04",
+        "props": {
+          "army": 1,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "effShootingRate": 0.05,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [-0.422618,0.0,-0.906308],
+          [0.0,1.0,0.0],
+          [0.906308,0.0,-0.422618],
+          [29793.7,-122.5,-11379.2]
+        ],
+        "unit_class": "uk_cargo_ship_liberty_EC",
+        "way": {
+          "usa_cazrgo_ship_04_wp_01": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 10.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [29732.9,0.0,-11574.5]
+            ],
+            "type": "normal"
+          },
+          "usa_cazrgo_ship_04_wp_02": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 10.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [30340.8,0.0,-14538.5]
+            ],
+            "type": "normal"
+          },
+          "usa_cazrgo_ship_04_wp_03": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [29502.7,0.0,-12153.1]
+            ],
+            "type": "normal"
+          }
+        },
+        "weapons": ""
+      }
+    },
+    {
+      "tracked_vehicles": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "usa_tank_01",
+        "props": {
+          "army": 1,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [-0.999048,0.0,0.0436195],
+          [0.0,1.0,0.0],
+          [-0.0436195,0.0,-0.999048],
+          [-32390.0,12.35,-32349.0]
+        ],
+        "unit_class": "us_m4a1",
+        "way": {
+          "usa_tank_01_wp_01": {
+            "props": {
+              "canUsePathFinder": false,
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 5.0,
+              "tas": false
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [22569.9,6.95,-18597.3]
+            ],
+            "type": "normal"
+          },
+          "usa_tank_01_wp_02": {
+            "props": {
+              "canUsePathFinder": false,
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 10.0,
+              "tas": false
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [21529.8,26.5,-19396.3]
+            ],
+            "type": "normal"
+          }
+        },
+        "weapons": ""
+      }
+    },
+    {
+      "tracked_vehicles": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "usa_tank_02",
+        "props": {
+          "army": 1,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [-0.999048,0.0,0.0436195],
+          [0.0,1.0,0.0],
+          [-0.0436195,0.0,-0.999048],
+          [-32390.0,12.35,-32324.1]
+        ],
+        "unit_class": "us_m4a1",
+        "way": {
+          "usa_tank_02_wp_01": {
+            "props": {
+              "canUsePathFinder": false,
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 5.0,
+              "tas": false
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [22569.9,6.95,-18572.4]
+            ],
+            "type": "normal"
+          },
+          "usa_tank_02_wp_02": {
+            "props": {
+              "canUsePathFinder": false,
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 10.0,
+              "tas": false
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [21529.8,26.5,-19371.3]
+            ],
+            "type": "normal"
+          }
+        },
+        "weapons": ""
+      }
+    },
+    {
+      "tracked_vehicles": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "usa_tank_03",
+        "props": {
+          "army": 1,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [-0.999048,0.0,0.0436195],
+          [0.0,1.0,0.0],
+          [-0.0436195,0.0,-0.999048],
+          [-32390.0,12.35,-32291.8]
+        ],
+        "unit_class": "us_m4a1",
+        "way": {
+          "usa_tank_03_wp_01": {
+            "props": {
+              "canUsePathFinder": false,
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 5.0,
+              "tas": false
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [22569.9,6.95,-18540.1]
+            ],
+            "type": "normal"
+          },
+          "usa_tank_03_wp_02": {
+            "props": {
+              "canUsePathFinder": false,
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 10.0,
+              "tas": false
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [21529.8,26.5,-19339.1]
+            ],
+            "type": "normal"
+          }
+        },
+        "weapons": ""
+      }
+    },
+    {
+      "tracked_vehicles": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "usa_tank_04",
+        "props": {
+          "army": 1,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [-0.999048,0.0,0.0436195],
+          [0.0,1.0,0.0],
+          [-0.0436195,0.0,-0.999048],
+          [-32390.0,12.35,-32265.1]
+        ],
+        "unit_class": "us_m4a1",
+        "way": {
+          "usa_tank_04_wp_01": {
+            "props": {
+              "canUsePathFinder": false,
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 5.0,
+              "tas": false
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [22569.9,6.95,-18513.3]
+            ],
+            "type": "normal"
+          },
+          "usa_tank_04_wp_02": {
+            "props": {
+              "canUsePathFinder": false,
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 10.0,
+              "tas": false
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [21529.8,26.5,-19312.3]
+            ],
+            "type": "normal"
+          }
+        },
+        "weapons": ""
+      }
+    },
+    {
+      "tracked_vehicles": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "usa_tank_05",
+        "props": {
+          "army": 1,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [-0.999048,0.0,0.0436195],
+          [0.0,1.0,0.0],
+          [-0.0436195,0.0,-0.999048],
+          [-32390.0,12.35,-32243.1]
+        ],
+        "unit_class": "us_m4a1",
+        "way": {
+          "usa_tank_05_wp_01": {
+            "props": {
+              "canUsePathFinder": false,
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 5.0,
+              "tas": false
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [22569.9,6.95,-18491.4]
+            ],
+            "type": "normal"
+          },
+          "usa_tank_05_wp_02": {
+            "props": {
+              "canUsePathFinder": false,
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 10.0,
+              "tas": false
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [21529.8,26.5,-19290.3]
+            ],
+            "type": "normal"
+          }
+        },
+        "weapons": ""
+      }
+    },
+    {
+      "tracked_vehicles": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "usa_tank_06",
+        "props": {
+          "army": 1,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [-0.999048,0.0,0.0436195],
+          [0.0,1.0,0.0],
+          [-0.0436195,0.0,-0.999048],
+          [-32390.0,12.35,-32221.6]
+        ],
+        "unit_class": "us_m4a1",
+        "way": {
+          "usa_tank_06_wp_01": {
+            "props": {
+              "canUsePathFinder": false,
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 5.0,
+              "tas": false
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [22569.9,6.95,-18469.9]
+            ],
+            "type": "normal"
+          },
+          "usa_tank_06_wp_02": {
+            "props": {
+              "canUsePathFinder": false,
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 10.0,
+              "tas": false
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [21529.8,26.5,-19268.9]
+            ],
+            "type": "normal"
+          }
+        },
+        "weapons": ""
+      }
+    },
+    {
+      "tracked_vehicles": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "usa_tank_07",
+        "props": {
+          "army": 1,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [-0.999048,0.0,0.0436195],
+          [0.0,1.0,0.0],
+          [-0.0436195,0.0,-0.999048],
+          [-32390.0,12.35,-32196.1]
+        ],
+        "unit_class": "us_m4a1",
+        "way": {
+          "usa_tank_07_wp_01": {
+            "props": {
+              "canUsePathFinder": false,
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 5.0,
+              "tas": false
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [22569.9,6.95,-18444.5]
+            ],
+            "type": "normal"
+          },
+          "usa_tank_07_wp_02": {
+            "props": {
+              "canUsePathFinder": false,
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 10.0,
+              "tas": false
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [21529.8,26.5,-19243.5]
+            ],
+            "type": "normal"
+          }
+        },
+        "weapons": ""
+      }
+    },
+    {
+      "tracked_vehicles": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "usa_tank_08",
+        "props": {
+          "army": 1,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [-0.999048,0.0,0.0436195],
+          [0.0,1.0,0.0],
+          [-0.0436195,0.0,-0.999048],
+          [-32390.0,12.35,-32167.8]
+        ],
+        "unit_class": "us_m4a1",
+        "way": {
+          "usa_tank_08_wp_01": {
+            "props": {
+              "canUsePathFinder": false,
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 5.0,
+              "tas": false
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [22569.9,6.95,-18416.2]
+            ],
+            "type": "normal"
+          },
+          "usa_tank_08_wp_02": {
+            "props": {
+              "canUsePathFinder": false,
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 10.0,
+              "tas": false
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [21529.8,26.5,-19215.1]
+            ],
+            "type": "normal"
+          }
+        },
+        "weapons": ""
+      }
+    },
+    {
+      "tracked_vehicles": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "usa_tank_09",
+        "props": {
+          "army": 1,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [-0.999048,0.0,0.0436195],
+          [0.0,1.0,0.0],
+          [-0.0436195,0.0,-0.999048],
+          [-32390.0,12.35,-32149.8]
+        ],
+        "unit_class": "us_m4a1",
+        "way": {
+          "usa_tank_09_wp_01": {
+            "props": {
+              "canUsePathFinder": false,
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 5.0,
+              "tas": false
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [22569.9,6.95,-18398.3]
+            ],
+            "type": "normal"
+          },
+          "usa_tank_09_wp_02": {
+            "props": {
+              "canUsePathFinder": false,
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 10.0,
+              "tas": false
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [21529.8,26.5,-19197.2]
+            ],
+            "type": "normal"
+          }
+        },
+        "weapons": ""
+      }
+    },
+    {
+      "tracked_vehicles": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "usa_tank_10",
+        "props": {
+          "army": 1,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [-0.999048,0.0,0.0436195],
+          [0.0,1.0,0.0],
+          [-0.0436195,0.0,-0.999048],
+          [-32390.0,12.35,-32127.6]
+        ],
+        "unit_class": "us_m4a1",
+        "way": {
+          "usa_tank_10_wp_01": {
+            "props": {
+              "canUsePathFinder": false,
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 5.0,
+              "tas": false
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [22569.9,6.95,-18375.9]
+            ],
+            "type": "normal"
+          },
+          "usa_tank_10_wp_02": {
+            "props": {
+              "canUsePathFinder": false,
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 10.0,
+              "tas": false
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [21529.8,26.5,-19174.9]
+            ],
+            "type": "normal"
+          }
+        },
+        "weapons": ""
+      }
+    },
+    {
+      "tracked_vehicles": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "usa_tank_11",
+        "props": {
+          "army": 1,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [-0.999048,0.0,0.0436195],
+          [0.0,1.0,0.0],
+          [-0.0436195,0.0,-0.999048],
+          [-32390.0,12.35,-32106.6]
+        ],
+        "unit_class": "us_m4a1",
+        "way": {
+          "usa_tank_11_wp_01": {
+            "props": {
+              "canUsePathFinder": false,
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 5.0,
+              "tas": false
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [22569.9,6.95,-18355.1]
+            ],
+            "type": "normal"
+          },
+          "usa_tank_11_wp_02": {
+            "props": {
+              "canUsePathFinder": false,
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 10.0,
+              "tas": false
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [21529.8,26.5,-19154.1]
+            ],
+            "type": "normal"
+          }
+        },
+        "weapons": ""
+      }
+    },
+    {
+      "tracked_vehicles": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "usa_tank_12",
+        "props": {
+          "army": 1,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [-0.999048,0.0,0.0436195],
+          [0.0,1.0,0.0],
+          [-0.0436195,0.0,-0.999048],
+          [-32390.0,12.35,-32086.8]
+        ],
+        "unit_class": "us_m4a1",
+        "way": {
+          "usa_tank_12_wp_01": {
+            "props": {
+              "canUsePathFinder": false,
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 5.0,
+              "tas": false
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [22569.9,6.95,-18335.2]
+            ],
+            "type": "normal"
+          },
+          "usa_tank_12_wp_02": {
+            "props": {
+              "canUsePathFinder": false,
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 10.0,
+              "tas": false
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [21529.8,26.5,-19134.1]
+            ],
+            "type": "normal"
+          }
+        },
+        "weapons": ""
+      }
+    },
+    {
+      "tracked_vehicles": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "usa_tank_13",
+        "props": {
+          "army": 1,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [-0.999048,0.0,0.0436195],
+          [0.0,1.0,0.0],
+          [-0.0436195,0.0,-0.999048],
+          [-32391.4,12.35,-32070.6]
+        ],
+        "unit_class": "us_m4a1",
+        "way": {
+          "usa_tank_13_wp_01": {
+            "props": {
+              "canUsePathFinder": false,
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 5.0,
+              "tas": false
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [22568.4,6.95,-18318.9]
+            ],
+            "type": "normal"
+          },
+          "usa_tank_13_wp_02": {
+            "props": {
+              "canUsePathFinder": false,
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 10.0,
+              "tas": false
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [21528.3,26.5,-19117.8]
+            ],
+            "type": "normal"
+          }
+        },
+        "weapons": ""
+      }
+    },
+    {
+      "tracked_vehicles": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "usa_tank_14",
+        "props": {
+          "army": 1,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [-0.999048,0.0,0.0436195],
+          [0.0,1.0,0.0],
+          [-0.0436195,0.0,-0.999048],
+          [-32398.2,12.35,-32049.2]
+        ],
+        "unit_class": "us_m4a1",
+        "way": {
+          "usa_tank_14_wp_01": {
+            "props": {
+              "canUsePathFinder": false,
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 5.0,
+              "tas": false
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [22561.6,6.95,-18297.6]
+            ],
+            "type": "normal"
+          },
+          "usa_tank_14_wp_02": {
+            "props": {
+              "canUsePathFinder": false,
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 10.0,
+              "tas": false
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [21521.5,26.5,-19096.5]
+            ],
+            "type": "normal"
+          }
+        },
+        "weapons": ""
+      }
+    },
+    {
+      "tracked_vehicles": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "usa_tank_15",
+        "props": {
+          "army": 1,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [-0.999048,0.0,0.0436195],
+          [0.0,1.0,0.0],
+          [-0.0436195,0.0,-0.999048],
+          [-32400.1,12.35,-32022.7]
+        ],
+        "unit_class": "us_m4a1",
+        "way": {
+          "usa_tank_15_wp_01": {
+            "props": {
+              "canUsePathFinder": false,
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 5.0,
+              "tas": false
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [22559.8,6.95,-18271.1]
+            ],
+            "type": "normal"
+          },
+          "usa_tank_15_wp_02": {
+            "props": {
+              "canUsePathFinder": false,
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 10.0,
+              "tas": false
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [21519.7,26.5,-19070.0]
+            ],
+            "type": "normal"
+          }
+        },
+        "weapons": ""
+      }
+    },
+    {
+      "tracked_vehicles": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "usa_tank_16",
+        "props": {
+          "army": 1,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [-0.999048,0.0,0.0436195],
+          [0.0,1.0,0.0],
+          [-0.0436195,0.0,-0.999048],
+          [-32401.3,12.35,-31994.9]
+        ],
+        "unit_class": "us_m4a1",
+        "way": {
+          "usa_tank_16_wp_01": {
+            "props": {
+              "canUsePathFinder": false,
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 5.0,
+              "tas": false
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [22558.6,6.95,-18243.2]
+            ],
+            "type": "normal"
+          },
+          "usa_tank_16_wp_02": {
+            "props": {
+              "canUsePathFinder": false,
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 10.0,
+              "tas": false
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [21518.5,26.5,-19042.2]
+            ],
+            "type": "normal"
+          }
+        },
+        "weapons": ""
+      }
+    },
+    {
+      "tracked_vehicles": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "usa_tank_17",
+        "props": {
+          "army": 1,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [-0.999048,0.0,0.0436195],
+          [0.0,1.0,0.0],
+          [-0.0436195,0.0,-0.999048],
+          [-32414.5,12.35,-31960.9]
+        ],
+        "unit_class": "us_m4a1",
+        "way": {
+          "usa_tank_17_wp_01": {
+            "props": {
+              "canUsePathFinder": false,
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 5.0,
+              "tas": false
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [22545.4,6.95,-18209.3]
+            ],
+            "type": "normal"
+          },
+          "usa_tank_17_wp_02": {
+            "props": {
+              "canUsePathFinder": false,
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 10.0,
+              "tas": false
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [21505.3,26.5,-19008.2]
+            ],
+            "type": "normal"
+          }
+        },
+        "weapons": ""
+      }
+    },
+    {
+      "tracked_vehicles": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "usa_tank_18",
+        "props": {
+          "army": 1,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [-0.999048,0.0,0.0436195],
+          [0.0,1.0,0.0],
+          [-0.0436195,0.0,-0.999048],
+          [-32426.9,12.35,-31925.7]
+        ],
+        "unit_class": "us_m4a1",
+        "way": {
+          "usa_tank_18_wp_01": {
+            "props": {
+              "canUsePathFinder": false,
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 5.0,
+              "tas": false
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [22533.0,6.95,-18174.0]
+            ],
+            "type": "normal"
+          },
+          "usa_tank_18_wp_02": {
+            "props": {
+              "canUsePathFinder": false,
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 10.0,
+              "tas": false
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [21492.9,26.5,-18973.0]
+            ],
+            "type": "normal"
+          }
+        },
+        "weapons": ""
+      }
+    },
+    {
+      "tracked_vehicles": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "usa_tank_19",
+        "props": {
+          "army": 1,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [-0.999048,0.0,0.0436195],
+          [0.0,1.0,0.0],
+          [-0.0436195,0.0,-0.999048],
+          [-32438.2,12.35,-31895.1]
+        ],
+        "unit_class": "us_m4a1",
+        "way": {
+          "usa_tank_19_wp_01": {
+            "props": {
+              "canUsePathFinder": false,
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 5.0,
+              "tas": false
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [22521.7,6.95,-18143.5]
+            ],
+            "type": "normal"
+          },
+          "usa_tank_19_wp_02": {
+            "props": {
+              "canUsePathFinder": false,
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 10.0,
+              "tas": false
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [21481.6,26.5,-18942.5]
+            ],
+            "type": "normal"
+          }
+        },
+        "weapons": ""
+      }
+    },
+    {
+      "tracked_vehicles": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "usa_tank_20",
+        "props": {
+          "army": 1,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [-0.999048,0.0,0.0436195],
+          [0.0,1.0,0.0],
+          [-0.0436195,0.0,-0.999048],
+          [-32454.8,12.35,-31870.2]
+        ],
+        "unit_class": "us_m4a1",
+        "way": {
+          "usa_tank_20_wp_01": {
+            "props": {
+              "canUsePathFinder": false,
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 0.0,
+              "tas": false
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [22505.0,6.95,-18118.6]
+            ],
+            "type": "normal"
+          },
+          "usa_tank_20_wp_02": {
+            "props": {
+              "canUsePathFinder": false,
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 10.0,
+              "tas": false
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [21464.9,26.5,-18917.5]
+            ],
+            "type": "normal"
+          }
+        },
+        "weapons": ""
+      }
+    },
+    {
+      "squad": {
+        "name": "usa_tanks_squad",
+        "props": [
+          {
+            "squad_members": "usa_tank_01"
+          },
+          {
+            "squad_members": "usa_tank_02"
+          },
+          {
+            "squad_members": "usa_tank_03"
+          },
+          {
+            "squad_members": "usa_tank_04"
+          },
+          {
+            "squad_members": "usa_tank_05"
+          },
+          {
+            "squad_members": "usa_tank_06"
+          },
+          {
+            "squad_members": "usa_tank_07"
+          },
+          {
+            "squad_members": "usa_tank_08"
+          },
+          {
+            "squad_members": "usa_tank_09"
+          },
+          {
+            "squad_members": "usa_tank_10"
+          },
+          {
+            "squad_members": "usa_tank_11"
+          },
+          {
+            "squad_members": "usa_tank_12"
+          },
+          {
+            "squad_members": "usa_tank_13"
+          },
+          {
+            "squad_members": "usa_tank_14"
+          },
+          {
+            "squad_members": "usa_tank_15"
+          },
+          {
+            "squad_members": "usa_tank_16"
+          },
+          {
+            "squad_members": "usa_tank_17"
+          },
+          {
+            "squad_members": "usa_tank_18"
+          },
+          {
+            "squad_members": "usa_tank_19"
+          },
+          {
+            "squad_members": "usa_tank_20"
+          },
+          {
+            "object_marking": 0
+          }
+        ],
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [23238.1,8.2,-18486.5]
+        ]
+      }
+    },
+    {
+      "squad": {
+        "name": "germany_planes",
+        "props": [
+          {
+            "squad_members": "bf109_01"
+          },
+          {
+            "squad_members": "bf109_03"
+          },
+          {
+            "squad_members": "bf109_02"
+          },
+          {
+            "squad_members": "bf109_01_add"
+          },
+          {
+            "squad_members": "bf109_02_add"
+          },
+          {
+            "squad_members": "bf109_03_add"
+          },
+          {
+            "squad_members": "bf109_for_cannons"
+          }
+        ],
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [21388.5,2145.93,-17743.2]
+        ]
+      }
+    },
+    {
+      "squad": {
+        "name": "british_planes",
+        "props": [
+          {
+            "squad_members": "player_wing"
+          },
+          {
+            "squad_members": "allies"
+          }
+        ],
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [33442.6,350.0,-9154.4]
+        ]
+      }
+    },
+    {
+      "squad": {
+        "name": "germ_sea_cannon_03",
+        "props": [
+          {
+            "squad_members": "germ_sea_cannon_03_04"
+          },
+          {
+            "squad_members": "germ_sea_cannon_03_01"
+          },
+          {
+            "squad_members": "germ_sea_cannon_03_02"
+          },
+          {
+            "squad_members": "germ_sea_cannon_03_03"
+          },
+          {
+            "squad_members": "germ_sea_cannon_03_05"
+          },
+          {
+            "squad_members": "germ_sea_cannon_03_06"
+          }
+        ],
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [28194.2,15.45,-10570.9]
+        ]
+      }
+    },
+    {
+      "squad": {
+        "name": "germ_sea_cannon_01",
+        "props": [
+          {
+            "squad_members": "germ_sea_cannon_01_04"
+          },
+          {
+            "squad_members": "germ_sea_cannon_01_01"
+          },
+          {
+            "squad_members": "germ_sea_cannon_01_02"
+          },
+          {
+            "squad_members": "germ_sea_cannon_01_03"
+          },
+          {
+            "squad_members": "germ_sea_cannon_01_05"
+          },
+          {
+            "squad_members": "germ_sea_cannon_01_06"
+          }
+        ],
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [27804.7,16.4,-11473.0]
+        ]
+      }
+    },
+    {
+      "squad": {
+        "name": "germ_sea_cannon_02",
+        "props": [
+          {
+            "squad_members": "germ_sea_cannon_02_04"
+          },
+          {
+            "squad_members": "germ_sea_cannon_02_01"
+          },
+          {
+            "squad_members": "germ_sea_cannon_02_02"
+          },
+          {
+            "squad_members": "germ_sea_cannon_02_03"
+          },
+          {
+            "squad_members": "germ_sea_cannon_02_05"
+          },
+          {
+            "squad_members": "germ_sea_cannon_02_06"
+          },
+          {
+            "squad_members": "germ_sea_cannon_02_07"
+          },
+          {
+            "squad_members": "germ_sea_cannon_02_08"
+          },
+          {
+            "squad_members": "germ_sea_cannon_02_09"
+          },
+          {
+            "squad_members": "germ_sea_cannon_02_10"
+          },
+          {
+            "squad_members": "germ_sea_cannon_02_11"
+          },
+          {
+            "squad_members": "germ_sea_cannon_02_12"
+          }
+        ],
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [27247.8,16.3997,-11778.8]
+        ]
+      }
+    },
+    {
+      "squad": {
+        "name": "germ_town_aaa_01",
+        "props": [
+          {
+            "squad_members": "germ_town_aaa_01_01"
+          },
+          {
+            "squad_members": "germ_town_aaa_01_02"
+          },
+          {
+            "squad_members": "germ_town_aaa_01_03"
+          },
+          {
+            "squad_members": "germ_town_aaa_01_04"
+          },
+          {
+            "squad_members": "germ_town_aaa_01_05"
+          },
+          {
+            "squad_members": "germ_town_aaa_01_06"
+          }
+        ],
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [26997.8,40.7739,-10978.9]
+        ]
+      }
+    },
+    {
+      "squad": {
+        "name": "germ_artillery",
+        "props": [
+          {
+            "squad_members": "germ_artillery_12"
+          },
+          {
+            "squad_members": "germ_artillery_01"
+          },
+          {
+            "squad_members": "germ_artillery_02"
+          },
+          {
+            "squad_members": "germ_artillery_03"
+          },
+          {
+            "squad_members": "germ_artillery_04"
+          },
+          {
+            "squad_members": "germ_artillery_05"
+          },
+          {
+            "squad_members": "germ_artillery_06"
+          },
+          {
+            "squad_members": "germ_artillery_07"
+          },
+          {
+            "squad_members": "germ_artillery_08"
+          },
+          {
+            "squad_members": "germ_artillery_09"
+          },
+          {
+            "squad_members": "germ_artillery_10"
+          },
+          {
+            "squad_members": "germ_artillery_11"
+          }
+        ],
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [21175.4,40.6116,-20117.3]
+        ]
+      }
+    },
+    {
+      "squad": {
+        "name": "british_ships_squad",
+        "props": [
+          {
+            "squad_members": "usa_navy_ship_01"
+          },
+          {
+            "squad_members": "usa_navy_ship_02"
+          },
+          {
+            "squad_members": "usa_navy_ship_03"
+          },
+          {
+            "squad_members": "usa_navy_ship_04"
+          },
+          {
+            "squad_members": "usa_navy_ship_05"
+          },
+          {
+            "squad_members": "descent_bots"
+          }
+        ],
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [32655.9,-102.083,-12064.8]
+        ]
+      }
+    },
+    {
+      "squad": {
+        "name": "british_big_ships_squad",
+        "props": [
+          {
+            "squad_members": "usa_navy_ship_01"
+          },
+          {
+            "squad_members": "usa_navy_ship_02"
+          },
+          {
+            "squad_members": "usa_navy_ship_03"
+          },
+          {
+            "squad_members": "usa_navy_ship_04"
+          },
+          {
+            "squad_members": "usa_navy_ship_05"
+          },
+          {
+            "squad_members": "usa_cazrgo_ship_01"
+          },
+          {
+            "squad_members": "usa_cazrgo_ship_02"
+          },
+          {
+            "squad_members": "usa_cazrgo_ship_03"
+          },
+          {
+            "squad_members": "usa_cazrgo_ship_04"
+          }
+        ],
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [31733.6,-122.5,-11205.6]
+        ]
+      }
+    },
+    {
+      "structures": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "germ_artillery_01",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "effShootingRate": 0.1,
+          "formation_div": 3,
+          "formation_noise": [1.0,1.0],
+          "formation_step": [2.4,2.2],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [0.906308,0.0,0.422618],
+          [0.0,1.0,0.0],
+          [-0.422618,0.0,0.906308],
+          [21146.9,40.6117,-19334.1]
+        ],
+        "unit_class": "germ_quest_large_art",
+        "way": [],
+        "weapons": ""
+      }
+    },
+    {
+      "structures": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "germ_sea_cannon_01_01",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 1,
+          "formation_noise": [0.1,0.4],
+          "formation_step": [1.9,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [0.953717,0.0,-0.300706],
+          [0.0,1.0,0.0],
+          [0.300706,0.0,0.953717],
+          [27889.8,16.4001,-11020.2]
+        ],
+        "unit_class": "us_152mm_for_land_battles",
+        "way": [],
+        "weapons": ""
+      }
+    },
+    {
+      "structures": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "germ_sea_cannon_02_01",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 1,
+          "formation_noise": [0.1,0.8],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [0.391972,0.0,-0.919977],
+          [0.0,1.0,0.0],
+          [0.919977,0.0,0.391972],
+          [27415.2,16.4,-11737.5]
+        ],
+        "unit_class": "us_152mm_for_land_battles",
+        "way": [],
+        "weapons": ""
+      }
+    },
+    {
+      "structures": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "germ_sea_cannon_03_01",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 1,
+          "formation_noise": [0.1,0.5],
+          "formation_step": [0.6,2.8],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [0.875882,0.0,-0.482525],
+          [0.0,1.0,0.0],
+          [0.482525,0.0,0.875882],
+          [28029.2,15.45,-10890.2]
+        ],
+        "unit_class": "us_152mm_for_land_battles",
+        "way": [],
+        "weapons": ""
+      }
+    },
+    {
+      "structures": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "germ_sea_cannon_03_02",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 1,
+          "formation_noise": [0.1,0.5],
+          "formation_step": [0.6,2.8],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [0.764535,0.0,-0.644583],
+          [0.0,1.0,0.0],
+          [0.644583,0.0,0.764535],
+          [28230.6,15.5951,-10643.3]
+        ],
+        "unit_class": "us_152mm_for_land_battles",
+        "way": [],
+        "weapons": ""
+      }
+    },
+    {
+      "structures": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "germ_sea_cannon_03_03",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 1,
+          "formation_noise": [0.1,0.5],
+          "formation_step": [0.6,2.8],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [0.882637,0.0,-0.470056],
+          [0.0,1.0,0.0],
+          [0.470056,0.0,0.882637],
+          [28279.5,15.6041,-10563.5]
+        ],
+        "unit_class": "us_152mm_for_land_battles",
+        "way": [],
+        "weapons": ""
+      }
+    },
+    {
+      "structures": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "germ_sea_cannon_03_04",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 1,
+          "formation_noise": [0.1,0.5],
+          "formation_step": [0.6,2.8],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [0.999913,0.0,-0.0132306],
+          [0.0,1.0,0.0],
+          [0.0132306,0.0,0.999913],
+          [28063.1,15.8931,-10758.7]
+        ],
+        "unit_class": "us_152mm_for_land_battles",
+        "way": [],
+        "weapons": ""
+      }
+    },
+    {
+      "structures": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "germ_sea_cannon_01_02",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 1,
+          "formation_noise": [0.1,0.4],
+          "formation_step": [1.9,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [0.587786,0.0,-0.809017],
+          [0.0,1.0,0.0],
+          [0.809017,0.0,0.587786],
+          [27861.7,16.4,-11655.7]
+        ],
+        "unit_class": "us_152mm_for_land_battles",
+        "way": [],
+        "weapons": ""
+      }
+    },
+    {
+      "structures": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "germ_sea_cannon_01_03",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 1,
+          "formation_noise": [0.1,0.4],
+          "formation_step": [1.9,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [0.953717,0.0,-0.300706],
+          [0.0,1.0,0.0],
+          [0.300706,0.0,0.953717],
+          [27993.2,16.4002,-11377.1]
+        ],
+        "unit_class": "us_152mm_for_land_battles",
+        "way": [],
+        "weapons": ""
+      }
+    },
+    {
+      "structures": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "germ_sea_cannon_01_04",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 1,
+          "formation_noise": [0.1,0.4],
+          "formation_step": [1.9,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [0.953717,0.0,-0.300706],
+          [0.0,1.0,0.0],
+          [0.300706,0.0,0.953717],
+          [28017.9,15.6067,-11591.8]
+        ],
+        "unit_class": "us_152mm_for_land_battles",
+        "way": [],
+        "weapons": ""
+      }
+    },
+    {
+      "structures": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "germ_sea_cannon_02_02",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 1,
+          "formation_noise": [0.1,0.8],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [-0.0117624,0.0,-0.999931],
+          [0.0,1.0,0.0],
+          [0.999931,0.0,-0.0117624],
+          [27625.3,16.4,-11706.5]
+        ],
+        "unit_class": "us_152mm_for_land_battles",
+        "way": [],
+        "weapons": ""
+      }
+    },
+    {
+      "structures": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "germ_sea_cannon_02_03",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 1,
+          "formation_noise": [0.1,0.8],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [0.573576,0.0,-0.819152],
+          [0.0,1.0,0.0],
+          [0.819152,0.0,0.573576],
+          [27252.2,16.4,-11863.4]
+        ],
+        "unit_class": "us_152mm_for_land_battles",
+        "way": [],
+        "weapons": ""
+      }
+    },
+    {
+      "structures": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "germ_sea_cannon_02_04",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 1,
+          "formation_noise": [0.1,0.8],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [0.573576,0.0,-0.819152],
+          [0.0,1.0,0.0],
+          [0.819152,0.0,0.573576],
+          [27112.0,16.4,-11959.0]
+        ],
+        "unit_class": "us_152mm_for_land_battles",
+        "way": [],
+        "weapons": ""
+      }
+    },
+    {
+      "structures": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "germ_artillery_02",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "effShootingRate": 0.1,
+          "formation_div": 3,
+          "formation_noise": [1.0,1.0],
+          "formation_step": [2.4,2.2],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [0.906308,0.0,0.422618],
+          [0.0,1.0,0.0],
+          [-0.422618,0.0,0.906308],
+          [21574.5,40.6117,-19610.2]
+        ],
+        "unit_class": "germ_quest_large_art",
+        "way": [],
+        "weapons": ""
+      }
+    },
+    {
+      "structures": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "germ_artillery_03",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "effShootingRate": 0.1,
+          "formation_div": 3,
+          "formation_noise": [1.0,1.0],
+          "formation_step": [2.4,2.2],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [0.906308,0.0,0.422618],
+          [0.0,1.0,0.0],
+          [-0.422618,0.0,0.906308],
+          [21191.4,40.6116,-18953.2]
+        ],
+        "unit_class": "germ_quest_large_art",
+        "way": [],
+        "weapons": ""
+      }
+    },
+    {
+      "structures": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "germ_artillery_04",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "effShootingRate": 0.1,
+          "formation_div": 3,
+          "formation_noise": [1.0,1.0],
+          "formation_step": [2.4,2.2],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [0.906308,0.0,0.422618],
+          [0.0,1.0,0.0],
+          [-0.422618,0.0,0.906308],
+          [21188.5,40.6116,-18743.9]
+        ],
+        "unit_class": "germ_quest_large_art",
+        "way": [],
+        "weapons": ""
+      }
+    },
+    {
+      "structures": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "germ_artillery_05",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "effShootingRate": 0.1,
+          "formation_div": 3,
+          "formation_noise": [1.0,1.0],
+          "formation_step": [2.4,2.2],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [0.906308,0.0,0.422618],
+          [0.0,1.0,0.0],
+          [-0.422618,0.0,0.906308],
+          [21200.4,40.6116,-19545.1]
+        ],
+        "unit_class": "germ_quest_large_art",
+        "way": [],
+        "weapons": ""
+      }
+    },
+    {
+      "structures": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "germ_artillery_06",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "effShootingRate": 0.1,
+          "formation_div": 3,
+          "formation_noise": [1.0,1.0],
+          "formation_step": [2.4,2.2],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [0.906308,0.0,0.422618],
+          [0.0,1.0,0.0],
+          [-0.422618,0.0,0.906308],
+          [21870.4,40.6116,-19676.0]
+        ],
+        "unit_class": "germ_quest_large_art",
+        "way": [],
+        "weapons": ""
+      }
+    },
+    {
+      "structures": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "germ_artillery_07",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "effShootingRate": 0.1,
+          "formation_div": 3,
+          "formation_noise": [1.0,1.0],
+          "formation_step": [2.4,2.2],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [0.906308,0.0,0.422618],
+          [0.0,1.0,0.0],
+          [-0.422618,0.0,0.906308],
+          [22104.9,40.6116,-19776.6]
+        ],
+        "unit_class": "germ_quest_large_art",
+        "way": [],
+        "weapons": ""
+      }
+    },
+    {
+      "structures": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "germ_artillery_08",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "effShootingRate": 0.1,
+          "formation_div": 3,
+          "formation_noise": [1.0,1.0],
+          "formation_step": [2.4,2.2],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [0.906308,0.0,0.422618],
+          [0.0,1.0,0.0],
+          [-0.422618,0.0,0.906308],
+          [21655.4,40.6116,-18880.4]
+        ],
+        "unit_class": "germ_quest_large_art",
+        "way": [],
+        "weapons": ""
+      }
+    },
+    {
+      "structures": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "germ_artillery_09",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "effShootingRate": 0.1,
+          "formation_div": 3,
+          "formation_noise": [1.0,1.0],
+          "formation_step": [2.4,2.2],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [0.906308,0.0,0.422618],
+          [0.0,1.0,0.0],
+          [-0.422618,0.0,0.906308],
+          [21941.3,40.6116,-19055.3]
+        ],
+        "unit_class": "germ_quest_large_art",
+        "way": [],
+        "weapons": ""
+      }
+    },
+    {
+      "structures": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "germ_artillery_10",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "effShootingRate": 0.1,
+          "formation_div": 3,
+          "formation_noise": [1.0,1.0],
+          "formation_step": [2.4,2.2],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [0.906308,0.0,0.422618],
+          [0.0,1.0,0.0],
+          [-0.422618,0.0,0.906308],
+          [22203.9,40.6116,-19448.6]
+        ],
+        "unit_class": "germ_quest_large_art",
+        "way": [],
+        "weapons": ""
+      }
+    },
+    {
+      "structures": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "germ_artillery_11",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "effShootingRate": 0.1,
+          "formation_div": 3,
+          "formation_noise": [1.0,1.0],
+          "formation_step": [2.4,2.2],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [0.906308,0.0,0.422618],
+          [0.0,1.0,0.0],
+          [-0.422618,0.0,0.906308],
+          [20931.0,40.6116,-19116.1]
+        ],
+        "unit_class": "germ_quest_large_art",
+        "way": [],
+        "weapons": ""
+      }
+    },
+    {
+      "structures": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "germ_artillery_12",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "effShootingRate": 0.1,
+          "formation_div": 3,
+          "formation_noise": [1.0,1.0],
+          "formation_step": [2.4,2.2],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [0.906308,0.0,0.422618],
+          [0.0,1.0,0.0],
+          [-0.422618,0.0,0.906308],
+          [21567.3,40.6116,-19242.3]
+        ],
+        "unit_class": "germ_quest_large_art",
+        "way": [],
+        "weapons": ""
+      }
+    },
+    {
+      "structures": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "germ_sea_cannon_03_05",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 1,
+          "formation_noise": [0.1,0.5],
+          "formation_step": [0.6,2.8],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [0.999913,0.0,-0.0132306],
+          [0.0,1.0,0.0],
+          [0.0132306,0.0,0.999913],
+          [27881.2,20.95,-10700.5]
+        ],
+        "unit_class": "germ_quest_large_art",
+        "way": [],
+        "weapons": ""
+      }
+    },
+    {
+      "structures": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "germ_sea_cannon_03_06",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 1,
+          "formation_noise": [0.1,0.5],
+          "formation_step": [0.6,2.8],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [0.999913,0.0,-0.0132306],
+          [0.0,1.0,0.0],
+          [0.0132306,0.0,0.999913],
+          [27686.2,32.35,-10970.5]
+        ],
+        "unit_class": "germ_quest_large_art",
+        "way": [],
+        "weapons": ""
+      }
+    },
+    {
+      "structures": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "germ_sea_cannon_01_05",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 1,
+          "formation_noise": [0.1,0.4],
+          "formation_step": [1.9,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [0.953717,0.0,-0.300706],
+          [0.0,1.0,0.0],
+          [0.300706,0.0,0.953717],
+          [27576.0,34.55,-11376.6]
+        ],
+        "unit_class": "germ_quest_large_art",
+        "way": [],
+        "weapons": ""
+      }
+    },
+    {
+      "structures": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "germ_sea_cannon_01_06",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 1,
+          "formation_noise": [0.1,0.4],
+          "formation_step": [1.9,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [0.953717,0.0,-0.300706],
+          [0.0,1.0,0.0],
+          [0.300706,0.0,0.953717],
+          [27588.8,34.55,-11190.7]
+        ],
+        "unit_class": "germ_quest_large_art",
+        "way": [],
+        "weapons": ""
+      }
+    },
+    {
+      "structures": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "germ_sea_cannon_02_05",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 1,
+          "formation_noise": [0.1,0.8],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [0.391972,0.0,-0.919977],
+          [0.0,1.0,0.0],
+          [0.919977,0.0,0.391972],
+          [27370.9,19.35,-11610.2]
+        ],
+        "unit_class": "germ_quest_large_art",
+        "way": [],
+        "weapons": ""
+      }
+    },
+    {
+      "structures": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "germ_sea_cannon_02_06",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 1,
+          "formation_noise": [0.1,0.8],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [0.391972,0.0,-0.919977],
+          [0.0,1.0,0.0],
+          [0.919977,0.0,0.391972],
+          [27247.2,27.5,-11611.9]
+        ],
+        "unit_class": "germ_quest_large_art",
+        "way": [],
+        "weapons": ""
+      }
+    },
+    {
+      "structures": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "germ_sea_cannon_02_07",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 1,
+          "formation_noise": [0.1,0.8],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [0.914097,0.0,0.405496],
+          [0.0,1.0,0.0],
+          [-0.405496,0.0,0.914097],
+          [25651.7,16.4,-13114.8]
+        ],
+        "unit_class": "germ_quest_large_art",
+        "way": [],
+        "weapons": ""
+      }
+    },
+    {
+      "structures": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "germ_sea_cannon_02_08",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 1,
+          "formation_noise": [0.1,0.8],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [0.914097,0.0,0.405496],
+          [0.0,1.0,0.0],
+          [-0.405496,0.0,0.914097],
+          [25573.0,16.4,-13407.7]
+        ],
+        "unit_class": "germ_quest_large_art",
+        "way": [],
+        "weapons": ""
+      }
+    },
+    {
+      "structures": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "germ_sea_cannon_02_09",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 1,
+          "formation_noise": [0.1,0.8],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [0.914097,0.0,0.405496],
+          [0.0,1.0,0.0],
+          [-0.405496,0.0,0.914097],
+          [25417.0,16.4,-12896.2]
+        ],
+        "unit_class": "germ_quest_large_art",
+        "way": [],
+        "weapons": ""
+      }
+    },
+    {
+      "structures": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "germ_sea_cannon_02_10",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 1,
+          "formation_noise": [0.1,0.8],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [0.914097,0.0,0.405496],
+          [0.0,1.0,0.0],
+          [-0.405496,0.0,0.914097],
+          [25217.6,16.4,-12625.5]
+        ],
+        "unit_class": "germ_quest_large_art",
+        "way": [],
+        "weapons": ""
+      }
+    },
+    {
+      "structures": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "germ_sea_cannon_02_11",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 1,
+          "formation_noise": [0.1,0.8],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [0.914097,0.0,0.405496],
+          [0.0,1.0,0.0],
+          [-0.405496,0.0,0.914097],
+          [25429.9,16.4,-12310.5]
+        ],
+        "unit_class": "germ_quest_large_art",
+        "way": [],
+        "weapons": ""
+      }
+    },
+    {
+      "structures": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "germ_sea_cannon_02_12",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 1,
+          "formation_noise": [0.1,0.8],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [0.914097,0.0,0.405496],
+          [0.0,1.0,0.0],
+          [-0.405496,0.0,0.914097],
+          [25465.0,16.4,-12087.5]
+        ],
+        "unit_class": "germ_quest_large_art",
+        "way": [],
+        "weapons": ""
+      }
+    },
+    {
+      "air_defence": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "germ_air_defence_01",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [1.0,1.0],
+          "formation_step": [5.0,5.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [20435.9,74.15,-19036.5]
+        ],
+        "unit_class": "germ_88mm_flak36",
+        "way": [],
+        "weapons": ""
+      }
+    },
+    {
+      "air_defence": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "germ_town_aaa_01_01",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.5,0.2],
+          "formation_step": [3.0,3.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [0.843391,0.0,-0.5373],
+          [0.0,1.0,0.0],
+          [0.5373,0.0,0.843391],
+          [27070.5,38.15,-11004.6]
+        ],
+        "unit_class": "germ_88mm_flak36",
+        "way": [],
+        "weapons": ""
+      }
+    },
+    {
+      "air_defence": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "germ_air_defence_02",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [1.0,1.0],
+          "formation_step": [5.0,5.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [20557.5,74.15,-19634.7]
+        ],
+        "unit_class": "germ_88mm_flak36",
+        "way": [],
+        "weapons": ""
+      }
+    },
+    {
+      "air_defence": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "germ_air_defence_03",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [1.0,1.0],
+          "formation_step": [5.0,5.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [21119.2,74.15,-20505.2]
+        ],
+        "unit_class": "germ_88mm_flak36",
+        "way": [],
+        "weapons": ""
+      }
+    },
+    {
+      "air_defence": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "germ_air_defence_04",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [1.0,1.0],
+          "formation_step": [5.0,5.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [21814.1,74.15,-20495.2]
+        ],
+        "unit_class": "germ_88mm_flak36",
+        "way": [],
+        "weapons": ""
+      }
+    },
+    {
+      "air_defence": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "germ_air_defence_05",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [1.0,1.0],
+          "formation_step": [5.0,5.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [20803.3,74.15,-18631.6]
+        ],
+        "unit_class": "germ_88mm_flak36",
+        "way": [],
+        "weapons": ""
+      }
+    },
+    {
+      "air_defence": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "germ_town_aaa_01_02",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.5,0.2],
+          "formation_step": [3.0,3.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [0.843391,0.0,-0.5373],
+          [0.0,1.0,0.0],
+          [0.5373,0.0,0.843391],
+          [27032.1,38.1498,-10762.6]
+        ],
+        "unit_class": "germ_88mm_flak36",
+        "way": [],
+        "weapons": ""
+      }
+    },
+    {
+      "air_defence": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "germ_town_aaa_01_03",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.5,0.2],
+          "formation_step": [3.0,3.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [0.843391,0.0,-0.5373],
+          [0.0,1.0,0.0],
+          [0.5373,0.0,0.843391],
+          [26740.4,38.1501,-11002.9]
+        ],
+        "unit_class": "germ_88mm_flak36",
+        "way": [],
+        "weapons": ""
+      }
+    },
+    {
+      "air_defence": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "germ_town_aaa_01_04",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.5,0.2],
+          "formation_step": [3.0,3.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [0.843391,0.0,-0.5373],
+          [0.0,1.0,0.0],
+          [0.5373,0.0,0.843391],
+          [26744.7,38.1501,-11221.5]
+        ],
+        "unit_class": "germ_88mm_flak36",
+        "way": [],
+        "weapons": ""
+      }
+    },
+    {
+      "air_defence": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "germ_town_aaa_01_05",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.5,0.2],
+          "formation_step": [3.0,3.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [0.843391,0.0,-0.5373],
+          [0.0,1.0,0.0],
+          [0.5373,0.0,0.843391],
+          [27073.8,38.1501,-11255.2]
+        ],
+        "unit_class": "germ_88mm_flak36",
+        "way": [],
+        "weapons": ""
+      }
+    },
+    {
+      "air_defence": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "germ_town_aaa_01_06",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.5,0.2],
+          "formation_step": [3.0,3.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [0.843391,0.0,-0.5373],
+          [0.0,1.0,0.0],
+          [0.5373,0.0,0.843391],
+          [27324.9,53.8931,-10626.5]
+        ],
+        "unit_class": "germ_88mm_flak36",
+        "way": [],
+        "weapons": ""
+      }
+    }
+  ],
+  "variables": {
+    "bots_alive_count": 24
+  },
+  "wayPoints": []
+}

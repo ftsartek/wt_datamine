@@ -1,0 +1,1611 @@
+{
+  "airfields": [],
+  "areas": [],
+  "bin_dump_file": "",
+  "dialogs": [],
+  "effects": [],
+  "imports": [],
+  "mission_objectives": {
+    "isCategory": true,
+    "is_enabled": true,
+    "ncnv_convoy_attack": {
+      "comments": "",
+      "is_enabled": true,
+      "onFailed": [],
+      "onSuccess": [],
+      "props": {
+        "isPrimary": true,
+        "team": "A",
+        "timeLimit": 1800
+      },
+      "type": "abstractMissionObjective"
+    },
+    "ncnv_convoy_defend": {
+      "comments": "",
+      "is_enabled": true,
+      "onFailed": [],
+      "onSuccess": [],
+      "props": {
+        "isPrimary": true,
+        "team": "B",
+        "timeLimit": 1800
+      },
+      "type": "abstractMissionObjective"
+    }
+  },
+  "mission_settings": {
+    "mission": {
+      "environment": "Day",
+      "level": "levels/water.bin",
+      "optionalTakeOff": false,
+      "restoreType": "attempts",
+      "type": "singleMission",
+      "weather": "hazy"
+    },
+    "player": {
+      "army": 1,
+      "wing": ""
+    },
+    "player_teamB": {
+      "army": 2
+    },
+    "spectator_points": []
+  },
+  "objLayers": [
+    {
+      "layer": {
+        "enabled": true
+      }
+    },
+    {
+      "layer": {
+        "enabled": true
+      }
+    },
+    {
+      "layer": {
+        "enabled": true
+      }
+    },
+    {
+      "layer": {
+        "enabled": true
+      }
+    }
+  ],
+  "selected_tag": "",
+  "triggers": {
+    "calc_waypoint_reached_penalty": {
+      "actions": [
+        {
+          "varSetInt": {
+            "source_var": "mpTi1",
+            "value": 0,
+            "var": "waypoint_reached_penalty"
+          }
+        },
+        {
+          "varModify": {
+            "operator": "divAB",
+            "use_variable": true,
+            "value": 1.0,
+            "var": "waypoint_reached_penalty",
+            "var_value": "waypoints_num"
+          }
+        },
+        {
+          "varModify": {
+            "operator": "mul",
+            "value": -1.0,
+            "var": "waypoint_reached_penalty"
+          }
+        },
+        {
+          "triggerEnable": {
+            "target": "waypoint_reached"
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": [],
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "convoy_all_unit_dead_check": {
+      "actions": {
+        "triggerEnable": {
+          "target": "convoy_all_unit_dead_end_mission"
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "unitWhenCountMatches": {
+          "func": "less",
+          "object": "convoy_sq",
+          "object_marking": 0,
+          "object_type": "isActive",
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "object_var_value": 0,
+          "value": 1
+        }
+      },
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 0.5
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "convoy_all_unit_dead_end_mission": {
+      "actions": {
+        "gameMPChangeScore": {
+          "team": "B",
+          "value": -10,
+          "valueSystem": "percentage"
+        }
+      },
+      "comments": "",
+      "conditions": [],
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": true
+      }
+    },
+    "convoy_counter": {
+      "actions": {
+        "missionSetTargetsIndicator": {
+          "delta": 0,
+          "icon": "ship",
+          "icon army": 2,
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "object_var_value": 0,
+          "set": true,
+          "target": "convoy_sq",
+          "target_marking": 0,
+          "target_type": "isAlive",
+          "team": "Both",
+          "var": "have_to_kill_count"
+        }
+      },
+      "comments": "",
+      "conditions": [],
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": true
+      }
+    },
+    "convoy_unit_convoy_kill_penalty": {
+      "actions": {
+        "gameMPChangeScore": {
+          "team": "B",
+          "value": -250,
+          "valueSystem": "amount",
+          "var": "convoy_kill_penalty"
+        }
+      },
+      "comments": "",
+      "conditions": [],
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 0.5
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "convoy_unit_killed": {
+      "actions": [
+        {
+          "varModify": {
+            "operator": "add",
+            "value": 1.0,
+            "var": "kill_count"
+          }
+        },
+        {
+          "varModify": {
+            "operator": "subAB",
+            "value": 1.0,
+            "var": "have_to_kill_count"
+          }
+        },
+        {
+          "triggerEnable": {
+            "target": "convoy_unit_convoy_kill_penalty"
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": {
+        "unitWhenCountMatches": {
+          "func": "more",
+          "object": "convoy_sq",
+          "object_marking": 0,
+          "object_type": "isKilled",
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "object_var_value": 0,
+          "value": 1,
+          "var": "kill_count"
+        }
+      },
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": true
+      }
+    },
+    "delay_death_bots": {
+      "actions": {
+        "unitPutToSleep": {
+          "delayForObjects": [3.0,0.0],
+          "numToSleep": 1,
+          "order": "fromStart",
+          "target": "convoy_sq",
+          "useForTriggerFiltered": true
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "unitWhenCountMatches": {
+          "func": "more",
+          "object": "convoy_sq",
+          "object_marking": 0,
+          "object_type": "isInactive",
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "object_var_value": 0,
+          "value": 0
+        }
+      },
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": true
+      }
+    },
+    "drawTheLineA": {
+      "actions": [
+        {
+          "varSetString": {
+            "value": "convoy_waypoint",
+            "var": "linePointStr"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "convoy_waypoint",
+            "var": "linPointStr_next"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 2,
+            "input_var": "linePointCount",
+            "value": "",
+            "var": "linePointStr"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 2,
+            "input_var": "linePointCount",
+            "value": "",
+            "var": "linPointStr_next"
+          }
+        },
+        {
+          "varModify": {
+            "operator": "add",
+            "value": 1.0,
+            "var": "linePointCount"
+          }
+        },
+        {
+          "missionShowMapLine": {
+            "areaNameFrom": "@linePointStr",
+            "areaNameTo": "@linPointStr_next",
+            "colorCode": "Team B",
+            "scale": 0.5,
+            "show": true
+          }
+        },
+        {
+          "missionShowMapIcon": {
+            "areaName": "@linPointStr_next",
+            "iconName": "ui/gameuiskin#radar_object_waypoint.svg",
+            "show": true
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": {
+        "varCompareInt": {
+          "comparasion_func": "less",
+          "value": 0,
+          "var_value": "linePointCount",
+          "var_value_other": "waypoints_num"
+        }
+      },
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 0.1
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": true
+      }
+    },
+    "isCategory": true,
+    "is_enabled": true,
+    "ncnv_template_init1": {
+      "actions": [
+        {
+          "varAddString": {
+            "digits": 2,
+            "input_var": "waypoints_num",
+            "value": "",
+            "var": "last_waypoint"
+          }
+        },
+        {
+          "varSetInt": {
+            "fromDescriptor": "aiTargetCount",
+            "value": 0,
+            "var": "have_to_kill_count"
+          }
+        },
+        {
+          "triggerEnable": [
+            {
+              "target": "drawTheLineA"
+            },
+            {
+              "target": "ncnv_template_init2"
+            },
+            {
+              "target": "show_first_point"
+            }
+          ]
+        },
+        {
+          "missionMarkAsRespawnPoint": [
+            {
+              "loc_name": "missions/spawn_random"
+            },
+            {
+              "spawnEffect": false
+            },
+            {
+              "isStrictSpawn": false
+            },
+            {
+              "resetStrictSpawnIndex": false
+            },
+            {
+              "isAirfield": false
+            },
+            {
+              "isUnit": false
+            },
+            {
+              "useExisting": false
+            },
+            {
+              "isIndividual": true
+            },
+            {
+              "onlyOnePlayerPerSpawnPoint": false
+            },
+            {
+              "removeAreas": false
+            },
+            {
+              "replaceAreas": false
+            },
+            {
+              "canSpawnOnNeutral": false
+            },
+            {
+              "showOnMap": true
+            },
+            {
+              "radius": -1.0
+            },
+            {
+              "target": "t1_ships_spawn00"
+            },
+            {
+              "target": "t1_ships_spawn01"
+            },
+            {
+              "target": "t1_ships_spawn02"
+            },
+            {
+              "team": "A"
+            },
+            {
+              "tags": {
+                "air": false,
+                "boat": true,
+                "ship": true,
+                "tank": false,
+                "type_battlecruiser": false,
+                "type_battleship": false,
+                "type_destroyer": false,
+                "type_frigate": false,
+                "type_heavy_cruiser": false,
+                "type_light_cruiser": false
+              }
+            }
+          ]
+        },
+        {
+          "missionMarkAsRespawnPoint": {
+            "canSpawnOnNeutral": false,
+            "isAirfield": false,
+            "isIndividual": true,
+            "isStrictSpawn": false,
+            "isUnit": false,
+            "loc_name": "missions/spawn_01",
+            "onlyOnePlayerPerSpawnPoint": false,
+            "radius": -1.0,
+            "removeAreas": false,
+            "replaceAreas": false,
+            "resetStrictSpawnIndex": false,
+            "showOnMap": true,
+            "spawnEffect": false,
+            "tags": {
+              "air": false,
+              "boat": true,
+              "ship": true,
+              "tank": false,
+              "type_battlecruiser": false,
+              "type_battleship": false,
+              "type_destroyer": false,
+              "type_frigate": false,
+              "type_heavy_cruiser": false,
+              "type_light_cruiser": false
+            },
+            "target": "t1_ships_spawn00",
+            "team": "A",
+            "useExisting": false
+          }
+        },
+        {
+          "missionMarkAsRespawnPoint": {
+            "canSpawnOnNeutral": false,
+            "isAirfield": false,
+            "isIndividual": true,
+            "isStrictSpawn": false,
+            "isUnit": false,
+            "loc_name": "missions/spawn_02",
+            "onlyOnePlayerPerSpawnPoint": false,
+            "radius": -1.0,
+            "removeAreas": false,
+            "replaceAreas": false,
+            "resetStrictSpawnIndex": false,
+            "showOnMap": true,
+            "spawnEffect": false,
+            "tags": {
+              "air": false,
+              "boat": true,
+              "ship": true,
+              "tank": false,
+              "type_battlecruiser": false,
+              "type_battleship": false,
+              "type_destroyer": false,
+              "type_frigate": false,
+              "type_heavy_cruiser": false,
+              "type_light_cruiser": false
+            },
+            "target": "t1_ships_spawn01",
+            "team": "A",
+            "useExisting": false
+          }
+        },
+        {
+          "missionMarkAsRespawnPoint": {
+            "canSpawnOnNeutral": false,
+            "isAirfield": false,
+            "isIndividual": true,
+            "isStrictSpawn": false,
+            "isUnit": false,
+            "loc_name": "missions/spawn_03",
+            "onlyOnePlayerPerSpawnPoint": false,
+            "radius": -1.0,
+            "removeAreas": false,
+            "replaceAreas": false,
+            "resetStrictSpawnIndex": false,
+            "showOnMap": true,
+            "spawnEffect": false,
+            "tags": {
+              "air": false,
+              "boat": true,
+              "ship": true,
+              "tank": false,
+              "type_battlecruiser": false,
+              "type_battleship": false,
+              "type_destroyer": false,
+              "type_frigate": false,
+              "type_heavy_cruiser": false,
+              "type_light_cruiser": false
+            },
+            "target": "t1_ships_spawn02",
+            "team": "A",
+            "useExisting": false
+          }
+        },
+        {
+          "missionMarkAsRespawnPoint": [
+            {
+              "loc_name": "missions/spawn_random"
+            },
+            {
+              "spawnEffect": false
+            },
+            {
+              "isStrictSpawn": false
+            },
+            {
+              "resetStrictSpawnIndex": false
+            },
+            {
+              "isAirfield": false
+            },
+            {
+              "isUnit": false
+            },
+            {
+              "useExisting": false
+            },
+            {
+              "isIndividual": true
+            },
+            {
+              "onlyOnePlayerPerSpawnPoint": false
+            },
+            {
+              "removeAreas": false
+            },
+            {
+              "replaceAreas": false
+            },
+            {
+              "canSpawnOnNeutral": false
+            },
+            {
+              "showOnMap": true
+            },
+            {
+              "radius": -1.0
+            },
+            {
+              "target": "t2_ships_spawn00"
+            },
+            {
+              "target": "t2_ships_spawn01"
+            },
+            {
+              "target": "t2_ships_spawn02"
+            },
+            {
+              "team": "B"
+            },
+            {
+              "tags": {
+                "air": false,
+                "boat": true,
+                "ship": true,
+                "tank": false,
+                "type_battlecruiser": false,
+                "type_battleship": false,
+                "type_destroyer": false,
+                "type_frigate": false,
+                "type_heavy_cruiser": false,
+                "type_light_cruiser": false
+              }
+            }
+          ]
+        },
+        {
+          "missionMarkAsRespawnPoint": {
+            "canSpawnOnNeutral": false,
+            "isAirfield": false,
+            "isIndividual": true,
+            "isStrictSpawn": false,
+            "isUnit": false,
+            "loc_name": "missions/spawn_01",
+            "onlyOnePlayerPerSpawnPoint": false,
+            "radius": -1.0,
+            "removeAreas": false,
+            "replaceAreas": false,
+            "resetStrictSpawnIndex": false,
+            "showOnMap": true,
+            "spawnEffect": false,
+            "tags": {
+              "air": false,
+              "boat": true,
+              "ship": true,
+              "tank": false,
+              "type_battlecruiser": false,
+              "type_battleship": false,
+              "type_destroyer": false,
+              "type_frigate": false,
+              "type_heavy_cruiser": false,
+              "type_light_cruiser": false
+            },
+            "target": "t2_ships_spawn00",
+            "team": "B",
+            "useExisting": false
+          }
+        },
+        {
+          "missionMarkAsRespawnPoint": {
+            "canSpawnOnNeutral": false,
+            "isAirfield": false,
+            "isIndividual": true,
+            "isStrictSpawn": false,
+            "isUnit": false,
+            "loc_name": "missions/spawn_02",
+            "onlyOnePlayerPerSpawnPoint": false,
+            "radius": -1.0,
+            "removeAreas": false,
+            "replaceAreas": false,
+            "resetStrictSpawnIndex": false,
+            "showOnMap": true,
+            "spawnEffect": false,
+            "tags": {
+              "air": false,
+              "boat": true,
+              "ship": true,
+              "tank": false,
+              "type_battlecruiser": false,
+              "type_battleship": false,
+              "type_destroyer": false,
+              "type_frigate": false,
+              "type_heavy_cruiser": false,
+              "type_light_cruiser": false
+            },
+            "target": "t2_ships_spawn01",
+            "team": "B",
+            "useExisting": false
+          }
+        },
+        {
+          "missionMarkAsRespawnPoint": {
+            "canSpawnOnNeutral": false,
+            "isAirfield": false,
+            "isIndividual": true,
+            "isStrictSpawn": false,
+            "isUnit": false,
+            "loc_name": "missions/spawn_03",
+            "onlyOnePlayerPerSpawnPoint": false,
+            "radius": -1.0,
+            "removeAreas": false,
+            "replaceAreas": false,
+            "resetStrictSpawnIndex": false,
+            "showOnMap": true,
+            "spawnEffect": false,
+            "tags": {
+              "air": false,
+              "boat": true,
+              "ship": true,
+              "tank": false,
+              "type_battlecruiser": false,
+              "type_battleship": false,
+              "type_destroyer": false,
+              "type_frigate": false,
+              "type_heavy_cruiser": false,
+              "type_light_cruiser": false
+            },
+            "target": "t2_ships_spawn02",
+            "team": "B",
+            "useExisting": false
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": [],
+      "else_actions": [],
+      "events": {
+        "initMission": []
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "ncnv_template_init2": {
+      "actions": {
+        "triggerEnable": {
+          "target": "ncnv_template_init3"
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "varCompareInt": {
+          "comparasion_func": "more",
+          "value": 0,
+          "var_value": "have_to_kill_count"
+        }
+      },
+      "else_actions": {
+        "triggerEnable": {
+          "target": "ncnv_template_init3"
+        },
+        "varSetInt": {
+          "value": 7,
+          "var": "have_to_kill_count"
+        }
+      },
+      "events": {
+        "initMission": []
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "ncnv_template_init3": {
+      "actions": [
+        {
+          "varAddString": {
+            "digits": 2,
+            "input_var": "have_to_kill_count",
+            "value": "",
+            "var": "convoy_sq_name"
+          }
+        },
+        {
+          "unitSetFormation": {
+            "allUnitsInOneFormation": true,
+            "formation_div": 3,
+            "formation_noise": [0.2,0.1],
+            "formation_step": [7.0,2.5],
+            "formation_type": "cols",
+            "object": "@convoy_sq_name"
+          }
+        },
+        {
+          "unitRespawn": {
+            "delay": 0.01,
+            "object": "@convoy_sq_name",
+            "object_type": "isInactive",
+            "offset": [0.0,0.0,0.0],
+            "randomObjectsCountVar": "have_to_kill_count",
+            "resetFormation": true,
+            "target": "convoy_starting_point"
+          }
+        },
+        {
+          "wait": {
+            "time": 1.0
+          }
+        },
+        {
+          "unitSetRoute": {
+            "object": "@convoy_sq_name",
+            "route": "convoy_route"
+          }
+        },
+        {
+          "unitSetProperties": {
+            "accuracy": 0.5,
+            "airEffShootingRate": 0.3,
+            "effShootingRate": 0.5,
+            "lockSpeed": true,
+            "object": "@convoy_sq_name",
+            "object_marking": 0,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "object_var_value": 0,
+            "speed": 20.0,
+            "targetAir": true,
+            "targetGnd": true
+          }
+        },
+        {
+          "unitSetIndication": {
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "object_var_value": 0,
+            "set": true,
+            "target": "@convoy_sq_name",
+            "target_marking": 0
+          }
+        },
+        {
+          "varSetInt": {
+            "source_var": "mpTi1",
+            "value": 0,
+            "var": "convoy_kill_penalty"
+          }
+        },
+        {
+          "varModify": {
+            "operator": "divAB",
+            "use_variable": true,
+            "value": 1.0,
+            "var": "convoy_kill_penalty",
+            "var_value": "have_to_kill_count"
+          }
+        },
+        {
+          "varModify": {
+            "operator": "mul",
+            "value": -1.0,
+            "var": "convoy_kill_penalty"
+          }
+        },
+        {
+          "triggerEnable": [
+            {
+              "target": "calc_waypoint_reached_penalty"
+            },
+            {
+              "target": "convoy_unit_killed"
+            },
+            {
+              "target": "convoy_counter"
+            },
+            {
+              "target": "convoy_all_unit_dead_check"
+            }
+          ]
+        }
+      ],
+      "comments": "",
+      "conditions": [],
+      "else_actions": [],
+      "events": {
+        "initMission": []
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "player_bots_move": {
+      "actions": {
+        "unitMoveTo": {
+          "distributionRadius": 300.0,
+          "follow_target": false,
+          "horizontalDirectionForTeleport": true,
+          "object": "all_players_squad",
+          "object_marking": 0,
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "object_var_value": 0,
+          "recalculatePathDist": -1.0,
+          "shouldKeepFormation": false,
+          "speed": 50.0,
+          "target": "@current_waypoint_str",
+          "target_marking": 0,
+          "teleportHeightType": "absolute",
+          "teleportHeightValue": 1000.0,
+          "useUnitHeightForTele": true,
+          "waypointReachedDist": 10.0
+        }
+      },
+      "comments": "",
+      "conditions": [],
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 5.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": true
+      }
+    },
+    "repair_mobility_parts": {
+      "actions": [
+        {
+          "unitRestore": [
+            {
+              "ressurectIfDead": false
+            },
+            {
+              "fullRestore": false
+            },
+            {
+              "target": "convoy_sq"
+            },
+            {
+              "partRestore": true
+            },
+            {
+              "tankPart": "engine_dm"
+            },
+            {
+              "tankPart": "engine_01_dm"
+            },
+            {
+              "tankPart": "engine_02_dm"
+            },
+            {
+              "tankPart": "engine_03_dm"
+            },
+            {
+              "tankPart": "engine_04_dm"
+            },
+            {
+              "tankPart": "engine_room_01_dm"
+            },
+            {
+              "tankPart": "engine_room_02_dm"
+            },
+            {
+              "tankPart": "engine_room_03_dm"
+            },
+            {
+              "tankPart": "engine_room_04_dm"
+            },
+            {
+              "power": 0.7
+            }
+          ]
+        },
+        {
+          "unitRestore": [
+            {
+              "ressurectIfDead": false
+            },
+            {
+              "fullRestore": false
+            },
+            {
+              "target": "convoy_sq"
+            },
+            {
+              "partRestore": true
+            },
+            {
+              "tankPart": "transmission_01_dm"
+            },
+            {
+              "tankPart": "transmission_02_dm"
+            },
+            {
+              "tankPart": "transmission_03_dm"
+            },
+            {
+              "tankPart": "transmission_04_dm"
+            },
+            {
+              "tankPart": "steering_gear_01_dm"
+            },
+            {
+              "tankPart": "steering_gear_02_dm"
+            },
+            {
+              "tankPart": "steering_gear_03_dm"
+            },
+            {
+              "tankPart": "steering_gear_04_dm"
+            },
+            {
+              "tankPart": "funnel_01_dm"
+            },
+            {
+              "tankPart": "funnel_02_dm"
+            },
+            {
+              "tankPart": "funnel_03_dm"
+            },
+            {
+              "tankPart": "funnel_04_dm"
+            },
+            {
+              "power": 0.7
+            }
+          ]
+        }
+      ],
+      "comments": "",
+      "conditions": [],
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 10.0
+        }
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": true
+      }
+    },
+    "show_first_point": {
+      "actions": {
+        "missionShowMapIcon": {
+          "areaName": "@current_waypoint_str",
+          "iconName": "ui/gameuiskin#radar_object_waypoint.svg",
+          "show": true
+        }
+      },
+      "comments": "",
+      "conditions": [],
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 0.01
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "waypoint_reached": {
+      "actions": {
+        "triggerEnable": {
+          "target": "waypoint_reached_penalty"
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "unitDistanceBetween": {
+          "check_objects": "any",
+          "check_targets": "any",
+          "math": "2D",
+          "object": "convoy_sq",
+          "object_marking": 0,
+          "object_type": "isAlive",
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "object_var_value": 0,
+          "target": "@current_waypoint_str",
+          "target_marking": 0,
+          "target_type": "isAlive",
+          "value": 500.0
+        }
+      },
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": true
+      }
+    },
+    "waypoint_reached_hide_lines": {
+      "actions": [
+        {
+          "varSetString": {
+            "input_var": "current_waypoint_str",
+            "value": "",
+            "var": "prev_waypoint_str"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "convoy_waypoint",
+            "var": "current_waypoint_str"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 2,
+            "input_var": "current_waypoint",
+            "value": "",
+            "var": "current_waypoint_str"
+          }
+        },
+        {
+          "missionShowMapLine": {
+            "areaNameFrom": "@prev_waypoint_str",
+            "areaNameTo": "@current_waypoint_str",
+            "show": false
+          }
+        },
+        {
+          "missionShowMapIcon": {
+            "areaName": "@prev_waypoint_str",
+            "iconName": "ui/gameuiskin#radar_object_waypoint.svg",
+            "show": false
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": [],
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 0.5
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "waypoint_reached_penalty": {
+      "actions": [
+        {
+          "gameMPChangeScore": {
+            "team": "A",
+            "value": 0,
+            "valueSystem": "amount",
+            "var": "waypoint_reached_penalty"
+          }
+        },
+        {
+          "varModify": {
+            "operator": "add",
+            "value": 1.0,
+            "var": "current_waypoint"
+          }
+        },
+        {
+          "varModify": {
+            "operator": "add",
+            "value": 1.0,
+            "var": "t1_spawnzone_counter"
+          }
+        },
+        {
+          "varModify": {
+            "operator": "add",
+            "value": 1.0,
+            "var": "t2_spawnzone_counter"
+          }
+        },
+        {
+          "triggerEnable": {
+            "target": "waypoint_reached_hide_lines"
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": [],
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 0.5
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    }
+  },
+  "units": [
+    {
+      "squad": {
+        "name": "convoy_sq",
+        "props": [
+          {
+            "squad_members": "ship_01"
+          },
+          {
+            "squad_members": "ship_02"
+          },
+          {
+            "squad_members": "ship_03"
+          },
+          {
+            "squad_members": "ship_04"
+          },
+          {
+            "squad_members": "ship_05"
+          },
+          {
+            "squad_members": "ship_06"
+          },
+          {
+            "squad_members": "ship_07"
+          },
+          {
+            "squad_members": "ship_08"
+          },
+          {
+            "squad_members": "ship_09"
+          },
+          {
+            "squad_members": "ship_10"
+          }
+        ],
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [2590.42,4.48975,-576.691]
+        ]
+      }
+    },
+    {
+      "squad": {
+        "name": "convoy_sq_01",
+        "props": {
+          "squad_members": "ship_01"
+        },
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [2586.26,4.48975,-576.691]
+        ]
+      }
+    },
+    {
+      "squad": {
+        "name": "convoy_sq_02",
+        "props": [
+          {
+            "squad_members": "ship_01"
+          },
+          {
+            "squad_members": "ship_02"
+          }
+        ],
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [2582.11,4.48975,-576.691]
+        ]
+      }
+    },
+    {
+      "squad": {
+        "name": "convoy_sq_03",
+        "props": [
+          {
+            "squad_members": "ship_01"
+          },
+          {
+            "squad_members": "ship_02"
+          },
+          {
+            "squad_members": "ship_03"
+          }
+        ],
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [2577.95,4.48975,-576.691]
+        ]
+      }
+    },
+    {
+      "squad": {
+        "name": "convoy_sq_04",
+        "props": [
+          {
+            "squad_members": "ship_01"
+          },
+          {
+            "squad_members": "ship_02"
+          },
+          {
+            "squad_members": "ship_03"
+          },
+          {
+            "squad_members": "ship_04"
+          }
+        ],
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [2573.8,4.48975,-576.691]
+        ]
+      }
+    },
+    {
+      "squad": {
+        "name": "convoy_sq_05",
+        "props": [
+          {
+            "squad_members": "ship_01"
+          },
+          {
+            "squad_members": "ship_02"
+          },
+          {
+            "squad_members": "ship_03"
+          },
+          {
+            "squad_members": "ship_04"
+          },
+          {
+            "squad_members": "ship_05"
+          }
+        ],
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [2569.64,4.48975,-576.691]
+        ]
+      }
+    },
+    {
+      "squad": {
+        "name": "convoy_sq_06",
+        "props": [
+          {
+            "squad_members": "ship_01"
+          },
+          {
+            "squad_members": "ship_02"
+          },
+          {
+            "squad_members": "ship_03"
+          },
+          {
+            "squad_members": "ship_04"
+          },
+          {
+            "squad_members": "ship_05"
+          },
+          {
+            "squad_members": "ship_06"
+          }
+        ],
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [2565.49,4.48975,-576.691]
+        ]
+      }
+    },
+    {
+      "squad": {
+        "name": "convoy_sq_07",
+        "props": [
+          {
+            "squad_members": "ship_01"
+          },
+          {
+            "squad_members": "ship_02"
+          },
+          {
+            "squad_members": "ship_03"
+          },
+          {
+            "squad_members": "ship_04"
+          },
+          {
+            "squad_members": "ship_05"
+          },
+          {
+            "squad_members": "ship_06"
+          },
+          {
+            "squad_members": "ship_07"
+          }
+        ],
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [2561.33,4.48975,-576.691]
+        ]
+      }
+    },
+    {
+      "squad": {
+        "name": "convoy_sq_08",
+        "props": [
+          {
+            "squad_members": "ship_01"
+          },
+          {
+            "squad_members": "ship_02"
+          },
+          {
+            "squad_members": "ship_03"
+          },
+          {
+            "squad_members": "ship_04"
+          },
+          {
+            "squad_members": "ship_05"
+          },
+          {
+            "squad_members": "ship_06"
+          },
+          {
+            "squad_members": "ship_07"
+          },
+          {
+            "squad_members": "ship_08"
+          }
+        ],
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [2557.18,4.48975,-576.691]
+        ]
+      }
+    },
+    {
+      "squad": {
+        "name": "convoy_sq_09",
+        "props": [
+          {
+            "squad_members": "ship_01"
+          },
+          {
+            "squad_members": "ship_02"
+          },
+          {
+            "squad_members": "ship_03"
+          },
+          {
+            "squad_members": "ship_04"
+          },
+          {
+            "squad_members": "ship_05"
+          },
+          {
+            "squad_members": "ship_06"
+          },
+          {
+            "squad_members": "ship_07"
+          },
+          {
+            "squad_members": "ship_08"
+          },
+          {
+            "squad_members": "ship_09"
+          }
+        ],
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [2553.02,4.48975,-576.691]
+        ]
+      }
+    },
+    {
+      "squad": {
+        "name": "convoy_sq_10",
+        "props": [
+          {
+            "squad_members": "ship_01"
+          },
+          {
+            "squad_members": "ship_02"
+          },
+          {
+            "squad_members": "ship_03"
+          },
+          {
+            "squad_members": "ship_04"
+          },
+          {
+            "squad_members": "ship_05"
+          },
+          {
+            "squad_members": "ship_06"
+          },
+          {
+            "squad_members": "ship_07"
+          },
+          {
+            "squad_members": "ship_08"
+          },
+          {
+            "squad_members": "ship_09"
+          },
+          {
+            "squad_members": "ship_10"
+          }
+        ],
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [2548.87,4.48975,-576.691]
+        ]
+      }
+    }
+  ],
+  "variables": {
+    "convoy_kill_penalty": 0,
+    "convoy_sq_name": "convoy_sq_",
+    "current_waypoint": 1,
+    "current_waypoint_str": "convoy_waypoint01",
+    "have_to_kill_count": 0,
+    "kill_count": 0,
+    "last_waypoint": "convoy_waypoint",
+    "linPointStr_next": "",
+    "linePointCount": 1,
+    "linePointStr": "",
+    "prev_waypoint_str": "convoy_waypoint00",
+    "t1_spawnzone_counter": 0,
+    "t1_spawnzone_name": "t1_ships_spawn00",
+    "t2_spawnzone_counter": 0,
+    "t2_spawnzone_name": "t2_ships_spawn00",
+    "waypoint_reached_penalty": 0
+  },
+  "wayPoints": []
+}

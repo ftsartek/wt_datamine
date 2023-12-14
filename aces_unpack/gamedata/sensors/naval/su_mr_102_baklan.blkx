@@ -1,0 +1,263 @@
+{
+  "fsms": {
+    "main": [
+      {
+        "stateInit": "init"
+      },
+      {
+        "stateInit": "init"
+      },
+      {
+        "actionsTemplates": {
+          "init": {
+            "setCenterElevation": {
+              "source": "constant",
+              "value": 7.5
+            },
+            "setEnabled": {
+              "value": false
+            },
+            "setScanPattern": {
+              "scanPattern": "search"
+            },
+            "setSignal": {
+              "signal": "search"
+            },
+            "setTargetDesignationRange": {
+              "azimuthRange": [-180.0,180.0],
+              "distanceRange": [0.0,40000.0]
+            },
+            "setTransiver": {
+              "transiver": "search"
+            }
+          },
+          "resetSearchMode": {
+            "setCueEnabled": {
+              "value": false
+            },
+            "setFsmActive": {
+              "active": false,
+              "fsm": "search"
+            }
+          },
+          "setSearchMode": {
+            "clearTargets": [],
+            "setCueEnabled": {
+              "value": true
+            },
+            "setEnabled": {
+              "value": true
+            },
+            "setFsmActive": {
+              "active": true,
+              "fsm": "search"
+            },
+            "setModeName": {
+              "name": "search"
+            },
+            "setScanPattern": {
+              "scanPattern": "search"
+            }
+          },
+          "setStandbyMode": {
+            "clearTargets": [],
+            "setCenterAzimuth": {
+              "source": "constant",
+              "value": 0.0
+            },
+            "setEnabled": {
+              "value": false
+            },
+            "setModeName": {
+              "name": "standby"
+            }
+          }
+        }
+      },
+      {
+        "transitions": {
+          "init": {
+            "actions": {
+              "init": [],
+              "setStandbyMode": []
+            },
+            "event": "init",
+            "stateFrom": "init",
+            "stateTo": "standby"
+          },
+          "switchOff": {
+            "actions": {
+              "resetSearchMode": [],
+              "setStandbyMode": []
+            },
+            "command": "switch",
+            "event": "disable",
+            "stateFrom": "search",
+            "stateTo": "standby"
+          },
+          "switchOn": {
+            "actions": {
+              "setSearchMode": []
+            },
+            "command": "switch",
+            "event": "enable",
+            "stateFrom": "standby",
+            "stateTo": "search"
+          },
+          "switchScanPattern": [
+            {
+              "stateFrom": "standby"
+            },
+            {
+              "stateFrom": "search"
+            },
+            {
+              "command": "scanPatternSwitch"
+            },
+            {
+              "actions": {
+                "setNextScanPattern": []
+              }
+            }
+          ],
+          "switchScopeRange": {
+            "actions": {
+              "setNextScopeRange": []
+            },
+            "command": "rangeSwitch"
+          }
+        }
+      }
+    ],
+    "search": {
+      "stateInit": "search",
+      "transitions": {
+        "addTarget": {
+          "actions": {
+            "addTarget": [],
+            "updateActiveDetectedTarget": []
+          },
+          "event": "targetDetected"
+        },
+        "designateTarget": {
+          "actions": {
+            "designateActiveDetectedTarget": {
+              "sensorIndex": 1,
+              "type": 0
+            },
+            "designateTargetUnderCue": {
+              "sensorIndex": 1,
+              "type": 0
+            }
+          },
+          "command": "selectTarget"
+        },
+        "detect": {
+          "actions": {
+            "detectTarget": [],
+            "setDistGatePos": {
+              "source": "continuousScale",
+              "width": 0.0
+            },
+            "setRelSpeedGatePos": {
+              "source": "continuousScale",
+              "width": 0.0
+            }
+          },
+          "event": "targetInSight"
+        },
+        "scan": {
+          "actions": {
+            "scan": []
+          },
+          "event": "update"
+        },
+        "setCueAzimuth": {
+          "actions": {
+            "setCueAzimuth": []
+          },
+          "command": "cueAxisX"
+        },
+        "setCueDist": {
+          "actions": {
+            "setCueDist": []
+          },
+          "command": "cueAxisY"
+        },
+        "setCueElevation": {
+          "actions": {
+            "setCueElevation": []
+          },
+          "command": "cueAxisZ"
+        },
+        "setSelectedTarget": {
+          "actions": {
+            "setDetectedTargetActive": []
+          },
+          "command": "switchToTarget"
+        },
+        "switchSelectedTarget": {
+          "actions": {
+            "setNextDetectedTargetActive": []
+          },
+          "command": "switchTarget"
+        }
+      }
+    }
+  },
+  "name": "MR-102-Baklan",
+  "scanPatterns": {
+    "search": {
+      "azimuthLimits": [-180.0,180.0],
+      "barHeight": 15.0,
+      "barsCount": 1,
+      "elevationLimits": [-10.0,50.0],
+      "period": 5.0,
+      "pitchStabLimit": 40.0,
+      "rollStabLimit": 15.0,
+      "rowMajor": true,
+      "type": "cylinder",
+      "yawStabLimit": 180.0
+    }
+  },
+  "scopeRanges": {
+    "range2": 10000.0,
+    "range3": 20000.0,
+    "range4": 40000.0
+  },
+  "signals": {
+    "search": {
+      "aircraftAsTarget": true,
+      "distance": {
+        "maxValue": 40000.0,
+        "minValue": 1000.0,
+        "presents": true
+      },
+      "friendFoeId": false,
+      "groundClutter": false,
+      "groundVehiclesAsTarget": false
+    }
+  },
+  "transivers": {
+    "search": {
+      "antenna": {
+        "azimuth": {
+          "angleHalfSens": 15.0,
+          "sideLobesSensitivity": -30.0
+        },
+        "elevation": {
+          "angleHalfSens": 20.0,
+          "sideLobesSensitivity": -30.0
+        }
+      },
+      "band": 8,
+      "prf": 1500.0,
+      "pulsePower": 50000.0,
+      "pulseWidth": 2.0,
+      "range": 36000.0,
+      "rangeMax": 40000.0,
+      "rcs": 100.0
+    }
+  },
+  "type": "radar"
+}

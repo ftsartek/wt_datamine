@@ -1,0 +1,1173 @@
+{
+  "airfields": [],
+  "areas": [],
+  "bin_dump_file": "",
+  "dialogs": [],
+  "effects": [],
+  "imports": [],
+  "mission_objectives": {
+    "isCategory": true,
+    "is_enabled": true,
+    "tl_t1_land_to_area": {
+      "comments": "",
+      "is_enabled": false,
+      "onFailed": [],
+      "onSuccess": [],
+      "props": {
+        "isPrimary": true,
+        "timeLimit": 7200
+      },
+      "type": "abstractMissionObjective"
+    },
+    "tl_t1_return_to_field": {
+      "comments": "",
+      "is_enabled": false,
+      "onFailed": [],
+      "onSuccess": [],
+      "props": {
+        "isPrimary": true,
+        "timeLimit": 7200
+      },
+      "type": "abstractMissionObjective"
+    }
+  },
+  "mission_settings": {
+    "mission": {
+      "environment": "Day",
+      "level": "levels/water.bin",
+      "type": "singleMission",
+      "weather": "hazy"
+    },
+    "player": {
+      "army": 1
+    },
+    "player_teamB": {
+      "army": 2
+    }
+  },
+  "objLayers": [
+    {
+      "layer": {
+        "enabled": true
+      }
+    },
+    {
+      "layer": {
+        "enabled": true
+      }
+    },
+    {
+      "layer": {
+        "enabled": true
+      }
+    },
+    {
+      "layer": {
+        "enabled": true
+      }
+    }
+  ],
+  "selected_tag": "",
+  "triggers": {
+    "isCategory": true,
+    "is_enabled": true,
+    "tl_init": {
+      "actions": [
+        {
+          "comment": {
+            "value": "creating t1 squad name"
+          }
+        },
+        {
+          "comment": {
+            "value": "creating t2 squad name"
+          }
+        },
+        {
+          "comment": {
+            "value": "initial delay"
+          }
+        },
+        {
+          "comment": {
+            "value": "making all pads invisible on map"
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "varSetString": {
+            "input_var": "tl_game_mode",
+            "value": "",
+            "var": "tl_t1_targets_squad_name"
+          }
+        },
+        {
+          "varSetString": {
+            "input_var": "tl_game_mode",
+            "value": "",
+            "var": "tl_t2_targets_squad_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 0,
+            "value": "_t2_squad",
+            "var": "tl_t1_targets_squad_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 0,
+            "value": "_t1_squad",
+            "var": "tl_t2_targets_squad_name"
+          }
+        },
+        {
+          "varSetInt": [
+            {
+              "value": 90
+            },
+            {
+              "var": "tl_t1_delay_timer"
+            },
+            {
+              "var": "tl_t2_delay_timer"
+            }
+          ]
+        },
+        {
+          "airfieldSetVisibility": [
+            {
+              "target": "@tl_t1_targets_squad_name"
+            },
+            {
+              "target": "@tl_t2_targets_squad_name"
+            },
+            {
+              "team": "None"
+            }
+          ]
+        },
+        {
+          "triggerEnable": {
+            "target": "tl_t1_restart"
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": [],
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "tl_t1_check_army_zone": {
+      "actions": [
+        {
+          "comment": {
+            "value": "object exist and inactive"
+          }
+        },
+        {
+          "comment": {
+            "value": "setting quest objective"
+          }
+        },
+        {
+          "comment": {
+            "value": "starting quest"
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "missionMarkAsCaptureZone": {
+            "army": 2,
+            "canCaptureInAir": false,
+            "canCaptureOnGround": true,
+            "captureNoPenalty": true,
+            "disableZone": false,
+            "name_for_respawn_base": "",
+            "onlyPlayersCanCapture": true,
+            "target": "@tl_t1_target_zone_name",
+            "timeMultiplier": 1.0,
+            "zoneDefenders": []
+          }
+        },
+        {
+          "unitWakeUp": {
+            "target": "@tl_t1_target_name"
+          }
+        },
+        {
+          "airfieldSetVisibility": {
+            "target": "@tl_t1_target_name",
+            "team": "None"
+          }
+        },
+        {
+          "moAddMissionObjective": {
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "target": "tl_t1_land_to_area",
+            "unit_or_area": "@tl_t1_target_zone_name"
+          }
+        },
+        {
+          "triggerEnable": {
+            "target": "tl_t1_zone_captured"
+          }
+        },
+        {
+          "triggerEnable": {
+            "target": "tl_t1_infantry"
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": {
+        "varCompareInt": {
+          "comparasion_func": "equal",
+          "value": 2,
+          "var_value": "@tl_t1_parent_zone_army_var_name"
+        }
+      },
+      "else_actions": {
+        "comment": {
+          "value": "object not exist or active"
+        },
+        "triggerEnable": {
+          "target": "tl_t1_restart"
+        }
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "tl_t1_check_tl_target_name": {
+      "actions": [
+        {
+          "comment": {
+            "value": "object exist and inactive"
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "getOwnArea": {
+            "name": "@tl_t1_target_zone_name",
+            "out_var": "tl_t1_parent_zone_name",
+            "template": "flt_area_"
+          }
+        },
+        {
+          "varGetStringValue": {
+            "from_var_name": "tl_t1_parent_zone_name",
+            "var": "tl_t1_parent_zone_army_var_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 0,
+            "value": "_state",
+            "var": "tl_t1_parent_zone_army_var_name"
+          }
+        },
+        {
+          "triggerEnable": {
+            "target": "tl_t1_check_army_zone"
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": [
+        {
+          "varCompareString": {
+            "comparasion_func": "equal",
+            "value": "afp",
+            "var_value": "tl_game_mode"
+          }
+        },
+        {
+          "objectExists": {
+            "target": "@tl_t1_target_name",
+            "type": "objectGroup"
+          }
+        },
+        {
+          "objectExists": {
+            "target": "@tl_t1_target_zone_name",
+            "type": "area"
+          }
+        }
+      ],
+      "else_actions": {
+        "comment": {
+          "value": "object not exist or active"
+        },
+        "triggerEnable": {
+          "target": "tl_t1_restart"
+        }
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "tl_t1_infantry": {
+      "actions": {
+        "comment": {
+          "value": "spawn infantry"
+        },
+        "unitMoveTo": {
+          "destTimeMode": false,
+          "fastClimb": false,
+          "follow_target": false,
+          "horizontalDirectionForTeleport": true,
+          "object": "infantry_01",
+          "object_marking": 0,
+          "object_type": "isActive",
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "object_var_value": 1,
+          "recalculatePathDist": -1.0,
+          "shouldKeepFormation": false,
+          "speed": 5.0,
+          "target": "t1_players_squad",
+          "target_marking": 0,
+          "target_type": "isUnitVar",
+          "target_var_comp_op": "equal",
+          "target_var_name": "",
+          "target_var_value": 1,
+          "teleportHeightType": "absolute",
+          "teleportHeightValue": 1000.0,
+          "traget_var_name": "ready_for_infantry",
+          "useUnitHeightForTele": true,
+          "waypointReachedDist": 10.0
+        },
+        "unitRespawn": {
+          "delay": 1.0,
+          "filterWhom": "target",
+          "object": "infantry_01",
+          "offset": [100.0,0.0,100.0],
+          "target": "t1_players_squad",
+          "useForTriggerFiltered": true
+        },
+        "unitSetVar": {
+          "object": "t1_players_squad",
+          "object_var_name": "ready_for_infantry",
+          "object_var_value": 1,
+          "useForTriggerFiltered": true
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "unitWhenOnLZ": {
+          "afterRepaired": false,
+          "check_objects": "any",
+          "object": "t1_players_squad",
+          "object_marking": 0,
+          "object_type": "isActive",
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "object_var_value": 1,
+          "target": "@tl_t1_target_name"
+        }
+      },
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "tl_t1_landing_check": {
+      "actions": [
+        {
+          "comment": {
+            "value": "need to check is it not the same landing plot"
+          }
+        },
+        {
+          "comment": {
+            "value": "marked player was landed to own field"
+          }
+        },
+        {
+          "comment": {
+            "value": "sleeping pad"
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "unitSetVar": {
+            "object": "t1_players_squad",
+            "object_var_name": "marked_to_return",
+            "object_var_value": 2
+          }
+        },
+        {
+          "triggerDisable": [
+            {
+              "target": "tl_t1_return_failed"
+            },
+            {
+              "target": "tl_t1_marked_player_died"
+            },
+            {
+              "target": "tl_t1_timer_update"
+            },
+            {
+              "target": "tl_timer_ended"
+            }
+          ]
+        },
+        {
+          "triggerEnable": {
+            "target": "t1_moderate_task_completed"
+          }
+        },
+        {
+          "triggerEnable": {
+            "target": "tl_t1_restart"
+          }
+        },
+        {
+          "unitPutToSleep": {
+            "target": "@tl_t1_target_name"
+          }
+        },
+        {
+          "moSetObjectiveStatus": {
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "status": 2,
+            "target": "tl_t1_return_to_field"
+          }
+        },
+        {
+          "moSetObjectiveStatus": {
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "status": 0,
+            "target": "tl_t1_return_to_field"
+          }
+        },
+        {
+          "wait": {
+            "time": 3.0
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": {
+        "unitWhenOnLZ": {
+          "afterRepaired": false,
+          "check_objects": "any",
+          "object": "t1_players_squad",
+          "object_marking": 0,
+          "object_type": "isUnitVar",
+          "object_var_comp_op": "equal",
+          "object_var_name": "marked_to_return",
+          "object_var_value": 1,
+          "target": "afp_t1_squad"
+        }
+      },
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "tl_t1_mark_players_for_return": {
+      "actions": [
+        {
+          "comment": {
+            "value": "marking players to return"
+          }
+        },
+        {
+          "comment": {
+            "value": "checking is marked player died"
+          }
+        },
+        {
+          "unitSetVar": {
+            "object": "t1_players_squad",
+            "object_var_name": "marked_to_return",
+            "object_var_value": 1,
+            "useForTriggerFiltered": true
+          }
+        },
+        {
+          "triggerEnable": [
+            {
+              "target": "tl_t1_marked_player_died"
+            },
+            {
+              "target": "tl_t1_landing_check"
+            },
+            {
+              "target": "tl_t1_timer_update"
+            },
+            {
+              "target": "tl_timer_ended"
+            }
+          ]
+        }
+      ],
+      "comments": "",
+      "conditions": {
+        "unitWhenInArea": {
+          "check_objects": "any",
+          "math": "2D",
+          "object": "t1_players_squad",
+          "object_marking": 0,
+          "object_type": "isOnGround",
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "target": "@tl_t1_target_zone_name"
+        }
+      },
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "tl_t1_marked_player_died": {
+      "actions": [
+        {
+          "comment": {
+            "value": "removing marking from dead player"
+          }
+        },
+        {
+          "comment": {
+            "value": "checking is all player who were marked died"
+          }
+        },
+        {
+          "unitSetVar": {
+            "object": "t1_players_squad",
+            "object_var_name": "marked_to_return",
+            "object_var_value": 0,
+            "useForTriggerFiltered": true
+          }
+        },
+        {
+          "triggerEnable": {
+            "target": "tl_t1_return_failed"
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": [
+        {
+          "unitWhenCountMatches": {
+            "func": "more",
+            "object": "t1_players_squad",
+            "object_marking": 0,
+            "object_type": "isKilled",
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "value": 0
+          }
+        },
+        {
+          "unitWhenCountMatches": {
+            "func": "more",
+            "object": "t1_players_squad",
+            "object_marking": 0,
+            "object_type": "isUnitVar",
+            "object_var_comp_op": "equal",
+            "object_var_name": "marked_to_return",
+            "object_var_value": 1,
+            "value": 0
+          }
+        }
+      ],
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": true
+      }
+    },
+    "tl_t1_restart": {
+      "actions": [
+        {
+          "comment": {
+            "value": "starting template for team A"
+          }
+        },
+        {
+          "unitSetVar": {
+            "object": "t1_players_squad",
+            "object_var_name": "marked_to_return",
+            "object_var_value": 0
+          }
+        },
+        {
+          "unitSetVar": {
+            "object": "t1_players_squad",
+            "object_var_name": "ready_for_infantry",
+            "object_var_value": 0
+          }
+        },
+        {
+          "triggerEnable": {
+            "target": "tl_t1_start"
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": {
+        "varCompareBool": {
+          "comparasion_func": "equal",
+          "value": true,
+          "var_value": "tl_t1_is_enabled"
+        }
+      },
+      "else_actions": {
+        "comment": {
+          "value": "template is forbidden for team A"
+        }
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 90.0,
+          "var": "tl_t1_delay_timer"
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "tl_t1_return_failed": {
+      "actions": [
+        {
+          "comment": {
+            "value": "no more marked players left"
+          }
+        },
+        {
+          "comment": {
+            "value": "sleeping pad"
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "triggerDisable": [
+            {
+              "target": "tl_t1_marked_player_died"
+            },
+            {
+              "target": "tl_t1_landing_check"
+            },
+            {
+              "target": "tl_t1_timer_update"
+            },
+            {
+              "target": "tl_timer_ended"
+            }
+          ]
+        },
+        {
+          "unitPutToSleep": {
+            "target": "@tl_t1_target_name"
+          }
+        },
+        {
+          "moSetObjectiveStatus": {
+            "extendedEnding": true,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "status": 3,
+            "target": "tl_t1_return_to_field"
+          }
+        },
+        {
+          "moSetObjectiveStatus": {
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "status": 0,
+            "target": "tl_t1_return_to_field"
+          }
+        },
+        {
+          "wait": {
+            "time": 3.0
+          }
+        },
+        {
+          "triggerEnable": {
+            "target": "tl_t1_restart"
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": {
+        "unitWhenCountMatches": {
+          "func": "less",
+          "object": "t1_players_squad",
+          "object_marking": 0,
+          "object_type": "isUnitVar",
+          "object_var_comp_op": "equal",
+          "object_var_name": "marked_to_return",
+          "object_var_value": 1,
+          "value": 1
+        }
+      },
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "tl_t1_rotator": {
+      "actions": [
+        {
+          "comment": {
+            "value": "randomizing position"
+          }
+        },
+        {
+          "comment": {
+            "value": "generating object name"
+          }
+        },
+        {
+          "comment": {
+            "value": "creating zone name"
+          }
+        },
+        {
+          "comment": {
+            "value": "checking is name is valid"
+          }
+        },
+        {
+          "varSetRandomInt": {
+            "check_prev_value": "tl_t1_prev_idx",
+            "from": 1,
+            "to_not_including": 10,
+            "var": "tl_t1_target_cur_idx",
+            "var_to_not_including": "tl_field_max_count"
+          }
+        },
+        {
+          "varSetInt": {
+            "input_var": "tl_t1_target_cur_idx",
+            "value": 0,
+            "var": "tl_t1_prev_idx"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "tl_base_",
+            "var": "tl_t1_target_name"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "tl_zone_",
+            "var": "tl_t1_target_zone_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 2,
+            "value": "@tl_t1_target_cur_idx",
+            "var": "tl_t1_target_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 2,
+            "value": "@tl_t1_target_cur_idx",
+            "var": "tl_t1_target_zone_name"
+          }
+        },
+        {
+          "triggerEnable": {
+            "target": "tl_t1_check_tl_target_name"
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": [],
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "tl_t1_start": {
+      "actions": [
+        {
+          "comment": {
+            "value": "resetting idx"
+          }
+        },
+        {
+          "comment": {
+            "value": "lowering delay to be ok during mission"
+          }
+        },
+        {
+          "comment": {
+            "value": "starting rotator"
+          }
+        },
+        {
+          "varSetInt": {
+            "value": 0,
+            "var": "tl_t1_target_cur_idx"
+          }
+        },
+        {
+          "varSetInt": {
+            "value": 10,
+            "var": "tl_t1_delay_timer"
+          }
+        },
+        {
+          "triggerEnable": {
+            "target": "tl_t1_rotator"
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": [],
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 0.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "tl_t1_timer_update": {
+      "actions": {
+        "varModify": {
+          "operator": "add",
+          "value": -1.0,
+          "var": "tl_t1_end_timer"
+        }
+      },
+      "comments": "",
+      "conditions": [],
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": true
+      }
+    },
+    "tl_t1_zone_captured": {
+      "actions": [
+        {
+          "missionMarkAsCaptureZone": {
+            "army": 0,
+            "disableZone": true,
+            "name_for_respawn_base": "",
+            "target": "@tl_t1_target_zone_name",
+            "timeMultiplier": 1.0,
+            "zoneDefenders": []
+          }
+        },
+        {
+          "comment": {
+            "value": "zone captured"
+          }
+        },
+        {
+          "comment": {
+            "value": "need to mark all players who is inside"
+          }
+        },
+        {
+          "comment": {
+            "value": "set timer"
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "moSetObjectiveStatus": {
+            "extendedEnding": true,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "status": 2,
+            "target": "tl_t1_land_to_area"
+          }
+        },
+        {
+          "moSetObjectiveStatus": {
+            "extendedEnding": true,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "status": 0,
+            "target": "tl_t1_land_to_area"
+          }
+        },
+        {
+          "moAddMissionObjective": {
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "target": "tl_t1_return_to_field"
+          }
+        },
+        {
+          "triggerEnable": {
+            "target": "tl_t1_mark_players_for_return"
+          }
+        },
+        {
+          "varSetInt": {
+            "input_var": "tl_default_end_timer",
+            "value": 0,
+            "var": "tl_t1_end_timer"
+          }
+        },
+        {
+          "wait": {
+            "time": 3.0
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": {
+        "missionIsZoneCaptured": {
+          "army": 1,
+          "target": "@tl_t1_target_zone_name"
+        }
+      },
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "tl_timer_ended": {
+      "actions": {
+        "triggerEnable": {
+          "target": "tl_t1_return_failed"
+        },
+        "unitSetVar": {
+          "object": "t1_players_squad",
+          "object_var_name": "marked_to_return",
+          "object_var_value": 0
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "varCompareInt": {
+          "comparasion_func": "less",
+          "value": 1,
+          "var_value": "tl_t1_end_timer"
+        }
+      },
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    }
+  },
+  "units": {
+    "infantry": {
+      "applyAllMods": false,
+      "bullets0": "",
+      "bullets1": "",
+      "bullets2": "",
+      "bullets3": "",
+      "bulletsCount0": 0,
+      "bulletsCount1": 0,
+      "bulletsCount2": 0,
+      "bulletsCount3": 0,
+      "closed_waypoints": false,
+      "crewSkillK": 0.0,
+      "isShipSpline": false,
+      "name": "infantry_01",
+      "objLayer": 1,
+      "props": {
+        "army": 1,
+        "attack_type": "fire_at_will",
+        "count": 2,
+        "formation_div": 3,
+        "formation_noise": [0.1,0.1],
+        "formation_step": [2.5,2.0],
+        "formation_type": "rows",
+        "isDelayed": true,
+        "skin": "ussr"
+      },
+      "shipTurnRadius": 100.0,
+      "tm": [
+        [1.0,0.0,0.0],
+        [0.0,1.0,0.0],
+        [0.0,0.0,1.0],
+        [-8245.12,100.35,-3517.15]
+      ],
+      "unit_class": "bazooka_infantry",
+      "way": [],
+      "weapons": ""
+    }
+  },
+  "variables": {
+    "tl_default_end_timer": 360,
+    "tl_field_max_count": 12,
+    "tl_game_mode": "afp",
+    "tl_t1_delay_timer": 0,
+    "tl_t1_end_timer": 0,
+    "tl_t1_is_active": false,
+    "tl_t1_is_enabled": false,
+    "tl_t1_parent_zone_army_var_name": "",
+    "tl_t1_parent_zone_name": "",
+    "tl_t1_prev_idx": 0,
+    "tl_t1_target_cur_idx": 0,
+    "tl_t1_target_name": "",
+    "tl_t1_target_zone_name": "",
+    "tl_t1_targets_squad_name": "",
+    "tl_t2_delay_timer": 0,
+    "tl_t2_end_timer": 0,
+    "tl_t2_is_active": false,
+    "tl_t2_is_enabled": false,
+    "tl_t2_parent_zone_army_var_name": "",
+    "tl_t2_parent_zone_name": "",
+    "tl_t2_prev_idx": 0,
+    "tl_t2_target_cur_idx": 0,
+    "tl_t2_target_name": "",
+    "tl_t2_target_zone_name": "",
+    "tl_t2_targets_squad_name": ""
+  },
+  "wayPoints": []
+}

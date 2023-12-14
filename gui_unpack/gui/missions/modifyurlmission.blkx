@@ -1,0 +1,86 @@
+{
+  "root": {
+    "blur": [],
+    "blur_foreground": [],
+    "frame": [
+      {
+        "width": "0.4@scrn_tgt"
+      },
+      {
+        "pos": "50%pw-50%w, 50%ph-50%h"
+      },
+      {
+        "position": "absolute"
+      },
+      {
+        "class": "wndNav"
+      },
+      {
+        "frame_header": {
+          "Button_close": [],
+          "activeText": {
+            "caption": "yes",
+            "id": "title",
+            "text": ""
+          }
+        }
+      },
+      {
+        "text": {
+          "text": "#urlMissions/name"
+        }
+      },
+      {
+        "text": {
+          "pos": "0, 1@blockInterval",
+          "position": "relative",
+          "text": "#urlMissions/url"
+        }
+      },
+      {
+        "EditBox": {
+          "_on_cancel_edit": "goBack",
+          "id": "name_editbox",
+          "max-len": "24",
+          "on_activate": "onKbdWrapDown",
+          "on_change_value": "onChangeName",
+          "pos": "0, 1@blockInterval",
+          "position": "relative",
+          "width": "pw"
+        }
+      },
+      {
+        "EditBox": {
+          "_on_activate": "onApply",
+          "_on_cancel_edit": "goBack",
+          "id": "url_editbox",
+          "on_change_value": "onChangeUrl",
+          "pos": "0, 1@blockInterval",
+          "position": "relative",
+          "width": "pw"
+        }
+      },
+      {
+        "navBar": {
+          "navMiddle": {
+            "Button_text": {
+              "ButtonImg": [],
+              "_on_click": "onApply",
+              "btnName": "A",
+              "enable": "no",
+              "id": "btn_apply",
+              "text": "#mainmenu/btnApply"
+            }
+          }
+        }
+      },
+      {
+        "dummy": {
+          "accessKey": "Tab",
+          "behaviour": "accesskey",
+          "on_click": "onKbdWrapDown"
+        }
+      }
+    ]
+  }
+}

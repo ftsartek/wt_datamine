@@ -1,0 +1,1562 @@
+{
+  "airfields": [],
+  "areas": [],
+  "bin_dump_file": "",
+  "dialogs": [],
+  "effects": [],
+  "imports": [],
+  "mission_objectives": {
+    "avg_Bto_objective_01": {
+      "comments": "",
+      "is_enabled": false,
+      "onFailed": [],
+      "onSuccess": [],
+      "props": {
+        "isPrimary": true,
+        "team": "Both",
+        "timeLimit": 3600
+      },
+      "type": "abstractMissionObjective"
+    },
+    "avg_Bto_objective_02": {
+      "comments": "",
+      "is_enabled": false,
+      "onFailed": [],
+      "onSuccess": [],
+      "props": {
+        "isPrimary": true,
+        "team": "Both",
+        "timeLimit": 3600
+      },
+      "type": "abstractMissionObjective"
+    },
+    "isCategory": true,
+    "is_enabled": true
+  },
+  "mission_settings": {
+    "mission": {
+      "environment": "Day",
+      "level": "levels/water.bin",
+      "optionalTakeOff": false,
+      "restoreType": "attempts",
+      "type": "campaign",
+      "weather": "hazy"
+    },
+    "player": {
+      "army": 1
+    },
+    "player_teamB": {
+      "army": 2
+    },
+    "spectator_points": []
+  },
+  "objLayers": [
+    {
+      "layer": {
+        "enabled": true
+      }
+    },
+    {
+      "layer": {
+        "enabled": true
+      }
+    },
+    {
+      "layer": {
+        "enabled": true
+      }
+    },
+    {
+      "layer": {
+        "enabled": true
+      }
+    },
+    {
+      "layer": {
+        "enabled": true
+      }
+    }
+  ],
+  "selected_tag": "",
+  "triggers": {
+    "battle_area_check": {
+      "actions": {
+        "missionBattleArea": {
+          "air": false,
+          "area": "@battle_area_name",
+          "ground": true,
+          "killOutOfBattleArea": true,
+          "mapArea": true,
+          "target": "@battle_area_name"
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "objectExists": {
+          "target": "@battle_area_name",
+          "type": "area"
+        }
+      },
+      "else_actions": [],
+      "events": {
+        "initMission": []
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "bto_init": {
+      "actions": [
+        {
+          "varSetString": {
+            "value": "t1_bto_spawn_01",
+            "var": "t1_spawn_01_name"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "t2_bto_spawn_01",
+            "var": "t2_spawn_01_name"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "bto_battle_area",
+            "var": "battle_area_name"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "t1_bto_circle_01",
+            "var": "t1_circle_name"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "t1_bto_effect_01",
+            "var": "t1_effect_name"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "t1_bto_capture_zone_01",
+            "var": "t1_capture_area_name"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "t2_bto_circle_01",
+            "var": "t2_circle_name"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "t2_bto_effect_01",
+            "var": "t2_effect_name"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "t2_bto_capture_zone_01",
+            "var": "t2_capture_area_name"
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "varSetInt": [
+            {
+              "value": 1
+            },
+            {
+              "var": "t1_bto_cur_zone_num"
+            },
+            {
+              "var": "t2_bto_cur_zone_num"
+            }
+          ]
+        },
+        {
+          "triggerEnable": {
+            "target": "bto_start"
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": [],
+      "else_actions": [],
+      "events": {
+        "initMission": []
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "bto_start": {
+      "actions": [
+        {
+          "missionMarkAsRespawnPoint": {
+            "canSpawnOnNeutral": false,
+            "isAirfield": false,
+            "isIndividual": true,
+            "isStrictSpawn": false,
+            "isUnit": false,
+            "loc_name": "missions/spawn_01",
+            "offset": [0.0,0.0,0.0],
+            "radius": -1.0,
+            "removeAreas": false,
+            "showOnMap": true,
+            "spawnEffect": false,
+            "tags": {
+              "tank": true
+            },
+            "target": "@t1_spawn_01_name",
+            "team": "A",
+            "useExisting": false
+          }
+        },
+        {
+          "missionMarkAsRespawnPoint": {
+            "canSpawnOnNeutral": false,
+            "isAirfield": false,
+            "isIndividual": true,
+            "isStrictSpawn": false,
+            "isUnit": false,
+            "loc_name": "missions/spawn_01",
+            "offset": [0.0,0.0,0.0],
+            "radius": -1.0,
+            "removeAreas": false,
+            "showOnMap": true,
+            "spawnEffect": false,
+            "tags": {
+              "tank": true
+            },
+            "target": "@t2_spawn_01_name",
+            "team": "B",
+            "useExisting": false
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "moAddMissionObjective": {
+            "target": "avg_Bto_objective_01"
+          }
+        },
+        {
+          "moAddMissionObjective": {
+            "target": "avg_Bto_objective_02"
+          }
+        },
+        {
+          "triggerEnable": [
+            {
+              "target": "battle_area_check"
+            },
+            {
+              "target": "bto_t1_fill_names"
+            },
+            {
+              "target": "bto_t2_fill_names"
+            }
+          ]
+        }
+      ],
+      "comments": "",
+      "conditions": [],
+      "else_actions": [],
+      "events": {
+        "initMission": []
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "bto_t1_activate_next_zone": {
+      "actions": [
+        {
+          "unitWakeUp": {
+            "target": "@t1_circle_name"
+          }
+        },
+        {
+          "unitPlayEffect": {
+            "attach": true,
+            "delay": [1.0,1.0],
+            "effect": "pv_point_smoke_blue",
+            "effect_type": "specify",
+            "loopSpawn": true,
+            "offset": [0.0,0.0,0.0],
+            "radiusOffset": [0.0,0.0],
+            "scale": 1.0,
+            "show": true,
+            "target": "@t1_effect_name"
+          }
+        },
+        {
+          "missionMarkAsCaptureZone": {
+            "army": 1,
+            "canCaptureByGM": true,
+            "canCaptureInAir": false,
+            "canCaptureOnGround": false,
+            "captureNoPenalty": true,
+            "disableZone": false,
+            "name_for_respawn_base": "",
+            "target": "@t1_capture_area_name",
+            "timeMultiplier": 1.5
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "comment": {
+            "value": "proveryaem novyj spavn protivopolozhnjo komandy"
+          }
+        },
+        {
+          "triggerEnable": [
+            {
+              "target": "bto_t1_draw_lines_start"
+            },
+            {
+              "target": "bto_t2_draw_lines_start"
+            },
+            {
+              "target": "bto_t1_zone_captured"
+            }
+          ]
+        },
+        {
+          "triggerEnable": {
+            "target": "bto_t2_check_new_spawn"
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": {
+        "objectExists": {
+          "target": "@t1_capture_area_name",
+          "type": "area"
+        }
+      },
+      "else_actions": {
+        "comment": {
+          "value": "zahvachena final'naya zona"
+        },
+        "triggerEnable": {
+          "target": "bto_t2_win"
+        }
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 0.1
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "bto_t1_check_new_spawn": {
+      "actions": [
+        {
+          "comment": {
+            "value": "na spavn 1 nichego ne delaem"
+          }
+        },
+        {
+          "comment": {
+            "value": "dobavlyaem indeks zony protivopolozhnoj komandy"
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "varSetString": {
+            "value": "missions/spawn_",
+            "var": "t1_spawn_loc_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 2,
+            "value": "@t2_bto_cur_zone_num",
+            "var": "t1_spawn_loc_name"
+          }
+        },
+        {
+          "missionMarkAsRespawnPoint": {
+            "canSpawnOnNeutral": false,
+            "isAirfield": false,
+            "isIndividual": true,
+            "isStrictSpawn": false,
+            "isUnit": false,
+            "loc_name": "@t1_spawn_loc_name",
+            "offset": [0.0,0.0,0.0],
+            "radius": -1.0,
+            "removeAreas": false,
+            "showOnMap": true,
+            "spawnEffect": false,
+            "tags": {
+              "tank": true
+            },
+            "target": "@t1_spawn_01_name",
+            "team": "A",
+            "useExisting": false
+          }
+        },
+        {
+          "playHint": {
+            "action": "show",
+            "hintType": "custom",
+            "name": "hints/new_respawn_point",
+            "priority": 0,
+            "shouldFadeOut": false,
+            "team": "A",
+            "time": 10.0
+          }
+        },
+        {
+          "playHint": {
+            "action": "hide",
+            "hintType": "custom",
+            "name": "hints/new_respawn_point",
+            "priority": 0,
+            "shouldFadeOut": false,
+            "team": "A",
+            "time": 0.0
+          }
+        },
+        {
+          "wait": {
+            "time": 10.0
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": {
+        "objectExists": {
+          "target": "@t1_spawn_01_name",
+          "type": "squad"
+        },
+        "varCompareInt": {
+          "comparasion_func": "more",
+          "value": 1,
+          "var_value": "t2_bto_cur_zone_num"
+        }
+      },
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "bto_t1_draw_line_drawing": {
+      "actions": [
+        {
+          "missionShowMapLine": {
+            "areaNameFrom": "@t1_bto_line_start_point",
+            "areaNameTo": "@t1_bto_line_end_point",
+            "colorCode": "Team A",
+            "scale": 0.5,
+            "show": true,
+            "team": "Both"
+          }
+        },
+        {
+          "missionShowMapIcon": {
+            "areaName": "@t1_bto_line_start_point",
+            "colorCode": "Team A",
+            "iconName": "ui/gameuiskin#objective_captureZone_next_default.svg",
+            "scale": 0.75,
+            "show": true
+          }
+        },
+        {
+          "missionShowMapIcon": {
+            "areaName": "@t1_bto_line_end_point",
+            "colorCode": "Team A",
+            "iconName": "ui/gameuiskin#objective_captureZone_next_default.svg",
+            "scale": 0.75,
+            "show": true
+          }
+        },
+        {
+          "triggerEnable": {
+            "target": "bto_t1_draw_lines_start"
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": [
+        {
+          "objectExists": {
+            "target": "@t1_bto_line_start_point",
+            "type": "area"
+          }
+        },
+        {
+          "objectExists": {
+            "target": "@t1_bto_line_end_point",
+            "type": "area"
+          }
+        }
+      ],
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 0.1
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "bto_t1_draw_lines_start": {
+      "actions": [
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "varModify": {
+            "operator": "add",
+            "value": 1.0,
+            "var": "t1_bto_draw_line_idx"
+          }
+        },
+        {
+          "varModify": {
+            "operator": "add",
+            "value": 1.0,
+            "var": "t1_bto_draw_next_line_idx"
+          }
+        },
+        {
+          "varSetInt": {
+            "input_var": "t1_bto_draw_line_idx",
+            "value": 0,
+            "var": "t1_bto_draw_next_line_idx"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "t1_bto_effect_",
+            "var": "t1_bto_line_start_point"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "t1_bto_effect_",
+            "var": "t1_bto_line_end_point"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 2,
+            "value": "@t1_bto_draw_line_idx",
+            "var": "t1_bto_line_start_point"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 2,
+            "value": "@t1_bto_draw_next_line_idx",
+            "var": "t1_bto_line_end_point"
+          }
+        },
+        {
+          "triggerEnable": {
+            "target": "bto_t1_draw_line_drawing"
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": [],
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 0.1
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "bto_t1_fill_names": {
+      "actions": [
+        {
+          "varSetString": {
+            "value": "t1_bto_spawn_",
+            "var": "t1_spawn_01_name"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "t1_bto_circle_",
+            "var": "t1_circle_name"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "t1_bto_effect_",
+            "var": "t1_effect_name"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "t1_bto_capture_zone_",
+            "var": "t1_capture_area_name"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "t2_bto_spawn_",
+            "var": "t2_spawn_01_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 2,
+            "value": "@t1_bto_cur_zone_num",
+            "var": "t1_spawn_01_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 2,
+            "value": "@t1_bto_cur_zone_num",
+            "var": "t1_circle_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 2,
+            "value": "@t1_bto_cur_zone_num",
+            "var": "t1_effect_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 2,
+            "value": "@t1_bto_cur_zone_num",
+            "var": "t1_capture_area_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 2,
+            "value": "@t1_bto_cur_zone_num",
+            "var": "t2_spawn_01_name"
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "comment": {
+            "value": "zapolnyaem spavn protivopolozhnoj komandy"
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "varSetInt": {
+            "input_var": "t1_bto_cur_zone_num",
+            "value": 0,
+            "var": "t1_bto_draw_line_idx"
+          }
+        },
+        {
+          "varSetInt": {
+            "input_var": "t2_bto_cur_zone_num",
+            "value": 0,
+            "var": "t2_bto_draw_line_idx"
+          }
+        },
+        {
+          "varModify": {
+            "operator": "add",
+            "value": -1.0,
+            "var": "t1_bto_draw_line_idx"
+          }
+        },
+        {
+          "varModify": {
+            "operator": "add",
+            "value": -1.0,
+            "var": "t2_bto_draw_line_idx"
+          }
+        },
+        {
+          "triggerEnable": {
+            "target": "bto_t1_activate_next_zone"
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": [],
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 0.1
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "bto_t1_win": {
+      "actions": {
+        "gameMPChangeScore": {
+          "team": "B",
+          "value": -2,
+          "valueSystem": "percentage"
+        }
+      },
+      "comments": "",
+      "conditions": [],
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": true
+      }
+    },
+    "bto_t1_zone_captured": {
+      "actions": [
+        {
+          "unitPutToSleep": {
+            "target": "@t1_circle_name"
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "missionMarkAsCaptureZone": {
+            "army": 0,
+            "disableZone": true,
+            "name_for_respawn_base": "",
+            "target": "@t1_capture_area_name",
+            "timeMultiplier": 1.0
+          }
+        },
+        {
+          "missionShowMapLine": {
+            "areaNameFrom": "@t1_bto_line_start_point",
+            "areaNameTo": "@t1_bto_line_end_point",
+            "clear": true,
+            "colorCode": "Team A",
+            "scale": 0.75,
+            "show": false,
+            "team": "Both"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "t1_bto_effect_",
+            "var": "t1_bto_line_start_point"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 2,
+            "value": "@t1_bto_cur_zone_num",
+            "var": "t1_bto_line_start_point"
+          }
+        },
+        {
+          "missionShowMapIcon": {
+            "areaName": "@t1_bto_line_start_point",
+            "colorCode": "Team A",
+            "iconName": "ui/gameuiskin#objective_captureZone_next_default.svg",
+            "scale": 0.75,
+            "show": false
+          }
+        },
+        {
+          "varModify": {
+            "operator": "add",
+            "value": 1.0,
+            "var": "t1_bto_cur_zone_num"
+          }
+        },
+        {
+          "triggerEnable": {
+            "target": "bto_t1_fill_names"
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": {
+        "missionIsZoneCaptured": {
+          "army": 2,
+          "target": "@t1_capture_area_name"
+        }
+      },
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "bto_t2_activate_next_zone": {
+      "actions": [
+        {
+          "unitWakeUp": {
+            "target": "@t2_circle_name"
+          }
+        },
+        {
+          "unitPlayEffect": {
+            "attach": true,
+            "delay": [1.0,1.0],
+            "effect": "pv_point_smoke_blue",
+            "effect_type": "specify",
+            "loopSpawn": true,
+            "offset": [0.0,0.0,0.0],
+            "radiusOffset": [0.0,0.0],
+            "scale": 1.0,
+            "show": true,
+            "target": "@t2_effect_name"
+          }
+        },
+        {
+          "missionMarkAsCaptureZone": {
+            "army": 2,
+            "canCaptureByGM": true,
+            "canCaptureInAir": false,
+            "canCaptureOnGround": false,
+            "captureNoPenalty": true,
+            "disableZone": false,
+            "name_for_respawn_base": "",
+            "target": "@t2_capture_area_name",
+            "timeMultiplier": 1.5
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "comment": {
+            "value": "proveryaem novyj spavn protivopolozhnjo komandy"
+          }
+        },
+        {
+          "triggerEnable": [
+            {
+              "target": "bto_t1_draw_lines_start"
+            },
+            {
+              "target": "bto_t2_draw_lines_start"
+            },
+            {
+              "target": "bto_t2_zone_captured"
+            }
+          ]
+        },
+        {
+          "triggerEnable": {
+            "target": "bto_t1_check_new_spawn"
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": {
+        "objectExists": {
+          "target": "@t2_capture_area_name",
+          "type": "area"
+        }
+      },
+      "else_actions": {
+        "comment": {
+          "value": "zahvachena final'naya zona"
+        },
+        "triggerEnable": {
+          "target": "bto_t1_win"
+        }
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 0.1
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "bto_t2_check_new_spawn": {
+      "actions": [
+        {
+          "comment": {
+            "value": "na spavn 1 nichego ne delaem"
+          }
+        },
+        {
+          "comment": {
+            "value": "dobavlyaem indeks zony protivopolozhnoj komandy"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "missions/spawn_",
+            "var": "t2_spawn_loc_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 2,
+            "value": "@t1_bto_cur_zone_num",
+            "var": "t2_spawn_loc_name"
+          }
+        },
+        {
+          "missionMarkAsRespawnPoint": {
+            "canSpawnOnNeutral": false,
+            "isAirfield": false,
+            "isIndividual": true,
+            "isStrictSpawn": false,
+            "isUnit": false,
+            "loc_name": "@t2_spawn_loc_name",
+            "offset": [0.0,0.0,0.0],
+            "radius": -1.0,
+            "removeAreas": false,
+            "showOnMap": true,
+            "spawnEffect": false,
+            "tags": {
+              "tank": true
+            },
+            "target": "@t2_spawn_01_name",
+            "team": "B",
+            "useExisting": false
+          }
+        },
+        {
+          "playHint": {
+            "action": "show",
+            "hintType": "custom",
+            "name": "hints/new_respawn_point",
+            "priority": 0,
+            "shouldFadeOut": false,
+            "team": "B",
+            "time": 10.0
+          }
+        },
+        {
+          "playHint": {
+            "action": "hide",
+            "hintType": "custom",
+            "name": "hints/new_respawn_point",
+            "priority": 0,
+            "shouldFadeOut": false,
+            "team": "B",
+            "time": 0.0
+          }
+        },
+        {
+          "wait": {
+            "time": 10.0
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": {
+        "objectExists": {
+          "target": "@t2_spawn_01_name",
+          "type": "squad"
+        },
+        "varCompareInt": {
+          "comparasion_func": "more",
+          "value": 1,
+          "var_value": "t1_bto_cur_zone_num"
+        }
+      },
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "bto_t2_draw_line_drawing": {
+      "actions": [
+        {
+          "missionShowMapLine": {
+            "areaNameFrom": "@t2_bto_line_start_point",
+            "areaNameTo": "@t2_bto_line_end_point",
+            "colorCode": "Team B",
+            "scale": 0.5,
+            "show": true,
+            "team": "Both"
+          }
+        },
+        {
+          "missionShowMapIcon": {
+            "areaName": "@t2_bto_line_start_point",
+            "colorCode": "Team B",
+            "iconName": "ui/gameuiskin#objective_captureZone_next_default.svg",
+            "scale": 0.75,
+            "show": true
+          }
+        },
+        {
+          "missionShowMapIcon": {
+            "areaName": "@t2_bto_line_end_point",
+            "colorCode": "Team B",
+            "iconName": "ui/gameuiskin#objective_captureZone_next_default.svg",
+            "scale": 0.75,
+            "show": true
+          }
+        },
+        {
+          "triggerEnable": {
+            "target": "bto_t2_draw_lines_start"
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": [
+        {
+          "objectExists": {
+            "target": "@t2_bto_line_start_point",
+            "type": "area"
+          }
+        },
+        {
+          "objectExists": {
+            "target": "@t2_bto_line_end_point",
+            "type": "area"
+          }
+        }
+      ],
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 0.1
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "bto_t2_draw_lines_start": {
+      "actions": [
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "varModify": {
+            "operator": "add",
+            "value": 1.0,
+            "var": "t2_bto_draw_line_idx"
+          }
+        },
+        {
+          "varModify": {
+            "operator": "add",
+            "value": 1.0,
+            "var": "t2_bto_draw_next_line_idx"
+          }
+        },
+        {
+          "varSetInt": {
+            "input_var": "t2_bto_draw_line_idx",
+            "value": 0,
+            "var": "t2_bto_draw_next_line_idx"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "t2_bto_effect_",
+            "var": "t2_bto_line_start_point"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "t2_bto_effect_",
+            "var": "t2_bto_line_end_point"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 2,
+            "value": "@t2_bto_draw_line_idx",
+            "var": "t2_bto_line_start_point"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 2,
+            "value": "@t2_bto_draw_next_line_idx",
+            "var": "t2_bto_line_end_point"
+          }
+        },
+        {
+          "triggerEnable": {
+            "target": "bto_t2_draw_line_drawing"
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": [],
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 0.1
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "bto_t2_fill_names": {
+      "actions": [
+        {
+          "varSetString": {
+            "value": "t2_bto_spawn_",
+            "var": "t2_spawn_01_name"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "t2_bto_circle_",
+            "var": "t2_circle_name"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "t2_bto_effect_",
+            "var": "t2_effect_name"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "t2_bto_capture_zone_",
+            "var": "t2_capture_area_name"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "t1_bto_spawn_",
+            "var": "t1_spawn_01_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 2,
+            "value": "@t2_bto_cur_zone_num",
+            "var": "t2_spawn_01_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 2,
+            "value": "@t2_bto_cur_zone_num",
+            "var": "t2_circle_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 2,
+            "value": "@t2_bto_cur_zone_num",
+            "var": "t2_effect_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 2,
+            "value": "@t2_bto_cur_zone_num",
+            "var": "t2_capture_area_name"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 2,
+            "value": "@t2_bto_cur_zone_num",
+            "var": "t1_spawn_01_name"
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "comment": {
+            "value": "zapolnyaem spavn protivopolozhnoj komandy"
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "varSetInt": {
+            "input_var": "t1_bto_cur_zone_num",
+            "value": 0,
+            "var": "t1_bto_draw_line_idx"
+          }
+        },
+        {
+          "varSetInt": {
+            "input_var": "t2_bto_cur_zone_num",
+            "value": 0,
+            "var": "t2_bto_draw_line_idx"
+          }
+        },
+        {
+          "varModify": {
+            "operator": "add",
+            "value": -1.0,
+            "var": "t1_bto_draw_line_idx"
+          }
+        },
+        {
+          "varModify": {
+            "operator": "add",
+            "value": -1.0,
+            "var": "t2_bto_draw_line_idx"
+          }
+        },
+        {
+          "triggerEnable": {
+            "target": "bto_t2_activate_next_zone"
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": [],
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 0.1
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "bto_t2_win": {
+      "actions": {
+        "gameMPChangeScore": {
+          "team": "A",
+          "value": -2,
+          "valueSystem": "percentage"
+        }
+      },
+      "comments": "",
+      "conditions": [],
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": true
+      }
+    },
+    "bto_t2_zone_captured": {
+      "actions": [
+        {
+          "unitPutToSleep": {
+            "target": "@t2_circle_name"
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "comment": {
+            "value": ""
+          }
+        },
+        {
+          "missionMarkAsCaptureZone": {
+            "army": 0,
+            "disableZone": true,
+            "name_for_respawn_base": "",
+            "target": "@t2_capture_area_name",
+            "timeMultiplier": 1.0
+          }
+        },
+        {
+          "missionShowMapLine": {
+            "areaNameFrom": "@t2_bto_line_start_point",
+            "areaNameTo": "@t2_bto_line_end_point",
+            "clear": true,
+            "colorCode": "Team B",
+            "scale": 0.75,
+            "show": false,
+            "team": "Both"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "t2_bto_effect_",
+            "var": "t2_bto_line_start_point"
+          }
+        },
+        {
+          "varAddString": {
+            "digits": 2,
+            "value": "@t2_bto_cur_zone_num",
+            "var": "t2_bto_line_start_point"
+          }
+        },
+        {
+          "missionShowMapIcon": {
+            "areaName": "@t2_bto_line_start_point",
+            "colorCode": "Team B",
+            "iconName": "ui/gameuiskin#objective_captureZone_next_default.svg",
+            "scale": 0.75,
+            "show": false
+          }
+        },
+        {
+          "varModify": {
+            "operator": "add",
+            "value": 1.0,
+            "var": "t2_bto_cur_zone_num"
+          }
+        },
+        {
+          "triggerEnable": {
+            "target": "bto_t2_fill_names"
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": {
+        "missionIsZoneCaptured": {
+          "army": 1,
+          "target": "@t2_capture_area_name"
+        }
+      },
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "isCategory": true,
+    "is_enabled": true
+  },
+  "units": [],
+  "variables": {
+    "battle_area_name": "",
+    "bto_max_zones": 3,
+    "t1_bto_cur_zone_num": 0,
+    "t1_bto_draw_line_idx": 0,
+    "t1_bto_draw_next_line_idx": 0,
+    "t1_bto_line_end_point": "",
+    "t1_bto_line_start_point": "",
+    "t1_capture_area_name": "",
+    "t1_circle_name": "",
+    "t1_effect_name": "",
+    "t1_spawn_01_name": "",
+    "t1_spawn_loc_name": "",
+    "t2_bto_cur_zone_num": 0,
+    "t2_bto_draw_line_idx": 0,
+    "t2_bto_draw_next_line_idx": 0,
+    "t2_bto_line_end_point": "",
+    "t2_bto_line_start_point": "",
+    "t2_capture_area_name": "",
+    "t2_circle_name": "",
+    "t2_effect_name": "",
+    "t2_spawn_01_name": "",
+    "t2_spawn_loc_name": ""
+  },
+  "wayPoints": []
+}

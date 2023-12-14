@@ -1,0 +1,381 @@
+{
+  "airfields": [],
+  "areas": [],
+  "bin_dump_file": "",
+  "dialogs": [],
+  "effects": [],
+  "imports": [
+    {
+      "import_record": {
+        "excludes": [],
+        "file": "gameData/missions/templates/enduring_confrontation/flt_frontline_template.blk",
+        "importAreas": true,
+        "importMissionObjectives": true,
+        "importTriggers": true,
+        "importUnits": true,
+        "importWayPoints": true,
+        "showAreas": true,
+        "showMissionObjectives": true,
+        "showTriggers": true,
+        "showUnits": true,
+        "showWayPoints": true
+      }
+    },
+    {
+      "import_record": {
+        "excludes": [],
+        "file": "gameData/missions/cta/planes/enduring_confrontation/spain/frontline/flt_frontline_part.blk",
+        "importAreas": true,
+        "importMissionObjectives": true,
+        "importTriggers": true,
+        "importUnits": true,
+        "importWayPoints": true,
+        "showAreas": true,
+        "showMissionObjectives": true,
+        "showTriggers": true,
+        "showUnits": true,
+        "showWayPoints": true
+      }
+    },
+    {
+      "import_record": {
+        "excludes": [],
+        "file": "gameData/missions/templates/enduring_confrontation/ad_air_dom_template.blk",
+        "importAreas": true,
+        "importMissionObjectives": true,
+        "importTriggers": true,
+        "importUnits": true,
+        "importWayPoints": true,
+        "showAreas": true,
+        "showMissionObjectives": true,
+        "showTriggers": true,
+        "showUnits": true,
+        "showWayPoints": true
+      }
+    }
+  ],
+  "mission_objectives": {
+    "isCategory": true,
+    "is_enabled": true
+  },
+  "mission_settings": {
+    "mission": {
+      "environment": "Day",
+      "level": "levels/water.bin",
+      "optionalTakeOff": false,
+      "restoreType": "attempts",
+      "type": "singleMission",
+      "weather": "hazy"
+    },
+    "player": {
+      "army": 1,
+      "wing": "flt_armada"
+    },
+    "player_teamB": {
+      "army": 2
+    },
+    "spectator_points": []
+  },
+  "objLayers": [
+    {
+      "layer": {
+        "enabled": true
+      }
+    },
+    {
+      "layer": {
+        "enabled": true
+      }
+    },
+    {
+      "layer": {
+        "enabled": true
+      }
+    },
+    {
+      "layer": {
+        "enabled": true
+      }
+    }
+  ],
+  "selected_tag": "",
+  "triggers": {
+    "flt_parts_init": {
+      "actions": [
+        {
+          "varSetInt": {
+            "value": 10,
+            "var": "flt_big_aaa_weight"
+          }
+        },
+        {
+          "varSetInt": {
+            "value": 10,
+            "var": "flt_small_aaa_weight"
+          }
+        },
+        {
+          "varSetInt": {
+            "value": 20,
+            "var": "flt_art_weight"
+          }
+        },
+        {
+          "varSetInt": {
+            "value": 50,
+            "var": "flt_tank_weight"
+          }
+        },
+        {
+          "varSetInt": [
+            {
+              "value": 8
+            },
+            {
+              "var": "flt_zones_in_row"
+            },
+            {
+              "var": "flt_zones_in_col_real"
+            }
+          ]
+        },
+        {
+          "varSetInt": [
+            {
+              "value": 8
+            },
+            {
+              "var": "flt_zones_in_col"
+            },
+            {
+              "var": "flt_zones_in_row_real"
+            }
+          ]
+        },
+        {
+          "varSetInt": {
+            "value": 0,
+            "var": "flt_total_zones"
+          }
+        },
+        {
+          "varSetInt": [
+            {
+              "value": 1
+            },
+            {
+              "var": "flt_area_45_state"
+            },
+            {
+              "var": "flt_area_53_state"
+            },
+            {
+              "var": "flt_area_54_state"
+            },
+            {
+              "var": "flt_area_61_state"
+            },
+            {
+              "var": "flt_area_62_state"
+            }
+          ]
+        },
+        {
+          "varSetInt": [
+            {
+              "value": 2
+            },
+            {
+              "var": "flt_area_03_state"
+            },
+            {
+              "var": "flt_area_04_state"
+            },
+            {
+              "var": "flt_area_11_state"
+            },
+            {
+              "var": "flt_area_12_state"
+            },
+            {
+              "var": "flt_area_20_state"
+            }
+          ]
+        },
+        {
+          "varSetInt": [
+            {
+              "value": 0
+            },
+            {
+              "var": "flt_area_61_state"
+            },
+            {
+              "var": "flt_area_62_state"
+            },
+            {
+              "var": "flt_area_63_state"
+            },
+            {
+              "var": "flt_area_64_state"
+            },
+            {
+              "var": "flt_area_54_state"
+            },
+            {
+              "var": "flt_area_55_state"
+            },
+            {
+              "var": "flt_area_56_state"
+            },
+            {
+              "var": "flt_area_48_state"
+            },
+            {
+              "var": "flt_area_40_state"
+            }
+          ]
+        },
+        {
+          "comment": {
+            "value": "nastrojki frontlajna"
+          }
+        },
+        {
+          "comment": {
+            "value": "obshchee kolichestvo zon"
+          }
+        },
+        {
+          "comment": {
+            "value": "vyschityvaem kolichestvo zon pokazyvayushchih glubinu fronta"
+          }
+        },
+        {
+          "comment": {
+            "value": "pomechaem zony komand (v cikle po algoritmu)"
+          }
+        },
+        {
+          "comment": {
+            "value": "seting custom army areas for t1"
+          }
+        },
+        {
+          "comment": {
+            "value": "seting custom army areas for t2"
+          }
+        },
+        {
+          "comment": {
+            "value": "seting sea areas"
+          }
+        },
+        {
+          "comment": {
+            "value": "risuem liniyu fronta"
+          }
+        },
+        {
+          "varModify": {
+            "operator": "add",
+            "use_variable": true,
+            "value": 0.0,
+            "var": "flt_total_zones",
+            "var_value": "flt_zones_in_row"
+          }
+        },
+        {
+          "varModify": {
+            "operator": "mul",
+            "use_variable": true,
+            "value": 3.0,
+            "var": "flt_total_zones",
+            "var_value": "flt_zones_in_col"
+          }
+        },
+        {
+          "varSetBool": {
+            "value": true,
+            "var": "flt_mirrior_start"
+          }
+        },
+        {
+          "varSetString": [
+            {
+              "value": "sea"
+            },
+            {
+              "var": "flt_area_61_type"
+            },
+            {
+              "var": "flt_area_62_type"
+            },
+            {
+              "var": "flt_area_63_type"
+            },
+            {
+              "var": "flt_area_64_type"
+            },
+            {
+              "var": "flt_area_54_type"
+            },
+            {
+              "var": "flt_area_55_type"
+            },
+            {
+              "var": "flt_area_56_type"
+            },
+            {
+              "var": "flt_area_48_type"
+            },
+            {
+              "var": "flt_area_40_type"
+            }
+          ]
+        },
+        {
+          "triggerEnable": {
+            "target": "flt_army_state_start"
+          }
+        },
+        {
+          "triggerEnable": {
+            "target": "flt_draw_frontline"
+          }
+        },
+        {
+          "missionBattleArea": {
+            "air": true,
+            "airMapArea": true,
+            "area": "flt_battle_area",
+            "detectionArea": false,
+            "gridCellCountVar": "flt_zones_in_row",
+            "ground": false,
+            "killArea": false,
+            "killOutOfBattleArea": true,
+            "mapArea": false,
+            "newGridHorizontalCellCount": 7
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": [],
+      "else_actions": [],
+      "events": {
+        "initMission": []
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "isCategory": true,
+    "is_enabled": true
+  },
+  "units": [],
+  "variables": [],
+  "wayPoints": []
+}

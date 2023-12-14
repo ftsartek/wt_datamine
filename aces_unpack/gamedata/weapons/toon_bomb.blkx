@@ -1,0 +1,112 @@
+{
+  "bomb": {
+    "DamageEffects": {
+      "part": [
+        {
+          "name": "body"
+        },
+        {
+          "onHit": {
+            "expl": 1.0,
+            "shellState": "inFlight"
+          }
+        },
+        {
+          "onHit": {
+            "break": 0.8,
+            "damage": 3.0,
+            "damageType": "generic",
+            "expl": 0.2,
+            "fHitCritical": true,
+            "shellState": "onUnit"
+          }
+        },
+        {
+          "onHit": {
+            "break": 0.5,
+            "damage": 30.0,
+            "damageType": "generic",
+            "expl": 0.5,
+            "fHitCritical": true,
+            "shellState": "onUnit"
+          }
+        },
+        {
+          "onHit": {
+            "break": 0.2,
+            "damage": 50.0,
+            "damageType": "explosion",
+            "expl": 0.8,
+            "fHitCritical": true,
+            "shellState": "onUnit"
+          }
+        },
+        {
+          "onHit": {
+            "damage": 100.0,
+            "damageType": "cumulative",
+            "expl": 1.0,
+            "fHitCritical": true,
+            "shellState": "onUnit"
+          }
+        },
+        {
+          "onKill": {
+            "destruction": 1.0,
+            "shellState": "inFlight"
+          }
+        },
+        {
+          "onKill": {
+            "expl": 1.0,
+            "fHitCritical": true,
+            "shellState": "onUnit"
+          }
+        }
+      ]
+    },
+    "DamageParts": {
+      "body": {
+        "armorClass": "tank_structural_steel",
+        "armorThickness": 15.0,
+        "explosionArmorQuality": 1.0,
+        "hp": 100.0,
+        "shatterArmorQuality": 1.0
+      }
+    },
+    "bombName": "fab100_43",
+    "bombType": "he_bomb",
+    "caliber": 0.273,
+    "distFromCmToStab": 0.4,
+    "dragCx": 0.04,
+    "endHitPower": [0.01,1500.0],
+    "explosionFx": "bomb_expl_100kg",
+    "explosionPatchRadius": 5.0,
+    "explosiveMass": 25.02,
+    "explosiveType": "tnt",
+    "farArmorPower": [0.2,700.0],
+    "farHitPower": [0.1,1000.0],
+    "hitPowerMult": 1.0,
+    "length": 1.033,
+    "mass": 103.5,
+    "midArmorPower": [7.0,400.0],
+    "midHitPower": [0.9,400.0],
+    "nearArmorPower": [10.0,50.0],
+    "nearHitPower": [1.0,50.0],
+    "pressureDamage": {
+      "damageType": "pressure"
+    },
+    "relativeVelArmorShift": [200.0,1000.0],
+    "relativeVelHitShift": [300.0,1000.0],
+    "sound": "weapon.bomb_mid",
+    "waterExplosionEffect": "water_explosion_big"
+  },
+  "bombGun": true,
+  "mesh": "toon_fab_100sv",
+  "preset_cost": 50,
+  "shotFreq": 10.0,
+  "sound": "weapon.bombgun",
+  "tags": {
+    "antiTankBomb": true
+  }
+}

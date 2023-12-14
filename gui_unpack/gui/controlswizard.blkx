@@ -1,0 +1,483 @@
+{
+  "root": {
+    "blur": [],
+    "blur_foreground": [],
+    "frame": [
+      {
+        "id": "wnd_frame"
+      },
+      {
+        "width": "0.99sw $min 1.7sh"
+      },
+      {
+        "height": "@rh $min 0.588sw"
+      },
+      {
+        "pos": "0.5pw-0.5w, 0.5ph-0.5h"
+      },
+      {
+        "position": "relative"
+      },
+      {
+        "class": "wnd"
+      },
+      {
+        "flow": "vertical"
+      },
+      {
+        "frame_header": [
+          {
+            "flow": "horizontal"
+          },
+          {
+            "position": "relative"
+          },
+          {
+            "activeText": {
+              "caption": "yes",
+              "id": "wizard-title",
+              "smallFont": "yes",
+              "text": "#hotkeys/msg/choose_preset_or_wizard",
+              "textHide": "yes"
+            }
+          },
+          {
+            "tdiv": {
+              "controlsBox": {
+                "id": "optionlist"
+              },
+              "display": "hide",
+              "id": "options-wnd",
+              "margin-left": "1@blockInterval",
+              "pos": "0, 0.5ph-0.5h",
+              "position": "relative",
+              "smallFont": "yes"
+            }
+          },
+          {
+            "Button_text": {
+              "ButtonImg": [],
+              "_on_click": "onContinue",
+              "btnName": "X",
+              "display": "hide",
+              "hideConsoleImage": "no",
+              "id": "btn_controlsWizard",
+              "margin-left": "1@blockInterval",
+              "position": "relative",
+              "smallFont": "yes",
+              "text": "#mainmenu/btnControlsWizard"
+            }
+          },
+          {
+            "Button_text": {
+              "ButtonImg": [],
+              "_on_click": "onPresetDone",
+              "btnName": "X",
+              "display": "hide",
+              "hideConsoleImage": "no",
+              "id": "btn_selectPreset",
+              "margin-left": "1@blockInterval",
+              "position": "relative",
+              "smallFont": "yes",
+              "text": "#controls/presetSelect"
+            }
+          },
+          {
+            "Button_close": {
+              "id": "btn_back"
+            }
+          }
+        ]
+      },
+      {
+        "tdiv": {
+          "id": "preview-wnd",
+          "position": "relative",
+          "size": "pw, ph"
+        }
+      },
+      {
+        "tdiv": [
+          {
+            "id": "shortcut-wnd"
+          },
+          {
+            "display": "hide"
+          },
+          {
+            "width": "pw"
+          },
+          {
+            "min-height": "0.3@scrn_tgt"
+          },
+          {
+            "pos": "50%pw-50%w, 30%ph-30%h"
+          },
+          {
+            "position": "absolute"
+          },
+          {
+            "flow": "vertical"
+          },
+          {
+            "tdalign": "center"
+          },
+          {
+            "tdiv": {
+              "behavior": "Timer",
+              "behaviour": "ControlsInput",
+              "button0": "",
+              "button1": "",
+              "button2": "",
+              "check_analog": "0",
+              "device0": "",
+              "device1": "",
+              "device2": "",
+              "id": "input-listener",
+              "on_activate": "switchAllListenModes",
+              "on_cancel_edit": "onCancelButtonInput",
+              "on_change_value": "onButtonAdded",
+              "on_end_edit": "onButtonEntered",
+              "position": "root",
+              "shortcutActivate": "J:Start",
+              "shortcutCancel": "Esc",
+              "size": "sw, sh",
+              "timer_handler_func": "onAxisInputTimer"
+            }
+          },
+          {
+            "activeText": {
+              "id": "shortcut_text",
+              "max-width": "pw",
+              "mediumFont": "yes",
+              "pos": "50%pw-50%w, 0",
+              "position": "relative"
+            }
+          },
+          {
+            "activeText": {
+              "id": "shortcut_current_button",
+              "mediumFont": "yes",
+              "pos": "50%pw-50%w, 2*@scrn_tgt/100.0",
+              "position": "relative",
+              "text": "?"
+            }
+          },
+          {
+            "activeText": {
+              "id": "hold_axis",
+              "pos": "50%pw-50%w, 0.01@scrn_tgt",
+              "position": "relative",
+              "text": ""
+            }
+          },
+          {
+            "activeText": {
+              "id": "bind-axis-name",
+              "mediumFont": "yes",
+              "pos": "50%pw-50%w, 0.5*@scrn_tgt/100.0",
+              "position": "relative",
+              "text": "?"
+            }
+          },
+          {
+            "textarea": {
+              "id": "curAssign_text",
+              "max-width": "pw",
+              "pos": "50%pw-50%w, 0",
+              "position": "relative",
+              "removeParagraphIndent": "yes"
+            }
+          },
+          {
+            "img": {
+              "height": "95",
+              "id": "shortcut_image",
+              "pos": "50%pw-50%w, 0.02@scrn_tgt",
+              "position": "relative",
+              "width": "160"
+            }
+          },
+          {
+            "frame": {
+              "axisPoint1": {
+                "id": "test-real-box",
+                "pos": "50%pw-50%w, 50%ph-50%h",
+                "position": "absolute"
+              },
+              "id": "test-axis",
+              "pos": "50%pw-50%w, 0.01@scrn_tgt",
+              "position": "relative",
+              "size": "0.25@scrn_tgt, 0.03@scrn_tgt"
+            }
+          },
+          {
+            "frame": {
+              "axisPoint1": {
+                "id": "test-real-box-vert",
+                "pos": "50%pw-50%w, 50%ph-50%h",
+                "position": "absolute"
+              },
+              "id": "test-axis-vert",
+              "pos": "50%pw-50%w, 0.01@scrn_tgt",
+              "position": "relative",
+              "size": "0.03@scrn_tgt, 0.2@scrn_tgt"
+            }
+          }
+        ]
+      },
+      {
+        "tdiv": {
+          "display": "hide",
+          "flow": "vertical",
+          "id": "msgBox-wnd",
+          "msgBoxButtonsHolder": {
+            "flow": "h-flow",
+            "id": "msgBox_buttons",
+            "max-width": "pw",
+            "pos": "50%pw-50%w, ph + 0.4(57%p.p.h - 50%ph - h)",
+            "position": "absolute"
+          },
+          "pos": "50%pw-50%w, 40%ph-40%h",
+          "position": "absolute",
+          "textarea": {
+            "id": "msgBox_text",
+            "max-width": "pw",
+            "mediumFont": "yes",
+            "overflow-y": "auto",
+            "pos": "50%pw-50%w, 0",
+            "position": "relative",
+            "removeParagraphIndent": "yes",
+            "text-align": "center"
+          },
+          "width": "pw"
+        }
+      },
+      {
+        "tdiv": [
+          {
+            "id": "msg-wnd"
+          },
+          {
+            "display": "hide"
+          },
+          {
+            "width": "pw"
+          },
+          {
+            "pos": "50%pw-50%w, 40%ph-40%h"
+          },
+          {
+            "position": "absolute"
+          },
+          {
+            "flow": "vertical"
+          },
+          {
+            "textarea": {
+              "id": "msg_text",
+              "max-width": "pw",
+              "mediumFont": "yes",
+              "pos": "50%pw-50%w, 0",
+              "position": "relative",
+              "removeParagraphIndent": "yes",
+              "text-align": "center"
+            }
+          },
+          {
+            "frame": [
+              {
+                "id": "msg-axis"
+              },
+              {
+                "size": "0.25@scrn_tgt, 0.03@scrn_tgt"
+              },
+              {
+                "pos": "50%pw-50%w, 0.01@scrn_tgt"
+              },
+              {
+                "position": "relative"
+              },
+              {
+                "locked": "yes"
+              },
+              {
+                "axisPoint1": {
+                  "id": "msg-real-box1",
+                  "pos": "50%pw-50%w, 50%ph-50%h",
+                  "position": "absolute"
+                }
+              },
+              {
+                "axisPoint1": {
+                  "id": "msg-real-box2",
+                  "pos": "50%pw-50%w, 50%ph-50%h",
+                  "position": "absolute"
+                }
+              }
+            ]
+          },
+          {
+            "frame": [
+              {
+                "id": "msg-axis-vert"
+              },
+              {
+                "size": "0.03@scrn_tgt, 0.2@scrn_tgt"
+              },
+              {
+                "pos": "50%pw-50%w, 0.01@scrn_tgt"
+              },
+              {
+                "position": "relative"
+              },
+              {
+                "locked": "yes"
+              },
+              {
+                "axisPoint1": {
+                  "id": "msg-real-box-vert1",
+                  "pos": "50%pw-50%w, 50%ph-50%h",
+                  "position": "absolute"
+                }
+              },
+              {
+                "axisPoint1": {
+                  "id": "msg-real-box-vert2",
+                  "pos": "50%pw-50%w, 50%ph-50%h",
+                  "position": "absolute"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tdiv": [
+          {
+            "id": "listbox-wnd"
+          },
+          {
+            "display": "hide"
+          },
+          {
+            "size": "pw, 0.5@sf"
+          },
+          {
+            "pos": "50%pw-50%w, 40%ph-40%h"
+          },
+          {
+            "position": "absolute"
+          },
+          {
+            "flow": "vertical"
+          },
+          {
+            "textarea": {
+              "id": "listbox_text",
+              "max-width": "pw",
+              "mediumFont": "yes",
+              "pos": "50%pw-50%w, 0",
+              "position": "relative",
+              "removeParagraphIndent": "yes"
+            }
+          },
+          {
+            "textarea": {
+              "id": "listbox-hint",
+              "pos": "50%pw-50%w, ph-h",
+              "position": "absolute",
+              "removeParagraphIndent": "yes",
+              "text-align": "center",
+              "width": "pw-2@framePadding"
+            }
+          },
+          {
+            "HorizontalListBox": {
+              "class": "options",
+              "id": "listbox",
+              "on_dbl_click": "onListboxDblClick",
+              "on_select": "onListboxSelect",
+              "pos": "50%pw-50%w, 0.1@scrn_tgt",
+              "position": "relative",
+              "style": "height:0.07@scrn_tgt"
+            }
+          },
+          {
+            "Button_text": {
+              "ButtonImg": [],
+              "_on_click": "onListboxDblClick",
+              "btnName": "A",
+              "id": "btn_select",
+              "pos": "50%pw-50%w, 0.05@scrn_tgt",
+              "position": "relative",
+              "text": "#mainmenu/btnSelect"
+            }
+          }
+        ]
+      },
+      {
+        "navBar": {
+          "display": "hide",
+          "navLeft": [
+            {
+              "Button_text": {
+                "ButtonImg": [],
+                "_on_click": "onPrevItem",
+                "btnName": "LB",
+                "display": "hide",
+                "hideConsoleImage": "no",
+                "id": "btn_prevItem",
+                "text": "#mainmenu/btnPrev"
+              }
+            },
+            {
+              "Button_text": {
+                "ButtonImg": [],
+                "_on_click": "switchAllListenModes",
+                "btnName": "start",
+                "display": "hide",
+                "hideText": "yes",
+                "id": "btn_switchAllModes",
+                "text": "#mainmenu/shortcuts",
+                "textarea": {
+                  "class": "buttonText",
+                  "id": "btn_switchAllModes_text"
+                }
+              }
+            },
+            {
+              "Button_text": {
+                "ButtonImg": [],
+                "btnName": "start",
+                "display": "hide",
+                "id": "btn-reset-axis-input",
+                "on_click": "onResetAxisInput",
+                "pos": "50%pw-50%w, ph-h",
+                "position": "relative",
+                "text": "#mainmenu/btnReset"
+              }
+            }
+          ],
+          "navRight": {
+            "Button_text": {
+              "ButtonImg": [],
+              "accessKey": "Esc | J:X",
+              "btnName": "X",
+              "display": "hide",
+              "hideConsoleImage": "no",
+              "id": "keep_assign_btn",
+              "on_click": "onCancelButtonInput",
+              "text": "#hotkeys/tip/KeepCurrentAssign"
+            }
+          }
+        }
+      }
+    ],
+    "timer": {
+      "id": "update-timer",
+      "timer_handler_func": "onUpdate"
+    },
+    "type": "big"
+  }
+}

@@ -1,0 +1,695 @@
+{
+  "airfields": [],
+  "areas": [],
+  "bin_dump_file": "",
+  "dialogs": [],
+  "effects": [],
+  "imports": [],
+  "mission_objectives": {
+    "isCategory": true,
+    "is_enabled": true
+  },
+  "mission_settings": {
+    "mission": {
+      "environment": "Day",
+      "level": "levels/water.bin",
+      "optionalTakeOff": false,
+      "restoreType": "attempts",
+      "type": "singleMission",
+      "weather": "hazy"
+    },
+    "player": {
+      "army": 1,
+      "wing": "armada_01"
+    },
+    "player_teamB": {
+      "army": 2
+    },
+    "spectator_points": []
+  },
+  "objLayers": [
+    {
+      "layer": {
+        "enabled": true
+      }
+    },
+    {
+      "layer": {
+        "enabled": true
+      }
+    },
+    {
+      "layer": {
+        "enabled": true
+      }
+    },
+    {
+      "layer": {
+        "enabled": true
+      }
+    }
+  ],
+  "selected_tag": "",
+  "triggers": {
+    "isCategory": true,
+    "is_enabled": true,
+    "mp_leaks_comparing": {
+      "actions": {
+        "comment": {
+          "value": "komanda A ravna komande B"
+        },
+        "triggerEnable": {
+          "target": "mp_leaks_rotator"
+        },
+        "varSetInt": {
+          "value": 0,
+          "var": "pct_timer"
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "varCompareInt": {
+          "comparasion_func": "equal",
+          "value": 0,
+          "var_value": "t1_players_counter",
+          "var_value_other": "t2_players_counter"
+        }
+      },
+      "else_actions": [
+        {
+          "comment": {
+            "value": "komanda A ne ravna komande B"
+          }
+        },
+        {
+          "triggerActivate": {
+            "activate_type": "checkConidtions",
+            "after_activation": "disable",
+            "check_trigger_status": false,
+            "target": "t1_mp_leaks"
+          }
+        },
+        {
+          "triggerActivate": {
+            "activate_type": "checkConidtions",
+            "after_activation": "disable",
+            "check_trigger_status": false,
+            "target": "t2_mp_leaks"
+          }
+        },
+        {
+          "varModify": {
+            "operator": "add",
+            "value": 1.0,
+            "var": "pct_timer"
+          }
+        }
+      ],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "mp_leaks_rotator": {
+      "actions": {
+        "triggerEnable": {
+          "target": "mp_leaks_comparing"
+        }
+      },
+      "comments": "",
+      "conditions": [],
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "start_mp_leaks": {
+      "actions": {
+        "triggerEnable": {
+          "target": "mp_leaks_rotator"
+        }
+      },
+      "comments": "",
+      "conditions": [],
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 300.0
+        }
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "t1_mp_leaks": {
+      "actions": [
+        {
+          "varModify": {
+            "operator": "add",
+            "value": 1.0,
+            "var": "t1_players_counter"
+          }
+        },
+        {
+          "varModify": {
+            "operator": "add",
+            "value": 1.0,
+            "var": "t2_players_counter"
+          }
+        },
+        {
+          "varModify": {
+            "operator": "add",
+            "use_variable": true,
+            "value": 1.0,
+            "var": "mp_leaks",
+            "var_value": "t1_players_counter"
+          }
+        },
+        {
+          "varModify": {
+            "operator": "divAB",
+            "use_variable": true,
+            "value": 1.0,
+            "var": "mp_leaks",
+            "var_value": "t2_players_counter"
+          }
+        },
+        {
+          "varModify": {
+            "operator": "mul",
+            "value": -1.0,
+            "var": "mp_leaks"
+          }
+        },
+        {
+          "varSetInt": {
+            "value": 0,
+            "var": "mp_leaks"
+          }
+        },
+        {
+          "gameMPChangeScore": {
+            "team": "B",
+            "value": 1,
+            "valueSystem": "amount",
+            "var": "mp_leaks"
+          }
+        },
+        {
+          "triggerEnable": {
+            "target": "mp_leaks_rotator"
+          }
+        },
+        {
+          "playHint": {
+            "action": "show",
+            "hintType": "custom",
+            "name": "hints/enemy_have_advantage",
+            "priority": 0,
+            "shouldBlink": false,
+            "shouldFadeOut": false,
+            "team": "B",
+            "time": -1.0
+          }
+        },
+        {
+          "playHint": {
+            "action": "hideCur",
+            "hintType": "custom",
+            "name": "hints/enemy_have_advantage",
+            "priority": 0,
+            "shouldBlink": false,
+            "shouldFadeOut": false,
+            "team": "B",
+            "time": -1.0
+          }
+        },
+        {
+          "wait": {
+            "time": 3.0
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": [
+        {
+          "varCompareInt": {
+            "comparasion_func": "more",
+            "value": 0,
+            "var_value": "t1_players_counter",
+            "var_value_other": "t2_players_counter"
+          }
+        },
+        {
+          "varCompareInt": {
+            "comparasion_func": "more",
+            "value": 90,
+            "var_value": "pct_timer"
+          }
+        }
+      ],
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "t1_player_counter_team_change": {
+      "actions": {
+        "triggerEnable": {
+          "target": "t1_players_counter_online_check"
+        },
+        "varModify": {
+          "operator": "add",
+          "value": 1.0,
+          "var": "t1_players_counter"
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "unitWhenCountMatches": {
+          "func": "more",
+          "object": "all_players_squad",
+          "object_marking": 0,
+          "object_type": "isTeamA",
+          "value": 0,
+          "var": "t1_players_counter"
+        }
+      },
+      "else_actions": {
+        "triggerEnable": {
+          "target": "t1_players_counter_online_check"
+        },
+        "varModify": {
+          "operator": "add",
+          "value": -1.0,
+          "var": "t1_players_counter"
+        }
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "t1_players_counter_online_check": {
+      "actions": {
+        "triggerEnable": {
+          "target": "t1_players_counter_team_check"
+        },
+        "varModify": {
+          "operator": "add",
+          "value": 1.0,
+          "var": "t1_players_counter"
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "unitWhenCountMatches": {
+          "func": "more",
+          "object": "all_players_squad",
+          "object_marking": 0,
+          "object_type": "isOnline",
+          "value": 0,
+          "var": "t1_players_counter"
+        }
+      },
+      "else_actions": {
+        "triggerEnable": {
+          "target": "t1_players_counter_rotator"
+        }
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "t1_players_counter_rotator": {
+      "actions": {
+        "triggerEnable": {
+          "target": "t1_players_counter_online_check"
+        }
+      },
+      "comments": "",
+      "conditions": [],
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "t1_players_counter_team_check": {
+      "actions": {
+        "comment": {
+          "value": "kolichsetvo memberov sovpalo. opyat' aktiviruem pervuyu proverku"
+        },
+        "triggerEnable": {
+          "target": "t1_players_counter_online_check"
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "unitWhenCountMatches": {
+          "func": "equal",
+          "object": "all_players_squad",
+          "object_marking": 0,
+          "object_type": "isTeamA",
+          "value": 0,
+          "var": "t1_players_counter"
+        }
+      },
+      "else_actions": {
+        "triggerEnable": {
+          "target": "t1_player_counter_team_change"
+        }
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "t2_mp_leaks": {
+      "actions": [
+        {
+          "varModify": {
+            "operator": "add",
+            "value": 1.0,
+            "var": "t2_players_counter"
+          }
+        },
+        {
+          "varModify": {
+            "operator": "add",
+            "value": 1.0,
+            "var": "t1_players_counter"
+          }
+        },
+        {
+          "varModify": {
+            "operator": "add",
+            "use_variable": true,
+            "value": 1.0,
+            "var": "mp_leaks",
+            "var_value": "t2_players_counter"
+          }
+        },
+        {
+          "varModify": {
+            "operator": "divAB",
+            "use_variable": true,
+            "value": 1.0,
+            "var": "mp_leaks",
+            "var_value": "t1_players_counter"
+          }
+        },
+        {
+          "varModify": {
+            "operator": "mul",
+            "value": -1.0,
+            "var": "mp_leaks"
+          }
+        },
+        {
+          "varSetInt": {
+            "value": 0,
+            "var": "mp_leaks"
+          }
+        },
+        {
+          "gameMPChangeScore": {
+            "team": "A",
+            "value": 1,
+            "valueSystem": "amount",
+            "var": "mp_leaks"
+          }
+        },
+        {
+          "triggerEnable": {
+            "target": "mp_leaks_rotator"
+          }
+        },
+        {
+          "playHint": {
+            "action": "show",
+            "hintType": "custom",
+            "name": "hints/enemy_have_advantage",
+            "priority": 0,
+            "shouldBlink": false,
+            "shouldFadeOut": false,
+            "team": "A",
+            "time": -1.0
+          }
+        },
+        {
+          "playHint": {
+            "action": "hideCur",
+            "hintType": "custom",
+            "name": "hints/enemy_have_advantage",
+            "priority": 0,
+            "shouldBlink": false,
+            "shouldFadeOut": false,
+            "team": "A",
+            "time": -1.0
+          }
+        },
+        {
+          "wait": {
+            "time": 3.0
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": [
+        {
+          "varCompareInt": {
+            "comparasion_func": "more",
+            "value": 0,
+            "var_value": "t2_players_counter",
+            "var_value_other": "t1_players_counter"
+          }
+        },
+        {
+          "varCompareInt": {
+            "comparasion_func": "more",
+            "value": 90,
+            "var_value": "pct_timer"
+          }
+        }
+      ],
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "t2_player_counter_team_change": {
+      "actions": {
+        "triggerEnable": {
+          "target": "t2_players_counter_online_check"
+        },
+        "varModify": {
+          "operator": "add",
+          "value": 1.0,
+          "var": "t2_players_counter"
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "unitWhenCountMatches": {
+          "func": "more",
+          "object": "all_players_squad",
+          "object_marking": 0,
+          "object_type": "isTeamB",
+          "value": 0,
+          "var": "t1_players_counter"
+        }
+      },
+      "else_actions": {
+        "triggerEnable": {
+          "target": "t2_players_counter_online_check"
+        },
+        "varModify": {
+          "operator": "add",
+          "value": -1.0,
+          "var": "t2_players_counter"
+        }
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "t2_players_counter_online_check": {
+      "actions": {
+        "triggerEnable": {
+          "target": "t2_players_counter_team_check"
+        },
+        "varModify": {
+          "operator": "add",
+          "value": 1.0,
+          "var": "t2_players_counter"
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "unitWhenCountMatches": {
+          "func": "more",
+          "object": "all_players_squad",
+          "object_marking": 0,
+          "object_type": "isOnline",
+          "value": 0,
+          "var": "t2_players_counter"
+        }
+      },
+      "else_actions": {
+        "triggerEnable": {
+          "target": "t2_players_counter_rotator"
+        }
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "t2_players_counter_rotator": {
+      "actions": {
+        "triggerEnable": {
+          "target": "t2_players_counter_online_check"
+        }
+      },
+      "comments": "",
+      "conditions": [],
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "t2_players_counter_team_check": {
+      "actions": {
+        "comment": {
+          "value": "kolichsetvo memberov sovpalo. opyat' aktiviruem pervuyu proverku"
+        },
+        "triggerEnable": {
+          "target": "t2_players_counter_online_check"
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "unitWhenCountMatches": {
+          "func": "equal",
+          "object": "all_players_squad",
+          "object_marking": 0,
+          "object_type": "isTeamB",
+          "value": 0,
+          "var": "t1_players_counter"
+        }
+      },
+      "else_actions": {
+        "triggerEnable": {
+          "target": "t2_player_counter_team_change"
+        }
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    }
+  },
+  "units": [],
+  "variables": {
+    "mp_leaks": 0,
+    "pct_timer": 0,
+    "t1_players_counter": 0,
+    "t2_players_counter": 0
+  },
+  "wayPoints": []
+}

@@ -1,0 +1,111 @@
+{
+  "ballistics": [
+    {
+      "preset": {
+        "param": "slopeEffectPreset",
+        "presets": "gamedata/damage_model/slope_effect.blk",
+        "target": "ballistics/slopeEffect/table"
+      }
+    },
+    {
+      "preset": {
+        "param": "ricochetPreset",
+        "presets": "gamedata/damage_model/ricochet.blk",
+        "target": "ballistics/ricochet/table"
+      }
+    },
+    {
+      "preset": {
+        "param": "groundRicochetPreset",
+        "presets": "gamedata/damage_model/ricochet_of_ground.blk",
+        "target": "ballistics/groundRicochet/table"
+      }
+    }
+  ],
+  "damage": [
+    {
+      "extends": {
+        "checkTargetExists": true,
+        "source": "config/damageModel.blk:defaultKineticDamageProps",
+        "target": "damage/kinetic"
+      }
+    },
+    {
+      "extends": {
+        "checkTargetExists": true,
+        "source": "config/damageModel.blk:defaultCumulativeDamageProps",
+        "target": "cumulativeDamage"
+      }
+    },
+    {
+      "extends": {
+        "checkTargetExists": true,
+        "source": "config/damageModel.blk:defaultCumulativeDamageProps",
+        "target": "damage/cumulative"
+      }
+    },
+    {
+      "extends": {
+        "checkTargetExists": true,
+        "source": "config/damageModel.blk:defaultSplashDamageProps",
+        "target": "damage/splash"
+      }
+    },
+    {
+      "extends": {
+        "checkTargetExists": true,
+        "source": "config/damageModel.blk:defaultShatterDamageProps",
+        "target": "damage/shatter"
+      }
+    },
+    {
+      "alias": {
+        "alias": "damage/splash/mass",
+        "param": "explosiveMass"
+      }
+    },
+    {
+      "alias": {
+        "alias": "damage/shatter/mass",
+        "param": "explosiveMass"
+      }
+    },
+    {
+      "alias": {
+        "alias": "damage/explosive/type",
+        "param": "explosiveType"
+      }
+    },
+    {
+      "alias": {
+        "alias": "damage/explosive/mass",
+        "param": "explosiveMass"
+      }
+    },
+    {
+      "alias": {
+        "alias": "damage/explosive/fuseDelay",
+        "param": "fuseDelay"
+      }
+    },
+    {
+      "alias": {
+        "alias": "damage/explosive/fuseDelayDist",
+        "param": "fuseDelayDist"
+      }
+    },
+    {
+      "alias": {
+        "alias": "damage/explosive/fuseArmorTreshold",
+        "param": "explodeTreshold"
+      }
+    },
+    {
+      "preset": {
+        "param": "explosiveType",
+        "presets": "gamedata/damage_model/explosive.blk:explosiveTypes",
+        "target": "damage/explosive"
+      }
+    }
+  ]
+}

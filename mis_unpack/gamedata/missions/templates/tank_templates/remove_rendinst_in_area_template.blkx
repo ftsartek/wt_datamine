@@ -1,0 +1,91 @@
+{
+  "airfields": [],
+  "areas": [],
+  "bin_dump_file": "",
+  "dialogs": [],
+  "effects": [],
+  "imports": [],
+  "mission_objectives": {
+    "isCategory": true,
+    "is_enabled": true
+  },
+  "mission_settings": {
+    "mission": {
+      "environment": "Day",
+      "level": "levels/water.bin",
+      "type": "singleMission",
+      "weather": "hazy"
+    },
+    "player": {
+      "army": 1
+    },
+    "player_teamB": {
+      "army": 2
+    }
+  },
+  "objLayers": [
+    {
+      "layer": {
+        "enabled": true
+      }
+    },
+    {
+      "layer": {
+        "enabled": true
+      }
+    },
+    {
+      "layer": {
+        "enabled": true
+      }
+    },
+    {
+      "layer": {
+        "enabled": true
+      }
+    }
+  ],
+  "selected_tag": "",
+  "triggers": {
+    "isCategory": true,
+    "is_enabled": true,
+    "remove_rendinst_in_area": {
+      "actions": {
+        "missionDestroyArea": {
+          "area": "@remove_rendinst_area_name",
+          "target_type": "permanent_rendinst"
+        }
+      },
+      "comments": "",
+      "conditions": [
+        {
+          "objectExists": {
+            "target": "@remove_rendinst_area_name",
+            "type": "area"
+          }
+        },
+        {
+          "objectExists": {
+            "target": "@remove_rendinst_area_name",
+            "type": "squad"
+          }
+        }
+      ],
+      "else_actions": [],
+      "events": {
+        "initMission": []
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ANY",
+        "enableAfterComplete": false
+      }
+    }
+  },
+  "units": [],
+  "variables": {
+    "remove_rendinst_area_name": "remove_rendinst_area"
+  },
+  "wayPoints": []
+}

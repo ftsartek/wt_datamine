@@ -1,0 +1,176 @@
+{
+  "airfields": [],
+  "areas": {
+    "mid_capture_area_01": {
+      "objLayer": 3,
+      "props": [],
+      "tm": [
+        [550.0,0.0,0.0],
+        [0.0,350.0,0.0],
+        [0.0,0.0,1750.0],
+        [-9962.1,180.538,-15190.5]
+      ],
+      "type": "Box"
+    },
+    "mid_capture_area_02": {
+      "objLayer": 3,
+      "props": [],
+      "tm": [
+        [550.0,0.0,0.0],
+        [0.0,350.0,0.0],
+        [0.0,0.0,1750.0],
+        [2039.06,140.088,-15190.5]
+      ],
+      "type": "Box"
+    },
+    "mid_capture_area_03": {
+      "objLayer": 4,
+      "props": [],
+      "tm": [
+        [2000.0,0.0,4.069e-05],
+        [0.0,3500.0,0.0],
+        [-4.069e-05,0.0,2000.0],
+        [-3963.9,500.2,-15194.7]
+      ],
+      "type": "Cylinder"
+    }
+  },
+  "bin_dump_file": "",
+  "dialogs": [],
+  "effects": [],
+  "imports": [],
+  "mission_objectives": {
+    "isCategory": true,
+    "is_enabled": true
+  },
+  "mission_settings": {
+    "mission": {
+      "environment": "Day",
+      "level": "levels/stalingrad.bin",
+      "type": "domination",
+      "weather": "hazy"
+    },
+    "player": {
+      "army": 1
+    },
+    "player_teamB": {
+      "army": 2
+    }
+  },
+  "objLayers": [
+    {
+      "layer": {
+        "enabled": true
+      }
+    },
+    {
+      "layer": {
+        "enabled": true
+      }
+    },
+    {
+      "layer": {
+        "enabled": true
+      }
+    },
+    {
+      "layer": {
+        "enabled": true
+      }
+    },
+    {
+      "layer": {
+        "enabled": true
+      }
+    }
+  ],
+  "selected_tag": "",
+  "triggers": {
+    "isCategory": true,
+    "is_enabled": true,
+    "mid_airfields_init": {
+      "actions": [
+        {
+          "varSetString": {
+            "value": "mid_capture_area_01",
+            "var": "capture_zone_01_name"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "mid_capture_area_02",
+            "var": "capture_zone_02_name"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "mid_capture_area_03",
+            "var": "capture_zone_03_name"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "mid_airfield_01",
+            "var": "airfield_01_name"
+          }
+        },
+        {
+          "varSetString": {
+            "value": "mid_airfield_02",
+            "var": "airfield_02_name"
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": [],
+      "else_actions": [],
+      "events": {
+        "initMission": []
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    }
+  },
+  "units": [
+    {
+      "objectGroups": {
+        "name": "mid_airfield_01",
+        "objLayer": 4,
+        "props": {
+          "active": true,
+          "army": 0
+        },
+        "tm": [
+          [-7.45058e-08,0.0,1.0],
+          [0.0,1.0,0.0],
+          [-1.0,0.0,-7.45058e-08],
+          [-9958.46,178.6,-15192.2]
+        ],
+        "unit_class": "dynaf_universal_1line_a"
+      }
+    },
+    {
+      "objectGroups": {
+        "name": "mid_airfield_02",
+        "objLayer": 4,
+        "props": {
+          "active": true,
+          "army": 0
+        },
+        "tm": [
+          [-7.45058e-08,0.0,1.0],
+          [0.0,1.0,0.0],
+          [-1.0,0.0,-7.45058e-08],
+          [2026.81,145.158,-15192.2]
+        ],
+        "unit_class": "dynaf_universal_1line_a"
+      }
+    }
+  ],
+  "variables": [],
+  "wayPoints": []
+}

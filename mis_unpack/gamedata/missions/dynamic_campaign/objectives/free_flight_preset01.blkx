@@ -1,0 +1,1849 @@
+{
+  "airfields": [],
+  "areas": {
+    "evac": {
+      "props": {
+        "forceReplication": true
+      },
+      "tm": [
+        [1.0,0.0,0.0],
+        [0.0,1.0,0.0],
+        [0.0,0.0,1.0],
+        [-24591.6,0.0,4351.7]
+      ],
+      "type": "Point"
+    },
+    "evac_forCut": {
+      "props": {
+        "forceReplication": true
+      },
+      "tm": [
+        [1.0,0.0,0.0],
+        [0.0,1.0,0.0],
+        [0.0,0.0,1.0],
+        [16159.6,48.0,30430.5]
+      ],
+      "type": "Point"
+    },
+    "waypoint01": {
+      "props": {
+        "forceReplication": true
+      },
+      "tm": [
+        [1.0,0.0,0.0],
+        [0.0,1.0,0.0],
+        [0.0,0.0,1.0],
+        [-44708.6,0.0,-2289.0]
+      ],
+      "type": "Point"
+    },
+    "waypoint02": {
+      "props": {
+        "forceReplication": true
+      },
+      "tm": [
+        [1.0,0.0,0.0],
+        [0.0,1.0,0.0],
+        [0.0,0.0,1.0],
+        [-42424.6,0.0,-1533.6]
+      ],
+      "type": "Point"
+    },
+    "waypoint03": {
+      "props": {
+        "forceReplication": true
+      },
+      "tm": [
+        [1.0,0.0,0.0],
+        [0.0,1.0,0.0],
+        [0.0,0.0,1.0],
+        [-40140.7,0.0,-778.2]
+      ],
+      "type": "Point"
+    },
+    "waypoint04": {
+      "props": {
+        "forceReplication": true
+      },
+      "tm": [
+        [1.0,0.0,0.0],
+        [0.0,1.0,0.0],
+        [0.0,0.0,1.0],
+        [-37856.7,0.0,-22.8003]
+      ],
+      "type": "Point"
+    },
+    "waypoint05": {
+      "props": {
+        "forceReplication": true
+      },
+      "tm": [
+        [1.0,0.0,0.0],
+        [0.0,1.0,0.0],
+        [0.0,0.0,1.0],
+        [-35572.8,0.0,732.6]
+      ],
+      "type": "Point"
+    },
+    "waypoint06": {
+      "props": {
+        "forceReplication": true
+      },
+      "tm": [
+        [1.0,0.0,0.0],
+        [0.0,1.0,0.0],
+        [0.0,0.0,1.0],
+        [-33288.8,0.0,1488.0]
+      ],
+      "type": "Point"
+    },
+    "waypoint07": {
+      "props": {
+        "forceReplication": true
+      },
+      "tm": [
+        [1.0,0.0,0.0],
+        [0.0,1.0,0.0],
+        [0.0,0.0,1.0],
+        [-31004.9,0.0,2243.4]
+      ],
+      "type": "Point"
+    },
+    "waypoint08": {
+      "props": {
+        "forceReplication": true
+      },
+      "tm": [
+        [1.0,0.0,0.0],
+        [0.0,1.0,0.0],
+        [0.0,0.0,1.0],
+        [-28720.9,0.0,2998.8]
+      ],
+      "type": "Point"
+    },
+    "waypoint09": {
+      "props": {
+        "forceReplication": true
+      },
+      "tm": [
+        [1.0,0.0,0.0],
+        [0.0,1.0,0.0],
+        [0.0,0.0,1.0],
+        [-26437.0,0.0,3754.2]
+      ],
+      "type": "Point"
+    }
+  },
+  "bin_dump_file": "",
+  "dialogs": [],
+  "effects": [],
+  "imports": [],
+  "mission_objectives": {
+    "isCategory": true,
+    "is_enabled": true,
+    "mo_dynamic_waypoint_fly": {
+      "comments": "",
+      "is_enabled": false,
+      "onFailed": [],
+      "onSuccess": [],
+      "props": {
+        "isPrimary": true,
+        "scoreConst": 100,
+        "scoreTime": 400,
+        "timeLimit": 1800
+      },
+      "type": "abstractMissionObjective"
+    }
+  },
+  "mission_settings": {
+    "aiParams": {
+      "aiEffectivenessViscosity": 90.0,
+      "effectivenessDistances": [2500.0,7000.0]
+    },
+    "atmosphere": {
+      "pressure": 760.0,
+      "temperature": 0.0
+    },
+    "briefing": {
+      "date_loc": "",
+      "music": "action_01",
+      "objective_loc": "mo_dynamic_freeFlight",
+      "part": [
+        {
+          "event": ""
+        },
+        {
+          "minTime": 0
+        },
+        {
+          "slide": {
+            "map": false,
+            "minTime": 4,
+            "picture": "dynamic_missions/berlin_02_01",
+            "showAirMap": false
+          }
+        },
+        {
+          "slide": {
+            "arrow": [
+              {
+                "width": 1
+              },
+              {
+                "side": "player"
+              },
+              {
+                "point": "#player.any"
+              },
+              {
+                "point": "waypoint01"
+              },
+              {
+                "point": "waypoint02"
+              },
+              {
+                "point": "waypoint03"
+              },
+              {
+                "point": "waypoint04"
+              },
+              {
+                "point": "waypoint05"
+              },
+              {
+                "point": "waypoint06"
+              },
+              {
+                "point": "waypoint07"
+              },
+              {
+                "point": "waypoint08"
+              },
+              {
+                "point": "waypoint09"
+              },
+              {
+                "point": "evac"
+              }
+            ],
+            "icon": {
+              "icontype": "fighter",
+              "lookAt": "waypoint01",
+              "side": "player",
+              "target": "#player.any"
+            },
+            "map": true,
+            "minTime": 4,
+            "picture": "",
+            "showAirMap": false
+          }
+        }
+      ],
+      "place_loc": "",
+      "viewAreaScale": 2.0
+    },
+    "cover_points": [],
+    "mission": {
+      "campaign": "pacific",
+      "environment": "Day",
+      "level": "levels/guadalcanal.bin",
+      "missionBriefing": "",
+      "missionDebriefing": "",
+      "missionType": {
+        "_ArtDA": false,
+        "_ArtDB": false,
+        "_Bto": false,
+        "_Bttl": false,
+        "_CnvA": false,
+        "_CnvB": false,
+        "_Conq": false,
+        "_Conq1": false,
+        "_Conq2": false,
+        "_Conq3": false,
+        "_Conq4": false,
+        "_Conq5": false,
+        "_Conq6": false,
+        "_DBttlA": false,
+        "_DBttlB": false,
+        "_Dom": false,
+        "_Flc": false,
+        "_v1_race_inverted": false,
+        "_v1_race_straight": false,
+        "_v2_race_inverted": false,
+        "_v2_race_straight": false
+      },
+      "name": "dynamic_free_flight01",
+      "optionalTakeOff": false,
+      "restoreType": "tactical control",
+      "tags": [],
+      "type": "dynamic",
+      "weather": "hazy"
+    },
+    "player": {
+      "army": 1,
+      "wing": "#player.any"
+    },
+    "player_teamB": {
+      "army": 2
+    },
+    "spectator_points": []
+  },
+  "objLayers": [
+    {
+      "layer": {
+        "enabled": true
+      }
+    },
+    {
+      "layer": {
+        "enabled": true
+      }
+    },
+    {
+      "layer": {
+        "enabled": true
+      }
+    },
+    {
+      "layer": {
+        "enabled": true
+      }
+    }
+  ],
+  "selected_tag": "",
+  "triggers": {
+    "battle_start": {
+      "actions": [
+        {
+          "wait": {
+            "time": 1.0
+          }
+        },
+        {
+          "wait": {
+            "time": 2.0
+          }
+        },
+        {
+          "unitPutToSleep": {
+            "target": "#player_cut.any"
+          }
+        },
+        {
+          "missionSetFade": {
+            "color": [0.0,0.0,0.0],
+            "mode": "fadeIn",
+            "time": 1.0
+          }
+        },
+        {
+          "missionStopCutscene": []
+        },
+        {
+          "missionMarkAsWaypoint": {
+            "ignoreDifficulty": false,
+            "oriented": false,
+            "primary": false,
+            "scale": 1.0,
+            "target": "waypoint01",
+            "visible": true
+          }
+        },
+        {
+          "moAddMissionObjective": {
+            "target": "mo_dynamic_waypoint_fly"
+          }
+        },
+        {
+          "triggerEnable": [
+            {
+              "target": "near_wp1"
+            },
+            {
+              "target": "timer"
+            }
+          ]
+        }
+      ],
+      "comments": "",
+      "conditions": [],
+      "else_actions": [],
+      "events": {
+        "timeExpires": {
+          "time": 0.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "completed": {
+      "actions": {
+        "triggerEnable": [
+          {
+            "target": "completed_online"
+          },
+          {
+            "target": "completed_offline"
+          }
+        ]
+      },
+      "comments": "",
+      "conditions": [],
+      "else_actions": [],
+      "events": {
+        "timeExpires": {
+          "time": 2.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "completed_offline": {
+      "actions": {
+        "missionCompleted": {
+          "timer": true
+        },
+        "triggerDisable": {
+          "target": "completed_online"
+        },
+        "wait": {
+          "time": 5.0
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "unitWhenCountMatches": {
+          "func": "notMore",
+          "object": "#player.any",
+          "object_marking": 0,
+          "object_type": "isOnline",
+          "value": 1
+        }
+      },
+      "else_actions": [],
+      "events": {
+        "timeExpires": {
+          "time": 0.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "completed_online": {
+      "actions": {
+        "missionCompleted": {
+          "timer": false
+        },
+        "triggerDisable": {
+          "target": "completed_offline"
+        },
+        "wait": {
+          "time": 5.0
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "unitWhenCountMatches": {
+          "func": "more",
+          "object": "#player.any",
+          "object_marking": 0,
+          "object_type": "isOnline",
+          "value": 1
+        }
+      },
+      "else_actions": [],
+      "events": {
+        "timeExpires": {
+          "time": 0.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "end_cut": {
+      "actions": [
+        {
+          "unitMoveTo": {
+            "follow_target": false,
+            "horizontalDirectionForTeleport": true,
+            "lookat": "evac",
+            "move_type": "teleport",
+            "object": "#player_cut.any",
+            "object_marking": 0,
+            "recalculatePathDist": -1.0,
+            "shouldKeepFormation": true,
+            "target": "evac_forCut",
+            "target_marking": 0,
+            "teleportHeightType": "target",
+            "teleportHeightValue": 0.0,
+            "useUnitHeightForTele": false,
+            "velocity": 250.0,
+            "waypointReachedDist": 10.0
+          }
+        },
+        {
+          "unitMoveTo": {
+            "follow_target": false,
+            "horizontalDirectionForTeleport": true,
+            "object": "#player_cut.any",
+            "object_marking": 0,
+            "recalculatePathDist": -1.0,
+            "shouldKeepFormation": false,
+            "target": "evac",
+            "target_marking": 0,
+            "teleportHeightType": "absolute",
+            "teleportHeightValue": 1000.0,
+            "useUnitHeightForTele": true,
+            "waypointReachedDist": 10.0
+          }
+        },
+        {
+          "showSmartCutscene": {
+            "allowDeadUnits": false,
+            "allowTeleportAttackers": true,
+            "changeCameras": true,
+            "delayPlayer": true,
+            "duration": 14.0,
+            "fadeIn": false,
+            "fadeOut": false,
+            "inverseCameraDirection": false,
+            "object": "#player_cut.any",
+            "sceneType": "on_the_march",
+            "startSubTypeArea": "",
+            "startSubTypeFlyBy": "",
+            "startSubTypeGroundUnits": "",
+            "startSubTypeOnTheMarch": "back",
+            "startSubTypeTakeoff": "",
+            "startSubTypeTwoUnits": "",
+            "startSubTypeUnitAttackUnit": "",
+            "startSubTypeUnitMoveToUnit": "",
+            "teleportAllAttackers": false,
+            "wait": false
+          }
+        },
+        {
+          "wait": {
+            "time": 2.0
+          }
+        },
+        {
+          "wait": {
+            "time": 8.0
+          }
+        },
+        {
+          "wait": {
+            "time": 1.0
+          }
+        },
+        {
+          "playHint": {
+            "action": "show",
+            "hintType": "custom",
+            "isOverFade": false,
+            "item": "ID_SKIP_CUTSCENE",
+            "name": "hints/cutsc_skip",
+            "priority": 0,
+            "shouldBlink": false,
+            "shouldFadeOut": false,
+            "target_marking": 0,
+            "time": -1.0
+          }
+        },
+        {
+          "playHint": {
+            "action": "hide",
+            "hintType": "custom",
+            "isOverFade": false,
+            "item": "ID_SKIP_CUTSCENE",
+            "name": "hints/cutsc_skip",
+            "priority": 0,
+            "shouldBlink": false,
+            "shouldFadeOut": false,
+            "target_marking": 0,
+            "time": -1.0
+          }
+        },
+        {
+          "triggerEnable": {
+            "target": "end_cut_skip"
+          }
+        },
+        {
+          "triggerEnable": {
+            "target": "miss_complete"
+          }
+        },
+        {
+          "triggerDisable": {
+            "target": "end_cut_skip"
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": [],
+      "else_actions": [],
+      "events": {
+        "timeExpires": {
+          "time": 0.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "end_cut_skip": {
+      "actions": {
+        "missionStopSpeech": [],
+        "playHint": {
+          "action": "hide",
+          "hintType": "custom",
+          "isOverFade": false,
+          "name": "hints/cutsc_skip",
+          "priority": 0,
+          "shouldFadeOut": false,
+          "target_marking": 0,
+          "time": -1.0
+        },
+        "triggerDisable": {
+          "target": "end_cut"
+        },
+        "triggerEnable": {
+          "target": "miss_complete"
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "playerShortcutPressed": {
+          "control": "ID_SKIP_CUTSCENE"
+        }
+      },
+      "else_actions": [],
+      "events": {
+        "timeExpires": {
+          "time": 0.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "evac": {
+      "actions": {
+        "missionMarkAsWaypoint": {
+          "ignoreDifficulty": false,
+          "oriented": false,
+          "primary": true,
+          "scale": 1.0,
+          "target": "evac",
+          "visible": true
+        },
+        "triggerDisable": [
+          {
+            "target": "near_wp1"
+          },
+          {
+            "target": "near_wp2"
+          },
+          {
+            "target": "near_wp3"
+          },
+          {
+            "target": "near_wp4"
+          },
+          {
+            "target": "near_wp5"
+          },
+          {
+            "target": "near_wp6"
+          },
+          {
+            "target": "near_wp7"
+          },
+          {
+            "target": "near_wp8"
+          },
+          {
+            "target": "near_wp9"
+          }
+        ],
+        "triggerEnable": {
+          "target": "near_evac"
+        },
+        "wait": {
+          "time": 0.3
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "varCompareInt": {
+          "comparasion_func": "notLess",
+          "value": 0,
+          "var_value": "wp_count",
+          "var_value_other": "wp_max"
+        }
+      },
+      "else_actions": [],
+      "events": {
+        "timeExpires": {
+          "time": 0.0
+        }
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "isCategory": true,
+    "is_enabled": true,
+    "miss_complete": {
+      "actions": [
+        {
+          "missionSetFade": {
+            "color": [0.0,0.0,0.0],
+            "mode": "fadeOut",
+            "time": 1.0
+          }
+        },
+        {
+          "missionSetFade": {
+            "color": [0.0,0.0,0.0],
+            "mode": "fadeIn",
+            "time": 1.0
+          }
+        },
+        {
+          "triggerEnable": {
+            "target": "completed"
+          }
+        },
+        {
+          "wait": {
+            "time": 1.0
+          }
+        },
+        {
+          "unitPutToSleep": {
+            "target": "#player_cut.any"
+          }
+        },
+        {
+          "missionStopCutscene": []
+        }
+      ],
+      "comments": "",
+      "conditions": [],
+      "else_actions": [],
+      "events": {
+        "timeExpires": {
+          "time": 0.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "miss_init": {
+      "actions": {
+        "triggerEnable": {
+          "target": "miss_start"
+        },
+        "unitDamage": {
+          "countEffects": 1,
+          "delay": [1.0,1.0],
+          "offset": [0.0,0.0,0.0],
+          "partName": "body_dm",
+          "power": 1.0,
+          "radiusOffset": [10.0,15.0],
+          "target": "dummy_fake",
+          "useEffect": false
+        }
+      },
+      "comments": "",
+      "conditions": [],
+      "else_actions": [],
+      "events": {
+        "initMission": []
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "miss_start": {
+      "actions": [
+        {
+          "showSmartCutscene": {
+            "allowDeadUnits": false,
+            "allowTeleportAttackers": true,
+            "changeCameras": true,
+            "delayPlayer": true,
+            "duration": 6.0,
+            "fadeIn": true,
+            "fadeOut": true,
+            "inverseCameraDirection": false,
+            "object": "#player_cut.any",
+            "sceneType": "on_the_march",
+            "startSubTypeArea": "",
+            "startSubTypeFlyBy": "",
+            "startSubTypeGroundUnits": "",
+            "startSubTypeOnTheMarch": "mid",
+            "startSubTypeTakeoff": "",
+            "startSubTypeTwoUnits": "",
+            "startSubTypeUnitAttackUnit": "",
+            "startSubTypeUnitMoveToUnit": "",
+            "teleportAllAttackers": false,
+            "wait": false
+          }
+        },
+        {
+          "showSmartCutscene": {
+            "allowDeadUnits": false,
+            "allowTeleportAttackers": true,
+            "changeCameras": true,
+            "delayPlayer": true,
+            "duration": 6.0,
+            "fadeIn": false,
+            "fadeOut": false,
+            "inverseCameraDirection": false,
+            "object": "#player_cut.any",
+            "sceneType": "on_the_march",
+            "startSubTypeArea": "",
+            "startSubTypeFlyBy": "",
+            "startSubTypeGroundUnits": "",
+            "startSubTypeOnTheMarch": "back",
+            "startSubTypeTakeoff": "",
+            "startSubTypeTwoUnits": "",
+            "startSubTypeUnitAttackUnit": "",
+            "startSubTypeUnitMoveToUnit": "",
+            "teleportAllAttackers": false,
+            "wait": false
+          }
+        },
+        {
+          "unitMoveTo": {
+            "follow_target": false,
+            "horizontalDirectionForTeleport": true,
+            "object": "#player_cut.any",
+            "object_marking": 0,
+            "recalculatePathDist": -1.0,
+            "shouldKeepFormation": false,
+            "target": "waypoint01",
+            "target_marking": 0,
+            "teleportHeightType": "absolute",
+            "teleportHeightValue": 1000.0,
+            "useUnitHeightForTele": true,
+            "waypointReachedDist": 10.0
+          }
+        },
+        {
+          "unitMoveTo": {
+            "follow_target": false,
+            "horizontalDirectionForTeleport": true,
+            "lookat": "waypoint01",
+            "move_type": "teleport",
+            "object": "#player.any",
+            "object_marking": 0,
+            "recalculatePathDist": -1.0,
+            "shouldKeepFormation": true,
+            "target": "#player_cut.any",
+            "target_marking": 0,
+            "teleportHeightType": "target",
+            "teleportHeightValue": 0.0,
+            "useUnitHeightForTele": false,
+            "velocity": 250.0,
+            "waypointReachedDist": 10.0
+          }
+        },
+        {
+          "wait": {
+            "time": 2.0
+          }
+        },
+        {
+          "wait": {
+            "time": 4.0
+          }
+        },
+        {
+          "wait": {
+            "time": 4.0
+          }
+        },
+        {
+          "wait": {
+            "time": 1.0
+          }
+        },
+        {
+          "wait": {
+            "time": 1.1
+          }
+        },
+        {
+          "playHint": {
+            "action": "show",
+            "hintType": "custom",
+            "isOverFade": false,
+            "item": "ID_SKIP_CUTSCENE",
+            "name": "hints/cutsc_skip",
+            "priority": 0,
+            "shouldBlink": false,
+            "shouldFadeOut": false,
+            "target_marking": 0,
+            "time": -1.0
+          }
+        },
+        {
+          "playHint": {
+            "action": "hide",
+            "hintType": "custom",
+            "isOverFade": false,
+            "item": "ID_SKIP_CUTSCENE",
+            "name": "hints/cutsc_skip",
+            "priority": 0,
+            "shouldBlink": false,
+            "shouldFadeOut": false,
+            "target_marking": 0,
+            "time": -1.0
+          }
+        },
+        {
+          "triggerEnable": {
+            "target": "start_cut_skip"
+          }
+        },
+        {
+          "triggerEnable": {
+            "target": "battle_start"
+          }
+        },
+        {
+          "triggerDisable": {
+            "target": "start_cut_skip"
+          }
+        },
+        {
+          "missionSetFade": {
+            "color": [0.0,0.0,0.0],
+            "mode": "fadeOut",
+            "time": 1.0
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": [],
+      "else_actions": [],
+      "events": {
+        "timeExpires": {
+          "time": 0.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "near_evac": {
+      "actions": {
+        "missionMarkAsWaypoint": {
+          "ignoreDifficulty": false,
+          "oriented": false,
+          "primary": true,
+          "scale": 1.0,
+          "target": "evac",
+          "visible": false
+        },
+        "moSetObjectiveStatus": {
+          "status": 2,
+          "target": "mo_dynamic_waypoint_fly"
+        },
+        "triggerDisable": {
+          "target": "timer"
+        },
+        "triggerEnable": {
+          "target": "end_cut"
+        },
+        "wait": {
+          "time": 2.0
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "playersDistanceBetween": {
+          "check_players": "any",
+          "check_targets": "any",
+          "math": "2D",
+          "players": "isAlive",
+          "target": "evac",
+          "target_type": "isAlive",
+          "value": 200.0
+        }
+      },
+      "else_actions": [],
+      "events": {
+        "timeExpires": {
+          "time": 0.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "near_wp1": {
+      "actions": [
+        {
+          "missionMarkAsWaypoint": {
+            "ignoreDifficulty": false,
+            "oriented": false,
+            "primary": false,
+            "scale": 1.0,
+            "target": "waypoint01",
+            "visible": false
+          }
+        },
+        {
+          "missionMarkAsWaypoint": {
+            "ignoreDifficulty": false,
+            "oriented": false,
+            "primary": false,
+            "scale": 1.0,
+            "target": "waypoint02",
+            "visible": true
+          }
+        },
+        {
+          "varModify": {
+            "operator": "add",
+            "value": 1.0,
+            "var": "wp_count"
+          }
+        },
+        {
+          "wait": {
+            "time": 0.3
+          }
+        },
+        {
+          "triggerEnable": {
+            "target": "near_wp2"
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": {
+        "playersDistanceBetween": {
+          "check_players": "any",
+          "check_targets": "any",
+          "math": "2D",
+          "players": "isAlive",
+          "target": "waypoint01",
+          "target_type": "isAlive",
+          "value": 200.0
+        }
+      },
+      "else_actions": [],
+      "events": {
+        "timeExpires": {
+          "time": 0.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "near_wp2": {
+      "actions": [
+        {
+          "missionMarkAsWaypoint": {
+            "ignoreDifficulty": false,
+            "oriented": false,
+            "primary": false,
+            "scale": 1.0,
+            "target": "waypoint02",
+            "visible": false
+          }
+        },
+        {
+          "missionMarkAsWaypoint": {
+            "ignoreDifficulty": false,
+            "oriented": false,
+            "primary": false,
+            "scale": 1.0,
+            "target": "waypoint03",
+            "visible": true
+          }
+        },
+        {
+          "varModify": {
+            "operator": "add",
+            "value": 1.0,
+            "var": "wp_count"
+          }
+        },
+        {
+          "wait": {
+            "time": 0.3
+          }
+        },
+        {
+          "triggerEnable": {
+            "target": "near_wp3"
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": {
+        "playersDistanceBetween": {
+          "check_players": "any",
+          "check_targets": "any",
+          "math": "2D",
+          "players": "isAlive",
+          "target": "waypoint02",
+          "target_type": "isAlive",
+          "value": 200.0
+        }
+      },
+      "else_actions": [],
+      "events": {
+        "timeExpires": {
+          "time": 0.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "near_wp3": {
+      "actions": [
+        {
+          "missionMarkAsWaypoint": {
+            "ignoreDifficulty": false,
+            "oriented": false,
+            "primary": false,
+            "scale": 1.0,
+            "target": "waypoint03",
+            "visible": false
+          }
+        },
+        {
+          "missionMarkAsWaypoint": {
+            "ignoreDifficulty": false,
+            "oriented": false,
+            "primary": false,
+            "scale": 1.0,
+            "target": "waypoint04",
+            "visible": true
+          }
+        },
+        {
+          "varModify": {
+            "operator": "add",
+            "value": 1.0,
+            "var": "wp_count"
+          }
+        },
+        {
+          "wait": {
+            "time": 0.3
+          }
+        },
+        {
+          "triggerEnable": {
+            "target": "near_wp4"
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": {
+        "playersDistanceBetween": {
+          "check_players": "any",
+          "check_targets": "any",
+          "math": "2D",
+          "players": "isAlive",
+          "target": "waypoint03",
+          "target_type": "isAlive",
+          "value": 200.0
+        }
+      },
+      "else_actions": [],
+      "events": {
+        "timeExpires": {
+          "time": 0.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "near_wp4": {
+      "actions": [
+        {
+          "missionMarkAsWaypoint": {
+            "ignoreDifficulty": false,
+            "oriented": false,
+            "primary": false,
+            "scale": 1.0,
+            "target": "waypoint04",
+            "visible": false
+          }
+        },
+        {
+          "missionMarkAsWaypoint": {
+            "ignoreDifficulty": false,
+            "oriented": false,
+            "primary": false,
+            "scale": 1.0,
+            "target": "waypoint05",
+            "visible": true
+          }
+        },
+        {
+          "varModify": {
+            "operator": "add",
+            "value": 1.0,
+            "var": "wp_count"
+          }
+        },
+        {
+          "wait": {
+            "time": 0.3
+          }
+        },
+        {
+          "triggerEnable": {
+            "target": "near_wp5"
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": {
+        "playersDistanceBetween": {
+          "check_players": "any",
+          "check_targets": "any",
+          "math": "2D",
+          "players": "isAlive",
+          "target": "waypoint04",
+          "target_type": "isAlive",
+          "value": 200.0
+        }
+      },
+      "else_actions": [],
+      "events": {
+        "timeExpires": {
+          "time": 0.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "near_wp5": {
+      "actions": [
+        {
+          "missionMarkAsWaypoint": {
+            "ignoreDifficulty": false,
+            "oriented": false,
+            "primary": false,
+            "scale": 1.0,
+            "target": "waypoint05",
+            "visible": false
+          }
+        },
+        {
+          "missionMarkAsWaypoint": {
+            "ignoreDifficulty": false,
+            "oriented": false,
+            "primary": false,
+            "scale": 1.0,
+            "target": "waypoint06",
+            "visible": true
+          }
+        },
+        {
+          "varModify": {
+            "operator": "add",
+            "value": 1.0,
+            "var": "wp_count"
+          }
+        },
+        {
+          "wait": {
+            "time": 0.3
+          }
+        },
+        {
+          "triggerEnable": {
+            "target": "near_wp6"
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": {
+        "playersDistanceBetween": {
+          "check_players": "any",
+          "check_targets": "any",
+          "math": "2D",
+          "players": "isAlive",
+          "target": "waypoint05",
+          "target_type": "isAlive",
+          "value": 200.0
+        }
+      },
+      "else_actions": [],
+      "events": {
+        "timeExpires": {
+          "time": 0.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "near_wp6": {
+      "actions": [
+        {
+          "missionMarkAsWaypoint": {
+            "ignoreDifficulty": false,
+            "oriented": false,
+            "primary": false,
+            "scale": 1.0,
+            "target": "waypoint06",
+            "visible": false
+          }
+        },
+        {
+          "missionMarkAsWaypoint": {
+            "ignoreDifficulty": false,
+            "oriented": false,
+            "primary": false,
+            "scale": 1.0,
+            "target": "waypoint07",
+            "visible": true
+          }
+        },
+        {
+          "varModify": {
+            "operator": "add",
+            "value": 1.0,
+            "var": "wp_count"
+          }
+        },
+        {
+          "wait": {
+            "time": 0.3
+          }
+        },
+        {
+          "triggerEnable": {
+            "target": "near_wp7"
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": {
+        "playersDistanceBetween": {
+          "check_players": "any",
+          "check_targets": "any",
+          "math": "2D",
+          "players": "isAlive",
+          "target": "waypoint06",
+          "target_type": "isAlive",
+          "value": 200.0
+        }
+      },
+      "else_actions": [],
+      "events": {
+        "timeExpires": {
+          "time": 0.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "near_wp7": {
+      "actions": [
+        {
+          "missionMarkAsWaypoint": {
+            "ignoreDifficulty": false,
+            "oriented": false,
+            "primary": false,
+            "scale": 1.0,
+            "target": "waypoint07",
+            "visible": false
+          }
+        },
+        {
+          "missionMarkAsWaypoint": {
+            "ignoreDifficulty": false,
+            "oriented": false,
+            "primary": false,
+            "scale": 1.0,
+            "target": "waypoint08",
+            "visible": true
+          }
+        },
+        {
+          "varModify": {
+            "operator": "add",
+            "value": 1.0,
+            "var": "wp_count"
+          }
+        },
+        {
+          "wait": {
+            "time": 0.3
+          }
+        },
+        {
+          "triggerEnable": {
+            "target": "near_wp8"
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": {
+        "playersDistanceBetween": {
+          "check_players": "any",
+          "check_targets": "any",
+          "math": "2D",
+          "players": "isAlive",
+          "target": "waypoint07",
+          "target_type": "isAlive",
+          "value": 200.0
+        }
+      },
+      "else_actions": [],
+      "events": {
+        "timeExpires": {
+          "time": 0.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "near_wp8": {
+      "actions": [
+        {
+          "missionMarkAsWaypoint": {
+            "ignoreDifficulty": false,
+            "oriented": false,
+            "primary": false,
+            "scale": 1.0,
+            "target": "waypoint08",
+            "visible": false
+          }
+        },
+        {
+          "missionMarkAsWaypoint": {
+            "ignoreDifficulty": false,
+            "oriented": false,
+            "primary": false,
+            "scale": 1.0,
+            "target": "waypoint09",
+            "visible": true
+          }
+        },
+        {
+          "varModify": {
+            "operator": "add",
+            "value": 1.0,
+            "var": "wp_count"
+          }
+        },
+        {
+          "wait": {
+            "time": 0.3
+          }
+        },
+        {
+          "triggerEnable": {
+            "target": "near_wp9"
+          }
+        }
+      ],
+      "comments": "",
+      "conditions": {
+        "playersDistanceBetween": {
+          "check_players": "any",
+          "check_targets": "any",
+          "math": "2D",
+          "players": "isAlive",
+          "target": "waypoint08",
+          "target_type": "isAlive",
+          "value": 200.0
+        }
+      },
+      "else_actions": [],
+      "events": {
+        "timeExpires": {
+          "time": 0.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "near_wp9": {
+      "actions": {
+        "missionMarkAsWaypoint": {
+          "ignoreDifficulty": false,
+          "oriented": false,
+          "primary": false,
+          "scale": 1.0,
+          "target": "waypoint09",
+          "visible": false
+        },
+        "varModify": {
+          "operator": "add",
+          "value": 1.0,
+          "var": "wp_count"
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "playersDistanceBetween": {
+          "check_players": "any",
+          "check_targets": "any",
+          "math": "2D",
+          "players": "isAlive",
+          "target": "waypoint09",
+          "target_type": "isAlive",
+          "value": 200.0
+        }
+      },
+      "else_actions": [],
+      "events": {
+        "timeExpires": {
+          "time": 0.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "start_cut_skip": {
+      "actions": {
+        "missionSetFade": {
+          "color": [0.0,0.0,0.0],
+          "mode": "fadeOut",
+          "time": 1.0
+        },
+        "missionStopCutscene": [],
+        "missionStopSpeech": [],
+        "playHint": {
+          "action": "hide",
+          "hintType": "custom",
+          "isOverFade": false,
+          "name": "hints/cutsc_skip",
+          "priority": 0,
+          "shouldFadeOut": false,
+          "target_marking": 0,
+          "time": -1.0
+        },
+        "triggerDisable": {
+          "target": "miss_start"
+        },
+        "triggerEnable": {
+          "target": "battle_start"
+        },
+        "unitMoveTo": {
+          "follow_target": false,
+          "horizontalDirectionForTeleport": true,
+          "lookat": "waypoint01",
+          "move_type": "teleport",
+          "object": "#player.any",
+          "object_marking": 0,
+          "recalculatePathDist": -1.0,
+          "shouldKeepFormation": true,
+          "target": "#player_cut.any",
+          "target_marking": 0,
+          "teleportHeightType": "target",
+          "teleportHeightValue": 0.0,
+          "useUnitHeightForTele": false,
+          "velocity": 250.0,
+          "waypointReachedDist": 10.0
+        },
+        "unitPutToSleep": {
+          "target": "#player_cut.any"
+        },
+        "wait": {
+          "time": 0.95
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "playerShortcutPressed": {
+          "control": "ID_SKIP_CUTSCENE"
+        }
+      },
+      "else_actions": [],
+      "events": {
+        "timeExpires": {
+          "time": 0.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "timer": {
+      "actions": {
+        "missionSetTimeIndicator": {
+          "var": "timer"
+        },
+        "varModify": {
+          "operator": "add",
+          "value": 1.0,
+          "var": "timer"
+        }
+      },
+      "comments": "",
+      "conditions": [],
+      "else_actions": [],
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": true
+      }
+    }
+  },
+  "units": [
+    {
+      "armada": {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "#player.any",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 1,
+          "attack_type": "fire_at_will",
+          "count": 4,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "minimum_distance_to_earth": 20.0,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [-47207.4,20.0,2066.2]
+        ],
+        "unit_class": "a-20g",
+        "way": [],
+        "weapons": ""
+      }
+    },
+    {
+      "armada": {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "#player_cut.any",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 1,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "isDelayed": true,
+          "minimum_distance_to_earth": 20.0,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "skill": 4,
+          "speed": 250.0
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [-27084.9,16.1,9353.2]
+        ],
+        "unit_class": "a-20g",
+        "way": [],
+        "weapons": ""
+      }
+    },
+    {
+      "squad": {
+        "name": "#unit_background",
+        "props": {
+          "squad_members": "dummy_fake"
+        },
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [166.4,-86.0,350.3]
+        ]
+      }
+    },
+    {
+      "squad": {
+        "name": "ally_all",
+        "props": {
+          "squad_members": "dummy_fake"
+        },
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [1472.6,14.5,8731.2]
+        ]
+      }
+    },
+    {
+      "structures": {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "dummy_fake",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "setStealth": true,
+          "stealthRadius": 0.0,
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [90706.6,0.0,90676.5]
+        ],
+        "unit_class": "dummy_nosmoke",
+        "way": [],
+        "weapons": ""
+      }
+    }
+  ],
+  "variables": {
+    "is_free_flight_preset02": false,
+    "timer": 0,
+    "wp_count": 0,
+    "wp_max": 4
+  },
+  "wayPoints": []
+}

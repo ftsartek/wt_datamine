@@ -1,0 +1,161 @@
+[
+  {
+    "model": "75mm_type88_noground_a"
+  },
+  {
+    "collisionSphere0": [0.0,-1.5,0.0,5.0]
+  },
+  {
+    "collisionSphere1": [5.0,2.0,0.0,1.0]
+  },
+  {
+    "timeToFire": 5.0
+  },
+  {
+    "maxFwdSpeed": 0.0
+  },
+  {
+    "maxRevSpeed": 0.0
+  },
+  {
+    "maxAngSpeed": 0.0
+  },
+  {
+    "maxAccel": 0.0
+  },
+  {
+    "maxDecel": 0.0
+  },
+  {
+    "maxAngAccel0": 0.0
+  },
+  {
+    "maxAngAccelV": 0.0
+  },
+  {
+    "maxAngAccel": 0.0
+  },
+  {
+    "groundNormSmoothViscosity": 0.1
+  },
+  {
+    "fireFx": "fire_ground_black_fx"
+  },
+  {
+    "fireFx": "ground_model_fire"
+  },
+  {
+    "subclass": "fortification"
+  },
+  {
+    "onRadarAs": "aam"
+  },
+  {
+    "bulletHitFx": "ground_model_hit"
+  },
+  {
+    "partDamageFx": "part_damage"
+  },
+  {
+    "explosionFx": "ground_model_expl"
+  },
+  {
+    "toGround": true
+  },
+  {
+    "expClass": "exp_aaa"
+  },
+  {
+    "attach": {
+      "inc_driver": "jpn_driver_young_cap",
+      "inc_soldier00": "jpn_middle_soldier_stand",
+      "inc_soldier01": "jpn_middle_soldier_stand2",
+      "inc_soldier02": "jpn_middle_soldier_stand4"
+    }
+  },
+  {
+    "DamageParts": {
+      "armor50_tanks": {
+        "armor1_dm": {
+          "hp": 99999.0
+        }
+      },
+      "steel": {
+        "body_dm": {
+          "hp": 240.0,
+          "napalmDamageMult": 1.0
+        }
+      }
+    }
+  },
+  {
+    "DamageEffects": {
+      "part": {
+        "name": "body_dm",
+        "onHit": {
+          "smoke": 0.01
+        },
+        "onKill": {
+          "expl": 1.0
+        }
+      }
+    }
+  },
+  {
+    "explosion": {
+      "expl": {
+        "explosionEffectName": "explosion_midair_medium",
+        "node": "body",
+        "partNo": 0,
+        "postEffectName": "smoke_ground_black_fx",
+        "postScale": 1.0,
+        "preScale": 1.0,
+        "timeForPostEffect": 60.0,
+        "timeToExplode": 0.5
+      }
+    }
+  },
+  {
+    "class_tags": {
+      "air_defence": true,
+      "country_japan": true,
+      "pacific": true
+    }
+  },
+  {
+    "weapon": {
+      "AttackMaxDistance": 8000.0,
+      "AttackMaxHeight": 8000.0,
+      "AttackMaxRadius": 8000.0,
+      "ChainfireTime": 0.0,
+      "DelayAfterShoot": 0.0,
+      "accuracyAir": 0.6,
+      "accuracyGnd": 0.0,
+      "blk": "gameData/weapons/groundModels_weapons/common_AAgun88mm.blk",
+      "defaultPitch": 30.0,
+      "defaultYaw": 0.0,
+      "emitter": "gun1",
+      "errExplTime": 0.0,
+      "errMeasureVel": 0.0,
+      "errMeasureVelDir": 0.0,
+      "errMeasureVelFast": 0.0,
+      "errMeasureVelFwdShift": 1.5,
+      "errTargetting": 3.0,
+      "errTargettingOn100kmph": 0.0,
+      "fireConeAngle": 2.0,
+      "flash": "flame1",
+      "limits": {
+        "pitch": [10.0,85.0],
+        "yaw": [-180.0,180.0]
+      },
+      "salvoAmount": 100.0,
+      "speedPitch": 66.0,
+      "speedYaw": 66.0,
+      "trigger": "gunner0",
+      "turret": {
+        "gun": "gun1",
+        "head": "turret1"
+      }
+    }
+  }
+]

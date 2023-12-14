@@ -1,0 +1,164 @@
+{
+  "helicopterGroup": 2,
+  "mesh": "df_missile",
+  "mesh_deployed": "df_missile_deployed",
+  "preset_cost": 25,
+  "rocket": {
+    "CxK": 0.9,
+    "DamageEffects": {
+      "part": [
+        {
+          "name": "body"
+        },
+        {
+          "onHit": {
+            "expl": 1.0,
+            "shellState": "inFlight"
+          }
+        },
+        {
+          "onHit": {
+            "break": 0.5,
+            "damage": 3.0,
+            "damageType": "generic",
+            "expl": 0.05,
+            "fHitCritical": true,
+            "fire": 0.45,
+            "shellState": "onUnit"
+          }
+        },
+        {
+          "onHit": {
+            "break": 0.2,
+            "damage": 30.0,
+            "damageType": "generic",
+            "expl": 0.5,
+            "fHitCritical": true,
+            "fire": 0.3,
+            "shellState": "onUnit"
+          }
+        },
+        {
+          "onHit": {
+            "break": 0.1,
+            "damage": 50.0,
+            "damageType": "explosion",
+            "expl": 0.45,
+            "fHitCritical": true,
+            "fire": 0.45,
+            "shellState": "onUnit"
+          }
+        },
+        {
+          "onHit": {
+            "break": 0.1,
+            "damage": 100.0,
+            "damageType": "cumulative",
+            "expl": 0.4,
+            "fHitCritical": true,
+            "fire": 0.4,
+            "shellState": "onUnit"
+          }
+        },
+        {
+          "onKill": {
+            "destruction": 1.0,
+            "shellState": "inFlight"
+          }
+        },
+        {
+          "onKill": {
+            "break": 0.9,
+            "expl": 0.05,
+            "fHitCritical": true,
+            "fire": 0.05,
+            "shellState": "onUnit"
+          }
+        }
+      ]
+    },
+    "DamageParts": {
+      "body": {
+        "armorClass": "tank_structural_steel",
+        "armorThickness": 1.0,
+        "hp": 50.0
+      }
+    },
+    "WdK": [0.1,0.1,0.1],
+    "aiAirOnly": false,
+    "aiGroundOnly": false,
+    "amountPerTier": 1.0,
+    "autoaimEnabled": false,
+    "caliber": 0.1,
+    "distFromCmToStab": 0.01,
+    "dragCx": 0.0001,
+    "endHitPower": [0.01,1500.0],
+    "endSmokeViscosity": 0.05,
+    "endSpeed": 0.0,
+    "explodeTreshold": 0.0,
+    "explosiveMass": 5.0,
+    "explosiveType": "sks",
+    "farArmorPower": [0.2,700.0],
+    "farHitPower": [0.1,1000.0],
+    "fireDamage": {
+      "burnFxSize": 17.0,
+      "burnFxType": "explosion_thermite_firespot",
+      "damage": 2.0,
+      "damageType": "napalm",
+      "emitterCount": 3,
+      "emitterDispersion": 0.7,
+      "fxType": "explosion_thermite_wrackages",
+      "lifeTime": 30.0,
+      "maxFlightDistance": 17.0,
+      "maxFlightTime": 4.0,
+      "maxRise": 4.0,
+      "penetration": 10.0,
+      "radius": 15.0,
+      "scorchDuration": 10.0,
+      "scorchMarginSize": 1.0,
+      "scorchStrength": 1.0,
+      "velocityMult": 3.5
+    },
+    "fireEffect": "fires_exhaust_jet_early_big",
+    "force": 3000.0,
+    "force1": 50.0,
+    "hazeEffect": "haze_missile",
+    "hitPowerMult": 1.0,
+    "iconType": "rockets_he_large",
+    "length": 1.6,
+    "mass": 10.0,
+    "massEnd": 8.0,
+    "massEnd1": 7.5,
+    "maxDeltaAngle": 1.0,
+    "maxDistance": 6200.0,
+    "maxSpeed": 410.0,
+    "midArmorPower": [7.0,400.0],
+    "midHitPower": [0.9,400.0],
+    "minDistance": 30.0,
+    "nearArmorPower": [10.0,50.0],
+    "nearHitPower": [1.0,50.0],
+    "relativeVelArmorShift": [200.0,1000.0],
+    "relativeVelHitShift": [300.0,1000.0],
+    "rendinstDamageRadius": 6.0,
+    "smokeEffect": "smoke_rocket_tail_light_huge",
+    "smokeEffect2": "",
+    "spawnExplosionFx": false,
+    "spawnExplosionWreckage": false,
+    "splash": {
+      "damage": 3200.0,
+      "damageType": "napalm",
+      "innerRadius": 2.0,
+      "outerRadius": 5.0,
+      "penetration": 7.0
+    },
+    "startSpeed": 0.0,
+    "statType": "hydra",
+    "thrustDeviation": 0.5,
+    "timeFire": 1.1,
+    "timeFire1": 3.5,
+    "useStartSpeed": true
+  },
+  "rocketGun": true,
+  "shotFreq": 20.0,
+  "sound": "weapon.rocketgun_132"
+}

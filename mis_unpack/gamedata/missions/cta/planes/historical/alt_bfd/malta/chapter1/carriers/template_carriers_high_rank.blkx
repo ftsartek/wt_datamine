@@ -1,0 +1,375 @@
+{
+  "airfields": [],
+  "areas": [],
+  "bin_dump_file": "",
+  "dialogs": [],
+  "effects": [],
+  "imports": [],
+  "mission_objectives": {
+    "isCategory": true,
+    "is_enabled": true
+  },
+  "mission_settings": {
+    "mission": {
+      "environment": "Day",
+      "level": "levels/malta.bin",
+      "type": "domination",
+      "weather": "hazy"
+    },
+    "player": {
+      "army": 1
+    },
+    "player_teamB": {
+      "army": 2
+    }
+  },
+  "objLayers": [
+    {
+      "layer": {
+        "enabled": true
+      }
+    },
+    {
+      "layer": {
+        "enabled": true
+      }
+    },
+    {
+      "layer": {
+        "enabled": true
+      }
+    }
+  ],
+  "selected_tag": "",
+  "triggers": {
+    "carriers_init_high": {
+      "actions": {
+        "missionMarkAsRespawnPoint": [
+          {
+            "loc_name": "missions/carriers_spawn"
+          },
+          {
+            "spawnEffect": false
+          },
+          {
+            "isAirfield": true
+          },
+          {
+            "isUnit": false
+          },
+          {
+            "radius": -1.0
+          },
+          {
+            "destructionAwardMultiplier": 1.0
+          },
+          {
+            "isStrictSpawn": false
+          },
+          {
+            "useExisting": false
+          },
+          {
+            "isIndividual": false
+          },
+          {
+            "removeAreas": false
+          },
+          {
+            "canSpawnOnNeutral": false
+          },
+          {
+            "showOnMap": true
+          },
+          {
+            "onlyOnePlayerPerSpawnPoint": false
+          },
+          {
+            "resetStrictSpawnIndex": false
+          },
+          {
+            "replaceAreas": false
+          },
+          {
+            "forceCreate": false
+          },
+          {
+            "ignoreTeamsOnReuse": false
+          },
+          {
+            "target": "t1_carrier_01"
+          },
+          {
+            "target": "t1_carrier_02"
+          },
+          {
+            "team": "A"
+          },
+          {
+            "object": "t1_carriers_squad"
+          },
+          {
+            "awardByBodyHp": false
+          },
+          {
+            "tags": {
+              "carrier_take_off": true,
+              "tank": false,
+              "type_aa_fighter": false,
+              "type_assault": false,
+              "type_frontline_bomber": false,
+              "type_interceptor": false,
+              "type_longrange_bomber": false
+            }
+          }
+        ]
+      },
+      "comments": "",
+      "conditions": [],
+      "else_actions": [],
+      "events": {
+        "initMission": []
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "isCategory": true,
+    "is_enabled": true
+  },
+  "units": [
+    {
+      "ships": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": true,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "t1_carrier_01",
+        "objLayer": 1,
+        "props": {
+          "army": 1,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [-0.291506,0.0,-0.956569],
+          [0.0,1.0,0.0],
+          [0.956569,0.0,-0.291506],
+          [25280.3,0.00390625,17177.2]
+        ],
+        "unit_class": "uk_aircraftcarrier_ark_royal",
+        "way": {
+          "t1_carrier_01_wp_01": {
+            "props": {
+              "canUsePathFinder": false,
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 30.0,
+              "tas": false
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [23561.1,0.00390625,4338.85]
+            ],
+            "type": "normal"
+          },
+          "t1_carrier_01_wp_02": {
+            "props": {
+              "canUsePathFinder": false,
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 30.0,
+              "tas": false
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [16331.0,0.00390625,4213.48]
+            ],
+            "type": "normal"
+          },
+          "t1_carrier_01_wp_03": {
+            "props": {
+              "canUsePathFinder": false,
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 30.0,
+              "tas": false
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [15982.0,0.00292969,19390.2]
+            ],
+            "type": "normal"
+          },
+          "t1_carrier_01_wp_04": {
+            "props": {
+              "canUsePathFinder": false,
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 30.0,
+              "tas": false
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [23457.2,0.00390625,19373.5]
+            ],
+            "type": "normal"
+          }
+        },
+        "weapons": ""
+      }
+    },
+    {
+      "ships": {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": true,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "t1_carrier_02",
+        "objLayer": 1,
+        "props": {
+          "army": 1,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [-0.133438,0.0,-0.991057],
+          [0.0,1.0,0.0],
+          [0.991057,0.0,-0.133438],
+          [25901.0,0.00390625,16822.3]
+        ],
+        "unit_class": "us_aircraftcarrier_forrestal",
+        "way": {
+          "t1_carrier_02_wp_01": {
+            "props": {
+              "canUsePathFinder": false,
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 30.0,
+              "tas": false
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [23988.5,0.00390625,3790.87]
+            ],
+            "type": "normal"
+          },
+          "t1_carrier_02_wp_02": {
+            "props": {
+              "canUsePathFinder": false,
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 30.0,
+              "tas": false
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [15676.2,0.00390625,3659.63]
+            ],
+            "type": "normal"
+          },
+          "t1_carrier_02_wp_03": {
+            "props": {
+              "canUsePathFinder": false,
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 30.0,
+              "tas": false
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [15223.9,0.00292969,19982.0]
+            ],
+            "type": "normal"
+          },
+          "t1_carrier_02_wp_04": {
+            "props": {
+              "canUsePathFinder": false,
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 30.0,
+              "tas": false
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [23742.8,0.00390625,19789.7]
+            ],
+            "type": "normal"
+          }
+        },
+        "weapons": ""
+      }
+    },
+    {
+      "squad": {
+        "name": "t1_carriers_squad",
+        "props": [
+          {
+            "squad_members": "t1_carrier_01"
+          },
+          {
+            "squad_members": "t1_carrier_02"
+          },
+          {
+            "object_marking": 0
+          }
+        ],
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [30463.1,0.00396729,16866.2]
+        ]
+      }
+    }
+  ],
+  "variables": [],
+  "wayPoints": []
+}

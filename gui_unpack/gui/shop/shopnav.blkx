@@ -1,0 +1,131 @@
+{
+  "navLeft": {
+    "tdiv": {
+      "height": "1@buttonHeight",
+      "textareaNoTab": {
+        "caption": "yes",
+        "id": "excess_exp_text",
+        "pos": "1@buttonMargin, ph/2-h/2",
+        "position": "absolute"
+      }
+    }
+  },
+  "navRight": [
+    {
+      "Button_text": {
+        "ButtonImg": [],
+        "_on_click": "onRepairAll",
+        "btnName": "L3",
+        "buttonGlance": [],
+        "buttonWink": [],
+        "display": "hide",
+        "hideText": "yes",
+        "id": "btn_repairall",
+        "textarea": {
+          "class": "buttonText",
+          "id": "btn_repairall_text",
+          "text": "#mainmenu/btnRepairAll"
+        },
+        "visualStyle": "purchase"
+      }
+    },
+    {
+      "Button_text": [
+        {
+          "id": "btn_spend_exp"
+        },
+        {
+          "navButtonFont": "yes"
+        },
+        {
+          "display": "hide"
+        },
+        {
+          "hideText": "yes"
+        },
+        {
+          "_on_click": "onSpendExcessExp"
+        },
+        {
+          "css-hier-invalidate": "yes"
+        },
+        {
+          "css-hier-invalidate": "yes"
+        },
+        {
+          "btnName": "X"
+        },
+        {
+          "visualStyle": "secondary"
+        },
+        {
+          "buttonWink": []
+        },
+        {
+          "textarea": {
+            "class": "buttonText",
+            "id": "btn_spend_exp_text",
+            "text": "#weaponry/research"
+          }
+        },
+        {
+          "ButtonImg": []
+        }
+      ]
+    },
+    {
+      "Button_text": {
+        "ButtonImg": [],
+        "_on_click": "onBuy",
+        "btnName": "X",
+        "buttonGlance": [],
+        "buttonWink": [],
+        "css-hier-invalidate": "yes",
+        "display": "hide",
+        "id": "btn_buy_unit",
+        "navButtonFont": "yes",
+        "text": "#shop/btnOrderUnit",
+        "visualStyle": "purchase"
+      }
+    },
+    {
+      "CheckBox": {
+        "CheckBoxImg": [],
+        "display": "hide",
+        "id": "move_exp_to_helicopters",
+        "inactiveColor": "no",
+        "on_change_value": "onMoveExpToHelicoptersChange",
+        "padding-right": "40@sf/@pf",
+        "text": "#shop/research_helicopters_by_ground_vehicles",
+        "tooltip": "#shop/research_helicopters_by_ground_vehicles_tooltip",
+        "type": "rightSideCb",
+        "valign": "center"
+      }
+    },
+    {
+      "tdiv": [
+        {
+          "margin": "1@buttonMargin"
+        },
+        {
+          "ComboBox": {
+            "display": "hide",
+            "id": "dev_options_select",
+            "margin-right": "1@buttonMargin",
+            "on_select": "onChangeDevMode",
+            "width": "250@sf/@pf"
+          }
+        },
+        {
+          "ComboBox": {
+            "btnName": "R3",
+            "id": "show_mode",
+            "on_select": "onChangeShowMode",
+            "tooltip": "#mainmenu/showModesInfo/tooltip",
+            "width": "300@sf/@pf"
+          }
+        }
+      ]
+    }
+  ]
+}

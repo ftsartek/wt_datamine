@@ -1,0 +1,180 @@
+{
+  "bomb": [
+    {
+      "mass": 49.76
+    },
+    {
+      "explosiveType": "sks"
+    },
+    {
+      "explosiveMass": 26.35
+    },
+    {
+      "bombType": "he_bomb"
+    },
+    {
+      "bombName": "fab50_43"
+    },
+    {
+      "caliber": 0.219
+    },
+    {
+      "length": 0.936
+    },
+    {
+      "distFromCmToStab": 0.3
+    },
+    {
+      "dragCx": 0.02
+    },
+    {
+      "useDelayExplosion": false
+    },
+    {
+      "sound": "weapon.bomb_std"
+    },
+    {
+      "sound": "weapon.bomb_mid"
+    },
+    {
+      "explosionFx": "explosion_thermite_fireball"
+    },
+    {
+      "explosionPatchRadius": 12.0
+    },
+    {
+      "fxGroundDust": "dust_ground_explosions_wave_dirt_small"
+    },
+    {
+      "fxGrassDust": "dust_ground_explosions_wave_dirt_small"
+    },
+    {
+      "fxSandDust": "dust_ground_explosions_wave_sand_small"
+    },
+    {
+      "fxSnowDust": "dust_ground_explosions_wave_snow_small"
+    },
+    {
+      "fxConcreteDust": "dust_ground_explosions_wave_concrete_small"
+    },
+    {
+      "fxWaterShockWave": "dust_waterwave_big"
+    },
+    {
+      "iconType": "ptb"
+    },
+    {
+      "DamageParts": {
+        "body": {
+          "armorClass": "tank_structural_steel",
+          "armorThickness": 15.0,
+          "explosionArmorQuality": 1.0,
+          "hp": 100.0,
+          "shatterArmorQuality": 1.0
+        }
+      }
+    },
+    {
+      "DamageEffects": {
+        "part": [
+          {
+            "name": "body"
+          },
+          {
+            "onHit": {
+              "expl": 1.0,
+              "shellState": "inFlight"
+            }
+          },
+          {
+            "onHit": {
+              "break": 0.8,
+              "damage": 3.0,
+              "damageType": "generic",
+              "expl": 0.2,
+              "fHitCritical": true,
+              "shellState": "onUnit"
+            }
+          },
+          {
+            "onHit": {
+              "break": 0.5,
+              "damage": 30.0,
+              "damageType": "generic",
+              "expl": 0.5,
+              "fHitCritical": true,
+              "shellState": "onUnit"
+            }
+          },
+          {
+            "onHit": {
+              "break": 0.2,
+              "damage": 50.0,
+              "damageType": "explosion",
+              "expl": 0.8,
+              "fHitCritical": true,
+              "shellState": "onUnit"
+            }
+          },
+          {
+            "onHit": {
+              "damage": 100.0,
+              "damageType": "cumulative",
+              "expl": 1.0,
+              "fHitCritical": true,
+              "shellState": "onUnit"
+            }
+          },
+          {
+            "onKill": {
+              "destruction": 1.0,
+              "shellState": "inFlight"
+            }
+          },
+          {
+            "onKill": {
+              "expl": 1.0,
+              "fHitCritical": true,
+              "shellState": "onUnit"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "splash": {
+        "damage": 6200.0,
+        "damageType": "napalm",
+        "innerRadius": 3.0,
+        "outerRadius": 7.0,
+        "penetration": 18.0
+      }
+    },
+    {
+      "fireDamage": {
+        "burnFxSize": 12.0,
+        "burnFxType": "explosion_thermite_firespot",
+        "damage": 10.0,
+        "damageType": "napalm",
+        "emitterCount": 3,
+        "emitterDispersion": 0.7,
+        "fxType": "explosion_thermite_wrackages",
+        "lifeTime": 30.0,
+        "maxFlightDistance": 12.0,
+        "maxFlightTime": 4.0,
+        "maxRise": 4.0,
+        "penetration": 10.0,
+        "radius": 7.0,
+        "scorchDuration": 10.0,
+        "scorchMarginSize": 1.0,
+        "scorchStrength": 1.0,
+        "velocityMult": 3.5
+      }
+    }
+  ],
+  "bombGun": true,
+  "mesh": "su_zab_50fp_1942",
+  "preset_cost": 20,
+  "shotFreq": 10.0,
+  "sound": "weapon.bombgun"
+}
