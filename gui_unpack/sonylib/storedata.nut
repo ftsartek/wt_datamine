@@ -1,1 +1,0 @@
-return require($"storeDataV2.nut")

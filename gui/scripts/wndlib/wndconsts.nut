@@ -1,6 +1,0 @@
-enum RCLICK_MENU_ORIENT {
-  LEFT,
-  RIGHT
-}
-
-return { RCLICK_MENU_ORIENT }

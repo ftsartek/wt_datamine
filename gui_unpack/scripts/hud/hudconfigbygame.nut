@@ -1,8 +1,0 @@
-//checked for plus_string
-from "%scripts/dagui_library.nut" import *
-
-let hudTankMovementStatesVisible = Watched({})
-
-return {
-  hudTankMovementStatesVisible = hudTankMovementStatesVisible
-}
