@@ -1,0 +1,1293 @@
+{
+  "airfields": [
+    []
+  ],
+  "areas": [
+    []
+  ],
+  "bin_dump_file": [
+    ""
+  ],
+  "dialogs": [
+    []
+  ],
+  "effects": [
+    []
+  ],
+  "imports": [
+    []
+  ],
+  "mission_objectives": [
+    {
+      "isCategory": [
+        true
+      ],
+      "is_enabled": [
+        true
+      ]
+    }
+  ],
+  "mission_settings": [
+    {
+      "mission": [
+        {
+          "environment": [
+            "Day"
+          ],
+          "level": [
+            "levels/water.bin"
+          ],
+          "optionalTakeOff": [
+            false
+          ],
+          "restoreType": [
+            "attempts"
+          ],
+          "type": [
+            "domination"
+          ],
+          "weather": [
+            "clear"
+          ]
+        }
+      ],
+      "player": [
+        {
+          "army": [
+            1
+          ]
+        }
+      ],
+      "player_teamB": [
+        {
+          "army": [
+            2
+          ]
+        }
+      ]
+    }
+  ],
+  "objLayers": [
+    {
+      "layer": [
+        {
+          "enabled": [
+            true
+          ]
+        },
+        {
+          "enabled": [
+            true
+          ]
+        },
+        {
+          "enabled": [
+            true
+          ]
+        },
+        {
+          "enabled": [
+            true
+          ]
+        }
+      ]
+    }
+  ],
+  "selected_tag": [
+    ""
+  ],
+  "triggers": [
+    {
+      "defence_a_init": [
+        {
+          "actions": [
+            {
+              "triggerEnable": [
+                {
+                  "target": [
+                    "t1_no_attackers_false",
+                    "t1_no_attackers_timer_renewable"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            {
+              "missionNamePostfix": [
+                {
+                  "postfix": [
+                    "_DBttlA"
+                  ]
+                },
+                {
+                  "postfix": [
+                    "_CnvA"
+                  ]
+                },
+                {
+                  "postfix": [
+                    "_BDA"
+                  ]
+                },
+                {
+                  "postfix": [
+                    "_deepdefa"
+                  ]
+                },
+                {
+                  "postfix": [
+                    "_aadefa"
+                  ]
+                }
+              ]
+            }
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "initMission": [
+                []
+              ]
+            }
+          ],
+          "is_enabled": [
+            true
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ANY"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ],
+      "defence_b_init": [
+        {
+          "actions": [
+            {
+              "triggerEnable": [
+                {
+                  "target": [
+                    "t2_no_attackers_false",
+                    "t2_no_attackers_timer_renewable"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            {
+              "missionNamePostfix": [
+                {
+                  "postfix": [
+                    "_DBttlB"
+                  ]
+                },
+                {
+                  "postfix": [
+                    "_CnvB"
+                  ]
+                },
+                {
+                  "postfix": [
+                    "_BDB"
+                  ]
+                },
+                {
+                  "postfix": [
+                    "_deepdefb"
+                  ]
+                },
+                {
+                  "postfix": [
+                    "_aadefb"
+                  ]
+                }
+              ]
+            }
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "initMission": [
+                []
+              ]
+            }
+          ],
+          "is_enabled": [
+            true
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ANY"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ],
+      "isCategory": [
+        true
+      ],
+      "is_enabled": [
+        true
+      ],
+      "t1_no_attackers_false": [
+        {
+          "actions": [
+            {
+              "playHint": [
+                {
+                  "action": [
+                    "hide"
+                  ],
+                  "hintType": [
+                    "standard"
+                  ],
+                  "isOverFade": [
+                    false
+                  ],
+                  "name": [
+                    "hints/no_attackers_so_mission_end"
+                  ],
+                  "object_var_comp_op": [
+                    "equal"
+                  ],
+                  "object_var_name": [
+                    ""
+                  ],
+                  "object_var_value": [
+                    0
+                  ],
+                  "priority": [
+                    0
+                  ],
+                  "shouldFadeOut": [
+                    false
+                  ],
+                  "target_marking": [
+                    0
+                  ],
+                  "time": [
+                    -1.0
+                  ]
+                }
+              ],
+              "triggerDisable": [
+                {
+                  "target": [
+                    "t1_no_attackers_timer_renewable",
+                    "t1_no_attackers_timer_accumulative"
+                  ]
+                }
+              ],
+              "triggerEnable": [
+                {
+                  "target": [
+                    "t1_no_attackers_timer_enable"
+                  ]
+                }
+              ],
+              "varSetInt": [
+                {
+                  "value": [
+                    60
+                  ],
+                  "var": [
+                    "no_attackers_timer_renewable"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            {
+              "unitWhenCountMatches": [
+                {
+                  "func": [
+                    "notLess"
+                  ],
+                  "object": [
+                    "t2_players_squad"
+                  ],
+                  "object_marking": [
+                    0
+                  ],
+                  "object_type": [
+                    "isActive"
+                  ],
+                  "object_var_comp_op": [
+                    "equal"
+                  ],
+                  "object_var_name": [
+                    ""
+                  ],
+                  "object_var_value": [
+                    0
+                  ],
+                  "value": [
+                    1
+                  ]
+                }
+              ]
+            }
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "periodicEvent": [
+                {
+                  "time": [
+                    1.0
+                  ]
+                }
+              ]
+            }
+          ],
+          "is_enabled": [
+            false
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ],
+      "t1_no_attackers_mission_end": [
+        {
+          "actions": [
+            {
+              "gameMPChangeScore": [
+                {
+                  "team": [
+                    "B"
+                  ],
+                  "value": [
+                    -33
+                  ],
+                  "valueSystem": [
+                    "percentage"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            []
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "periodicEvent": [
+                {
+                  "time": [
+                    0.33
+                  ]
+                }
+              ]
+            }
+          ],
+          "is_enabled": [
+            false
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                true
+              ]
+            }
+          ]
+        }
+      ],
+      "t1_no_attackers_timer_accumulative": [
+        {
+          "actions": [
+            {
+              "playHint": [
+                {
+                  "action": [
+                    "show"
+                  ],
+                  "hintType": [
+                    "standard"
+                  ],
+                  "isOverFade": [
+                    false
+                  ],
+                  "name": [
+                    "hints/no_attackers_so_mission_end"
+                  ],
+                  "object_var_comp_op": [
+                    "equal"
+                  ],
+                  "object_var_name": [
+                    ""
+                  ],
+                  "object_var_value": [
+                    0
+                  ],
+                  "priority": [
+                    0
+                  ],
+                  "shouldFadeOut": [
+                    false
+                  ],
+                  "target_marking": [
+                    0
+                  ],
+                  "time": [
+                    -1.0
+                  ],
+                  "var_name": [
+                    "no_attackers_timer_accumulative"
+                  ]
+                }
+              ],
+              "varModify": [
+                {
+                  "operator": [
+                    "add"
+                  ],
+                  "value": [
+                    -1.0
+                  ],
+                  "var": [
+                    "no_attackers_timer_accumulative"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            {
+              "varCompareInt": [
+                {
+                  "comparasion_func": [
+                    "notLess"
+                  ],
+                  "value": [
+                    1
+                  ],
+                  "var_value": [
+                    "no_attackers_timer_accumulative"
+                  ]
+                }
+              ]
+            }
+          ],
+          "else_actions": [
+            {
+              "playHint": [
+                {
+                  "action": [
+                    "hide"
+                  ],
+                  "hintType": [
+                    "standard"
+                  ],
+                  "isOverFade": [
+                    false
+                  ],
+                  "name": [
+                    "hints/no_attackers_so_mission_end"
+                  ],
+                  "object_var_comp_op": [
+                    "equal"
+                  ],
+                  "object_var_name": [
+                    ""
+                  ],
+                  "object_var_value": [
+                    0
+                  ],
+                  "priority": [
+                    0
+                  ],
+                  "shouldFadeOut": [
+                    false
+                  ],
+                  "target_marking": [
+                    0
+                  ],
+                  "time": [
+                    -1.0
+                  ]
+                }
+              ],
+              "triggerEnable": [
+                {
+                  "target": [
+                    "t1_no_attackers_mission_end"
+                  ]
+                }
+              ]
+            }
+          ],
+          "events": [
+            {
+              "periodicEvent": [
+                {
+                  "time": [
+                    1.0
+                  ]
+                }
+              ]
+            }
+          ],
+          "is_enabled": [
+            false
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                true
+              ]
+            }
+          ]
+        }
+      ],
+      "t1_no_attackers_timer_enable": [
+        {
+          "actions": [
+            {
+              "triggerEnable": [
+                {
+                  "target": [
+                    "t1_no_attackers_timer_renewable",
+                    "t1_no_attackers_false"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            {
+              "unitWhenCountMatches": [
+                {
+                  "func": [
+                    "less"
+                  ],
+                  "object": [
+                    "t2_players_squad"
+                  ],
+                  "object_marking": [
+                    0
+                  ],
+                  "object_type": [
+                    "isActive"
+                  ],
+                  "object_var_comp_op": [
+                    "equal"
+                  ],
+                  "object_var_name": [
+                    ""
+                  ],
+                  "object_var_value": [
+                    0
+                  ],
+                  "value": [
+                    1
+                  ]
+                }
+              ]
+            }
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "periodicEvent": [
+                {
+                  "time": [
+                    1.0
+                  ]
+                }
+              ]
+            }
+          ],
+          "is_enabled": [
+            false
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ANY"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ],
+      "t1_no_attackers_timer_renewable": [
+        {
+          "actions": [
+            {
+              "varModify": [
+                {
+                  "operator": [
+                    "add"
+                  ],
+                  "value": [
+                    -1.0
+                  ],
+                  "var": [
+                    "no_attackers_timer_renewable"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            {
+              "varCompareInt": [
+                {
+                  "comparasion_func": [
+                    "more"
+                  ],
+                  "value": [
+                    0
+                  ],
+                  "var_value": [
+                    "no_attackers_timer_renewable"
+                  ]
+                }
+              ]
+            }
+          ],
+          "else_actions": [
+            {
+              "triggerEnable": [
+                {
+                  "target": [
+                    "t1_no_attackers_timer_accumulative"
+                  ]
+                }
+              ]
+            }
+          ],
+          "events": [
+            {
+              "periodicEvent": [
+                {
+                  "time": [
+                    1.0
+                  ]
+                }
+              ]
+            }
+          ],
+          "is_enabled": [
+            false
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                true
+              ]
+            }
+          ]
+        }
+      ],
+      "t2_no_attackers_false": [
+        {
+          "actions": [
+            {
+              "playHint": [
+                {
+                  "action": [
+                    "hide"
+                  ],
+                  "hintType": [
+                    "standard"
+                  ],
+                  "isOverFade": [
+                    false
+                  ],
+                  "name": [
+                    "hints/no_attackers_so_mission_end"
+                  ],
+                  "object_var_comp_op": [
+                    "equal"
+                  ],
+                  "object_var_name": [
+                    ""
+                  ],
+                  "object_var_value": [
+                    0
+                  ],
+                  "priority": [
+                    0
+                  ],
+                  "shouldFadeOut": [
+                    false
+                  ],
+                  "target_marking": [
+                    0
+                  ],
+                  "time": [
+                    -1.0
+                  ]
+                }
+              ],
+              "triggerDisable": [
+                {
+                  "target": [
+                    "t2_no_attackers_timer_renewable",
+                    "t2_no_attackers_timer_accumulative"
+                  ]
+                }
+              ],
+              "triggerEnable": [
+                {
+                  "target": [
+                    "t2_no_attackers_timer_enable"
+                  ]
+                }
+              ],
+              "varSetInt": [
+                {
+                  "value": [
+                    60
+                  ],
+                  "var": [
+                    "no_attackers_timer_renewable"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            {
+              "unitWhenCountMatches": [
+                {
+                  "func": [
+                    "notLess"
+                  ],
+                  "object": [
+                    "t1_players_squad"
+                  ],
+                  "object_marking": [
+                    0
+                  ],
+                  "object_type": [
+                    "isActive"
+                  ],
+                  "object_var_comp_op": [
+                    "equal"
+                  ],
+                  "object_var_name": [
+                    ""
+                  ],
+                  "object_var_value": [
+                    0
+                  ],
+                  "value": [
+                    1
+                  ]
+                }
+              ]
+            }
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "periodicEvent": [
+                {
+                  "time": [
+                    1.0
+                  ]
+                }
+              ]
+            }
+          ],
+          "is_enabled": [
+            false
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ],
+      "t2_no_attackers_mission_end": [
+        {
+          "actions": [
+            {
+              "gameMPChangeScore": [
+                {
+                  "team": [
+                    "A"
+                  ],
+                  "value": [
+                    -33
+                  ],
+                  "valueSystem": [
+                    "percentage"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            []
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "periodicEvent": [
+                {
+                  "time": [
+                    0.33
+                  ]
+                }
+              ]
+            }
+          ],
+          "is_enabled": [
+            false
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                true
+              ]
+            }
+          ]
+        }
+      ],
+      "t2_no_attackers_timer_accumulative": [
+        {
+          "actions": [
+            {
+              "playHint": [
+                {
+                  "action": [
+                    "show"
+                  ],
+                  "hintType": [
+                    "standard"
+                  ],
+                  "isOverFade": [
+                    false
+                  ],
+                  "name": [
+                    "hints/no_attackers_so_mission_end"
+                  ],
+                  "object_var_comp_op": [
+                    "equal"
+                  ],
+                  "object_var_name": [
+                    ""
+                  ],
+                  "object_var_value": [
+                    0
+                  ],
+                  "priority": [
+                    0
+                  ],
+                  "shouldFadeOut": [
+                    false
+                  ],
+                  "target_marking": [
+                    0
+                  ],
+                  "time": [
+                    -1.0
+                  ],
+                  "var_name": [
+                    "no_attackers_timer_accumulative"
+                  ]
+                }
+              ],
+              "varModify": [
+                {
+                  "operator": [
+                    "add"
+                  ],
+                  "value": [
+                    -1.0
+                  ],
+                  "var": [
+                    "no_attackers_timer_accumulative"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            {
+              "varCompareInt": [
+                {
+                  "comparasion_func": [
+                    "notLess"
+                  ],
+                  "value": [
+                    1
+                  ],
+                  "var_value": [
+                    "no_attackers_timer_accumulative"
+                  ]
+                }
+              ]
+            }
+          ],
+          "else_actions": [
+            {
+              "playHint": [
+                {
+                  "action": [
+                    "hide"
+                  ],
+                  "hintType": [
+                    "standard"
+                  ],
+                  "isOverFade": [
+                    false
+                  ],
+                  "name": [
+                    "hints/no_attackers_so_mission_end"
+                  ],
+                  "object_var_comp_op": [
+                    "equal"
+                  ],
+                  "object_var_name": [
+                    ""
+                  ],
+                  "object_var_value": [
+                    0
+                  ],
+                  "priority": [
+                    0
+                  ],
+                  "shouldFadeOut": [
+                    false
+                  ],
+                  "target_marking": [
+                    0
+                  ],
+                  "time": [
+                    -1.0
+                  ]
+                }
+              ],
+              "triggerEnable": [
+                {
+                  "target": [
+                    "t2_no_attackers_mission_end"
+                  ]
+                }
+              ]
+            }
+          ],
+          "events": [
+            {
+              "periodicEvent": [
+                {
+                  "time": [
+                    1.0
+                  ]
+                }
+              ]
+            }
+          ],
+          "is_enabled": [
+            false
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                true
+              ]
+            }
+          ]
+        }
+      ],
+      "t2_no_attackers_timer_enable": [
+        {
+          "actions": [
+            {
+              "triggerEnable": [
+                {
+                  "target": [
+                    "t2_no_attackers_timer_renewable",
+                    "t2_no_attackers_false"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            {
+              "unitWhenCountMatches": [
+                {
+                  "func": [
+                    "less"
+                  ],
+                  "object": [
+                    "t1_players_squad"
+                  ],
+                  "object_marking": [
+                    0
+                  ],
+                  "object_type": [
+                    "isActive"
+                  ],
+                  "object_var_comp_op": [
+                    "equal"
+                  ],
+                  "object_var_name": [
+                    ""
+                  ],
+                  "object_var_value": [
+                    0
+                  ],
+                  "value": [
+                    1
+                  ]
+                }
+              ]
+            }
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "periodicEvent": [
+                {
+                  "time": [
+                    1.0
+                  ]
+                }
+              ]
+            }
+          ],
+          "is_enabled": [
+            false
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ANY"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ],
+      "t2_no_attackers_timer_renewable": [
+        {
+          "actions": [
+            {
+              "varModify": [
+                {
+                  "operator": [
+                    "add"
+                  ],
+                  "value": [
+                    -1.0
+                  ],
+                  "var": [
+                    "no_attackers_timer_renewable"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            {
+              "varCompareInt": [
+                {
+                  "comparasion_func": [
+                    "more"
+                  ],
+                  "value": [
+                    0
+                  ],
+                  "var_value": [
+                    "no_attackers_timer_renewable"
+                  ]
+                }
+              ]
+            }
+          ],
+          "else_actions": [
+            {
+              "triggerEnable": [
+                {
+                  "target": [
+                    "t2_no_attackers_timer_accumulative"
+                  ]
+                }
+              ]
+            }
+          ],
+          "events": [
+            {
+              "periodicEvent": [
+                {
+                  "time": [
+                    1.0
+                  ]
+                }
+              ]
+            }
+          ],
+          "is_enabled": [
+            false
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                true
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "units": [
+    []
+  ],
+  "variables": [
+    {
+      "no_attackers_timer_accumulative": [
+        60
+      ],
+      "no_attackers_timer_renewable": [
+        60
+      ]
+    }
+  ],
+  "wayPoints": [
+    []
+  ]
+}

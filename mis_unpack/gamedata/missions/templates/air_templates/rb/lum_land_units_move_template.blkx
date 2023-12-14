@@ -1,0 +1,3177 @@
+{
+  "airfields": [
+    []
+  ],
+  "areas": [
+    []
+  ],
+  "bin_dump_file": [
+    ""
+  ],
+  "dialogs": [
+    []
+  ],
+  "effects": [
+    []
+  ],
+  "imports": [
+    []
+  ],
+  "mission_objectives": [
+    {
+      "isCategory": [
+        true
+      ],
+      "is_enabled": [
+        true
+      ]
+    }
+  ],
+  "mission_settings": [
+    {
+      "mission": [
+        {
+          "allowEmptyTeams": [
+            false
+          ],
+          "allowedUnitTypes": [
+            {
+              "isAirplanesAllowed": [
+                true
+              ],
+              "isHelicoptersAllowed": [
+                false
+              ],
+              "isShipsAllowed": [
+                false
+              ],
+              "isTanksAllowed": [
+                false
+              ]
+            }
+          ],
+          "country_allies": [
+            "usa"
+          ],
+          "country_axis": [
+            "germany"
+          ],
+          "deathPenaltyMul": [
+            0.0
+          ],
+          "environment": [
+            "Day"
+          ],
+          "level": [
+            "levels/ruhr.bin"
+          ],
+          "locDesc": [
+            "missions/_BfD_norespawn/desc"
+          ],
+          "locName": [
+            "missions/ruhr_BfD_norespawn"
+          ],
+          "optionalTakeOff": [
+            false
+          ],
+          "restoreType": [
+            "attempts"
+          ],
+          "scoreLimit": [
+            2900
+          ],
+          "timeLimit": [
+            25
+          ],
+          "type": [
+            "domination"
+          ],
+          "weather": [
+            "clear"
+          ]
+        }
+      ],
+      "player": [
+        {
+          "army": [
+            1
+          ]
+        }
+      ],
+      "player_teamB": [
+        {
+          "army": [
+            2
+          ]
+        }
+      ]
+    }
+  ],
+  "objLayers": [
+    {
+      "layer": [
+        {
+          "enabled": [
+            true
+          ]
+        },
+        {
+          "enabled": [
+            true
+          ]
+        },
+        {
+          "enabled": [
+            true
+          ]
+        },
+        {
+          "enabled": [
+            true
+          ]
+        },
+        {
+          "enabled": [
+            false
+          ]
+        }
+      ]
+    }
+  ],
+  "selected_tag": [
+    ""
+  ],
+  "triggers": [
+    {
+      "isCategory": [
+        true
+      ],
+      "is_enabled": [
+        true
+      ],
+      "lum_start": [
+        {
+          "actions": [
+            {
+              "comment": [
+                {
+                  "value": [
+                    "resetting lum_state"
+                  ]
+                },
+                {
+                  "value": [
+                    "putting all units to sleep"
+                  ]
+                },
+                {
+                  "value": [
+                    "starting spawns rotation"
+                  ]
+                }
+              ],
+              "triggerEnable": [
+                {
+                  "target": [
+                    "lum_t1_spawn_start",
+                    "lum_t2_spawn_start"
+                  ]
+                }
+              ],
+              "unitMark": [
+                {
+                  "target": [
+                    "all_road_units_squad"
+                  ],
+                  "target_marking": [
+                    10
+                  ]
+                }
+              ],
+              "unitPutToSleep": [
+                {
+                  "target": [
+                    "all_road_units_squad"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            []
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "initMission": [
+                []
+              ]
+            }
+          ],
+          "is_enabled": [
+            true
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ],
+      "spawn_routine": [
+        {
+          "isCategory": [
+            true
+          ],
+          "is_enabled": [
+            true
+          ],
+          "lum_t1_spawn_fill_names": [
+            {
+              "actions": [
+                {
+                  "comment": [
+                    {
+                      "value": [
+                        "creating road names"
+                      ]
+                    },
+                    {
+                      "value": [
+                        "creating road names"
+                      ]
+                    },
+                    {
+                      "value": [
+                        "creating road names"
+                      ]
+                    },
+                    {
+                      "value": [
+                        "checking entities"
+                      ]
+                    }
+                  ],
+                  "triggerEnable": [
+                    {
+                      "target": [
+                        "lum_t1_check_objects_01",
+                        "lum_t1_check_objects_02",
+                        "lum_t1_check_objects_03"
+                      ]
+                    }
+                  ],
+                  "varSetString": [
+                    {
+                      "value": [
+                        "t1_road_01"
+                      ],
+                      "var": [
+                        "lum_t1_road_01_name"
+                      ]
+                    },
+                    {
+                      "value": [
+                        "t1_road_01_spawn"
+                      ],
+                      "var": [
+                        "lum_t1_spawn_01_name"
+                      ]
+                    },
+                    {
+                      "value": [
+                        "t1_road_01_squad"
+                      ],
+                      "var": [
+                        "lum_t1_squad_01_name"
+                      ]
+                    },
+                    {
+                      "value": [
+                        "t1_road_02"
+                      ],
+                      "var": [
+                        "lum_t1_road_02_name"
+                      ]
+                    },
+                    {
+                      "value": [
+                        "t1_road_02_spawn"
+                      ],
+                      "var": [
+                        "lum_t1_spawn_02_name"
+                      ]
+                    },
+                    {
+                      "value": [
+                        "t1_road_02_squad"
+                      ],
+                      "var": [
+                        "lum_t1_squad_02_name"
+                      ]
+                    },
+                    {
+                      "value": [
+                        "t1_road_03"
+                      ],
+                      "var": [
+                        "lum_t1_road_03_name"
+                      ]
+                    },
+                    {
+                      "value": [
+                        "t1_road_03_spawn"
+                      ],
+                      "var": [
+                        "lum_t1_spawn_03_name"
+                      ]
+                    },
+                    {
+                      "value": [
+                        "t1_road_03_squad"
+                      ],
+                      "var": [
+                        "lum_t1_squad_03_name"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "comments": [
+                ""
+              ],
+              "conditions": [
+                []
+              ],
+              "else_actions": [
+                []
+              ],
+              "events": [
+                {
+                  "periodicEvent": [
+                    {
+                      "time": [
+                        1.0
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "is_enabled": [
+                false
+              ],
+              "props": [
+                {
+                  "actionsType": [
+                    "PERFORM_ONE_BY_ONE"
+                  ],
+                  "conditionsType": [
+                    "ALL"
+                  ],
+                  "enableAfterComplete": [
+                    false
+                  ]
+                }
+              ]
+            }
+          ],
+          "lum_t1_spawn_start": [
+            {
+              "actions": [
+                {
+                  "comment": [
+                    {
+                      "value": [
+                        ""
+                      ]
+                    }
+                  ],
+                  "triggerEnable": [
+                    {
+                      "target": [
+                        "lum_t1_spawn_fill_names"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "comments": [
+                ""
+              ],
+              "conditions": [
+                []
+              ],
+              "else_actions": [
+                []
+              ],
+              "events": [
+                {
+                  "periodicEvent": [
+                    {
+                      "time": [
+                        1.0
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "is_enabled": [
+                false
+              ],
+              "props": [
+                {
+                  "actionsType": [
+                    "PERFORM_ONE_BY_ONE"
+                  ],
+                  "conditionsType": [
+                    "ALL"
+                  ],
+                  "enableAfterComplete": [
+                    false
+                  ]
+                }
+              ]
+            }
+          ],
+          "lum_t2_spawn_fill_names": [
+            {
+              "actions": [
+                {
+                  "comment": [
+                    {
+                      "value": [
+                        "creating road names"
+                      ]
+                    },
+                    {
+                      "value": [
+                        "creating road names"
+                      ]
+                    },
+                    {
+                      "value": [
+                        "creating road names"
+                      ]
+                    },
+                    {
+                      "value": [
+                        "checking entities"
+                      ]
+                    }
+                  ],
+                  "triggerEnable": [
+                    {
+                      "target": [
+                        "lum_t2_check_objects_01",
+                        "lum_t2_check_objects_02",
+                        "lum_t2_check_objects_03"
+                      ]
+                    }
+                  ],
+                  "varSetString": [
+                    {
+                      "value": [
+                        "t2_road_01"
+                      ],
+                      "var": [
+                        "lum_t2_road_01_name"
+                      ]
+                    },
+                    {
+                      "value": [
+                        "t2_road_01_spawn"
+                      ],
+                      "var": [
+                        "lum_t2_spawn_01_name"
+                      ]
+                    },
+                    {
+                      "value": [
+                        "t2_road_01_squad"
+                      ],
+                      "var": [
+                        "lum_t2_squad_01_name"
+                      ]
+                    },
+                    {
+                      "value": [
+                        "t2_road_02"
+                      ],
+                      "var": [
+                        "lum_t2_road_02_name"
+                      ]
+                    },
+                    {
+                      "value": [
+                        "t2_road_02_spawn"
+                      ],
+                      "var": [
+                        "lum_t2_spawn_02_name"
+                      ]
+                    },
+                    {
+                      "value": [
+                        "t2_road_02_squad"
+                      ],
+                      "var": [
+                        "lum_t2_squad_02_name"
+                      ]
+                    },
+                    {
+                      "value": [
+                        "t2_road_03"
+                      ],
+                      "var": [
+                        "lum_t2_road_03_name"
+                      ]
+                    },
+                    {
+                      "value": [
+                        "t2_road_03_spawn"
+                      ],
+                      "var": [
+                        "lum_t2_spawn_03_name"
+                      ]
+                    },
+                    {
+                      "value": [
+                        "t2_road_03_squad"
+                      ],
+                      "var": [
+                        "lum_t2_squad_03_name"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "comments": [
+                ""
+              ],
+              "conditions": [
+                []
+              ],
+              "else_actions": [
+                []
+              ],
+              "events": [
+                {
+                  "periodicEvent": [
+                    {
+                      "time": [
+                        1.0
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "is_enabled": [
+                false
+              ],
+              "props": [
+                {
+                  "actionsType": [
+                    "PERFORM_ONE_BY_ONE"
+                  ],
+                  "conditionsType": [
+                    "ALL"
+                  ],
+                  "enableAfterComplete": [
+                    false
+                  ]
+                }
+              ]
+            }
+          ],
+          "lum_t2_spawn_start": [
+            {
+              "actions": [
+                {
+                  "comment": [
+                    {
+                      "value": [
+                        ""
+                      ]
+                    }
+                  ],
+                  "triggerEnable": [
+                    {
+                      "target": [
+                        "lum_t2_spawn_fill_names"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "comments": [
+                ""
+              ],
+              "conditions": [
+                []
+              ],
+              "else_actions": [
+                []
+              ],
+              "events": [
+                {
+                  "periodicEvent": [
+                    {
+                      "time": [
+                        1.0
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "is_enabled": [
+                false
+              ],
+              "props": [
+                {
+                  "actionsType": [
+                    "PERFORM_ONE_BY_ONE"
+                  ],
+                  "conditionsType": [
+                    "ALL"
+                  ],
+                  "enableAfterComplete": [
+                    false
+                  ]
+                }
+              ]
+            }
+          ],
+          "road_01": [
+            {
+              "isCategory": [
+                true
+              ],
+              "is_enabled": [
+                true
+              ],
+              "lum_t1_check_objects_01": [
+                {
+                  "actions": [
+                    {
+                      "comment": [
+                        {
+                          "value": [
+                            "all is ok"
+                          ]
+                        }
+                      ],
+                      "triggerEnable": [
+                        {
+                          "target": [
+                            "lum_t1_unit_rotator_01"
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "comments": [
+                    ""
+                  ],
+                  "conditions": [
+                    {
+                      "objectExists": [
+                        {
+                          "target": [
+                            "@lum_t1_spawn_01_name"
+                          ],
+                          "type": [
+                            "area"
+                          ]
+                        },
+                        {
+                          "target": [
+                            "@lum_t1_squad_01_name"
+                          ],
+                          "type": [
+                            "squad"
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "else_actions": [
+                    {
+                      "comment": [
+                        {
+                          "value": [
+                            "objects dosn't exist. disabling_trigger"
+                          ]
+                        }
+                      ],
+                      "triggerDisable": [
+                        {
+                          "target": [
+                            "lum_t1_check_objects_01"
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "events": [
+                    {
+                      "periodicEvent": [
+                        {
+                          "time": [
+                            1.0
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "is_enabled": [
+                    false
+                  ],
+                  "props": [
+                    {
+                      "actionsType": [
+                        "PERFORM_ONE_BY_ONE"
+                      ],
+                      "conditionsType": [
+                        "ALL"
+                      ],
+                      "enableAfterComplete": [
+                        false
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "lum_t1_unit_rotator_01": [
+                {
+                  "actions": [
+                    {
+                      "comment": [
+                        {
+                          "value": [
+                            "there is units for spawn"
+                          ]
+                        },
+                        {
+                          "value": [
+                            "spawning_unit"
+                          ]
+                        },
+                        {
+                          "value": [
+                            "setting road for spawned unit"
+                          ]
+                        },
+                        {
+                          "value": [
+                            ""
+                          ]
+                        },
+                        {
+                          "value": [
+                            ""
+                          ]
+                        }
+                      ],
+                      "triggerEnable": [
+                        {
+                          "target": [
+                            "lum_t1_check_objects_01"
+                          ]
+                        }
+                      ],
+                      "unitGetRandomNameFromSquad": [
+                        {
+                          "check_objects": [
+                            "any"
+                          ],
+                          "object_marking": [
+                            10
+                          ],
+                          "object_type": [
+                            "isDelayed"
+                          ],
+                          "squad": [
+                            "@lum_t1_squad_01_name"
+                          ],
+                          "string_var": [
+                            "lum_t1_unit_01_to_spawn"
+                          ]
+                        }
+                      ],
+                      "unitRespawn": [
+                        {
+                          "delay": [
+                            0.0
+                          ],
+                          "object": [
+                            "@lum_t1_unit_01_to_spawn"
+                          ],
+                          "object_type": [
+                            "isDelayed"
+                          ],
+                          "object_var_comp_op": [
+                            "equal"
+                          ],
+                          "object_var_name": [
+                            "lum_state"
+                          ],
+                          "object_var_value": [
+                            0
+                          ],
+                          "offset": [
+                            [0.0,0.0,0.0]
+                          ],
+                          "randomObjectsCount": [
+                            1
+                          ],
+                          "resetFormation": [
+                            true
+                          ],
+                          "target": [
+                            "@lum_t1_spawn_01_name"
+                          ]
+                        }
+                      ],
+                      "unitSetRoute": [
+                        {
+                          "object": [
+                            "@lum_t1_unit_01_to_spawn"
+                          ],
+                          "object_var_comp_op": [
+                            "equal"
+                          ],
+                          "object_var_name": [
+                            ""
+                          ],
+                          "route": [
+                            "@lum_t1_road_01_name"
+                          ],
+                          "teleportToStart": [
+                            false
+                          ]
+                        }
+                      ],
+                      "wait": [
+                        {
+                          "time": [
+                            3.0
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "comments": [
+                    ""
+                  ],
+                  "conditions": [
+                    {
+                      "unitWhenCountMatches": [
+                        {
+                          "func": [
+                            "more"
+                          ],
+                          "object": [
+                            "@lum_t1_squad_01_name"
+                          ],
+                          "object_marking": [
+                            10
+                          ],
+                          "object_type": [
+                            "isDelayed"
+                          ],
+                          "object_var_comp_op": [
+                            "equal"
+                          ],
+                          "object_var_name": [
+                            "lum_state"
+                          ],
+                          "value": [
+                            0
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "else_actions": [
+                    {
+                      "comment": [
+                        {
+                          "value": [
+                            "all units has been spawned. disabling trigger"
+                          ]
+                        }
+                      ],
+                      "triggerDisable": [
+                        {
+                          "target": [
+                            "lum_t1_unit_rotator_01"
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "events": [
+                    {
+                      "periodicEvent": [
+                        {
+                          "time": [
+                            1.0
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "is_enabled": [
+                    false
+                  ],
+                  "props": [
+                    {
+                      "actionsType": [
+                        "PERFORM_ONE_BY_ONE"
+                      ],
+                      "conditionsType": [
+                        "ALL"
+                      ],
+                      "enableAfterComplete": [
+                        false
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "lum_t2_check_objects_01": [
+                {
+                  "actions": [
+                    {
+                      "comment": [
+                        {
+                          "value": [
+                            "all is ok"
+                          ]
+                        }
+                      ],
+                      "triggerEnable": [
+                        {
+                          "target": [
+                            "lum_t2_unit_rotator_01"
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "comments": [
+                    ""
+                  ],
+                  "conditions": [
+                    {
+                      "objectExists": [
+                        {
+                          "target": [
+                            "@lum_t2_spawn_01_name"
+                          ],
+                          "type": [
+                            "area"
+                          ]
+                        },
+                        {
+                          "target": [
+                            "@lum_t2_squad_01_name"
+                          ],
+                          "type": [
+                            "squad"
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "else_actions": [
+                    {
+                      "comment": [
+                        {
+                          "value": [
+                            "objects dosn't exist. disabling_trigger"
+                          ]
+                        }
+                      ],
+                      "triggerDisable": [
+                        {
+                          "target": [
+                            "lum_t2_check_objects_01"
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "events": [
+                    {
+                      "periodicEvent": [
+                        {
+                          "time": [
+                            1.0
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "is_enabled": [
+                    false
+                  ],
+                  "props": [
+                    {
+                      "actionsType": [
+                        "PERFORM_ONE_BY_ONE"
+                      ],
+                      "conditionsType": [
+                        "ALL"
+                      ],
+                      "enableAfterComplete": [
+                        false
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "lum_t2_unit_rotator_01": [
+                {
+                  "actions": [
+                    {
+                      "comment": [
+                        {
+                          "value": [
+                            "there is units for spawn"
+                          ]
+                        },
+                        {
+                          "value": [
+                            "spawning_unit"
+                          ]
+                        },
+                        {
+                          "value": [
+                            "setting road for spawned unit"
+                          ]
+                        },
+                        {
+                          "value": [
+                            ""
+                          ]
+                        },
+                        {
+                          "value": [
+                            ""
+                          ]
+                        }
+                      ],
+                      "triggerEnable": [
+                        {
+                          "target": [
+                            "lum_t2_check_objects_01"
+                          ]
+                        }
+                      ],
+                      "unitGetRandomNameFromSquad": [
+                        {
+                          "check_objects": [
+                            "any"
+                          ],
+                          "object_marking": [
+                            10
+                          ],
+                          "object_type": [
+                            "isDelayed"
+                          ],
+                          "squad": [
+                            "@lum_t2_squad_01_name"
+                          ],
+                          "string_var": [
+                            "lum_t2_unit_01_to_spawn"
+                          ]
+                        }
+                      ],
+                      "unitRespawn": [
+                        {
+                          "delay": [
+                            0.0
+                          ],
+                          "object": [
+                            "@lum_t2_unit_01_to_spawn"
+                          ],
+                          "object_type": [
+                            "isDelayed"
+                          ],
+                          "object_var_comp_op": [
+                            "equal"
+                          ],
+                          "object_var_name": [
+                            "lum_state"
+                          ],
+                          "object_var_value": [
+                            0
+                          ],
+                          "offset": [
+                            [0.0,0.0,0.0]
+                          ],
+                          "randomObjectsCount": [
+                            1
+                          ],
+                          "resetFormation": [
+                            true
+                          ],
+                          "target": [
+                            "@lum_t2_spawn_01_name"
+                          ]
+                        }
+                      ],
+                      "unitSetRoute": [
+                        {
+                          "object": [
+                            "@lum_t2_unit_01_to_spawn"
+                          ],
+                          "object_var_comp_op": [
+                            "equal"
+                          ],
+                          "object_var_name": [
+                            ""
+                          ],
+                          "route": [
+                            "@lum_t2_road_01_name"
+                          ],
+                          "teleportToStart": [
+                            false
+                          ]
+                        }
+                      ],
+                      "wait": [
+                        {
+                          "time": [
+                            3.0
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "comments": [
+                    ""
+                  ],
+                  "conditions": [
+                    {
+                      "unitWhenCountMatches": [
+                        {
+                          "func": [
+                            "more"
+                          ],
+                          "object": [
+                            "@lum_t2_squad_01_name"
+                          ],
+                          "object_marking": [
+                            10
+                          ],
+                          "object_type": [
+                            "isDelayed"
+                          ],
+                          "object_var_comp_op": [
+                            "equal"
+                          ],
+                          "object_var_name": [
+                            "lum_state"
+                          ],
+                          "value": [
+                            0
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "else_actions": [
+                    {
+                      "comment": [
+                        {
+                          "value": [
+                            "all units has been spawned. disabling trigger"
+                          ]
+                        }
+                      ],
+                      "triggerDisable": [
+                        {
+                          "target": [
+                            "lum_t2_unit_rotator_01"
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "events": [
+                    {
+                      "periodicEvent": [
+                        {
+                          "time": [
+                            1.0
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "is_enabled": [
+                    false
+                  ],
+                  "props": [
+                    {
+                      "actionsType": [
+                        "PERFORM_ONE_BY_ONE"
+                      ],
+                      "conditionsType": [
+                        "ALL"
+                      ],
+                      "enableAfterComplete": [
+                        false
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "road_02": [
+            {
+              "isCategory": [
+                true
+              ],
+              "is_enabled": [
+                true
+              ],
+              "lum_t1_check_objects_02": [
+                {
+                  "actions": [
+                    {
+                      "comment": [
+                        {
+                          "value": [
+                            "all is ok"
+                          ]
+                        }
+                      ],
+                      "triggerEnable": [
+                        {
+                          "target": [
+                            "lum_t1_unit_rotator_02"
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "comments": [
+                    ""
+                  ],
+                  "conditions": [
+                    {
+                      "objectExists": [
+                        {
+                          "target": [
+                            "@lum_t1_spawn_02_name"
+                          ],
+                          "type": [
+                            "area"
+                          ]
+                        },
+                        {
+                          "target": [
+                            "@lum_t1_squad_02_name"
+                          ],
+                          "type": [
+                            "squad"
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "else_actions": [
+                    {
+                      "comment": [
+                        {
+                          "value": [
+                            "objects dosn't exist. disabling_trigger"
+                          ]
+                        }
+                      ],
+                      "triggerDisable": [
+                        {
+                          "target": [
+                            "lum_t1_check_objects_02"
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "events": [
+                    {
+                      "periodicEvent": [
+                        {
+                          "time": [
+                            1.0
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "is_enabled": [
+                    false
+                  ],
+                  "props": [
+                    {
+                      "actionsType": [
+                        "PERFORM_ONE_BY_ONE"
+                      ],
+                      "conditionsType": [
+                        "ALL"
+                      ],
+                      "enableAfterComplete": [
+                        false
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "lum_t1_unit_rotator_02": [
+                {
+                  "actions": [
+                    {
+                      "comment": [
+                        {
+                          "value": [
+                            "there is units for spawn"
+                          ]
+                        },
+                        {
+                          "value": [
+                            "spawning_unit"
+                          ]
+                        },
+                        {
+                          "value": [
+                            "setting road for spawned unit"
+                          ]
+                        },
+                        {
+                          "value": [
+                            ""
+                          ]
+                        },
+                        {
+                          "value": [
+                            ""
+                          ]
+                        }
+                      ],
+                      "triggerEnable": [
+                        {
+                          "target": [
+                            "lum_t1_check_objects_02"
+                          ]
+                        }
+                      ],
+                      "unitGetRandomNameFromSquad": [
+                        {
+                          "check_objects": [
+                            "any"
+                          ],
+                          "object_marking": [
+                            10
+                          ],
+                          "object_type": [
+                            "isDelayed"
+                          ],
+                          "squad": [
+                            "@lum_t1_squad_02_name"
+                          ],
+                          "string_var": [
+                            "lum_t1_unit_02_to_spawn"
+                          ]
+                        }
+                      ],
+                      "unitRespawn": [
+                        {
+                          "delay": [
+                            0.0
+                          ],
+                          "object": [
+                            "@lum_t1_unit_02_to_spawn"
+                          ],
+                          "object_type": [
+                            "isDelayed"
+                          ],
+                          "object_var_comp_op": [
+                            "equal"
+                          ],
+                          "object_var_name": [
+                            "lum_state"
+                          ],
+                          "object_var_value": [
+                            0
+                          ],
+                          "offset": [
+                            [0.0,0.0,0.0]
+                          ],
+                          "randomObjectsCount": [
+                            1
+                          ],
+                          "resetFormation": [
+                            true
+                          ],
+                          "target": [
+                            "@lum_t1_spawn_02_name"
+                          ]
+                        }
+                      ],
+                      "unitSetRoute": [
+                        {
+                          "object": [
+                            "@lum_t1_unit_02_to_spawn"
+                          ],
+                          "object_var_comp_op": [
+                            "equal"
+                          ],
+                          "object_var_name": [
+                            ""
+                          ],
+                          "route": [
+                            "@lum_t1_road_02_name"
+                          ],
+                          "teleportToStart": [
+                            false
+                          ]
+                        }
+                      ],
+                      "wait": [
+                        {
+                          "time": [
+                            3.0
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "comments": [
+                    ""
+                  ],
+                  "conditions": [
+                    {
+                      "unitWhenCountMatches": [
+                        {
+                          "func": [
+                            "more"
+                          ],
+                          "object": [
+                            "@lum_t1_squad_02_name"
+                          ],
+                          "object_marking": [
+                            10
+                          ],
+                          "object_type": [
+                            "isDelayed"
+                          ],
+                          "object_var_comp_op": [
+                            "equal"
+                          ],
+                          "object_var_name": [
+                            "lum_state"
+                          ],
+                          "value": [
+                            0
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "else_actions": [
+                    {
+                      "comment": [
+                        {
+                          "value": [
+                            "all units has been spawned. disabling trigger"
+                          ]
+                        }
+                      ],
+                      "triggerDisable": [
+                        {
+                          "target": [
+                            "lum_t1_unit_rotator_02"
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "events": [
+                    {
+                      "periodicEvent": [
+                        {
+                          "time": [
+                            1.0
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "is_enabled": [
+                    false
+                  ],
+                  "props": [
+                    {
+                      "actionsType": [
+                        "PERFORM_ONE_BY_ONE"
+                      ],
+                      "conditionsType": [
+                        "ALL"
+                      ],
+                      "enableAfterComplete": [
+                        false
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "lum_t2_check_objects_02": [
+                {
+                  "actions": [
+                    {
+                      "comment": [
+                        {
+                          "value": [
+                            "all is ok"
+                          ]
+                        }
+                      ],
+                      "triggerEnable": [
+                        {
+                          "target": [
+                            "lum_t2_unit_rotator_02"
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "comments": [
+                    ""
+                  ],
+                  "conditions": [
+                    {
+                      "objectExists": [
+                        {
+                          "target": [
+                            "@lum_t2_spawn_02_name"
+                          ],
+                          "type": [
+                            "area"
+                          ]
+                        },
+                        {
+                          "target": [
+                            "@lum_t2_squad_02_name"
+                          ],
+                          "type": [
+                            "squad"
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "else_actions": [
+                    {
+                      "comment": [
+                        {
+                          "value": [
+                            "objects dosn't exist. disabling_trigger"
+                          ]
+                        }
+                      ],
+                      "triggerDisable": [
+                        {
+                          "target": [
+                            "lum_t2_check_objects_02"
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "events": [
+                    {
+                      "periodicEvent": [
+                        {
+                          "time": [
+                            1.0
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "is_enabled": [
+                    false
+                  ],
+                  "props": [
+                    {
+                      "actionsType": [
+                        "PERFORM_ONE_BY_ONE"
+                      ],
+                      "conditionsType": [
+                        "ALL"
+                      ],
+                      "enableAfterComplete": [
+                        false
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "lum_t2_unit_rotator_02": [
+                {
+                  "actions": [
+                    {
+                      "comment": [
+                        {
+                          "value": [
+                            "there is units for spawn"
+                          ]
+                        },
+                        {
+                          "value": [
+                            "spawning_unit"
+                          ]
+                        },
+                        {
+                          "value": [
+                            "setting road for spawned unit"
+                          ]
+                        },
+                        {
+                          "value": [
+                            ""
+                          ]
+                        },
+                        {
+                          "value": [
+                            ""
+                          ]
+                        }
+                      ],
+                      "triggerEnable": [
+                        {
+                          "target": [
+                            "lum_t2_check_objects_02"
+                          ]
+                        }
+                      ],
+                      "unitGetRandomNameFromSquad": [
+                        {
+                          "check_objects": [
+                            "any"
+                          ],
+                          "object_marking": [
+                            10
+                          ],
+                          "object_type": [
+                            "isDelayed"
+                          ],
+                          "squad": [
+                            "@lum_t2_squad_02_name"
+                          ],
+                          "string_var": [
+                            "lum_t2_unit_02_to_spawn"
+                          ]
+                        }
+                      ],
+                      "unitRespawn": [
+                        {
+                          "delay": [
+                            0.0
+                          ],
+                          "object": [
+                            "@lum_t2_unit_02_to_spawn"
+                          ],
+                          "object_type": [
+                            "isDelayed"
+                          ],
+                          "object_var_comp_op": [
+                            "equal"
+                          ],
+                          "object_var_name": [
+                            "lum_state"
+                          ],
+                          "object_var_value": [
+                            0
+                          ],
+                          "offset": [
+                            [0.0,0.0,0.0]
+                          ],
+                          "randomObjectsCount": [
+                            1
+                          ],
+                          "resetFormation": [
+                            true
+                          ],
+                          "target": [
+                            "@lum_t2_spawn_02_name"
+                          ]
+                        }
+                      ],
+                      "unitSetRoute": [
+                        {
+                          "object": [
+                            "@lum_t2_unit_02_to_spawn"
+                          ],
+                          "object_var_comp_op": [
+                            "equal"
+                          ],
+                          "object_var_name": [
+                            ""
+                          ],
+                          "route": [
+                            "@lum_t2_road_02_name"
+                          ],
+                          "teleportToStart": [
+                            false
+                          ],
+                          "useForTriggerFiltered": [
+                            true
+                          ]
+                        }
+                      ],
+                      "wait": [
+                        {
+                          "time": [
+                            3.0
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "comments": [
+                    ""
+                  ],
+                  "conditions": [
+                    {
+                      "unitWhenCountMatches": [
+                        {
+                          "func": [
+                            "more"
+                          ],
+                          "object": [
+                            "@lum_t2_squad_02_name"
+                          ],
+                          "object_marking": [
+                            10
+                          ],
+                          "object_type": [
+                            "isDelayed"
+                          ],
+                          "object_var_comp_op": [
+                            "equal"
+                          ],
+                          "object_var_name": [
+                            "lum_state"
+                          ],
+                          "value": [
+                            0
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "else_actions": [
+                    {
+                      "comment": [
+                        {
+                          "value": [
+                            "all units has been spawned. disabling trigger"
+                          ]
+                        }
+                      ],
+                      "triggerDisable": [
+                        {
+                          "target": [
+                            "lum_t2_unit_rotator_02"
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "events": [
+                    {
+                      "periodicEvent": [
+                        {
+                          "time": [
+                            1.0
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "is_enabled": [
+                    false
+                  ],
+                  "props": [
+                    {
+                      "actionsType": [
+                        "PERFORM_ONE_BY_ONE"
+                      ],
+                      "conditionsType": [
+                        "ALL"
+                      ],
+                      "enableAfterComplete": [
+                        false
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "road_03": [
+            {
+              "isCategory": [
+                true
+              ],
+              "is_enabled": [
+                true
+              ],
+              "lum_t1_check_objects_03": [
+                {
+                  "actions": [
+                    {
+                      "comment": [
+                        {
+                          "value": [
+                            "all is ok"
+                          ]
+                        }
+                      ],
+                      "triggerEnable": [
+                        {
+                          "target": [
+                            "lum_t1_unit_rotator_03"
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "comments": [
+                    ""
+                  ],
+                  "conditions": [
+                    {
+                      "objectExists": [
+                        {
+                          "target": [
+                            "@lum_t1_spawn_03_name"
+                          ],
+                          "type": [
+                            "area"
+                          ]
+                        },
+                        {
+                          "target": [
+                            "@lum_t1_squad_03_name"
+                          ],
+                          "type": [
+                            "squad"
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "else_actions": [
+                    {
+                      "comment": [
+                        {
+                          "value": [
+                            "objects dosn't exist. disabling_trigger"
+                          ]
+                        }
+                      ],
+                      "triggerDisable": [
+                        {
+                          "target": [
+                            "lum_t1_check_objects_03"
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "events": [
+                    {
+                      "periodicEvent": [
+                        {
+                          "time": [
+                            1.0
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "is_enabled": [
+                    false
+                  ],
+                  "props": [
+                    {
+                      "actionsType": [
+                        "PERFORM_ONE_BY_ONE"
+                      ],
+                      "conditionsType": [
+                        "ALL"
+                      ],
+                      "enableAfterComplete": [
+                        false
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "lum_t1_unit_rotator_03": [
+                {
+                  "actions": [
+                    {
+                      "comment": [
+                        {
+                          "value": [
+                            "there is units for spawn"
+                          ]
+                        },
+                        {
+                          "value": [
+                            "spawning_unit"
+                          ]
+                        },
+                        {
+                          "value": [
+                            "setting road for spawned unit"
+                          ]
+                        },
+                        {
+                          "value": [
+                            ""
+                          ]
+                        },
+                        {
+                          "value": [
+                            ""
+                          ]
+                        }
+                      ],
+                      "triggerEnable": [
+                        {
+                          "target": [
+                            "lum_t1_check_objects_03"
+                          ]
+                        }
+                      ],
+                      "unitGetRandomNameFromSquad": [
+                        {
+                          "check_objects": [
+                            "any"
+                          ],
+                          "object_marking": [
+                            10
+                          ],
+                          "object_type": [
+                            "isDelayed"
+                          ],
+                          "squad": [
+                            "@lum_t1_squad_03_name"
+                          ],
+                          "string_var": [
+                            "lum_t1_unit_03_to_spawn"
+                          ]
+                        }
+                      ],
+                      "unitRespawn": [
+                        {
+                          "delay": [
+                            0.0
+                          ],
+                          "object": [
+                            "@lum_t1_unit_03_to_spawn"
+                          ],
+                          "object_type": [
+                            "isDelayed"
+                          ],
+                          "object_var_comp_op": [
+                            "equal"
+                          ],
+                          "object_var_name": [
+                            "lum_state"
+                          ],
+                          "object_var_value": [
+                            0
+                          ],
+                          "offset": [
+                            [0.0,0.0,0.0]
+                          ],
+                          "randomObjectsCount": [
+                            1
+                          ],
+                          "resetFormation": [
+                            true
+                          ],
+                          "target": [
+                            "@lum_t1_spawn_03_name"
+                          ]
+                        }
+                      ],
+                      "unitSetRoute": [
+                        {
+                          "object": [
+                            "@lum_t1_unit_03_to_spawn"
+                          ],
+                          "object_var_comp_op": [
+                            "equal"
+                          ],
+                          "object_var_name": [
+                            ""
+                          ],
+                          "route": [
+                            "@lum_t1_road_03_name"
+                          ],
+                          "teleportToStart": [
+                            false
+                          ]
+                        }
+                      ],
+                      "wait": [
+                        {
+                          "time": [
+                            3.0
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "comments": [
+                    ""
+                  ],
+                  "conditions": [
+                    {
+                      "unitWhenCountMatches": [
+                        {
+                          "func": [
+                            "more"
+                          ],
+                          "object": [
+                            "@lum_t1_squad_03_name"
+                          ],
+                          "object_marking": [
+                            10
+                          ],
+                          "object_type": [
+                            "isDelayed"
+                          ],
+                          "object_var_comp_op": [
+                            "equal"
+                          ],
+                          "object_var_name": [
+                            "lum_state"
+                          ],
+                          "value": [
+                            0
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "else_actions": [
+                    {
+                      "comment": [
+                        {
+                          "value": [
+                            "all units has been spawned. disabling trigger"
+                          ]
+                        }
+                      ],
+                      "triggerDisable": [
+                        {
+                          "target": [
+                            "lum_t1_unit_rotator_03"
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "events": [
+                    {
+                      "periodicEvent": [
+                        {
+                          "time": [
+                            1.0
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "is_enabled": [
+                    false
+                  ],
+                  "props": [
+                    {
+                      "actionsType": [
+                        "PERFORM_ONE_BY_ONE"
+                      ],
+                      "conditionsType": [
+                        "ALL"
+                      ],
+                      "enableAfterComplete": [
+                        false
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "lum_t2_check_objects_03": [
+                {
+                  "actions": [
+                    {
+                      "comment": [
+                        {
+                          "value": [
+                            "all is ok"
+                          ]
+                        }
+                      ],
+                      "triggerEnable": [
+                        {
+                          "target": [
+                            "lum_t2_unit_rotator_03"
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "comments": [
+                    ""
+                  ],
+                  "conditions": [
+                    {
+                      "objectExists": [
+                        {
+                          "target": [
+                            "@lum_t2_spawn_03_name"
+                          ],
+                          "type": [
+                            "area"
+                          ]
+                        },
+                        {
+                          "target": [
+                            "@lum_t2_squad_03_name"
+                          ],
+                          "type": [
+                            "squad"
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "else_actions": [
+                    {
+                      "comment": [
+                        {
+                          "value": [
+                            "objects dosn't exist. disabling_trigger"
+                          ]
+                        }
+                      ],
+                      "triggerDisable": [
+                        {
+                          "target": [
+                            "lum_t2_check_objects_03"
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "events": [
+                    {
+                      "periodicEvent": [
+                        {
+                          "time": [
+                            1.0
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "is_enabled": [
+                    false
+                  ],
+                  "props": [
+                    {
+                      "actionsType": [
+                        "PERFORM_ONE_BY_ONE"
+                      ],
+                      "conditionsType": [
+                        "ALL"
+                      ],
+                      "enableAfterComplete": [
+                        false
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "lum_t2_unit_rotator_03": [
+                {
+                  "actions": [
+                    {
+                      "comment": [
+                        {
+                          "value": [
+                            "there is units for spawn"
+                          ]
+                        },
+                        {
+                          "value": [
+                            "spawning_unit"
+                          ]
+                        },
+                        {
+                          "value": [
+                            "setting road for spawned unit"
+                          ]
+                        },
+                        {
+                          "value": [
+                            ""
+                          ]
+                        },
+                        {
+                          "value": [
+                            ""
+                          ]
+                        }
+                      ],
+                      "triggerEnable": [
+                        {
+                          "target": [
+                            "lum_t2_check_objects_03"
+                          ]
+                        }
+                      ],
+                      "unitGetRandomNameFromSquad": [
+                        {
+                          "check_objects": [
+                            "any"
+                          ],
+                          "object_marking": [
+                            10
+                          ],
+                          "object_type": [
+                            "isDelayed"
+                          ],
+                          "squad": [
+                            "@lum_t2_squad_03_name"
+                          ],
+                          "string_var": [
+                            "lum_t2_unit_03_to_spawn"
+                          ]
+                        }
+                      ],
+                      "unitRespawn": [
+                        {
+                          "delay": [
+                            0.0
+                          ],
+                          "object": [
+                            "@lum_t2_unit_03_to_spawn"
+                          ],
+                          "object_type": [
+                            "isDelayed"
+                          ],
+                          "object_var_comp_op": [
+                            "equal"
+                          ],
+                          "object_var_name": [
+                            "lum_state"
+                          ],
+                          "object_var_value": [
+                            0
+                          ],
+                          "offset": [
+                            [0.0,0.0,0.0]
+                          ],
+                          "randomObjectsCount": [
+                            1
+                          ],
+                          "resetFormation": [
+                            true
+                          ],
+                          "target": [
+                            "@lum_t2_spawn_03_name"
+                          ]
+                        }
+                      ],
+                      "unitSetRoute": [
+                        {
+                          "object": [
+                            "@lum_t2_unit_03_to_spawn"
+                          ],
+                          "object_var_comp_op": [
+                            "equal"
+                          ],
+                          "object_var_name": [
+                            ""
+                          ],
+                          "route": [
+                            "@lum_t2_road_03_name"
+                          ],
+                          "teleportToStart": [
+                            false
+                          ]
+                        }
+                      ],
+                      "wait": [
+                        {
+                          "time": [
+                            3.0
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "comments": [
+                    ""
+                  ],
+                  "conditions": [
+                    {
+                      "unitWhenCountMatches": [
+                        {
+                          "func": [
+                            "more"
+                          ],
+                          "object": [
+                            "@lum_t2_squad_03_name"
+                          ],
+                          "object_marking": [
+                            10
+                          ],
+                          "object_type": [
+                            "isDelayed"
+                          ],
+                          "object_var_comp_op": [
+                            "equal"
+                          ],
+                          "object_var_name": [
+                            "lum_state"
+                          ],
+                          "value": [
+                            0
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "else_actions": [
+                    {
+                      "comment": [
+                        {
+                          "value": [
+                            "all units has been spawned. disabling trigger"
+                          ]
+                        }
+                      ],
+                      "triggerDisable": [
+                        {
+                          "target": [
+                            "lum_t2_unit_rotator_03"
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "events": [
+                    {
+                      "periodicEvent": [
+                        {
+                          "time": [
+                            1.0
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "is_enabled": [
+                    false
+                  ],
+                  "props": [
+                    {
+                      "actionsType": [
+                        "PERFORM_ONE_BY_ONE"
+                      ],
+                      "conditionsType": [
+                        "ALL"
+                      ],
+                      "enableAfterComplete": [
+                        false
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "road_04": [
+            {
+              "isCategory": [
+                true
+              ],
+              "is_enabled": [
+                true
+              ],
+              "lum_t1_check_objects_04": [
+                {
+                  "actions": [
+                    {
+                      "comment": [
+                        {
+                          "value": [
+                            "all is ok"
+                          ]
+                        }
+                      ],
+                      "triggerEnable": [
+                        {
+                          "target": [
+                            "lum_t1_unit_rotator_04"
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "comments": [
+                    ""
+                  ],
+                  "conditions": [
+                    {
+                      "objectExists": [
+                        {
+                          "target": [
+                            "@lum_t1_spawn_04_name"
+                          ],
+                          "type": [
+                            "area"
+                          ]
+                        },
+                        {
+                          "target": [
+                            "@lum_t1_squad_04_name"
+                          ],
+                          "type": [
+                            "squad"
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "else_actions": [
+                    {
+                      "comment": [
+                        {
+                          "value": [
+                            "objects dosn't exist. disabling_trigger"
+                          ]
+                        }
+                      ],
+                      "triggerDisable": [
+                        {
+                          "target": [
+                            "lum_t1_check_objects_04"
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "events": [
+                    {
+                      "periodicEvent": [
+                        {
+                          "time": [
+                            1.0
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "is_enabled": [
+                    false
+                  ],
+                  "props": [
+                    {
+                      "actionsType": [
+                        "PERFORM_ONE_BY_ONE"
+                      ],
+                      "conditionsType": [
+                        "ALL"
+                      ],
+                      "enableAfterComplete": [
+                        false
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "lum_t1_unit_rotator_04": [
+                {
+                  "actions": [
+                    {
+                      "comment": [
+                        {
+                          "value": [
+                            "there is units for spawn"
+                          ]
+                        },
+                        {
+                          "value": [
+                            "spawning_unit"
+                          ]
+                        },
+                        {
+                          "value": [
+                            "setting road for spawned unit"
+                          ]
+                        },
+                        {
+                          "value": [
+                            ""
+                          ]
+                        },
+                        {
+                          "value": [
+                            ""
+                          ]
+                        }
+                      ],
+                      "triggerEnable": [
+                        {
+                          "target": [
+                            "lum_t1_check_objects_04"
+                          ]
+                        }
+                      ],
+                      "unitGetRandomNameFromSquad": [
+                        {
+                          "check_objects": [
+                            "any"
+                          ],
+                          "object_marking": [
+                            10
+                          ],
+                          "object_type": [
+                            "isDelayed"
+                          ],
+                          "squad": [
+                            "@lum_t1_squad_04_name"
+                          ],
+                          "string_var": [
+                            "lum_t1_unit_04_to_spawn"
+                          ]
+                        }
+                      ],
+                      "unitRespawn": [
+                        {
+                          "delay": [
+                            0.0
+                          ],
+                          "object": [
+                            "@lum_t1_unit_04_to_spawn"
+                          ],
+                          "object_type": [
+                            "isDelayed"
+                          ],
+                          "object_var_comp_op": [
+                            "equal"
+                          ],
+                          "object_var_name": [
+                            "lum_state"
+                          ],
+                          "object_var_value": [
+                            0
+                          ],
+                          "offset": [
+                            [0.0,0.0,0.0]
+                          ],
+                          "randomObjectsCount": [
+                            1
+                          ],
+                          "resetFormation": [
+                            true
+                          ],
+                          "target": [
+                            "@lum_t1_spawn_04_name"
+                          ]
+                        }
+                      ],
+                      "unitSetRoute": [
+                        {
+                          "object": [
+                            "@lum_t1_unit_04_to_spawn"
+                          ],
+                          "object_var_comp_op": [
+                            "equal"
+                          ],
+                          "object_var_name": [
+                            ""
+                          ],
+                          "route": [
+                            "@lum_t1_road_04_name"
+                          ],
+                          "teleportToStart": [
+                            false
+                          ]
+                        }
+                      ],
+                      "wait": [
+                        {
+                          "time": [
+                            3.0
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "comments": [
+                    ""
+                  ],
+                  "conditions": [
+                    {
+                      "unitWhenCountMatches": [
+                        {
+                          "func": [
+                            "more"
+                          ],
+                          "object": [
+                            "@lum_t1_squad_04_name"
+                          ],
+                          "object_marking": [
+                            10
+                          ],
+                          "object_type": [
+                            "isDelayed"
+                          ],
+                          "object_var_comp_op": [
+                            "equal"
+                          ],
+                          "object_var_name": [
+                            "lum_state"
+                          ],
+                          "value": [
+                            0
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "else_actions": [
+                    {
+                      "comment": [
+                        {
+                          "value": [
+                            "all units has been spawned. disabling trigger"
+                          ]
+                        }
+                      ],
+                      "triggerDisable": [
+                        {
+                          "target": [
+                            "lum_t1_unit_rotator_04"
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "events": [
+                    {
+                      "periodicEvent": [
+                        {
+                          "time": [
+                            1.0
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "is_enabled": [
+                    false
+                  ],
+                  "props": [
+                    {
+                      "actionsType": [
+                        "PERFORM_ONE_BY_ONE"
+                      ],
+                      "conditionsType": [
+                        "ALL"
+                      ],
+                      "enableAfterComplete": [
+                        false
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "lum_t2_check_objects_04": [
+                {
+                  "actions": [
+                    {
+                      "comment": [
+                        {
+                          "value": [
+                            "all is ok"
+                          ]
+                        }
+                      ],
+                      "triggerEnable": [
+                        {
+                          "target": [
+                            "lum_t2_unit_rotator_04"
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "comments": [
+                    ""
+                  ],
+                  "conditions": [
+                    {
+                      "objectExists": [
+                        {
+                          "target": [
+                            "@lum_t2_spawn_04_name"
+                          ],
+                          "type": [
+                            "area"
+                          ]
+                        },
+                        {
+                          "target": [
+                            "@lum_t2_squad_04_name"
+                          ],
+                          "type": [
+                            "squad"
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "else_actions": [
+                    {
+                      "comment": [
+                        {
+                          "value": [
+                            "objects dosn't exist. disabling_trigger"
+                          ]
+                        }
+                      ],
+                      "triggerDisable": [
+                        {
+                          "target": [
+                            "lum_t2_check_objects_04"
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "events": [
+                    {
+                      "periodicEvent": [
+                        {
+                          "time": [
+                            1.0
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "is_enabled": [
+                    false
+                  ],
+                  "props": [
+                    {
+                      "actionsType": [
+                        "PERFORM_ONE_BY_ONE"
+                      ],
+                      "conditionsType": [
+                        "ALL"
+                      ],
+                      "enableAfterComplete": [
+                        false
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "lum_t2_unit_rotator_04": [
+                {
+                  "actions": [
+                    {
+                      "comment": [
+                        {
+                          "value": [
+                            "there is units for spawn"
+                          ]
+                        },
+                        {
+                          "value": [
+                            "spawning_unit"
+                          ]
+                        },
+                        {
+                          "value": [
+                            "setting road for spawned unit"
+                          ]
+                        },
+                        {
+                          "value": [
+                            ""
+                          ]
+                        },
+                        {
+                          "value": [
+                            ""
+                          ]
+                        }
+                      ],
+                      "triggerEnable": [
+                        {
+                          "target": [
+                            "lum_t2_check_objects_04"
+                          ]
+                        }
+                      ],
+                      "unitGetRandomNameFromSquad": [
+                        {
+                          "check_objects": [
+                            "any"
+                          ],
+                          "object_marking": [
+                            10
+                          ],
+                          "object_type": [
+                            "isDelayed"
+                          ],
+                          "squad": [
+                            "@lum_t2_squad_04_name"
+                          ],
+                          "string_var": [
+                            "lum_t2_unit_04_to_spawn"
+                          ]
+                        }
+                      ],
+                      "unitRespawn": [
+                        {
+                          "delay": [
+                            0.0
+                          ],
+                          "object": [
+                            "@lum_t2_unit_04_to_spawn"
+                          ],
+                          "object_type": [
+                            "isDelayed"
+                          ],
+                          "object_var_comp_op": [
+                            "equal"
+                          ],
+                          "object_var_name": [
+                            "lum_state"
+                          ],
+                          "object_var_value": [
+                            0
+                          ],
+                          "offset": [
+                            [0.0,0.0,0.0]
+                          ],
+                          "randomObjectsCount": [
+                            1
+                          ],
+                          "resetFormation": [
+                            true
+                          ],
+                          "target": [
+                            "@lum_t2_spawn_04_name"
+                          ]
+                        }
+                      ],
+                      "unitSetRoute": [
+                        {
+                          "object": [
+                            "@lum_t2_unit_04_to_spawn"
+                          ],
+                          "object_var_comp_op": [
+                            "equal"
+                          ],
+                          "object_var_name": [
+                            ""
+                          ],
+                          "route": [
+                            "@lum_t2_road_04_name"
+                          ],
+                          "teleportToStart": [
+                            false
+                          ]
+                        }
+                      ],
+                      "wait": [
+                        {
+                          "time": [
+                            3.0
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "comments": [
+                    ""
+                  ],
+                  "conditions": [
+                    {
+                      "unitWhenCountMatches": [
+                        {
+                          "func": [
+                            "more"
+                          ],
+                          "object": [
+                            "@lum_t2_squad_04_name"
+                          ],
+                          "object_marking": [
+                            10
+                          ],
+                          "object_type": [
+                            "isDelayed"
+                          ],
+                          "object_var_comp_op": [
+                            "equal"
+                          ],
+                          "object_var_name": [
+                            "lum_state"
+                          ],
+                          "value": [
+                            0
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "else_actions": [
+                    {
+                      "comment": [
+                        {
+                          "value": [
+                            "all units has been spawned. disabling trigger"
+                          ]
+                        }
+                      ],
+                      "triggerDisable": [
+                        {
+                          "target": [
+                            "lum_t2_unit_rotator_04"
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "events": [
+                    {
+                      "periodicEvent": [
+                        {
+                          "time": [
+                            1.0
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "is_enabled": [
+                    false
+                  ],
+                  "props": [
+                    {
+                      "actionsType": [
+                        "PERFORM_ONE_BY_ONE"
+                      ],
+                      "conditionsType": [
+                        "ALL"
+                      ],
+                      "enableAfterComplete": [
+                        false
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "units": [
+    []
+  ],
+  "variables": [
+    {
+      "lum_t1_road_01_name": [
+        ""
+      ],
+      "lum_t1_road_02_name": [
+        ""
+      ],
+      "lum_t1_road_03_name": [
+        ""
+      ],
+      "lum_t1_road_04_name": [
+        ""
+      ],
+      "lum_t1_road_05_name": [
+        ""
+      ],
+      "lum_t1_road_06_name": [
+        ""
+      ],
+      "lum_t1_spawn_01_name": [
+        ""
+      ],
+      "lum_t1_spawn_02_name": [
+        ""
+      ],
+      "lum_t1_spawn_03_name": [
+        ""
+      ],
+      "lum_t1_spawn_04_name": [
+        ""
+      ],
+      "lum_t1_spawn_05_name": [
+        ""
+      ],
+      "lum_t1_spawn_06_name": [
+        ""
+      ],
+      "lum_t1_squad_01_name": [
+        ""
+      ],
+      "lum_t1_squad_02_name": [
+        ""
+      ],
+      "lum_t1_squad_03_name": [
+        ""
+      ],
+      "lum_t1_squad_04_name": [
+        ""
+      ],
+      "lum_t1_squad_05_name": [
+        ""
+      ],
+      "lum_t1_squad_06_name": [
+        ""
+      ],
+      "lum_t1_unit_01_to_spawn": [
+        ""
+      ],
+      "lum_t1_unit_02_to_spawn": [
+        ""
+      ],
+      "lum_t1_unit_03_to_spawn": [
+        ""
+      ],
+      "lum_t1_unit_04_to_spawn": [
+        ""
+      ],
+      "lum_t1_unit_05_to_spawn": [
+        ""
+      ],
+      "lum_t1_unit_06_to_spawn": [
+        ""
+      ],
+      "lum_t2_road_01_name": [
+        ""
+      ],
+      "lum_t2_road_02_name": [
+        ""
+      ],
+      "lum_t2_road_03_name": [
+        ""
+      ],
+      "lum_t2_road_04_name": [
+        ""
+      ],
+      "lum_t2_road_05_name": [
+        ""
+      ],
+      "lum_t2_road_06_name": [
+        ""
+      ],
+      "lum_t2_spawn_01_name": [
+        ""
+      ],
+      "lum_t2_spawn_02_name": [
+        ""
+      ],
+      "lum_t2_spawn_03_name": [
+        ""
+      ],
+      "lum_t2_spawn_04_name": [
+        ""
+      ],
+      "lum_t2_spawn_05_name": [
+        ""
+      ],
+      "lum_t2_spawn_06_name": [
+        ""
+      ],
+      "lum_t2_squad_01_name": [
+        ""
+      ],
+      "lum_t2_squad_02_name": [
+        ""
+      ],
+      "lum_t2_squad_03_name": [
+        ""
+      ],
+      "lum_t2_squad_04_name": [
+        ""
+      ],
+      "lum_t2_squad_05_name": [
+        ""
+      ],
+      "lum_t2_squad_06_name": [
+        ""
+      ],
+      "lum_t2_unit_01_to_spawn": [
+        ""
+      ],
+      "lum_t2_unit_02_to_spawn": [
+        ""
+      ],
+      "lum_t2_unit_03_to_spawn": [
+        ""
+      ],
+      "lum_t2_unit_04_to_spawn": [
+        ""
+      ],
+      "lum_t2_unit_05_to_spawn": [
+        ""
+      ],
+      "lum_t2_unit_06_to_spawn": [
+        ""
+      ]
+    }
+  ],
+  "wayPoints": [
+    []
+  ]
+}

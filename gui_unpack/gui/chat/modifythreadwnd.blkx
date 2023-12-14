@@ -1,0 +1,379 @@
+{
+  "root": [
+    {
+      "blur": [
+        []
+      ],
+      "blur_foreground": [
+        []
+      ],
+      "frame": [
+        {
+          "ComboBox": [
+            {
+              "id": [
+                "categories_list"
+              ],
+              "position": [
+                "relative"
+              ],
+              "width": [
+                "pw"
+              ]
+            }
+          ],
+          "EditBox": [
+            {
+              "_on_cancel_edit": [
+                "goBack"
+              ],
+              "id": [
+                "thread_title_editbox"
+              ],
+              "multiline": [
+                "yes"
+              ],
+              "on_change_value": [
+                "onChangeTitle"
+              ],
+              "size": [
+                "pw, 4@buttonHeight"
+              ]
+            }
+          ],
+          "class": [
+            "wndNav"
+          ],
+          "frame_header": [
+            {
+              "Button_close": [
+                []
+              ],
+              "activeText": [
+                {
+                  "caption": [
+                    "yes"
+                  ],
+                  "text": [
+                    "#chat/editThread"
+                  ]
+                }
+              ]
+            }
+          ],
+          "navBar": [
+            {
+              "navMiddle": [
+                {
+                  "Button_text": [
+                    {
+                      "ButtonImg": [
+                        []
+                      ],
+                      "_on_click": [
+                        "onApply"
+                      ],
+                      "btnName": [
+                        "X"
+                      ],
+                      "enable": [
+                        "no"
+                      ],
+                      "id": [
+                        "btn_apply"
+                      ],
+                      "text": [
+                        "#mainmenu/btnApply"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "pos": [
+            "50%pw-50%w, 50%ph-50%h"
+          ],
+          "position": [
+            "absolute"
+          ],
+          "tdiv": [
+            {
+              "id": [
+                "language_block"
+              ],
+              "pos": [
+                "0, 1@blockInterval"
+              ],
+              "position": [
+                "relative"
+              ],
+              "tdiv": [
+                {
+                  "Button_text": [
+                    {
+                      "class": [
+                        "image"
+                      ],
+                      "id": [
+                        "language_btn"
+                      ],
+                      "isColoredImg": [
+                        "yes"
+                      ],
+                      "max-width": [
+                        "pw"
+                      ],
+                      "noMargin": [
+                        "yes"
+                      ],
+                      "noWidth": [
+                        "yes"
+                      ],
+                      "on_click": [
+                        "onLangBtn"
+                      ],
+                      "overflow": [
+                        "hidden"
+                      ],
+                      "position": [
+                        "relative"
+                      ],
+                      "showConsoleImage": [
+                        "no"
+                      ]
+                    }
+                  ],
+                  "width": [
+                    "fw"
+                  ]
+                }
+              ],
+              "textareaNoTab": [
+                {
+                  "text": [
+                    "#profile/language"
+                  ],
+                  "valign": [
+                    "center"
+                  ]
+                },
+                {
+                  "text": [
+                    "#ui/colon"
+                  ],
+                  "valign": [
+                    "center"
+                  ]
+                }
+              ],
+              "width": [
+                "pw"
+              ]
+            },
+            {
+              "CheckBox": [
+                {
+                  "CheckBoxImg": [
+                    []
+                  ],
+                  "id": [
+                    "is_hidden_checkbox"
+                  ],
+                  "on_change_value": [
+                    "onChangeHidden"
+                  ],
+                  "text": [
+                    "#chat/hideThread"
+                  ]
+                },
+                {
+                  "CheckBoxImg": [
+                    []
+                  ],
+                  "id": [
+                    "is_pinned_checkbox"
+                  ],
+                  "on_change_value": [
+                    "onChangePinned"
+                  ],
+                  "pos": [
+                    "1@blockInterval, 0"
+                  ],
+                  "position": [
+                    "relative"
+                  ],
+                  "text": [
+                    "#chat/pinThread"
+                  ]
+                }
+              ],
+              "pos": [
+                "0, 1@blockInterval"
+              ],
+              "position": [
+                "relative"
+              ],
+              "width": [
+                "pw"
+              ]
+            },
+            {
+              "flow": [
+                "h-flow"
+              ],
+              "pos": [
+                "0, 1@blockInterval"
+              ],
+              "position": [
+                "relative"
+              ],
+              "textareaNoTab": [
+                {
+                  "id": [
+                    "thread_time_header"
+                  ],
+                  "text": [
+                    ""
+                  ]
+                },
+                {
+                  "id": [
+                    "new_time_text"
+                  ],
+                  "overlayTextColor": [
+                    "active"
+                  ],
+                  "text": [
+                    " "
+                  ]
+                }
+              ],
+              "width": [
+                "pw"
+              ]
+            },
+            {
+              "Button_text": [
+                {
+                  "_on_click": [
+                    "onMoveChatMenu"
+                  ],
+                  "class": [
+                    "image"
+                  ],
+                  "img": [
+                    {
+                      "background-image": [
+                        "#ui/gameuiskin#btn_modifications.svg"
+                      ]
+                    }
+                  ],
+                  "showConsoleImage": [
+                    "no"
+                  ],
+                  "size": [
+                    "1@buttonHeight, 1@buttonHeight"
+                  ],
+                  "tooltip": [
+                    "#chat/moveThreadToPosition/tooltip"
+                  ]
+                },
+                {
+                  "_on_click": [
+                    "onPinChatMenu"
+                  ],
+                  "class": [
+                    "image"
+                  ],
+                  "img": [
+                    {
+                      "background-image": [
+                        "#ui/gameuiskin#hourglass.svg"
+                      ]
+                    }
+                  ],
+                  "showConsoleImage": [
+                    "no"
+                  ],
+                  "size": [
+                    "1@buttonHeight, 1@buttonHeight"
+                  ],
+                  "tooltip": [
+                    "#chat/pinThreadForTime/tooltip"
+                  ]
+                }
+              ],
+              "EditBox": [
+                {
+                  "char-mask": [
+                    "0123456789:- "
+                  ],
+                  "id": [
+                    "timestamp_editbox"
+                  ],
+                  "margin-top": [
+                    "1@buttonMargin"
+                  ],
+                  "on_cancel_edit": [
+                    "goCancelTimeStamp"
+                  ],
+                  "on_change_value": [
+                    "onChangeTimeStamp"
+                  ],
+                  "text": [
+                    ""
+                  ],
+                  "width": [
+                    "fw"
+                  ]
+                }
+              ],
+              "width": [
+                "pw"
+              ]
+            }
+          ],
+          "textareaNoTab": [
+            {
+              "id": [
+                "created_by_text"
+              ],
+              "text": [
+                ""
+              ]
+            },
+            {
+              "id": [
+                "thread_category_header"
+              ],
+              "pos": [
+                "0, 1@blockInterval"
+              ],
+              "position": [
+                "relative"
+              ],
+              "text": [
+                "#chat/categoryHeader"
+              ]
+            },
+            {
+              "id": [
+                "thread_title_header"
+              ],
+              "pos": [
+                "0, 1@blockInterval"
+              ],
+              "position": [
+                "relative"
+              ]
+            }
+          ],
+          "width": [
+            "0.55@scrn_tgt"
+          ]
+        }
+      ]
+    }
+  ]
+}

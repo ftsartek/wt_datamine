@@ -1,0 +1,213 @@
+{
+  "tdiv": [
+    {
+      "activeText": [
+        {
+          "display": [
+            "hide"
+          ],
+          "hideEmptyText": [
+            "yes"
+          ],
+          "id": [
+            "inQueue-topmenu-text"
+          ],
+          "pos": [
+            "50%pw-50%w, 10*@sf/@pf_outdated"
+          ],
+          "position": [
+            "relative"
+          ],
+          "style": [
+            "color:@userlogColoredText;"
+          ],
+          "text": [
+            "#yn1/waiting_for_game_query",
+            ""
+          ],
+          "wink": [
+            "no"
+          ]
+        },
+        {
+          "hideEmptyText": [
+            "yes"
+          ],
+          "id": [
+            "queue_players_total"
+          ],
+          "pos": [
+            "50%pw-50%w, 10*@sf/@pf_outdated"
+          ],
+          "position": [
+            "relative"
+          ],
+          "smallFont": [
+            "yes"
+          ],
+          "style": [
+            "color:@commonMenuButtonColor;"
+          ],
+          "text": [
+            "",
+            ""
+          ]
+        }
+      ],
+      "flow": [
+        "vertical"
+      ],
+      "id": [
+        "waiting_time"
+      ],
+      "padding": [
+        "10*@sf/@pf_outdated"
+      ],
+      "tdiv": [
+        {
+          "activeText": [
+            {
+              "id": [
+                "countries_header"
+              ],
+              "pos": [
+                "50%pw-50%w, 0"
+              ],
+              "position": [
+                "relative"
+              ],
+              "smallFont": [
+                "yes"
+              ],
+              "text": [
+                ""
+              ],
+              "text-align": [
+                "center"
+              ]
+            }
+          ],
+          "flow": [
+            "vertical"
+          ],
+          "id": [
+            "available_countries"
+          ],
+          "padding-bottom": [
+            "0.01@scrn_tgt"
+          ],
+          "pos": [
+            "50%pw-50%w, 0"
+          ],
+          "position": [
+            "relative"
+          ],
+          "tdiv": [
+            {
+              "id": [
+                "countries_icons"
+              ],
+              "pos": [
+                "50%pw-50%w, 0"
+              ],
+              "position": [
+                "relative"
+              ]
+            }
+          ]
+        },
+        {
+          "centerBlock": [
+            {
+              "activeText": [
+                {
+                  "smallFont": [
+                    "yes"
+                  ],
+                  "style": [
+                    "color:@commonMenuButtonColor;"
+                  ],
+                  "text": [
+                    "#multiplayer/currentWaitTime"
+                  ]
+                }
+              ],
+              "flow": [
+                "vertical"
+              ],
+              "pos": [
+                "50%pw-50%w, 50%ph-50%h"
+              ],
+              "position": [
+                "absolute"
+              ],
+              "textAreaCentered": [
+                {
+                  "class": [
+                    "active"
+                  ],
+                  "id": [
+                    "msgText"
+                  ],
+                  "pos": [
+                    "50%pw-50%w,0"
+                  ],
+                  "position": [
+                    "relative"
+                  ],
+                  "text": [
+                    "00:00:00"
+                  ],
+                  "text-halign": [
+                    "center"
+                  ],
+                  "titleFont": [
+                    "yes"
+                  ]
+                }
+              ]
+            }
+          ],
+          "pos": [
+            "pw/2-w/2, 0"
+          ],
+          "position": [
+            "relative"
+          ],
+          "size": [
+            "180@sf/@pf, 180@sf/@pf"
+          ],
+          "tdiv": [
+            {
+              "id": [
+                "queue_wait_icon_block"
+              ],
+              "position": [
+                "absolute"
+              ],
+              "size": [
+                "pw, ph"
+              ]
+            }
+          ]
+        }
+      ],
+      "width": [
+        "pw"
+      ]
+    }
+  ],
+  "timer": [
+    {
+      "id": [
+        "queue_update_timer"
+      ],
+      "timer_handler_func": [
+        "onUpdate"
+      ],
+      "timer_interval_msec": [
+        "1000"
+      ]
+    }
+  ]
+}

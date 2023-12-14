@@ -1,0 +1,274 @@
+{
+  "tdiv": [
+    {
+      "div": [
+        {
+          "auto-scroll": [
+            "yes"
+          ],
+          "chatLog": [
+            {
+              "id": [
+                "chat_log"
+              ],
+              "on_link_click": [
+                "onChatLinkClick"
+              ],
+              "on_link_rclick": [
+                "onChatLinkRClick"
+              ],
+              "punctuation-exception": [
+                "-.,'\"():/\\@[]=^+"
+              ],
+              "text": [
+                ""
+              ],
+              "width": [
+                "pw"
+              ]
+            }
+          ],
+          "css-hier-invalidate": [
+            "yes"
+          ],
+          "id": [
+            "chat_log_tdiv"
+          ],
+          "overflow-y": [
+            "auto"
+          ],
+          "padding-left": [
+            "@scrollBarSize + 0.5*@scrn_tgt/100.0"
+          ],
+          "position": [
+            "absolute"
+          ],
+          "scroll-align": [
+            "left"
+          ],
+          "size": [
+            "pw + 1@scrollBarSize, ph"
+          ],
+          "sizeWithInput": [
+            "pw + 1@scrollBarSize, ph - @spectatorToolbarBtnSize - 5*@sf/@pf_outdated"
+          ],
+          "sizeWithoutInput": [
+            "pw + 1@scrollBarSize, ph"
+          ]
+        },
+        {
+          "div": [
+            {
+              "display": [
+                "show"
+              ],
+              "hoverButton": [
+                {
+                  "_on_click": [
+                    "onChatIngameRequestActivate"
+                  ],
+                  "chatHint": [
+                    {
+                      "auto-scroll": [
+                        "medium"
+                      ],
+                      "behaviour": [
+                        "BhvHint"
+                      ],
+                      "pos": [
+                        "0, 0.5ph-0.5h"
+                      ],
+                      "position": [
+                        "relative"
+                      ],
+                      "value": [
+                        "chat/help/spectator"
+                      ]
+                    }
+                  ],
+                  "id": [
+                    "btn_activate"
+                  ],
+                  "isTextBtn": [
+                    "yes"
+                  ],
+                  "not-input-transparent": [
+                    "yes"
+                  ],
+                  "overflow": [
+                    "hidden"
+                  ],
+                  "style": [
+                    "margin:0; width:pw;"
+                  ],
+                  "total-input-transparent": [
+                    "yes"
+                  ]
+                }
+              ],
+              "id": [
+                "chat_input_placeholder"
+              ],
+              "position": [
+                "absolute"
+              ],
+              "size": [
+                "pw, ph"
+              ]
+            },
+            {
+              "EditBox": [
+                {
+                  "id": [
+                    "chat_input"
+                  ],
+                  "max-len": [
+                    "250"
+                  ],
+                  "on_activate": [
+                    "onChatEntered"
+                  ],
+                  "on_cancel_edit": [
+                    "onChatCancel"
+                  ],
+                  "on_change_value": [
+                    "onChatChanged"
+                  ],
+                  "style": [
+                    "height:@spectatorToolbarBtnSize;"
+                  ],
+                  "text": [
+                    ""
+                  ],
+                  "width": [
+                    "fw"
+                  ]
+                }
+              ],
+              "display": [
+                "hide"
+              ],
+              "flow": [
+                "horizontal"
+              ],
+              "hoverButton": [
+                {
+                  "_on_click": [
+                    "onChatMode"
+                  ],
+                  "icon": [
+                    {
+                      "background-image": [
+                        "#ui/gameuiskin#player_in_queue"
+                      ],
+                      "id": [
+                        "icon"
+                      ],
+                      "input-transparent": [
+                        "yes"
+                      ]
+                    }
+                  ],
+                  "id": [
+                    "chat_prompt"
+                  ],
+                  "no_text": [
+                    "yes"
+                  ],
+                  "style": [
+                    "margin:0;"
+                  ],
+                  "tooltip": [
+                    "#chat/team"
+                  ]
+                },
+                {
+                  "icon": [
+                    {
+                      "background-image": [
+                        "#ui/gameuiskin#ok"
+                      ]
+                    }
+                  ],
+                  "id": [
+                    "btn_send"
+                  ],
+                  "on_click": [
+                    "onChatIngameRequestEnter"
+                  ],
+                  "style": [
+                    "margin:0;"
+                  ],
+                  "tooltip": [
+                    "#chat/send"
+                  ]
+                },
+                {
+                  "_on_click": [
+                    "onChatIngameRequestCancel"
+                  ],
+                  "icon": [
+                    {
+                      "background-image": [
+                        "#ui/gameuiskin#btn_close.svg"
+                      ]
+                    }
+                  ],
+                  "id": [
+                    "btn_cancel"
+                  ],
+                  "style": [
+                    "margin:0;"
+                  ],
+                  "tooltip": [
+                    "#msgbox/btn_cancel"
+                  ]
+                }
+              ],
+              "id": [
+                "chat_input_back"
+              ],
+              "position": [
+                "absolute"
+              ],
+              "size": [
+                "pw, ph"
+              ]
+            }
+          ],
+          "id": [
+            "chat_input_div"
+          ],
+          "pos": [
+            "0, ph-h"
+          ],
+          "position": [
+            "absolute"
+          ],
+          "size": [
+            "pw, @spectatorToolbarBtnSize"
+          ]
+        }
+      ],
+      "flow": [
+        "vertical"
+      ],
+      "id": [
+        "gamechat"
+      ],
+      "size": [
+        "pw, ph"
+      ]
+    }
+  ],
+  "timer": [
+    {
+      "id": [
+        "chat_update"
+      ],
+      "timer_handler_func": [
+        "onUpdate"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,730 @@
+{
+  "airfields": [
+    []
+  ],
+  "areas": [
+    {
+      "landing_lookAt_point": [
+        {
+          "props": [
+            []
+          ],
+          "tm": [
+            [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [93.3,0.0,28.25]
+            ]
+          ],
+          "type": [
+            "Point"
+          ]
+        }
+      ],
+      "landing_spawn_point": [
+        {
+          "props": [
+            []
+          ],
+          "tm": [
+            [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [-48.3,0.0,-79.05]
+            ]
+          ],
+          "type": [
+            "Point"
+          ]
+        }
+      ]
+    }
+  ],
+  "bin_dump_file": [
+    ""
+  ],
+  "dialogs": [
+    []
+  ],
+  "effects": [
+    []
+  ],
+  "imports": [
+    []
+  ],
+  "mission_objectives": [
+    {
+      "isCategory": [
+        true
+      ],
+      "is_enabled": [
+        true
+      ],
+      "mo_dynamic_landing": [
+        {
+          "comments": [
+            ""
+          ],
+          "is_enabled": [
+            false
+          ],
+          "onFailed": [
+            []
+          ],
+          "onSuccess": [
+            []
+          ],
+          "props": [
+            {
+              "isPrimary": [
+                false
+              ],
+              "scoreConst": [
+                100
+              ],
+              "scoreTime": [
+                400
+              ],
+              "timeLimit": [
+                1800
+              ]
+            }
+          ],
+          "type": [
+            "abstractMissionObjective"
+          ]
+        }
+      ],
+      "mo_dynamic_ship_landing": [
+        {
+          "comments": [
+            ""
+          ],
+          "is_enabled": [
+            false
+          ],
+          "onFailed": [
+            []
+          ],
+          "onSuccess": [
+            []
+          ],
+          "props": [
+            {
+              "isPrimary": [
+                false
+              ],
+              "scoreConst": [
+                100
+              ],
+              "scoreTime": [
+                400
+              ],
+              "timeLimit": [
+                1800
+              ]
+            }
+          ],
+          "type": [
+            "abstractMissionObjective"
+          ]
+        }
+      ]
+    }
+  ],
+  "mission_settings": [
+    {
+      "aiParams": [
+        {
+          "aiEffectivenessViscosity": [
+            90.0
+          ],
+          "effectivenessDistances": [
+            [2500.0,7000.0]
+          ]
+        }
+      ],
+      "atmosphere": [
+        {
+          "pressure": [
+            760.0
+          ],
+          "temperature": [
+            0.0
+          ]
+        }
+      ],
+      "briefing": [
+        {
+          "date_loc": [
+            ""
+          ],
+          "music": [
+            "action_01"
+          ],
+          "objective_loc": [
+            ""
+          ],
+          "part": [
+            {
+              "event": [
+                ""
+              ],
+              "minTime": [
+                0
+              ],
+              "slide": [
+                {
+                  "icon": [
+                    {
+                      "icontype": [
+                        "fighter"
+                      ],
+                      "side": [
+                        "player"
+                      ],
+                      "target": [
+                        "#player.any"
+                      ]
+                    }
+                  ],
+                  "map": [
+                    true
+                  ],
+                  "minTime": [
+                    4
+                  ],
+                  "picture": [
+                    ""
+                  ]
+                }
+              ]
+            }
+          ],
+          "place_loc": [
+            ""
+          ]
+        }
+      ],
+      "cover_points": [
+        []
+      ],
+      "mission": [
+        {
+          "campaign": [
+            "pacific"
+          ],
+          "environment": [
+            "Day"
+          ],
+          "level": [
+            "levels/guadalcanal.bin"
+          ],
+          "missionBriefing": [
+            ""
+          ],
+          "missionDebriefing": [
+            ""
+          ],
+          "name": [
+            "landing"
+          ],
+          "optionalTakeOff": [
+            false
+          ],
+          "restoreType": [
+            "attempts"
+          ],
+          "tags": [
+            []
+          ],
+          "type": [
+            "campaign"
+          ],
+          "weather": [
+            "hazy"
+          ]
+        }
+      ],
+      "player": [
+        {
+          "army": [
+            1
+          ],
+          "wing": [
+            ""
+          ]
+        }
+      ],
+      "player_teamB": [
+        {
+          "army": [
+            2
+          ]
+        }
+      ]
+    }
+  ],
+  "selected_tag": [
+    ""
+  ],
+  "triggers": [
+    {
+      "isCategory": [
+        true
+      ],
+      "is_enabled": [
+        true
+      ],
+      "landing_end": [
+        {
+          "actions": [
+            {
+              "missionDebriefing": [
+                []
+              ],
+              "moSetObjectiveStatus": [
+                {
+                  "status": [
+                    2
+                  ],
+                  "target": [
+                    "mo_dynamic_landing"
+                  ]
+                }
+              ],
+              "wait": [
+                {
+                  "time": [
+                    2.0
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            {
+              "playersWhenOnLZ": [
+                {
+                  "afterRepaired": [
+                    false
+                  ],
+                  "check_objects": [
+                    "any"
+                  ],
+                  "object": [
+                    "#player_sq"
+                  ],
+                  "object_marking": [
+                    0
+                  ],
+                  "object_type": [
+                    "isAlive"
+                  ],
+                  "target": [
+                    ""
+                  ]
+                }
+              ]
+            }
+          ],
+          "events": [
+            {
+              "periodicEvent": [
+                {
+                  "time": [
+                    1.0
+                  ]
+                }
+              ]
+            }
+          ],
+          "is_enabled": [
+            false
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ],
+      "landing_quick_start": [
+        {
+          "actions": [
+            {
+              "missionCompleted": [
+                {
+                  "timer": [
+                    true
+                  ]
+                }
+              ],
+              "moAddMissionObjective": [
+                {
+                  "target": [
+                    "mo_dynamic_landing"
+                  ]
+                }
+              ],
+              "triggerEnable": [
+                {
+                  "target": [
+                    "landing_end"
+                  ]
+                }
+              ],
+              "unitMoveTo": [
+                {
+                  "follow_target": [
+                    false
+                  ],
+                  "lookat": [
+                    "landing_lookAt_point"
+                  ],
+                  "move_type": [
+                    "teleport"
+                  ],
+                  "object": [
+                    "#player_sq"
+                  ],
+                  "shouldKeepFormation": [
+                    true
+                  ],
+                  "target": [
+                    "landing_spawn_point"
+                  ],
+                  "teleportHeightType": [
+                    "target"
+                  ],
+                  "teleportHeightValue": [
+                    0.0
+                  ],
+                  "useUnitHeightForTele": [
+                    false
+                  ],
+                  "velocity": [
+                    250.0
+                  ]
+                }
+              ],
+              "wait": [
+                {
+                  "time": [
+                    2.0
+                  ]
+                },
+                {
+                  "time": [
+                    5.0
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            {
+              "varCompareBool": [
+                {
+                  "comparasion_func": [
+                    "equal"
+                  ],
+                  "value": [
+                    false
+                  ],
+                  "var_value": [
+                    "landing_real"
+                  ]
+                }
+              ]
+            }
+          ],
+          "events": [
+            {
+              "timeExpires": [
+                {
+                  "time": [
+                    0.0
+                  ]
+                }
+              ]
+            }
+          ],
+          "is_enabled": [
+            false
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ],
+      "landing_real_start": [
+        {
+          "actions": [
+            {
+              "moAddMissionObjective": [
+                {
+                  "target": [
+                    "mo_dynamic_landing"
+                  ]
+                }
+              ],
+              "triggerActivate": [
+                {
+                  "activate_type": [
+                    "ignoreConditions"
+                  ],
+                  "after_activation": [
+                    "disable"
+                  ],
+                  "check_trigger_status": [
+                    false
+                  ],
+                  "target": [
+                    "completed_offline"
+                  ]
+                }
+              ],
+              "triggerEnable": [
+                {
+                  "target": [
+                    "landing_end"
+                  ]
+                }
+              ],
+              "wait": [
+                {
+                  "time": [
+                    2.0
+                  ]
+                },
+                {
+                  "time": [
+                    2.0
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            []
+          ],
+          "events": [
+            {
+              "timeExpires": [
+                {
+                  "time": [
+                    0.0
+                  ]
+                }
+              ]
+            }
+          ],
+          "is_enabled": [
+            false
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ],
+      "landing_skip": [
+        {
+          "actions": [
+            {
+              "triggerDisable": [
+                {
+                  "target": [
+                    "landing_start"
+                  ]
+                }
+              ],
+              "triggerEnable": [
+                {
+                  "target": [
+                    "completed_online",
+                    "completed_offline"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            {
+              "varCompareBool": [
+                {
+                  "comparasion_func": [
+                    "equal"
+                  ],
+                  "value": [
+                    true
+                  ],
+                  "var_value": [
+                    "landing_skip"
+                  ]
+                }
+              ]
+            }
+          ],
+          "events": [
+            {
+              "timeExpires": [
+                {
+                  "time": [
+                    0.0
+                  ]
+                }
+              ]
+            }
+          ],
+          "is_enabled": [
+            false
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ],
+      "landing_start": [
+        {
+          "actions": [
+            {
+              "airfieldSetIndication": [
+                {
+                  "set": [
+                    true
+                  ],
+                  "target": [
+                    ""
+                  ]
+                }
+              ],
+              "triggerEnable": [
+                {
+                  "target": [
+                    "landing_skip"
+                  ]
+                },
+                {
+                  "target": [
+                    "landing_real_start"
+                  ]
+                }
+              ],
+              "wait": [
+                {
+                  "time": [
+                    1.0
+                  ]
+                },
+                {
+                  "time": [
+                    2.0
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            []
+          ],
+          "events": [
+            {
+              "timeExpires": [
+                {
+                  "time": [
+                    0.0
+                  ]
+                }
+              ]
+            }
+          ],
+          "is_enabled": [
+            false
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "units": [
+    []
+  ],
+  "variables": [
+    {
+      "landing_real": [
+        false
+      ],
+      "landing_skip": [
+        false
+      ]
+    }
+  ]
+}

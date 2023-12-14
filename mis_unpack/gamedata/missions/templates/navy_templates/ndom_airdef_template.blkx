@@ -1,0 +1,2854 @@
+{
+  "airfields": [
+    []
+  ],
+  "areas": [
+    []
+  ],
+  "bin_dump_file": [
+    ""
+  ],
+  "dialogs": [
+    []
+  ],
+  "effects": [
+    []
+  ],
+  "imports": [
+    []
+  ],
+  "mission_objectives": [
+    {
+      "avn_zone01_airdef_objective": [
+        {
+          "comments": [
+            ""
+          ],
+          "is_enabled": [
+            false
+          ],
+          "onFailed": [
+            []
+          ],
+          "onSuccess": [
+            []
+          ],
+          "props": [
+            {
+              "isPrimary": [
+                true
+              ],
+              "timeLimit": [
+                1800
+              ]
+            }
+          ],
+          "type": [
+            "abstractMissionObjective"
+          ]
+        }
+      ],
+      "avn_zone02_airdef_objective": [
+        {
+          "comments": [
+            ""
+          ],
+          "is_enabled": [
+            false
+          ],
+          "onFailed": [
+            []
+          ],
+          "onSuccess": [
+            []
+          ],
+          "props": [
+            {
+              "isPrimary": [
+                true
+              ],
+              "timeLimit": [
+                1800
+              ]
+            }
+          ],
+          "type": [
+            "abstractMissionObjective"
+          ]
+        }
+      ],
+      "avn_zone03_airdef_objective": [
+        {
+          "comments": [
+            ""
+          ],
+          "is_enabled": [
+            false
+          ],
+          "onFailed": [
+            []
+          ],
+          "onSuccess": [
+            []
+          ],
+          "props": [
+            {
+              "isPrimary": [
+                true
+              ],
+              "timeLimit": [
+                1800
+              ]
+            }
+          ],
+          "type": [
+            "abstractMissionObjective"
+          ]
+        }
+      ],
+      "isCategory": [
+        true
+      ],
+      "is_enabled": [
+        true
+      ]
+    }
+  ],
+  "mission_settings": [
+    {
+      "mission": [
+        {
+          "environment": [
+            "Day"
+          ],
+          "level": [
+            "levels/water.bin"
+          ],
+          "optionalTakeOff": [
+            false
+          ],
+          "restoreType": [
+            "attempts"
+          ],
+          "type": [
+            "campaign"
+          ],
+          "weather": [
+            "hazy"
+          ]
+        }
+      ],
+      "player": [
+        {
+          "army": [
+            1
+          ]
+        }
+      ],
+      "player_teamB": [
+        {
+          "army": [
+            2
+          ]
+        }
+      ],
+      "spectator_points": [
+        []
+      ]
+    }
+  ],
+  "objLayers": [
+    {
+      "layer": [
+        {
+          "enabled": [
+            true
+          ]
+        },
+        {
+          "enabled": [
+            true
+          ]
+        },
+        {
+          "enabled": [
+            true
+          ]
+        },
+        {
+          "enabled": [
+            true
+          ]
+        }
+      ]
+    }
+  ],
+  "selected_tag": [
+    ""
+  ],
+  "triggers": [
+    {
+      "initial": [
+        {
+          "actions": [
+            {
+              "varSetInt": [
+                {
+                  "fromDescriptor": [
+                    "airDefenceOnCZRestoreTime"
+                  ],
+                  "value": [
+                    10
+                  ],
+                  "var": [
+                    "common_airdef_restore_time"
+                  ]
+                },
+                {
+                  "input_var": [
+                    "common_airdef_restore_time"
+                  ],
+                  "value": [
+                    0
+                  ],
+                  "var": [
+                    "zone01_airdef_restore_timer"
+                  ]
+                },
+                {
+                  "input_var": [
+                    "common_airdef_restore_time"
+                  ],
+                  "value": [
+                    0
+                  ],
+                  "var": [
+                    "zone02_airdef_restore_timer"
+                  ]
+                },
+                {
+                  "input_var": [
+                    "common_airdef_restore_time"
+                  ],
+                  "value": [
+                    0
+                  ],
+                  "var": [
+                    "zone03_airdef_restore_timer"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            []
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "initMission": [
+                []
+              ]
+            }
+          ],
+          "is_enabled": [
+            true
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ],
+      "isCategory": [
+        true
+      ],
+      "is_enabled": [
+        true
+      ],
+      "zone_01": [
+        {
+          "isCategory": [
+            true
+          ],
+          "is_enabled": [
+            true
+          ],
+          "zone_01_airdef_can_be_restored": [
+            {
+              "actions": [
+                {
+                  "triggerEnable": [
+                    {
+                      "target": [
+                        "zone_01_airdef_restore_timer"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "comments": [
+                ""
+              ],
+              "conditions": [
+                {
+                  "unitWhenCountMatches": [
+                    {
+                      "func": [
+                        "more"
+                      ],
+                      "object": [
+                        "sq_zone_01_airdef"
+                      ],
+                      "object_marking": [
+                        0
+                      ],
+                      "object_type": [
+                        "isKilled"
+                      ],
+                      "object_var_comp_op": [
+                        "equal"
+                      ],
+                      "object_var_name": [
+                        ""
+                      ],
+                      "object_var_value": [
+                        0
+                      ],
+                      "value": [
+                        0
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "else_actions": [
+                {
+                  "triggerDisable": [
+                    {
+                      "target": [
+                        "zone_01_airdef_restore_timer"
+                      ]
+                    }
+                  ],
+                  "varSetInt": [
+                    {
+                      "input_var": [
+                        "common_airdef_restore_time"
+                      ],
+                      "value": [
+                        0
+                      ],
+                      "var": [
+                        "zone01_airdef_restore_timer"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "periodicEvent": [
+                    {
+                      "time": [
+                        1.0
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "is_enabled": [
+                false
+              ],
+              "props": [
+                {
+                  "actionsType": [
+                    "PERFORM_ONE_BY_ONE"
+                  ],
+                  "conditionsType": [
+                    "ALL"
+                  ],
+                  "enableAfterComplete": [
+                    true
+                  ]
+                }
+              ]
+            }
+          ],
+          "zone_01_airdef_exist": [
+            {
+              "actions": [
+                {
+                  "moAddMissionObjective": [
+                    {
+                      "target": [
+                        "avn_zone01_airdef_objective"
+                      ]
+                    }
+                  ],
+                  "triggerEnable": [
+                    {
+                      "target": [
+                        "zone_01_captured_by_t0",
+                        "zone_01_captured_by_t1",
+                        "zone_01_captured_by_t2",
+                        "zone_01_get_airdef_initial_num"
+                      ]
+                    }
+                  ],
+                  "unitPutToSleep": [
+                    {
+                      "target": [
+                        "sq_zone_01_airdef"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "comments": [
+                ""
+              ],
+              "conditions": [
+                {
+                  "objectExists": [
+                    {
+                      "target": [
+                        "sq_zone_01_airdef"
+                      ],
+                      "type": [
+                        "squad"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "else_actions": [
+                []
+              ],
+              "events": [
+                {
+                  "initMission": [
+                    []
+                  ]
+                }
+              ],
+              "is_enabled": [
+                true
+              ],
+              "props": [
+                {
+                  "actionsType": [
+                    "PERFORM_ONE_BY_ONE"
+                  ],
+                  "conditionsType": [
+                    "ANY"
+                  ],
+                  "enableAfterComplete": [
+                    false
+                  ]
+                }
+              ]
+            }
+          ],
+          "zone_01_airdef_restore_timer": [
+            {
+              "actions": [
+                {
+                  "triggerDisable": [
+                    {
+                      "target": [
+                        "zone_01_airdef_restore_timer"
+                      ]
+                    }
+                  ],
+                  "triggerEnable": [
+                    {
+                      "target": [
+                        "zone_01_airdef_restoring"
+                      ]
+                    }
+                  ],
+                  "varSetInt": [
+                    {
+                      "input_var": [
+                        "common_airdef_restore_time"
+                      ],
+                      "value": [
+                        0
+                      ],
+                      "var": [
+                        "zone01_airdef_restore_timer"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "comments": [
+                ""
+              ],
+              "conditions": [
+                {
+                  "varCompareInt": [
+                    {
+                      "comparasion_func": [
+                        "notMore"
+                      ],
+                      "value": [
+                        0
+                      ],
+                      "var_value": [
+                        "zone01_airdef_restore_timer"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "else_actions": [
+                {
+                  "varModify": [
+                    {
+                      "operator": [
+                        "add"
+                      ],
+                      "value": [
+                        -1.0
+                      ],
+                      "var": [
+                        "zone01_airdef_restore_timer"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "periodicEvent": [
+                    {
+                      "time": [
+                        1.0
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "is_enabled": [
+                false
+              ],
+              "props": [
+                {
+                  "actionsType": [
+                    "PERFORM_ONE_BY_ONE"
+                  ],
+                  "conditionsType": [
+                    "ALL"
+                  ],
+                  "enableAfterComplete": [
+                    true
+                  ]
+                }
+              ]
+            }
+          ],
+          "zone_01_airdef_restoring": [
+            {
+              "actions": [
+                {
+                  "unitRestore": [
+                    {
+                      "fullRestore": [
+                        true
+                      ],
+                      "randomTargetsCount": [
+                        1
+                      ],
+                      "ressurectIfDead": [
+                        true
+                      ],
+                      "target": [
+                        "sq_zone_01_airdef"
+                      ],
+                      "useForTriggerFiltered": [
+                        true
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "comments": [
+                ""
+              ],
+              "conditions": [
+                {
+                  "unitWhenStatus": [
+                    {
+                      "check_objects": [
+                        "any"
+                      ],
+                      "check_period": [
+                        1.0
+                      ],
+                      "object": [
+                        "sq_zone_01_airdef"
+                      ],
+                      "object_marking": [
+                        0
+                      ],
+                      "object_type": [
+                        "isKilled"
+                      ],
+                      "object_var_comp_op": [
+                        "equal"
+                      ],
+                      "object_var_name": [
+                        ""
+                      ],
+                      "object_var_value": [
+                        0
+                      ],
+                      "target_type": [
+                        "isAlive"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "else_actions": [
+                []
+              ],
+              "events": [
+                {
+                  "periodicEvent": [
+                    {
+                      "time": [
+                        1.0
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "is_enabled": [
+                false
+              ],
+              "props": [
+                {
+                  "actionsType": [
+                    "PERFORM_ONE_BY_ONE"
+                  ],
+                  "conditionsType": [
+                    "ALL"
+                  ],
+                  "enableAfterComplete": [
+                    false
+                  ]
+                }
+              ]
+            }
+          ],
+          "zone_01_captured_by_t0": [
+            {
+              "actions": [
+                {
+                  "triggerDisable": [
+                    {
+                      "target": [
+                        "zone_01_airdef_can_be_restored",
+                        "zone_01_airdef_restore_timer",
+                        "zone_01_airdef_restoring"
+                      ]
+                    }
+                  ],
+                  "triggerEnable": [
+                    {
+                      "target": [
+                        "zone_01_captured_by_t1",
+                        "zone_01_captured_by_t2"
+                      ]
+                    }
+                  ],
+                  "unitSetProperties": [
+                    {
+                      "army": [
+                        0
+                      ],
+                      "object": [
+                        "sq_zone_01_airdef"
+                      ],
+                      "object_marking": [
+                        0
+                      ],
+                      "object_var_comp_op": [
+                        "equal"
+                      ],
+                      "object_var_name": [
+                        ""
+                      ],
+                      "object_var_value": [
+                        0
+                      ],
+                      "targetAir": [
+                        false
+                      ],
+                      "targetGnd": [
+                        false
+                      ]
+                    }
+                  ],
+                  "varSetInt": [
+                    {
+                      "input_var": [
+                        "common_airdef_restore_time"
+                      ],
+                      "value": [
+                        0
+                      ],
+                      "var": [
+                        "zone01_airdef_restore_timer"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "comments": [
+                ""
+              ],
+              "conditions": [
+                {
+                  "missionIsZoneCaptured": [
+                    {
+                      "army": [
+                        0
+                      ],
+                      "target": [
+                        "ndom_capture_area_01"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "else_actions": [
+                []
+              ],
+              "events": [
+                {
+                  "periodicEvent": [
+                    {
+                      "time": [
+                        1.0
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "is_enabled": [
+                false
+              ],
+              "props": [
+                {
+                  "actionsType": [
+                    "PERFORM_ONE_BY_ONE"
+                  ],
+                  "conditionsType": [
+                    "ANY"
+                  ],
+                  "enableAfterComplete": [
+                    false
+                  ]
+                }
+              ]
+            }
+          ],
+          "zone_01_captured_by_t1": [
+            {
+              "actions": [
+                {
+                  "triggerEnable": [
+                    {
+                      "target": [
+                        "zone_01_captured_by_t0",
+                        "zone_01_airdef_can_be_restored"
+                      ]
+                    }
+                  ],
+                  "unitRestore": [
+                    {
+                      "fullRestore": [
+                        true
+                      ],
+                      "ressurectIfDead": [
+                        true
+                      ],
+                      "target": [
+                        "sq_zone_01_airdef"
+                      ]
+                    }
+                  ],
+                  "unitSetProperties": [
+                    {
+                      "accuracy": [
+                        0.2
+                      ],
+                      "airEffShootingRate": [
+                        0.2
+                      ],
+                      "army": [
+                        1
+                      ],
+                      "calmDetection": [
+                        true
+                      ],
+                      "fireRandom": [
+                        true
+                      ],
+                      "maxDeviationAngle": [
+                        5.0
+                      ],
+                      "object": [
+                        "sq_zone_01_airdef"
+                      ],
+                      "object_marking": [
+                        0
+                      ],
+                      "object_var_comp_op": [
+                        "equal"
+                      ],
+                      "object_var_name": [
+                        ""
+                      ],
+                      "object_var_value": [
+                        0
+                      ],
+                      "targetAir": [
+                        true
+                      ],
+                      "targetChangeInterval": [
+                        3.0
+                      ],
+                      "targetChangeProb": [
+                        0.33
+                      ],
+                      "targetGnd": [
+                        false
+                      ]
+                    }
+                  ],
+                  "unitWakeUp": [
+                    {
+                      "target": [
+                        "sq_zone_01_airdef"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "comments": [
+                ""
+              ],
+              "conditions": [
+                {
+                  "missionIsZoneCaptured": [
+                    {
+                      "army": [
+                        1
+                      ],
+                      "target": [
+                        "ndom_capture_area_01"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "else_actions": [
+                []
+              ],
+              "events": [
+                {
+                  "periodicEvent": [
+                    {
+                      "time": [
+                        1.0
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "is_enabled": [
+                false
+              ],
+              "props": [
+                {
+                  "actionsType": [
+                    "PERFORM_ONE_BY_ONE"
+                  ],
+                  "conditionsType": [
+                    "ANY"
+                  ],
+                  "enableAfterComplete": [
+                    false
+                  ]
+                }
+              ]
+            }
+          ],
+          "zone_01_captured_by_t2": [
+            {
+              "actions": [
+                {
+                  "triggerEnable": [
+                    {
+                      "target": [
+                        "zone_01_captured_by_t0",
+                        "zone_01_airdef_can_be_restored"
+                      ]
+                    }
+                  ],
+                  "unitRestore": [
+                    {
+                      "fullRestore": [
+                        true
+                      ],
+                      "ressurectIfDead": [
+                        true
+                      ],
+                      "target": [
+                        "sq_zone_01_airdef"
+                      ]
+                    }
+                  ],
+                  "unitSetProperties": [
+                    {
+                      "accuracy": [
+                        0.2
+                      ],
+                      "airEffShootingRate": [
+                        0.2
+                      ],
+                      "army": [
+                        2
+                      ],
+                      "calmDetection": [
+                        true
+                      ],
+                      "fireRandom": [
+                        true
+                      ],
+                      "maxDeviationAngle": [
+                        5.0
+                      ],
+                      "object": [
+                        "sq_zone_01_airdef"
+                      ],
+                      "object_marking": [
+                        0
+                      ],
+                      "object_var_comp_op": [
+                        "equal"
+                      ],
+                      "object_var_name": [
+                        ""
+                      ],
+                      "object_var_value": [
+                        0
+                      ],
+                      "targetAir": [
+                        true
+                      ],
+                      "targetChangeInterval": [
+                        3.0
+                      ],
+                      "targetChangeProb": [
+                        0.33
+                      ],
+                      "targetGnd": [
+                        false
+                      ]
+                    }
+                  ],
+                  "unitWakeUp": [
+                    {
+                      "target": [
+                        "sq_zone_01_airdef"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "comments": [
+                ""
+              ],
+              "conditions": [
+                {
+                  "missionIsZoneCaptured": [
+                    {
+                      "army": [
+                        2
+                      ],
+                      "target": [
+                        "ndom_capture_area_01"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "else_actions": [
+                []
+              ],
+              "events": [
+                {
+                  "periodicEvent": [
+                    {
+                      "time": [
+                        1.0
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "is_enabled": [
+                false
+              ],
+              "props": [
+                {
+                  "actionsType": [
+                    "PERFORM_ONE_BY_ONE"
+                  ],
+                  "conditionsType": [
+                    "ANY"
+                  ],
+                  "enableAfterComplete": [
+                    false
+                  ]
+                }
+              ]
+            }
+          ],
+          "zone_01_get_airdef_initial_num": [
+            {
+              "actions": [
+                {
+                  "varModify": [
+                    {
+                      "operator": [
+                        "add"
+                      ],
+                      "value": [
+                        1.0
+                      ],
+                      "var": [
+                        "zone01_airdef_initial_num"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "comments": [
+                ""
+              ],
+              "conditions": [
+                {
+                  "unitWhenCountMatches": [
+                    {
+                      "func": [
+                        "more"
+                      ],
+                      "object": [
+                        "sq_zone_01_airdef"
+                      ],
+                      "object_marking": [
+                        0
+                      ],
+                      "object_type": [
+                        "any"
+                      ],
+                      "object_var_comp_op": [
+                        "equal"
+                      ],
+                      "object_var_name": [
+                        ""
+                      ],
+                      "object_var_value": [
+                        0
+                      ],
+                      "value": [
+                        0
+                      ],
+                      "var": [
+                        "zone01_airdef_initial_num"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "else_actions": [
+                []
+              ],
+              "events": [
+                {
+                  "periodicEvent": [
+                    {
+                      "time": [
+                        1.0
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "is_enabled": [
+                false
+              ],
+              "props": [
+                {
+                  "actionsType": [
+                    "PERFORM_ONE_BY_ONE"
+                  ],
+                  "conditionsType": [
+                    "ALL"
+                  ],
+                  "enableAfterComplete": [
+                    false
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "zone_02": [
+        {
+          "isCategory": [
+            true
+          ],
+          "is_enabled": [
+            true
+          ],
+          "zone_02_airdef_can_be_restored": [
+            {
+              "actions": [
+                {
+                  "triggerEnable": [
+                    {
+                      "target": [
+                        "zone_02_airdef_restore_timer"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "comments": [
+                ""
+              ],
+              "conditions": [
+                {
+                  "unitWhenCountMatches": [
+                    {
+                      "func": [
+                        "more"
+                      ],
+                      "object": [
+                        "sq_zone_02_airdef"
+                      ],
+                      "object_marking": [
+                        0
+                      ],
+                      "object_type": [
+                        "isKilled"
+                      ],
+                      "object_var_comp_op": [
+                        "equal"
+                      ],
+                      "object_var_name": [
+                        ""
+                      ],
+                      "object_var_value": [
+                        0
+                      ],
+                      "value": [
+                        0
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "else_actions": [
+                {
+                  "triggerDisable": [
+                    {
+                      "target": [
+                        "zone_02_airdef_restore_timer"
+                      ]
+                    }
+                  ],
+                  "varSetInt": [
+                    {
+                      "input_var": [
+                        "common_airdef_restore_time"
+                      ],
+                      "value": [
+                        0
+                      ],
+                      "var": [
+                        "zone02_airdef_restore_timer"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "periodicEvent": [
+                    {
+                      "time": [
+                        1.0
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "is_enabled": [
+                false
+              ],
+              "props": [
+                {
+                  "actionsType": [
+                    "PERFORM_ONE_BY_ONE"
+                  ],
+                  "conditionsType": [
+                    "ALL"
+                  ],
+                  "enableAfterComplete": [
+                    true
+                  ]
+                }
+              ]
+            }
+          ],
+          "zone_02_airdef_exist": [
+            {
+              "actions": [
+                {
+                  "moAddMissionObjective": [
+                    {
+                      "target": [
+                        "avn_zone02_airdef_objective"
+                      ]
+                    }
+                  ],
+                  "triggerEnable": [
+                    {
+                      "target": [
+                        "zone_02_captured_by_t0",
+                        "zone_02_captured_by_t1",
+                        "zone_02_captured_by_t2",
+                        "zone_02_get_airdef_initial_num"
+                      ]
+                    }
+                  ],
+                  "unitPutToSleep": [
+                    {
+                      "target": [
+                        "sq_zone_02_airdef"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "comments": [
+                ""
+              ],
+              "conditions": [
+                {
+                  "objectExists": [
+                    {
+                      "target": [
+                        "sq_zone_02_airdef"
+                      ],
+                      "type": [
+                        "squad"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "else_actions": [
+                []
+              ],
+              "events": [
+                {
+                  "initMission": [
+                    []
+                  ]
+                }
+              ],
+              "is_enabled": [
+                true
+              ],
+              "props": [
+                {
+                  "actionsType": [
+                    "PERFORM_ONE_BY_ONE"
+                  ],
+                  "conditionsType": [
+                    "ANY"
+                  ],
+                  "enableAfterComplete": [
+                    false
+                  ]
+                }
+              ]
+            }
+          ],
+          "zone_02_airdef_restore_timer": [
+            {
+              "actions": [
+                {
+                  "triggerDisable": [
+                    {
+                      "target": [
+                        "zone_02_airdef_restore_timer"
+                      ]
+                    }
+                  ],
+                  "triggerEnable": [
+                    {
+                      "target": [
+                        "zone_02_airdef_restoring"
+                      ]
+                    }
+                  ],
+                  "varSetInt": [
+                    {
+                      "input_var": [
+                        "common_airdef_restore_time"
+                      ],
+                      "value": [
+                        0
+                      ],
+                      "var": [
+                        "zone02_airdef_restore_timer"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "comments": [
+                ""
+              ],
+              "conditions": [
+                {
+                  "varCompareInt": [
+                    {
+                      "comparasion_func": [
+                        "notMore"
+                      ],
+                      "value": [
+                        0
+                      ],
+                      "var_value": [
+                        "zone02_airdef_restore_timer"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "else_actions": [
+                {
+                  "varModify": [
+                    {
+                      "operator": [
+                        "add"
+                      ],
+                      "value": [
+                        -1.0
+                      ],
+                      "var": [
+                        "zone02_airdef_restore_timer"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "periodicEvent": [
+                    {
+                      "time": [
+                        1.0
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "is_enabled": [
+                false
+              ],
+              "props": [
+                {
+                  "actionsType": [
+                    "PERFORM_ONE_BY_ONE"
+                  ],
+                  "conditionsType": [
+                    "ALL"
+                  ],
+                  "enableAfterComplete": [
+                    true
+                  ]
+                }
+              ]
+            }
+          ],
+          "zone_02_airdef_restoring": [
+            {
+              "actions": [
+                {
+                  "unitRestore": [
+                    {
+                      "fullRestore": [
+                        true
+                      ],
+                      "randomTargetsCount": [
+                        1
+                      ],
+                      "ressurectIfDead": [
+                        true
+                      ],
+                      "target": [
+                        "sq_zone_02_airdef"
+                      ],
+                      "useForTriggerFiltered": [
+                        true
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "comments": [
+                ""
+              ],
+              "conditions": [
+                {
+                  "unitWhenStatus": [
+                    {
+                      "check_objects": [
+                        "any"
+                      ],
+                      "check_period": [
+                        1.0
+                      ],
+                      "object": [
+                        "sq_zone_02_airdef"
+                      ],
+                      "object_marking": [
+                        0
+                      ],
+                      "object_type": [
+                        "isKilled"
+                      ],
+                      "object_var_comp_op": [
+                        "equal"
+                      ],
+                      "object_var_name": [
+                        ""
+                      ],
+                      "object_var_value": [
+                        0
+                      ],
+                      "target_type": [
+                        "isAlive"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "else_actions": [
+                []
+              ],
+              "events": [
+                {
+                  "periodicEvent": [
+                    {
+                      "time": [
+                        1.0
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "is_enabled": [
+                false
+              ],
+              "props": [
+                {
+                  "actionsType": [
+                    "PERFORM_ONE_BY_ONE"
+                  ],
+                  "conditionsType": [
+                    "ALL"
+                  ],
+                  "enableAfterComplete": [
+                    false
+                  ]
+                }
+              ]
+            }
+          ],
+          "zone_02_captured_by_t0": [
+            {
+              "actions": [
+                {
+                  "triggerDisable": [
+                    {
+                      "target": [
+                        "zone_02_airdef_can_be_restored",
+                        "zone_02_airdef_restore_timer",
+                        "zone_02_airdef_restoring"
+                      ]
+                    }
+                  ],
+                  "triggerEnable": [
+                    {
+                      "target": [
+                        "zone_02_captured_by_t1",
+                        "zone_02_captured_by_t2"
+                      ]
+                    }
+                  ],
+                  "unitSetProperties": [
+                    {
+                      "army": [
+                        0
+                      ],
+                      "object": [
+                        "sq_zone_02_airdef"
+                      ],
+                      "object_marking": [
+                        0
+                      ],
+                      "object_var_comp_op": [
+                        "equal"
+                      ],
+                      "object_var_name": [
+                        ""
+                      ],
+                      "object_var_value": [
+                        0
+                      ],
+                      "targetAir": [
+                        false
+                      ],
+                      "targetGnd": [
+                        false
+                      ]
+                    }
+                  ],
+                  "varSetInt": [
+                    {
+                      "input_var": [
+                        "common_airdef_restore_time"
+                      ],
+                      "value": [
+                        0
+                      ],
+                      "var": [
+                        "zone02_airdef_restore_timer"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "comments": [
+                ""
+              ],
+              "conditions": [
+                {
+                  "missionIsZoneCaptured": [
+                    {
+                      "army": [
+                        0
+                      ],
+                      "target": [
+                        "ndom_capture_area_02"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "else_actions": [
+                []
+              ],
+              "events": [
+                {
+                  "periodicEvent": [
+                    {
+                      "time": [
+                        1.0
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "is_enabled": [
+                false
+              ],
+              "props": [
+                {
+                  "actionsType": [
+                    "PERFORM_ONE_BY_ONE"
+                  ],
+                  "conditionsType": [
+                    "ANY"
+                  ],
+                  "enableAfterComplete": [
+                    false
+                  ]
+                }
+              ]
+            }
+          ],
+          "zone_02_captured_by_t1": [
+            {
+              "actions": [
+                {
+                  "triggerEnable": [
+                    {
+                      "target": [
+                        "zone_02_captured_by_t0",
+                        "zone_02_airdef_can_be_restored"
+                      ]
+                    }
+                  ],
+                  "unitRestore": [
+                    {
+                      "fullRestore": [
+                        true
+                      ],
+                      "ressurectIfDead": [
+                        true
+                      ],
+                      "target": [
+                        "sq_zone_02_airdef"
+                      ]
+                    }
+                  ],
+                  "unitSetProperties": [
+                    {
+                      "accuracy": [
+                        0.2
+                      ],
+                      "airEffShootingRate": [
+                        0.2
+                      ],
+                      "army": [
+                        1
+                      ],
+                      "calmDetection": [
+                        true
+                      ],
+                      "fireRandom": [
+                        true
+                      ],
+                      "maxDeviationAngle": [
+                        5.0
+                      ],
+                      "object": [
+                        "sq_zone_02_airdef"
+                      ],
+                      "object_marking": [
+                        0
+                      ],
+                      "object_var_comp_op": [
+                        "equal"
+                      ],
+                      "object_var_name": [
+                        ""
+                      ],
+                      "object_var_value": [
+                        0
+                      ],
+                      "targetAir": [
+                        true
+                      ],
+                      "targetChangeInterval": [
+                        3.0
+                      ],
+                      "targetChangeProb": [
+                        0.33
+                      ],
+                      "targetGnd": [
+                        false
+                      ]
+                    }
+                  ],
+                  "unitWakeUp": [
+                    {
+                      "target": [
+                        "sq_zone_02_airdef"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "comments": [
+                ""
+              ],
+              "conditions": [
+                {
+                  "missionIsZoneCaptured": [
+                    {
+                      "army": [
+                        1
+                      ],
+                      "target": [
+                        "ndom_capture_area_02"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "else_actions": [
+                []
+              ],
+              "events": [
+                {
+                  "periodicEvent": [
+                    {
+                      "time": [
+                        1.0
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "is_enabled": [
+                false
+              ],
+              "props": [
+                {
+                  "actionsType": [
+                    "PERFORM_ONE_BY_ONE"
+                  ],
+                  "conditionsType": [
+                    "ANY"
+                  ],
+                  "enableAfterComplete": [
+                    false
+                  ]
+                }
+              ]
+            }
+          ],
+          "zone_02_captured_by_t2": [
+            {
+              "actions": [
+                {
+                  "triggerEnable": [
+                    {
+                      "target": [
+                        "zone_02_captured_by_t0",
+                        "zone_02_airdef_can_be_restored"
+                      ]
+                    }
+                  ],
+                  "unitRestore": [
+                    {
+                      "fullRestore": [
+                        true
+                      ],
+                      "ressurectIfDead": [
+                        true
+                      ],
+                      "target": [
+                        "sq_zone_02_airdef"
+                      ]
+                    }
+                  ],
+                  "unitSetProperties": [
+                    {
+                      "accuracy": [
+                        0.2
+                      ],
+                      "airEffShootingRate": [
+                        0.2
+                      ],
+                      "army": [
+                        2
+                      ],
+                      "calmDetection": [
+                        true
+                      ],
+                      "fireRandom": [
+                        true
+                      ],
+                      "maxDeviationAngle": [
+                        5.0
+                      ],
+                      "object": [
+                        "sq_zone_02_airdef"
+                      ],
+                      "object_marking": [
+                        0
+                      ],
+                      "object_var_comp_op": [
+                        "equal"
+                      ],
+                      "object_var_name": [
+                        ""
+                      ],
+                      "object_var_value": [
+                        0
+                      ],
+                      "targetAir": [
+                        true
+                      ],
+                      "targetChangeInterval": [
+                        3.0
+                      ],
+                      "targetChangeProb": [
+                        0.33
+                      ],
+                      "targetGnd": [
+                        false
+                      ]
+                    }
+                  ],
+                  "unitWakeUp": [
+                    {
+                      "target": [
+                        "sq_zone_02_airdef"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "comments": [
+                ""
+              ],
+              "conditions": [
+                {
+                  "missionIsZoneCaptured": [
+                    {
+                      "army": [
+                        2
+                      ],
+                      "target": [
+                        "ndom_capture_area_02"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "else_actions": [
+                []
+              ],
+              "events": [
+                {
+                  "periodicEvent": [
+                    {
+                      "time": [
+                        1.0
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "is_enabled": [
+                false
+              ],
+              "props": [
+                {
+                  "actionsType": [
+                    "PERFORM_ONE_BY_ONE"
+                  ],
+                  "conditionsType": [
+                    "ANY"
+                  ],
+                  "enableAfterComplete": [
+                    false
+                  ]
+                }
+              ]
+            }
+          ],
+          "zone_02_get_airdef_initial_num": [
+            {
+              "actions": [
+                {
+                  "varModify": [
+                    {
+                      "operator": [
+                        "add"
+                      ],
+                      "value": [
+                        1.0
+                      ],
+                      "var": [
+                        "zone02_airdef_initial_num"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "comments": [
+                ""
+              ],
+              "conditions": [
+                {
+                  "unitWhenCountMatches": [
+                    {
+                      "func": [
+                        "more"
+                      ],
+                      "object": [
+                        "sq_zone_02_airdef"
+                      ],
+                      "object_marking": [
+                        0
+                      ],
+                      "object_type": [
+                        "any"
+                      ],
+                      "object_var_comp_op": [
+                        "equal"
+                      ],
+                      "object_var_name": [
+                        ""
+                      ],
+                      "object_var_value": [
+                        0
+                      ],
+                      "value": [
+                        0
+                      ],
+                      "var": [
+                        "zone02_airdef_initial_num"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "else_actions": [
+                []
+              ],
+              "events": [
+                {
+                  "periodicEvent": [
+                    {
+                      "time": [
+                        1.0
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "is_enabled": [
+                false
+              ],
+              "props": [
+                {
+                  "actionsType": [
+                    "PERFORM_ONE_BY_ONE"
+                  ],
+                  "conditionsType": [
+                    "ALL"
+                  ],
+                  "enableAfterComplete": [
+                    false
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "zone_03": [
+        {
+          "isCategory": [
+            true
+          ],
+          "is_enabled": [
+            true
+          ],
+          "zone_03_airdef_can_be_restored": [
+            {
+              "actions": [
+                {
+                  "triggerEnable": [
+                    {
+                      "target": [
+                        "zone_03_airdef_restore_timer"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "comments": [
+                ""
+              ],
+              "conditions": [
+                {
+                  "unitWhenCountMatches": [
+                    {
+                      "func": [
+                        "more"
+                      ],
+                      "object": [
+                        "sq_zone_03_airdef"
+                      ],
+                      "object_marking": [
+                        0
+                      ],
+                      "object_type": [
+                        "isKilled"
+                      ],
+                      "object_var_comp_op": [
+                        "equal"
+                      ],
+                      "object_var_name": [
+                        ""
+                      ],
+                      "object_var_value": [
+                        0
+                      ],
+                      "value": [
+                        0
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "else_actions": [
+                {
+                  "triggerDisable": [
+                    {
+                      "target": [
+                        "zone_03_airdef_restore_timer"
+                      ]
+                    }
+                  ],
+                  "varSetInt": [
+                    {
+                      "input_var": [
+                        "common_airdef_restore_time"
+                      ],
+                      "value": [
+                        0
+                      ],
+                      "var": [
+                        "zone03_airdef_restore_timer"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "periodicEvent": [
+                    {
+                      "time": [
+                        1.0
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "is_enabled": [
+                false
+              ],
+              "props": [
+                {
+                  "actionsType": [
+                    "PERFORM_ONE_BY_ONE"
+                  ],
+                  "conditionsType": [
+                    "ALL"
+                  ],
+                  "enableAfterComplete": [
+                    true
+                  ]
+                }
+              ]
+            }
+          ],
+          "zone_03_airdef_exist": [
+            {
+              "actions": [
+                {
+                  "moAddMissionObjective": [
+                    {
+                      "target": [
+                        "avn_zone03_airdef_objective"
+                      ]
+                    }
+                  ],
+                  "triggerEnable": [
+                    {
+                      "target": [
+                        "zone_03_captured_by_t0",
+                        "zone_03_captured_by_t1",
+                        "zone_03_captured_by_t2",
+                        "zone_03_get_airdef_initial_num"
+                      ]
+                    }
+                  ],
+                  "unitPutToSleep": [
+                    {
+                      "target": [
+                        "sq_zone_03_airdef"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "comments": [
+                ""
+              ],
+              "conditions": [
+                {
+                  "objectExists": [
+                    {
+                      "target": [
+                        "sq_zone_03_airdef"
+                      ],
+                      "type": [
+                        "squad"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "else_actions": [
+                []
+              ],
+              "events": [
+                {
+                  "initMission": [
+                    []
+                  ]
+                }
+              ],
+              "is_enabled": [
+                true
+              ],
+              "props": [
+                {
+                  "actionsType": [
+                    "PERFORM_ONE_BY_ONE"
+                  ],
+                  "conditionsType": [
+                    "ANY"
+                  ],
+                  "enableAfterComplete": [
+                    false
+                  ]
+                }
+              ]
+            }
+          ],
+          "zone_03_airdef_restore_timer": [
+            {
+              "actions": [
+                {
+                  "triggerDisable": [
+                    {
+                      "target": [
+                        "zone_03_airdef_restore_timer"
+                      ]
+                    }
+                  ],
+                  "triggerEnable": [
+                    {
+                      "target": [
+                        "zone_03_airdef_restoring"
+                      ]
+                    }
+                  ],
+                  "varSetInt": [
+                    {
+                      "input_var": [
+                        "common_airdef_restore_time"
+                      ],
+                      "value": [
+                        0
+                      ],
+                      "var": [
+                        "zone03_airdef_restore_timer"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "comments": [
+                ""
+              ],
+              "conditions": [
+                {
+                  "varCompareInt": [
+                    {
+                      "comparasion_func": [
+                        "notMore"
+                      ],
+                      "value": [
+                        0
+                      ],
+                      "var_value": [
+                        "zone03_airdef_restore_timer"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "else_actions": [
+                {
+                  "varModify": [
+                    {
+                      "operator": [
+                        "add"
+                      ],
+                      "value": [
+                        -1.0
+                      ],
+                      "var": [
+                        "zone03_airdef_restore_timer"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "periodicEvent": [
+                    {
+                      "time": [
+                        1.0
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "is_enabled": [
+                false
+              ],
+              "props": [
+                {
+                  "actionsType": [
+                    "PERFORM_ONE_BY_ONE"
+                  ],
+                  "conditionsType": [
+                    "ALL"
+                  ],
+                  "enableAfterComplete": [
+                    true
+                  ]
+                }
+              ]
+            }
+          ],
+          "zone_03_airdef_restoring": [
+            {
+              "actions": [
+                {
+                  "unitRestore": [
+                    {
+                      "fullRestore": [
+                        true
+                      ],
+                      "randomTargetsCount": [
+                        1
+                      ],
+                      "ressurectIfDead": [
+                        true
+                      ],
+                      "target": [
+                        "sq_zone_03_airdef"
+                      ],
+                      "useForTriggerFiltered": [
+                        true
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "comments": [
+                ""
+              ],
+              "conditions": [
+                {
+                  "unitWhenStatus": [
+                    {
+                      "check_objects": [
+                        "any"
+                      ],
+                      "check_period": [
+                        1.0
+                      ],
+                      "object": [
+                        "sq_zone_03_airdef"
+                      ],
+                      "object_marking": [
+                        0
+                      ],
+                      "object_type": [
+                        "isKilled"
+                      ],
+                      "object_var_comp_op": [
+                        "equal"
+                      ],
+                      "object_var_name": [
+                        ""
+                      ],
+                      "object_var_value": [
+                        0
+                      ],
+                      "target_type": [
+                        "isAlive"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "else_actions": [
+                []
+              ],
+              "events": [
+                {
+                  "periodicEvent": [
+                    {
+                      "time": [
+                        1.0
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "is_enabled": [
+                false
+              ],
+              "props": [
+                {
+                  "actionsType": [
+                    "PERFORM_ONE_BY_ONE"
+                  ],
+                  "conditionsType": [
+                    "ALL"
+                  ],
+                  "enableAfterComplete": [
+                    false
+                  ]
+                }
+              ]
+            }
+          ],
+          "zone_03_captured_by_t0": [
+            {
+              "actions": [
+                {
+                  "triggerDisable": [
+                    {
+                      "target": [
+                        "zone_03_airdef_can_be_restored",
+                        "zone_03_airdef_restore_timer",
+                        "zone_03_airdef_restoring"
+                      ]
+                    }
+                  ],
+                  "triggerEnable": [
+                    {
+                      "target": [
+                        "zone_03_captured_by_t1",
+                        "zone_03_captured_by_t2"
+                      ]
+                    }
+                  ],
+                  "unitSetProperties": [
+                    {
+                      "army": [
+                        0
+                      ],
+                      "object": [
+                        "sq_zone_03_airdef"
+                      ],
+                      "object_marking": [
+                        0
+                      ],
+                      "object_var_comp_op": [
+                        "equal"
+                      ],
+                      "object_var_name": [
+                        ""
+                      ],
+                      "object_var_value": [
+                        0
+                      ],
+                      "targetAir": [
+                        false
+                      ],
+                      "targetGnd": [
+                        false
+                      ]
+                    }
+                  ],
+                  "varSetInt": [
+                    {
+                      "input_var": [
+                        "common_airdef_restore_time"
+                      ],
+                      "value": [
+                        0
+                      ],
+                      "var": [
+                        "zone03_airdef_restore_timer"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "comments": [
+                ""
+              ],
+              "conditions": [
+                {
+                  "missionIsZoneCaptured": [
+                    {
+                      "army": [
+                        0
+                      ],
+                      "target": [
+                        "ndom_capture_area_03"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "else_actions": [
+                []
+              ],
+              "events": [
+                {
+                  "periodicEvent": [
+                    {
+                      "time": [
+                        1.0
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "is_enabled": [
+                false
+              ],
+              "props": [
+                {
+                  "actionsType": [
+                    "PERFORM_ONE_BY_ONE"
+                  ],
+                  "conditionsType": [
+                    "ANY"
+                  ],
+                  "enableAfterComplete": [
+                    false
+                  ]
+                }
+              ]
+            }
+          ],
+          "zone_03_captured_by_t1": [
+            {
+              "actions": [
+                {
+                  "triggerEnable": [
+                    {
+                      "target": [
+                        "zone_03_captured_by_t0",
+                        "zone_03_airdef_can_be_restored"
+                      ]
+                    }
+                  ],
+                  "unitRestore": [
+                    {
+                      "fullRestore": [
+                        true
+                      ],
+                      "ressurectIfDead": [
+                        true
+                      ],
+                      "target": [
+                        "sq_zone_03_airdef"
+                      ]
+                    }
+                  ],
+                  "unitSetProperties": [
+                    {
+                      "accuracy": [
+                        0.2
+                      ],
+                      "airEffShootingRate": [
+                        0.2
+                      ],
+                      "army": [
+                        1
+                      ],
+                      "calmDetection": [
+                        true
+                      ],
+                      "fireRandom": [
+                        true
+                      ],
+                      "maxDeviationAngle": [
+                        5.0
+                      ],
+                      "object": [
+                        "sq_zone_03_airdef"
+                      ],
+                      "object_marking": [
+                        0
+                      ],
+                      "object_var_comp_op": [
+                        "equal"
+                      ],
+                      "object_var_name": [
+                        ""
+                      ],
+                      "object_var_value": [
+                        0
+                      ],
+                      "targetAir": [
+                        true
+                      ],
+                      "targetChangeInterval": [
+                        3.0
+                      ],
+                      "targetChangeProb": [
+                        0.33
+                      ],
+                      "targetGnd": [
+                        false
+                      ]
+                    }
+                  ],
+                  "unitWakeUp": [
+                    {
+                      "target": [
+                        "sq_zone_03_airdef"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "comments": [
+                ""
+              ],
+              "conditions": [
+                {
+                  "missionIsZoneCaptured": [
+                    {
+                      "army": [
+                        1
+                      ],
+                      "target": [
+                        "ndom_capture_area_03"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "else_actions": [
+                []
+              ],
+              "events": [
+                {
+                  "periodicEvent": [
+                    {
+                      "time": [
+                        1.0
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "is_enabled": [
+                false
+              ],
+              "props": [
+                {
+                  "actionsType": [
+                    "PERFORM_ONE_BY_ONE"
+                  ],
+                  "conditionsType": [
+                    "ANY"
+                  ],
+                  "enableAfterComplete": [
+                    false
+                  ]
+                }
+              ]
+            }
+          ],
+          "zone_03_captured_by_t2": [
+            {
+              "actions": [
+                {
+                  "triggerEnable": [
+                    {
+                      "target": [
+                        "zone_03_captured_by_t0",
+                        "zone_03_airdef_can_be_restored"
+                      ]
+                    }
+                  ],
+                  "unitRestore": [
+                    {
+                      "fullRestore": [
+                        true
+                      ],
+                      "ressurectIfDead": [
+                        true
+                      ],
+                      "target": [
+                        "sq_zone_03_airdef"
+                      ]
+                    }
+                  ],
+                  "unitSetProperties": [
+                    {
+                      "accuracy": [
+                        0.2
+                      ],
+                      "airEffShootingRate": [
+                        0.2
+                      ],
+                      "army": [
+                        2
+                      ],
+                      "calmDetection": [
+                        true
+                      ],
+                      "fireRandom": [
+                        true
+                      ],
+                      "maxDeviationAngle": [
+                        5.0
+                      ],
+                      "object": [
+                        "sq_zone_03_airdef"
+                      ],
+                      "object_marking": [
+                        0
+                      ],
+                      "object_var_comp_op": [
+                        "equal"
+                      ],
+                      "object_var_name": [
+                        ""
+                      ],
+                      "object_var_value": [
+                        0
+                      ],
+                      "targetAir": [
+                        true
+                      ],
+                      "targetChangeInterval": [
+                        3.0
+                      ],
+                      "targetChangeProb": [
+                        0.33
+                      ],
+                      "targetGnd": [
+                        false
+                      ]
+                    }
+                  ],
+                  "unitWakeUp": [
+                    {
+                      "target": [
+                        "sq_zone_03_airdef"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "comments": [
+                ""
+              ],
+              "conditions": [
+                {
+                  "missionIsZoneCaptured": [
+                    {
+                      "army": [
+                        2
+                      ],
+                      "target": [
+                        "ndom_capture_area_03"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "else_actions": [
+                []
+              ],
+              "events": [
+                {
+                  "periodicEvent": [
+                    {
+                      "time": [
+                        1.0
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "is_enabled": [
+                false
+              ],
+              "props": [
+                {
+                  "actionsType": [
+                    "PERFORM_ONE_BY_ONE"
+                  ],
+                  "conditionsType": [
+                    "ANY"
+                  ],
+                  "enableAfterComplete": [
+                    false
+                  ]
+                }
+              ]
+            }
+          ],
+          "zone_03_get_airdef_initial_num": [
+            {
+              "actions": [
+                {
+                  "varModify": [
+                    {
+                      "operator": [
+                        "add"
+                      ],
+                      "value": [
+                        1.0
+                      ],
+                      "var": [
+                        "zone03_airdef_initial_num"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "comments": [
+                ""
+              ],
+              "conditions": [
+                {
+                  "unitWhenCountMatches": [
+                    {
+                      "func": [
+                        "more"
+                      ],
+                      "object": [
+                        "sq_zone_03_airdef"
+                      ],
+                      "object_marking": [
+                        0
+                      ],
+                      "object_type": [
+                        "any"
+                      ],
+                      "object_var_comp_op": [
+                        "equal"
+                      ],
+                      "object_var_name": [
+                        ""
+                      ],
+                      "object_var_value": [
+                        0
+                      ],
+                      "value": [
+                        0
+                      ],
+                      "var": [
+                        "zone03_airdef_initial_num"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "else_actions": [
+                []
+              ],
+              "events": [
+                {
+                  "periodicEvent": [
+                    {
+                      "time": [
+                        1.0
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "is_enabled": [
+                false
+              ],
+              "props": [
+                {
+                  "actionsType": [
+                    "PERFORM_ONE_BY_ONE"
+                  ],
+                  "conditionsType": [
+                    "ALL"
+                  ],
+                  "enableAfterComplete": [
+                    false
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "units": [
+    []
+  ],
+  "variables": [
+    {
+      "common_airdef_restore_time": [
+        0
+      ],
+      "zone01_airdef_initial_num": [
+        0
+      ],
+      "zone01_airdef_restore_timer": [
+        0
+      ],
+      "zone02_airdef_initial_num": [
+        0
+      ],
+      "zone02_airdef_restore_timer": [
+        0
+      ],
+      "zone03_airdef_initial_num": [
+        0
+      ],
+      "zone03_airdef_restore_timer": [
+        0
+      ]
+    }
+  ],
+  "wayPoints": [
+    []
+  ]
+}

@@ -1,0 +1,284 @@
+{
+  "frame_header": [
+    {
+      "Button_close": [
+        {
+          "id": [
+            "btn_back"
+          ]
+        }
+      ],
+      "HorizontalListBox": [
+        {
+          "activeAccesskeys": [
+            "RS"
+          ],
+          "class": [
+            "header"
+          ],
+          "height": [
+            "ph"
+          ],
+          "id": [
+            "shop_pages_list"
+          ],
+          "move-only-hover": [
+            "yes"
+          ],
+          "on_select": [
+            "onAircraftsPage"
+          ],
+          "withImages": [
+            "yes"
+          ]
+        }
+      ],
+      "textareaNoTab": [
+        {
+          "caption": [
+            "yes"
+          ],
+          "id": [
+            "shop_header"
+          ],
+          "text": [
+            ""
+          ]
+        }
+      ],
+      "top_right_holder": [
+        {
+          "hasRightIndent": [
+            "yes"
+          ],
+          "tdiv": [
+            {
+              "flow": [
+                "horizontal"
+              ],
+              "id": [
+                "shop_search_box"
+              ],
+              "pos": [
+                "0, ph/2-h/2"
+              ],
+              "position": [
+                "relative"
+              ],
+              "width": [
+                "0.33@scrn_tgt"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "navBar": [
+    []
+  ],
+  "tdiv": [
+    {
+      "id": [
+        "tree_header_div"
+      ],
+      "size": [
+        "pw, 1@buttonHeight"
+      ]
+    },
+    {
+      "background-color": [
+        "@frameBackgroundColor"
+      ],
+      "size": [
+        "pw, 2@dp"
+      ]
+    },
+    {
+      "id": [
+        "shop_items_visible_div"
+      ],
+      "overflow-y": [
+        "auto"
+      ],
+      "scrollbarShortcuts": [
+        "yes"
+      ],
+      "size": [
+        "pw, fh"
+      ],
+      "tdiv": [
+        {
+          "id": [
+            "shop_items_scroll_div"
+          ],
+          "tdiv": [
+            {
+              "id": [
+                "shop_useful_width"
+              ],
+              "pos": [
+                "0, 0"
+              ],
+              "position": [
+                "absolute"
+              ],
+              "size": [
+                "pw-@scrollBarSize, 0"
+              ]
+            },
+            {
+              "flow": [
+                "vertical"
+              ],
+              "height": [
+                "ph"
+              ],
+              "id": [
+                "shopTable_air_plates"
+              ],
+              "pos": [
+                "0, 0"
+              ],
+              "position": [
+                "absolute"
+              ]
+            },
+            {
+              "id": [
+                "shop_items_pos_div"
+              ],
+              "left": [
+                "(pw-w)/2"
+              ],
+              "padding": [
+                "1@modBlockTierNumHeight, 0, 1@scrollBarSize, 0"
+              ],
+              "position": [
+                "relative"
+              ],
+              "shopTable": [
+                {
+                  "alwaysShowBorder": [
+                    "yes"
+                  ],
+                  "behavior": [
+                    "posNavigator"
+                  ],
+                  "id": [
+                    "shop_items_list"
+                  ],
+                  "moveY": [
+                    "linear"
+                  ],
+                  "navigatorShortcuts": [
+                    "SpaceA"
+                  ],
+                  "on_activate": [
+                    "onUnitActivate"
+                  ],
+                  "on_click": [
+                    "onUnitClick"
+                  ],
+                  "on_dbl_click": [
+                    "onUnitDblClick"
+                  ],
+                  "on_hold_start": [
+                    "::gcb.delayedTooltipListHoldStart"
+                  ],
+                  "on_hold_stop": [
+                    "::gcb.delayedTooltipListHoldStop"
+                  ],
+                  "on_pushed": [
+                    "::gcb.delayedTooltipListPush"
+                  ],
+                  "on_r_click": [
+                    "onUnitRightClick"
+                  ],
+                  "on_select": [
+                    "onUnitSelect"
+                  ]
+                }
+              ],
+              "tdiv": [
+                {
+                  "flow": [
+                    "vertical"
+                  ],
+                  "height": [
+                    "ph"
+                  ],
+                  "id": [
+                    "shopTable_air_rows"
+                  ],
+                  "pos": [
+                    "1@modBlockTierNumHeight, 0"
+                  ],
+                  "position": [
+                    "absolute"
+                  ]
+                }
+              ],
+              "top": [
+                "1@shop_h_extra_first"
+              ]
+            },
+            {
+              "display": [
+                "hide"
+              ],
+              "id": [
+                "shop_dark_screen"
+              ],
+              "pos": [
+                "0, 0"
+              ],
+              "position": [
+                "absolute"
+              ],
+              "size": [
+                "pw, ph"
+              ],
+              "total-input-transparent": [
+                "yes"
+              ]
+            },
+            {
+              "height": [
+                "ph"
+              ],
+              "id": [
+                "tier_arrows_div"
+              ],
+              "pos": [
+                "0, 1@shop_h_extra_first"
+              ],
+              "position": [
+                "absolute"
+              ],
+              "width": [
+                "1@modBlockTierNumHeight"
+              ]
+            }
+          ],
+          "width": [
+            "fw"
+          ]
+        }
+      ],
+      "total-input-transparent": [
+        "yes"
+      ]
+    }
+  ],
+  "timer": [
+    {
+      "id": [
+        "shop_timer"
+      ],
+      "timer_handler_func": [
+        "onUpdate"
+      ]
+    }
+  ]
+}

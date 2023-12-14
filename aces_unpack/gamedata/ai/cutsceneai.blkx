@@ -1,0 +1,247 @@
+{
+  "selector": [
+    {
+      "fighterAttackFighter": [
+        []
+      ],
+      "name": [
+        "cutsceneFighterVsFighter"
+      ],
+      "reaction": [
+        {
+          "event": [
+            "groundAhead"
+          ],
+          "parallel": [
+            {
+              "stayAtSpeed": [
+                {
+                  "speedMode": [
+                    "boostOn"
+                  ]
+                }
+              ],
+              "turnToEvasiveDir": [
+                []
+              ]
+            }
+          ]
+        },
+        {
+          "event": [
+            "collisionAhead"
+          ],
+          "parallel": [
+            {
+              "stayAtSpeed": [
+                {
+                  "speedMode": [
+                    "boostOn"
+                  ]
+                }
+              ],
+              "turnToEvasiveDir": [
+                []
+              ]
+            }
+          ]
+        },
+        {
+          "event": [
+            "outsideBattleField"
+          ],
+          "flyToPos": [
+            {
+              "destType": [
+                "battleField"
+              ],
+              "dist": [
+                -1.0
+              ],
+              "minAlt": [
+                100.0
+              ],
+              "speed": [
+                550.0
+              ]
+            }
+          ]
+        }
+      ],
+      "selectStrategy": [
+        "ordered"
+      ]
+    },
+    {
+      "name": [
+        "cutsceneFighterVsBomber"
+      ],
+      "reaction": [
+        {
+          "event": [
+            "groundAhead"
+          ],
+          "parallel": [
+            {
+              "stayAtSpeed": [
+                {
+                  "speedMode": [
+                    "boostOn"
+                  ]
+                }
+              ],
+              "turnToEvasiveDir": [
+                []
+              ]
+            }
+          ]
+        },
+        {
+          "event": [
+            "collisionAhead"
+          ],
+          "parallel": [
+            {
+              "stayAtSpeed": [
+                {
+                  "speedMode": [
+                    "boostOn"
+                  ]
+                }
+              ],
+              "turnToEvasiveDir": [
+                []
+              ]
+            }
+          ]
+        },
+        {
+          "event": [
+            "outsideBattleField"
+          ],
+          "flyToPos": [
+            {
+              "destType": [
+                "battleField"
+              ],
+              "dist": [
+                -1.0
+              ],
+              "minAlt": [
+                100.0
+              ],
+              "speed": [
+                550.0
+              ]
+            }
+          ]
+        }
+      ],
+      "selectStrategy": [
+        "ordered"
+      ],
+      "selector": [
+        {
+          "fighterAttackFighter": [
+            []
+          ],
+          "selectOnSuccess": [
+            true
+          ],
+          "selectStrategy": [
+            "ordered"
+          ],
+          "sequencer": [
+            {
+              "fighterAttackBomber": [
+                []
+              ],
+              "isFighterSpecialAttackBomber": [
+                []
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "diveBombTarget": [
+        {
+          "overrideDiveSpeed": [
+            70.0
+          ],
+          "overrideDropHeight": [
+            100.0
+          ]
+        }
+      ],
+      "name": [
+        "cutsceneDiveBombTarget"
+      ],
+      "reaction": [
+        {
+          "event": [
+            "groundAhead"
+          ],
+          "parallel": [
+            {
+              "stayAtSpeed": [
+                {
+                  "speedMode": [
+                    "boostOn"
+                  ]
+                }
+              ],
+              "turnToEvasiveDir": [
+                []
+              ]
+            }
+          ]
+        },
+        {
+          "event": [
+            "collisionAhead"
+          ],
+          "parallel": [
+            {
+              "stayAtSpeed": [
+                {
+                  "speedMode": [
+                    "boostOn"
+                  ]
+                }
+              ],
+              "turnToEvasiveDir": [
+                []
+              ]
+            }
+          ]
+        },
+        {
+          "event": [
+            "outsideBattleField"
+          ],
+          "flyToPos": [
+            {
+              "destType": [
+                "battleField"
+              ],
+              "dist": [
+                -1.0
+              ],
+              "minAlt": [
+                100.0
+              ],
+              "speed": [
+                550.0
+              ]
+            }
+          ]
+        }
+      ],
+      "selectStrategy": [
+        "ordered"
+      ]
+    }
+  ]
+}

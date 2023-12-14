@@ -1,0 +1,600 @@
+{
+  "root": [
+    {
+      "blur": [
+        []
+      ],
+      "blur_foreground": [
+        []
+      ],
+      "frame": [
+        {
+          "class": [
+            "wnd"
+          ],
+          "css-hier-invalidate": [
+            "yes"
+          ],
+          "frame_header": [
+            {
+              "Button_close": [
+                {
+                  "id": [
+                    "btn_back"
+                  ]
+                }
+              ],
+              "activeText": [
+                {
+                  "caption": [
+                    "yes"
+                  ],
+                  "id": [
+                    "wnd_title"
+                  ],
+                  "text": [
+                    "#shop/slotbarPresets/title"
+                  ]
+                }
+              ]
+            }
+          ],
+          "id": [
+            "wnd_frame"
+          ],
+          "input-transparent": [
+            "no"
+          ],
+          "navBar": [
+            {
+              "navLeft": [
+                {
+                  "Button_text": [
+                    {
+                      "ButtonImg": [
+                        []
+                      ],
+                      "btnName": [
+                        "L3"
+                      ],
+                      "id": [
+                        "btn_preset_create"
+                      ],
+                      "on_click": [
+                        "onBtnPresetAdd"
+                      ],
+                      "text": [
+                        "#msgbox/btn_add"
+                      ]
+                    },
+                    {
+                      "ButtonImg": [
+                        []
+                      ],
+                      "btnName": [
+                        "LT"
+                      ],
+                      "id": [
+                        "btn_preset_copy"
+                      ],
+                      "on_click": [
+                        "onBtnPresetCopy"
+                      ],
+                      "text": [
+                        "#msgbox/btn_copy"
+                      ]
+                    },
+                    {
+                      "ButtonImg": [
+                        []
+                      ],
+                      "btnName": [
+                        "Y"
+                      ],
+                      "id": [
+                        "btn_preset_rename"
+                      ],
+                      "on_click": [
+                        "onBtnPresetRename"
+                      ],
+                      "text": [
+                        "#msgbox/btn_rename"
+                      ]
+                    },
+                    {
+                      "ButtonImg": [
+                        []
+                      ],
+                      "btnName": [
+                        "LB"
+                      ],
+                      "class": [
+                        "image"
+                      ],
+                      "id": [
+                        "btn_preset_move_up"
+                      ],
+                      "img": [
+                        {
+                          "background-image": [
+                            "#ui/gameuiskin#spinnerListBox_arrow_up.svg"
+                          ]
+                        }
+                      ],
+                      "on_click": [
+                        "onBtnPresetMoveUp"
+                      ],
+                      "text": [
+                        ""
+                      ],
+                      "tooltip": [
+                        "#msgbox/btn_move_up"
+                      ]
+                    },
+                    {
+                      "ButtonImg": [
+                        []
+                      ],
+                      "btnName": [
+                        "RB"
+                      ],
+                      "class": [
+                        "image"
+                      ],
+                      "id": [
+                        "btn_preset_move_dn"
+                      ],
+                      "img": [
+                        {
+                          "background-image": [
+                            "#ui/gameuiskin#spinnerListBox_arrow_up.svg"
+                          ],
+                          "rotation": [
+                            "180"
+                          ]
+                        }
+                      ],
+                      "on_click": [
+                        "onBtnPresetMoveDown"
+                      ],
+                      "text": [
+                        ""
+                      ],
+                      "tooltip": [
+                        "#msgbox/btn_move_down"
+                      ]
+                    },
+                    {
+                      "ButtonImg": [
+                        []
+                      ],
+                      "btnName": [
+                        "R3"
+                      ],
+                      "id": [
+                        "btn_preset_delete"
+                      ],
+                      "on_click": [
+                        "onBtnPresetDelete"
+                      ],
+                      "text": [
+                        "#msgbox/btn_delete"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "navRight": [
+                {
+                  "Button_text": [
+                    {
+                      "ButtonImg": [
+                        []
+                      ],
+                      "btnName": [
+                        "X"
+                      ],
+                      "id": [
+                        "btn_preset_load"
+                      ],
+                      "on_click": [
+                        "onBtnPresetLoad"
+                      ],
+                      "text": [
+                        "#mainmenu/btnApply"
+                      ]
+                    },
+                    {
+                      "ButtonImg": [
+                        []
+                      ],
+                      "btnName": [
+                        "A"
+                      ],
+                      "display": [
+                        "hide"
+                      ],
+                      "id": [
+                        "btn_preset_select"
+                      ],
+                      "on_click": [
+                        "onBtnPresetSelect"
+                      ],
+                      "text": [
+                        "#mainmenu/btnSelect"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "pos": [
+            "50%pw-50%w, 1@minYposWindow + 50%(ph-h-1@minYposWindow-1@slotbarHeight-1@slotbarOffset-1@slotbarTop)"
+          ],
+          "position": [
+            "relative"
+          ],
+          "size": [
+            "4@framePadding + 0.02*@scrn_tgt + 0.32@sf + 4@slot_width, 420*@sf/@pf_outdated"
+          ],
+          "tdiv": [
+            {
+              "chapterListPlace": [
+                {
+                  "flow": [
+                    "vertical"
+                  ],
+                  "height": [
+                    "ph"
+                  ],
+                  "id": [
+                    "chapter_place"
+                  ],
+                  "tdiv": [
+                    {
+                      "display": [
+                        "hide"
+                      ],
+                      "id": [
+                        "div_before_chapters_list"
+                      ],
+                      "width": [
+                        "pw"
+                      ]
+                    },
+                    {
+                      "animated_wait_icon": [
+                        {
+                          "background-rotation": [
+                            "0"
+                          ],
+                          "display": [
+                            "hide"
+                          ],
+                          "id": [
+                            "items_list_wait_icon"
+                          ],
+                          "pos": [
+                            "50%pw-50%w, 40%ph-40%h"
+                          ],
+                          "position": [
+                            "absolute"
+                          ]
+                        }
+                      ],
+                      "flow": [
+                        "vertical"
+                      ],
+                      "id": [
+                        "chapters_list_place"
+                      ],
+                      "listbox": [
+                        {
+                          "_on_dbl_click": [
+                            "onItemDblClick"
+                          ],
+                          "flow": [
+                            "vertical"
+                          ],
+                          "id": [
+                            "items_list"
+                          ],
+                          "move-only-hover": [
+                            "yes"
+                          ],
+                          "navigatorShortcuts": [
+                            "yes"
+                          ],
+                          "on_select": [
+                            "onItemSelect"
+                          ],
+                          "size": [
+                            "pw, fh"
+                          ]
+                        }
+                      ],
+                      "popupFilter": [
+                        {
+                          "margin-left": [
+                            "1@buttonMargin"
+                          ]
+                        }
+                      ],
+                      "size": [
+                        "pw, fh"
+                      ],
+                      "tdiv": [
+                        {
+                          "id": [
+                            "listbox_filter_holder"
+                          ],
+                          "pos": [
+                            "1@blockInterval, 0"
+                          ],
+                          "position": [
+                            "relative"
+                          ],
+                          "width": [
+                            "pw"
+                          ]
+                        }
+                      ],
+                      "textAreaCentered": [
+                        {
+                          "hideEmptyText": [
+                            "yes"
+                          ],
+                          "id": [
+                            "items_list_msg"
+                          ],
+                          "pos": [
+                            "50%pw-50%w, 40%ph-40%h"
+                          ],
+                          "position": [
+                            "absolute"
+                          ],
+                          "text": [
+                            ""
+                          ],
+                          "width": [
+                            "80%pw"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "chapterSeparator": [
+                {
+                  "margin": [
+                    "1@blockInterval, 0"
+                  ]
+                }
+              ],
+              "id": [
+                "wnd_content"
+              ],
+              "size": [
+                "fw, ph - 1@frameFooterHeight"
+              ],
+              "tdiv": [
+                {
+                  "flow": [
+                    "vertical"
+                  ],
+                  "id": [
+                    "item_desc"
+                  ],
+                  "overflow-y": [
+                    "auto"
+                  ],
+                  "size": [
+                    "fw, ph"
+                  ],
+                  "tdiv": [
+                    {
+                      "flow": [
+                        "vertical"
+                      ],
+                      "id": [
+                        "mission_desc"
+                      ],
+                      "position": [
+                        "absolute"
+                      ],
+                      "size": [
+                        "pw,ph"
+                      ]
+                    },
+                    {
+                      "display": [
+                        "hide"
+                      ],
+                      "flow": [
+                        "vertical"
+                      ],
+                      "id": [
+                        "chapter_include_block"
+                      ],
+                      "img": [
+                        {
+                          "background-image": [
+                            ""
+                          ],
+                          "background-repeat": [
+                            "expand"
+                          ],
+                          "height": [
+                            "w*128/1024"
+                          ],
+                          "id": [
+                            "item_desc_header_img"
+                          ],
+                          "width": [
+                            "pw"
+                          ]
+                        }
+                      ],
+                      "size": [
+                        "pw, fh"
+                      ],
+                      "tdiv": [
+                        {
+                          "flow": [
+                            "h-flow"
+                          ],
+                          "flow-align": [
+                            "center"
+                          ],
+                          "id": [
+                            "div_before_text"
+                          ],
+                          "width": [
+                            "pw"
+                          ]
+                        },
+                        {
+                          "flow": [
+                            "vertical"
+                          ],
+                          "height": [
+                            "fh"
+                          ],
+                          "overflow-y": [
+                            "auto"
+                          ],
+                          "scrollbarShortcuts": [
+                            "yes"
+                          ],
+                          "tdiv": [
+                            {
+                              "display": [
+                                "hide"
+                              ],
+                              "flow": [
+                                "vertical"
+                              ],
+                              "id": [
+                                "session_results"
+                              ],
+                              "padding-top": [
+                                "0.01@scrn_tgt"
+                              ],
+                              "tdiv": [
+                                {
+                                  "flow": [
+                                    "vertical"
+                                  ],
+                                  "id": [
+                                    "results_table_place"
+                                  ],
+                                  "width": [
+                                    "pw"
+                                  ]
+                                }
+                              ],
+                              "textarea": [
+                                {
+                                  "chapterTextAreaStyle": [
+                                    "yes"
+                                  ],
+                                  "font-bold": [
+                                    "@fontMedium"
+                                  ],
+                                  "text": [
+                                    "#mainmenu/sessionResults"
+                                  ]
+                                }
+                              ],
+                              "width": [
+                                "pw"
+                              ]
+                            }
+                          ],
+                          "textarea": [
+                            {
+                              "chapterTextAreaStyle": [
+                                "yes"
+                              ],
+                              "font-bold": [
+                                "@fontMedium"
+                              ],
+                              "hideEmptyText": [
+                                "yes"
+                              ],
+                              "id": [
+                                "item_desc_text"
+                              ],
+                              "text": [
+                                ""
+                              ],
+                              "width": [
+                                "pw"
+                              ]
+                            }
+                          ],
+                          "total-input-transparent": [
+                            "yes"
+                          ],
+                          "width": [
+                            "pw"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "id": [
+                        "after_desc_block"
+                      ],
+                      "width": [
+                        "pw"
+                      ]
+                    },
+                    {
+                      "flow": [
+                        "vertical"
+                      ],
+                      "id": [
+                        "item_misc"
+                      ]
+                    }
+                  ],
+                  "text": [
+                    {
+                      "id": [
+                        "item_name"
+                      ],
+                      "left": [
+                        "(pw-w)/2"
+                      ],
+                      "position": [
+                        "relative"
+                      ],
+                      "style": [
+                        "font:@fontMedium;color:@titleTextColor;"
+                      ],
+                      "text": [
+                        ""
+                      ],
+                      "textHide": [
+                        "yes"
+                      ]
+                    }
+                  ],
+                  "total-input-transparent": [
+                    "yes"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "on_click": [
+        "goBack"
+      ]
+    }
+  ]
+}

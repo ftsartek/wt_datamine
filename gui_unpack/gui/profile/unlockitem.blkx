@@ -1,0 +1,601 @@
+{
+  "selImg": [
+    {
+      "expandImg": [
+        {
+          "background-color": [
+            "@premiumColor"
+          ],
+          "background-image": [
+            "#ui/gameuiskin#expand_info"
+          ],
+          "display": [
+            "hide"
+          ],
+          "height": [
+            "1*@scrn_tgt/100.0"
+          ],
+          "id": [
+            "expandImg"
+          ],
+          "pos": [
+            "50%pw-50%w, ph-h-0.7*@sf/100.0"
+          ],
+          "position": [
+            "absolute"
+          ],
+          "width": [
+            "2h"
+          ]
+        }
+      ],
+      "hiddenDiv": [
+        {
+          "flow": [
+            "h-flow"
+          ],
+          "id": [
+            "hidden_block"
+          ],
+          "padding": [
+            "8*@scrn_tgt/100.0, 0, 1*@scrn_tgt/100.0, 0"
+          ],
+          "width": [
+            "pw"
+          ]
+        }
+      ],
+      "id": [
+        "unlock_block"
+      ],
+      "mainDescWrap": [
+        {
+          "CheckBox": [
+            {
+              "ButtonImg": [
+                {
+                  "btnName": [
+                    "A"
+                  ],
+                  "showOnSelect": [
+                    "hover"
+                  ]
+                }
+              ],
+              "CheckBoxImg": [
+                []
+              ],
+              "btnName": [
+                ""
+              ],
+              "id": [
+                "checkbox_favorites"
+              ],
+              "on_change_value": [
+                "unlockToFavorites"
+              ],
+              "pos": [
+                "pw-w-@blockInterval, @blockInterval"
+              ],
+              "position": [
+                "absolute"
+              ],
+              "skip-navigation": [
+                "yes"
+              ],
+              "smallFont": [
+                "yes"
+              ],
+              "text": [
+                "#mainmenu/UnlockAchievementsToFavorite"
+              ],
+              "tooltip": [
+                ""
+              ],
+              "unlockId": [
+                ""
+              ]
+            }
+          ],
+          "achievementTitle": [
+            {
+              "activeText": [
+                {
+                  "id": [
+                    "achivment_title"
+                  ],
+                  "max-width": [
+                    "pw"
+                  ],
+                  "overlayTextColor": [
+                    "unlockHeader"
+                  ],
+                  "pare-text": [
+                    "yes"
+                  ],
+                  "text": [
+                    ""
+                  ]
+                }
+              ],
+              "challengeDescriptionProgress": [
+                {
+                  "display": [
+                    "hide"
+                  ],
+                  "id": [
+                    "progress_bar"
+                  ],
+                  "value": [
+                    ""
+                  ]
+                }
+              ],
+              "flow": [
+                "vertical"
+              ],
+              "margin-left": [
+                "0.015@sf"
+              ],
+              "min-height": [
+                "@profileUnlockIconSize"
+              ],
+              "tdiv": [
+                {
+                  "Button_text": [
+                    {
+                      "ButtonImg": [
+                        {
+                          "showOnSelect": [
+                            "yes"
+                          ]
+                        }
+                      ],
+                      "btnName": [
+                        "Y"
+                      ],
+                      "buttonWink": [
+                        []
+                      ],
+                      "enableOn": [
+                        "hoverOrSelect"
+                      ],
+                      "hideText": [
+                        "yes"
+                      ],
+                      "id": [
+                        "purchase_button"
+                      ],
+                      "on_click": [
+                        "onBuyUnlock"
+                      ],
+                      "textarea": [
+                        {
+                          "class": [
+                            "buttonText"
+                          ],
+                          "id": [
+                            "purchase_button_text"
+                          ]
+                        }
+                      ],
+                      "unlockId": [
+                        ""
+                      ],
+                      "visualStyle": [
+                        "purchase"
+                      ]
+                    },
+                    {
+                      "ButtonImg": [
+                        {
+                          "showOnSelect": [
+                            "yes"
+                          ]
+                        }
+                      ],
+                      "btnName": [
+                        "Y"
+                      ],
+                      "buttonWink": [
+                        []
+                      ],
+                      "enableOn": [
+                        "hoverOrSelect"
+                      ],
+                      "id": [
+                        "manual_open_button"
+                      ],
+                      "on_click": [
+                        "onManualOpenUnlock"
+                      ],
+                      "text": [
+                        "#items/getRewardShort"
+                      ],
+                      "unlockId": [
+                        ""
+                      ],
+                      "visualStyle": [
+                        "purchase"
+                      ]
+                    },
+                    {
+                      "ButtonImg": [
+                        {
+                          "showOnSelect": [
+                            "yes"
+                          ]
+                        }
+                      ],
+                      "btnName": [
+                        "L3"
+                      ],
+                      "buttonWink": [
+                        []
+                      ],
+                      "display": [
+                        "hide"
+                      ],
+                      "enableOn": [
+                        "hoverOrSelect"
+                      ],
+                      "id": [
+                        "show_prizes_btn"
+                      ],
+                      "margin-bottom": [
+                        "1@blockInterval"
+                      ],
+                      "margin-top": [
+                        "1@blockInterval"
+                      ],
+                      "on_click": [
+                        "showUnlockPrizes"
+                      ],
+                      "text": [
+                        "#profile/awards"
+                      ],
+                      "trophyId": [
+                        ""
+                      ],
+                      "visualStyle": [
+                        "secondary"
+                      ]
+                    },
+                    {
+                      "ButtonImg": [
+                        {
+                          "showOnSelect": [
+                            "yes"
+                          ]
+                        }
+                      ],
+                      "btnName": [
+                        "L3"
+                      ],
+                      "buttonWink": [
+                        []
+                      ],
+                      "class": [
+                        "image"
+                      ],
+                      "display": [
+                        "hide"
+                      ],
+                      "enableOn": [
+                        "hoverOrSelect"
+                      ],
+                      "id": [
+                        "preview_prize_btn"
+                      ],
+                      "img": [
+                        {
+                          "background-image": [
+                            "#ui/gameuiskin#btn_preview.svg"
+                          ]
+                        }
+                      ],
+                      "margin-bottom": [
+                        "1@blockInterval"
+                      ],
+                      "margin-top": [
+                        "1@blockInterval"
+                      ],
+                      "on_click": [
+                        "onPrizePreview"
+                      ],
+                      "text": [
+                        "#mainmenu/btnPreview"
+                      ],
+                      "unlockId": [
+                        ""
+                      ],
+                      "visualStyle": [
+                        "secondary"
+                      ]
+                    },
+                    {
+                      "ButtonImg": [
+                        {
+                          "showOnSelect": [
+                            "yes"
+                          ]
+                        }
+                      ],
+                      "btnName": [
+                        "X"
+                      ],
+                      "buttonWink": [
+                        []
+                      ],
+                      "display": [
+                        "hide"
+                      ],
+                      "enableOn": [
+                        "hoverOrSelect"
+                      ],
+                      "id": [
+                        "show_units_btn"
+                      ],
+                      "margin-bottom": [
+                        "1@blockInterval"
+                      ],
+                      "margin-top": [
+                        "1@blockInterval"
+                      ],
+                      "on_click": [
+                        "showUnlockUnits"
+                      ],
+                      "text": [
+                        "#mainmenu/showVehicles"
+                      ],
+                      "unlockId": [
+                        ""
+                      ],
+                      "visualStyle": [
+                        "secondary"
+                      ]
+                    }
+                  ],
+                  "left": [
+                    "-1@blockInterval"
+                  ],
+                  "position": [
+                    "relative"
+                  ],
+                  "width": [
+                    "pw"
+                  ]
+                }
+              ],
+              "textareaNoTab": [
+                {
+                  "id": [
+                    "description"
+                  ],
+                  "overflow": [
+                    "hidden"
+                  ],
+                  "smallFont": [
+                    "yes"
+                  ],
+                  "text": [
+                    ""
+                  ],
+                  "width": [
+                    "pw"
+                  ]
+                },
+                {
+                  "id": [
+                    "main_cond"
+                  ],
+                  "margin-top": [
+                    "1@blockInterval"
+                  ],
+                  "overflow": [
+                    "hidden"
+                  ],
+                  "smallFont": [
+                    "yes"
+                  ],
+                  "text": [
+                    ""
+                  ],
+                  "width": [
+                    "pw"
+                  ]
+                },
+                {
+                  "id": [
+                    "mult_desc"
+                  ],
+                  "overflow": [
+                    "hidden"
+                  ],
+                  "smallFont": [
+                    "yes"
+                  ],
+                  "text": [
+                    ""
+                  ],
+                  "width": [
+                    "pw"
+                  ]
+                },
+                {
+                  "id": [
+                    "conditions"
+                  ],
+                  "margin-top": [
+                    "1@blockInterval"
+                  ],
+                  "overflow": [
+                    "hidden"
+                  ],
+                  "smallFont": [
+                    "yes"
+                  ],
+                  "text": [
+                    ""
+                  ],
+                  "width": [
+                    "pw"
+                  ]
+                },
+                {
+                  "id": [
+                    "reward"
+                  ],
+                  "margin-top": [
+                    "0.005@sf"
+                  ],
+                  "max-width": [
+                    "pw"
+                  ],
+                  "pare-text": [
+                    "yes"
+                  ],
+                  "smallFont": [
+                    "yes"
+                  ],
+                  "text": [
+                    ""
+                  ],
+                  "title": [
+                    "$tooltipObj"
+                  ],
+                  "tooltipObj": [
+                    {
+                      "display": [
+                        "hide"
+                      ],
+                      "id": [
+                        "tooltip"
+                      ],
+                      "on_tooltip_close": [
+                        "onTooltipObjClose"
+                      ],
+                      "on_tooltip_open": [
+                        "onGenericTooltipOpen"
+                      ],
+                      "reward": [
+                        ""
+                      ],
+                      "smallFont": [
+                        "yes"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "width": [
+                "fw"
+              ]
+            }
+          ],
+          "layeredIconContainer": [
+            {
+              "id": [
+                "achivment_ico"
+              ],
+              "pos": [
+                "0, ph/2 - h/2"
+              ],
+              "position": [
+                "relative"
+              ],
+              "size": [
+                "@profileUnlockIconSize, @profileUnlockIconSize"
+              ]
+            }
+          ],
+          "padding": [
+            "1.5*@sf/100.0"
+          ],
+          "unlockStages": [
+            {
+              "behavior": [
+                "PosNavigator"
+              ],
+              "flow": [
+                "horizontal"
+              ],
+              "id": [
+                "stages"
+              ],
+              "margin-left": [
+                "0.05@sf"
+              ],
+              "navigatorShortcuts": [
+                "noSelect"
+              ],
+              "pos": [
+                "0, 50%ph-50%h"
+              ],
+              "position": [
+                "relative"
+              ]
+            }
+          ],
+          "width": [
+            "pw"
+          ]
+        }
+      ],
+      "tdiv": [
+        {
+          "height": [
+            "@newWidgetIconHeight"
+          ],
+          "img": [
+            {
+              "background-color": [
+                "@white"
+              ],
+              "background-image": [
+                "#ui/gameuiskin#locked.svg"
+              ],
+              "background-svg-size": [
+                "@cIco,@cIco"
+              ],
+              "display": [
+                "hide"
+              ],
+              "id": [
+                "lock_icon"
+              ],
+              "pos": [
+                "0, 50%(ph-h)"
+              ],
+              "position": [
+                "relative"
+              ],
+              "size": [
+                "@cIco,@cIco"
+              ]
+            }
+          ],
+          "pos": [
+            "10@sf/@pf, 10@sf/@pf"
+          ],
+          "position": [
+            "absolute"
+          ],
+          "unseenIcon": [
+            {
+              "id": [
+                "unseen_icon"
+              ],
+              "noMargin": [
+                "yes"
+              ]
+            }
+          ]
+        }
+      ],
+      "width": [
+        "pw"
+      ]
+    }
+  ]
+}

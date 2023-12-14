@@ -1,0 +1,1673 @@
+{
+  "airfields": [
+    []
+  ],
+  "areas": [
+    []
+  ],
+  "bin_dump_file": [
+    ""
+  ],
+  "dialogs": [
+    []
+  ],
+  "effects": [
+    []
+  ],
+  "imports": [
+    []
+  ],
+  "mission_objectives": [
+    {
+      "isCategory": [
+        true
+      ],
+      "is_enabled": [
+        true
+      ]
+    }
+  ],
+  "mission_settings": [
+    {
+      "atmosphere": [
+        {
+          "pressure": [
+            760.0
+          ],
+          "temperature": [
+            0.0
+          ]
+        }
+      ],
+      "mission": [
+        {
+          "difficulty": [
+            ""
+          ],
+          "environment": [
+            "Day"
+          ],
+          "level": [
+            "levels/guadalcanal.bin"
+          ],
+          "openDiffLevels": [
+            true
+          ],
+          "optionalTakeOff": [
+            false
+          ],
+          "restoreType": [
+            "attempts"
+          ],
+          "scoreLimit": [
+            5000
+          ],
+          "type": [
+            "domination"
+          ],
+          "weather": [
+            "hazy"
+          ]
+        }
+      ],
+      "player": [
+        {
+          "army": [
+            1
+          ],
+          "wing": [
+            "t1_player01",
+            "t1_player02",
+            "t1_player03",
+            "t1_player04",
+            "t1_player05",
+            "t1_player06",
+            "t1_player07",
+            "t1_player08",
+            "t1_player09",
+            "t1_player10",
+            "t1_player11",
+            "t1_player12",
+            "t1_player13",
+            "t1_player14",
+            "t1_player15",
+            "t1_player16"
+          ]
+        }
+      ],
+      "player_teamB": [
+        {
+          "army": [
+            2
+          ],
+          "wing": [
+            "t2_player01",
+            "t2_player02",
+            "t2_player03",
+            "t2_player04",
+            "t2_player05",
+            "t2_player06",
+            "t2_player07",
+            "t2_player08",
+            "t2_player09",
+            "t2_player10",
+            "t2_player11",
+            "t2_player12",
+            "t2_player13",
+            "t2_player14",
+            "t2_player15",
+            "t2_player16",
+            "t2_player17"
+          ]
+        }
+      ],
+      "spectator_points": [
+        []
+      ]
+    }
+  ],
+  "objLayers": [
+    []
+  ],
+  "selected_tag": [
+    ""
+  ],
+  "triggers": [
+    {
+      "arcade_land_units_adding": [
+        {
+          "arcade_units_adding_init": [
+            {
+              "actions": [
+                {
+                  "comment": [
+                    {
+                      "value": [
+                        "proverili chto est' skvady s dop yunitami. znachit mozhno rabotat'"
+                      ]
+                    }
+                  ],
+                  "missionGetBalanceLevel": [
+                    {
+                      "input_var": [
+                        "adding_units_balance_level"
+                      ]
+                    }
+                  ],
+                  "triggerEnable": [
+                    {
+                      "target": [
+                        "arcade_units_adding_rank_0_5",
+                        "arcade_units_adding_rank_6_11",
+                        "arcade_units_adding_rank_12_14",
+                        "arcade_units_adding_rank_15_17",
+                        "arcade_units_adding_rank_18_23",
+                        "arcade_units_adding_rank_23_plus"
+                      ]
+                    }
+                  ],
+                  "unitPutToSleep": [
+                    {
+                      "target": [
+                        "@t1_additional_units_squad_name",
+                        "@t2_additional_units_squad_name"
+                      ]
+                    }
+                  ],
+                  "varSetString": [
+                    {
+                      "value": [
+                        "t1_quest_additional_units"
+                      ],
+                      "var": [
+                        "t1_additional_units_squad_name"
+                      ]
+                    },
+                    {
+                      "value": [
+                        "t2_quest_additional_units"
+                      ],
+                      "var": [
+                        "t2_additional_units_squad_name"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "comments": [
+                ""
+              ],
+              "conditions": [
+                {
+                  "objectExists": [
+                    {
+                      "target": [
+                        "t1_quest_additional_units"
+                      ],
+                      "type": [
+                        "squad"
+                      ]
+                    },
+                    {
+                      "target": [
+                        "t2_quest_additional_units"
+                      ],
+                      "type": [
+                        "squad"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "else_actions": [
+                []
+              ],
+              "events": [
+                {
+                  "initMission": [
+                    []
+                  ]
+                }
+              ],
+              "is_enabled": [
+                true
+              ],
+              "props": [
+                {
+                  "actionsType": [
+                    "PERFORM_ONE_BY_ONE"
+                  ],
+                  "conditionsType": [
+                    "ALL"
+                  ],
+                  "enableAfterComplete": [
+                    false
+                  ]
+                }
+              ]
+            }
+          ],
+          "arcade_units_adding_rank_0_5": [
+            {
+              "actions": [
+                {
+                  "comment": [
+                    {
+                      "value": [
+                        "BR 0-5"
+                      ]
+                    },
+                    {
+                      "value": [
+                        "nichego ne delaem - 24 yunitov hvataet"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "comments": [
+                ""
+              ],
+              "conditions": [
+                {
+                  "varCompareInt": [
+                    {
+                      "comparasion_func": [
+                        "less"
+                      ],
+                      "value": [
+                        6
+                      ],
+                      "var_value": [
+                        "adding_units_balance_level"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "else_actions": [
+                []
+              ],
+              "events": [
+                {
+                  "periodicEvent": [
+                    {
+                      "time": [
+                        1.0
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "is_enabled": [
+                false
+              ],
+              "props": [
+                {
+                  "actionsType": [
+                    "PERFORM_ONE_BY_ONE"
+                  ],
+                  "conditionsType": [
+                    "ALL"
+                  ],
+                  "enableAfterComplete": [
+                    false
+                  ]
+                }
+              ]
+            }
+          ],
+          "arcade_units_adding_rank_12_14": [
+            {
+              "actions": [
+                {
+                  "comment": [
+                    {
+                      "value": [
+                        "BR 12-14"
+                      ]
+                    },
+                    {
+                      "value": [
+                        "probuzhdaem po 10 yunitov s kazhdoj storony"
+                      ]
+                    }
+                  ],
+                  "triggerEnable": [
+                    {
+                      "target": [
+                        "arcade_units_adding_tickets_cost"
+                      ]
+                    }
+                  ],
+                  "unitWakeUp": [
+                    {
+                      "numToWakeUp": [
+                        10
+                      ],
+                      "order": [
+                        "fromStart"
+                      ],
+                      "target": [
+                        "@t1_additional_units_squad_name"
+                      ]
+                    },
+                    {
+                      "numToWakeUp": [
+                        10
+                      ],
+                      "order": [
+                        "fromStart"
+                      ],
+                      "target": [
+                        "@t2_additional_units_squad_name"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "comments": [
+                ""
+              ],
+              "conditions": [
+                {
+                  "varCompareInt": [
+                    {
+                      "comparasion_func": [
+                        "more"
+                      ],
+                      "value": [
+                        11
+                      ],
+                      "var_value": [
+                        "adding_units_balance_level"
+                      ]
+                    },
+                    {
+                      "comparasion_func": [
+                        "less"
+                      ],
+                      "value": [
+                        15
+                      ],
+                      "var_value": [
+                        "adding_units_balance_level"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "else_actions": [
+                []
+              ],
+              "events": [
+                {
+                  "periodicEvent": [
+                    {
+                      "time": [
+                        1.0
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "is_enabled": [
+                false
+              ],
+              "props": [
+                {
+                  "actionsType": [
+                    "PERFORM_ONE_BY_ONE"
+                  ],
+                  "conditionsType": [
+                    "ALL"
+                  ],
+                  "enableAfterComplete": [
+                    false
+                  ]
+                }
+              ]
+            }
+          ],
+          "arcade_units_adding_rank_15_17": [
+            {
+              "actions": [
+                {
+                  "comment": [
+                    {
+                      "value": [
+                        "BR 15-17"
+                      ]
+                    },
+                    {
+                      "value": [
+                        "probuzhdaem po 10 yunitov s kazhdoj storony"
+                      ]
+                    }
+                  ],
+                  "triggerEnable": [
+                    {
+                      "target": [
+                        "arcade_units_adding_tickets_cost"
+                      ]
+                    }
+                  ],
+                  "unitWakeUp": [
+                    {
+                      "numToWakeUp": [
+                        10
+                      ],
+                      "order": [
+                        "fromStart"
+                      ],
+                      "target": [
+                        "@t1_additional_units_squad_name"
+                      ]
+                    },
+                    {
+                      "numToWakeUp": [
+                        10
+                      ],
+                      "order": [
+                        "fromStart"
+                      ],
+                      "target": [
+                        "@t2_additional_units_squad_name"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "comments": [
+                ""
+              ],
+              "conditions": [
+                {
+                  "varCompareInt": [
+                    {
+                      "comparasion_func": [
+                        "more"
+                      ],
+                      "value": [
+                        14
+                      ],
+                      "var_value": [
+                        "adding_units_balance_level"
+                      ]
+                    },
+                    {
+                      "comparasion_func": [
+                        "less"
+                      ],
+                      "value": [
+                        18
+                      ],
+                      "var_value": [
+                        "adding_units_balance_level"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "else_actions": [
+                []
+              ],
+              "events": [
+                {
+                  "periodicEvent": [
+                    {
+                      "time": [
+                        1.0
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "is_enabled": [
+                false
+              ],
+              "props": [
+                {
+                  "actionsType": [
+                    "PERFORM_ONE_BY_ONE"
+                  ],
+                  "conditionsType": [
+                    "ALL"
+                  ],
+                  "enableAfterComplete": [
+                    false
+                  ]
+                }
+              ]
+            }
+          ],
+          "arcade_units_adding_rank_18_23": [
+            {
+              "actions": [
+                {
+                  "comment": [
+                    {
+                      "value": [
+                        "BR 18-23"
+                      ]
+                    },
+                    {
+                      "value": [
+                        "probuzhdaem vseh yunitov s kazhdoj storony"
+                      ]
+                    }
+                  ],
+                  "triggerEnable": [
+                    {
+                      "target": [
+                        "arcade_units_adding_tickets_cost"
+                      ]
+                    }
+                  ],
+                  "unitWakeUp": [
+                    {
+                      "target": [
+                        "@t1_additional_units_squad_name"
+                      ]
+                    },
+                    {
+                      "target": [
+                        "@t2_additional_units_squad_name"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "comments": [
+                ""
+              ],
+              "conditions": [
+                {
+                  "varCompareInt": [
+                    {
+                      "comparasion_func": [
+                        "more"
+                      ],
+                      "value": [
+                        17
+                      ],
+                      "var_value": [
+                        "adding_units_balance_level"
+                      ]
+                    },
+                    {
+                      "comparasion_func": [
+                        "less"
+                      ],
+                      "value": [
+                        24
+                      ],
+                      "var_value": [
+                        "adding_units_balance_level"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "else_actions": [
+                []
+              ],
+              "events": [
+                {
+                  "periodicEvent": [
+                    {
+                      "time": [
+                        1.0
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "is_enabled": [
+                false
+              ],
+              "props": [
+                {
+                  "actionsType": [
+                    "PERFORM_ONE_BY_ONE"
+                  ],
+                  "conditionsType": [
+                    "ALL"
+                  ],
+                  "enableAfterComplete": [
+                    false
+                  ]
+                }
+              ]
+            }
+          ],
+          "arcade_units_adding_rank_23_plus": [
+            {
+              "actions": [
+                {
+                  "comment": [
+                    {
+                      "value": [
+                        "BR 23+"
+                      ]
+                    },
+                    {
+                      "value": [
+                        "probuzhdaem po 10 yunitov s kazhdoj storony"
+                      ]
+                    }
+                  ],
+                  "triggerEnable": [
+                    {
+                      "target": [
+                        "arcade_units_adding_tickets_cost"
+                      ]
+                    }
+                  ],
+                  "unitWakeUp": [
+                    {
+                      "numToWakeUp": [
+                        10
+                      ],
+                      "order": [
+                        "fromStart"
+                      ],
+                      "target": [
+                        "@t1_additional_units_squad_name"
+                      ]
+                    },
+                    {
+                      "numToWakeUp": [
+                        10
+                      ],
+                      "order": [
+                        "fromStart"
+                      ],
+                      "target": [
+                        "@t2_additional_units_squad_name"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "comments": [
+                ""
+              ],
+              "conditions": [
+                {
+                  "varCompareInt": [
+                    {
+                      "comparasion_func": [
+                        "more"
+                      ],
+                      "value": [
+                        23
+                      ],
+                      "var_value": [
+                        "adding_units_balance_level"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "else_actions": [
+                []
+              ],
+              "events": [
+                {
+                  "periodicEvent": [
+                    {
+                      "time": [
+                        1.0
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "is_enabled": [
+                false
+              ],
+              "props": [
+                {
+                  "actionsType": [
+                    "PERFORM_ONE_BY_ONE"
+                  ],
+                  "conditionsType": [
+                    "ALL"
+                  ],
+                  "enableAfterComplete": [
+                    false
+                  ]
+                }
+              ]
+            }
+          ],
+          "arcade_units_adding_rank_6_11": [
+            {
+              "actions": [
+                {
+                  "comment": [
+                    {
+                      "value": [
+                        "BR 6-11"
+                      ]
+                    },
+                    {
+                      "value": [
+                        "nichego ne delaem - 24 yunitov hvataet"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "comments": [
+                ""
+              ],
+              "conditions": [
+                {
+                  "varCompareInt": [
+                    {
+                      "comparasion_func": [
+                        "more"
+                      ],
+                      "value": [
+                        5
+                      ],
+                      "var_value": [
+                        "adding_units_balance_level"
+                      ]
+                    },
+                    {
+                      "comparasion_func": [
+                        "less"
+                      ],
+                      "value": [
+                        12
+                      ],
+                      "var_value": [
+                        "adding_units_balance_level"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "else_actions": [
+                []
+              ],
+              "events": [
+                {
+                  "periodicEvent": [
+                    {
+                      "time": [
+                        1.0
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "is_enabled": [
+                false
+              ],
+              "props": [
+                {
+                  "actionsType": [
+                    "PERFORM_ONE_BY_ONE"
+                  ],
+                  "conditionsType": [
+                    "ALL"
+                  ],
+                  "enableAfterComplete": [
+                    false
+                  ]
+                }
+              ]
+            }
+          ],
+          "arcade_units_adding_tickets_cost": [
+            {
+              "actions": [
+                {
+                  "comment": [
+                    {
+                      "value": [
+                        "schitaem kolichestvo aktivnyh yunitov v obeih komandah"
+                      ]
+                    },
+                    {
+                      "value": [
+                        "schitaem tol'ko quest_units, tak kak oni vklyuchayut v sebya dop skvady"
+                      ]
+                    },
+                    {
+                      "value": [
+                        "uvelichivaem peremennuyu podscheta"
+                      ]
+                    }
+                  ],
+                  "varModify": [
+                    {
+                      "operator": [
+                        "add"
+                      ],
+                      "value": [
+                        1.0
+                      ],
+                      "var": [
+                        "additional_units_quantity"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "comments": [
+                ""
+              ],
+              "conditions": [
+                {
+                  "unitWhenCountMatches": [
+                    {
+                      "func": [
+                        "more"
+                      ],
+                      "object": [
+                        "t1_quest_units_squad",
+                        "t2_quest_units_squad"
+                      ],
+                      "object_marking": [
+                        0
+                      ],
+                      "object_type": [
+                        "isActive"
+                      ],
+                      "value": [
+                        0
+                      ],
+                      "var": [
+                        "additional_units_quantity"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "else_actions": [
+                {
+                  "comment": [
+                    {
+                      "value": [
+                        "podschitali kolichestvo yunitov"
+                      ]
+                    },
+                    {
+                      "value": [
+                        "podelim chislo na 2"
+                      ]
+                    },
+                    {
+                      "value": [
+                        "poluchim kolichestvo tekushchih ochkov komandy A"
+                      ]
+                    },
+                    {
+                      "value": [
+                        "razdelim kolichestvo ochkov na kolichestvo yunitov"
+                      ]
+                    },
+                    {
+                      "value": [
+                        "dobavim 1 chtoby garantirovat' nulevoe kolichestvo ochkov pri smerti vsej nazemki"
+                      ]
+                    },
+                    {
+                      "value": [
+                        "umnozhaem chislo na -1, chtoby tikety otnimalis'"
+                      ]
+                    },
+                    {
+                      "value": [
+                        "zapuskaem trigger okonchaniya podschetov"
+                      ]
+                    }
+                  ],
+                  "triggerEnable": [
+                    {
+                      "target": [
+                        "arcade_units_adding_tickets_end"
+                      ]
+                    }
+                  ],
+                  "varModify": [
+                    {
+                      "operator": [
+                        "divAB"
+                      ],
+                      "value": [
+                        2.0
+                      ],
+                      "var": [
+                        "additional_units_quantity"
+                      ]
+                    },
+                    {
+                      "operator": [
+                        "add"
+                      ],
+                      "use_variable": [
+                        true
+                      ],
+                      "value": [
+                        0.0
+                      ],
+                      "var": [
+                        "additional_units_tickets_cost"
+                      ],
+                      "var_value": [
+                        "additional_units_cur_tickets"
+                      ]
+                    },
+                    {
+                      "operator": [
+                        "divAB"
+                      ],
+                      "use_variable": [
+                        true
+                      ],
+                      "value": [
+                        1.0
+                      ],
+                      "var": [
+                        "additional_units_tickets_cost"
+                      ],
+                      "var_value": [
+                        "additional_units_quantity"
+                      ]
+                    },
+                    {
+                      "operator": [
+                        "add"
+                      ],
+                      "value": [
+                        1.0
+                      ],
+                      "var": [
+                        "additional_units_tickets_cost"
+                      ]
+                    },
+                    {
+                      "operator": [
+                        "mul"
+                      ],
+                      "value": [
+                        -1.0
+                      ],
+                      "var": [
+                        "additional_units_tickets_cost"
+                      ]
+                    }
+                  ],
+                  "varSetInt": [
+                    {
+                      "source_var": [
+                        "mpTi1"
+                      ],
+                      "value": [
+                        0
+                      ],
+                      "var": [
+                        "additional_units_cur_tickets"
+                      ]
+                    },
+                    {
+                      "value": [
+                        0
+                      ],
+                      "var": [
+                        "additional_units_tickets_cost"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "periodicEvent": [
+                    {
+                      "time": [
+                        0.1
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "is_enabled": [
+                false
+              ],
+              "props": [
+                {
+                  "actionsType": [
+                    "PERFORM_ONE_BY_ONE"
+                  ],
+                  "conditionsType": [
+                    "ALL"
+                  ],
+                  "enableAfterComplete": [
+                    true
+                  ]
+                }
+              ]
+            }
+          ],
+          "arcade_units_adding_tickets_end": [
+            {
+              "actions": [
+                {
+                  "comment": [
+                    {
+                      "value": [
+                        "zakonchili podschet triggerov"
+                      ]
+                    },
+                    {
+                      "value": [
+                        "vyklyuchaem trigger podscheta"
+                      ]
+                    },
+                    {
+                      "value": [
+                        "zapuskaem sluzhebnye triggery"
+                      ]
+                    }
+                  ],
+                  "triggerDisable": [
+                    {
+                      "target": [
+                        "arcade_units_adding_tickets_cost"
+                      ]
+                    }
+                  ],
+                  "triggerEnable": [
+                    {
+                      "target": [
+                        "t1_land_damaged",
+                        "t2_land_damaged",
+                        "t1_all_land_destroyed",
+                        "t2_all_land_destroyed"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "comments": [
+                ""
+              ],
+              "conditions": [
+                []
+              ],
+              "else_actions": [
+                []
+              ],
+              "events": [
+                {
+                  "periodicEvent": [
+                    {
+                      "time": [
+                        1.0
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "is_enabled": [
+                false
+              ],
+              "props": [
+                {
+                  "actionsType": [
+                    "PERFORM_ONE_BY_ONE"
+                  ],
+                  "conditionsType": [
+                    "ALL"
+                  ],
+                  "enableAfterComplete": [
+                    false
+                  ]
+                }
+              ]
+            }
+          ],
+          "isCategory": [
+            true
+          ],
+          "is_enabled": [
+            true
+          ]
+        }
+      ],
+      "isCategory": [
+        true
+      ],
+      "is_enabled": [
+        true
+      ],
+      "land_units_damage_init": [
+        {
+          "actions": [
+            {
+              "varSetInt": [
+                {
+                  "value": [
+                    -100
+                  ],
+                  "var": [
+                    "additional_units_tickets_cost"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            []
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "initMission": [
+                []
+              ]
+            }
+          ],
+          "is_enabled": [
+            true
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ],
+      "t1_all_land_destroyed": [
+        {
+          "actions": [
+            {
+              "triggerEnable": [
+                {
+                  "target": [
+                    "t1_all_land_destroyed_mp_change"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            []
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "periodicEvent": [
+                {
+                  "time": [
+                    30.0
+                  ]
+                }
+              ]
+            }
+          ],
+          "is_enabled": [
+            true
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ],
+      "t1_all_land_destroyed_mp_change": [
+        {
+          "actions": [
+            {
+              "triggerEnable": [
+                {
+                  "target": [
+                    "t1_loose"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            {
+              "unitWhenCountMatches": [
+                {
+                  "func": [
+                    "less"
+                  ],
+                  "object": [
+                    "t1_quest_units_squad"
+                  ],
+                  "object_marking": [
+                    0
+                  ],
+                  "object_type": [
+                    "isActive"
+                  ],
+                  "value": [
+                    1
+                  ]
+                }
+              ]
+            }
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "periodicEvent": [
+                {
+                  "time": [
+                    1.0
+                  ]
+                }
+              ]
+            }
+          ],
+          "is_enabled": [
+            false
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ],
+      "t1_land_damaged": [
+        {
+          "actions": [
+            {
+              "gameMPChangeScore": [
+                {
+                  "team": [
+                    "A"
+                  ],
+                  "value": [
+                    -100
+                  ],
+                  "valueSystem": [
+                    "amount"
+                  ],
+                  "var": [
+                    "additional_units_tickets_cost"
+                  ]
+                }
+              ],
+              "varModify": [
+                {
+                  "operator": [
+                    "add"
+                  ],
+                  "value": [
+                    1.0
+                  ],
+                  "var": [
+                    "t1_land_death_counter"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            {
+              "unitWhenCountMatches": [
+                {
+                  "func": [
+                    "more"
+                  ],
+                  "object": [
+                    "t1_quest_units_squad"
+                  ],
+                  "object_marking": [
+                    0
+                  ],
+                  "object_type": [
+                    "isKilled"
+                  ],
+                  "value": [
+                    0
+                  ],
+                  "var": [
+                    "t1_land_death_counter"
+                  ]
+                }
+              ]
+            }
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "periodicEvent": [
+                {
+                  "time": [
+                    1.0
+                  ]
+                }
+              ]
+            }
+          ],
+          "is_enabled": [
+            true
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                true
+              ]
+            }
+          ]
+        }
+      ],
+      "t2_all_land_destroyed": [
+        {
+          "actions": [
+            {
+              "triggerEnable": [
+                {
+                  "target": [
+                    "t2_all_land_destroyed_mp_change"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            []
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "periodicEvent": [
+                {
+                  "time": [
+                    30.0
+                  ]
+                }
+              ]
+            }
+          ],
+          "is_enabled": [
+            true
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ],
+      "t2_all_land_destroyed_mp_change": [
+        {
+          "actions": [
+            {
+              "triggerEnable": [
+                {
+                  "target": [
+                    "t2_loose"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            {
+              "unitWhenCountMatches": [
+                {
+                  "func": [
+                    "less"
+                  ],
+                  "object": [
+                    "t2_quest_units_squad"
+                  ],
+                  "object_marking": [
+                    0
+                  ],
+                  "object_type": [
+                    "isActive"
+                  ],
+                  "value": [
+                    1
+                  ]
+                }
+              ]
+            }
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "periodicEvent": [
+                {
+                  "time": [
+                    1.0
+                  ]
+                }
+              ]
+            }
+          ],
+          "is_enabled": [
+            false
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ],
+      "t2_land_damaged": [
+        {
+          "actions": [
+            {
+              "gameMPChangeScore": [
+                {
+                  "team": [
+                    "B"
+                  ],
+                  "value": [
+                    -100
+                  ],
+                  "valueSystem": [
+                    "amount"
+                  ],
+                  "var": [
+                    "additional_units_tickets_cost"
+                  ]
+                }
+              ],
+              "varModify": [
+                {
+                  "operator": [
+                    "add"
+                  ],
+                  "value": [
+                    1.0
+                  ],
+                  "var": [
+                    "t2_land_death_counter"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            {
+              "unitWhenCountMatches": [
+                {
+                  "func": [
+                    "more"
+                  ],
+                  "object": [
+                    "t2_quest_units_squad"
+                  ],
+                  "object_marking": [
+                    0
+                  ],
+                  "object_type": [
+                    "isKilled"
+                  ],
+                  "value": [
+                    0
+                  ],
+                  "var": [
+                    "t2_land_death_counter"
+                  ]
+                }
+              ]
+            }
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "periodicEvent": [
+                {
+                  "time": [
+                    1.0
+                  ]
+                }
+              ]
+            }
+          ],
+          "is_enabled": [
+            true
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                true
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "units": [
+    []
+  ],
+  "variables": [
+    {
+      "adding_units_balance_level": [
+        0
+      ],
+      "additional_units_cur_tickets": [
+        0
+      ],
+      "additional_units_quantity": [
+        0
+      ],
+      "additional_units_tickets_cost": [
+        0
+      ],
+      "t1_additional_units_squad_name": [
+        ""
+      ],
+      "t1_land_death_counter": [
+        0
+      ],
+      "t2_additional_units_squad_name": [
+        ""
+      ],
+      "t2_land_death_counter": [
+        0
+      ]
+    }
+  ],
+  "wayPoints": [
+    []
+  ]
+}

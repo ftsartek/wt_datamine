@@ -1,0 +1,464 @@
+{
+  "airfields": [
+    []
+  ],
+  "areas": [
+    []
+  ],
+  "bin_dump_file": [
+    ""
+  ],
+  "dialogs": [
+    []
+  ],
+  "effects": [
+    []
+  ],
+  "imports": [
+    []
+  ],
+  "mission_objectives": [
+    {
+      "isCategory": [
+        true
+      ],
+      "is_enabled": [
+        true
+      ]
+    }
+  ],
+  "mission_settings": [
+    {
+      "mission": [
+        {
+          "environment": [
+            "Day"
+          ],
+          "level": [
+            "levels/malta.bin"
+          ],
+          "type": [
+            "domination"
+          ],
+          "weather": [
+            "clear"
+          ]
+        }
+      ],
+      "player": [
+        {
+          "army": [
+            1
+          ]
+        }
+      ],
+      "player_teamB": [
+        {
+          "army": [
+            2
+          ]
+        }
+      ]
+    }
+  ],
+  "objLayers": [
+    {
+      "layer": [
+        {
+          "enabled": [
+            true
+          ]
+        },
+        {
+          "enabled": [
+            true
+          ]
+        },
+        {
+          "enabled": [
+            true
+          ]
+        },
+        {
+          "enabled": [
+            true
+          ]
+        }
+      ]
+    }
+  ],
+  "selected_tag": [
+    ""
+  ],
+  "triggers": [
+    {
+      "carriers_init_low": [
+        {
+          "actions": [
+            {
+              "missionMarkAsRespawnPoint": [
+                {
+                  "canSpawnOnNeutral": [
+                    false
+                  ],
+                  "forceCreate": [
+                    false
+                  ],
+                  "isAirfield": [
+                    true
+                  ],
+                  "isIndividual": [
+                    false
+                  ],
+                  "isStrictSpawn": [
+                    false
+                  ],
+                  "isUnit": [
+                    false
+                  ],
+                  "loc_name": [
+                    "missions/carriers_spawn"
+                  ],
+                  "object": [
+                    "t1_carrier"
+                  ],
+                  "onlyOnePlayerPerSpawnPoint": [
+                    false
+                  ],
+                  "radius": [
+                    -1.0
+                  ],
+                  "removeAreas": [
+                    false
+                  ],
+                  "replaceAreas": [
+                    false
+                  ],
+                  "resetStrictSpawnIndex": [
+                    false
+                  ],
+                  "showOnMap": [
+                    true
+                  ],
+                  "spawnEffect": [
+                    false
+                  ],
+                  "tags": [
+                    {
+                      "carrier_take_off": [
+                        true
+                      ],
+                      "tank": [
+                        false
+                      ],
+                      "type_aa_fighter": [
+                        false
+                      ],
+                      "type_assault": [
+                        false
+                      ],
+                      "type_frontline_bomber": [
+                        false
+                      ],
+                      "type_interceptor": [
+                        false
+                      ],
+                      "type_longrange_bomber": [
+                        false
+                      ]
+                    }
+                  ],
+                  "target": [
+                    "t1_carrier"
+                  ],
+                  "team": [
+                    "A"
+                  ],
+                  "useExisting": [
+                    false
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            []
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "initMission": [
+                []
+              ]
+            }
+          ],
+          "is_enabled": [
+            true
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ],
+      "isCategory": [
+        true
+      ],
+      "is_enabled": [
+        true
+      ]
+    }
+  ],
+  "units": [
+    {
+      "ships": [
+        {
+          "bullets0": [
+            ""
+          ],
+          "bullets1": [
+            ""
+          ],
+          "bullets2": [
+            ""
+          ],
+          "bullets3": [
+            ""
+          ],
+          "bulletsCount0": [
+            0
+          ],
+          "bulletsCount1": [
+            0
+          ],
+          "bulletsCount2": [
+            0
+          ],
+          "bulletsCount3": [
+            0
+          ],
+          "closed_waypoints": [
+            true
+          ],
+          "crewSkillK": [
+            0.0
+          ],
+          "isShipSpline": [
+            true
+          ],
+          "name": [
+            "t1_carrier"
+          ],
+          "objLayer": [
+            1
+          ],
+          "props": [
+            {
+              "army": [
+                1
+              ],
+              "attack_type": [
+                "fire_at_will"
+              ],
+              "count": [
+                1
+              ],
+              "formation_div": [
+                3
+              ],
+              "formation_noise": [
+                [0.1,0.1]
+              ],
+              "formation_step": [
+                [2.5,2.0]
+              ],
+              "formation_type": [
+                "rows"
+              ],
+              "uniqueName": [
+                ""
+              ]
+            }
+          ],
+          "shipTurnRadius": [
+            100.0
+          ],
+          "tm": [
+            [
+              [-0.766044,0.0,0.642788],
+              [0.0,1.0,0.0],
+              [-0.642788,0.0,-0.766044],
+              [16337.2,-64.85,-5815.4]
+            ]
+          ],
+          "unit_class": [
+            "hms_cv_illustrious"
+          ],
+          "way": [
+            {
+              "t1_carrier_wp_01": [
+                {
+                  "props": [
+                    {
+                      "canUsePathFinder": [
+                        false
+                      ],
+                      "moveType": [
+                        "MOVETO_STRAIGHT"
+                      ],
+                      "shouldKeepFormation": [
+                        false
+                      ],
+                      "speed": [
+                        10.0
+                      ],
+                      "tas": [
+                        false
+                      ]
+                    }
+                  ],
+                  "tm": [
+                    [
+                      [1.0,0.0,0.0],
+                      [0.0,1.0,0.0],
+                      [0.0,0.0,1.0],
+                      [12063.3,2.00049,-3261.29]
+                    ]
+                  ],
+                  "type": [
+                    "normal"
+                  ]
+                }
+              ],
+              "t1_carrier_wp_02": [
+                {
+                  "props": [
+                    {
+                      "canUsePathFinder": [
+                        false
+                      ],
+                      "moveType": [
+                        "MOVETO_STRAIGHT"
+                      ],
+                      "shouldKeepFormation": [
+                        false
+                      ],
+                      "speed": [
+                        10.0
+                      ],
+                      "tas": [
+                        false
+                      ]
+                    }
+                  ],
+                  "tm": [
+                    [
+                      [1.0,0.0,0.0],
+                      [0.0,1.0,0.0],
+                      [0.0,0.0,1.0],
+                      [14120.0,2.00049,-704.044]
+                    ]
+                  ],
+                  "type": [
+                    "normal"
+                  ]
+                }
+              ],
+              "t1_carrier_wp_03": [
+                {
+                  "props": [
+                    {
+                      "canUsePathFinder": [
+                        false
+                      ],
+                      "moveType": [
+                        "MOVETO_STRAIGHT"
+                      ],
+                      "shouldKeepFormation": [
+                        false
+                      ],
+                      "speed": [
+                        10.0
+                      ],
+                      "tas": [
+                        false
+                      ]
+                    }
+                  ],
+                  "tm": [
+                    [
+                      [1.0,0.0,0.0],
+                      [0.0,1.0,0.0],
+                      [0.0,0.0,1.0],
+                      [19537.3,1.99976,-3269.78]
+                    ]
+                  ],
+                  "type": [
+                    "normal"
+                  ]
+                }
+              ],
+              "t1_carrier_wp_04": [
+                {
+                  "props": [
+                    {
+                      "canUsePathFinder": [
+                        false
+                      ],
+                      "moveType": [
+                        "MOVETO_STRAIGHT"
+                      ],
+                      "shouldKeepFormation": [
+                        false
+                      ],
+                      "speed": [
+                        10.0
+                      ],
+                      "tas": [
+                        false
+                      ]
+                    }
+                  ],
+                  "tm": [
+                    [
+                      [1.0,0.0,0.0],
+                      [0.0,1.0,0.0],
+                      [0.0,0.0,1.0],
+                      [18744.1,2.0,-5730.95]
+                    ]
+                  ],
+                  "type": [
+                    "normal"
+                  ]
+                }
+              ]
+            }
+          ],
+          "weapons": [
+            ""
+          ]
+        }
+      ]
+    }
+  ],
+  "variables": [
+    []
+  ],
+  "wayPoints": [
+    []
+  ]
+}

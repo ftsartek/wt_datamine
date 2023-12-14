@@ -1,0 +1,287 @@
+{
+  "root": [
+    {
+      "blur": [
+        []
+      ],
+      "blur_foreground": [
+        []
+      ],
+      "frame": [
+        {
+          "class": [
+            "wndNav"
+          ],
+          "flow": [
+            "vertical"
+          ],
+          "frame_header": [
+            {
+              "Button_close": [
+                []
+              ],
+              "activeText": [
+                {
+                  "caption": [
+                    "yes"
+                  ],
+                  "text": [
+                    "#gpuBenchmark/title"
+                  ]
+                }
+              ]
+            }
+          ],
+          "navBar": [
+            {
+              "navLeft": [
+                {
+                  "Button_text": [
+                    {
+                      "ButtonImg": [
+                        []
+                      ],
+                      "btnName": [
+                        "B"
+                      ],
+                      "on_click": [
+                        "goBack"
+                      ],
+                      "text": [
+                        "#msgbox/btn_cancel"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "navRight": [
+                {
+                  "Button_text": [
+                    {
+                      "ButtonImg": [
+                        []
+                      ],
+                      "btnName": [
+                        "EnterX"
+                      ],
+                      "id": [
+                        "btnStart"
+                      ],
+                      "on_click": [
+                        "onBenchmarkStart"
+                      ],
+                      "text": [
+                        "#gpuBenchmark/btnStart"
+                      ]
+                    },
+                    {
+                      "ButtonImg": [
+                        []
+                      ],
+                      "btnName": [
+                        "EnterX"
+                      ],
+                      "id": [
+                        "btnApply"
+                      ],
+                      "on_click": [
+                        "onPresetApply"
+                      ],
+                      "text": [
+                        "#mainmenu/btnApply"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "pos": [
+            "50%(pw-w), 50%(ph-h)"
+          ],
+          "position": [
+            "absolute"
+          ],
+          "size": [
+            "0.8@sf, 0.35@sf"
+          ],
+          "tdiv": [
+            {
+              "size": [
+                "pw, ph"
+              ],
+              "tdiv": [
+                {
+                  "id": [
+                    "benchmarkStart"
+                  ],
+                  "position": [
+                    "absolute"
+                  ],
+                  "size": [
+                    "pw, ph"
+                  ],
+                  "textareaNoTab": [
+                    {
+                      "pos": [
+                        "50%(pw-w), 50%(ph-h)"
+                      ],
+                      "position": [
+                        "relative"
+                      ],
+                      "text": [
+                        "#gpuBenchmark/desc"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "animated_wait_icon": [
+                    {
+                      "background-rotation": [
+                        "0"
+                      ],
+                      "margin-right": [
+                        "1@blockInterval"
+                      ]
+                    }
+                  ],
+                  "display": [
+                    "hide"
+                  ],
+                  "id": [
+                    "waitAnimation"
+                  ],
+                  "pos": [
+                    "50%(pw-w), 50%(ph-h)"
+                  ],
+                  "position": [
+                    "absolute"
+                  ],
+                  "textareaNoTab": [
+                    {
+                      "id": [
+                        "progressText"
+                      ],
+                      "pos": [
+                        "0, 50%(ph-h)"
+                      ],
+                      "position": [
+                        "relative"
+                      ]
+                    }
+                  ],
+                  "timer": [
+                    {
+                      "id": [
+                        "progress_timer"
+                      ],
+                      "timer_handler_func": [
+                        "onUpdate"
+                      ],
+                      "timer_interval_msec": [
+                        "1000"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "display": [
+                    "hide"
+                  ],
+                  "flow": [
+                    "vertical"
+                  ],
+                  "id": [
+                    "presetSelection"
+                  ],
+                  "margin-bottom": [
+                    "0.005@scrn_tgt"
+                  ],
+                  "margin-top": [
+                    "0.01@scrn_tgt"
+                  ],
+                  "pos": [
+                    "50%(pw-w), 0"
+                  ],
+                  "position": [
+                    "relative"
+                  ],
+                  "rowSeparator": [
+                    []
+                  ],
+                  "tdiv": [
+                    {
+                      "margin-bottom": [
+                        "0.005@scrn_tgt"
+                      ],
+                      "margin-left": [
+                        "0.02@scrn_tgt"
+                      ],
+                      "textareaNoTab": [
+                        {
+                          "text": [
+                            "#gpuBenchmark/resultsTitle"
+                          ],
+                          "width": [
+                            "pw"
+                          ]
+                        }
+                      ],
+                      "width": [
+                        "pw"
+                      ]
+                    },
+                    {
+                      "margin-top": [
+                        "0.02@scrn_tgt"
+                      ],
+                      "textarea": [
+                        {
+                          "text": [
+                            "#gpuBenchmark/resultsEffect"
+                          ]
+                        },
+                        {
+                          "left": [
+                            "50%pw+3@blockInterval"
+                          ],
+                          "position": [
+                            "absolute"
+                          ],
+                          "text": [
+                            "#gpuBenchmark/resultsPresetName"
+                          ]
+                        }
+                      ],
+                      "width": [
+                        "pw"
+                      ]
+                    },
+                    {
+                      "flow": [
+                        "vertical"
+                      ],
+                      "id": [
+                        "resultsList"
+                      ],
+                      "padding": [
+                        "0.01@scrn_tgt, 0.01@scrn_tgt"
+                      ],
+                      "width": [
+                        "pw"
+                      ]
+                    }
+                  ],
+                  "width": [
+                    "pw"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

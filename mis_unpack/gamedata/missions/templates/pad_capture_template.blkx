@@ -1,0 +1,1223 @@
+{
+  "airfields": [
+    []
+  ],
+  "areas": [
+    []
+  ],
+  "bin_dump_file": [
+    ""
+  ],
+  "dialogs": [
+    []
+  ],
+  "effects": [
+    []
+  ],
+  "imports": [
+    []
+  ],
+  "mission_objectives": [
+    {
+      "isCategory": [
+        true
+      ],
+      "is_enabled": [
+        true
+      ]
+    }
+  ],
+  "mission_settings": [
+    {
+      "mission": [
+        {
+          "environment": [
+            "Day"
+          ],
+          "level": [
+            "levels/water.bin"
+          ],
+          "optionalTakeOff": [
+            false
+          ],
+          "restoreType": [
+            "attempts"
+          ],
+          "type": [
+            "singleMission"
+          ],
+          "weather": [
+            "hazy"
+          ]
+        }
+      ],
+      "player": [
+        {
+          "army": [
+            1
+          ],
+          "wing": [
+            ""
+          ]
+        }
+      ],
+      "player_teamB": [
+        {
+          "army": [
+            2
+          ]
+        }
+      ],
+      "spectator_points": [
+        []
+      ]
+    }
+  ],
+  "objLayers": [
+    {
+      "layer": [
+        {
+          "enabled": [
+            true
+          ]
+        },
+        {
+          "enabled": [
+            true
+          ]
+        },
+        {
+          "enabled": [
+            true
+          ]
+        }
+      ]
+    }
+  ],
+  "selected_tag": [
+    ""
+  ],
+  "triggers": [
+    {
+      "isCategory": [
+        true
+      ],
+      "is_enabled": [
+        true
+      ],
+      "pad_aa_spawn_for_t1": [
+        {
+          "actions": [
+            {
+              "unitPutToSleep": [
+                {
+                  "target": [
+                    "@pad_t2_aa_name"
+                  ]
+                }
+              ],
+              "unitRestore": [
+                {
+                  "fullRestore": [
+                    true
+                  ],
+                  "ressurectIfDead": [
+                    true
+                  ],
+                  "target": [
+                    "@pad_t1_aa_name"
+                  ]
+                }
+              ],
+              "unitSetProperties": [
+                {
+                  "accuracy": [
+                    0.0
+                  ],
+                  "effShootingRate": [
+                    0.0
+                  ],
+                  "object": [
+                    "@pad_t1_aa_name"
+                  ],
+                  "object_marking": [
+                    0
+                  ],
+                  "object_var_comp_op": [
+                    "equal"
+                  ],
+                  "object_var_name": [
+                    ""
+                  ],
+                  "object_var_value": [
+                    0
+                  ]
+                }
+              ],
+              "unitWakeUp": [
+                {
+                  "target": [
+                    "@pad_t1_aa_name"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            []
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "periodicEvent": [
+                {
+                  "time": [
+                    0.0
+                  ]
+                }
+              ]
+            }
+          ],
+          "is_enabled": [
+            false
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ],
+      "pad_aa_spawn_for_t2": [
+        {
+          "actions": [
+            {
+              "unitPutToSleep": [
+                {
+                  "target": [
+                    "@pad_t1_aa_name"
+                  ]
+                }
+              ],
+              "unitRestore": [
+                {
+                  "fullRestore": [
+                    true
+                  ],
+                  "ressurectIfDead": [
+                    true
+                  ],
+                  "target": [
+                    "@pad_t2_aa_name"
+                  ]
+                }
+              ],
+              "unitSetProperties": [
+                {
+                  "accuracy": [
+                    0.0
+                  ],
+                  "army": [
+                    2
+                  ],
+                  "effShootingRate": [
+                    0.0
+                  ],
+                  "object": [
+                    "@pad_t2_aa_name"
+                  ],
+                  "object_marking": [
+                    0
+                  ],
+                  "object_var_comp_op": [
+                    "equal"
+                  ],
+                  "object_var_name": [
+                    ""
+                  ],
+                  "object_var_value": [
+                    0
+                  ]
+                }
+              ],
+              "unitWakeUp": [
+                {
+                  "target": [
+                    "@pad_t2_aa_name"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            []
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "periodicEvent": [
+                {
+                  "time": [
+                    0.0
+                  ]
+                }
+              ]
+            }
+          ],
+          "is_enabled": [
+            false
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ],
+      "pad_capture_check_t1": [
+        {
+          "actions": [
+            {
+              "comment": [
+                {
+                  "value": [
+                    ""
+                  ]
+                },
+                {
+                  "value": [
+                    ""
+                  ]
+                },
+                {
+                  "value": [
+                    ""
+                  ]
+                }
+              ],
+              "gameMPChangeScore": [
+                {
+                  "team": [
+                    "B"
+                  ],
+                  "value": [
+                    -20
+                  ],
+                  "valueSystem": [
+                    "percentage"
+                  ]
+                }
+              ],
+              "triggerEnable": [
+                {
+                  "target": [
+                    "pad_aa_spawn_for_t1",
+                    "pad_capture_rotator"
+                  ]
+                }
+              ],
+              "varSetInt": [
+                {
+                  "value": [
+                    1
+                  ],
+                  "var": [
+                    "@pad_cur_army"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            {
+              "missionIsZoneCaptured": [
+                {
+                  "army": [
+                    1
+                  ],
+                  "target": [
+                    "@pad_name"
+                  ]
+                }
+              ],
+              "varCompareInt": [
+                {
+                  "comparasion_func": [
+                    "notEqual"
+                  ],
+                  "value": [
+                    1
+                  ],
+                  "var_value": [
+                    "@pad_cur_army"
+                  ]
+                }
+              ]
+            }
+          ],
+          "else_actions": [
+            {
+              "comment": [
+                {
+                  "value": [
+                    ""
+                  ]
+                }
+              ],
+              "triggerEnable": [
+                {
+                  "target": [
+                    "pad_capture_check_t2"
+                  ]
+                }
+              ]
+            }
+          ],
+          "events": [
+            {
+              "periodicEvent": [
+                {
+                  "time": [
+                    0.0
+                  ]
+                }
+              ]
+            }
+          ],
+          "is_enabled": [
+            false
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ],
+      "pad_capture_check_t2": [
+        {
+          "actions": [
+            {
+              "comment": [
+                {
+                  "value": [
+                    ""
+                  ]
+                },
+                {
+                  "value": [
+                    ""
+                  ]
+                },
+                {
+                  "value": [
+                    ""
+                  ]
+                }
+              ],
+              "gameMPChangeScore": [
+                {
+                  "team": [
+                    "A"
+                  ],
+                  "value": [
+                    -20
+                  ],
+                  "valueSystem": [
+                    "percentage"
+                  ]
+                }
+              ],
+              "triggerEnable": [
+                {
+                  "target": [
+                    "pad_aa_spawn_for_t2",
+                    "pad_capture_rotator"
+                  ]
+                }
+              ],
+              "varSetInt": [
+                {
+                  "value": [
+                    2
+                  ],
+                  "var": [
+                    "@pad_cur_army"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            {
+              "missionIsZoneCaptured": [
+                {
+                  "army": [
+                    2
+                  ],
+                  "target": [
+                    "@pad_name"
+                  ]
+                }
+              ],
+              "varCompareInt": [
+                {
+                  "comparasion_func": [
+                    "notEqual"
+                  ],
+                  "value": [
+                    2
+                  ],
+                  "var_value": [
+                    "@pad_cur_army"
+                  ]
+                }
+              ]
+            }
+          ],
+          "else_actions": [
+            {
+              "comment": [
+                {
+                  "value": [
+                    ""
+                  ]
+                }
+              ],
+              "triggerEnable": [
+                {
+                  "target": [
+                    "pad_capture_rotator"
+                  ]
+                }
+              ]
+            }
+          ],
+          "events": [
+            {
+              "periodicEvent": [
+                {
+                  "time": [
+                    0.0
+                  ]
+                }
+              ]
+            }
+          ],
+          "is_enabled": [
+            false
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ],
+      "pad_capture_restart": [
+        {
+          "actions": [
+            {
+              "triggerEnable": [
+                {
+                  "target": [
+                    "pad_capture_rotator"
+                  ]
+                }
+              ],
+              "varSetInt": [
+                {
+                  "value": [
+                    0
+                  ],
+                  "var": [
+                    "pad_cur_idx"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            []
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "periodicEvent": [
+                {
+                  "time": [
+                    0.0
+                  ]
+                }
+              ]
+            }
+          ],
+          "is_enabled": [
+            false
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ],
+      "pad_capture_rotator": [
+        {
+          "actions": [
+            {
+              "comment": [
+                {
+                  "value": [
+                    ""
+                  ]
+                },
+                {
+                  "value": [
+                    ""
+                  ]
+                },
+                {
+                  "value": [
+                    ""
+                  ]
+                },
+                {
+                  "value": [
+                    ""
+                  ]
+                },
+                {
+                  "value": [
+                    ""
+                  ]
+                }
+              ],
+              "triggerEnable": [
+                {
+                  "target": [
+                    "pad_capture_check_t1"
+                  ]
+                }
+              ],
+              "varAddString": [
+                {
+                  "digits": [
+                    2
+                  ],
+                  "value": [
+                    "@pad_cur_idx"
+                  ],
+                  "var": [
+                    "pad_name"
+                  ]
+                },
+                {
+                  "digits": [
+                    2
+                  ],
+                  "value": [
+                    "@pad_cur_idx"
+                  ],
+                  "var": [
+                    "pad_cur_army"
+                  ]
+                },
+                {
+                  "digits": [
+                    0
+                  ],
+                  "value": [
+                    "_army"
+                  ],
+                  "var": [
+                    "pad_cur_army"
+                  ]
+                },
+                {
+                  "digits": [
+                    2
+                  ],
+                  "value": [
+                    "@pad_cur_idx"
+                  ],
+                  "var": [
+                    "pad_t1_aa_name"
+                  ]
+                },
+                {
+                  "digits": [
+                    0
+                  ],
+                  "value": [
+                    "_squad"
+                  ],
+                  "var": [
+                    "pad_t1_aa_name"
+                  ]
+                },
+                {
+                  "digits": [
+                    2
+                  ],
+                  "value": [
+                    "@pad_cur_idx"
+                  ],
+                  "var": [
+                    "pad_t2_aa_name"
+                  ]
+                },
+                {
+                  "digits": [
+                    0
+                  ],
+                  "value": [
+                    "_squad"
+                  ],
+                  "var": [
+                    "pad_t2_aa_name"
+                  ]
+                }
+              ],
+              "varModify": [
+                {
+                  "operator": [
+                    "add"
+                  ],
+                  "value": [
+                    1.0
+                  ],
+                  "var": [
+                    "pad_cur_idx"
+                  ]
+                }
+              ],
+              "varSetString": [
+                {
+                  "value": [
+                    "pad_area_"
+                  ],
+                  "var": [
+                    "pad_name"
+                  ]
+                },
+                {
+                  "value": [
+                    "pad_"
+                  ],
+                  "var": [
+                    "pad_cur_army"
+                  ]
+                },
+                {
+                  "value": [
+                    "pad_t1_aa_"
+                  ],
+                  "var": [
+                    "pad_t1_aa_name"
+                  ]
+                },
+                {
+                  "value": [
+                    "pad_t2_aa_"
+                  ],
+                  "var": [
+                    "pad_t2_aa_name"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            {
+              "varCompareInt": [
+                {
+                  "comparasion_func": [
+                    "less"
+                  ],
+                  "value": [
+                    0
+                  ],
+                  "var_value": [
+                    "pad_cur_idx"
+                  ],
+                  "var_value_other": [
+                    "pad_max_num"
+                  ]
+                }
+              ]
+            }
+          ],
+          "else_actions": [
+            {
+              "triggerEnable": [
+                {
+                  "target": [
+                    "pad_capture_restart"
+                  ]
+                }
+              ]
+            }
+          ],
+          "events": [
+            {
+              "periodicEvent": [
+                {
+                  "time": [
+                    1.0
+                  ]
+                }
+              ]
+            }
+          ],
+          "is_enabled": [
+            false
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ],
+      "pad_check": [
+        {
+          "actions": [
+            {
+              "comment": [
+                {
+                  "value": [
+                    ""
+                  ]
+                }
+              ],
+              "missionMarkAsCaptureZone": [
+                {
+                  "airfield": [
+                    "@pad_object"
+                  ],
+                  "army": [
+                    0
+                  ],
+                  "canCaptureByGM": [
+                    true
+                  ],
+                  "canCaptureInAir": [
+                    false
+                  ],
+                  "canCaptureOnGround": [
+                    true
+                  ],
+                  "captureNoPenalty": [
+                    true
+                  ],
+                  "disableZone": [
+                    false
+                  ],
+                  "name_for_respawn_base": [
+                    ""
+                  ],
+                  "onlyPlayersCanCapture": [
+                    false
+                  ],
+                  "target": [
+                    "@pad_name"
+                  ],
+                  "timeMultiplier": [
+                    0.14
+                  ]
+                }
+              ],
+              "triggerEnable": [
+                {
+                  "target": [
+                    "pad_rotator"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            {
+              "objectExists": [
+                {
+                  "target": [
+                    "@pad_name"
+                  ],
+                  "type": [
+                    "area"
+                  ]
+                },
+                {
+                  "target": [
+                    "@pad_object"
+                  ],
+                  "type": [
+                    "objectGroup"
+                  ]
+                }
+              ]
+            }
+          ],
+          "else_actions": [
+            {
+              "triggerEnable": [
+                {
+                  "target": [
+                    "pad_rotator"
+                  ]
+                }
+              ]
+            }
+          ],
+          "events": [
+            {
+              "periodicEvent": [
+                {
+                  "time": [
+                    0.0
+                  ]
+                }
+              ]
+            }
+          ],
+          "is_enabled": [
+            false
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ],
+      "pad_init": [
+        {
+          "actions": [
+            {
+              "triggerEnable": [
+                {
+                  "target": [
+                    "pad_rotator"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            []
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "initMission": [
+                []
+              ]
+            }
+          ],
+          "is_enabled": [
+            true
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ],
+      "pad_rotator": [
+        {
+          "actions": [
+            {
+              "comment": [
+                {
+                  "value": [
+                    ""
+                  ]
+                },
+                {
+                  "value": [
+                    ""
+                  ]
+                },
+                {
+                  "value": [
+                    ""
+                  ]
+                }
+              ],
+              "triggerEnable": [
+                {
+                  "target": [
+                    "pad_check"
+                  ]
+                }
+              ],
+              "varAddString": [
+                {
+                  "digits": [
+                    2
+                  ],
+                  "value": [
+                    "@pad_cur_idx"
+                  ],
+                  "var": [
+                    "pad_name"
+                  ]
+                },
+                {
+                  "digits": [
+                    2
+                  ],
+                  "value": [
+                    "@pad_cur_idx"
+                  ],
+                  "var": [
+                    "pad_object"
+                  ]
+                }
+              ],
+              "varModify": [
+                {
+                  "operator": [
+                    "add"
+                  ],
+                  "value": [
+                    1.0
+                  ],
+                  "var": [
+                    "pad_cur_idx"
+                  ]
+                }
+              ],
+              "varSetString": [
+                {
+                  "value": [
+                    "pad_area_"
+                  ],
+                  "var": [
+                    "pad_name"
+                  ]
+                },
+                {
+                  "value": [
+                    "pad_object_"
+                  ],
+                  "var": [
+                    "pad_object"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            {
+              "varCompareInt": [
+                {
+                  "comparasion_func": [
+                    "less"
+                  ],
+                  "value": [
+                    0
+                  ],
+                  "var_value": [
+                    "pad_cur_idx"
+                  ],
+                  "var_value_other": [
+                    "pad_max_num"
+                  ]
+                }
+              ]
+            }
+          ],
+          "else_actions": [
+            {
+              "triggerEnable": [
+                {
+                  "target": [
+                    "pad_capture_restart"
+                  ]
+                }
+              ]
+            }
+          ],
+          "events": [
+            {
+              "periodicEvent": [
+                {
+                  "time": [
+                    1.0
+                  ]
+                }
+              ]
+            }
+          ],
+          "is_enabled": [
+            false
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "units": [
+    []
+  ],
+  "variables": [
+    {
+      "pad_01_army": [
+        0
+      ],
+      "pad_02_army": [
+        0
+      ],
+      "pad_03_army": [
+        0
+      ],
+      "pad_04_army": [
+        0
+      ],
+      "pad_05_army": [
+        0
+      ],
+      "pad_06_army": [
+        0
+      ],
+      "pad_cur_army": [
+        ""
+      ],
+      "pad_cur_idx": [
+        0
+      ],
+      "pad_max_num": [
+        6
+      ],
+      "pad_name": [
+        ""
+      ],
+      "pad_object": [
+        ""
+      ],
+      "pad_t1_aa_name": [
+        ""
+      ],
+      "pad_t2_aa_name": [
+        ""
+      ]
+    }
+  ],
+  "wayPoints": [
+    []
+  ]
+}

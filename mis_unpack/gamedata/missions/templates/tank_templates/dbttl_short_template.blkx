@@ -1,0 +1,1127 @@
+{
+  "airfields": [
+    []
+  ],
+  "areas": [
+    []
+  ],
+  "bin_dump_file": [
+    ""
+  ],
+  "dialogs": [
+    []
+  ],
+  "effects": [
+    []
+  ],
+  "imports": [
+    {
+      "import_record": [
+        {
+          "excludes": [
+            []
+          ],
+          "file": [
+            "gameData/missions/templates/score_penalty_by_time.blk"
+          ],
+          "importAreas": [
+            true
+          ],
+          "importMissionObjectives": [
+            true
+          ],
+          "importTriggers": [
+            true
+          ],
+          "importUnits": [
+            true
+          ],
+          "importWayPoints": [
+            true
+          ],
+          "showAreas": [
+            true
+          ],
+          "showMissionObjectives": [
+            true
+          ],
+          "showTriggers": [
+            true
+          ],
+          "showUnits": [
+            true
+          ],
+          "showWayPoints": [
+            true
+          ]
+        },
+        {
+          "excludes": [
+            []
+          ],
+          "file": [
+            "gameData/missions/templates/tank_templates/defence_spawn_template.blk"
+          ],
+          "importAreas": [
+            true
+          ],
+          "importMissionObjectives": [
+            true
+          ],
+          "importTriggers": [
+            true
+          ],
+          "importUnits": [
+            true
+          ],
+          "importWayPoints": [
+            true
+          ],
+          "showAreas": [
+            true
+          ],
+          "showMissionObjectives": [
+            true
+          ],
+          "showTriggers": [
+            true
+          ],
+          "showUnits": [
+            true
+          ],
+          "showWayPoints": [
+            true
+          ]
+        }
+      ]
+    }
+  ],
+  "mission_objectives": [
+    {
+      "avg_DBttlA_objective_01": [
+        {
+          "comments": [
+            ""
+          ],
+          "is_enabled": [
+            false
+          ],
+          "onFailed": [
+            []
+          ],
+          "onSuccess": [
+            []
+          ],
+          "props": [
+            {
+              "isPrimary": [
+                true
+              ],
+              "team": [
+                "A"
+              ],
+              "timeLimit": [
+                3600
+              ]
+            }
+          ],
+          "type": [
+            "abstractMissionObjective"
+          ]
+        }
+      ],
+      "avg_DBttlA_objective_02": [
+        {
+          "comments": [
+            ""
+          ],
+          "is_enabled": [
+            false
+          ],
+          "onFailed": [
+            []
+          ],
+          "onSuccess": [
+            []
+          ],
+          "props": [
+            {
+              "isPrimary": [
+                true
+              ],
+              "team": [
+                "B"
+              ],
+              "timeLimit": [
+                3600
+              ]
+            }
+          ],
+          "type": [
+            "abstractMissionObjective"
+          ]
+        }
+      ],
+      "avg_DBttlB_objective_01": [
+        {
+          "comments": [
+            ""
+          ],
+          "is_enabled": [
+            false
+          ],
+          "onFailed": [
+            []
+          ],
+          "onSuccess": [
+            []
+          ],
+          "props": [
+            {
+              "isPrimary": [
+                true
+              ],
+              "team": [
+                "B"
+              ],
+              "timeLimit": [
+                3600
+              ]
+            }
+          ],
+          "type": [
+            "abstractMissionObjective"
+          ]
+        }
+      ],
+      "avg_DBttlB_objective_02": [
+        {
+          "comments": [
+            ""
+          ],
+          "is_enabled": [
+            false
+          ],
+          "onFailed": [
+            []
+          ],
+          "onSuccess": [
+            []
+          ],
+          "props": [
+            {
+              "isPrimary": [
+                true
+              ],
+              "team": [
+                "A"
+              ],
+              "timeLimit": [
+                3600
+              ]
+            }
+          ],
+          "type": [
+            "abstractMissionObjective"
+          ]
+        }
+      ],
+      "isCategory": [
+        true
+      ],
+      "is_enabled": [
+        true
+      ]
+    }
+  ],
+  "mission_settings": [
+    {
+      "mission": [
+        {
+          "environment": [
+            "Day"
+          ],
+          "level": [
+            "levels/water.bin"
+          ],
+          "optionalTakeOff": [
+            false
+          ],
+          "restoreType": [
+            "attempts"
+          ],
+          "type": [
+            "domination"
+          ],
+          "weather": [
+            "clear"
+          ]
+        }
+      ],
+      "player": [
+        {
+          "army": [
+            1
+          ]
+        }
+      ],
+      "player_teamB": [
+        {
+          "army": [
+            2
+          ]
+        }
+      ]
+    }
+  ],
+  "objLayers": [
+    {
+      "layer": [
+        {
+          "enabled": [
+            true
+          ]
+        },
+        {
+          "enabled": [
+            true
+          ]
+        },
+        {
+          "enabled": [
+            true
+          ]
+        },
+        {
+          "enabled": [
+            true
+          ]
+        }
+      ]
+    }
+  ],
+  "selected_tag": [
+    ""
+  ],
+  "triggers": [
+    {
+      "dbttl_a_init": [
+        {
+          "actions": [
+            {
+              "missionMarkAsCaptureZone": [
+                {
+                  "army": [
+                    1
+                  ],
+                  "canCaptureByGM": [
+                    true
+                  ],
+                  "canCaptureInAir": [
+                    false
+                  ],
+                  "canCaptureOnGround": [
+                    false
+                  ],
+                  "captureNoPenalty": [
+                    true
+                  ],
+                  "capture_tags": [
+                    {
+                      "tank": [
+                        true
+                      ],
+                      "type_attack_helicopter": [
+                        true
+                      ],
+                      "type_utility_helicopter": [
+                        true
+                      ],
+                      "vtol_jet": [
+                        true
+                      ]
+                    }
+                  ],
+                  "disableZone": [
+                    false
+                  ],
+                  "markUnitPreset": [
+                    "tank_decal"
+                  ],
+                  "markUnits": [
+                    "cz_circle"
+                  ],
+                  "name_for_respawn_base": [
+                    ""
+                  ],
+                  "playAirfieldSound": [
+                    false
+                  ],
+                  "target": [
+                    "@zone_name"
+                  ],
+                  "timeMultiplier": [
+                    1.5
+                  ],
+                  "useHUDMarkers": [
+                    true
+                  ],
+                  "zoneDefenders": [
+                    []
+                  ]
+                }
+              ],
+              "triggerEnable": [
+                {
+                  "target": [
+                    "dbttl_a_start",
+                    "dbttl_check_battle_area_exist",
+                    "defence_spawn_start_t1",
+                    "defence_spawn_start_t2"
+                  ]
+                }
+              ],
+              "varSetBool": [
+                {
+                  "value": [
+                    true
+                  ],
+                  "var": [
+                    "score_by_time_for_team_b"
+                  ]
+                }
+              ],
+              "varSetString": [
+                {
+                  "value": [
+                    "dbttl_t1_capture_area"
+                  ],
+                  "var": [
+                    "zone_name"
+                  ]
+                },
+                {
+                  "value": [
+                    "dbttl_battle_area"
+                  ],
+                  "var": [
+                    "battle_area_name"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            {
+              "missionNamePostfix": [
+                {
+                  "postfix": [
+                    "_DBttlA"
+                  ]
+                }
+              ]
+            }
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "initMission": [
+                []
+              ]
+            }
+          ],
+          "is_enabled": [
+            true
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ],
+      "dbttl_a_start": [
+        {
+          "actions": [
+            {
+              "moAddMissionObjective": [
+                {
+                  "object_marking": [
+                    0
+                  ],
+                  "object_var_comp_op": [
+                    "equal"
+                  ],
+                  "object_var_name": [
+                    ""
+                  ],
+                  "target": [
+                    "avg_DBttlA_objective_01"
+                  ]
+                },
+                {
+                  "object_marking": [
+                    0
+                  ],
+                  "object_var_comp_op": [
+                    "equal"
+                  ],
+                  "object_var_name": [
+                    ""
+                  ],
+                  "target": [
+                    "avg_DBttlA_objective_02"
+                  ]
+                }
+              ],
+              "triggerEnable": [
+                {
+                  "target": [
+                    "dbttl_zone_captured_by_t2"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            []
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "periodicEvent": [
+                {
+                  "time": [
+                    3.0
+                  ]
+                }
+              ]
+            }
+          ],
+          "is_enabled": [
+            false
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ],
+      "dbttl_b_init": [
+        {
+          "actions": [
+            {
+              "missionMarkAsCaptureZone": [
+                {
+                  "army": [
+                    2
+                  ],
+                  "canCaptureByGM": [
+                    true
+                  ],
+                  "canCaptureInAir": [
+                    false
+                  ],
+                  "canCaptureOnGround": [
+                    false
+                  ],
+                  "captureNoPenalty": [
+                    true
+                  ],
+                  "capture_tags": [
+                    {
+                      "tank": [
+                        true
+                      ],
+                      "type_attack_helicopter": [
+                        true
+                      ],
+                      "type_utility_helicopter": [
+                        true
+                      ],
+                      "vtol_jet": [
+                        true
+                      ]
+                    }
+                  ],
+                  "disableZone": [
+                    false
+                  ],
+                  "markUnitPreset": [
+                    "tank_decal"
+                  ],
+                  "markUnits": [
+                    "cz_circle"
+                  ],
+                  "name_for_respawn_base": [
+                    ""
+                  ],
+                  "playAirfieldSound": [
+                    false
+                  ],
+                  "target": [
+                    "@zone_name"
+                  ],
+                  "timeMultiplier": [
+                    1.5
+                  ],
+                  "useHUDMarkers": [
+                    true
+                  ],
+                  "zoneDefenders": [
+                    []
+                  ]
+                }
+              ],
+              "triggerEnable": [
+                {
+                  "target": [
+                    "dbttl_b_start",
+                    "dbttl_check_battle_area_exist",
+                    "defence_spawn_start_t1",
+                    "defence_spawn_start_t2"
+                  ]
+                }
+              ],
+              "varSetBool": [
+                {
+                  "value": [
+                    true
+                  ],
+                  "var": [
+                    "score_by_time_for_team_a"
+                  ]
+                }
+              ],
+              "varSetString": [
+                {
+                  "value": [
+                    "dbttl_t2_capture_area"
+                  ],
+                  "var": [
+                    "zone_name"
+                  ]
+                },
+                {
+                  "value": [
+                    "dbttl_battle_area"
+                  ],
+                  "var": [
+                    "battle_area_name"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            {
+              "missionNamePostfix": [
+                {
+                  "postfix": [
+                    "_DBttlB"
+                  ]
+                }
+              ]
+            }
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "initMission": [
+                []
+              ]
+            }
+          ],
+          "is_enabled": [
+            true
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ],
+      "dbttl_b_start": [
+        {
+          "actions": [
+            {
+              "moAddMissionObjective": [
+                {
+                  "object_marking": [
+                    0
+                  ],
+                  "object_var_comp_op": [
+                    "equal"
+                  ],
+                  "object_var_name": [
+                    ""
+                  ],
+                  "target": [
+                    "avg_DBttlB_objective_01"
+                  ]
+                },
+                {
+                  "object_marking": [
+                    0
+                  ],
+                  "object_var_comp_op": [
+                    "equal"
+                  ],
+                  "object_var_name": [
+                    ""
+                  ],
+                  "target": [
+                    "avg_DBttlB_objective_02"
+                  ]
+                }
+              ],
+              "triggerEnable": [
+                {
+                  "target": [
+                    "dbttl_zone_captured_by_t1"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            []
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "periodicEvent": [
+                {
+                  "time": [
+                    3.0
+                  ]
+                }
+              ]
+            }
+          ],
+          "is_enabled": [
+            false
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ],
+      "dbttl_check_battle_area_exist": [
+        {
+          "actions": [
+            {
+              "missionBattleArea": [
+                {
+                  "air": [
+                    false
+                  ],
+                  "airMapArea": [
+                    false
+                  ],
+                  "area": [
+                    "@battle_area_name"
+                  ],
+                  "detectionArea": [
+                    false
+                  ],
+                  "ground": [
+                    true
+                  ],
+                  "killArea": [
+                    false
+                  ],
+                  "killOutOfBattleArea": [
+                    true
+                  ],
+                  "mapArea": [
+                    true
+                  ],
+                  "newGridHorizontalCellCount": [
+                    0
+                  ],
+                  "target": [
+                    "@battle_area_name"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            {
+              "objectExists": [
+                {
+                  "target": [
+                    "@battle_area_name"
+                  ],
+                  "type": [
+                    "area"
+                  ]
+                }
+              ]
+            }
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "initMission": [
+                []
+              ]
+            }
+          ],
+          "is_enabled": [
+            false
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ],
+      "dbttl_zone_captured_by_t1": [
+        {
+          "actions": [
+            {
+              "gameMPChangeScore": [
+                {
+                  "team": [
+                    "B"
+                  ],
+                  "value": [
+                    -100
+                  ],
+                  "valueSystem": [
+                    "percentage"
+                  ]
+                }
+              ],
+              "moSetObjectiveStatus": [
+                {
+                  "object_marking": [
+                    0
+                  ],
+                  "object_var_comp_op": [
+                    "equal"
+                  ],
+                  "object_var_name": [
+                    ""
+                  ],
+                  "status": [
+                    3
+                  ],
+                  "target": [
+                    "avg_DBttlB_objective_01"
+                  ],
+                  "team": [
+                    "B"
+                  ]
+                },
+                {
+                  "object_marking": [
+                    0
+                  ],
+                  "object_var_comp_op": [
+                    "equal"
+                  ],
+                  "object_var_name": [
+                    ""
+                  ],
+                  "status": [
+                    2
+                  ],
+                  "target": [
+                    "avg_DBttlB_objective_02"
+                  ],
+                  "team": [
+                    "A"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            {
+              "missionIsZoneCaptured": [
+                {
+                  "army": [
+                    1
+                  ],
+                  "target": [
+                    "@zone_name"
+                  ]
+                }
+              ]
+            }
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "periodicEvent": [
+                {
+                  "time": [
+                    0.5
+                  ]
+                }
+              ]
+            }
+          ],
+          "is_enabled": [
+            false
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                true
+              ]
+            }
+          ]
+        }
+      ],
+      "dbttl_zone_captured_by_t2": [
+        {
+          "actions": [
+            {
+              "gameMPChangeScore": [
+                {
+                  "team": [
+                    "A"
+                  ],
+                  "value": [
+                    -100
+                  ],
+                  "valueSystem": [
+                    "percentage"
+                  ]
+                }
+              ],
+              "moSetObjectiveStatus": [
+                {
+                  "object_marking": [
+                    0
+                  ],
+                  "object_var_comp_op": [
+                    "equal"
+                  ],
+                  "object_var_name": [
+                    ""
+                  ],
+                  "status": [
+                    3
+                  ],
+                  "target": [
+                    "avg_DBttlA_objective_01"
+                  ],
+                  "team": [
+                    "A"
+                  ]
+                },
+                {
+                  "object_marking": [
+                    0
+                  ],
+                  "object_var_comp_op": [
+                    "equal"
+                  ],
+                  "object_var_name": [
+                    ""
+                  ],
+                  "status": [
+                    2
+                  ],
+                  "target": [
+                    "avg_DBttlA_objective_02"
+                  ],
+                  "team": [
+                    "B"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            {
+              "missionIsZoneCaptured": [
+                {
+                  "army": [
+                    2
+                  ],
+                  "target": [
+                    "@zone_name"
+                  ]
+                }
+              ]
+            }
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "periodicEvent": [
+                {
+                  "time": [
+                    0.5
+                  ]
+                }
+              ]
+            }
+          ],
+          "is_enabled": [
+            false
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                true
+              ]
+            }
+          ]
+        }
+      ],
+      "isCategory": [
+        true
+      ],
+      "is_enabled": [
+        true
+      ]
+    }
+  ],
+  "units": [
+    {
+      "objectGroups": [
+        {
+          "name": [
+            "cz_circle"
+          ],
+          "objLayer": [
+            2
+          ],
+          "props": [
+            {
+              "active": [
+                true
+              ],
+              "army": [
+                0
+              ]
+            }
+          ],
+          "tm": [
+            [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [1831.7,4.65,2455.55]
+            ]
+          ],
+          "unit_class": [
+            "capture_zone_circle"
+          ]
+        }
+      ]
+    }
+  ],
+  "variables": [
+    {
+      "battle_area_name": [
+        ""
+      ],
+      "zone_name": [
+        ""
+      ]
+    }
+  ],
+  "wayPoints": [
+    []
+  ]
+}

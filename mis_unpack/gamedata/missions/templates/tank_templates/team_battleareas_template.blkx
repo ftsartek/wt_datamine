@@ -1,0 +1,760 @@
+{
+  "airfields": [
+    []
+  ],
+  "areas": [
+    []
+  ],
+  "bin_dump_file": [
+    ""
+  ],
+  "dialogs": [
+    []
+  ],
+  "effects": [
+    []
+  ],
+  "imports": [
+    []
+  ],
+  "mission_objectives": [
+    {
+      "isCategory": [
+        true
+      ],
+      "is_enabled": [
+        true
+      ]
+    }
+  ],
+  "mission_settings": [
+    {
+      "mission": [
+        {
+          "environment": [
+            "Day"
+          ],
+          "level": [
+            "levels/water.bin"
+          ],
+          "optionalTakeOff": [
+            false
+          ],
+          "restoreType": [
+            "attempts"
+          ],
+          "type": [
+            "singleMission"
+          ],
+          "weather": [
+            "hazy"
+          ]
+        }
+      ],
+      "player": [
+        {
+          "army": [
+            1
+          ]
+        }
+      ],
+      "player_teamB": [
+        {
+          "army": [
+            2
+          ]
+        }
+      ],
+      "spectator_points": [
+        []
+      ]
+    }
+  ],
+  "objLayers": [
+    {
+      "layer": [
+        {
+          "enabled": [
+            true
+          ]
+        },
+        {
+          "enabled": [
+            true
+          ]
+        },
+        {
+          "enabled": [
+            true
+          ]
+        },
+        {
+          "enabled": [
+            true
+          ]
+        }
+      ]
+    }
+  ],
+  "selected_tag": [
+    ""
+  ],
+  "triggers": [
+    {
+      "isCategory": [
+        true
+      ],
+      "is_enabled": [
+        true
+      ],
+      "t1_battleareas_init": [
+        {
+          "actions": [
+            {
+              "missionBattleArea": [
+                {
+                  "air": [
+                    false
+                  ],
+                  "area": [
+                    "@t1_battlearea"
+                  ],
+                  "ground": [
+                    true
+                  ],
+                  "killArea": [
+                    false
+                  ],
+                  "killOutOfBattleArea": [
+                    true
+                  ],
+                  "mapArea": [
+                    true
+                  ],
+                  "newGridHorizontalCellCount": [
+                    0
+                  ],
+                  "team": [
+                    "A"
+                  ]
+                }
+              ],
+              "triggerDisable": [
+                {
+                  "target": [
+                    "team_killareas_init"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            {
+              "objectExists": [
+                {
+                  "target": [
+                    "@t1_battlearea"
+                  ],
+                  "type": [
+                    "area"
+                  ]
+                },
+                {
+                  "target": [
+                    "@t1_battlearea"
+                  ],
+                  "type": [
+                    "squad"
+                  ]
+                }
+              ]
+            }
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "initMission": [
+                []
+              ]
+            }
+          ],
+          "is_enabled": [
+            false
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ANY"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ],
+      "t2_battleareas_init": [
+        {
+          "actions": [
+            {
+              "missionBattleArea": [
+                {
+                  "air": [
+                    false
+                  ],
+                  "area": [
+                    "@t2_battlearea"
+                  ],
+                  "ground": [
+                    true
+                  ],
+                  "killArea": [
+                    false
+                  ],
+                  "killOutOfBattleArea": [
+                    true
+                  ],
+                  "mapArea": [
+                    true
+                  ],
+                  "newGridHorizontalCellCount": [
+                    0
+                  ],
+                  "team": [
+                    "B"
+                  ]
+                }
+              ],
+              "triggerDisable": [
+                {
+                  "target": [
+                    "team_killareas_init"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            {
+              "objectExists": [
+                {
+                  "target": [
+                    "@t2_battlearea"
+                  ],
+                  "type": [
+                    "area"
+                  ]
+                },
+                {
+                  "target": [
+                    "@t2_battlearea"
+                  ],
+                  "type": [
+                    "squad"
+                  ]
+                }
+              ]
+            }
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "initMission": [
+                []
+              ]
+            }
+          ],
+          "is_enabled": [
+            false
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ANY"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ],
+      "team_battleareas_check_arcade": [
+        {
+          "actions": [
+            {
+              "triggerEnable": [
+                {
+                  "target": [
+                    "t1_battleareas_init",
+                    "t2_battleareas_init"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            {
+              "gameWhenDifficulty": [
+                {
+                  "difficulty": [
+                    "arcade"
+                  ],
+                  "is": [
+                    "equal"
+                  ]
+                }
+              ]
+            }
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "initMission": [
+                []
+              ]
+            }
+          ],
+          "is_enabled": [
+            false
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ],
+      "team_battleareas_check_hardcore": [
+        {
+          "actions": [
+            {
+              "triggerEnable": [
+                {
+                  "target": [
+                    "t1_battleareas_init",
+                    "t2_battleareas_init"
+                  ]
+                }
+              ],
+              "varAddString": [
+                {
+                  "digits": [
+                    0
+                  ],
+                  "value": [
+                    "_hardcore"
+                  ],
+                  "var": [
+                    "t1_battlearea",
+                    "t2_battlearea"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            {
+              "gameWhenDifficulty": [
+                {
+                  "difficulty": [
+                    "simulator"
+                  ],
+                  "is": [
+                    "equal"
+                  ]
+                }
+              ]
+            }
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "initMission": [
+                []
+              ]
+            }
+          ],
+          "is_enabled": [
+            false
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ],
+      "team_battleareas_check_realistic": [
+        {
+          "actions": [
+            {
+              "triggerEnable": [
+                {
+                  "target": [
+                    "team_battleareas_check_realistic_t1_exist"
+                  ]
+                }
+              ],
+              "varAddString": [
+                {
+                  "digits": [
+                    0
+                  ],
+                  "value": [
+                    "_realistic"
+                  ],
+                  "var": [
+                    "t1_battlearea_temp",
+                    "t2_battlearea_temp"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            {
+              "gameWhenDifficulty": [
+                {
+                  "difficulty": [
+                    "realistic"
+                  ],
+                  "is": [
+                    "equal"
+                  ]
+                }
+              ]
+            }
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "initMission": [
+                []
+              ]
+            }
+          ],
+          "is_enabled": [
+            false
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ],
+      "team_battleareas_check_realistic_t1_exist": [
+        {
+          "actions": [
+            {
+              "triggerEnable": [
+                {
+                  "target": [
+                    "team_battleareas_check_realistic_t2_exist"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            {
+              "objectExists": [
+                {
+                  "target": [
+                    "@t1_battlearea_temp"
+                  ],
+                  "type": [
+                    "area"
+                  ]
+                },
+                {
+                  "target": [
+                    "@t1_battlearea_temp"
+                  ],
+                  "type": [
+                    "squad"
+                  ]
+                }
+              ]
+            }
+          ],
+          "else_actions": [
+            {
+              "triggerEnable": [
+                {
+                  "target": [
+                    "t1_battleareas_init",
+                    "t2_battleareas_init"
+                  ]
+                }
+              ]
+            }
+          ],
+          "events": [
+            {
+              "initMission": [
+                []
+              ]
+            }
+          ],
+          "is_enabled": [
+            false
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ANY"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ],
+      "team_battleareas_check_realistic_t2_exist": [
+        {
+          "actions": [
+            {
+              "triggerEnable": [
+                {
+                  "target": [
+                    "t1_battleareas_init",
+                    "t2_battleareas_init"
+                  ]
+                }
+              ],
+              "varAddString": [
+                {
+                  "digits": [
+                    0
+                  ],
+                  "value": [
+                    "_realistic"
+                  ],
+                  "var": [
+                    "t1_battlearea",
+                    "t2_battlearea"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            {
+              "objectExists": [
+                {
+                  "target": [
+                    "@t2_battlearea_temp"
+                  ],
+                  "type": [
+                    "area"
+                  ]
+                },
+                {
+                  "target": [
+                    "@t2_battlearea_temp"
+                  ],
+                  "type": [
+                    "squad"
+                  ]
+                }
+              ]
+            }
+          ],
+          "else_actions": [
+            {
+              "triggerEnable": [
+                {
+                  "target": [
+                    "t1_battleareas_init",
+                    "t2_battleareas_init"
+                  ]
+                }
+              ]
+            }
+          ],
+          "events": [
+            {
+              "initMission": [
+                []
+              ]
+            }
+          ],
+          "is_enabled": [
+            false
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ANY"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ],
+      "team_battleareas_init": [
+        {
+          "actions": [
+            {
+              "triggerEnable": [
+                {
+                  "target": [
+                    "team_battleareas_check_arcade",
+                    "team_battleareas_check_realistic",
+                    "team_battleareas_check_hardcore"
+                  ]
+                }
+              ],
+              "varSetString": [
+                {
+                  "value": [
+                    "t1_battlearea"
+                  ],
+                  "var": [
+                    "t1_battlearea",
+                    "t1_battlearea_temp"
+                  ]
+                },
+                {
+                  "value": [
+                    "t2_battlearea"
+                  ],
+                  "var": [
+                    "t2_battlearea",
+                    "t2_battlearea_temp"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            []
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "initMission": [
+                []
+              ]
+            }
+          ],
+          "is_enabled": [
+            true
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "units": [
+    []
+  ],
+  "variables": [
+    {
+      "t1_battlearea": [
+        ""
+      ],
+      "t1_battlearea_temp": [
+        ""
+      ],
+      "t2_battlearea": [
+        ""
+      ],
+      "t2_battlearea_temp": [
+        ""
+      ]
+    }
+  ],
+  "wayPoints": [
+    []
+  ]
+}

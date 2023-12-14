@@ -1,0 +1,344 @@
+{
+  "airfields": [
+    []
+  ],
+  "areas": [
+    []
+  ],
+  "bin_dump_file": [
+    ""
+  ],
+  "dialogs": [
+    []
+  ],
+  "effects": [
+    []
+  ],
+  "imports": [
+    {
+      "import_record": [
+        {
+          "excludes": [
+            []
+          ],
+          "file": [
+            "gameData/missions/cta/planes/arcade/aconq/air_israel/movable_units/small_movable_units_template.blk"
+          ],
+          "importAreas": [
+            true
+          ],
+          "importMissionObjectives": [
+            true
+          ],
+          "importTriggers": [
+            true
+          ],
+          "importUnits": [
+            true
+          ],
+          "importWayPoints": [
+            true
+          ],
+          "rankRange": [
+            [0,7]
+          ],
+          "showAreas": [
+            true
+          ],
+          "showMissionObjectives": [
+            true
+          ],
+          "showTriggers": [
+            true
+          ],
+          "showUnits": [
+            true
+          ],
+          "showWayPoints": [
+            true
+          ]
+        },
+        {
+          "excludes": [
+            []
+          ],
+          "file": [
+            "gameData/missions/cta/planes/arcade/aconq/air_israel/movable_units/mid_movable_units_template.blk"
+          ],
+          "importAreas": [
+            true
+          ],
+          "importMissionObjectives": [
+            true
+          ],
+          "importTriggers": [
+            true
+          ],
+          "importUnits": [
+            true
+          ],
+          "importWayPoints": [
+            true
+          ],
+          "rankRange": [
+            [8,16]
+          ],
+          "showAreas": [
+            true
+          ],
+          "showMissionObjectives": [
+            true
+          ],
+          "showTriggers": [
+            true
+          ],
+          "showUnits": [
+            true
+          ],
+          "showWayPoints": [
+            true
+          ]
+        },
+        {
+          "excludes": [
+            []
+          ],
+          "file": [
+            "gameData/missions/cta/planes/arcade/aconq/air_israel/movable_units/high_movable_units_template.blk"
+          ],
+          "importAreas": [
+            true
+          ],
+          "importMissionObjectives": [
+            true
+          ],
+          "importTriggers": [
+            true
+          ],
+          "importUnits": [
+            true
+          ],
+          "importWayPoints": [
+            true
+          ],
+          "rankRange": [
+            [17,50]
+          ],
+          "showAreas": [
+            true
+          ],
+          "showMissionObjectives": [
+            true
+          ],
+          "showTriggers": [
+            true
+          ],
+          "showUnits": [
+            true
+          ],
+          "showWayPoints": [
+            true
+          ]
+        },
+        {
+          "excludes": [
+            []
+          ],
+          "file": [
+            "gameData/missions/templates/air_templates/mu_movable_units_template.blk"
+          ],
+          "importAreas": [
+            true
+          ],
+          "importMissionObjectives": [
+            true
+          ],
+          "importTriggers": [
+            true
+          ],
+          "importUnits": [
+            true
+          ],
+          "importWayPoints": [
+            true
+          ],
+          "showAreas": [
+            true
+          ],
+          "showMissionObjectives": [
+            true
+          ],
+          "showTriggers": [
+            true
+          ],
+          "showUnits": [
+            true
+          ],
+          "showWayPoints": [
+            true
+          ]
+        }
+      ]
+    }
+  ],
+  "mission_objectives": [
+    {
+      "isCategory": [
+        true
+      ],
+      "is_enabled": [
+        true
+      ]
+    }
+  ],
+  "mission_settings": [
+    {
+      "mission": [
+        {
+          "environment": [
+            "Day"
+          ],
+          "level": [
+            "levels/air_israel.bin"
+          ],
+          "type": [
+            "domination"
+          ],
+          "weather": [
+            "hazy"
+          ]
+        }
+      ],
+      "player": [
+        {
+          "army": [
+            1
+          ]
+        }
+      ],
+      "player_teamB": [
+        {
+          "army": [
+            2
+          ]
+        }
+      ]
+    }
+  ],
+  "objLayers": [
+    {
+      "layer": [
+        {
+          "enabled": [
+            true
+          ]
+        },
+        {
+          "enabled": [
+            true
+          ]
+        },
+        {
+          "enabled": [
+            true
+          ]
+        },
+        {
+          "enabled": [
+            true
+          ]
+        },
+        {
+          "enabled": [
+            true
+          ]
+        }
+      ]
+    }
+  ],
+  "selected_tag": [
+    ""
+  ],
+  "triggers": [
+    {
+      "isCategory": [
+        true
+      ],
+      "is_enabled": [
+        true
+      ],
+      "mu_movable_units_init": [
+        {
+          "actions": [
+            {
+              "unitSetIndication": [
+                {
+                  "object_var_comp_op": [
+                    "equal"
+                  ],
+                  "object_var_name": [
+                    ""
+                  ],
+                  "object_var_value": [
+                    0
+                  ],
+                  "set": [
+                    true
+                  ],
+                  "target": [
+                    "t1_movable_units_squad",
+                    "t2_movable_units_squad"
+                  ],
+                  "target_marking": [
+                    0
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            []
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "initMission": [
+                []
+              ]
+            }
+          ],
+          "is_enabled": [
+            true
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "units": [
+    []
+  ],
+  "variables": [
+    []
+  ],
+  "wayPoints": [
+    []
+  ]
+}

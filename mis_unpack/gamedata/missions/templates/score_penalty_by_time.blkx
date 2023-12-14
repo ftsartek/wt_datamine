@@ -1,0 +1,791 @@
+{
+  "airfields": [
+    []
+  ],
+  "areas": [
+    []
+  ],
+  "bin_dump_file": [
+    ""
+  ],
+  "dialogs": [
+    []
+  ],
+  "effects": [
+    []
+  ],
+  "imports": [
+    []
+  ],
+  "mission_objectives": [
+    {
+      "isCategory": [
+        true
+      ],
+      "is_enabled": [
+        true
+      ]
+    }
+  ],
+  "mission_settings": [
+    {
+      "mission": [
+        {
+          "environment": [
+            "Day"
+          ],
+          "level": [
+            "levels/avg_volokolamsk.bin"
+          ],
+          "type": [
+            "domination"
+          ],
+          "weather": [
+            "hazy"
+          ]
+        }
+      ],
+      "player": [
+        {
+          "army": [
+            1
+          ]
+        }
+      ],
+      "player_teamB": [
+        {
+          "army": [
+            2
+          ]
+        }
+      ]
+    }
+  ],
+  "objLayers": [
+    {
+      "layer": [
+        {
+          "enabled": [
+            true
+          ]
+        },
+        {
+          "enabled": [
+            true
+          ]
+        },
+        {
+          "enabled": [
+            true
+          ]
+        },
+        {
+          "enabled": [
+            true
+          ]
+        }
+      ]
+    }
+  ],
+  "selected_tag": [
+    ""
+  ],
+  "triggers": [
+    {
+      "check_next_step": [
+        {
+          "actions": [
+            {
+              "triggerEnable": [
+                {
+                  "target": [
+                    "team_a_score_decrease",
+                    "team_b_score_decrease"
+                  ]
+                }
+              ],
+              "varModify": [
+                {
+                  "operator": [
+                    "add"
+                  ],
+                  "value": [
+                    -10.0
+                  ],
+                  "var": [
+                    "mission_time_left_for_next_step"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            {
+              "varCompareInt": [
+                {
+                  "comparasion_func": [
+                    "notMore"
+                  ],
+                  "value": [
+                    0
+                  ],
+                  "var_value": [
+                    "mission_time_left_cur"
+                  ],
+                  "var_value_other": [
+                    "mission_time_left_for_next_step"
+                  ]
+                }
+              ]
+            }
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "periodicEvent": [
+                {
+                  "time": [
+                    0.5
+                  ]
+                }
+              ]
+            }
+          ],
+          "is_enabled": [
+            false
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                true
+              ]
+            }
+          ]
+        }
+      ],
+      "get_mission_time_left": [
+        {
+          "actions": [
+            {
+              "varSetInt": [
+                {
+                  "source_var": [
+                    "timeLeft"
+                  ],
+                  "value": [
+                    0
+                  ],
+                  "var": [
+                    "mission_time_left_cur"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            []
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "periodicEvent": [
+                {
+                  "time": [
+                    0.5
+                  ]
+                }
+              ]
+            }
+          ],
+          "is_enabled": [
+            false
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                true
+              ]
+            }
+          ]
+        }
+      ],
+      "isCategory": [
+        true
+      ],
+      "is_enabled": [
+        true
+      ],
+      "mission_time_out": [
+        {
+          "actions": [
+            {
+              "triggerEnable": [
+                {
+                  "target": [
+                    "team_a_score_to_zero",
+                    "team_b_score_to_zero"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            {
+              "varCompareInt": [
+                {
+                  "comparasion_func": [
+                    "notMore"
+                  ],
+                  "value": [
+                    0
+                  ],
+                  "var_value": [
+                    "mission_time_left_cur"
+                  ]
+                }
+              ]
+            }
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "periodicEvent": [
+                {
+                  "time": [
+                    0.1
+                  ]
+                }
+              ]
+            }
+          ],
+          "is_enabled": [
+            false
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                true
+              ]
+            }
+          ]
+        }
+      ],
+      "score_by_time_init": [
+        {
+          "actions": [
+            {
+              "triggerEnable": [
+                {
+                  "target": [
+                    "get_mission_time_left",
+                    "mission_time_out",
+                    "check_next_step"
+                  ]
+                }
+              ],
+              "varModify": [
+                {
+                  "operator": [
+                    "mul"
+                  ],
+                  "value": [
+                    10.0
+                  ],
+                  "var": [
+                    "player_score_decrease_per_10sec"
+                  ]
+                },
+                {
+                  "operator": [
+                    "divAB"
+                  ],
+                  "use_variable": [
+                    true
+                  ],
+                  "value": [
+                    0.0
+                  ],
+                  "var": [
+                    "player_score_decrease_per_10sec"
+                  ],
+                  "var_value": [
+                    "mission_time_left_cur"
+                  ]
+                },
+                {
+                  "operator": [
+                    "mul"
+                  ],
+                  "value": [
+                    -1.0
+                  ],
+                  "var": [
+                    "player_score_decrease_per_10sec"
+                  ]
+                },
+                {
+                  "operator": [
+                    "add"
+                  ],
+                  "value": [
+                    -10.0
+                  ],
+                  "var": [
+                    "mission_time_left_for_next_step"
+                  ]
+                }
+              ],
+              "varSetInt": [
+                {
+                  "fromDescriptor": [
+                    "scoreLimit"
+                  ],
+                  "value": [
+                    0
+                  ],
+                  "var": [
+                    "player_score_decrease_per_10sec"
+                  ]
+                },
+                {
+                  "source_var": [
+                    "timeLeft"
+                  ],
+                  "value": [
+                    0
+                  ],
+                  "var": [
+                    "mission_time_left_cur"
+                  ]
+                },
+                {
+                  "input_var": [
+                    "mission_time_left_cur"
+                  ],
+                  "value": [
+                    0
+                  ],
+                  "var": [
+                    "mission_time_left_for_next_step"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            {
+              "unitWhenStatus": [
+                {
+                  "check_objects": [
+                    "any"
+                  ],
+                  "check_period": [
+                    1.0
+                  ],
+                  "object": [
+                    "all_players_squad"
+                  ],
+                  "object_marking": [
+                    0
+                  ],
+                  "object_type": [
+                    "isOnline"
+                  ],
+                  "object_var_comp_op": [
+                    "equal"
+                  ],
+                  "object_var_name": [
+                    ""
+                  ],
+                  "object_var_value": [
+                    0
+                  ],
+                  "target_type": [
+                    "isAlive"
+                  ]
+                }
+              ]
+            }
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "initMission": [
+                []
+              ]
+            }
+          ],
+          "is_enabled": [
+            true
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ],
+      "team_a_score_decrease": [
+        {
+          "actions": [
+            {
+              "gameMPChangeScore": [
+                {
+                  "team": [
+                    "A"
+                  ],
+                  "value": [
+                    0
+                  ],
+                  "valueSystem": [
+                    "amount"
+                  ],
+                  "var": [
+                    "player_score_decrease_per_10sec"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            {
+              "varCompareBool": [
+                {
+                  "comparasion_func": [
+                    "equal"
+                  ],
+                  "value": [
+                    true
+                  ],
+                  "var_value": [
+                    "score_by_time_for_team_a"
+                  ]
+                }
+              ]
+            }
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "periodicEvent": [
+                {
+                  "time": [
+                    0.0
+                  ]
+                }
+              ]
+            }
+          ],
+          "is_enabled": [
+            false
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ],
+      "team_a_score_to_zero": [
+        {
+          "actions": [
+            {
+              "gameMPChangeScore": [
+                {
+                  "team": [
+                    "A"
+                  ],
+                  "value": [
+                    -100
+                  ],
+                  "valueSystem": [
+                    "percentage"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            {
+              "varCompareBool": [
+                {
+                  "comparasion_func": [
+                    "equal"
+                  ],
+                  "value": [
+                    true
+                  ],
+                  "var_value": [
+                    "score_by_time_for_team_a"
+                  ]
+                }
+              ]
+            }
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "periodicEvent": [
+                {
+                  "time": [
+                    0.0
+                  ]
+                }
+              ]
+            }
+          ],
+          "is_enabled": [
+            false
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ],
+      "team_b_score_decrease": [
+        {
+          "actions": [
+            {
+              "gameMPChangeScore": [
+                {
+                  "team": [
+                    "B"
+                  ],
+                  "value": [
+                    0
+                  ],
+                  "valueSystem": [
+                    "amount"
+                  ],
+                  "var": [
+                    "player_score_decrease_per_10sec"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            {
+              "varCompareBool": [
+                {
+                  "comparasion_func": [
+                    "equal"
+                  ],
+                  "value": [
+                    true
+                  ],
+                  "var_value": [
+                    "score_by_time_for_team_b"
+                  ]
+                }
+              ]
+            }
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "periodicEvent": [
+                {
+                  "time": [
+                    0.0
+                  ]
+                }
+              ]
+            }
+          ],
+          "is_enabled": [
+            false
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ],
+      "team_b_score_to_zero": [
+        {
+          "actions": [
+            {
+              "gameMPChangeScore": [
+                {
+                  "team": [
+                    "B"
+                  ],
+                  "value": [
+                    -100
+                  ],
+                  "valueSystem": [
+                    "percentage"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            {
+              "varCompareBool": [
+                {
+                  "comparasion_func": [
+                    "equal"
+                  ],
+                  "value": [
+                    true
+                  ],
+                  "var_value": [
+                    "score_by_time_for_team_b"
+                  ]
+                }
+              ]
+            }
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "periodicEvent": [
+                {
+                  "time": [
+                    0.0
+                  ]
+                }
+              ]
+            }
+          ],
+          "is_enabled": [
+            false
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "units": [
+    []
+  ],
+  "variables": [
+    {
+      "mission_time_left_cur": [
+        0
+      ],
+      "mission_time_left_for_next_step": [
+        0
+      ],
+      "player_score_decrease_per_10sec": [
+        0
+      ],
+      "score_by_time_for_team_a": [
+        false
+      ],
+      "score_by_time_for_team_b": [
+        false
+      ]
+    }
+  ],
+  "wayPoints": [
+    []
+  ]
+}

@@ -1,0 +1,371 @@
+{
+  "tdiv": [
+    {
+      "background-color": [
+        "@black"
+      ],
+      "id": [
+        "bg_picture_container"
+      ],
+      "position": [
+        "root"
+      ],
+      "size": [
+        "sw, sh"
+      ],
+      "tdiv": [
+        {
+          "overflow": [
+            "hidden"
+          ],
+          "pos": [
+            "50%sw-50%w,50%sh-50%h"
+          ],
+          "position": [
+            "absolute"
+          ],
+          "size": [
+            "2.333sh, sh"
+          ],
+          "tdiv": [
+            {
+              "behaviour": [
+                "multiLayerImage"
+              ],
+              "blend-time": [
+                "500"
+              ],
+              "id": [
+                "animated_bg_picture"
+              ],
+              "pos": [
+                "pw/2-w/2, ph/2-h/2"
+              ],
+              "position": [
+                "absolute"
+              ],
+              "size": [
+                "2.5sh, sh"
+              ]
+            },
+            {
+              "background-color": [
+                "@black"
+              ],
+              "background-image": [
+                "!ui/gameuiskin#debriefing_bg_grad@@ss"
+              ],
+              "pos": [
+                "-w/2, 0"
+              ],
+              "position": [
+                "absolute"
+              ],
+              "size": [
+                "0.333sh, sh"
+              ]
+            },
+            {
+              "background-color": [
+                "@black"
+              ],
+              "background-image": [
+                "!ui/gameuiskin#debriefing_bg_grad@@ss"
+              ],
+              "pos": [
+                "pw -w/2, 0"
+              ],
+              "position": [
+                "absolute"
+              ],
+              "size": [
+                "0.333sh, sh"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "background-color": [
+        "@shadeBackgroundColor4"
+      ],
+      "background-repeat": [
+        "expand"
+      ],
+      "padding": [
+        "0.005sw,0.01sh,0.005sw,0.01sh"
+      ],
+      "pos": [
+        "50%pw-50%w,sh-1@bh-h-20@dp"
+      ],
+      "position": [
+        "absolute"
+      ],
+      "textAreaCentered": [
+        {
+          "pos": [
+            "50%pw-50%w,0"
+          ],
+          "position": [
+            "relative"
+          ],
+          "style": [
+            "color:@helpF1Color;"
+          ],
+          "text": [
+            "#preloaderSettings/hint"
+          ],
+          "width": [
+            "pw"
+          ]
+        }
+      ],
+      "width": [
+        "0.67@rw $min 2@rh"
+      ]
+    },
+    {
+      "frame": [
+        {
+          "behaviour": [
+            "moveObj"
+          ],
+          "class": [
+            "wndNav"
+          ],
+          "div": [
+            {
+              "size": [
+                "pw,fh"
+              ],
+              "tdiv": [
+                {
+                  "chapterListPlace": [
+                    {
+                      "flow": [
+                        "vertical"
+                      ],
+                      "height": [
+                        "ph"
+                      ],
+                      "id": [
+                        "chapter_place"
+                      ],
+                      "tdiv": [
+                        {
+                          "display": [
+                            "hide"
+                          ],
+                          "id": [
+                            "div_before_chapters_list"
+                          ],
+                          "width": [
+                            "pw"
+                          ]
+                        },
+                        {
+                          "animated_wait_icon": [
+                            {
+                              "background-rotation": [
+                                "0"
+                              ],
+                              "display": [
+                                "hide"
+                              ],
+                              "id": [
+                                "items_list_wait_icon"
+                              ],
+                              "pos": [
+                                "50%pw-50%w, 40%ph-40%h"
+                              ],
+                              "position": [
+                                "absolute"
+                              ]
+                            }
+                          ],
+                          "flow": [
+                            "vertical"
+                          ],
+                          "id": [
+                            "chapters_list_place"
+                          ],
+                          "listbox": [
+                            {
+                              "_on_dbl_click": [
+                                "onItemDblClick"
+                              ],
+                              "flow": [
+                                "vertical"
+                              ],
+                              "id": [
+                                "items_list"
+                              ],
+                              "move-only-hover": [
+                                "yes"
+                              ],
+                              "navigatorShortcuts": [
+                                "yes"
+                              ],
+                              "on_select": [
+                                "onItemSelect"
+                              ],
+                              "size": [
+                                "pw, fh"
+                              ]
+                            }
+                          ],
+                          "popupFilter": [
+                            {
+                              "margin-left": [
+                                "1@buttonMargin"
+                              ]
+                            }
+                          ],
+                          "size": [
+                            "pw, fh"
+                          ],
+                          "tdiv": [
+                            {
+                              "id": [
+                                "listbox_filter_holder"
+                              ],
+                              "pos": [
+                                "1@blockInterval, 0"
+                              ],
+                              "position": [
+                                "relative"
+                              ],
+                              "width": [
+                                "pw"
+                              ]
+                            }
+                          ],
+                          "textAreaCentered": [
+                            {
+                              "hideEmptyText": [
+                                "yes"
+                              ],
+                              "id": [
+                                "items_list_msg"
+                              ],
+                              "pos": [
+                                "50%pw-50%w, 40%ph-40%h"
+                              ],
+                              "position": [
+                                "absolute"
+                              ],
+                              "text": [
+                                ""
+                              ],
+                              "width": [
+                                "80%pw"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "mislist": [
+                    "yes"
+                  ],
+                  "size": [
+                    "pw,ph"
+                  ]
+                }
+              ]
+            }
+          ],
+          "frame_header": [
+            {
+              "Button_close": [
+                []
+              ],
+              "activeText": [
+                {
+                  "caption": [
+                    "yes"
+                  ],
+                  "text": [
+                    "#preloaderSettings/title"
+                  ]
+                }
+              ]
+            }
+          ],
+          "height": [
+            "1@maxWindowHeight"
+          ],
+          "navBar": [
+            {
+              "navRight": [
+                {
+                  "Button_text": [
+                    {
+                      "ButtonImg": [
+                        []
+                      ],
+                      "btnName": [
+                        "A"
+                      ],
+                      "id": [
+                        "btn_select"
+                      ],
+                      "text": [
+                        "#mainmenu/btnSelect"
+                      ]
+                    },
+                    {
+                      "ButtonImg": [
+                        []
+                      ],
+                      "_on_click": [
+                        "toggleBan"
+                      ],
+                      "btnName": [
+                        "X"
+                      ],
+                      "id": [
+                        "btn_ban"
+                      ],
+                      "text": [
+                        "#maps/preferences/ban"
+                      ]
+                    },
+                    {
+                      "ButtonImg": [
+                        []
+                      ],
+                      "btnName": [
+                        "X"
+                      ],
+                      "id": [
+                        "btn_fav"
+                      ],
+                      "on_click": [
+                        "onToggleFav"
+                      ],
+                      "text": [
+                        "#preloaderSettings/trackProgress"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "total-input-transparent": [
+            "yes"
+          ]
+        }
+      ],
+      "pos": [
+        "@bw+30@dp,@bh+30@dp"
+      ],
+      "size": [
+        "sw,sh"
+      ]
+    }
+  ]
+}

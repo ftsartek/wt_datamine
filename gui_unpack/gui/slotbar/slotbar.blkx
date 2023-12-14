@@ -1,0 +1,277 @@
+{
+  "CountriesCrews": [
+    {
+      "id": [
+        "countries_crews"
+      ]
+    }
+  ],
+  "SlotbarBackground": [
+    {
+      "blockSeparator": [
+        []
+      ],
+      "display": [
+        "hide"
+      ],
+      "hasPresetsPanel": [
+        "no"
+      ],
+      "id": [
+        "slotbar_background"
+      ],
+      "pos": [
+        "50%pw-50%w, 0"
+      ],
+      "position": [
+        "absolute"
+      ],
+      "size": [
+        "pw, ph"
+      ],
+      "slotbarTop": [
+        {
+          "behavior": [
+            "Timer"
+          ],
+          "display": [
+            "hide"
+          ],
+          "id": [
+            "slotbar_buttons_place"
+          ],
+          "pos": [
+            "0,-h"
+          ],
+          "position": [
+            "absolute"
+          ],
+          "size": [
+            "pw, 1@slotbarTop"
+          ],
+          "tdiv": [
+            {
+              "DummyButton": [
+                {
+                  "ButtonImg": [
+                    {
+                      "class": [
+                        "independent"
+                      ],
+                      "fullSizeIcons": [
+                        "yes"
+                      ]
+                    }
+                  ],
+                  "btnName": [
+                    "LB"
+                  ],
+                  "id": [
+                    "prev_country_btn"
+                  ],
+                  "on_click": [
+                    "prevCountry"
+                  ],
+                  "padding": [
+                    "1@blockInterval, 0"
+                  ]
+                },
+                {
+                  "ButtonImg": [
+                    {
+                      "class": [
+                        "independent"
+                      ],
+                      "fullSizeIcons": [
+                        "yes"
+                      ]
+                    }
+                  ],
+                  "btnName": [
+                    "RB"
+                  ],
+                  "id": [
+                    "next_country_btn"
+                  ],
+                  "on_click": [
+                    "nextCountry"
+                  ],
+                  "padding": [
+                    "1@blockInterval, 0"
+                  ]
+                }
+              ],
+              "activateSelect": [
+                {
+                  "class": [
+                    "slotsHeader"
+                  ],
+                  "css-hier-invalidate": [
+                    "yes"
+                  ],
+                  "height": [
+                    "ph"
+                  ],
+                  "id": [
+                    "header_countries"
+                  ],
+                  "isShort": [
+                    "no"
+                  ],
+                  "navigatorShortcuts": [
+                    "yes"
+                  ],
+                  "normalFont": [
+                    "yes"
+                  ],
+                  "on_dbl_click": [
+                    "onCountriesListDblClick"
+                  ],
+                  "on_select": [
+                    "onHeaderCountry"
+                  ],
+                  "total-input-transparent": [
+                    "yes"
+                  ]
+                }
+              ],
+              "css-hier-invalidate": [
+                "yes"
+              ],
+              "height": [
+                "ph"
+              ],
+              "id": [
+                "header_countries_nest"
+              ]
+            },
+            {
+              "CheckBox": [
+                {
+                  "CheckBoxImg": [
+                    []
+                  ],
+                  "class": [
+                    "with_image"
+                  ],
+                  "id": [
+                    "slots-autorepair"
+                  ],
+                  "infoImg": [
+                    {
+                      "background-image": [
+                        "#ui/gameuiskin#slot_repair.svg"
+                      ]
+                    }
+                  ],
+                  "margin-right": [
+                    "0.5h"
+                  ],
+                  "on_change_value": [
+                    "onSlotsChangeAutoRefill"
+                  ],
+                  "tooltip": [
+                    "#shop/auto_repair"
+                  ]
+                },
+                {
+                  "CheckBoxImg": [
+                    []
+                  ],
+                  "class": [
+                    "with_image"
+                  ],
+                  "id": [
+                    "slots-autoweapon"
+                  ],
+                  "infoImg": [
+                    {
+                      "background-image": [
+                        "#ui/gameuiskin#btn_weapons.svg"
+                      ]
+                    }
+                  ],
+                  "margin-right": [
+                    "0.5h"
+                  ],
+                  "on_change_value": [
+                    "onSlotsChangeAutoRefill"
+                  ],
+                  "tooltip": [
+                    "#shop/auto_buy_weapons"
+                  ]
+                }
+              ],
+              "display": [
+                "hide"
+              ],
+              "id": [
+                "autorefill-settings"
+              ],
+              "left": [
+                "pw-w"
+              ],
+              "padding-left": [
+                "3@dp"
+              ],
+              "position": [
+                "absolute"
+              ],
+              "top": [
+                "50%(ph-h)"
+              ]
+            }
+          ]
+        }
+      ],
+      "tdiv": [
+        {
+          "blur": [
+            []
+          ],
+          "blur_foreground": [
+            []
+          ],
+          "overflow": [
+            "hidden"
+          ],
+          "size": [
+            "pw, ph"
+          ]
+        }
+      ]
+    }
+  ],
+  "animShow": [
+    {
+      "animation": [
+        "hide"
+      ],
+      "background-color": [
+        "@shadeBackgroundColor"
+      ],
+      "color-factor": [
+        "0"
+      ],
+      "id": [
+        "slotbar_shade"
+      ],
+      "pos": [
+        "50%pw-50%w, -1@slotbarTop"
+      ],
+      "position": [
+        "absolute"
+      ],
+      "size": [
+        "pw, 1@slotbarHeight + 1@slotbarOffset + 1@slotbarTop -1@bh"
+      ]
+    }
+  ],
+  "timer": [
+    {
+      "id": [
+        "slotbar_timer"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,2912 @@
+{
+  "airfields": [
+    []
+  ],
+  "areas": [
+    []
+  ],
+  "bin_dump_file": [
+    ""
+  ],
+  "dialogs": [
+    []
+  ],
+  "effects": [
+    []
+  ],
+  "imports": [
+    []
+  ],
+  "mission_objectives": [
+    {
+      "isCategory": [
+        true
+      ],
+      "is_enabled": [
+        true
+      ]
+    }
+  ],
+  "mission_settings": [
+    {
+      "mission": [
+        {
+          "country_allies": [
+            "ussr"
+          ],
+          "country_axis": [
+            "germany"
+          ],
+          "deathPenaltyMul": [
+            0.0
+          ],
+          "deathPenaltyMulRounds": [
+            0.0
+          ],
+          "environment": [
+            "Day"
+          ],
+          "level": [
+            "levels/berlin.bin"
+          ],
+          "optionalTakeOff": [
+            false
+          ],
+          "restoreType": [
+            "attempts"
+          ],
+          "scoreLimit": [
+            2900
+          ],
+          "stars": [
+            {
+              "day": [
+                2
+              ],
+              "latitude": [
+                52.5
+              ],
+              "longitude": [
+                13.0
+              ],
+              "month": [
+                4
+              ],
+              "year": [
+                1945
+              ]
+            }
+          ],
+          "timeLimit": [
+            60
+          ],
+          "type": [
+            "domination"
+          ],
+          "weather": [
+            "hazy"
+          ]
+        }
+      ],
+      "player": [
+        {
+          "army": [
+            1
+          ],
+          "wing": [
+            "",
+            "t1_player06",
+            "t1_player07",
+            "t1_player08",
+            "t1_player09",
+            "t1_player10",
+            "t1_player11",
+            "t1_player12",
+            "t1_player13",
+            "t1_player14",
+            "t1_player15"
+          ]
+        }
+      ],
+      "player_teamB": [
+        {
+          "army": [
+            2
+          ],
+          "wing": [
+            "t2_player01",
+            "t2_player02",
+            "t2_player03",
+            "t2_player04",
+            "t2_player05",
+            "t2_player06",
+            "t2_player07",
+            "t2_player08",
+            "t2_player09",
+            "t2_player10",
+            "t2_player11",
+            "t2_player12",
+            "t2_player13",
+            "t2_player14",
+            "t2_player15",
+            "t2_player16",
+            "t2_player17"
+          ]
+        }
+      ],
+      "spectator_points": [
+        []
+      ]
+    }
+  ],
+  "objLayers": [
+    []
+  ],
+  "selected_tag": [
+    ""
+  ],
+  "triggers": [
+    {
+      "isCategory": [
+        true
+      ],
+      "is_enabled": [
+        true
+      ],
+      "rearm_areas": [
+        {
+          "bombers_rearm_area_init": [
+            {
+              "actions": [
+                {
+                  "triggerEnable": [
+                    {
+                      "target": [
+                        "t1_bombers_rearm_area_check",
+                        "t2_bombers_rearm_area_check"
+                      ]
+                    }
+                  ],
+                  "varSetString": [
+                    {
+                      "value": [
+                        "t1_bombers_rearm_area"
+                      ],
+                      "var": [
+                        "t1_bombers_rearm_area_name"
+                      ]
+                    },
+                    {
+                      "value": [
+                        "t2_bombers_rearm_area"
+                      ],
+                      "var": [
+                        "t2_bombers_rearm_area_name"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "comments": [
+                ""
+              ],
+              "conditions": [
+                []
+              ],
+              "else_actions": [
+                []
+              ],
+              "events": [
+                {
+                  "periodicEvent": [
+                    {
+                      "time": [
+                        1.0
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "is_enabled": [
+                true
+              ],
+              "props": [
+                {
+                  "actionsType": [
+                    "PERFORM_ONE_BY_ONE"
+                  ],
+                  "conditionsType": [
+                    "ALL"
+                  ],
+                  "enableAfterComplete": [
+                    false
+                  ]
+                }
+              ]
+            }
+          ],
+          "isCategory": [
+            true
+          ],
+          "is_enabled": [
+            true
+          ],
+          "t1_bombers_rearm_area_check": [
+            {
+              "actions": [
+                {
+                  "missionMarkAsRearmZone": [
+                    {
+                      "area_name": [
+                        "@t1_bombers_rearm_area_name"
+                      ],
+                      "army": [
+                        1
+                      ],
+                      "enabled": [
+                        true
+                      ],
+                      "restoreWhenNoAmmoLeft": [
+                        true
+                      ],
+                      "tags": [
+                        {
+                          "type_bomber": [
+                            true
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "comments": [
+                ""
+              ],
+              "conditions": [
+                {
+                  "objectExists": [
+                    {
+                      "target": [
+                        "@t1_bombers_rearm_area_name"
+                      ],
+                      "type": [
+                        "area"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "else_actions": [
+                []
+              ],
+              "events": [
+                {
+                  "periodicEvent": [
+                    {
+                      "time": [
+                        1.0
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "is_enabled": [
+                false
+              ],
+              "props": [
+                {
+                  "actionsType": [
+                    "PERFORM_ONE_BY_ONE"
+                  ],
+                  "conditionsType": [
+                    "ALL"
+                  ],
+                  "enableAfterComplete": [
+                    false
+                  ]
+                }
+              ]
+            }
+          ],
+          "t2_bombers_rearm_area_check": [
+            {
+              "actions": [
+                {
+                  "missionMarkAsRearmZone": [
+                    {
+                      "area_name": [
+                        "@t2_bombers_rearm_area_name"
+                      ],
+                      "army": [
+                        2
+                      ],
+                      "enabled": [
+                        true
+                      ],
+                      "restoreWhenNoAmmoLeft": [
+                        true
+                      ],
+                      "tags": [
+                        {
+                          "type_bomber": [
+                            true
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "comments": [
+                ""
+              ],
+              "conditions": [
+                {
+                  "objectExists": [
+                    {
+                      "target": [
+                        "@t2_bombers_rearm_area_name"
+                      ],
+                      "type": [
+                        "area"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "else_actions": [
+                []
+              ],
+              "events": [
+                {
+                  "periodicEvent": [
+                    {
+                      "time": [
+                        1.0
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "is_enabled": [
+                false
+              ],
+              "props": [
+                {
+                  "actionsType": [
+                    "PERFORM_ONE_BY_ONE"
+                  ],
+                  "conditionsType": [
+                    "ALL"
+                  ],
+                  "enableAfterComplete": [
+                    false
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "spawns_init": [
+        {
+          "actions": [
+            {
+              "triggerEnable": [
+                {
+                  "target": [
+                    "t1_spawns_start",
+                    "t2_spawns_start"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            {
+              "objectExists": [
+                {
+                  "target": [
+                    "t1_base_spawn_point"
+                  ],
+                  "type": [
+                    "area"
+                  ]
+                },
+                {
+                  "target": [
+                    "t2_base_spawn_point"
+                  ],
+                  "type": [
+                    "area"
+                  ]
+                }
+              ]
+            }
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "initMission": [
+                []
+              ]
+            }
+          ],
+          "is_enabled": [
+            true
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ],
+      "t1_airfield_01_spawn_for_all": [
+        {
+          "actions": [
+            {
+              "airfieldSetProperties": [
+                {
+                  "enemySurrenderOnLanding": [
+                    true
+                  ],
+                  "object": [
+                    "t1_airfield_01"
+                  ]
+                }
+              ],
+              "comment": [
+                {
+                  "value": [
+                    "etot spavn dolzhen byt' poslednnim v ocheredi spavnov svoej komandy"
+                  ]
+                }
+              ],
+              "missionMarkAsRespawnPoint": [
+                {
+                  "canSpawnOnNeutral": [
+                    false
+                  ],
+                  "forceCreate": [
+                    false
+                  ],
+                  "ignoreTeamsOnReuse": [
+                    false
+                  ],
+                  "isAirfield": [
+                    true
+                  ],
+                  "isIndividual": [
+                    false
+                  ],
+                  "isStrictSpawn": [
+                    false
+                  ],
+                  "isUnit": [
+                    false
+                  ],
+                  "loc_name": [
+                    "missions/airfield_spawn1"
+                  ],
+                  "modular_airfield": [
+                    false
+                  ],
+                  "onlyOnePlayerPerSpawnPoint": [
+                    false
+                  ],
+                  "radius": [
+                    -1.0
+                  ],
+                  "removeAreas": [
+                    false
+                  ],
+                  "replaceAreas": [
+                    false
+                  ],
+                  "resetStrictSpawnIndex": [
+                    false
+                  ],
+                  "separate_fuel_time": [
+                    false
+                  ],
+                  "showOnMap": [
+                    true
+                  ],
+                  "spawnEffect": [
+                    false
+                  ],
+                  "tags": [
+                    {
+                      "tank": [
+                        false
+                      ]
+                    }
+                  ],
+                  "target": [
+                    "t1_airfield_01"
+                  ],
+                  "team": [
+                    "A"
+                  ],
+                  "useExisting": [
+                    true
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            {
+              "varCompareBool": [
+                {
+                  "comparasion_func": [
+                    "equal"
+                  ],
+                  "value": [
+                    true
+                  ],
+                  "var_value": [
+                    "t1_airfield_01_exist"
+                  ]
+                }
+              ]
+            }
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "initMission": [
+                []
+              ]
+            }
+          ],
+          "is_enabled": [
+            true
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ANY"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ],
+      "t1_airfield_02_spawn_for_all": [
+        {
+          "actions": [
+            {
+              "airfieldSetProperties": [
+                {
+                  "enemySurrenderOnLanding": [
+                    true
+                  ],
+                  "object": [
+                    "t1_airfield_02"
+                  ]
+                }
+              ],
+              "comment": [
+                {
+                  "value": [
+                    "etot spavn dolzhen byt' poslednnim v ocheredi spavnov svoej komandy"
+                  ]
+                }
+              ],
+              "missionMarkAsRespawnPoint": [
+                {
+                  "canSpawnOnNeutral": [
+                    false
+                  ],
+                  "forceCreate": [
+                    false
+                  ],
+                  "ignoreTeamsOnReuse": [
+                    false
+                  ],
+                  "isAirfield": [
+                    true
+                  ],
+                  "isIndividual": [
+                    false
+                  ],
+                  "isStrictSpawn": [
+                    false
+                  ],
+                  "isUnit": [
+                    false
+                  ],
+                  "loc_name": [
+                    "missions/airfield_spawn2"
+                  ],
+                  "modular_airfield": [
+                    false
+                  ],
+                  "onlyOnePlayerPerSpawnPoint": [
+                    false
+                  ],
+                  "radius": [
+                    -1.0
+                  ],
+                  "removeAreas": [
+                    false
+                  ],
+                  "replaceAreas": [
+                    false
+                  ],
+                  "resetStrictSpawnIndex": [
+                    false
+                  ],
+                  "separate_fuel_time": [
+                    false
+                  ],
+                  "showOnMap": [
+                    true
+                  ],
+                  "spawnEffect": [
+                    false
+                  ],
+                  "tags": [
+                    {
+                      "tank": [
+                        false
+                      ]
+                    }
+                  ],
+                  "target": [
+                    "t1_airfield_02"
+                  ],
+                  "team": [
+                    "A"
+                  ],
+                  "useExisting": [
+                    true
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            {
+              "varCompareBool": [
+                {
+                  "comparasion_func": [
+                    "equal"
+                  ],
+                  "value": [
+                    true
+                  ],
+                  "var_value": [
+                    "t1_airfield_02_exist"
+                  ]
+                }
+              ]
+            }
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "initMission": [
+                []
+              ]
+            }
+          ],
+          "is_enabled": [
+            true
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ANY"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ],
+      "t1_airfield_default_spawn_for_all": [
+        {
+          "actions": [
+            {
+              "comment": [
+                {
+                  "value": [
+                    "etot spavn dolzhen byt' poslednnim v ocheredi spavnov svoej komandy"
+                  ]
+                }
+              ],
+              "missionMarkAsRespawnPoint": [
+                {
+                  "canSpawnOnNeutral": [
+                    false
+                  ],
+                  "forceCreate": [
+                    false
+                  ],
+                  "ignoreTeamsOnReuse": [
+                    false
+                  ],
+                  "isAirfield": [
+                    true
+                  ],
+                  "isIndividual": [
+                    false
+                  ],
+                  "isStrictSpawn": [
+                    false
+                  ],
+                  "isUnit": [
+                    false
+                  ],
+                  "loc_name": [
+                    "missions/airfield_spawn1"
+                  ],
+                  "modular_airfield": [
+                    false
+                  ],
+                  "onlyOnePlayerPerSpawnPoint": [
+                    false
+                  ],
+                  "radius": [
+                    -1.0
+                  ],
+                  "removeAreas": [
+                    false
+                  ],
+                  "replaceAreas": [
+                    false
+                  ],
+                  "resetStrictSpawnIndex": [
+                    false
+                  ],
+                  "separate_fuel_time": [
+                    false
+                  ],
+                  "showOnMap": [
+                    true
+                  ],
+                  "spawnEffect": [
+                    false
+                  ],
+                  "tags": [
+                    {
+                      "tank": [
+                        false
+                      ]
+                    }
+                  ],
+                  "target": [
+                    "t1_airfield"
+                  ],
+                  "team": [
+                    "A"
+                  ],
+                  "useExisting": [
+                    true
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            {
+              "objectExists": [
+                {
+                  "target": [
+                    "t1_airfield"
+                  ],
+                  "type": [
+                    "objectGroup"
+                  ]
+                }
+              ]
+            }
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "initMission": [
+                []
+              ]
+            }
+          ],
+          "is_enabled": [
+            true
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ANY"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ],
+      "t1_airfields_01_exist_check": [
+        {
+          "actions": [
+            {
+              "comment": [
+                {
+                  "value": [
+                    "aerodrom 01 sushchestvuet"
+                  ]
+                }
+              ],
+              "varSetBool": [
+                {
+                  "value": [
+                    true
+                  ],
+                  "var": [
+                    "t1_airfield_01_exist"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            {
+              "objectExists": [
+                {
+                  "target": [
+                    "t1_airfield_01"
+                  ],
+                  "type": [
+                    "objectGroup"
+                  ]
+                },
+                {
+                  "target": [
+                    "t1_airfield_01"
+                  ],
+                  "type": [
+                    "area"
+                  ]
+                }
+              ]
+            }
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "initMission": [
+                []
+              ]
+            }
+          ],
+          "is_enabled": [
+            true
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ANY"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ],
+      "t1_airfields_02_exist_check": [
+        {
+          "actions": [
+            {
+              "comment": [
+                {
+                  "value": [
+                    "aerodrom 02 sushchestvuet"
+                  ]
+                }
+              ],
+              "varSetBool": [
+                {
+                  "value": [
+                    true
+                  ],
+                  "var": [
+                    "t1_airfield_02_exist"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            {
+              "objectExists": [
+                {
+                  "target": [
+                    "t1_airfield_02"
+                  ],
+                  "type": [
+                    "objectGroup"
+                  ]
+                },
+                {
+                  "target": [
+                    "t1_airfield_02"
+                  ],
+                  "type": [
+                    "area"
+                  ]
+                }
+              ]
+            }
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "initMission": [
+                []
+              ]
+            }
+          ],
+          "is_enabled": [
+            true
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ANY"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ],
+      "t1_airfields_default_spawn_check": [
+        {
+          "actions": [
+            {
+              "comment": [
+                {
+                  "value": [
+                    "aerodromov net. proveryaem defoltnyj"
+                  ]
+                }
+              ],
+              "triggerEnable": [
+                {
+                  "target": [
+                    "t1_airfield_default_spawn_for_all"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            {
+              "varCompareBool": [
+                {
+                  "comparasion_func": [
+                    "equal"
+                  ],
+                  "value": [
+                    false
+                  ],
+                  "var_value": [
+                    "t1_airfield_01_exist"
+                  ]
+                },
+                {
+                  "comparasion_func": [
+                    "equal"
+                  ],
+                  "value": [
+                    false
+                  ],
+                  "var_value": [
+                    "t1_airfield_02_exist"
+                  ]
+                }
+              ]
+            }
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "initMission": [
+                []
+              ]
+            }
+          ],
+          "is_enabled": [
+            true
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ],
+      "t1_common_fighter_in_air": [
+        {
+          "actions": [
+            {
+              "missionMarkAsRespawnPoint": [
+                {
+                  "canSpawnOnNeutral": [
+                    false
+                  ],
+                  "forceCreate": [
+                    false
+                  ],
+                  "ignoreTeamsOnReuse": [
+                    false
+                  ],
+                  "isAirfield": [
+                    false
+                  ],
+                  "isIndividual": [
+                    false
+                  ],
+                  "isStrictSpawn": [
+                    false
+                  ],
+                  "isUnit": [
+                    false
+                  ],
+                  "loc_name": [
+                    "missions/air_spawn"
+                  ],
+                  "onlyOnePlayerPerSpawnPoint": [
+                    false
+                  ],
+                  "radius": [
+                    -1.0
+                  ],
+                  "removeAreas": [
+                    false
+                  ],
+                  "replaceAreas": [
+                    false
+                  ],
+                  "resetStrictSpawnIndex": [
+                    false
+                  ],
+                  "showOnMap": [
+                    true
+                  ],
+                  "spawnEffect": [
+                    false
+                  ],
+                  "spawnOffset": [
+                    [-3000.0,500.0,0.0]
+                  ],
+                  "spawnOffsetSpace": [
+                    "object"
+                  ],
+                  "tags": [
+                    {
+                      "tank": [
+                        false
+                      ]
+                    }
+                  ],
+                  "target": [
+                    "t1_base_spawn_point"
+                  ],
+                  "team": [
+                    "A"
+                  ],
+                  "useExisting": [
+                    false
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            {
+              "varCompareBool": [
+                {
+                  "comparasion_func": [
+                    "equal"
+                  ],
+                  "value": [
+                    true
+                  ],
+                  "var_value": [
+                    "force_air_spawn"
+                  ]
+                }
+              ]
+            }
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "initMission": [
+                []
+              ]
+            }
+          ],
+          "is_enabled": [
+            false
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ],
+      "t1_spawns_start": [
+        {
+          "actions": [
+            {
+              "comment": [
+                {
+                  "value": [
+                    "shturmoviki: 1000m vysoty +5000 blizhe k centru"
+                  ]
+                },
+                {
+                  "value": [
+                    "perehvatchiki: 1000m vysoty -5000 blizhe k centru"
+                  ]
+                },
+                {
+                  "value": [
+                    "aaa fighters"
+                  ]
+                },
+                {
+                  "value": [
+                    "main bombers"
+                  ]
+                },
+                {
+                  "value": [
+                    "big bombers"
+                  ]
+                },
+                {
+                  "value": [
+                    ""
+                  ]
+                }
+              ],
+              "missionMarkAsRespawnPoint": [
+                {
+                  "canSpawnOnNeutral": [
+                    false
+                  ],
+                  "forceCreate": [
+                    false
+                  ],
+                  "ignoreTeamsOnReuse": [
+                    false
+                  ],
+                  "isAirfield": [
+                    false
+                  ],
+                  "isIndividual": [
+                    false
+                  ],
+                  "isStrictSpawn": [
+                    false
+                  ],
+                  "isUnit": [
+                    false
+                  ],
+                  "loc_name": [
+                    "missions/assault_spawn"
+                  ],
+                  "onlyOnePlayerPerSpawnPoint": [
+                    false
+                  ],
+                  "radius": [
+                    -1.0
+                  ],
+                  "removeAreas": [
+                    false
+                  ],
+                  "replaceAreas": [
+                    false
+                  ],
+                  "resetStrictSpawnIndex": [
+                    false
+                  ],
+                  "showOnMap": [
+                    true
+                  ],
+                  "spawnEffect": [
+                    false
+                  ],
+                  "spawnOffset": [
+                    [3000.0,1000.0,0.0]
+                  ],
+                  "spawnOffsetSpace": [
+                    "object"
+                  ],
+                  "tags": [
+                    {
+                      "type_assault": [
+                        true
+                      ]
+                    }
+                  ],
+                  "target": [
+                    "t1_base_spawn_point"
+                  ],
+                  "team": [
+                    "A"
+                  ],
+                  "useExisting": [
+                    false
+                  ]
+                },
+                {
+                  "canSpawnOnNeutral": [
+                    false
+                  ],
+                  "forceCreate": [
+                    false
+                  ],
+                  "ignoreTeamsOnReuse": [
+                    false
+                  ],
+                  "isAirfield": [
+                    false
+                  ],
+                  "isIndividual": [
+                    false
+                  ],
+                  "isStrictSpawn": [
+                    false
+                  ],
+                  "isUnit": [
+                    false
+                  ],
+                  "loc_name": [
+                    "missions/interceptor_spawn"
+                  ],
+                  "modular_airfield": [
+                    false
+                  ],
+                  "onlyOnePlayerPerSpawnPoint": [
+                    false
+                  ],
+                  "radius": [
+                    -1.0
+                  ],
+                  "removeAreas": [
+                    false
+                  ],
+                  "replaceAreas": [
+                    false
+                  ],
+                  "resetStrictSpawnIndex": [
+                    false
+                  ],
+                  "separate_fuel_time": [
+                    false
+                  ],
+                  "showOnMap": [
+                    true
+                  ],
+                  "spawnEffect": [
+                    false
+                  ],
+                  "spawnOffset": [
+                    [-5000.0,1000.0,0.0]
+                  ],
+                  "spawnOffsetSpace": [
+                    "object"
+                  ],
+                  "tags": [
+                    {
+                      "type_interceptor": [
+                        true
+                      ]
+                    }
+                  ],
+                  "target": [
+                    "t1_base_spawn_point"
+                  ],
+                  "team": [
+                    "A"
+                  ],
+                  "useExisting": [
+                    false
+                  ]
+                },
+                {
+                  "canSpawnOnNeutral": [
+                    false
+                  ],
+                  "forceCreate": [
+                    false
+                  ],
+                  "ignoreTeamsOnReuse": [
+                    false
+                  ],
+                  "isAirfield": [
+                    false
+                  ],
+                  "isIndividual": [
+                    false
+                  ],
+                  "isStrictSpawn": [
+                    false
+                  ],
+                  "isUnit": [
+                    false
+                  ],
+                  "loc_name": [
+                    "missions/aaa_fighter_spawn"
+                  ],
+                  "onlyOnePlayerPerSpawnPoint": [
+                    false
+                  ],
+                  "radius": [
+                    -1.0
+                  ],
+                  "removeAreas": [
+                    false
+                  ],
+                  "replaceAreas": [
+                    false
+                  ],
+                  "resetStrictSpawnIndex": [
+                    false
+                  ],
+                  "showOnMap": [
+                    true
+                  ],
+                  "spawnEffect": [
+                    false
+                  ],
+                  "spawnOffset": [
+                    [-3000.0,1000.0,0.0]
+                  ],
+                  "spawnOffsetSpace": [
+                    "object"
+                  ],
+                  "tags": [
+                    {
+                      "type_aa_fighter": [
+                        true
+                      ]
+                    }
+                  ],
+                  "target": [
+                    "t1_base_spawn_point"
+                  ],
+                  "team": [
+                    "A"
+                  ],
+                  "useExisting": [
+                    false
+                  ]
+                },
+                {
+                  "canSpawnOnNeutral": [
+                    false
+                  ],
+                  "forceCreate": [
+                    false
+                  ],
+                  "ignoreTeamsOnReuse": [
+                    false
+                  ],
+                  "isAirfield": [
+                    false
+                  ],
+                  "isIndividual": [
+                    false
+                  ],
+                  "isStrictSpawn": [
+                    false
+                  ],
+                  "isUnit": [
+                    false
+                  ],
+                  "loc_name": [
+                    "missions/main_bomber_spawn"
+                  ],
+                  "onlyOnePlayerPerSpawnPoint": [
+                    false
+                  ],
+                  "radius": [
+                    -1.0
+                  ],
+                  "removeAreas": [
+                    false
+                  ],
+                  "replaceAreas": [
+                    false
+                  ],
+                  "resetStrictSpawnIndex": [
+                    false
+                  ],
+                  "showOnMap": [
+                    true
+                  ],
+                  "spawnEffect": [
+                    false
+                  ],
+                  "spawnOffset": [
+                    [-5000.0,3000.0,0.0]
+                  ],
+                  "spawnOffsetSpace": [
+                    "object"
+                  ],
+                  "tags": [
+                    {
+                      "type_bomber": [
+                        true
+                      ],
+                      "type_longrange_bomber": [
+                        false
+                      ]
+                    }
+                  ],
+                  "target": [
+                    "t1_base_spawn_point"
+                  ],
+                  "team": [
+                    "A"
+                  ],
+                  "useExisting": [
+                    false
+                  ]
+                },
+                {
+                  "canSpawnOnNeutral": [
+                    false
+                  ],
+                  "forceCreate": [
+                    false
+                  ],
+                  "ignoreTeamsOnReuse": [
+                    false
+                  ],
+                  "isAirfield": [
+                    false
+                  ],
+                  "isIndividual": [
+                    false
+                  ],
+                  "isStrictSpawn": [
+                    false
+                  ],
+                  "isUnit": [
+                    false
+                  ],
+                  "loc_name": [
+                    "missions/far_bomber_spawn"
+                  ],
+                  "onlyOnePlayerPerSpawnPoint": [
+                    false
+                  ],
+                  "radius": [
+                    -1.0
+                  ],
+                  "removeAreas": [
+                    false
+                  ],
+                  "replaceAreas": [
+                    false
+                  ],
+                  "resetStrictSpawnIndex": [
+                    false
+                  ],
+                  "showOnMap": [
+                    true
+                  ],
+                  "spawnEffect": [
+                    false
+                  ],
+                  "spawnOffset": [
+                    [-5000.0,4000.0,0.0]
+                  ],
+                  "spawnOffsetSpace": [
+                    "object"
+                  ],
+                  "tags": [
+                    {
+                      "type_longrange_bomber": [
+                        true
+                      ]
+                    }
+                  ],
+                  "target": [
+                    "t1_base_spawn_point"
+                  ],
+                  "team": [
+                    "A"
+                  ],
+                  "useExisting": [
+                    false
+                  ]
+                }
+              ],
+              "triggerEnable": [
+                {
+                  "target": [
+                    "t1_common_fighter_in_air"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            []
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "initMission": [
+                []
+              ]
+            }
+          ],
+          "is_enabled": [
+            false
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ],
+      "t2_airfield_01_spawn_for_all": [
+        {
+          "actions": [
+            {
+              "airfieldSetProperties": [
+                {
+                  "enemySurrenderOnLanding": [
+                    true
+                  ],
+                  "object": [
+                    "t2_airfield_01"
+                  ]
+                }
+              ],
+              "comment": [
+                {
+                  "value": [
+                    "etot spavn dolzhen byt' poslednnim v ocheredi spavnov svoej komandy"
+                  ]
+                }
+              ],
+              "missionMarkAsRespawnPoint": [
+                {
+                  "canSpawnOnNeutral": [
+                    false
+                  ],
+                  "forceCreate": [
+                    false
+                  ],
+                  "ignoreTeamsOnReuse": [
+                    false
+                  ],
+                  "isAirfield": [
+                    true
+                  ],
+                  "isIndividual": [
+                    false
+                  ],
+                  "isStrictSpawn": [
+                    false
+                  ],
+                  "isUnit": [
+                    false
+                  ],
+                  "loc_name": [
+                    "missions/airfield_spawn1"
+                  ],
+                  "modular_airfield": [
+                    false
+                  ],
+                  "onlyOnePlayerPerSpawnPoint": [
+                    false
+                  ],
+                  "radius": [
+                    -1.0
+                  ],
+                  "removeAreas": [
+                    false
+                  ],
+                  "replaceAreas": [
+                    false
+                  ],
+                  "resetStrictSpawnIndex": [
+                    false
+                  ],
+                  "separate_fuel_time": [
+                    false
+                  ],
+                  "showOnMap": [
+                    true
+                  ],
+                  "spawnEffect": [
+                    false
+                  ],
+                  "tags": [
+                    {
+                      "tank": [
+                        false
+                      ]
+                    }
+                  ],
+                  "target": [
+                    "t2_airfield_01"
+                  ],
+                  "team": [
+                    "B"
+                  ],
+                  "useExisting": [
+                    true
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            {
+              "varCompareBool": [
+                {
+                  "comparasion_func": [
+                    "equal"
+                  ],
+                  "value": [
+                    true
+                  ],
+                  "var_value": [
+                    "t2_airfield_01_exist"
+                  ]
+                }
+              ]
+            }
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "initMission": [
+                []
+              ]
+            }
+          ],
+          "is_enabled": [
+            true
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ANY"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ],
+      "t2_airfield_02_spawn_for_all": [
+        {
+          "actions": [
+            {
+              "airfieldSetProperties": [
+                {
+                  "enemySurrenderOnLanding": [
+                    true
+                  ],
+                  "object": [
+                    "t2_airfield_02"
+                  ]
+                }
+              ],
+              "comment": [
+                {
+                  "value": [
+                    "etot spavn dolzhen byt' poslednnim v ocheredi spavnov svoej komandy"
+                  ]
+                }
+              ],
+              "missionMarkAsRespawnPoint": [
+                {
+                  "canSpawnOnNeutral": [
+                    false
+                  ],
+                  "forceCreate": [
+                    false
+                  ],
+                  "ignoreTeamsOnReuse": [
+                    false
+                  ],
+                  "isAirfield": [
+                    true
+                  ],
+                  "isIndividual": [
+                    false
+                  ],
+                  "isStrictSpawn": [
+                    false
+                  ],
+                  "isUnit": [
+                    false
+                  ],
+                  "loc_name": [
+                    "missions/airfield_spawn2"
+                  ],
+                  "modular_airfield": [
+                    false
+                  ],
+                  "onlyOnePlayerPerSpawnPoint": [
+                    false
+                  ],
+                  "radius": [
+                    -1.0
+                  ],
+                  "removeAreas": [
+                    false
+                  ],
+                  "replaceAreas": [
+                    false
+                  ],
+                  "resetStrictSpawnIndex": [
+                    false
+                  ],
+                  "separate_fuel_time": [
+                    false
+                  ],
+                  "showOnMap": [
+                    true
+                  ],
+                  "spawnEffect": [
+                    false
+                  ],
+                  "tags": [
+                    {
+                      "tank": [
+                        false
+                      ]
+                    }
+                  ],
+                  "target": [
+                    "t2_airfield_02"
+                  ],
+                  "team": [
+                    "B"
+                  ],
+                  "useExisting": [
+                    true
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            {
+              "varCompareBool": [
+                {
+                  "comparasion_func": [
+                    "equal"
+                  ],
+                  "value": [
+                    true
+                  ],
+                  "var_value": [
+                    "t2_airfield_01_exist"
+                  ]
+                }
+              ]
+            }
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "initMission": [
+                []
+              ]
+            }
+          ],
+          "is_enabled": [
+            true
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ANY"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ],
+      "t2_airfield_default_spawn_for_all": [
+        {
+          "actions": [
+            {
+              "comment": [
+                {
+                  "value": [
+                    "etot spavn dolzhen byt' poslednnim v ocheredi spavnov svoej komandy"
+                  ]
+                }
+              ],
+              "missionMarkAsRespawnPoint": [
+                {
+                  "canSpawnOnNeutral": [
+                    false
+                  ],
+                  "forceCreate": [
+                    false
+                  ],
+                  "ignoreTeamsOnReuse": [
+                    false
+                  ],
+                  "isAirfield": [
+                    true
+                  ],
+                  "isIndividual": [
+                    false
+                  ],
+                  "isStrictSpawn": [
+                    false
+                  ],
+                  "isUnit": [
+                    false
+                  ],
+                  "loc_name": [
+                    "missions/airfield_spawn1"
+                  ],
+                  "modular_airfield": [
+                    false
+                  ],
+                  "onlyOnePlayerPerSpawnPoint": [
+                    false
+                  ],
+                  "radius": [
+                    -1.0
+                  ],
+                  "removeAreas": [
+                    false
+                  ],
+                  "replaceAreas": [
+                    false
+                  ],
+                  "resetStrictSpawnIndex": [
+                    false
+                  ],
+                  "separate_fuel_time": [
+                    false
+                  ],
+                  "showOnMap": [
+                    true
+                  ],
+                  "spawnEffect": [
+                    false
+                  ],
+                  "tags": [
+                    {
+                      "tank": [
+                        false
+                      ]
+                    }
+                  ],
+                  "target": [
+                    "t2_airfield"
+                  ],
+                  "team": [
+                    "B"
+                  ],
+                  "useExisting": [
+                    true
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            {
+              "objectExists": [
+                {
+                  "target": [
+                    "t2_airfield"
+                  ],
+                  "type": [
+                    "objectGroup"
+                  ]
+                }
+              ]
+            }
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "initMission": [
+                []
+              ]
+            }
+          ],
+          "is_enabled": [
+            true
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ANY"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ],
+      "t2_airfields_01_exist_check": [
+        {
+          "actions": [
+            {
+              "comment": [
+                {
+                  "value": [
+                    "aerodrom 01 sushchestvuet"
+                  ]
+                }
+              ],
+              "varSetBool": [
+                {
+                  "value": [
+                    true
+                  ],
+                  "var": [
+                    "t2_airfield_01_exist"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            {
+              "objectExists": [
+                {
+                  "target": [
+                    "t2_airfield_01"
+                  ],
+                  "type": [
+                    "objectGroup"
+                  ]
+                },
+                {
+                  "target": [
+                    "t2_airfield_01"
+                  ],
+                  "type": [
+                    "area"
+                  ]
+                }
+              ]
+            }
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "initMission": [
+                []
+              ]
+            }
+          ],
+          "is_enabled": [
+            true
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ANY"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ],
+      "t2_airfields_02_exist_check": [
+        {
+          "actions": [
+            {
+              "comment": [
+                {
+                  "value": [
+                    "aerodrom 02 sushchestvuet"
+                  ]
+                }
+              ],
+              "varSetBool": [
+                {
+                  "value": [
+                    true
+                  ],
+                  "var": [
+                    "t2_airfield_02_exist"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            {
+              "objectExists": [
+                {
+                  "target": [
+                    "t2_airfield_02"
+                  ],
+                  "type": [
+                    "objectGroup"
+                  ]
+                },
+                {
+                  "target": [
+                    "t2_airfield_02"
+                  ],
+                  "type": [
+                    "area"
+                  ]
+                }
+              ]
+            }
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "initMission": [
+                []
+              ]
+            }
+          ],
+          "is_enabled": [
+            true
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ANY"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ],
+      "t2_airfields_default_spawn_check": [
+        {
+          "actions": [
+            {
+              "comment": [
+                {
+                  "value": [
+                    "aerodromov net. proveryaem defoltnyj"
+                  ]
+                }
+              ],
+              "triggerEnable": [
+                {
+                  "target": [
+                    "t2_airfield_default_spawn_for_all"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            {
+              "varCompareBool": [
+                {
+                  "comparasion_func": [
+                    "equal"
+                  ],
+                  "value": [
+                    false
+                  ],
+                  "var_value": [
+                    "t2_airfield_01_exist"
+                  ]
+                },
+                {
+                  "comparasion_func": [
+                    "equal"
+                  ],
+                  "value": [
+                    false
+                  ],
+                  "var_value": [
+                    "t2_airfield_02_exist"
+                  ]
+                }
+              ]
+            }
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "initMission": [
+                []
+              ]
+            }
+          ],
+          "is_enabled": [
+            true
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ],
+      "t2_common_fighter_in_air": [
+        {
+          "actions": [
+            {
+              "missionMarkAsRespawnPoint": [
+                {
+                  "canSpawnOnNeutral": [
+                    false
+                  ],
+                  "forceCreate": [
+                    false
+                  ],
+                  "ignoreTeamsOnReuse": [
+                    false
+                  ],
+                  "isAirfield": [
+                    false
+                  ],
+                  "isIndividual": [
+                    false
+                  ],
+                  "isStrictSpawn": [
+                    false
+                  ],
+                  "isUnit": [
+                    false
+                  ],
+                  "loc_name": [
+                    "missions/air_spawn"
+                  ],
+                  "onlyOnePlayerPerSpawnPoint": [
+                    false
+                  ],
+                  "radius": [
+                    -1.0
+                  ],
+                  "removeAreas": [
+                    false
+                  ],
+                  "replaceAreas": [
+                    false
+                  ],
+                  "resetStrictSpawnIndex": [
+                    false
+                  ],
+                  "showOnMap": [
+                    true
+                  ],
+                  "spawnEffect": [
+                    false
+                  ],
+                  "spawnOffset": [
+                    [-3000.0,500.0,0.0]
+                  ],
+                  "spawnOffsetSpace": [
+                    "object"
+                  ],
+                  "tags": [
+                    {
+                      "tank": [
+                        false
+                      ]
+                    }
+                  ],
+                  "target": [
+                    "t2_base_spawn_point"
+                  ],
+                  "team": [
+                    "B"
+                  ],
+                  "useExisting": [
+                    false
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            {
+              "varCompareBool": [
+                {
+                  "comparasion_func": [
+                    "equal"
+                  ],
+                  "value": [
+                    true
+                  ],
+                  "var_value": [
+                    "force_air_spawn"
+                  ]
+                }
+              ]
+            }
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "initMission": [
+                []
+              ]
+            }
+          ],
+          "is_enabled": [
+            false
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ],
+      "t2_spawns_start": [
+        {
+          "actions": [
+            {
+              "comment": [
+                {
+                  "value": [
+                    "shturmoviki: 1000m vysoty +5000 blizhe k centru"
+                  ]
+                },
+                {
+                  "value": [
+                    "perehvatchiki: 1000m vysoty -5000 blizhe k centru"
+                  ]
+                },
+                {
+                  "value": [
+                    "aaa fighters"
+                  ]
+                },
+                {
+                  "value": [
+                    "main bombers"
+                  ]
+                },
+                {
+                  "value": [
+                    "big bombers"
+                  ]
+                },
+                {
+                  "value": [
+                    ""
+                  ]
+                }
+              ],
+              "missionMarkAsRespawnPoint": [
+                {
+                  "canSpawnOnNeutral": [
+                    false
+                  ],
+                  "forceCreate": [
+                    false
+                  ],
+                  "ignoreTeamsOnReuse": [
+                    false
+                  ],
+                  "isAirfield": [
+                    false
+                  ],
+                  "isIndividual": [
+                    false
+                  ],
+                  "isStrictSpawn": [
+                    false
+                  ],
+                  "isUnit": [
+                    false
+                  ],
+                  "loc_name": [
+                    "missions/assault_spawn"
+                  ],
+                  "modular_airfield": [
+                    false
+                  ],
+                  "onlyOnePlayerPerSpawnPoint": [
+                    false
+                  ],
+                  "radius": [
+                    -1.0
+                  ],
+                  "removeAreas": [
+                    false
+                  ],
+                  "replaceAreas": [
+                    false
+                  ],
+                  "resetStrictSpawnIndex": [
+                    false
+                  ],
+                  "separate_fuel_time": [
+                    false
+                  ],
+                  "showOnMap": [
+                    true
+                  ],
+                  "spawnEffect": [
+                    false
+                  ],
+                  "spawnOffset": [
+                    [3000.0,1000.0,0.0]
+                  ],
+                  "spawnOffsetSpace": [
+                    "object"
+                  ],
+                  "tags": [
+                    {
+                      "type_assault": [
+                        true
+                      ]
+                    }
+                  ],
+                  "target": [
+                    "t2_base_spawn_point"
+                  ],
+                  "team": [
+                    "B"
+                  ],
+                  "useExisting": [
+                    false
+                  ]
+                },
+                {
+                  "canSpawnOnNeutral": [
+                    false
+                  ],
+                  "forceCreate": [
+                    false
+                  ],
+                  "ignoreTeamsOnReuse": [
+                    false
+                  ],
+                  "isAirfield": [
+                    false
+                  ],
+                  "isIndividual": [
+                    false
+                  ],
+                  "isStrictSpawn": [
+                    false
+                  ],
+                  "isUnit": [
+                    false
+                  ],
+                  "loc_name": [
+                    "missions/interceptor_spawn"
+                  ],
+                  "modular_airfield": [
+                    false
+                  ],
+                  "onlyOnePlayerPerSpawnPoint": [
+                    false
+                  ],
+                  "radius": [
+                    -1.0
+                  ],
+                  "removeAreas": [
+                    false
+                  ],
+                  "replaceAreas": [
+                    false
+                  ],
+                  "resetStrictSpawnIndex": [
+                    false
+                  ],
+                  "separate_fuel_time": [
+                    false
+                  ],
+                  "showOnMap": [
+                    true
+                  ],
+                  "spawnEffect": [
+                    false
+                  ],
+                  "spawnOffset": [
+                    [-5000.0,1000.0,0.0]
+                  ],
+                  "spawnOffsetSpace": [
+                    "object"
+                  ],
+                  "tags": [
+                    {
+                      "type_interceptor": [
+                        true
+                      ]
+                    }
+                  ],
+                  "target": [
+                    "t2_base_spawn_point"
+                  ],
+                  "team": [
+                    "B"
+                  ],
+                  "useExisting": [
+                    false
+                  ]
+                },
+                {
+                  "canSpawnOnNeutral": [
+                    false
+                  ],
+                  "forceCreate": [
+                    false
+                  ],
+                  "ignoreTeamsOnReuse": [
+                    false
+                  ],
+                  "isAirfield": [
+                    false
+                  ],
+                  "isIndividual": [
+                    false
+                  ],
+                  "isStrictSpawn": [
+                    false
+                  ],
+                  "isUnit": [
+                    false
+                  ],
+                  "loc_name": [
+                    "missions/aaa_fighter_spawn"
+                  ],
+                  "onlyOnePlayerPerSpawnPoint": [
+                    false
+                  ],
+                  "radius": [
+                    -1.0
+                  ],
+                  "removeAreas": [
+                    false
+                  ],
+                  "replaceAreas": [
+                    false
+                  ],
+                  "resetStrictSpawnIndex": [
+                    false
+                  ],
+                  "showOnMap": [
+                    true
+                  ],
+                  "spawnEffect": [
+                    false
+                  ],
+                  "spawnOffset": [
+                    [-3000.0,1000.0,0.0]
+                  ],
+                  "spawnOffsetSpace": [
+                    "object"
+                  ],
+                  "tags": [
+                    {
+                      "type_aa_fighter": [
+                        true
+                      ]
+                    }
+                  ],
+                  "target": [
+                    "t2_base_spawn_point"
+                  ],
+                  "team": [
+                    "B"
+                  ],
+                  "useExisting": [
+                    false
+                  ]
+                },
+                {
+                  "canSpawnOnNeutral": [
+                    false
+                  ],
+                  "forceCreate": [
+                    false
+                  ],
+                  "ignoreTeamsOnReuse": [
+                    false
+                  ],
+                  "isAirfield": [
+                    false
+                  ],
+                  "isIndividual": [
+                    false
+                  ],
+                  "isStrictSpawn": [
+                    false
+                  ],
+                  "isUnit": [
+                    false
+                  ],
+                  "loc_name": [
+                    "missions/main_bomber_spawn"
+                  ],
+                  "onlyOnePlayerPerSpawnPoint": [
+                    false
+                  ],
+                  "radius": [
+                    -1.0
+                  ],
+                  "removeAreas": [
+                    false
+                  ],
+                  "replaceAreas": [
+                    false
+                  ],
+                  "resetStrictSpawnIndex": [
+                    false
+                  ],
+                  "showOnMap": [
+                    true
+                  ],
+                  "spawnEffect": [
+                    false
+                  ],
+                  "spawnOffset": [
+                    [-5000.0,3000.0,0.0]
+                  ],
+                  "spawnOffsetSpace": [
+                    "object"
+                  ],
+                  "tags": [
+                    {
+                      "type_bomber": [
+                        true
+                      ],
+                      "type_longrange_bomber": [
+                        false
+                      ]
+                    }
+                  ],
+                  "target": [
+                    "t2_base_spawn_point"
+                  ],
+                  "team": [
+                    "B"
+                  ],
+                  "useExisting": [
+                    false
+                  ]
+                },
+                {
+                  "canSpawnOnNeutral": [
+                    false
+                  ],
+                  "forceCreate": [
+                    false
+                  ],
+                  "ignoreTeamsOnReuse": [
+                    false
+                  ],
+                  "isAirfield": [
+                    false
+                  ],
+                  "isIndividual": [
+                    false
+                  ],
+                  "isStrictSpawn": [
+                    false
+                  ],
+                  "isUnit": [
+                    false
+                  ],
+                  "loc_name": [
+                    "missions/far_bomber_spawn"
+                  ],
+                  "onlyOnePlayerPerSpawnPoint": [
+                    false
+                  ],
+                  "radius": [
+                    -1.0
+                  ],
+                  "removeAreas": [
+                    false
+                  ],
+                  "replaceAreas": [
+                    false
+                  ],
+                  "resetStrictSpawnIndex": [
+                    false
+                  ],
+                  "showOnMap": [
+                    true
+                  ],
+                  "spawnEffect": [
+                    false
+                  ],
+                  "spawnOffset": [
+                    [-5000.0,4000.0,0.0]
+                  ],
+                  "spawnOffsetSpace": [
+                    "object"
+                  ],
+                  "tags": [
+                    {
+                      "type_longrange_bomber": [
+                        true
+                      ]
+                    }
+                  ],
+                  "target": [
+                    "t2_base_spawn_point"
+                  ],
+                  "team": [
+                    "B"
+                  ],
+                  "useExisting": [
+                    false
+                  ]
+                }
+              ],
+              "triggerEnable": [
+                {
+                  "target": [
+                    "t2_common_fighter_in_air"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            []
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "initMission": [
+                []
+              ]
+            }
+          ],
+          "is_enabled": [
+            false
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "units": [
+    []
+  ],
+  "variables": [
+    {
+      "force_air_spawn": [
+        false
+      ],
+      "t1_airfield_01_exist": [
+        false
+      ],
+      "t1_airfield_02_exist": [
+        false
+      ],
+      "t1_airfield_spawn_name": [
+        ""
+      ],
+      "t1_bombers_rearm_area_name": [
+        ""
+      ],
+      "t2_airfield_01_exist": [
+        false
+      ],
+      "t2_airfield_02_exist": [
+        false
+      ],
+      "t2_airfield_spawn_name": [
+        ""
+      ],
+      "t2_bombers_rearm_area_name": [
+        ""
+      ]
+    }
+  ],
+  "wayPoints": [
+    []
+  ]
+}

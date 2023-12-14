@@ -1,0 +1,884 @@
+{
+  "root": [
+    {
+      "airInfoBlock": [
+        {
+          "id": [
+            "slot_info"
+          ]
+        }
+      ],
+      "tdiv": [
+        {
+          "flow": [
+            "vertical"
+          ],
+          "height": [
+            "fh - 1@wndWithSlotbarBottomOffset"
+          ],
+          "id": [
+            "promo_mainmenu_place"
+          ],
+          "pos": [
+            "sw - w - 1@bw + 1@scrollBarSize, 1@titleLogoPlateHeight + 1@bh + 0.02@sf"
+          ],
+          "position": [
+            "relative"
+          ],
+          "tdiv": [
+            {
+              "behavior": [
+                "PosOptionsNavigator"
+              ],
+              "css-hier-invalidate": [
+                "yes"
+              ],
+              "flow": [
+                "vertical"
+              ],
+              "height": [
+                "fh"
+              ],
+              "id": [
+                "promo_mainmenu_place_top"
+              ],
+              "navigatorShortcuts": [
+                "yes"
+              ],
+              "overflow-y": [
+                "auto"
+              ],
+              "pos": [
+                "pw-w, 0"
+              ],
+              "position": [
+                "relative"
+              ],
+              "width": [
+                "pw"
+              ]
+            },
+            {
+              "flow": [
+                "vertical"
+              ],
+              "id": [
+                "promo_mainmenu_place_bottom"
+              ],
+              "pos": [
+                "0, 0.01@scrn_tgt"
+              ],
+              "position": [
+                "relative"
+              ]
+            }
+          ],
+          "width": [
+            "1@promoButtonWidth + 1@scrollBarSize"
+          ]
+        },
+        {
+          "Button_text": [
+            {
+              "display": [
+                "hide"
+              ],
+              "focus_border": [
+                []
+              ],
+              "id": [
+                "btn_main_menu_showRequests"
+              ],
+              "max-width": [
+                "0.5sw+0.5@slotbarWidthFull-0.01@sf"
+              ],
+              "on_click": [
+                "on_show_clan_requests"
+              ],
+              "pos": [
+                "0.5pw-0.5w, 0"
+              ],
+              "position": [
+                "relative"
+              ],
+              "visualStyle": [
+                "noBgr"
+              ]
+            },
+            {
+              "ButtonImg": [
+                []
+              ],
+              "btnName": [
+                "R3"
+              ],
+              "display": [
+                "hide"
+              ],
+              "focus_border": [
+                []
+              ],
+              "id": [
+                "game_mode_notice"
+              ],
+              "max-width": [
+                "0.5sw+0.5@slotbarWidthFull-0.01@sf"
+              ],
+              "on_click": [
+                "onGMNoticeClick"
+              ],
+              "pos": [
+                "0.5pw-0.5w, 0"
+              ],
+              "position": [
+                "relative"
+              ],
+              "visualStyle": [
+                "noBgr"
+              ]
+            }
+          ],
+          "advertDiv": [
+            {
+              "behavior": [
+                "Timer"
+              ],
+              "css-hier-invalidate": [
+                "yes"
+              ],
+              "display": [
+                "hide"
+              ],
+              "id": [
+                "topmenu_advert"
+              ],
+              "padding": [
+                "10, 5, 10, 10"
+              ],
+              "pos": [
+                "50%pw-50%w, 0"
+              ],
+              "position": [
+                "relative"
+              ],
+              "textAreaCentered": [
+                {
+                  "bqKey": [
+                    "mainmenu_block_advert"
+                  ],
+                  "id": [
+                    "topmenu_advert_text"
+                  ],
+                  "input-transparent": [
+                    "yes"
+                  ],
+                  "on_link_click": [
+                    "onAdvertLinkClick"
+                  ],
+                  "pos": [
+                    "50%pw-50%w, 50%ph-50%h"
+                  ],
+                  "position": [
+                    "relative"
+                  ],
+                  "text": [
+                    ""
+                  ],
+                  "textHide": [
+                    "yes"
+                  ],
+                  "width": [
+                    "0.45sw"
+                  ]
+                }
+              ],
+              "width": [
+                "0.55sw"
+              ]
+            },
+            {
+              "css-hier-invalidate": [
+                "yes"
+              ],
+              "display": [
+                "hide"
+              ],
+              "id": [
+                "topmenu_psn_update"
+              ],
+              "padding": [
+                "10, 5, 10, 10"
+              ],
+              "pos": [
+                "50%pw-50%w, 0"
+              ],
+              "position": [
+                "relative"
+              ],
+              "textAreaCentered": [
+                {
+                  "id": [
+                    "topmenu_psn_update_text"
+                  ],
+                  "input-transparent": [
+                    "yes"
+                  ],
+                  "pos": [
+                    "50%pw-50%w, 50%ph-50%h"
+                  ],
+                  "position": [
+                    "relative"
+                  ],
+                  "text": [
+                    "#mainmenu/ps5_update_request"
+                  ],
+                  "width": [
+                    "0.45sw"
+                  ]
+                }
+              ],
+              "width": [
+                "0.55sw"
+              ]
+            }
+          ],
+          "flow": [
+            "vertical"
+          ],
+          "pos": [
+            "0.5sw-0.5w, 2@topBarHeight + 0.018@sf - @bh"
+          ],
+          "position": [
+            "absolute"
+          ],
+          "textAreaCentered": [
+            {
+              "display": [
+                "hide"
+              ],
+              "id": [
+                "update_avail"
+              ],
+              "input-transparent": [
+                "yes"
+              ],
+              "max-width": [
+                "0.5sw+0.5@slotbarWidthFull-0.01@sf"
+              ],
+              "pos": [
+                "0.5pw-0.5w, 0"
+              ],
+              "position": [
+                "relative"
+              ],
+              "text": [
+                "#mainmenu/update_avail_popup_title"
+              ],
+              "tooltip": [
+                "#mainmenu/update_avail_popup_text"
+              ]
+            }
+          ]
+        },
+        {
+          "animWaitMsg": [
+            {
+              "animated_wait_icon": [
+                {
+                  "_transp-timer": [
+                    "0"
+                  ],
+                  "background-rotation": [
+                    "0"
+                  ],
+                  "color-factor": [
+                    "0"
+                  ],
+                  "fade": [
+                    "out"
+                  ],
+                  "pos": [
+                    "0,50%ph-50%h"
+                  ],
+                  "position": [
+                    "relative"
+                  ]
+                }
+              ],
+              "behavior": [
+                "bhvUpdater"
+              ],
+              "css-hier-invalidate": [
+                "yes"
+              ],
+              "fade": [
+                "out"
+              ],
+              "pos": [
+                "50%pw-50%w, 0"
+              ],
+              "position": [
+                "relative"
+              ],
+              "tdiv": [
+                {
+                  "animText": [
+                    {
+                      "color-factor": [
+                        "0"
+                      ],
+                      "fade": [
+                        "out"
+                      ],
+                      "font": [
+                        "@fontNormal"
+                      ],
+                      "id": [
+                        "msgText"
+                      ],
+                      "overlayTextColor": [
+                        "active"
+                      ],
+                      "pos": [
+                        "50%pw-50%w, 0"
+                      ],
+                      "position": [
+                        "relative"
+                      ],
+                      "text": [
+                        "#loading/skin"
+                      ],
+                      "textShade": [
+                        "yes"
+                      ]
+                    }
+                  ],
+                  "css-hier-invalidate": [
+                    "yes"
+                  ],
+                  "flow": [
+                    "vertical"
+                  ],
+                  "pos": [
+                    "0,50%ph-50%h"
+                  ],
+                  "position": [
+                    "relative"
+                  ],
+                  "tdiv": [
+                    {
+                      "dlDataStat": [
+                        {
+                          "animText": [
+                            {
+                              "color-factor": [
+                                "0"
+                              ],
+                              "fade": [
+                                "out"
+                              ],
+                              "font": [
+                                "@fontTiny"
+                              ],
+                              "text": [
+                                ""
+                              ]
+                            }
+                          ],
+                          "behavior": [
+                            "bhvUpdater"
+                          ],
+                          "css-hier-invalidate": [
+                            "yes"
+                          ],
+                          "pos": [
+                            "50%pw-50%w,0"
+                          ],
+                          "position": [
+                            "relative"
+                          ],
+                          "value": [
+                            "{\"viewId\": \"DL_DATA_STATE_TEXT\"}"
+                          ]
+                        }
+                      ],
+                      "pos": [
+                        "50%pw-50%w, 0"
+                      ],
+                      "position": [
+                        "relative"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "value": [
+                "{\"viewId\": \"DL_DATA_WAIT_MSG\"}"
+              ]
+            }
+          ],
+          "flow": [
+            "vertical"
+          ],
+          "pos": [
+            "50%pw-50%w, @battleBtnBottomOffset-1.5@battleButtonHeight-h"
+          ],
+          "position": [
+            "absolute"
+          ],
+          "tdiv": [
+            {
+              "button": [
+                {
+                  "_on_click": [
+                    "onLoadModels"
+                  ],
+                  "id": [
+                    "low_quality_model_download_button"
+                  ],
+                  "noMargin": [
+                    "yes"
+                  ],
+                  "pos": [
+                    "0.5pw-0.5w, 0.01@scrn_tgt"
+                  ],
+                  "position": [
+                    "relative"
+                  ],
+                  "talign": [
+                    "left"
+                  ],
+                  "text": [
+                    "#btn/load_high_quality_models"
+                  ],
+                  "tfont": [
+                    "small"
+                  ],
+                  "underline": [
+                    []
+                  ]
+                }
+              ],
+              "display": [
+                "hide"
+              ],
+              "flow": [
+                "vertical"
+              ],
+              "id": [
+                "low-quality-model-warning"
+              ],
+              "padding-bottom": [
+                "10*@sf/@pf_outdated"
+              ],
+              "pos": [
+                "pw/2-w/2, -h"
+              ],
+              "position": [
+                "relative"
+              ],
+              "textAreaCentered": [
+                {
+                  "input-transparent": [
+                    "yes"
+                  ],
+                  "max-width": [
+                    "0.33sw"
+                  ],
+                  "pos": [
+                    "0.5pw-0.5w, 0"
+                  ],
+                  "position": [
+                    "relative"
+                  ],
+                  "style": [
+                    "color:@warningTextColor"
+                  ],
+                  "text": [
+                    "#low_quality_model_in_hangar"
+                  ]
+                }
+              ]
+            },
+            {
+              "activeText": [
+                {
+                  "input-transparent": [
+                    "yes"
+                  ],
+                  "pos": [
+                    "50%pw-50%w,0"
+                  ],
+                  "position": [
+                    "relative"
+                  ],
+                  "text": [
+                    "#armor_class/no_armoring/common"
+                  ],
+                  "titleFont": [
+                    "yes"
+                  ]
+                }
+              ],
+              "display": [
+                "hide"
+              ],
+              "id": [
+                "unit_has_no_armoring"
+              ],
+              "pos": [
+                "50%pw-50%w,0"
+              ],
+              "position": [
+                "relative"
+              ]
+            },
+            {
+              "activeText": [
+                {
+                  "input-transparent": [
+                    "yes"
+                  ],
+                  "overlayTextColor": [
+                    "bad"
+                  ],
+                  "pos": [
+                    "50%pw-50%w,0"
+                  ],
+                  "position": [
+                    "relative"
+                  ],
+                  "text": [
+                    "#mainmenu/crewLockLeft"
+                  ],
+                  "titleFont": [
+                    "yes"
+                  ]
+                },
+                {
+                  "id": [
+                    "time"
+                  ],
+                  "input-transparent": [
+                    "yes"
+                  ],
+                  "overlayTextColor": [
+                    "bad"
+                  ],
+                  "pos": [
+                    "50%pw-50%w,0"
+                  ],
+                  "position": [
+                    "relative"
+                  ],
+                  "text": [
+                    "adfa sdf af"
+                  ],
+                  "titleFont": [
+                    "yes"
+                  ]
+                }
+              ],
+              "behavior": [
+                "Timer"
+              ],
+              "display": [
+                "hide"
+              ],
+              "flow": [
+                "vertical"
+              ],
+              "id": [
+                "crew-notready-topmenu"
+              ],
+              "pos": [
+                "50%pw-50%w,0"
+              ],
+              "position": [
+                "relative"
+              ],
+              "tdiv": [
+                {
+                  "Button_text": [
+                    {
+                      "buttonGlance": [
+                        []
+                      ],
+                      "buttonWink": [
+                        []
+                      ],
+                      "css-hier-invalidate": [
+                        "yes"
+                      ],
+                      "hideText": [
+                        "yes"
+                      ],
+                      "id": [
+                        "btn_unlock_crew"
+                      ],
+                      "on_click": [
+                        "onUnlockCrew"
+                      ],
+                      "textarea": [
+                        {
+                          "class": [
+                            "buttonText"
+                          ],
+                          "id": [
+                            "btn_unlock_crew_text"
+                          ]
+                        }
+                      ],
+                      "visualStyle": [
+                        "purchase"
+                      ]
+                    },
+                    {
+                      "buttonGlance": [
+                        []
+                      ],
+                      "buttonWink": [
+                        []
+                      ],
+                      "css-hier-invalidate": [
+                        "yes"
+                      ],
+                      "hideText": [
+                        "yes"
+                      ],
+                      "id": [
+                        "btn_unlock_crew_gold"
+                      ],
+                      "on_click": [
+                        "onUnlockCrew"
+                      ],
+                      "textarea": [
+                        {
+                          "class": [
+                            "buttonText"
+                          ],
+                          "id": [
+                            "btn_unlock_crew_gold_text"
+                          ]
+                        }
+                      ],
+                      "visualStyle": [
+                        "purchase"
+                      ]
+                    }
+                  ],
+                  "id": [
+                    "crew_unlock_buttons"
+                  ],
+                  "pos": [
+                    "50%pw-50%w, 0"
+                  ],
+                  "position": [
+                    "relative"
+                  ]
+                }
+              ],
+              "tooltip": [
+                ""
+              ]
+            },
+            {
+              "activeText": [
+                {
+                  "behavior": [
+                    "Timer"
+                  ],
+                  "display": [
+                    "hide"
+                  ],
+                  "id": [
+                    "rented_unit_info_text"
+                  ],
+                  "input-transparent": [
+                    "yes"
+                  ],
+                  "overlayTextColor": [
+                    "good"
+                  ],
+                  "pos": [
+                    "50%pw-50%w,0"
+                  ],
+                  "position": [
+                    "relative"
+                  ],
+                  "text": [
+                    ""
+                  ],
+                  "titleFont": [
+                    "yes"
+                  ]
+                }
+              ],
+              "id": [
+                "rented_unit_info"
+              ]
+            },
+            {
+              "Button_text": [
+                {
+                  "_on_click": [
+                    "onSkinPreview"
+                  ],
+                  "class": [
+                    "image"
+                  ],
+                  "img": [
+                    {
+                      "background-image": [
+                        "#ui/gameuiskin#btn_preview.svg"
+                      ]
+                    }
+                  ],
+                  "pos": [
+                    "50%(pw-w), 0"
+                  ],
+                  "position": [
+                    "relative"
+                  ],
+                  "showConsoleImage": [
+                    "no"
+                  ],
+                  "text": [
+                    "#mainmenu/btnPreview"
+                  ]
+                }
+              ],
+              "display": [
+                "hide"
+              ],
+              "flow": [
+                "vertical"
+              ],
+              "id": [
+                "suggested_skin"
+              ],
+              "pos": [
+                "50%(pw-w), 0"
+              ],
+              "position": [
+                "relative"
+              ],
+              "textAreaCentered": [
+                {
+                  "id": [
+                    "info_text"
+                  ],
+                  "input-transparent": [
+                    "yes"
+                  ],
+                  "max-width": [
+                    "@rw - 2@maxPromoButtonWidth"
+                  ],
+                  "overlayTextColor": [
+                    "active"
+                  ],
+                  "pos": [
+                    "50%pw-50%w,0"
+                  ],
+                  "position": [
+                    "relative"
+                  ],
+                  "text": [
+                    "#suggested_skin/available"
+                  ],
+                  "textShade": [
+                    "yes"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "timer": [
+        {
+          "id": [
+            "promo_blocks_timer_slow"
+          ],
+          "timer_handler_func": [
+            "onPromoBlocksUpdate"
+          ],
+          "timer_interval_msec": [
+            "5000"
+          ]
+        },
+        {
+          "id": [
+            "promo_blocks_timer_fast"
+          ],
+          "timer_handler_func": [
+            "onPromoBlocksTimer"
+          ],
+          "timer_interval_msec": [
+            "1000"
+          ]
+        }
+      ]
+    }
+  ],
+  "smallHint": [
+    {
+      "ButtonImg": [
+        {
+          "btnName": [
+            "A"
+          ],
+          "pos": [
+            "0, 50%ph-50%h"
+          ],
+          "position": [
+            "relative"
+          ],
+          "size": [
+            "1@infoBtnIconSize, 1@infoBtnIconSize"
+          ]
+        }
+      ],
+      "behavior": [
+        "Timer"
+      ],
+      "display": [
+        "hide"
+      ],
+      "id": [
+        "background_model_hint"
+      ],
+      "input-transparent": [
+        "yes"
+      ],
+      "order-popup": [
+        "yes"
+      ],
+      "position": [
+        "root"
+      ],
+      "text": [
+        {
+          "margin": [
+            "@blockInterval, 0"
+          ],
+          "pos": [
+            "0, 50%ph-50%h"
+          ],
+          "position": [
+            "relative"
+          ],
+          "text": [
+            "#click_to_view"
+          ],
+          "tinyFont": [
+            "yes"
+          ]
+        }
+      ],
+      "timer_handler_func": [
+        "onBackgroundModelHintTimer"
+      ]
+    }
+  ]
+}

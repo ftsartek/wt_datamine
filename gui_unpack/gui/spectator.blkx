@@ -1,0 +1,2045 @@
+{
+  "tdiv": [
+    {
+      "hitCamera": [
+        {
+          "_transp-timer": [
+            "0"
+          ],
+          "hitCameraRender": [
+            {
+              "enemyDamageStatusPanel": [
+                {
+                  "flow": [
+                    "vertical"
+                  ],
+                  "tdiv": [
+                    {
+                      "display": [
+                        "hide"
+                      ],
+                      "flow": [
+                        "horizontal"
+                      ],
+                      "hpProgressBar": [
+                        {
+                          "id": [
+                            "hpProgressBar"
+                          ],
+                          "pos": [
+                            "0, 0.5ph-0.5h"
+                          ],
+                          "position": [
+                            "relative"
+                          ],
+                          "size": [
+                            "fw, 0.005@shHud"
+                          ],
+                          "value": [
+                            "0"
+                          ]
+                        }
+                      ],
+                      "id": [
+                        "hpIndicator"
+                      ],
+                      "padding": [
+                        "0.01@shHud, 0"
+                      ],
+                      "pos": [
+                        "0.5pw-0.5w, 0"
+                      ],
+                      "position": [
+                        "relative"
+                      ],
+                      "textareaNoTab": [
+                        {
+                          "id": [
+                            "damage"
+                          ],
+                          "pos": [
+                            "0.5pw-0.5w, -0.6h"
+                          ],
+                          "position": [
+                            "absolute"
+                          ]
+                        },
+                        {
+                          "id": [
+                            "hpCount"
+                          ],
+                          "overlayTextColor": [
+                            "active"
+                          ],
+                          "padding-right": [
+                            "0.01@shHud"
+                          ],
+                          "pos": [
+                            "0, 0.5ph-0.5h"
+                          ],
+                          "position": [
+                            "relative"
+                          ]
+                        }
+                      ],
+                      "width": [
+                        "pw"
+                      ]
+                    },
+                    {
+                      "id": [
+                        "damageStatus"
+                      ],
+                      "pos": [
+                        "0.5pw-0.5w, 0"
+                      ],
+                      "position": [
+                        "relative"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "hitCameraCrew": [
+                {
+                  "id": [
+                    "crew_nest"
+                  ],
+                  "img": [
+                    {
+                      "background-image": [
+                        "#ui/gameuiskin#ship_crew.svg"
+                      ],
+                      "background-svg-size": [
+                        "1@cIco, 1@cIco"
+                      ],
+                      "margin-left": [
+                        "1@blockInterval"
+                      ],
+                      "pos": [
+                        "0, ph-h"
+                      ],
+                      "position": [
+                        "relative"
+                      ],
+                      "size": [
+                        "1@cIco, 1@cIco"
+                      ]
+                    }
+                  ],
+                  "pos": [
+                    "1@blockInterval, 0.2ph"
+                  ],
+                  "position": [
+                    "absolute"
+                  ],
+                  "tdiv": [
+                    {
+                      "hitCameraLostCrew": [
+                        {
+                          "flow": [
+                            "vertical"
+                          ],
+                          "id": [
+                            "lost_crew_count"
+                          ],
+                          "pos": [
+                            "pw-w, -h"
+                          ],
+                          "position": [
+                            "absolute"
+                          ]
+                        }
+                      ],
+                      "pos": [
+                        "0, ph-h"
+                      ],
+                      "position": [
+                        "relative"
+                      ],
+                      "textareaNoTab": [
+                        {
+                          "id": [
+                            "crew_count"
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "textareaNoTab": [
+                    {
+                      "id": [
+                        "max_crew_count"
+                      ],
+                      "overlayTextColor": [
+                        "active"
+                      ],
+                      "pos": [
+                        "0, ph-h"
+                      ],
+                      "position": [
+                        "relative"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "hitCameraInfo": [
+                {
+                  "id": [
+                    "info"
+                  ]
+                }
+              ],
+              "hitCameraTitle": [
+                {
+                  "id": [
+                    "title"
+                  ]
+                }
+              ],
+              "tdiv": [
+                {
+                  "hitCameraCritAnim": [
+                    {
+                      "_size-timer": [
+                        "0"
+                      ],
+                      "_transp-timer": [
+                        "0"
+                      ],
+                      "color-factor": [
+                        "255"
+                      ],
+                      "height": [
+                        "1@hitCameraHeight"
+                      ],
+                      "id": [
+                        "critAnim"
+                      ],
+                      "needAnim": [
+                        "no"
+                      ]
+                    }
+                  ],
+                  "overflow": [
+                    "hidden"
+                  ],
+                  "position": [
+                    "absolute"
+                  ],
+                  "size": [
+                    "pw, ph"
+                  ]
+                }
+              ]
+            }
+          ],
+          "id": [
+            "hud_hitcamera"
+          ],
+          "input-transparent": [
+            "yes"
+          ],
+          "pos": [
+            "pw - w, ph-h - 1@spectatorTableWidth -2@framePadding - @cIco - 2@blockInterval"
+          ],
+          "position": [
+            "absolute"
+          ],
+          "result": [
+            ""
+          ],
+          "total-input-transparent": [
+            "yes"
+          ]
+        }
+      ],
+      "hudActionBar": [
+        {
+          "height": [
+            "@hudActionBarItemSize"
+          ],
+          "id": [
+            "spectator_hud_action_bar"
+          ],
+          "pos": [
+            "pw/2-w/2, ph-h"
+          ],
+          "position": [
+            "absolute"
+          ],
+          "tdiv": [
+            {
+              "id": [
+                "actions_nest"
+              ],
+              "position": [
+                "absolute"
+              ]
+            }
+          ]
+        }
+      ],
+      "id": [
+        "spectator_root"
+      ],
+      "multiplayerScore": [
+        {
+          "pos": [
+            "50%pw-50%w, 2@spectatorToolbarPadding + 1@spectatorToolbarBtnSize + 0.02@scrn_tgt"
+          ],
+          "position": [
+            "absolute"
+          ]
+        }
+      ],
+      "pos": [
+        "pw/2-w/2, ph/2-h/2"
+      ],
+      "position": [
+        "absolute"
+      ],
+      "size": [
+        "sw - 2@bw, sh - 2@bh"
+      ],
+      "spectatorFrame": [
+        {
+          "css-hier-invalidate": [
+            "yes"
+          ],
+          "flow": [
+            "vertical"
+          ],
+          "id": [
+            "log_div"
+          ],
+          "min-height": [
+            "2@sIco"
+          ],
+          "padding-left": [
+            "1@spectatorBw"
+          ],
+          "pos": [
+            "-1@spectatorBw -4@dp, ph-h"
+          ],
+          "position": [
+            "absolute"
+          ],
+          "tdiv": [
+            {
+              "HorizontalListBox": [
+                {
+                  "class": [
+                    "tabs"
+                  ],
+                  "id": [
+                    "tabs"
+                  ],
+                  "navigatorShortcuts": [
+                    "yes"
+                  ],
+                  "on_select": [
+                    "onBtnLogTabSwitch"
+                  ],
+                  "smallFont": [
+                    "yes"
+                  ],
+                  "width": [
+                    "pw"
+                  ]
+                }
+              ],
+              "flow": [
+                "vertical"
+              ],
+              "id": [
+                "content"
+              ],
+              "size": [
+                "1@spectatorTableWidth, 1@spectatorTableWidth"
+              ],
+              "tdiv": [
+                {
+                  "chatPlaceSpectator": [
+                    {
+                      "display": [
+                        "hide"
+                      ],
+                      "id": [
+                        "chat_container"
+                      ],
+                      "position": [
+                        "absolute"
+                      ],
+                      "size": [
+                        "pw, ph"
+                      ]
+                    }
+                  ],
+                  "size": [
+                    "pw, fh"
+                  ],
+                  "tdiv": [
+                    {
+                      "auto-scroll": [
+                        "yes"
+                      ],
+                      "css-hier-invalidate": [
+                        "yes"
+                      ],
+                      "display": [
+                        "show"
+                      ],
+                      "historyLog": [
+                        {
+                          "id": [
+                            "history_log"
+                          ],
+                          "punctuation-exception": [
+                            "-.,'\"():/\\@[]=^+"
+                          ],
+                          "text": [
+                            ""
+                          ],
+                          "width": [
+                            "pw"
+                          ]
+                        }
+                      ],
+                      "id": [
+                        "history_container"
+                      ],
+                      "overflow-y": [
+                        "auto"
+                      ],
+                      "position": [
+                        "absolute"
+                      ],
+                      "scroll-align": [
+                        "left"
+                      ],
+                      "size": [
+                        "pw, ph"
+                      ]
+                    },
+                    {
+                      "id": [
+                        "order_status"
+                      ],
+                      "position": [
+                        "absolute"
+                      ],
+                      "size": [
+                        "pw, ph"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "css-hier-invalidate": [
+            "yes"
+          ],
+          "flow": [
+            "vertical"
+          ],
+          "id": [
+            "map_div"
+          ],
+          "min-height": [
+            "2@sIco"
+          ],
+          "padding": [
+            "1@framePadding"
+          ],
+          "padding-right": [
+            "1@spectatorBw+4@dp"
+          ],
+          "pos": [
+            "pw - w + 4@dp + 1@spectatorBw, ph-h"
+          ],
+          "position": [
+            "absolute"
+          ],
+          "tdiv": [
+            {
+              "id": [
+                "content"
+              ],
+              "size": [
+                "1@spectatorTableWidth, 1@spectatorTableWidth"
+              ],
+              "tacticalMap": [
+                {
+                  "behaviour": [
+                    "button"
+                  ],
+                  "on_click": [
+                    "onMapClick"
+                  ],
+                  "size": [
+                    "pw, ph"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "buttons_block": [
+            {
+              "enable": [
+                "no"
+              ],
+              "height": [
+                "@spectatorToolbarBtnSize"
+              ],
+              "id": [
+                "controls_timer"
+              ],
+              "text": [
+                {
+                  "id": [
+                    "txt_mission_timer"
+                  ],
+                  "position": [
+                    "relative"
+                  ],
+                  "text": [
+                    "#ui/not_applicable"
+                  ],
+                  "top": [
+                    "ph/2-h/2"
+                  ],
+                  "width": [
+                    "0.07@sf;"
+                  ]
+                }
+              ]
+            }
+          ],
+          "hoverButton": [
+            {
+              "icon": [
+                {
+                  "background-image": [
+                    "#ui/gameuiskin#btn_modifications.svg"
+                  ]
+                }
+              ],
+              "id": [
+                "ID_FLIGHTMENU"
+              ],
+              "is_shortcut": [
+                "yes"
+              ],
+              "on_click": [
+                "onBtnShortcut"
+              ]
+            },
+            {
+              "icon": [
+                {
+                  "background-image": [
+                    "#ui/gameuiskin#leaderboard.svg"
+                  ]
+                }
+              ],
+              "id": [
+                "ID_MPSTATSCREEN"
+              ],
+              "is_shortcut": [
+                "yes"
+              ],
+              "on_click": [
+                "onBtnShortcut"
+              ]
+            },
+            {
+              "_on_click": [
+                "onBtnMpStatScreen"
+              ],
+              "icon": [
+                {
+                  "background-image": [
+                    "#ui/gameuiskin#leaderboard.svg"
+                  ]
+                }
+              ],
+              "id": [
+                "controls_mpstats_replays"
+              ],
+              "tooltip": [
+                "#hotkeys/ID_MPSTATSCREEN"
+              ]
+            },
+            {
+              "icon": [
+                {
+                  "background-image": [
+                    "#ui/gameuiskin#spinnerListBox_arrow_up.svg"
+                  ],
+                  "rotation": [
+                    "270"
+                  ]
+                }
+              ],
+              "id": [
+                "ID_PREV_PLANE"
+              ],
+              "is_shortcut": [
+                "yes"
+              ],
+              "on_click": [
+                "onBtnShortcut"
+              ]
+            },
+            {
+              "icon": [
+                {
+                  "background-image": [
+                    "#ui/gameuiskin#spinnerListBox_arrow_up.svg"
+                  ],
+                  "rotation": [
+                    "90"
+                  ]
+                }
+              ],
+              "id": [
+                "ID_NEXT_PLANE"
+              ],
+              "is_shortcut": [
+                "yes"
+              ],
+              "on_click": [
+                "onBtnShortcut"
+              ]
+            },
+            {
+              "enable": [
+                "no"
+              ],
+              "id": [
+                "ID_CAMERA_DEFAULT"
+              ],
+              "is_shortcut": [
+                "yes"
+              ],
+              "on_click": [
+                "onBtnShortcut"
+              ],
+              "text": [
+                "1"
+              ]
+            },
+            {
+              "enable": [
+                "no"
+              ],
+              "id": [
+                "ID_TOGGLE_FOLLOWING_CAMERA"
+              ],
+              "is_shortcut": [
+                "yes"
+              ],
+              "on_click": [
+                "onBtnShortcut"
+              ],
+              "text": [
+                "2"
+              ]
+            },
+            {
+              "enable": [
+                "no"
+              ],
+              "id": [
+                "ID_REPLAY_CAMERA_OPERATOR"
+              ],
+              "is_shortcut": [
+                "yes"
+              ],
+              "on_click": [
+                "onBtnShortcut"
+              ],
+              "text": [
+                "3"
+              ]
+            },
+            {
+              "enable": [
+                "no"
+              ],
+              "id": [
+                "ID_REPLAY_CAMERA_FLYBY"
+              ],
+              "is_shortcut": [
+                "yes"
+              ],
+              "on_click": [
+                "onBtnShortcut"
+              ],
+              "text": [
+                "4"
+              ]
+            },
+            {
+              "enable": [
+                "no"
+              ],
+              "id": [
+                "ID_REPLAY_CAMERA_WING"
+              ],
+              "is_shortcut": [
+                "yes"
+              ],
+              "on_click": [
+                "onBtnShortcut"
+              ],
+              "text": [
+                "5"
+              ]
+            },
+            {
+              "enable": [
+                "no"
+              ],
+              "id": [
+                "ID_REPLAY_CAMERA_GUN"
+              ],
+              "is_shortcut": [
+                "yes"
+              ],
+              "on_click": [
+                "onBtnShortcut"
+              ],
+              "text": [
+                "6"
+              ]
+            },
+            {
+              "enable": [
+                "no"
+              ],
+              "id": [
+                "ID_REPLAY_CAMERA_RANDOMIZE"
+              ],
+              "is_shortcut": [
+                "yes"
+              ],
+              "on_click": [
+                "onBtnShortcut"
+              ],
+              "text": [
+                "#mainmenu/btnReplayCameraRandom"
+              ]
+            },
+            {
+              "enable": [
+                "no"
+              ],
+              "id": [
+                "ID_REPLAY_CAMERA_FREE"
+              ],
+              "is_shortcut": [
+                "yes"
+              ],
+              "on_click": [
+                "onBtnShortcut"
+              ],
+              "text": [
+                "#mainmenu/btnReplayCameraFree"
+              ]
+            },
+            {
+              "enable": [
+                "no"
+              ],
+              "id": [
+                "ID_REPLAY_CAMERA_FREE_PARENTED"
+              ],
+              "is_shortcut": [
+                "yes"
+              ],
+              "on_click": [
+                "onBtnShortcut"
+              ],
+              "text": [
+                "#mainmenu/btnReplayCameraFreeParented"
+              ]
+            },
+            {
+              "enable": [
+                "no"
+              ],
+              "id": [
+                "ID_REPLAY_CAMERA_FREE_ATTACHED"
+              ],
+              "is_shortcut": [
+                "yes"
+              ],
+              "on_click": [
+                "onBtnShortcut"
+              ],
+              "text": [
+                "#mainmenu/btnReplayCameraFreeAttached"
+              ]
+            },
+            {
+              "enable": [
+                "no"
+              ],
+              "id": [
+                "ID_REPLAY_CAMERA_HOVER"
+              ],
+              "is_shortcut": [
+                "yes"
+              ],
+              "on_click": [
+                "onBtnShortcut"
+              ],
+              "text": [
+                "#mainmenu/btnReplayCameraHover"
+              ]
+            },
+            {
+              "icon": [
+                {
+                  "background-image": [
+                    "#ui/gameuiskin#cursor.svg"
+                  ]
+                }
+              ],
+              "id": [
+                "ID_TOGGLE_FORCE_SPECTATOR_CAM_ROT"
+              ],
+              "is_shortcut": [
+                "yes"
+              ],
+              "on_click": [
+                "onBtnShortcut"
+              ]
+            },
+            {
+              "id": [
+                "ID_REPLAY_SHOW_MARKERS"
+              ],
+              "is_shortcut": [
+                "yes"
+              ],
+              "on_click": [
+                "onBtnShortcut"
+              ],
+              "text": [
+                "#icon/mpstats/raceLastCheckpoint"
+              ]
+            },
+            {
+              "icon": [
+                {
+                  "background-image": [
+                    "#ui/gameuiskin#replay_forward.svg"
+                  ],
+                  "background-position": [
+                    "0, h"
+                  ],
+                  "rotation": [
+                    "180"
+                  ]
+                }
+              ],
+              "id": [
+                "ID_REPLAY_SLOWER"
+              ],
+              "is_shortcut": [
+                "yes"
+              ],
+              "on_click": [
+                "onBtnShortcut"
+              ]
+            },
+            {
+              "icon": [
+                {
+                  "background-image": [
+                    "#ui/gameuiskin#replay_forward.svg"
+                  ]
+                }
+              ],
+              "id": [
+                "ID_REPLAY_FASTER"
+              ],
+              "is_shortcut": [
+                "yes"
+              ],
+              "on_click": [
+                "onBtnShortcut"
+              ]
+            },
+            {
+              "icon": [
+                {
+                  "background-image": [
+                    "#ui/gameuiskin#replay_restart.svg"
+                  ]
+                }
+              ],
+              "id": [
+                "ID_REPLAY_BACKWARD"
+              ],
+              "is_shortcut": [
+                "yes"
+              ],
+              "on_click": [
+                "onBtnBackward"
+              ]
+            },
+            {
+              "icon": [
+                {
+                  "background-image": [
+                    "#ui/gameuiskin#replay_pause.svg"
+                  ],
+                  "id": [
+                    "icon"
+                  ]
+                }
+              ],
+              "id": [
+                "ID_REPLAY_PAUSE"
+              ],
+              "is_shortcut": [
+                "yes"
+              ],
+              "on_click": [
+                "onBtnShortcut"
+              ]
+            },
+            {
+              "icon": [
+                {
+                  "background-image": [
+                    "#ui/gameuiskin#replay_restart.svg"
+                  ],
+                  "rotation": [
+                    "180"
+                  ]
+                }
+              ],
+              "id": [
+                "ID_REPLAY_FORWARD"
+              ],
+              "is_shortcut": [
+                "yes"
+              ],
+              "on_click": [
+                "onBtnForward"
+              ]
+            }
+          ],
+          "id": [
+            "controls_div"
+          ],
+          "input-transparent": [
+            "yes"
+          ],
+          "padding": [
+            "1@spectatorToolbarPadding"
+          ],
+          "pos": [
+            "50%pw-50%w, -1@spectatorToolbarPadding"
+          ],
+          "position": [
+            "absolute"
+          ],
+          "tdiv": [
+            {
+              "id": [
+                "controls_cameras_icon"
+              ],
+              "img": [
+                {
+                  "background-image": [
+                    "#ui/gameuiskin#player_spectator.svg"
+                  ],
+                  "background-svg-size": [
+                    "@sIco, @sIco"
+                  ],
+                  "input-transparent": [
+                    "yes"
+                  ],
+                  "pos": [
+                    "pw-1.2w, ph/2-h/2"
+                  ],
+                  "position": [
+                    "relative"
+                  ],
+                  "size": [
+                    "@sIco, @sIco"
+                  ],
+                  "style": [
+                    "background-color:#4c4c4c4c"
+                  ]
+                }
+              ],
+              "inactive": [
+                "yes"
+              ],
+              "position": [
+                "relative"
+              ],
+              "size": [
+                "@spectatorToolbarBtnSize, @spectatorToolbarBtnSize"
+              ],
+              "top": [
+                "ph/2-h/2"
+              ]
+            },
+            {
+              "expProgress": [
+                {
+                  "id": [
+                    "timeline_progress"
+                  ],
+                  "max": [
+                    "1000"
+                  ],
+                  "position": [
+                    "relative"
+                  ],
+                  "top": [
+                    "ph/2-h/2"
+                  ],
+                  "value": [
+                    "0"
+                  ],
+                  "width": [
+                    "1@spectatorTimerProgressWidth"
+                  ]
+                }
+              ],
+              "id": [
+                "controls_timeline"
+              ],
+              "position": [
+                "relative"
+              ],
+              "text": [
+                {
+                  "id": [
+                    "txt_replay_time_current"
+                  ],
+                  "position": [
+                    "relative"
+                  ],
+                  "text": [
+                    "#ui/not_applicable"
+                  ],
+                  "top": [
+                    "ph/2-h/2"
+                  ],
+                  "width": [
+                    "0.10@sf"
+                  ]
+                },
+                {
+                  "id": [
+                    "txt_replay_time_total"
+                  ],
+                  "position": [
+                    "relative"
+                  ],
+                  "text": [
+                    "#ui/not_applicable"
+                  ],
+                  "top": [
+                    "ph/2-h/2"
+                  ],
+                  "width": [
+                    "0.10@sf"
+                  ]
+                }
+              ],
+              "top": [
+                "ph/2-h/2"
+              ]
+            }
+          ],
+          "text": [
+            {
+              "enable": [
+                "no"
+              ],
+              "id": [
+                "txt_replay_time_speed"
+              ],
+              "position": [
+                "relative"
+              ],
+              "text": [
+                "#ui/not_applicable"
+              ],
+              "top": [
+                "ph/2-h/2"
+              ],
+              "width": [
+                "0.07@sf;"
+              ]
+            }
+          ]
+        },
+        {
+          "Button_close": [
+            {
+              "have_shortcut": [
+                "no"
+              ],
+              "id": [
+                "btnCloseMap"
+              ],
+              "on_click": [
+                "onMapClick"
+              ],
+              "pos": [
+                "pw-w-1@framePadding, 1@framePadding"
+              ],
+              "position": [
+                "absolute"
+              ]
+            }
+          ],
+          "behaviour": [
+            "button"
+          ],
+          "css-hier-invalidate": [
+            "yes"
+          ],
+          "display": [
+            "hide"
+          ],
+          "height": [
+            "1@rh $min (1@rw -2@spectatorTableWidth -16@sf/@pf)"
+          ],
+          "id": [
+            "map_large_div"
+          ],
+          "on_click": [
+            "onMapClick"
+          ],
+          "padding": [
+            "1@framePadding"
+          ],
+          "pos": [
+            "pw/2-w/2, ph/2-h/2"
+          ],
+          "position": [
+            "absolute"
+          ],
+          "tacticalMap": [
+            {
+              "behaviour": [
+                "button"
+              ],
+              "display": [
+                "hide"
+              ],
+              "enable": [
+                "no"
+              ],
+              "height": [
+                "ph"
+              ],
+              "id": [
+                "tactical_map"
+              ],
+              "on_click": [
+                "onMapClick"
+              ],
+              "width": [
+                "pw"
+              ]
+            }
+          ],
+          "width": [
+            "1@rh $min (1@rw -2@spectatorTableWidth -16@sf/@pf)"
+          ]
+        }
+      ],
+      "tdiv": [
+        {
+          "background-color": [
+            "#99999999"
+          ],
+          "background-image": [
+            "#ui/gameuiskin#expandable_item_ww_transp_reflect"
+          ],
+          "background-position": [
+            "2, 2, 0, 2"
+          ],
+          "background-repeat": [
+            "expand"
+          ],
+          "css-hier-invalidate": [
+            "yes"
+          ],
+          "dyncampresult": [
+            {
+              "id": [
+                "header"
+              ],
+              "pos": [
+                "1.5@mIco, -0.5@mIco -h/2"
+              ],
+              "position": [
+                "absolute"
+              ],
+              "textShade": [
+                "yes"
+              ]
+            }
+          ],
+          "flow": [
+            "vertical"
+          ],
+          "id": [
+            "stats_left"
+          ],
+          "min-height": [
+            "2@sIco"
+          ],
+          "padding": [
+            "1@spectatorBw, 1@dp, 1@framePadding, 1@dp"
+          ],
+          "pos": [
+            "-1@spectatorBw -4@dp, 1@spectatorTopOffset"
+          ],
+          "position": [
+            "absolute"
+          ],
+          "re-type": [
+            "9rect"
+          ],
+          "tdiv": [
+            {
+              "id": [
+                "content"
+              ],
+              "invisibleSelection": [
+                "yes"
+              ],
+              "max-height": [
+                "p.p.h -1@spectatorTopOffset -1@mIco -1@spectatorTableWidth -24@sf/@pf"
+              ],
+              "min-height": [
+                "1@spectatorRowHeight"
+              ],
+              "overflow-y": [
+                "auto"
+              ],
+              "pos": [
+                "0, 0"
+              ],
+              "position": [
+                "relative"
+              ],
+              "scroll-align": [
+                "left"
+              ],
+              "table": [
+                {
+                  "behavior": [
+                    "posNavigator"
+                  ],
+                  "class": [
+                    "spectatorTeamTable"
+                  ],
+                  "clearOnFocusLost": [
+                    "yes"
+                  ],
+                  "id": [
+                    "table_team1"
+                  ],
+                  "navigatorShortcuts": [
+                    "yes"
+                  ],
+                  "on_activate": [
+                    "onSelectPlayer"
+                  ],
+                  "on_click": [
+                    "onPlayerClick"
+                  ],
+                  "on_r_click": [
+                    "onPlayerRClick"
+                  ],
+                  "on_set_focus": [
+                    "onChangeFocusTable"
+                  ],
+                  "selfFocusBorder": [
+                    "yes"
+                  ],
+                  "side": [
+                    "left"
+                  ],
+                  "team": [
+                    ""
+                  ]
+                }
+              ],
+              "width": [
+                "1@spectatorRowWidth"
+              ]
+            }
+          ],
+          "width": [
+            "1@spectatorTableWidth + 1@spectatorBw"
+          ]
+        },
+        {
+          "background-color": [
+            "#99999999"
+          ],
+          "background-image": [
+            "#ui/gameuiskin#expandable_item_ww_transp"
+          ],
+          "background-position": [
+            "0, 2, 2, 2"
+          ],
+          "background-repeat": [
+            "expand"
+          ],
+          "css-hier-invalidate": [
+            "yes"
+          ],
+          "dyncampresult": [
+            {
+              "id": [
+                "header"
+              ],
+              "pos": [
+                "pw - w - 1.5@mIco, -0.5@mIco -h/2"
+              ],
+              "position": [
+                "absolute"
+              ],
+              "textShade": [
+                "yes"
+              ]
+            }
+          ],
+          "flow": [
+            "vertical"
+          ],
+          "id": [
+            "stats_right"
+          ],
+          "min-height": [
+            "2@sIco"
+          ],
+          "padding": [
+            "1@framePadding, 1@dp, 1@spectatorBw, 1@dp"
+          ],
+          "pos": [
+            "pw - w + 4@dp +1@spectatorBw, 1@spectatorTopOffset"
+          ],
+          "position": [
+            "absolute"
+          ],
+          "re-type": [
+            "9rect"
+          ],
+          "tdiv": [
+            {
+              "id": [
+                "content"
+              ],
+              "invisibleSelection": [
+                "yes"
+              ],
+              "max-height": [
+                "p.p.h -1@spectatorTopOffset -1@mIco -1@spectatorTableWidth -24@sf/@pf"
+              ],
+              "min-height": [
+                "1@spectatorRowHeight"
+              ],
+              "overflow-y": [
+                "auto"
+              ],
+              "pos": [
+                "pw-w, 0"
+              ],
+              "position": [
+                "relative"
+              ],
+              "scroll-align": [
+                "right"
+              ],
+              "table": [
+                {
+                  "behavior": [
+                    "posNavigator"
+                  ],
+                  "class": [
+                    "spectatorTeamTable"
+                  ],
+                  "clearOnFocusLost": [
+                    "yes"
+                  ],
+                  "id": [
+                    "table_team2"
+                  ],
+                  "navigatorShortcuts": [
+                    "yes"
+                  ],
+                  "on_activate": [
+                    "onSelectPlayer"
+                  ],
+                  "on_click": [
+                    "onPlayerClick"
+                  ],
+                  "on_r_click": [
+                    "onPlayerRClick"
+                  ],
+                  "on_set_focus": [
+                    "onChangeFocusTable"
+                  ],
+                  "selfFocusBorder": [
+                    "yes"
+                  ],
+                  "side": [
+                    "right"
+                  ],
+                  "team": [
+                    ""
+                  ]
+                }
+              ],
+              "width": [
+                "1@spectatorRowWidth"
+              ]
+            }
+          ],
+          "width": [
+            "1@spectatorTableWidth + 1@spectatorBw"
+          ]
+        },
+        {
+          "id": [
+            "spectator_hud_damage"
+          ],
+          "pos": [
+            "1@spectatorTableWidth +0.01@shHud, ph-h"
+          ],
+          "position": [
+            "absolute"
+          ],
+          "size": [
+            "0.15@shHud, 0.15@shHud"
+          ]
+        },
+        {
+          "activeText": [
+            {
+              "display": [
+                "hide"
+              ],
+              "id": [
+                "waiting_for_target_spawn"
+              ],
+              "padding-bottom": [
+                "12@sf/@pf"
+              ],
+              "pos": [
+                "pw/2-w/2, 0"
+              ],
+              "position": [
+                "relative"
+              ],
+              "text": [
+                "#spectator/waiting_for_target_spawn"
+              ]
+            }
+          ],
+          "flow": [
+            "vertical"
+          ],
+          "pos": [
+            "pw/2-w/2, ph-h - 0.06@shHud - 1@sIco"
+          ],
+          "position": [
+            "absolute"
+          ],
+          "targetInfo": [
+            {
+              "activeText": [
+                {
+                  "id": [
+                    "target_state"
+                  ],
+                  "pos": [
+                    "pw/2-w/2, 0"
+                  ],
+                  "position": [
+                    "relative"
+                  ],
+                  "text": [
+                    ""
+                  ]
+                }
+              ],
+              "display": [
+                "hide"
+              ],
+              "flow": [
+                "vertical"
+              ],
+              "id": [
+                "target_info"
+              ],
+              "pos": [
+                "pw/2-w/2, 0"
+              ],
+              "position": [
+                "relative"
+              ],
+              "tdiv": [
+                {
+                  "display": [
+                    "hide"
+                  ],
+                  "id": [
+                    "spectator_live_stats_nest"
+                  ],
+                  "pos": [
+                    "pw/2-w/2, 0"
+                  ],
+                  "position": [
+                    "relative"
+                  ]
+                }
+              ]
+            }
+          ],
+          "tdiv": [
+            {
+              "behavior": [
+                "Timer"
+              ],
+              "css-hier-invalidate": [
+                "yes"
+              ],
+              "flow": [
+                "vertical"
+              ],
+              "hudMessages": [
+                {
+                  "id": [
+                    "hud_message_zone_capture_notification"
+                  ],
+                  "input-transparent": [
+                    "yes"
+                  ],
+                  "message_style": [
+                    "zone_capture_notification"
+                  ],
+                  "width": [
+                    "pw"
+                  ]
+                },
+                {
+                  "flow": [
+                    "vertical"
+                  ],
+                  "id": [
+                    "hud_message_player_damage_notification"
+                  ],
+                  "left": [
+                    "0.2@shHud"
+                  ],
+                  "message_style": [
+                    "player_damage_notification"
+                  ],
+                  "position": [
+                    "relative"
+                  ],
+                  "width": [
+                    "pw - 0.2@shHud"
+                  ]
+                }
+              ],
+              "id": [
+                "hud_hints_nest"
+              ],
+              "tdiv": [
+                {
+                  "id": [
+                    "ship_obstacle_rf"
+                  ],
+                  "size": [
+                    "pw, 0.04@shHud"
+                  ]
+                },
+                {
+                  "flow": [
+                    "vertical"
+                  ],
+                  "pos": [
+                    "pw/2 - w/2, 0"
+                  ],
+                  "position": [
+                    "relative"
+                  ],
+                  "tdiv": [
+                    {
+                      "id": [
+                        "common_priority_hints_holder"
+                      ],
+                      "position": [
+                        "relative"
+                      ],
+                      "tdiv": [
+                        {
+                          "flow": [
+                            "vertical"
+                          ],
+                          "id": [
+                            "common_priority_hints"
+                          ],
+                          "pos": [
+                            "0, ph-h"
+                          ],
+                          "position": [
+                            "relative"
+                          ],
+                          "width": [
+                            "pw"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "tdiv": [
+                        {
+                          "flow": [
+                            "vertical"
+                          ],
+                          "id": [
+                            "mission_hints"
+                          ],
+                          "pos": [
+                            "0, ph-h"
+                          ],
+                          "position": [
+                            "relative"
+                          ],
+                          "width": [
+                            "pw"
+                          ]
+                        }
+                      ],
+                      "width": [
+                        "pw"
+                      ]
+                    },
+                    {
+                      "id": [
+                        "mission_action_hints_holder"
+                      ],
+                      "position": [
+                        "relative"
+                      ],
+                      "tdiv": [
+                        {
+                          "flow": [
+                            "vertical"
+                          ],
+                          "id": [
+                            "mission_action_hints"
+                          ],
+                          "pos": [
+                            "0, ph-h"
+                          ],
+                          "position": [
+                            "relative"
+                          ],
+                          "width": [
+                            "pw"
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "width": [
+                    "pw"
+                  ]
+                },
+                {
+                  "div": [
+                    {
+                      "id": [
+                        "iconed_hints"
+                      ]
+                    },
+                    {
+                      "id": [
+                        "display_timers"
+                      ]
+                    }
+                  ],
+                  "left": [
+                    "pw/2 - w/2"
+                  ],
+                  "position": [
+                    "relative"
+                  ]
+                },
+                {
+                  "id": [
+                    "actionbar_hints_nest"
+                  ],
+                  "left": [
+                    "0.5pw-0.5w"
+                  ],
+                  "position": [
+                    "relative"
+                  ],
+                  "tdiv": [
+                    {
+                      "flow": [
+                        "vertical"
+                      ],
+                      "pos": [
+                        "0, ph-h"
+                      ],
+                      "position": [
+                        "relative"
+                      ],
+                      "tdiv": [
+                        {
+                          "flow": [
+                            "vertical"
+                          ],
+                          "id": [
+                            "actionbar_hints"
+                          ],
+                          "width": [
+                            "pw"
+                          ]
+                        }
+                      ],
+                      "width": [
+                        "pw"
+                      ]
+                    }
+                  ],
+                  "width": [
+                    "1@shHud"
+                  ]
+                },
+                {
+                  "flow": [
+                    "vertical"
+                  ],
+                  "id": [
+                    "tutorial_hints"
+                  ],
+                  "pos": [
+                    "50%sw-50%w, 1@bhHud + 0.67@shHud"
+                  ],
+                  "position": [
+                    "root"
+                  ],
+                  "width": [
+                    "pw"
+                  ]
+                },
+                {
+                  "flow": [
+                    "vertical"
+                  ],
+                  "id": [
+                    "minor_priority_hints"
+                  ],
+                  "pos": [
+                    "50%sw-50%w, @shHud - h"
+                  ],
+                  "position": [
+                    "root"
+                  ],
+                  "width": [
+                    "pw"
+                  ]
+                }
+              ],
+              "textAreaCentered": [
+                {
+                  "display": [
+                    "hide"
+                  ],
+                  "id": [
+                    "low-quality-model-warning"
+                  ],
+                  "style": [
+                    "color:@warningTextColor; font:@fontHudNormal;"
+                  ],
+                  "text": [
+                    "#low_quality_model_in_hangar"
+                  ],
+                  "width": [
+                    "pw"
+                  ]
+                }
+              ],
+              "width": [
+                "2/3@rwHud"
+              ]
+            }
+          ]
+        },
+        {
+          "behaviour": [
+            "darg"
+          ],
+          "pos": [
+            "0, 0"
+          ],
+          "position": [
+            "root"
+          ],
+          "size": [
+            "sw, sh"
+          ]
+        },
+        {
+          "Button_text": [
+            {
+              "halign": [
+                "center"
+              ],
+              "margin-top": [
+                "2@blockInterval"
+              ],
+              "on_click": [
+                "onBtnCancelReplayDownload"
+              ],
+              "text": [
+                "#mainmenu/btnCancel"
+              ]
+            }
+          ],
+          "display": [
+            "hide"
+          ],
+          "flow": [
+            "vertical"
+          ],
+          "id": [
+            "replay_paused_block"
+          ],
+          "pos": [
+            "pw/2-w/2, ph/2 - h/2"
+          ],
+          "position": [
+            "absolute"
+          ],
+          "tdiv": [
+            {
+              "animated_wait_icon": [
+                {
+                  "background-rotation": [
+                    "0"
+                  ]
+                }
+              ],
+              "halign": [
+                "center"
+              ],
+              "margin-top": [
+                "1@blockInterval"
+              ],
+              "textareaNoTab": [
+                {
+                  "id": [
+                    "replay_download_status"
+                  ],
+                  "margin-right": [
+                    "2@blockInterval"
+                  ],
+                  "overlayTextColor": [
+                    "active"
+                  ],
+                  "valign": [
+                    "center"
+                  ]
+                }
+              ]
+            }
+          ],
+          "textareaNoTab": [
+            {
+              "overlayTextColor": [
+                "active"
+              ],
+              "text": [
+                "#hints/replay_paused"
+              ]
+            }
+          ]
+        }
+      ],
+      "textareaNoTab": [
+        {
+          "id": [
+            "txt_replay_session_id"
+          ],
+          "pos": [
+            "0.085@sf, sh-0.015@sf"
+          ],
+          "position": [
+            "root"
+          ],
+          "text": [
+            ""
+          ],
+          "textHide": [
+            "yes"
+          ],
+          "tinyFont": [
+            "yes"
+          ]
+        }
+      ],
+      "timer": [
+        {
+          "id": [
+            "update_timer"
+          ],
+          "timer_handler_func": [
+            "onUpdate"
+          ]
+        }
+      ],
+      "toggleButton": [
+        {
+          "attachSide": [
+            "left"
+          ],
+          "icon": [
+            []
+          ],
+          "id": [
+            "btnToggleStats1"
+          ],
+          "on_click": [
+            "onToggleButtonClick"
+          ],
+          "pos": [
+            "-4@dp, 1@spectatorTopOffset - h"
+          ],
+          "position": [
+            "absolute"
+          ],
+          "toggleObj": [
+            "stats_left"
+          ],
+          "toggled": [
+            "yes"
+          ]
+        },
+        {
+          "attachSide": [
+            "right"
+          ],
+          "icon": [
+            []
+          ],
+          "id": [
+            "btnToggleStats2"
+          ],
+          "on_click": [
+            "onToggleButtonClick"
+          ],
+          "pos": [
+            "pw-w +4@dp, 1@spectatorTopOffset - h"
+          ],
+          "position": [
+            "absolute"
+          ],
+          "toggleObj": [
+            "stats_right"
+          ],
+          "toggled": [
+            "yes"
+          ]
+        },
+        {
+          "attachSide": [
+            "left"
+          ],
+          "icon": [
+            []
+          ],
+          "id": [
+            "btnToggleLog"
+          ],
+          "on_click": [
+            "onToggleButtonClick"
+          ],
+          "pos": [
+            "-4@dp, ph-h - 1@spectatorTableWidth -16@sf/@pf"
+          ],
+          "position": [
+            "absolute"
+          ],
+          "toggleObj": [
+            "log_div"
+          ],
+          "toggled": [
+            "yes"
+          ]
+        },
+        {
+          "attachSide": [
+            "right"
+          ],
+          "icon": [
+            []
+          ],
+          "id": [
+            "btnToggleMap"
+          ],
+          "on_click": [
+            "onToggleButtonClick"
+          ],
+          "pos": [
+            "pw-w +4@dp, ph-h - 1@spectatorTableWidth -16@sf/@pf"
+          ],
+          "position": [
+            "absolute"
+          ],
+          "toggleObj": [
+            "map_div"
+          ],
+          "toggled": [
+            "yes"
+          ]
+        }
+      ]
+    },
+    {
+      "id": [
+        "hud_message_timers"
+      ]
+    }
+  ],
+  "timer": [
+    {
+      "id": [
+        "hud_message_timer"
+      ]
+    }
+  ]
+}

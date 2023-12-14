@@ -1,0 +1,3535 @@
+{
+  "airfields": [
+    []
+  ],
+  "areas": [
+    []
+  ],
+  "bin_dump_file": [
+    ""
+  ],
+  "dialogs": [
+    []
+  ],
+  "effects": [
+    []
+  ],
+  "imports": [
+    []
+  ],
+  "mission_objectives": [
+    {
+      "isCategory": [
+        true
+      ],
+      "is_enabled": [
+        true
+      ],
+      "t1_ai_base_attack": [
+        {
+          "comments": [
+            ""
+          ],
+          "is_enabled": [
+            false
+          ],
+          "onFailed": [
+            []
+          ],
+          "onSuccess": [
+            []
+          ],
+          "props": [
+            {
+              "isPrimary": [
+                true
+              ],
+              "team": [
+                "A"
+              ],
+              "timeLimit": [
+                1800
+              ]
+            }
+          ],
+          "type": [
+            "abstractMissionObjective"
+          ]
+        }
+      ],
+      "t1_ai_base_defend": [
+        {
+          "comments": [
+            ""
+          ],
+          "is_enabled": [
+            false
+          ],
+          "onFailed": [
+            []
+          ],
+          "onSuccess": [
+            []
+          ],
+          "props": [
+            {
+              "isPrimary": [
+                true
+              ],
+              "team": [
+                "A"
+              ],
+              "timeLimit": [
+                1800
+              ]
+            }
+          ],
+          "type": [
+            "abstractMissionObjective"
+          ]
+        }
+      ],
+      "t2_ai_base_attack": [
+        {
+          "comments": [
+            ""
+          ],
+          "is_enabled": [
+            false
+          ],
+          "onFailed": [
+            []
+          ],
+          "onSuccess": [
+            []
+          ],
+          "props": [
+            {
+              "isPrimary": [
+                true
+              ],
+              "team": [
+                "B"
+              ],
+              "timeLimit": [
+                1800
+              ]
+            }
+          ],
+          "type": [
+            "abstractMissionObjective"
+          ]
+        }
+      ],
+      "t2_ai_base_defend": [
+        {
+          "comments": [
+            ""
+          ],
+          "is_enabled": [
+            false
+          ],
+          "onFailed": [
+            []
+          ],
+          "onSuccess": [
+            []
+          ],
+          "props": [
+            {
+              "isPrimary": [
+                true
+              ],
+              "team": [
+                "B"
+              ],
+              "timeLimit": [
+                1800
+              ]
+            }
+          ],
+          "type": [
+            "abstractMissionObjective"
+          ]
+        }
+      ]
+    }
+  ],
+  "mission_settings": [
+    {
+      "atmosphere": [
+        {
+          "pressure": [
+            760.0
+          ],
+          "temperature": [
+            30.0
+          ]
+        }
+      ],
+      "mission": [
+        {
+          "deathPenaltyMul": [
+            0.0
+          ],
+          "environment": [
+            "Day"
+          ],
+          "level": [
+            "levels/water.bin"
+          ],
+          "optionalTakeOff": [
+            false
+          ],
+          "restoreType": [
+            "attempts"
+          ],
+          "scoreLimit": [
+            6400
+          ],
+          "timeLimit": [
+            25
+          ],
+          "type": [
+            "domination"
+          ],
+          "weather": [
+            "clear"
+          ]
+        }
+      ],
+      "player": [
+        {
+          "army": [
+            1
+          ],
+          "wing": [
+            "t1_player01"
+          ]
+        }
+      ],
+      "player_teamB": [
+        {
+          "army": [
+            2
+          ]
+        }
+      ],
+      "spectator_points": [
+        []
+      ]
+    }
+  ],
+  "objLayers": [
+    {
+      "layer": [
+        {
+          "enabled": [
+            true
+          ]
+        },
+        {
+          "enabled": [
+            true
+          ]
+        },
+        {
+          "enabled": [
+            true
+          ]
+        },
+        {
+          "enabled": [
+            true
+          ]
+        }
+      ]
+    }
+  ],
+  "selected_tag": [
+    ""
+  ],
+  "triggers": [
+    {
+      "antiTankGun_AADef": [
+        {
+          "actions": [
+            {
+              "unitSetProperties": [
+                {
+                  "accuracy": [
+                    0.7
+                  ],
+                  "checkVisibilityTarget": [
+                    true
+                  ],
+                  "object": [
+                    "t1_zoneDef_sq",
+                    "t2_zoneDef_sq"
+                  ],
+                  "object_marking": [
+                    0
+                  ],
+                  "object_var_comp_op": [
+                    "equal"
+                  ],
+                  "object_var_name": [
+                    ""
+                  ],
+                  "object_var_value": [
+                    0
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            {
+              "varCompareBool": [
+                {
+                  "comparasion_func": [
+                    "equal"
+                  ],
+                  "value": [
+                    true
+                  ],
+                  "var_value": [
+                    "isAADef"
+                  ]
+                }
+              ]
+            }
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "initMission": [
+                []
+              ]
+            }
+          ],
+          "is_enabled": [
+            false
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ],
+      "antiTankGun_counter": [
+        {
+          "actions": [
+            {
+              "missionSetTargetsIndicator": [
+                {
+                  "delta": [
+                    0
+                  ],
+                  "icon": [
+                    "cannon"
+                  ],
+                  "icon army": [
+                    1
+                  ],
+                  "object_var_comp_op": [
+                    "equal"
+                  ],
+                  "object_var_name": [
+                    ""
+                  ],
+                  "object_var_value": [
+                    0
+                  ],
+                  "set": [
+                    true
+                  ],
+                  "target": [
+                    "t1_zoneDef_sq"
+                  ],
+                  "target_marking": [
+                    0
+                  ],
+                  "target_type": [
+                    "isActive"
+                  ]
+                },
+                {
+                  "delta": [
+                    0
+                  ],
+                  "icon": [
+                    "cannon"
+                  ],
+                  "icon army": [
+                    2
+                  ],
+                  "object_var_comp_op": [
+                    "equal"
+                  ],
+                  "object_var_name": [
+                    ""
+                  ],
+                  "object_var_value": [
+                    0
+                  ],
+                  "set": [
+                    true
+                  ],
+                  "target": [
+                    "t2_zoneDef_sq"
+                  ],
+                  "target_marking": [
+                    0
+                  ],
+                  "target_type": [
+                    "isActive"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            []
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "periodicEvent": [
+                {
+                  "time": [
+                    1.0
+                  ]
+                }
+              ]
+            }
+          ],
+          "is_enabled": [
+            false
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                true
+              ]
+            }
+          ]
+        }
+      ],
+      "antiTankGun_init": [
+        {
+          "actions": [
+            {
+              "triggerEnable": [
+                {
+                  "target": [
+                    "antiTankGun_AADef",
+                    "teamA_antiTankGun_needToSpawn",
+                    "teamB_antiTankGun_needToSpawn"
+                  ]
+                }
+              ],
+              "unitPutToSleep": [
+                {
+                  "target": [
+                    "t1_zoneDef_sq",
+                    "t2_zoneDef_sq",
+                    "t1_trench_sq",
+                    "t2_trench_sq"
+                  ]
+                }
+              ],
+              "unitSetProperties": [
+                {
+                  "accuracy": [
+                    0.5
+                  ],
+                  "checkVisibilityTarget": [
+                    true
+                  ],
+                  "object": [
+                    "t1_zoneDef_sq",
+                    "t2_zoneDef_sq"
+                  ],
+                  "object_marking": [
+                    0
+                  ],
+                  "object_var_comp_op": [
+                    "equal"
+                  ],
+                  "object_var_name": [
+                    ""
+                  ],
+                  "object_var_value": [
+                    0
+                  ],
+                  "visibilityTreeTransparencyThreshold": [
+                    0.01
+                  ]
+                }
+              ],
+              "varSetBool": [
+                {
+                  "fromDescriptor": [
+                    "isAADef"
+                  ],
+                  "value": [
+                    false
+                  ],
+                  "var": [
+                    "isAADef"
+                  ]
+                },
+                {
+                  "fromDescriptor": [
+                    "antiTankGunMissionTarget"
+                  ],
+                  "value": [
+                    false
+                  ],
+                  "var": [
+                    "antiTankGunMissionTarget"
+                  ]
+                }
+              ],
+              "varSetInt": [
+                {
+                  "fromDescriptor": [
+                    "teamA_antiTankGun_count"
+                  ],
+                  "value": [
+                    0
+                  ],
+                  "var": [
+                    "teamA_antiTankGun_count"
+                  ]
+                },
+                {
+                  "fromDescriptor": [
+                    "teamB_antiTankGun_count"
+                  ],
+                  "value": [
+                    0
+                  ],
+                  "var": [
+                    "teamB_antiTankGun_count"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            {
+              "objectExists": [
+                {
+                  "target": [
+                    "t1_zoneDef_sq"
+                  ],
+                  "type": [
+                    "squad"
+                  ]
+                },
+                {
+                  "target": [
+                    "t2_zoneDef_sq"
+                  ],
+                  "type": [
+                    "squad"
+                  ]
+                }
+              ]
+            }
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "initMission": [
+                []
+              ]
+            }
+          ],
+          "is_enabled": [
+            true
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ],
+      "antiTankGun_missionType_check": [
+        {
+          "actions": [
+            {
+              "triggerEnable": [
+                {
+                  "target": [
+                    "antiTankGun_counter"
+                  ]
+                }
+              ],
+              "unitMark": [
+                {
+                  "target": [
+                    "t1_zoneDef_sq",
+                    "t2_zoneDef_sq"
+                  ],
+                  "target_marking": [
+                    2
+                  ]
+                }
+              ],
+              "unitSetIndication": [
+                {
+                  "object_var_comp_op": [
+                    "equal"
+                  ],
+                  "object_var_name": [
+                    ""
+                  ],
+                  "object_var_value": [
+                    0
+                  ],
+                  "set": [
+                    true
+                  ],
+                  "target": [
+                    "t1_zoneDef_sq",
+                    "t2_zoneDef_sq"
+                  ],
+                  "target_marking": [
+                    0
+                  ]
+                }
+              ],
+              "varModify": [
+                {
+                  "operator": [
+                    "add"
+                  ],
+                  "use_variable": [
+                    true
+                  ],
+                  "value": [
+                    1.0
+                  ],
+                  "var": [
+                    "teamA_totalAICount"
+                  ],
+                  "var_value": [
+                    "teamA_antiTankGun_count"
+                  ]
+                },
+                {
+                  "operator": [
+                    "add"
+                  ],
+                  "use_variable": [
+                    true
+                  ],
+                  "value": [
+                    1.0
+                  ],
+                  "var": [
+                    "teamB_totalAICount"
+                  ],
+                  "var_value": [
+                    "teamB_antiTankGun_count"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            {
+              "varCompareBool": [
+                {
+                  "comparasion_func": [
+                    "equal"
+                  ],
+                  "value": [
+                    true
+                  ],
+                  "var_value": [
+                    "antiTankGunMissionTarget"
+                  ]
+                }
+              ]
+            }
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "initMission": [
+                []
+              ]
+            }
+          ],
+          "is_enabled": [
+            false
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ],
+      "artillery_counter": [
+        {
+          "actions": [
+            {
+              "missionSetTargetsIndicator": [
+                {
+                  "delta": [
+                    0
+                  ],
+                  "icon": [
+                    "aa"
+                  ],
+                  "icon army": [
+                    1
+                  ],
+                  "object_var_comp_op": [
+                    "equal"
+                  ],
+                  "object_var_name": [
+                    ""
+                  ],
+                  "object_var_value": [
+                    0
+                  ],
+                  "set": [
+                    true
+                  ],
+                  "target": [
+                    "t1_artillery_sq"
+                  ],
+                  "target_marking": [
+                    0
+                  ],
+                  "target_type": [
+                    "isActive"
+                  ]
+                },
+                {
+                  "delta": [
+                    0
+                  ],
+                  "icon": [
+                    "aa"
+                  ],
+                  "icon army": [
+                    2
+                  ],
+                  "object_var_comp_op": [
+                    "equal"
+                  ],
+                  "object_var_name": [
+                    ""
+                  ],
+                  "object_var_value": [
+                    0
+                  ],
+                  "set": [
+                    true
+                  ],
+                  "target": [
+                    "t2_artillery_sq"
+                  ],
+                  "target_marking": [
+                    0
+                  ],
+                  "target_type": [
+                    "isActive"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            []
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "periodicEvent": [
+                {
+                  "time": [
+                    1.0
+                  ]
+                }
+              ]
+            }
+          ],
+          "is_enabled": [
+            false
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                true
+              ]
+            }
+          ]
+        }
+      ],
+      "artillery_init": [
+        {
+          "actions": [
+            {
+              "triggerEnable": [
+                {
+                  "target": [
+                    "teamA_artillery_spawn",
+                    "teamB_artillery_spawn"
+                  ]
+                }
+              ],
+              "unitPutToSleep": [
+                {
+                  "target": [
+                    "t1_artillery_sq",
+                    "t2_artillery_sq"
+                  ]
+                }
+              ],
+              "unitSetProperties": [
+                {
+                  "object": [
+                    "t1_artillery_sq",
+                    "t2_artillery_sq"
+                  ],
+                  "object_marking": [
+                    0
+                  ],
+                  "object_var_comp_op": [
+                    "equal"
+                  ],
+                  "object_var_name": [
+                    ""
+                  ],
+                  "object_var_value": [
+                    0
+                  ]
+                }
+              ],
+              "varSetBool": [
+                {
+                  "fromDescriptor": [
+                    "artilleryMissionTarget"
+                  ],
+                  "value": [
+                    false
+                  ],
+                  "var": [
+                    "artilleryMissionTarget"
+                  ]
+                }
+              ],
+              "varSetInt": [
+                {
+                  "fromDescriptor": [
+                    "teamA_artillery_count"
+                  ],
+                  "value": [
+                    0
+                  ],
+                  "var": [
+                    "teamA_artillery_count"
+                  ]
+                },
+                {
+                  "fromDescriptor": [
+                    "teamB_artillery_count"
+                  ],
+                  "value": [
+                    0
+                  ],
+                  "var": [
+                    "teamB_artillery_count"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            {
+              "objectExists": [
+                {
+                  "target": [
+                    "t1_artillery_sq"
+                  ],
+                  "type": [
+                    "squad"
+                  ]
+                },
+                {
+                  "target": [
+                    "t2_artillery_sq"
+                  ],
+                  "type": [
+                    "squad"
+                  ]
+                }
+              ]
+            }
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "initMission": [
+                []
+              ]
+            }
+          ],
+          "is_enabled": [
+            true
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ],
+      "artillery_missionType_check": [
+        {
+          "actions": [
+            {
+              "triggerEnable": [
+                {
+                  "target": [
+                    "artillery_counter"
+                  ]
+                }
+              ],
+              "unitMark": [
+                {
+                  "target": [
+                    "t1_artillery_sq",
+                    "t2_artillery_sq"
+                  ],
+                  "target_marking": [
+                    2
+                  ]
+                }
+              ],
+              "unitSetIndication": [
+                {
+                  "object_var_comp_op": [
+                    "equal"
+                  ],
+                  "object_var_name": [
+                    ""
+                  ],
+                  "object_var_value": [
+                    0
+                  ],
+                  "set": [
+                    true
+                  ],
+                  "target": [
+                    "t1_artillery_sq",
+                    "t2_artillery_sq"
+                  ],
+                  "target_marking": [
+                    0
+                  ]
+                }
+              ],
+              "varModify": [
+                {
+                  "operator": [
+                    "add"
+                  ],
+                  "use_variable": [
+                    true
+                  ],
+                  "value": [
+                    1.0
+                  ],
+                  "var": [
+                    "teamA_totalAICount"
+                  ],
+                  "var_value": [
+                    "teamA_artillery_count"
+                  ]
+                },
+                {
+                  "operator": [
+                    "add"
+                  ],
+                  "use_variable": [
+                    true
+                  ],
+                  "value": [
+                    1.0
+                  ],
+                  "var": [
+                    "teamB_totalAICount"
+                  ],
+                  "var_value": [
+                    "teamB_artillery_count"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            {
+              "varCompareBool": [
+                {
+                  "comparasion_func": [
+                    "equal"
+                  ],
+                  "value": [
+                    true
+                  ],
+                  "var_value": [
+                    "artilleryMissionTarget"
+                  ]
+                }
+              ]
+            }
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "initMission": [
+                []
+              ]
+            }
+          ],
+          "is_enabled": [
+            false
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ],
+      "common_init": [
+        {
+          "actions": [
+            {
+              "triggerEnable": [
+                {
+                  "target": [
+                    "t1_check_kill_penalty",
+                    "t2_check_kill_penalty"
+                  ]
+                }
+              ],
+              "varModify": [
+                {
+                  "operator": [
+                    "mul"
+                  ],
+                  "use_variable": [
+                    true
+                  ],
+                  "value": [
+                    1.0
+                  ],
+                  "var": [
+                    "kill_penalty"
+                  ],
+                  "var_value": [
+                    "tickets_count"
+                  ]
+                },
+                {
+                  "operator": [
+                    "divAB"
+                  ],
+                  "value": [
+                    100.0
+                  ],
+                  "var": [
+                    "kill_penalty"
+                  ]
+                }
+              ],
+              "varSetInt": [
+                {
+                  "fromDescriptor": [
+                    "aiKillPenaltyPercent"
+                  ],
+                  "value": [
+                    0
+                  ],
+                  "var": [
+                    "kill_penalty"
+                  ]
+                },
+                {
+                  "source_var": [
+                    "mpTi1"
+                  ],
+                  "value": [
+                    0
+                  ],
+                  "var": [
+                    "tickets_count"
+                  ]
+                },
+                {
+                  "input_var": [
+                    "kill_penalty"
+                  ],
+                  "value": [
+                    0
+                  ],
+                  "var": [
+                    "teamA_ai_dies_penalty"
+                  ]
+                },
+                {
+                  "input_var": [
+                    "kill_penalty"
+                  ],
+                  "value": [
+                    0
+                  ],
+                  "var": [
+                    "teamB_ai_dies_penalty"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            {
+              "objectExists": [
+                {
+                  "target": [
+                    "t1_allActive_ai_zoneDef_sq"
+                  ],
+                  "type": [
+                    "squad"
+                  ]
+                },
+                {
+                  "target": [
+                    "t1_allActive_ai_zoneDef_sq"
+                  ],
+                  "type": [
+                    "squad"
+                  ]
+                }
+              ]
+            }
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "periodicEvent": [
+                {
+                  "time": [
+                    1.0
+                  ]
+                }
+              ]
+            }
+          ],
+          "is_enabled": [
+            true
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ],
+      "isCategory": [
+        true
+      ],
+      "is_enabled": [
+        true
+      ],
+      "t1_add_objectives": [
+        {
+          "actions": [
+            {
+              "moAddMissionObjective": [
+                {
+                  "object_var_comp_op": [
+                    "equal"
+                  ],
+                  "object_var_name": [
+                    ""
+                  ],
+                  "target": [
+                    "t1_ai_base_defend"
+                  ]
+                },
+                {
+                  "object_var_comp_op": [
+                    "equal"
+                  ],
+                  "object_var_name": [
+                    ""
+                  ],
+                  "target": [
+                    "t2_ai_base_defend"
+                  ]
+                }
+              ],
+              "wait": [
+                {
+                  "time": [
+                    3.0
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            {
+              "missionNamePostfix": [
+                {
+                  "postfix": [
+                    "_DBttlA"
+                  ]
+                }
+              ]
+            }
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "periodicEvent": [
+                {
+                  "time": [
+                    1.0
+                  ]
+                }
+              ]
+            }
+          ],
+          "is_enabled": [
+            false
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ],
+      "t1_check_kill_penalty": [
+        {
+          "actions": [
+            {
+              "triggerEnable": [
+                {
+                  "target": [
+                    "teamA_ai_dies",
+                    "teamA_all_ai_dead",
+                    "teamB_attack_timeIsUp",
+                    "t1_add_objectives"
+                  ]
+                }
+              ],
+              "varModify": [
+                {
+                  "operator": [
+                    "divAB"
+                  ],
+                  "use_variable": [
+                    true
+                  ],
+                  "value": [
+                    1.0
+                  ],
+                  "var": [
+                    "teamA_ai_dies_penalty"
+                  ],
+                  "var_value": [
+                    "teamA_totalAICount"
+                  ]
+                },
+                {
+                  "operator": [
+                    "mul"
+                  ],
+                  "value": [
+                    -1.0
+                  ],
+                  "var": [
+                    "teamA_ai_dies_penalty"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            {
+              "varCompareInt": [
+                {
+                  "comparasion_func": [
+                    "more"
+                  ],
+                  "value": [
+                    0
+                  ],
+                  "var_value": [
+                    "teamA_ai_dies_penalty"
+                  ]
+                },
+                {
+                  "comparasion_func": [
+                    "more"
+                  ],
+                  "value": [
+                    0
+                  ],
+                  "var_value": [
+                    "teamA_totalAICount"
+                  ]
+                }
+              ]
+            }
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "periodicEvent": [
+                {
+                  "time": [
+                    1.0
+                  ]
+                }
+              ]
+            }
+          ],
+          "is_enabled": [
+            false
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ],
+      "t2_add_objectives": [
+        {
+          "actions": [
+            {
+              "moAddMissionObjective": [
+                {
+                  "object_var_comp_op": [
+                    "equal"
+                  ],
+                  "object_var_name": [
+                    ""
+                  ],
+                  "target": [
+                    "t2_ai_base_defend"
+                  ]
+                },
+                {
+                  "object_var_comp_op": [
+                    "equal"
+                  ],
+                  "object_var_name": [
+                    ""
+                  ],
+                  "target": [
+                    "t1_ai_base_attack"
+                  ]
+                }
+              ],
+              "wait": [
+                {
+                  "time": [
+                    3.0
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            {
+              "missionNamePostfix": [
+                {
+                  "postfix": [
+                    "_DBttlB"
+                  ]
+                }
+              ]
+            }
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "periodicEvent": [
+                {
+                  "time": [
+                    1.0
+                  ]
+                }
+              ]
+            }
+          ],
+          "is_enabled": [
+            false
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ],
+      "t2_check_kill_penalty": [
+        {
+          "actions": [
+            {
+              "triggerEnable": [
+                {
+                  "target": [
+                    "teamB_ai_dies",
+                    "teamB_all_ai_dead",
+                    "teamA_attack_timeIsUp",
+                    "t2_add_objectives"
+                  ]
+                }
+              ],
+              "varModify": [
+                {
+                  "operator": [
+                    "divAB"
+                  ],
+                  "use_variable": [
+                    true
+                  ],
+                  "value": [
+                    1.0
+                  ],
+                  "var": [
+                    "teamB_ai_dies_penalty"
+                  ],
+                  "var_value": [
+                    "teamB_totalAICount"
+                  ]
+                },
+                {
+                  "operator": [
+                    "mul"
+                  ],
+                  "value": [
+                    -1.0
+                  ],
+                  "var": [
+                    "teamB_ai_dies_penalty"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            {
+              "varCompareInt": [
+                {
+                  "comparasion_func": [
+                    "more"
+                  ],
+                  "value": [
+                    0
+                  ],
+                  "var_value": [
+                    "teamB_ai_dies_penalty"
+                  ]
+                },
+                {
+                  "comparasion_func": [
+                    "more"
+                  ],
+                  "value": [
+                    0
+                  ],
+                  "var_value": [
+                    "teamB_totalAICount"
+                  ]
+                }
+              ]
+            }
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "periodicEvent": [
+                {
+                  "time": [
+                    1.0
+                  ]
+                }
+              ]
+            }
+          ],
+          "is_enabled": [
+            false
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ],
+      "tank_init": [
+        {
+          "actions": [
+            {
+              "triggerEnable": [
+                {
+                  "target": [
+                    "teamA_tanks_spawn",
+                    "teamB_tanks_spawn"
+                  ]
+                }
+              ],
+              "unitPutToSleep": [
+                {
+                  "target": [
+                    "t1_ai_tank_sq",
+                    "t2_ai_tank_sq"
+                  ]
+                }
+              ],
+              "unitSetProperties": [
+                {
+                  "accuracy": [
+                    0.3
+                  ],
+                  "checkVisibilityTarget": [
+                    true
+                  ],
+                  "object": [
+                    "t1_ai_tank_sq",
+                    "t2_ai_tank_sq"
+                  ],
+                  "object_marking": [
+                    0
+                  ],
+                  "object_var_comp_op": [
+                    "equal"
+                  ],
+                  "object_var_name": [
+                    ""
+                  ],
+                  "object_var_value": [
+                    0
+                  ]
+                }
+              ],
+              "varSetBool": [
+                {
+                  "fromDescriptor": [
+                    "tankMissionTarget"
+                  ],
+                  "value": [
+                    false
+                  ],
+                  "var": [
+                    "tankMissionTarget"
+                  ]
+                }
+              ],
+              "varSetInt": [
+                {
+                  "fromDescriptor": [
+                    "aiTargetCount_teamA"
+                  ],
+                  "value": [
+                    0
+                  ],
+                  "var": [
+                    "teamA_tanks_count"
+                  ]
+                },
+                {
+                  "fromDescriptor": [
+                    "aiTargetCount_teamB"
+                  ],
+                  "value": [
+                    0
+                  ],
+                  "var": [
+                    "teamB_tanks_count"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            {
+              "objectExists": [
+                {
+                  "target": [
+                    "t1_ai_tank_sq"
+                  ],
+                  "type": [
+                    "squad"
+                  ]
+                },
+                {
+                  "target": [
+                    "t2_ai_tank_sq"
+                  ],
+                  "type": [
+                    "squad"
+                  ]
+                }
+              ]
+            }
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "initMission": [
+                []
+              ]
+            }
+          ],
+          "is_enabled": [
+            true
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ],
+      "tank_missionType_check": [
+        {
+          "actions": [
+            {
+              "triggerEnable": [
+                {
+                  "target": [
+                    "tanks_counter"
+                  ]
+                }
+              ],
+              "unitMark": [
+                {
+                  "target": [
+                    "t1_ai_tank_sq",
+                    "t2_ai_tank_sq"
+                  ],
+                  "target_marking": [
+                    2
+                  ]
+                }
+              ],
+              "unitSetIndication": [
+                {
+                  "object_var_comp_op": [
+                    "equal"
+                  ],
+                  "object_var_name": [
+                    ""
+                  ],
+                  "object_var_value": [
+                    0
+                  ],
+                  "set": [
+                    true
+                  ],
+                  "target": [
+                    "t1_ai_tank_sq",
+                    "t2_ai_tank_sq"
+                  ],
+                  "target_marking": [
+                    0
+                  ]
+                }
+              ],
+              "varModify": [
+                {
+                  "operator": [
+                    "add"
+                  ],
+                  "use_variable": [
+                    true
+                  ],
+                  "value": [
+                    1.0
+                  ],
+                  "var": [
+                    "teamA_totalAICount"
+                  ],
+                  "var_value": [
+                    "teamA_tanks_count"
+                  ]
+                },
+                {
+                  "operator": [
+                    "add"
+                  ],
+                  "use_variable": [
+                    true
+                  ],
+                  "value": [
+                    1.0
+                  ],
+                  "var": [
+                    "teamB_totalAICount"
+                  ],
+                  "var_value": [
+                    "teamB_tanks_count"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            {
+              "varCompareBool": [
+                {
+                  "comparasion_func": [
+                    "equal"
+                  ],
+                  "value": [
+                    true
+                  ],
+                  "var_value": [
+                    "tankMissionTarget"
+                  ]
+                }
+              ]
+            }
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "initMission": [
+                []
+              ]
+            }
+          ],
+          "is_enabled": [
+            false
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ],
+      "tanks_counter": [
+        {
+          "actions": [
+            {
+              "missionSetTargetsIndicator": [
+                {
+                  "delta": [
+                    0
+                  ],
+                  "icon": [
+                    "tank"
+                  ],
+                  "icon army": [
+                    1
+                  ],
+                  "object_var_comp_op": [
+                    "equal"
+                  ],
+                  "object_var_name": [
+                    ""
+                  ],
+                  "object_var_value": [
+                    0
+                  ],
+                  "set": [
+                    true
+                  ],
+                  "target": [
+                    "t1_ai_tank_sq"
+                  ],
+                  "target_marking": [
+                    0
+                  ],
+                  "target_type": [
+                    "isActive"
+                  ]
+                },
+                {
+                  "delta": [
+                    0
+                  ],
+                  "icon": [
+                    "tank"
+                  ],
+                  "icon army": [
+                    2
+                  ],
+                  "object_var_comp_op": [
+                    "equal"
+                  ],
+                  "object_var_name": [
+                    ""
+                  ],
+                  "object_var_value": [
+                    0
+                  ],
+                  "set": [
+                    true
+                  ],
+                  "target": [
+                    "t2_ai_tank_sq"
+                  ],
+                  "target_marking": [
+                    0
+                  ],
+                  "target_type": [
+                    "isActive"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            {
+              "varCompareInt": [
+                {
+                  "comparasion_func": [
+                    "more"
+                  ],
+                  "value": [
+                    0
+                  ],
+                  "var_value": [
+                    "teamA_tanks_count"
+                  ]
+                },
+                {
+                  "comparasion_func": [
+                    "more"
+                  ],
+                  "value": [
+                    0
+                  ],
+                  "var_value": [
+                    "teamB_tanks_count"
+                  ]
+                }
+              ]
+            }
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "periodicEvent": [
+                {
+                  "time": [
+                    1.0
+                  ]
+                }
+              ]
+            }
+          ],
+          "is_enabled": [
+            false
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ANY"
+              ],
+              "enableAfterComplete": [
+                true
+              ]
+            }
+          ]
+        }
+      ],
+      "teamA_ai_dies": [
+        {
+          "actions": [
+            {
+              "gameMPChangeScore": [
+                {
+                  "team": [
+                    "A"
+                  ],
+                  "value": [
+                    1
+                  ],
+                  "valueSystem": [
+                    "amount"
+                  ],
+                  "var": [
+                    "teamA_ai_dies_penalty"
+                  ]
+                }
+              ],
+              "varModify": [
+                {
+                  "operator": [
+                    "subAB"
+                  ],
+                  "value": [
+                    1.0
+                  ],
+                  "var": [
+                    "teamA_totalAICount"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            {
+              "unitWhenCountMatches": [
+                {
+                  "func": [
+                    "less"
+                  ],
+                  "object": [
+                    "t1_allActive_ai_zoneDef_sq"
+                  ],
+                  "object_marking": [
+                    2
+                  ],
+                  "object_type": [
+                    "isMarked"
+                  ],
+                  "object_var_comp_op": [
+                    "equal"
+                  ],
+                  "object_var_name": [
+                    ""
+                  ],
+                  "object_var_value": [
+                    0
+                  ],
+                  "unit_type_ex": [
+                    "isActive"
+                  ],
+                  "value": [
+                    1
+                  ],
+                  "var": [
+                    "teamA_totalAICount"
+                  ]
+                }
+              ]
+            }
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "periodicEvent": [
+                {
+                  "time": [
+                    1.0
+                  ]
+                }
+              ]
+            }
+          ],
+          "is_enabled": [
+            false
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                true
+              ]
+            }
+          ]
+        }
+      ],
+      "teamA_all_ai_dead": [
+        {
+          "actions": [
+            {
+              "gameMPChangeScore": [
+                {
+                  "team": [
+                    "A"
+                  ],
+                  "value": [
+                    -100
+                  ],
+                  "valueSystem": [
+                    "percentage"
+                  ]
+                }
+              ],
+              "moSetObjectiveStatus": [
+                {
+                  "object_var_comp_op": [
+                    "equal"
+                  ],
+                  "object_var_name": [
+                    ""
+                  ],
+                  "status": [
+                    3
+                  ],
+                  "target": [
+                    "t1_ai_base_defend"
+                  ],
+                  "team": [
+                    "A"
+                  ]
+                },
+                {
+                  "object_var_comp_op": [
+                    "equal"
+                  ],
+                  "object_var_name": [
+                    ""
+                  ],
+                  "status": [
+                    2
+                  ],
+                  "target": [
+                    "t2_ai_base_attack"
+                  ],
+                  "team": [
+                    "B"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            {
+              "unitWhenCountMatches": [
+                {
+                  "func": [
+                    "less"
+                  ],
+                  "object": [
+                    "t1_allActive_ai_zoneDef_sq"
+                  ],
+                  "object_marking": [
+                    2
+                  ],
+                  "object_type": [
+                    "isMarked"
+                  ],
+                  "object_var_comp_op": [
+                    "equal"
+                  ],
+                  "object_var_name": [
+                    ""
+                  ],
+                  "object_var_value": [
+                    0
+                  ],
+                  "value": [
+                    1
+                  ]
+                }
+              ]
+            }
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "periodicEvent": [
+                {
+                  "time": [
+                    1.0
+                  ]
+                }
+              ]
+            }
+          ],
+          "is_enabled": [
+            false
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ],
+      "teamA_antiTankGun_needToSpawn": [
+        {
+          "actions": [
+            {
+              "triggerEnable": [
+                {
+                  "target": [
+                    "teamA_antiTankGun_setLimit"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            {
+              "objectExists": [
+                {
+                  "invertResult": [
+                    true
+                  ],
+                  "target": [
+                    "defenseMissionTeam"
+                  ],
+                  "type": [
+                    "var"
+                  ]
+                }
+              ],
+              "varCompareString": [
+                {
+                  "comparasion_func": [
+                    "equal"
+                  ],
+                  "value": [
+                    "teamA"
+                  ],
+                  "var_value": [
+                    "defenseMissionTeam"
+                  ]
+                }
+              ]
+            }
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "initMission": [
+                []
+              ]
+            }
+          ],
+          "is_enabled": [
+            false
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ANY"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ],
+      "teamA_antiTankGun_setLimit": [
+        {
+          "actions": [
+            {
+              "triggerEnable": [
+                {
+                  "target": [
+                    "teamA_antiTankGun_spawn"
+                  ]
+                }
+              ],
+              "varSetInt": [
+                {
+                  "value": [
+                    20
+                  ],
+                  "var": [
+                    "teamA_antiTankGun_count"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            {
+              "varCompareInt": [
+                {
+                  "comparasion_func": [
+                    "more"
+                  ],
+                  "value": [
+                    20
+                  ],
+                  "var_value": [
+                    "teamA_antiTankGun_count"
+                  ]
+                }
+              ]
+            }
+          ],
+          "else_actions": [
+            {
+              "triggerEnable": [
+                {
+                  "target": [
+                    "teamA_antiTankGun_spawn"
+                  ]
+                }
+              ]
+            }
+          ],
+          "events": [
+            {
+              "initMission": [
+                []
+              ]
+            }
+          ],
+          "is_enabled": [
+            false
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ],
+      "teamA_antiTankGun_spawn": [
+        {
+          "actions": [
+            {
+              "triggerEnable": [
+                {
+                  "target": [
+                    "antiTankGun_missionType_check"
+                  ]
+                }
+              ],
+              "unitWakeUp": [
+                {
+                  "order": [
+                    "random"
+                  ],
+                  "target": [
+                    "t1_zoneDef_sq"
+                  ],
+                  "varNameNumToWakeUp": [
+                    "teamA_antiTankGun_count"
+                  ]
+                },
+                {
+                  "target": [
+                    "t1_trench_sq"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            {
+              "varCompareInt": [
+                {
+                  "comparasion_func": [
+                    "more"
+                  ],
+                  "value": [
+                    0
+                  ],
+                  "var_value": [
+                    "teamA_antiTankGun_count"
+                  ]
+                }
+              ]
+            }
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "initMission": [
+                []
+              ]
+            }
+          ],
+          "is_enabled": [
+            false
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ],
+      "teamA_artillery_spawn": [
+        {
+          "actions": [
+            {
+              "triggerEnable": [
+                {
+                  "target": [
+                    "artillery_missionType_check"
+                  ]
+                }
+              ],
+              "unitWakeUp": [
+                {
+                  "order": [
+                    "random"
+                  ],
+                  "target": [
+                    "t1_artillery_sq"
+                  ],
+                  "varNameNumToWakeUp": [
+                    "teamA_artillery_count"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            {
+              "varCompareInt": [
+                {
+                  "comparasion_func": [
+                    "more"
+                  ],
+                  "value": [
+                    0
+                  ],
+                  "var_value": [
+                    "teamA_artillery_count"
+                  ]
+                }
+              ]
+            }
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "initMission": [
+                []
+              ]
+            }
+          ],
+          "is_enabled": [
+            false
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ],
+      "teamA_attack_timeIsUp": [
+        {
+          "actions": [
+            {
+              "moSetObjectiveStatus": [
+                {
+                  "object_var_comp_op": [
+                    "equal"
+                  ],
+                  "object_var_name": [
+                    ""
+                  ],
+                  "status": [
+                    2
+                  ],
+                  "target": [
+                    "t2_ai_base_defend"
+                  ],
+                  "team": [
+                    "B"
+                  ]
+                },
+                {
+                  "object_var_comp_op": [
+                    "equal"
+                  ],
+                  "object_var_name": [
+                    ""
+                  ],
+                  "status": [
+                    3
+                  ],
+                  "target": [
+                    "t1_ai_base_attack"
+                  ],
+                  "team": [
+                    "A"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            {
+              "objectExists": [
+                {
+                  "target": [
+                    "dbttl_cur_timer"
+                  ],
+                  "type": [
+                    "var"
+                  ]
+                }
+              ],
+              "varCompareInt": [
+                {
+                  "comparasion_func": [
+                    "less"
+                  ],
+                  "value": [
+                    1
+                  ],
+                  "var_value": [
+                    "@dbttl_timer_str"
+                  ]
+                }
+              ]
+            }
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "periodicEvent": [
+                {
+                  "time": [
+                    1.0
+                  ]
+                }
+              ]
+            }
+          ],
+          "is_enabled": [
+            false
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ],
+      "teamA_tanks_spawn": [
+        {
+          "actions": [
+            {
+              "triggerEnable": [
+                {
+                  "target": [
+                    "tank_missionType_check"
+                  ]
+                }
+              ],
+              "unitWakeUp": [
+                {
+                  "order": [
+                    "random"
+                  ],
+                  "target": [
+                    "t1_ai_tank_sq"
+                  ],
+                  "varNameNumToWakeUp": [
+                    "teamA_tanks_count"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            {
+              "varCompareInt": [
+                {
+                  "comparasion_func": [
+                    "more"
+                  ],
+                  "value": [
+                    0
+                  ],
+                  "var_value": [
+                    "teamA_tanks_count"
+                  ]
+                }
+              ]
+            }
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "initMission": [
+                []
+              ]
+            }
+          ],
+          "is_enabled": [
+            false
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ],
+      "teamB_ai_dies": [
+        {
+          "actions": [
+            {
+              "gameMPChangeScore": [
+                {
+                  "team": [
+                    "B"
+                  ],
+                  "value": [
+                    1
+                  ],
+                  "valueSystem": [
+                    "amount"
+                  ],
+                  "var": [
+                    "teamB_ai_dies_penalty"
+                  ]
+                }
+              ],
+              "varModify": [
+                {
+                  "operator": [
+                    "subAB"
+                  ],
+                  "value": [
+                    1.0
+                  ],
+                  "var": [
+                    "teamB_totalAICount"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            {
+              "unitWhenCountMatches": [
+                {
+                  "func": [
+                    "less"
+                  ],
+                  "object": [
+                    "t2_allActive_ai_zoneDef_sq"
+                  ],
+                  "object_marking": [
+                    2
+                  ],
+                  "object_type": [
+                    "isMarked"
+                  ],
+                  "object_var_comp_op": [
+                    "equal"
+                  ],
+                  "object_var_name": [
+                    ""
+                  ],
+                  "object_var_value": [
+                    0
+                  ],
+                  "unit_type_ex": [
+                    "isActive"
+                  ],
+                  "value": [
+                    1
+                  ],
+                  "var": [
+                    "teamB_totalAICount"
+                  ]
+                }
+              ]
+            }
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "periodicEvent": [
+                {
+                  "time": [
+                    1.0
+                  ]
+                }
+              ]
+            }
+          ],
+          "is_enabled": [
+            false
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                true
+              ]
+            }
+          ]
+        }
+      ],
+      "teamB_all_ai_dead": [
+        {
+          "actions": [
+            {
+              "gameMPChangeScore": [
+                {
+                  "team": [
+                    "B"
+                  ],
+                  "value": [
+                    -100
+                  ],
+                  "valueSystem": [
+                    "percentage"
+                  ]
+                }
+              ],
+              "moSetObjectiveStatus": [
+                {
+                  "object_var_comp_op": [
+                    "equal"
+                  ],
+                  "object_var_name": [
+                    ""
+                  ],
+                  "status": [
+                    3
+                  ],
+                  "target": [
+                    "t2_ai_base_defend"
+                  ],
+                  "team": [
+                    "B"
+                  ]
+                },
+                {
+                  "object_var_comp_op": [
+                    "equal"
+                  ],
+                  "object_var_name": [
+                    ""
+                  ],
+                  "status": [
+                    2
+                  ],
+                  "target": [
+                    "t1_ai_base_attack"
+                  ],
+                  "team": [
+                    "A"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            {
+              "unitWhenCountMatches": [
+                {
+                  "func": [
+                    "less"
+                  ],
+                  "object": [
+                    "t2_allActive_ai_zoneDef_sq"
+                  ],
+                  "object_marking": [
+                    2
+                  ],
+                  "object_type": [
+                    "isMarked"
+                  ],
+                  "object_var_comp_op": [
+                    "equal"
+                  ],
+                  "object_var_name": [
+                    ""
+                  ],
+                  "object_var_value": [
+                    0
+                  ],
+                  "value": [
+                    1
+                  ]
+                }
+              ]
+            }
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "periodicEvent": [
+                {
+                  "time": [
+                    1.0
+                  ]
+                }
+              ]
+            }
+          ],
+          "is_enabled": [
+            false
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ],
+      "teamB_antiTankGun_needToSpawn": [
+        {
+          "actions": [
+            {
+              "triggerEnable": [
+                {
+                  "target": [
+                    "teamB_antiTankGun_setLimit"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            {
+              "objectExists": [
+                {
+                  "invertResult": [
+                    true
+                  ],
+                  "target": [
+                    "defenseMissionTeam"
+                  ],
+                  "type": [
+                    "var"
+                  ]
+                }
+              ],
+              "varCompareString": [
+                {
+                  "comparasion_func": [
+                    "equal"
+                  ],
+                  "value": [
+                    "teamB"
+                  ],
+                  "var_value": [
+                    "defenseMissionTeam"
+                  ]
+                }
+              ]
+            }
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "initMission": [
+                []
+              ]
+            }
+          ],
+          "is_enabled": [
+            false
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ANY"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ],
+      "teamB_antiTankGun_setLimit": [
+        {
+          "actions": [
+            {
+              "triggerEnable": [
+                {
+                  "target": [
+                    "teamB_antiTankGun_spawn"
+                  ]
+                }
+              ],
+              "varSetInt": [
+                {
+                  "value": [
+                    20
+                  ],
+                  "var": [
+                    "teamB_antiTankGun_count"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            {
+              "varCompareInt": [
+                {
+                  "comparasion_func": [
+                    "more"
+                  ],
+                  "value": [
+                    20
+                  ],
+                  "var_value": [
+                    "teamB_antiTankGun_count"
+                  ]
+                }
+              ]
+            }
+          ],
+          "else_actions": [
+            {
+              "triggerEnable": [
+                {
+                  "target": [
+                    "teamB_antiTankGun_spawn"
+                  ]
+                }
+              ]
+            }
+          ],
+          "events": [
+            {
+              "initMission": [
+                []
+              ]
+            }
+          ],
+          "is_enabled": [
+            false
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ],
+      "teamB_antiTankGun_spawn": [
+        {
+          "actions": [
+            {
+              "triggerEnable": [
+                {
+                  "target": [
+                    "antiTankGun_missionType_check"
+                  ]
+                }
+              ],
+              "unitWakeUp": [
+                {
+                  "order": [
+                    "random"
+                  ],
+                  "target": [
+                    "t2_zoneDef_sq"
+                  ],
+                  "varNameNumToWakeUp": [
+                    "teamB_antiTankGun_count"
+                  ]
+                },
+                {
+                  "target": [
+                    "t2_trench_sq"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            {
+              "varCompareInt": [
+                {
+                  "comparasion_func": [
+                    "more"
+                  ],
+                  "value": [
+                    0
+                  ],
+                  "var_value": [
+                    "teamB_antiTankGun_count"
+                  ]
+                }
+              ]
+            }
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "initMission": [
+                []
+              ]
+            }
+          ],
+          "is_enabled": [
+            false
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ],
+      "teamB_artillery_spawn": [
+        {
+          "actions": [
+            {
+              "triggerEnable": [
+                {
+                  "target": [
+                    "artillery_missionType_check"
+                  ]
+                }
+              ],
+              "unitWakeUp": [
+                {
+                  "order": [
+                    "random"
+                  ],
+                  "target": [
+                    "t2_artillery_sq"
+                  ],
+                  "varNameNumToWakeUp": [
+                    "teamB_artillery_count"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            {
+              "varCompareInt": [
+                {
+                  "comparasion_func": [
+                    "more"
+                  ],
+                  "value": [
+                    0
+                  ],
+                  "var_value": [
+                    "teamB_artillery_count"
+                  ]
+                }
+              ]
+            }
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "initMission": [
+                []
+              ]
+            }
+          ],
+          "is_enabled": [
+            false
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ],
+      "teamB_attack_timeIsUp": [
+        {
+          "actions": [
+            {
+              "moSetObjectiveStatus": [
+                {
+                  "object_var_comp_op": [
+                    "equal"
+                  ],
+                  "object_var_name": [
+                    ""
+                  ],
+                  "status": [
+                    2
+                  ],
+                  "target": [
+                    "t1_ai_base_defend"
+                  ],
+                  "team": [
+                    "A"
+                  ]
+                },
+                {
+                  "object_var_comp_op": [
+                    "equal"
+                  ],
+                  "object_var_name": [
+                    ""
+                  ],
+                  "status": [
+                    3
+                  ],
+                  "target": [
+                    "t2_ai_base_attack"
+                  ],
+                  "team": [
+                    "B"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            {
+              "objectExists": [
+                {
+                  "target": [
+                    "dbttl_cur_timer"
+                  ],
+                  "type": [
+                    "var"
+                  ]
+                }
+              ],
+              "varCompareInt": [
+                {
+                  "comparasion_func": [
+                    "less"
+                  ],
+                  "value": [
+                    1
+                  ],
+                  "var_value": [
+                    "@dbttl_timer_str"
+                  ]
+                }
+              ]
+            }
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "periodicEvent": [
+                {
+                  "time": [
+                    1.0
+                  ]
+                }
+              ]
+            }
+          ],
+          "is_enabled": [
+            false
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ],
+      "teamB_tanks_spawn": [
+        {
+          "actions": [
+            {
+              "triggerEnable": [
+                {
+                  "target": [
+                    "tank_missionType_check"
+                  ]
+                }
+              ],
+              "unitWakeUp": [
+                {
+                  "order": [
+                    "random"
+                  ],
+                  "target": [
+                    "t2_ai_tank_sq"
+                  ],
+                  "varNameNumToWakeUp": [
+                    "teamB_tanks_count"
+                  ]
+                }
+              ]
+            }
+          ],
+          "comments": [
+            ""
+          ],
+          "conditions": [
+            {
+              "varCompareInt": [
+                {
+                  "comparasion_func": [
+                    "more"
+                  ],
+                  "value": [
+                    0
+                  ],
+                  "var_value": [
+                    "teamB_tanks_count"
+                  ]
+                }
+              ]
+            }
+          ],
+          "else_actions": [
+            []
+          ],
+          "events": [
+            {
+              "initMission": [
+                []
+              ]
+            }
+          ],
+          "is_enabled": [
+            false
+          ],
+          "props": [
+            {
+              "actionsType": [
+                "PERFORM_ONE_BY_ONE"
+              ],
+              "conditionsType": [
+                "ALL"
+              ],
+              "enableAfterComplete": [
+                false
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "units": [
+    []
+  ],
+  "variables": [
+    {
+      "antiTankGunMissionTarget": [
+        false
+      ],
+      "artilleryMissionTarget": [
+        false
+      ],
+      "dbttl_timer_str": [
+        "dbttl_cur_timer"
+      ],
+      "isAADef": [
+        false
+      ],
+      "kill_penalty": [
+        0
+      ],
+      "tankMissionTarget": [
+        false
+      ],
+      "teamA_ai_dies_penalty": [
+        0
+      ],
+      "teamA_antiTankGun_count": [
+        0
+      ],
+      "teamA_artillery_count": [
+        0
+      ],
+      "teamA_tanks_count": [
+        0
+      ],
+      "teamA_totalAICount": [
+        0
+      ],
+      "teamB_ai_dies_penalty": [
+        0
+      ],
+      "teamB_antiTankGun_count": [
+        0
+      ],
+      "teamB_artillery_count": [
+        0
+      ],
+      "teamB_tanks_count": [
+        0
+      ],
+      "teamB_totalAICount": [
+        0
+      ],
+      "tickets_count": [
+        0
+      ]
+    }
+  ],
+  "wayPoints": [
+    []
+  ]
+}

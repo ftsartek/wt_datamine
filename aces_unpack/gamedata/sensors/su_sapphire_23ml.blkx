@@ -1,0 +1,5736 @@
+{
+  "fsms": [
+    {
+      "checkRaltGreater": [
+        {
+          "stateInit": [
+            "init"
+          ],
+          "transitions": [
+            {
+              "scan": [
+                {
+                  "actions": [
+                    {
+                      "checkRalt": [
+                        {
+                          "operation": [
+                            "greater"
+                          ],
+                          "value": [
+                            1800.0
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "event": [
+                    "update"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "checkRaltLess": [
+        {
+          "stateInit": [
+            "init"
+          ],
+          "transitions": [
+            {
+              "scan": [
+                {
+                  "actions": [
+                    {
+                      "checkRalt": [
+                        {
+                          "operation": [
+                            "less"
+                          ],
+                          "value": [
+                            1500.0
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "event": [
+                    "update"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "illumination": [
+        {
+          "stateInit": [
+            "init"
+          ],
+          "transitions": [
+            {
+              "activate": [
+                {
+                  "actions": [
+                    {
+                      "checkIlluminationTimeOut": [
+                        {
+                          "pauseMax": [
+                            5.0
+                          ],
+                          "transiver": [
+                            true
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "event": [
+                    "fsmActivate"
+                  ],
+                  "stateTo": [
+                    "active"
+                  ]
+                }
+              ],
+              "activateIllumination": [
+                {
+                  "actions": [
+                    {
+                      "setIlluminationTimeOut": [
+                        {
+                          "timeOut": [
+                            60.0
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "event": [
+                    "sarhMissileLaunch"
+                  ]
+                }
+              ],
+              "deactivate": [
+                {
+                  "actions": [
+                    {
+                      "setIllumination": [
+                        {
+                          "transiver": [
+                            false
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "event": [
+                    "fsmDeactivate"
+                  ],
+                  "stateTo": [
+                    "inactive"
+                  ]
+                }
+              ],
+              "updateIllumination": [
+                {
+                  "actions": [
+                    {
+                      "checkIlluminationTimeOut": [
+                        {
+                          "pauseMax": [
+                            5.0
+                          ],
+                          "transiver": [
+                            true
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "event": [
+                    "update"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "lock": [
+        {
+          "stateInit": [
+            "lock"
+          ],
+          "transitions": [
+            {
+              "detect": [
+                {
+                  "actions": [
+                    {
+                      "detectTarget": [
+                        {
+                          "rangeMult": [
+                            1.0
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "event": [
+                    "targetInSight"
+                  ]
+                }
+              ],
+              "scan": [
+                {
+                  "actions": [
+                    {
+                      "scan": [
+                        []
+                      ]
+                    }
+                  ],
+                  "event": [
+                    "update"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "main": [
+        {
+          "actionsTemplates": [
+            {
+              "init": [
+                {
+                  "setEnabled": [
+                    {
+                      "value": [
+                        false
+                      ]
+                    }
+                  ],
+                  "setRadarTargetDesignationRange": [
+                    []
+                  ]
+                }
+              ],
+              "resetLockMode": [
+                {
+                  "setFsmActive": [
+                    {
+                      "active": [
+                        false
+                      ],
+                      "fsm": [
+                        "lock"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "resetSearchMode": [
+                {
+                  "setCueEnabled": [
+                    {
+                      "value": [
+                        false
+                      ]
+                    }
+                  ],
+                  "setFsmActive": [
+                    {
+                      "active": [
+                        false
+                      ],
+                      "fsm": [
+                        "search"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "resetTrackMode": [
+                {
+                  "setFsmActive": [
+                    {
+                      "active": [
+                        false
+                      ],
+                      "fsm": [
+                        "track"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "setBSVBoresightLockMode": [
+                {
+                  "setBoresightLockModeRadarCommon": [
+                    []
+                  ],
+                  "setHighAltModeCommon": [
+                    []
+                  ],
+                  "setModeName": [
+                    {
+                      "name": [
+                        "ACM"
+                      ]
+                    }
+                  ],
+                  "setPulseSearchShortModeCommon": [
+                    []
+                  ]
+                }
+              ],
+              "setBSVDesignationLockMode": [
+                {
+                  "setCenterAzimuth": [
+                    {
+                      "source": [
+                        "targetDesignation"
+                      ]
+                    }
+                  ],
+                  "setDesignationLockModeCommon": [
+                    []
+                  ],
+                  "setHighAltModeCommon": [
+                    []
+                  ],
+                  "setModeName": [
+                    {
+                      "name": [
+                        "acquisition"
+                      ]
+                    }
+                  ],
+                  "setPulseTrackModeCommon": [
+                    []
+                  ],
+                  "setScanPattern": [
+                    {
+                      "scanPattern": [
+                        "designationLockUp"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "setBSVSearchMode": [
+                {
+                  "setFsmActive": [
+                    {
+                      "active": [
+                        true
+                      ],
+                      "fsm": [
+                        "checkRaltLess"
+                      ]
+                    },
+                    {
+                      "active": [
+                        false
+                      ],
+                      "fsm": [
+                        "checkRaltGreater"
+                      ]
+                    }
+                  ],
+                  "setHighAltModeCommon": [
+                    []
+                  ],
+                  "setModeName": [
+                    {
+                      "name": [
+                        "search"
+                      ]
+                    }
+                  ],
+                  "setPulseSearchLongModeCommon": [
+                    []
+                  ],
+                  "setScanPatternSet": [
+                    {
+                      "scanPatternSet": [
+                        "searchUp"
+                      ]
+                    }
+                  ],
+                  "setSearchModeCommon": [
+                    []
+                  ]
+                }
+              ],
+              "setBSVStandbyMode": [
+                {
+                  "setFsmActive": [
+                    {
+                      "active": [
+                        true
+                      ],
+                      "fsm": [
+                        "checkRaltLess"
+                      ]
+                    },
+                    {
+                      "active": [
+                        false
+                      ],
+                      "fsm": [
+                        "checkRaltGreater"
+                      ]
+                    }
+                  ],
+                  "setHighAltModeCommon": [
+                    []
+                  ],
+                  "setModeName": [
+                    {
+                      "name": [
+                        "standby"
+                      ]
+                    }
+                  ],
+                  "setPulseSearchLongModeCommon": [
+                    []
+                  ],
+                  "setScanPatternSet": [
+                    {
+                      "scanPatternSet": [
+                        "searchUp"
+                      ]
+                    }
+                  ],
+                  "setStandbyModeCommon": [
+                    []
+                  ]
+                }
+              ],
+              "setBSVTrackMode": [
+                {
+                  "setHighAltModeCommon": [
+                    []
+                  ],
+                  "setModeName": [
+                    {
+                      "name": [
+                        "track"
+                      ]
+                    }
+                  ],
+                  "setPulseTrackModeCommon": [
+                    []
+                  ],
+                  "setRadarTrackModeCommon": [
+                    []
+                  ]
+                }
+              ],
+              "setBSVdHBoresightLockMode": [
+                {
+                  "setBoresightLockModeRadarCommon": [
+                    []
+                  ],
+                  "setHighAltModeCommon": [
+                    []
+                  ],
+                  "setModeName": [
+                    {
+                      "name": [
+                        "LD ACM"
+                      ]
+                    }
+                  ],
+                  "setPulseSearchShortModeCommon": [
+                    []
+                  ]
+                }
+              ],
+              "setBSVdHDesignationLockMode": [
+                {
+                  "setCenterAzimuth": [
+                    {
+                      "source": [
+                        "targetDesignation"
+                      ]
+                    }
+                  ],
+                  "setDesignationLockModeCommon": [
+                    []
+                  ],
+                  "setHighAltModeCommon": [
+                    []
+                  ],
+                  "setModeName": [
+                    {
+                      "name": [
+                        "LD acquisition"
+                      ]
+                    }
+                  ],
+                  "setPulseTrackModeCommon": [
+                    []
+                  ],
+                  "setScanPattern": [
+                    {
+                      "scanPattern": [
+                        "designationLockDown"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "setBSVdHSearchMode": [
+                {
+                  "setFsmActive": [
+                    {
+                      "active": [
+                        true
+                      ],
+                      "fsm": [
+                        "checkRaltLess"
+                      ]
+                    },
+                    {
+                      "active": [
+                        false
+                      ],
+                      "fsm": [
+                        "checkRaltGreater"
+                      ]
+                    }
+                  ],
+                  "setHighAltModeCommon": [
+                    []
+                  ],
+                  "setModeName": [
+                    {
+                      "name": [
+                        "LD search"
+                      ]
+                    }
+                  ],
+                  "setPulseSearchLongModeCommon": [
+                    []
+                  ],
+                  "setScanPatternSet": [
+                    {
+                      "scanPatternSet": [
+                        "searchDown"
+                      ]
+                    }
+                  ],
+                  "setSearchModeCommon": [
+                    []
+                  ]
+                }
+              ],
+              "setBSVdHStandbyMode": [
+                {
+                  "setFsmActive": [
+                    {
+                      "active": [
+                        true
+                      ],
+                      "fsm": [
+                        "checkRaltLess"
+                      ]
+                    },
+                    {
+                      "active": [
+                        false
+                      ],
+                      "fsm": [
+                        "checkRaltGreater"
+                      ]
+                    }
+                  ],
+                  "setHighAltModeCommon": [
+                    []
+                  ],
+                  "setModeName": [
+                    {
+                      "name": [
+                        "LD standby"
+                      ]
+                    }
+                  ],
+                  "setPulseSearchLongModeCommon": [
+                    []
+                  ],
+                  "setScanPatternSet": [
+                    {
+                      "scanPatternSet": [
+                        "searchDown"
+                      ]
+                    }
+                  ],
+                  "setStandbyModeCommon": [
+                    []
+                  ]
+                }
+              ],
+              "setBSVdHTrackMode": [
+                {
+                  "setHighAltModeCommon": [
+                    []
+                  ],
+                  "setModeName": [
+                    {
+                      "name": [
+                        "LD track"
+                      ]
+                    }
+                  ],
+                  "setPulseTrackModeCommon": [
+                    []
+                  ],
+                  "setRadarTrackModeCommon": [
+                    []
+                  ]
+                }
+              ],
+              "setBoresightLockModeCommon": [
+                {
+                  "setCenterAzimuth": [
+                    {
+                      "source": [
+                        "constant"
+                      ],
+                      "value": [
+                        0.0
+                      ]
+                    }
+                  ],
+                  "setCenterElevation": [
+                    {
+                      "source": [
+                        "constant"
+                      ],
+                      "value": [
+                        0.0
+                      ]
+                    }
+                  ],
+                  "setDistGatePos": [
+                    {
+                      "pos": [
+                        5000.0
+                      ],
+                      "source": [
+                        "constRange"
+                      ],
+                      "width": [
+                        10000.0
+                      ]
+                    }
+                  ],
+                  "setLockModeCommon": [
+                    []
+                  ]
+                }
+              ],
+              "setBoresightLockModeRadarCommon": [
+                {
+                  "setBoresightLockModeCommon": [
+                    []
+                  ],
+                  "setScanPattern": [
+                    {
+                      "scanPattern": [
+                        "boresightLock"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "setDesignationLockModeCommon": [
+                {
+                  "setDistGatePos": [
+                    {
+                      "source": [
+                        "targetDesignation"
+                      ],
+                      "width": [
+                        5000.0
+                      ]
+                    }
+                  ],
+                  "setFsmActive": [
+                    {
+                      "active": [
+                        false
+                      ],
+                      "fsm": [
+                        "checkRaltLess"
+                      ]
+                    },
+                    {
+                      "active": [
+                        false
+                      ],
+                      "fsm": [
+                        "checkRaltGreater"
+                      ]
+                    }
+                  ],
+                  "setLockModeCommon": [
+                    []
+                  ]
+                }
+              ],
+              "setHighAltModeCommon": [
+                {
+                  "setScopeRangeSet": [
+                    {
+                      "scopeRangeSet": [
+                        "searchHighAlt"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "setLockModeCommon": [
+                {
+                  "clearTargets": [
+                    []
+                  ],
+                  "clearTargetsOfInterest": [
+                    []
+                  ],
+                  "resetScanPhase": [
+                    []
+                  ],
+                  "setEnabled": [
+                    {
+                      "value": [
+                        true
+                      ]
+                    }
+                  ],
+                  "setFsmActive": [
+                    {
+                      "active": [
+                        true
+                      ],
+                      "fsm": [
+                        "lock"
+                      ]
+                    },
+                    {
+                      "active": [
+                        false
+                      ],
+                      "fsm": [
+                        "illumination"
+                      ]
+                    }
+                  ],
+                  "setRelSpeedGatePos": [
+                    {
+                      "pos": [
+                        765.0
+                      ],
+                      "source": [
+                        "constRange"
+                      ],
+                      "width": [
+                        1470.0
+                      ]
+                    }
+                  ],
+                  "setScanPatternSet": [
+                    []
+                  ]
+                }
+              ],
+              "setLowAltModeCommon": [
+                {
+                  "setScopeRangeSet": [
+                    {
+                      "scopeRangeSet": [
+                        "searchLowAlt"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "setMVBoresightLockMode": [
+                {
+                  "setBoresightLockModeRadarCommon": [
+                    []
+                  ],
+                  "setLowAltModeCommon": [
+                    []
+                  ],
+                  "setModeName": [
+                    {
+                      "name": [
+                        "MTI ACM"
+                      ]
+                    }
+                  ],
+                  "setPulseDopplerModeCommon": [
+                    []
+                  ]
+                }
+              ],
+              "setMVDesignationLockMode": [
+                {
+                  "setCenterAzimuth": [
+                    {
+                      "source": [
+                        "targetDesignation"
+                      ]
+                    }
+                  ],
+                  "setDesignationLockModeCommon": [
+                    []
+                  ],
+                  "setLowAltModeCommon": [
+                    []
+                  ],
+                  "setModeName": [
+                    {
+                      "name": [
+                        "MTI acquisition"
+                      ]
+                    }
+                  ],
+                  "setPulseDopplerModeCommon": [
+                    []
+                  ],
+                  "setScanPattern": [
+                    {
+                      "scanPattern": [
+                        "designationLockLow"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "setMVSearchMode": [
+                {
+                  "setFsmActive": [
+                    {
+                      "active": [
+                        true
+                      ],
+                      "fsm": [
+                        "checkRaltGreater"
+                      ]
+                    },
+                    {
+                      "active": [
+                        false
+                      ],
+                      "fsm": [
+                        "checkRaltLess"
+                      ]
+                    }
+                  ],
+                  "setLowAltModeCommon": [
+                    []
+                  ],
+                  "setModeName": [
+                    {
+                      "name": [
+                        "MTI search"
+                      ]
+                    }
+                  ],
+                  "setPulseDopplerModeCommon": [
+                    []
+                  ],
+                  "setScanPatternSet": [
+                    {
+                      "scanPatternSet": [
+                        "searchLow"
+                      ]
+                    }
+                  ],
+                  "setSearchModeCommon": [
+                    []
+                  ]
+                }
+              ],
+              "setMVStandbyMode": [
+                {
+                  "setFsmActive": [
+                    {
+                      "active": [
+                        true
+                      ],
+                      "fsm": [
+                        "checkRaltGreater"
+                      ]
+                    },
+                    {
+                      "active": [
+                        false
+                      ],
+                      "fsm": [
+                        "checkRaltLess"
+                      ]
+                    }
+                  ],
+                  "setLowAltModeCommon": [
+                    []
+                  ],
+                  "setModeName": [
+                    {
+                      "name": [
+                        "MTI standby"
+                      ]
+                    }
+                  ],
+                  "setPulseDopplerModeCommon": [
+                    []
+                  ],
+                  "setScanPatternSet": [
+                    {
+                      "scanPatternSet": [
+                        "searchLow"
+                      ]
+                    }
+                  ],
+                  "setStandbyModeCommon": [
+                    []
+                  ]
+                }
+              ],
+              "setMVTrackMode": [
+                {
+                  "setLowAltModeCommon": [
+                    []
+                  ],
+                  "setModeName": [
+                    {
+                      "name": [
+                        "MTI track"
+                      ]
+                    }
+                  ],
+                  "setPulseDopplerTrackModeCommon": [
+                    []
+                  ],
+                  "setRadarTrackModeCommon": [
+                    []
+                  ]
+                }
+              ],
+              "setOLSBoresightLockMode": [
+                {
+                  "setBoresightLockModeCommon": [
+                    []
+                  ],
+                  "setCenterAzimuth": [
+                    {
+                      "source": [
+                        "constant"
+                      ],
+                      "value": [
+                        0.0
+                      ]
+                    }
+                  ],
+                  "setCenterElevation": [
+                    {
+                      "source": [
+                        "constant"
+                      ],
+                      "value": [
+                        0.0
+                      ]
+                    }
+                  ],
+                  "setHighAltModeCommon": [
+                    []
+                  ],
+                  "setModeName": [
+                    {
+                      "name": [
+                        "IRST ACM"
+                      ]
+                    }
+                  ],
+                  "setOLSModeCommon": [
+                    []
+                  ],
+                  "setScanPattern": [
+                    {
+                      "scanPattern": [
+                        "boresightLockOLS"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "setOLSDesignationLockMode": [
+                {
+                  "setCenterAzimuth": [
+                    {
+                      "source": [
+                        "targetDesignation"
+                      ]
+                    }
+                  ],
+                  "setCenterElevation": [
+                    {
+                      "source": [
+                        "targetDesignation"
+                      ]
+                    }
+                  ],
+                  "setDesignationLockModeCommon": [
+                    []
+                  ],
+                  "setHighAltModeCommon": [
+                    []
+                  ],
+                  "setModeName": [
+                    {
+                      "name": [
+                        "IRST acquisition"
+                      ]
+                    }
+                  ],
+                  "setOLSModeCommon": [
+                    []
+                  ],
+                  "setScanPattern": [
+                    {
+                      "scanPattern": [
+                        "designationLockOLS"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "setOLSModeCommon": [
+                {
+                  "setSignal": [
+                    {
+                      "signal": [
+                        "OLS"
+                      ]
+                    }
+                  ],
+                  "setTransiver": [
+                    {
+                      "transiver": [
+                        "OLS"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "setOLSSearchMode": [
+                {
+                  "setFsmActive": [
+                    {
+                      "active": [
+                        false
+                      ],
+                      "fsm": [
+                        "checkRaltGreater"
+                      ]
+                    },
+                    {
+                      "active": [
+                        false
+                      ],
+                      "fsm": [
+                        "checkRaltLess"
+                      ]
+                    }
+                  ],
+                  "setHighAltModeCommon": [
+                    []
+                  ],
+                  "setModeName": [
+                    {
+                      "name": [
+                        "IRST search"
+                      ]
+                    }
+                  ],
+                  "setOLSModeCommon": [
+                    []
+                  ],
+                  "setScanPatternSet": [
+                    {
+                      "scanPatternSet": [
+                        "searchOLS"
+                      ]
+                    }
+                  ],
+                  "setSearchModeCommon": [
+                    []
+                  ]
+                }
+              ],
+              "setOLSStandbyMode": [
+                {
+                  "setFsmActive": [
+                    {
+                      "active": [
+                        false
+                      ],
+                      "fsm": [
+                        "checkRaltGreater"
+                      ]
+                    },
+                    {
+                      "active": [
+                        false
+                      ],
+                      "fsm": [
+                        "checkRaltLess"
+                      ]
+                    }
+                  ],
+                  "setHighAltModeCommon": [
+                    []
+                  ],
+                  "setModeName": [
+                    {
+                      "name": [
+                        "IRST standby"
+                      ]
+                    }
+                  ],
+                  "setOLSModeCommon": [
+                    []
+                  ],
+                  "setScanPatternSet": [
+                    {
+                      "scanPatternSet": [
+                        "searchOLS"
+                      ]
+                    }
+                  ],
+                  "setStandbyModeCommon": [
+                    []
+                  ]
+                }
+              ],
+              "setOLSTargetDesignationRange": [
+                {
+                  "setTargetDesignationRange": [
+                    {
+                      "azimuthRange": [
+                        [-30.0,30.0]
+                      ],
+                      "azimuthWidth": [
+                        2.5
+                      ],
+                      "elevationRange": [
+                        [-30.0,8.0]
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "setOLSTrackMode": [
+                {
+                  "setHighAltModeCommon": [
+                    []
+                  ],
+                  "setModeName": [
+                    {
+                      "name": [
+                        "IRST track"
+                      ]
+                    }
+                  ],
+                  "setOLSModeCommon": [
+                    []
+                  ],
+                  "setOLSTrackModeCommon": [
+                    []
+                  ]
+                }
+              ],
+              "setOLSTrackModeCommon": [
+                {
+                  "setFsmActive": [
+                    {
+                      "active": [
+                        false
+                      ],
+                      "fsm": [
+                        "illumination"
+                      ]
+                    }
+                  ],
+                  "setScanPattern": [
+                    {
+                      "scanPattern": [
+                        "trackOLS"
+                      ]
+                    }
+                  ],
+                  "setTrackModeCommon": [
+                    []
+                  ]
+                }
+              ],
+              "setPulseDopplerModeCommon": [
+                {
+                  "setSignal": [
+                    {
+                      "signal": [
+                        "MTI"
+                      ]
+                    }
+                  ],
+                  "setTransiver": [
+                    {
+                      "transiver": [
+                        "MTI"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "setPulseDopplerTrackModeCommon": [
+                {
+                  "setSignal": [
+                    {
+                      "signal": [
+                        "MTITrack"
+                      ]
+                    }
+                  ],
+                  "setTransiver": [
+                    {
+                      "transiver": [
+                        "MTI"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "setPulseModeCommon": [
+                {
+                  "setTransiver": [
+                    {
+                      "transiver": [
+                        "pulse"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "setPulseSearchLongModeCommon": [
+                {
+                  "setPulseModeCommon": [
+                    []
+                  ],
+                  "setSignal": [
+                    {
+                      "signal": [
+                        "pulseLong"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "setPulseSearchShortModeCommon": [
+                {
+                  "setPulseModeCommon": [
+                    []
+                  ],
+                  "setSignal": [
+                    {
+                      "signal": [
+                        "pulseShort"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "setPulseTrackModeCommon": [
+                {
+                  "setPulseModeCommon": [
+                    []
+                  ],
+                  "setSignal": [
+                    {
+                      "signal": [
+                        "pulseTrack"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "setRadarTargetDesignationRange": [
+                {
+                  "setTargetDesignationRange": [
+                    {
+                      "azimuthRange": [
+                        [-66.0,66.0]
+                      ],
+                      "azimuthWidth": [
+                        4.0
+                      ],
+                      "distanceRange": [
+                        [0.0,60000.0]
+                      ],
+                      "distanceWidth": [
+                        2000.0
+                      ],
+                      "elevationRange": [
+                        [-44.0,56.0]
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "setRadarTrackModeCommon": [
+                {
+                  "setFsmActive": [
+                    {
+                      "active": [
+                        true
+                      ],
+                      "fsm": [
+                        "illumination"
+                      ]
+                    }
+                  ],
+                  "setScanPattern": [
+                    {
+                      "scanPattern": [
+                        "track"
+                      ]
+                    }
+                  ],
+                  "setTrackModeCommon": [
+                    []
+                  ]
+                }
+              ],
+              "setSMVBoresightLockMode": [
+                {
+                  "setBoresightLockModeRadarCommon": [
+                    []
+                  ],
+                  "setLowAltModeCommon": [
+                    []
+                  ],
+                  "setModeName": [
+                    {
+                      "name": [
+                        "ACM"
+                      ]
+                    }
+                  ],
+                  "setPulseSearchShortModeCommon": [
+                    []
+                  ]
+                }
+              ],
+              "setSMVDesignationLockMode": [
+                {
+                  "setCenterAzimuth": [
+                    {
+                      "source": [
+                        "targetDesignation"
+                      ]
+                    }
+                  ],
+                  "setDesignationLockModeCommon": [
+                    []
+                  ],
+                  "setLowAltModeCommon": [
+                    []
+                  ],
+                  "setModeName": [
+                    {
+                      "name": [
+                        "acquisition"
+                      ]
+                    }
+                  ],
+                  "setPulseTrackModeCommon": [
+                    []
+                  ],
+                  "setScanPattern": [
+                    {
+                      "scanPattern": [
+                        "designationLockUp"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "setSMVSearchMode": [
+                {
+                  "setFsmActive": [
+                    {
+                      "active": [
+                        true
+                      ],
+                      "fsm": [
+                        "checkRaltGreater"
+                      ]
+                    },
+                    {
+                      "active": [
+                        false
+                      ],
+                      "fsm": [
+                        "checkRaltLess"
+                      ]
+                    }
+                  ],
+                  "setLowAltModeCommon": [
+                    []
+                  ],
+                  "setModeName": [
+                    {
+                      "name": [
+                        "search"
+                      ]
+                    }
+                  ],
+                  "setPulseSearchShortModeCommon": [
+                    []
+                  ],
+                  "setScanPatternSet": [
+                    {
+                      "scanPatternSet": [
+                        "searchUp"
+                      ]
+                    }
+                  ],
+                  "setSearchModeCommon": [
+                    []
+                  ]
+                }
+              ],
+              "setSMVStandbyMode": [
+                {
+                  "setFsmActive": [
+                    {
+                      "active": [
+                        true
+                      ],
+                      "fsm": [
+                        "checkRaltGreater"
+                      ]
+                    },
+                    {
+                      "active": [
+                        false
+                      ],
+                      "fsm": [
+                        "checkRaltLess"
+                      ]
+                    }
+                  ],
+                  "setLowAltModeCommon": [
+                    []
+                  ],
+                  "setModeName": [
+                    {
+                      "name": [
+                        "standby"
+                      ]
+                    }
+                  ],
+                  "setPulseSearchShortModeCommon": [
+                    []
+                  ],
+                  "setScanPatternSet": [
+                    {
+                      "scanPatternSet": [
+                        "searchUp"
+                      ]
+                    }
+                  ],
+                  "setStandbyModeCommon": [
+                    []
+                  ]
+                }
+              ],
+              "setSMVTrackMode": [
+                {
+                  "setLowAltModeCommon": [
+                    []
+                  ],
+                  "setModeName": [
+                    {
+                      "name": [
+                        "track"
+                      ]
+                    }
+                  ],
+                  "setPulseTrackModeCommon": [
+                    []
+                  ],
+                  "setRadarTrackModeCommon": [
+                    []
+                  ]
+                }
+              ],
+              "setSearchModeCommon": [
+                {
+                  "clearTargets": [
+                    []
+                  ],
+                  "clearTargetsOfInterest": [
+                    []
+                  ],
+                  "setCenterAzimuth": [
+                    {
+                      "source": [
+                        "constant"
+                      ],
+                      "value": [
+                        0.0
+                      ]
+                    }
+                  ],
+                  "setCueEnabled": [
+                    {
+                      "value": [
+                        true
+                      ]
+                    }
+                  ],
+                  "setEnabled": [
+                    {
+                      "value": [
+                        true
+                      ]
+                    }
+                  ],
+                  "setFsmActive": [
+                    {
+                      "active": [
+                        true
+                      ],
+                      "fsm": [
+                        "search"
+                      ]
+                    },
+                    {
+                      "active": [
+                        false
+                      ],
+                      "fsm": [
+                        "illumination"
+                      ]
+                    }
+                  ],
+                  "setScanPatternSet": [
+                    {
+                      "scanPatternSet": [
+                        "searchUp"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "setStandbyModeCommon": [
+                {
+                  "clearTargets": [
+                    []
+                  ],
+                  "clearTargetsOfInterest": [
+                    []
+                  ],
+                  "setCenterAzimuth": [
+                    {
+                      "source": [
+                        "constant"
+                      ],
+                      "value": [
+                        0.0
+                      ]
+                    }
+                  ],
+                  "setEnabled": [
+                    {
+                      "value": [
+                        false
+                      ]
+                    }
+                  ],
+                  "setFsmActive": [
+                    {
+                      "active": [
+                        false
+                      ],
+                      "fsm": [
+                        "illumination"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "setTrackModeCommon": [
+                {
+                  "addTargetOfInterest": [
+                    []
+                  ],
+                  "clearTargetsOfInterest": [
+                    []
+                  ],
+                  "setCenterAzimuth": [
+                    {
+                      "source": [
+                        "activeTargetOfInterest"
+                      ]
+                    }
+                  ],
+                  "setCenterElevation": [
+                    {
+                      "source": [
+                        "activeTargetOfInterest"
+                      ]
+                    }
+                  ],
+                  "setDistGatePos": [
+                    {
+                      "source": [
+                        "activeTargetOfInterest"
+                      ],
+                      "width": [
+                        0.0
+                      ]
+                    }
+                  ],
+                  "setEnabled": [
+                    {
+                      "value": [
+                        true
+                      ]
+                    }
+                  ],
+                  "setFsmActive": [
+                    {
+                      "active": [
+                        true
+                      ],
+                      "fsm": [
+                        "track"
+                      ]
+                    },
+                    {
+                      "active": [
+                        false
+                      ],
+                      "fsm": [
+                        "checkRaltLess"
+                      ]
+                    },
+                    {
+                      "active": [
+                        false
+                      ],
+                      "fsm": [
+                        "checkRaltGreater"
+                      ]
+                    }
+                  ],
+                  "setLastTargetOfInterestActive": [
+                    []
+                  ],
+                  "setRelSpeedGatePos": [
+                    {
+                      "source": [
+                        "activeTargetOfInterest"
+                      ],
+                      "width": [
+                        0.0
+                      ]
+                    }
+                  ],
+                  "setScanPatternSet": [
+                    []
+                  ],
+                  "updateActiveTargetOfInterest": [
+                    []
+                  ]
+                }
+              ]
+            }
+          ],
+          "stateInit": [
+            "init"
+          ],
+          "transitions": [
+            {
+              "BSVBoresightLock": [
+                {
+                  "actions": [
+                    {
+                      "setBSVBoresightLockMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "command": [
+                    "selectTarget"
+                  ],
+                  "stateFrom": [
+                    "BSVStandby"
+                  ],
+                  "stateTo": [
+                    "BSVBoresightLock"
+                  ]
+                },
+                {
+                  "actions": [
+                    {
+                      "resetSearchMode": [
+                        []
+                      ],
+                      "setBSVBoresightLockMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "command": [
+                    "acmSwitch"
+                  ],
+                  "stateFrom": [
+                    "BSVSearch"
+                  ],
+                  "stateTo": [
+                    "BSVBoresightLock"
+                  ]
+                }
+              ],
+              "BSVBoresightTrack": [
+                {
+                  "actions": [
+                    {
+                      "resetLockMode": [
+                        []
+                      ],
+                      "setBSVTrackMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "event": [
+                    "targetDetected"
+                  ],
+                  "stateFrom": [
+                    "BSVBoresightLock"
+                  ],
+                  "stateTo": [
+                    "BSVBoresightTrack"
+                  ]
+                }
+              ],
+              "BSVDesignationLock": [
+                {
+                  "actions": [
+                    {
+                      "designateActiveDetectedTarget": [
+                        {
+                          "self": [
+                            true
+                          ],
+                          "sensorIndex": [
+                            0
+                          ],
+                          "type": [
+                            0
+                          ]
+                        }
+                      ],
+                      "designateTargetUnderCue": [
+                        {
+                          "self": [
+                            true
+                          ],
+                          "sensorIndex": [
+                            0
+                          ],
+                          "type": [
+                            0
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "command": [
+                    "selectTarget"
+                  ],
+                  "stateFrom": [
+                    "BSVSearch"
+                  ]
+                }
+              ],
+              "BSVDesignationLockResponce": [
+                {
+                  "actions": [
+                    {
+                      "resetSearchMode": [
+                        []
+                      ],
+                      "setBSVDesignationLockMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "event": [
+                    "designationTypeEquals"
+                  ],
+                  "stateFrom": [
+                    "checkBSVDesignationType0"
+                  ],
+                  "stateTo": [
+                    "BSVDesignationLock"
+                  ]
+                }
+              ],
+              "BSVDesignationTrack": [
+                {
+                  "actions": [
+                    {
+                      "resetLockMode": [
+                        []
+                      ],
+                      "setBSVTrackMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "event": [
+                    "targetDetected"
+                  ],
+                  "stateFrom": [
+                    "BSVDesignationLock"
+                  ],
+                  "stateTo": [
+                    "BSVDesignationTrack"
+                  ]
+                }
+              ],
+              "BSVSdHwitchOff": [
+                {
+                  "actions": [
+                    {
+                      "resetSearchMode": [
+                        []
+                      ],
+                      "setBSVdHStandbyMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "command": [
+                    "switch"
+                  ],
+                  "event": [
+                    "disable"
+                  ],
+                  "stateFrom": [
+                    "BSVdHSearch"
+                  ],
+                  "stateTo": [
+                    "BSVdHStandby"
+                  ]
+                }
+              ],
+              "BSVSwitchOff": [
+                {
+                  "actions": [
+                    {
+                      "resetSearchMode": [
+                        []
+                      ],
+                      "setBSVStandbyMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "command": [
+                    "switch"
+                  ],
+                  "event": [
+                    "disable"
+                  ],
+                  "stateFrom": [
+                    "BSVSearch"
+                  ],
+                  "stateTo": [
+                    "BSVStandby"
+                  ]
+                }
+              ],
+              "BSVSwitchOn": [
+                {
+                  "actions": [
+                    {
+                      "setBSVSearchMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "command": [
+                    "switch"
+                  ],
+                  "event": [
+                    "enable"
+                  ],
+                  "stateFrom": [
+                    "BSVStandby"
+                  ],
+                  "stateTo": [
+                    "BSVSearch"
+                  ]
+                }
+              ],
+              "BSVToBSVdHSearch": [
+                {
+                  "actions": [
+                    {
+                      "setBSVdHSearchMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "command": [
+                    "modeSwitch"
+                  ],
+                  "stateFrom": [
+                    "BSVSearch"
+                  ],
+                  "stateTo": [
+                    "BSVdHSearch"
+                  ]
+                }
+              ],
+              "BSVToBSVdHStandby": [
+                {
+                  "actions": [
+                    {
+                      "setBSVdHStandbyMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "command": [
+                    "modeSwitch"
+                  ],
+                  "stateFrom": [
+                    "BSVStandby"
+                  ],
+                  "stateTo": [
+                    "BSVdHStandby"
+                  ]
+                }
+              ],
+              "BSVToSMVSearch": [
+                {
+                  "actions": [
+                    {
+                      "setSMVSearchMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "event": [
+                    "raltCheckOk"
+                  ],
+                  "stateFrom": [
+                    "BSVSearch"
+                  ],
+                  "stateTo": [
+                    "SMVSearch"
+                  ]
+                }
+              ],
+              "BSVToSMVStandby": [
+                {
+                  "actions": [
+                    {
+                      "setSMVStandbyMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "event": [
+                    "raltCheckOk"
+                  ],
+                  "stateFrom": [
+                    "BSVStandby"
+                  ],
+                  "stateTo": [
+                    "SMVStandby"
+                  ]
+                }
+              ],
+              "BSVdHBoresightLock": [
+                {
+                  "actions": [
+                    {
+                      "setBSVdHBoresightLockMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "command": [
+                    "selectTarget"
+                  ],
+                  "stateFrom": [
+                    "BSVdHStandby"
+                  ],
+                  "stateTo": [
+                    "BSVdHBoresightLock"
+                  ]
+                },
+                {
+                  "actions": [
+                    {
+                      "resetSearchMode": [
+                        []
+                      ],
+                      "setBSVdHBoresightLockMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "command": [
+                    "acmSwitch"
+                  ],
+                  "stateFrom": [
+                    "BSVdHSearch"
+                  ],
+                  "stateTo": [
+                    "BSVdHBoresightLock"
+                  ]
+                }
+              ],
+              "BSVdHBoresightTrack": [
+                {
+                  "actions": [
+                    {
+                      "resetLockMode": [
+                        []
+                      ],
+                      "setBSVdHTrackMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "event": [
+                    "targetDetected"
+                  ],
+                  "stateFrom": [
+                    "BSVdHBoresightLock"
+                  ],
+                  "stateTo": [
+                    "BSVdHBoresightTrack"
+                  ]
+                }
+              ],
+              "BSVdHDesignationLock": [
+                {
+                  "actions": [
+                    {
+                      "designateActiveDetectedTarget": [
+                        {
+                          "self": [
+                            true
+                          ],
+                          "sensorIndex": [
+                            0
+                          ],
+                          "type": [
+                            0
+                          ]
+                        }
+                      ],
+                      "designateTargetUnderCue": [
+                        {
+                          "self": [
+                            true
+                          ],
+                          "sensorIndex": [
+                            0
+                          ],
+                          "type": [
+                            0
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "command": [
+                    "selectTarget"
+                  ],
+                  "stateFrom": [
+                    "BSVdHSearch"
+                  ]
+                }
+              ],
+              "BSVdHDesignationLockResponce": [
+                {
+                  "actions": [
+                    {
+                      "resetSearchMode": [
+                        []
+                      ],
+                      "setBSVdHDesignationLockMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "event": [
+                    "designationTypeEquals"
+                  ],
+                  "stateFrom": [
+                    "checkBSVdHDesignationType0"
+                  ],
+                  "stateTo": [
+                    "BSVdHDesignationLock"
+                  ]
+                }
+              ],
+              "BSVdHDesignationTrack": [
+                {
+                  "actions": [
+                    {
+                      "resetLockMode": [
+                        []
+                      ],
+                      "setBSVdHTrackMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "event": [
+                    "targetDetected"
+                  ],
+                  "stateFrom": [
+                    "BSVdHDesignationLock"
+                  ],
+                  "stateTo": [
+                    "BSVdHDesignationTrack"
+                  ]
+                }
+              ],
+              "BSVdHSwitchOn": [
+                {
+                  "actions": [
+                    {
+                      "setBSVdHSearchMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "command": [
+                    "switch"
+                  ],
+                  "event": [
+                    "enable"
+                  ],
+                  "stateFrom": [
+                    "BSVdHStandby"
+                  ],
+                  "stateTo": [
+                    "BSVdHSearch"
+                  ]
+                }
+              ],
+              "BSVdHToBSVSearch": [
+                {
+                  "actions": [
+                    {
+                      "setBSVSearchMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "command": [
+                    "modeSwitch"
+                  ],
+                  "stateFrom": [
+                    "BSVdHSearch"
+                  ],
+                  "stateTo": [
+                    "BSVSearch"
+                  ]
+                }
+              ],
+              "BSVdHToBSVStandby": [
+                {
+                  "actions": [
+                    {
+                      "setBSVStandbyMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "command": [
+                    "modeSwitch"
+                  ],
+                  "stateFrom": [
+                    "BSVdHStandby"
+                  ],
+                  "stateTo": [
+                    "BSVStandby"
+                  ]
+                }
+              ],
+              "BSVdHToMVSearch": [
+                {
+                  "actions": [
+                    {
+                      "setMVSearchMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "event": [
+                    "raltCheckOk"
+                  ],
+                  "stateFrom": [
+                    "BSVdHSearch"
+                  ],
+                  "stateTo": [
+                    "MVSearch"
+                  ]
+                }
+              ],
+              "BSVdHToMVStandby": [
+                {
+                  "actions": [
+                    {
+                      "setMVStandbyMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "event": [
+                    "raltCheckOk"
+                  ],
+                  "stateFrom": [
+                    "BSVdHStandby"
+                  ],
+                  "stateTo": [
+                    "MVStandby"
+                  ]
+                }
+              ],
+              "LookDownToOLSSearch": [
+                {
+                  "actions": [
+                    {
+                      "setOLSSearchMode": [
+                        []
+                      ],
+                      "setOLSTargetDesignationRange": [
+                        []
+                      ]
+                    }
+                  ],
+                  "command": [
+                    "typeSwitch"
+                  ],
+                  "stateFrom": [
+                    "BSVdHSearch",
+                    "MVSearch"
+                  ],
+                  "stateTo": [
+                    "OLSFromLookUpSearch"
+                  ]
+                }
+              ],
+              "LookDownToOLSStandby": [
+                {
+                  "actions": [
+                    {
+                      "setOLSStandbyMode": [
+                        []
+                      ],
+                      "setOLSTargetDesignationRange": [
+                        []
+                      ]
+                    }
+                  ],
+                  "command": [
+                    "typeSwitch"
+                  ],
+                  "stateFrom": [
+                    "BSVdHStandby",
+                    "MVStandby"
+                  ],
+                  "stateTo": [
+                    "OLSFromLookUpStandby"
+                  ]
+                }
+              ],
+              "LookUpToOLSSearch": [
+                {
+                  "actions": [
+                    {
+                      "setOLSSearchMode": [
+                        []
+                      ],
+                      "setOLSTargetDesignationRange": [
+                        []
+                      ]
+                    }
+                  ],
+                  "command": [
+                    "typeSwitch"
+                  ],
+                  "stateFrom": [
+                    "BSVSearch",
+                    "SMVSearch"
+                  ],
+                  "stateTo": [
+                    "OLSFromLookDownSearch"
+                  ]
+                }
+              ],
+              "LookUpToOLSStandby": [
+                {
+                  "actions": [
+                    {
+                      "setOLSStandbyMode": [
+                        []
+                      ],
+                      "setOLSTargetDesignationRange": [
+                        []
+                      ]
+                    }
+                  ],
+                  "command": [
+                    "typeSwitch"
+                  ],
+                  "stateFrom": [
+                    "BSVStandby",
+                    "SMVStandby"
+                  ],
+                  "stateTo": [
+                    "OLSFromLookDownStandby"
+                  ]
+                }
+              ],
+              "MVBoresightLock": [
+                {
+                  "actions": [
+                    {
+                      "setMVBoresightLockMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "command": [
+                    "selectTarget"
+                  ],
+                  "stateFrom": [
+                    "MVStandby"
+                  ],
+                  "stateTo": [
+                    "MVBoresightLock"
+                  ]
+                },
+                {
+                  "actions": [
+                    {
+                      "resetSearchMode": [
+                        []
+                      ],
+                      "setMVBoresightLockMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "command": [
+                    "acmSwitch"
+                  ],
+                  "stateFrom": [
+                    "MVSearch"
+                  ],
+                  "stateTo": [
+                    "MVBoresightLock"
+                  ]
+                }
+              ],
+              "MVBoresightTrack": [
+                {
+                  "actions": [
+                    {
+                      "resetLockMode": [
+                        []
+                      ],
+                      "setMVTrackMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "event": [
+                    "targetDetected"
+                  ],
+                  "stateFrom": [
+                    "MVBoresightLock"
+                  ],
+                  "stateTo": [
+                    "MVBoresightTrack"
+                  ]
+                }
+              ],
+              "MVDesignationLock": [
+                {
+                  "actions": [
+                    {
+                      "designateActiveDetectedTarget": [
+                        {
+                          "self": [
+                            true
+                          ],
+                          "sensorIndex": [
+                            0
+                          ],
+                          "type": [
+                            0
+                          ]
+                        }
+                      ],
+                      "designateTargetUnderCue": [
+                        {
+                          "self": [
+                            true
+                          ],
+                          "sensorIndex": [
+                            0
+                          ],
+                          "type": [
+                            0
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "command": [
+                    "selectTarget"
+                  ],
+                  "stateFrom": [
+                    "MVSearch"
+                  ]
+                }
+              ],
+              "MVDesignationLockResponce": [
+                {
+                  "actions": [
+                    {
+                      "resetSearchMode": [
+                        []
+                      ],
+                      "setMVDesignationLockMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "event": [
+                    "designationTypeEquals"
+                  ],
+                  "stateFrom": [
+                    "checkMVDesignationType0"
+                  ],
+                  "stateTo": [
+                    "MVDesignationLock"
+                  ]
+                }
+              ],
+              "MVDesignationTrack": [
+                {
+                  "actions": [
+                    {
+                      "resetLockMode": [
+                        []
+                      ],
+                      "setMVTrackMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "event": [
+                    "targetDetected"
+                  ],
+                  "stateFrom": [
+                    "MVDesignationLock"
+                  ],
+                  "stateTo": [
+                    "MVDesignationTrack"
+                  ]
+                }
+              ],
+              "MVSwitchOn": [
+                {
+                  "actions": [
+                    {
+                      "setMVSearchMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "command": [
+                    "switch"
+                  ],
+                  "event": [
+                    "enable"
+                  ],
+                  "stateFrom": [
+                    "MVStandby"
+                  ],
+                  "stateTo": [
+                    "MVSearch"
+                  ]
+                }
+              ],
+              "MVToBSVdHSearch": [
+                {
+                  "actions": [
+                    {
+                      "setBSVdHSearchMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "event": [
+                    "raltCheckOk"
+                  ],
+                  "stateFrom": [
+                    "MVSearch"
+                  ],
+                  "stateTo": [
+                    "BSVdHSearch"
+                  ]
+                }
+              ],
+              "MVToBSVdHStandby": [
+                {
+                  "actions": [
+                    {
+                      "setBSVdHStandbyMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "event": [
+                    "raltCheckOk"
+                  ],
+                  "stateFrom": [
+                    "MVStandby"
+                  ],
+                  "stateTo": [
+                    "BSVdHStandby"
+                  ]
+                }
+              ],
+              "MVToSMVSearch": [
+                {
+                  "actions": [
+                    {
+                      "setSMVSearchMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "command": [
+                    "modeSwitch"
+                  ],
+                  "stateFrom": [
+                    "MVSearch"
+                  ],
+                  "stateTo": [
+                    "SMVSearch"
+                  ]
+                }
+              ],
+              "MVToSMVStandby": [
+                {
+                  "actions": [
+                    {
+                      "setSMVStandbyMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "command": [
+                    "modeSwitch"
+                  ],
+                  "stateFrom": [
+                    "MVStandby"
+                  ],
+                  "stateTo": [
+                    "SMVStandby"
+                  ]
+                }
+              ],
+              "MVswitchOff": [
+                {
+                  "actions": [
+                    {
+                      "resetSearchMode": [
+                        []
+                      ],
+                      "setMVStandbyMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "command": [
+                    "switch"
+                  ],
+                  "event": [
+                    "disable"
+                  ],
+                  "stateFrom": [
+                    "MVSearch"
+                  ],
+                  "stateTo": [
+                    "MVStandby"
+                  ]
+                }
+              ],
+              "OLSFromLookDownBoresightLock": [
+                {
+                  "actions": [
+                    {
+                      "setOLSBoresightLockMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "command": [
+                    "selectTarget"
+                  ],
+                  "stateFrom": [
+                    "OLSFromLookDownStandby"
+                  ],
+                  "stateTo": [
+                    "OLSFromLookDownBoresightLock"
+                  ]
+                },
+                {
+                  "actions": [
+                    {
+                      "resetSearchMode": [
+                        []
+                      ],
+                      "setOLSBoresightLockMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "command": [
+                    "acmSwitch"
+                  ],
+                  "stateFrom": [
+                    "OLSFromLookDownSearch"
+                  ],
+                  "stateTo": [
+                    "OLSFromLookDownBoresightLock"
+                  ]
+                }
+              ],
+              "OLSFromLookDownBoresightTrack": [
+                {
+                  "actions": [
+                    {
+                      "resetLockMode": [
+                        []
+                      ],
+                      "setOLSTrackMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "event": [
+                    "targetDetected"
+                  ],
+                  "stateFrom": [
+                    "OLSFromLookDownBoresightLock"
+                  ],
+                  "stateTo": [
+                    "OLSFromLookDownBoresightTrack"
+                  ]
+                }
+              ],
+              "OLSFromLookDownDesignationLock": [
+                {
+                  "actions": [
+                    {
+                      "designateActiveDetectedTarget": [
+                        {
+                          "self": [
+                            true
+                          ],
+                          "sensorIndex": [
+                            0
+                          ],
+                          "type": [
+                            0
+                          ]
+                        }
+                      ],
+                      "designateTargetUnderCue": [
+                        {
+                          "self": [
+                            true
+                          ],
+                          "sensorIndex": [
+                            0
+                          ],
+                          "type": [
+                            0
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "command": [
+                    "selectTarget"
+                  ],
+                  "stateFrom": [
+                    "OLSFromLookDownSearch"
+                  ]
+                }
+              ],
+              "OLSFromLookDownDesignationLockResponce": [
+                {
+                  "actions": [
+                    {
+                      "resetSearchMode": [
+                        []
+                      ],
+                      "setOLSDesignationLockMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "event": [
+                    "designationTypeEquals"
+                  ],
+                  "stateFrom": [
+                    "checkOLSFromLookDownDesignationType0"
+                  ],
+                  "stateTo": [
+                    "OLSFromLookDownDesignationLock"
+                  ]
+                }
+              ],
+              "OLSFromLookDownDesignationTrack": [
+                {
+                  "actions": [
+                    {
+                      "resetLockMode": [
+                        []
+                      ],
+                      "setOLSTrackMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "event": [
+                    "targetDetected"
+                  ],
+                  "stateFrom": [
+                    "OLSFromLookDownDesignationLock"
+                  ],
+                  "stateTo": [
+                    "OLSFromLookDownDesignationTrack"
+                  ]
+                }
+              ],
+              "OLSFromLookDownSwitchOn": [
+                {
+                  "actions": [
+                    {
+                      "setOLSSearchMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "command": [
+                    "switch"
+                  ],
+                  "event": [
+                    "enable"
+                  ],
+                  "stateFrom": [
+                    "OLSFromLookDownStandby"
+                  ],
+                  "stateTo": [
+                    "OLSFromLookDownSearch"
+                  ]
+                }
+              ],
+              "OLSFromLookUpBoresightLock": [
+                {
+                  "actions": [
+                    {
+                      "setOLSBoresightLockMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "command": [
+                    "selectTarget"
+                  ],
+                  "stateFrom": [
+                    "OLSFromLookUpStandby"
+                  ],
+                  "stateTo": [
+                    "OLSFromLookUpBoresightLock"
+                  ]
+                },
+                {
+                  "actions": [
+                    {
+                      "resetSearchMode": [
+                        []
+                      ],
+                      "setOLSBoresightLockMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "command": [
+                    "acmSwitch"
+                  ],
+                  "stateFrom": [
+                    "OLSFromLookUpSearch"
+                  ],
+                  "stateTo": [
+                    "OLSFromLookUpBoresightLock"
+                  ]
+                }
+              ],
+              "OLSFromLookUpBoresightTrack": [
+                {
+                  "actions": [
+                    {
+                      "resetLockMode": [
+                        []
+                      ],
+                      "setOLSTrackMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "event": [
+                    "targetDetected"
+                  ],
+                  "stateFrom": [
+                    "OLSFromLookUpBoresightLock"
+                  ],
+                  "stateTo": [
+                    "OLSFromLookUpBoresightTrack"
+                  ]
+                }
+              ],
+              "OLSFromLookUpDesignationLock": [
+                {
+                  "actions": [
+                    {
+                      "designateActiveDetectedTarget": [
+                        {
+                          "self": [
+                            true
+                          ],
+                          "sensorIndex": [
+                            0
+                          ],
+                          "type": [
+                            0
+                          ]
+                        }
+                      ],
+                      "designateTargetUnderCue": [
+                        {
+                          "self": [
+                            true
+                          ],
+                          "sensorIndex": [
+                            0
+                          ],
+                          "type": [
+                            0
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "command": [
+                    "selectTarget"
+                  ],
+                  "stateFrom": [
+                    "OLSFromLookUpSearch"
+                  ]
+                }
+              ],
+              "OLSFromLookUpDesignationLockResponce": [
+                {
+                  "actions": [
+                    {
+                      "resetSearchMode": [
+                        []
+                      ],
+                      "setOLSDesignationLockMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "event": [
+                    "designationTypeEquals"
+                  ],
+                  "stateFrom": [
+                    "checkOLSFromLookUpDesignationType0"
+                  ],
+                  "stateTo": [
+                    "OLSFromLookUpDesignationLock"
+                  ]
+                }
+              ],
+              "OLSFromLookUpDesignationTrack": [
+                {
+                  "actions": [
+                    {
+                      "resetLockMode": [
+                        []
+                      ],
+                      "setOLSTrackMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "event": [
+                    "targetDetected"
+                  ],
+                  "stateFrom": [
+                    "OLSFromLookUpDesignationLock"
+                  ],
+                  "stateTo": [
+                    "OLSFromLookUpDesignationTrack"
+                  ]
+                }
+              ],
+              "OLSFromLookUpSwitchOn": [
+                {
+                  "actions": [
+                    {
+                      "setOLSSearchMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "command": [
+                    "switch"
+                  ],
+                  "event": [
+                    "enable"
+                  ],
+                  "stateFrom": [
+                    "OLSFromLookUpStandby"
+                  ],
+                  "stateTo": [
+                    "OLSFromLookUpSearch"
+                  ]
+                }
+              ],
+              "OLSSFromLookDownSwitchOff": [
+                {
+                  "actions": [
+                    {
+                      "resetSearchMode": [
+                        []
+                      ],
+                      "setOLSStandbyMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "command": [
+                    "switch"
+                  ],
+                  "event": [
+                    "disable"
+                  ],
+                  "stateFrom": [
+                    "OLSFromLookDownSearch"
+                  ],
+                  "stateTo": [
+                    "OLSFromLookDownStandby"
+                  ]
+                }
+              ],
+              "OLSSFromLookUpSwitchOff": [
+                {
+                  "actions": [
+                    {
+                      "resetSearchMode": [
+                        []
+                      ],
+                      "setOLSStandbyMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "command": [
+                    "switch"
+                  ],
+                  "event": [
+                    "disable"
+                  ],
+                  "stateFrom": [
+                    "OLSFromLookUpSearch"
+                  ],
+                  "stateTo": [
+                    "OLSFromLookUpStandby"
+                  ]
+                }
+              ],
+              "OLSToLookDownSearch": [
+                {
+                  "actions": [
+                    {
+                      "setBSVdHSearchMode": [
+                        []
+                      ],
+                      "setRadarTargetDesignationRange": [
+                        []
+                      ]
+                    }
+                  ],
+                  "command": [
+                    "typeSwitch"
+                  ],
+                  "stateFrom": [
+                    "OLSFromLookUpSearch"
+                  ],
+                  "stateTo": [
+                    "BSVdHSearch"
+                  ]
+                }
+              ],
+              "OLSToLookDownStandby": [
+                {
+                  "actions": [
+                    {
+                      "setBSVdHStandbyMode": [
+                        []
+                      ],
+                      "setRadarTargetDesignationRange": [
+                        []
+                      ]
+                    }
+                  ],
+                  "command": [
+                    "typeSwitch"
+                  ],
+                  "stateFrom": [
+                    "OLSFromLookUpStandby"
+                  ],
+                  "stateTo": [
+                    "BSVdHStandby"
+                  ]
+                }
+              ],
+              "OLSToLookUpSearch": [
+                {
+                  "actions": [
+                    {
+                      "setBSVSearchMode": [
+                        []
+                      ],
+                      "setRadarTargetDesignationRange": [
+                        []
+                      ]
+                    }
+                  ],
+                  "command": [
+                    "typeSwitch"
+                  ],
+                  "stateFrom": [
+                    "OLSFromLookDownSearch"
+                  ],
+                  "stateTo": [
+                    "BSVSearch"
+                  ]
+                }
+              ],
+              "OLSToLookUpStandby": [
+                {
+                  "actions": [
+                    {
+                      "setBSVStandbyMode": [
+                        []
+                      ],
+                      "setRadarTargetDesignationRange": [
+                        []
+                      ]
+                    }
+                  ],
+                  "command": [
+                    "typeSwitch"
+                  ],
+                  "stateFrom": [
+                    "OLSFromLookDownStandby"
+                  ],
+                  "stateTo": [
+                    "BSVStandby"
+                  ]
+                }
+              ],
+              "SMVBoresightLock": [
+                {
+                  "actions": [
+                    {
+                      "setSMVBoresightLockMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "command": [
+                    "selectTarget"
+                  ],
+                  "stateFrom": [
+                    "SMVStandby"
+                  ],
+                  "stateTo": [
+                    "SMVBoresightLock"
+                  ]
+                },
+                {
+                  "actions": [
+                    {
+                      "resetSearchMode": [
+                        []
+                      ],
+                      "setSMVBoresightLockMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "command": [
+                    "acmSwitch"
+                  ],
+                  "stateFrom": [
+                    "SMVSearch"
+                  ],
+                  "stateTo": [
+                    "SMVBoresightLock"
+                  ]
+                }
+              ],
+              "SMVBoresightTrack": [
+                {
+                  "actions": [
+                    {
+                      "resetLockMode": [
+                        []
+                      ],
+                      "setSMVTrackMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "event": [
+                    "targetDetected"
+                  ],
+                  "stateFrom": [
+                    "SMVBoresightLock"
+                  ],
+                  "stateTo": [
+                    "SMVBoresightTrack"
+                  ]
+                }
+              ],
+              "SMVDesignationLock": [
+                {
+                  "actions": [
+                    {
+                      "designateActiveDetectedTarget": [
+                        {
+                          "self": [
+                            true
+                          ],
+                          "sensorIndex": [
+                            0
+                          ],
+                          "type": [
+                            0
+                          ]
+                        }
+                      ],
+                      "designateTargetUnderCue": [
+                        {
+                          "self": [
+                            true
+                          ],
+                          "sensorIndex": [
+                            0
+                          ],
+                          "type": [
+                            0
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "command": [
+                    "selectTarget"
+                  ],
+                  "stateFrom": [
+                    "SMVSearch"
+                  ]
+                }
+              ],
+              "SMVDesignationLockResponce": [
+                {
+                  "actions": [
+                    {
+                      "resetSearchMode": [
+                        []
+                      ],
+                      "setSMVDesignationLockMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "event": [
+                    "designationTypeEquals"
+                  ],
+                  "stateFrom": [
+                    "checkSMVDesignationType0"
+                  ],
+                  "stateTo": [
+                    "SMVDesignationLock"
+                  ]
+                }
+              ],
+              "SMVDesignationTrack": [
+                {
+                  "actions": [
+                    {
+                      "resetLockMode": [
+                        []
+                      ],
+                      "setSMVTrackMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "event": [
+                    "targetDetected"
+                  ],
+                  "stateFrom": [
+                    "SMVDesignationLock"
+                  ],
+                  "stateTo": [
+                    "SMVDesignationTrack"
+                  ]
+                }
+              ],
+              "SMVSwitchOn": [
+                {
+                  "actions": [
+                    {
+                      "setSMVSearchMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "command": [
+                    "switch"
+                  ],
+                  "event": [
+                    "enable"
+                  ],
+                  "stateFrom": [
+                    "SMVStandby"
+                  ],
+                  "stateTo": [
+                    "SMVSearch"
+                  ]
+                }
+              ],
+              "SMVToBSVSearch": [
+                {
+                  "actions": [
+                    {
+                      "setBSVSearchMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "event": [
+                    "raltCheckOk"
+                  ],
+                  "stateFrom": [
+                    "SMVSearch"
+                  ],
+                  "stateTo": [
+                    "BSVSearch"
+                  ]
+                }
+              ],
+              "SMVToBSVStandby": [
+                {
+                  "actions": [
+                    {
+                      "setBSVStandbyMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "event": [
+                    "raltCheckOk"
+                  ],
+                  "stateFrom": [
+                    "SMVStandby"
+                  ],
+                  "stateTo": [
+                    "BSVStandby"
+                  ]
+                }
+              ],
+              "SMVToMVSearch": [
+                {
+                  "actions": [
+                    {
+                      "setMVSearchMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "command": [
+                    "modeSwitch"
+                  ],
+                  "stateFrom": [
+                    "SMVSearch"
+                  ],
+                  "stateTo": [
+                    "MVSearch"
+                  ]
+                }
+              ],
+              "SMVToMVStandby": [
+                {
+                  "actions": [
+                    {
+                      "setMVStandbyMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "command": [
+                    "modeSwitch"
+                  ],
+                  "stateFrom": [
+                    "SMVStandby"
+                  ],
+                  "stateTo": [
+                    "MVStandby"
+                  ]
+                }
+              ],
+              "SMVswitchOff": [
+                {
+                  "actions": [
+                    {
+                      "resetSearchMode": [
+                        []
+                      ],
+                      "setSMVStandbyMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "command": [
+                    "switch"
+                  ],
+                  "event": [
+                    "disable"
+                  ],
+                  "stateFrom": [
+                    "SMVSearch"
+                  ],
+                  "stateTo": [
+                    "SMVStandby"
+                  ]
+                }
+              ],
+              "checkBSVDesignationType0": [
+                {
+                  "actions": [
+                    {
+                      "checkDesignationTypeEquals": [
+                        {
+                          "value": [
+                            0
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "command": [
+                    "designateTarget"
+                  ],
+                  "stateFrom": [
+                    "BSVSearch"
+                  ],
+                  "stateTo": [
+                    "checkBSVDesignationType0"
+                  ]
+                }
+              ],
+              "checkBSVdHDesignationType0": [
+                {
+                  "actions": [
+                    {
+                      "checkDesignationTypeEquals": [
+                        {
+                          "value": [
+                            0
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "command": [
+                    "designateTarget"
+                  ],
+                  "stateFrom": [
+                    "BSVdHSearch"
+                  ],
+                  "stateTo": [
+                    "checkBSVdHDesignationType0"
+                  ]
+                }
+              ],
+              "checkMVDesignationType0": [
+                {
+                  "actions": [
+                    {
+                      "checkDesignationTypeEquals": [
+                        {
+                          "value": [
+                            0
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "command": [
+                    "designateTarget"
+                  ],
+                  "stateFrom": [
+                    "MVSearch"
+                  ],
+                  "stateTo": [
+                    "checkMVDesignationType0"
+                  ]
+                }
+              ],
+              "checkOLSFromLookDownDesignationType0": [
+                {
+                  "actions": [
+                    {
+                      "checkDesignationTypeEquals": [
+                        {
+                          "value": [
+                            0
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "command": [
+                    "designateTarget"
+                  ],
+                  "stateFrom": [
+                    "OLSFromLookDownSearch"
+                  ],
+                  "stateTo": [
+                    "checkOLSFromLookDownDesignationType0"
+                  ]
+                }
+              ],
+              "checkOLSFromLookUpDesignationType0": [
+                {
+                  "actions": [
+                    {
+                      "checkDesignationTypeEquals": [
+                        {
+                          "value": [
+                            0
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "command": [
+                    "designateTarget"
+                  ],
+                  "stateFrom": [
+                    "OLSFromLookUpSearch"
+                  ],
+                  "stateTo": [
+                    "checkOLSFromLookUpDesignationType0"
+                  ]
+                }
+              ],
+              "checkSMVDesignationType0": [
+                {
+                  "actions": [
+                    {
+                      "checkDesignationTypeEquals": [
+                        {
+                          "value": [
+                            0
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "command": [
+                    "designateTarget"
+                  ],
+                  "stateFrom": [
+                    "SMVSearch"
+                  ],
+                  "stateTo": [
+                    "checkSMVDesignationType0"
+                  ]
+                }
+              ],
+              "failedBSVDesignationLock": [
+                {
+                  "actions": [
+                    {
+                      "resetLockMode": [
+                        []
+                      ],
+                      "setBSVSearchMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "event": [
+                    "scanFinished"
+                  ],
+                  "stateFrom": [
+                    "BSVDesignationLock"
+                  ],
+                  "stateTo": [
+                    "BSVSearch"
+                  ]
+                }
+              ],
+              "failedBSVdHDesignationLock": [
+                {
+                  "actions": [
+                    {
+                      "resetLockMode": [
+                        []
+                      ],
+                      "setBSVdHSearchMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "event": [
+                    "scanFinished"
+                  ],
+                  "stateFrom": [
+                    "BSVdHDesignationLock"
+                  ],
+                  "stateTo": [
+                    "BSVdHSearch"
+                  ]
+                }
+              ],
+              "failedMVDesignationLock": [
+                {
+                  "actions": [
+                    {
+                      "resetLockMode": [
+                        []
+                      ],
+                      "setMVSearchMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "event": [
+                    "scanFinished"
+                  ],
+                  "stateFrom": [
+                    "MVDesignationLock"
+                  ],
+                  "stateTo": [
+                    "MVSearch"
+                  ]
+                }
+              ],
+              "failedOLSFromLookDownDesignationLock": [
+                {
+                  "actions": [
+                    {
+                      "resetLockMode": [
+                        []
+                      ],
+                      "setOLSSearchMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "event": [
+                    "scanFinished"
+                  ],
+                  "stateFrom": [
+                    "OLSFromLookDownDesignationLock"
+                  ],
+                  "stateTo": [
+                    "OLSFromLookDownSearch"
+                  ]
+                }
+              ],
+              "failedOLSFromLookUpDesignationLock": [
+                {
+                  "actions": [
+                    {
+                      "resetLockMode": [
+                        []
+                      ],
+                      "setOLSSearchMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "event": [
+                    "scanFinished"
+                  ],
+                  "stateFrom": [
+                    "OLSFromLookUpDesignationLock"
+                  ],
+                  "stateTo": [
+                    "OLSFromLookUpSearch"
+                  ]
+                }
+              ],
+              "failedSMVDesignationLock": [
+                {
+                  "actions": [
+                    {
+                      "resetLockMode": [
+                        []
+                      ],
+                      "setSMVSearchMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "event": [
+                    "scanFinished"
+                  ],
+                  "stateFrom": [
+                    "SMVDesignationLock"
+                  ],
+                  "stateTo": [
+                    "SMVSearch"
+                  ]
+                }
+              ],
+              "finishedBSVDesignationTrack": [
+                {
+                  "actions": [
+                    {
+                      "resetTrackMode": [
+                        []
+                      ],
+                      "setBSVSearchMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "command": [
+                    "selectTarget"
+                  ],
+                  "event": [
+                    "targetsOfInterestCleanup"
+                  ],
+                  "stateFrom": [
+                    "BSVDesignationTrack"
+                  ],
+                  "stateTo": [
+                    "BSVSearch"
+                  ]
+                }
+              ],
+              "finishedBSVdHBoresightTrack": [
+                {
+                  "actions": [
+                    {
+                      "resetTrackMode": [
+                        []
+                      ],
+                      "setBSVdHBoresightLockMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "event": [
+                    "targetsOfInterestCleanup"
+                  ],
+                  "stateFrom": [
+                    "BSVdHBoresightTrack"
+                  ],
+                  "stateTo": [
+                    "BSVdHBoresightLock"
+                  ]
+                }
+              ],
+              "finishedBoresightTrack": [
+                {
+                  "actions": [
+                    {
+                      "resetTrackMode": [
+                        []
+                      ],
+                      "setBSVBoresightLockMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "event": [
+                    "targetsOfInterestCleanup"
+                  ],
+                  "stateFrom": [
+                    "BSVBoresightTrack"
+                  ],
+                  "stateTo": [
+                    "BSVBoresightLock"
+                  ]
+                }
+              ],
+              "finishedDesignationTrack": [
+                {
+                  "actions": [
+                    {
+                      "resetTrackMode": [
+                        []
+                      ],
+                      "setBSVdHSearchMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "command": [
+                    "selectTarget"
+                  ],
+                  "event": [
+                    "targetsOfInterestCleanup"
+                  ],
+                  "stateFrom": [
+                    "BSVdHDesignationTrack"
+                  ],
+                  "stateTo": [
+                    "BSVdHSearch"
+                  ]
+                },
+                {
+                  "actions": [
+                    {
+                      "resetTrackMode": [
+                        []
+                      ],
+                      "setSMVSearchMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "command": [
+                    "selectTarget"
+                  ],
+                  "event": [
+                    "targetsOfInterestCleanup"
+                  ],
+                  "stateFrom": [
+                    "SMVDesignationTrack"
+                  ],
+                  "stateTo": [
+                    "SMVSearch"
+                  ]
+                },
+                {
+                  "actions": [
+                    {
+                      "resetTrackMode": [
+                        []
+                      ],
+                      "setMVSearchMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "command": [
+                    "selectTarget"
+                  ],
+                  "event": [
+                    "targetsOfInterestCleanup"
+                  ],
+                  "stateFrom": [
+                    "MVDesignationTrack"
+                  ],
+                  "stateTo": [
+                    "MVSearch"
+                  ]
+                },
+                {
+                  "actions": [
+                    {
+                      "resetTrackMode": [
+                        []
+                      ],
+                      "setOLSSearchMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "command": [
+                    "selectTarget"
+                  ],
+                  "event": [
+                    "targetsOfInterestCleanup"
+                  ],
+                  "stateFrom": [
+                    "OLSFromLookUpDesignationTrack"
+                  ],
+                  "stateTo": [
+                    "OLSFromLookUpSearch"
+                  ]
+                },
+                {
+                  "actions": [
+                    {
+                      "resetTrackMode": [
+                        []
+                      ],
+                      "setOLSSearchMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "command": [
+                    "selectTarget"
+                  ],
+                  "event": [
+                    "targetsOfInterestCleanup"
+                  ],
+                  "stateFrom": [
+                    "OLSFromLookDownDesignationTrack"
+                  ],
+                  "stateTo": [
+                    "OLSFromLookDownSearch"
+                  ]
+                }
+              ],
+              "finishedMVBoresightTrack": [
+                {
+                  "actions": [
+                    {
+                      "resetTrackMode": [
+                        []
+                      ],
+                      "setMVBoresightLockMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "event": [
+                    "targetsOfInterestCleanup"
+                  ],
+                  "stateFrom": [
+                    "MVBoresightTrack"
+                  ],
+                  "stateTo": [
+                    "MVBoresightLock"
+                  ]
+                }
+              ],
+              "finishedOLSFromLookDownBoresightTrack": [
+                {
+                  "actions": [
+                    {
+                      "resetTrackMode": [
+                        []
+                      ],
+                      "setOLSBoresightLockMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "event": [
+                    "targetsOfInterestCleanup"
+                  ],
+                  "stateFrom": [
+                    "OLSFromLookDownBoresightTrack"
+                  ],
+                  "stateTo": [
+                    "OLSFromLookDownBoresightLock"
+                  ]
+                }
+              ],
+              "finishedOLSFromLookUpBoresightTrack": [
+                {
+                  "actions": [
+                    {
+                      "resetTrackMode": [
+                        []
+                      ],
+                      "setOLSBoresightLockMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "event": [
+                    "targetsOfInterestCleanup"
+                  ],
+                  "stateFrom": [
+                    "OLSFromLookUpBoresightTrack"
+                  ],
+                  "stateTo": [
+                    "OLSFromLookUpBoresightLock"
+                  ]
+                }
+              ],
+              "finishedSMVBoresightTrack": [
+                {
+                  "actions": [
+                    {
+                      "resetTrackMode": [
+                        []
+                      ],
+                      "setSMVBoresightLockMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "event": [
+                    "targetsOfInterestCleanup"
+                  ],
+                  "stateFrom": [
+                    "SMVBoresightTrack"
+                  ],
+                  "stateTo": [
+                    "SMVBoresightLock"
+                  ]
+                }
+              ],
+              "init": [
+                {
+                  "actions": [
+                    {
+                      "init": [
+                        []
+                      ],
+                      "setBSVStandbyMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "event": [
+                    "init"
+                  ],
+                  "stateFrom": [
+                    "init"
+                  ],
+                  "stateTo": [
+                    "BSVStandby"
+                  ]
+                }
+              ],
+              "returnToBSVSearchMode": [
+                {
+                  "event": [
+                    "designationTypeNotEquals"
+                  ],
+                  "stateFrom": [
+                    "checkBSVDesignationType0"
+                  ],
+                  "stateTo": [
+                    "BSVSearch"
+                  ]
+                },
+                {
+                  "actions": [
+                    {
+                      "resetLockMode": [
+                        []
+                      ],
+                      "resetTrackMode": [
+                        []
+                      ],
+                      "setBSVSearchMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "command": [
+                    "acmSwitch"
+                  ],
+                  "stateFrom": [
+                    "BSVBoresightLock",
+                    "BSVBoresightTrack"
+                  ],
+                  "stateTo": [
+                    "BSVSearch"
+                  ]
+                }
+              ],
+              "returnToBSVStandbyMode": [
+                {
+                  "actions": [
+                    {
+                      "resetLockMode": [
+                        []
+                      ],
+                      "resetTrackMode": [
+                        []
+                      ],
+                      "setBSVStandbyMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "command": [
+                    "selectTarget"
+                  ],
+                  "stateFrom": [
+                    "BSVBoresightLock",
+                    "BSVBoresightTrack"
+                  ],
+                  "stateTo": [
+                    "BSVStandby"
+                  ]
+                }
+              ],
+              "returnToBSVdHSearchMode": [
+                {
+                  "event": [
+                    "designationTypeNotEquals"
+                  ],
+                  "stateFrom": [
+                    "checkBSVdHDesignationType0"
+                  ],
+                  "stateTo": [
+                    "BSVdHSearch"
+                  ]
+                },
+                {
+                  "actions": [
+                    {
+                      "resetLockMode": [
+                        []
+                      ],
+                      "resetTrackMode": [
+                        []
+                      ],
+                      "setBSVdHSearchMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "command": [
+                    "acmSwitch"
+                  ],
+                  "stateFrom": [
+                    "BSVdHBoresightLock",
+                    "BSVdHBoresightTrack"
+                  ],
+                  "stateTo": [
+                    "BSVdHSearch"
+                  ]
+                }
+              ],
+              "returnToBSVdHStandbyMode": [
+                {
+                  "actions": [
+                    {
+                      "resetLockMode": [
+                        []
+                      ],
+                      "resetTrackMode": [
+                        []
+                      ],
+                      "setBSVStandbyMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "command": [
+                    "selectTarget"
+                  ],
+                  "stateFrom": [
+                    "BSVdHBoresightLock",
+                    "BSVdHBoresightTrack"
+                  ],
+                  "stateTo": [
+                    "BSVdHStandby"
+                  ]
+                }
+              ],
+              "returnToMVSearchMode": [
+                {
+                  "event": [
+                    "designationTypeNotEquals"
+                  ],
+                  "stateFrom": [
+                    "checkMVDesignationType0"
+                  ],
+                  "stateTo": [
+                    "MVSearch"
+                  ]
+                },
+                {
+                  "actions": [
+                    {
+                      "resetLockMode": [
+                        []
+                      ],
+                      "resetTrackMode": [
+                        []
+                      ],
+                      "setMVSearchMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "command": [
+                    "acmSwitch"
+                  ],
+                  "stateFrom": [
+                    "MVBoresightLock",
+                    "MVBoresightTrack"
+                  ],
+                  "stateTo": [
+                    "MVSearch"
+                  ]
+                }
+              ],
+              "returnToMVStandbyMode": [
+                {
+                  "actions": [
+                    {
+                      "resetLockMode": [
+                        []
+                      ],
+                      "resetTrackMode": [
+                        []
+                      ],
+                      "setMVStandbyMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "command": [
+                    "selectTarget"
+                  ],
+                  "stateFrom": [
+                    "MVBoresightLock",
+                    "MVBoresightTrack"
+                  ],
+                  "stateTo": [
+                    "MVStandby"
+                  ]
+                }
+              ],
+              "returnToOLSFromLookDownSearchMode": [
+                {
+                  "event": [
+                    "designationTypeNotEquals"
+                  ],
+                  "stateFrom": [
+                    "checkOLSFromLookDownDesignationType0"
+                  ],
+                  "stateTo": [
+                    "OLSFromLookDownSearch"
+                  ]
+                },
+                {
+                  "actions": [
+                    {
+                      "resetLockMode": [
+                        []
+                      ],
+                      "resetTrackMode": [
+                        []
+                      ],
+                      "setOLSSearchMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "command": [
+                    "acmSwitch"
+                  ],
+                  "stateFrom": [
+                    "OLSFromLookDownBoresightLock",
+                    "OLSFromLookDownBoresightTrack"
+                  ],
+                  "stateTo": [
+                    "OLSFromLookDownSearch"
+                  ]
+                }
+              ],
+              "returnToOLSFromLookDownStandbyMode": [
+                {
+                  "actions": [
+                    {
+                      "resetLockMode": [
+                        []
+                      ],
+                      "resetTrackMode": [
+                        []
+                      ],
+                      "setOLSStandbyMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "command": [
+                    "selectTarget"
+                  ],
+                  "stateFrom": [
+                    "OLSFromLookDownBoresightLock",
+                    "OLSFromLookDownBoresightTrack"
+                  ],
+                  "stateTo": [
+                    "OLSFromLookDownStandby"
+                  ]
+                }
+              ],
+              "returnToOLSFromLookUpSearchMode": [
+                {
+                  "event": [
+                    "designationTypeNotEquals"
+                  ],
+                  "stateFrom": [
+                    "checkOLSFromLookUpDesignationType0"
+                  ],
+                  "stateTo": [
+                    "OLSFromLookUpSearch"
+                  ]
+                },
+                {
+                  "actions": [
+                    {
+                      "resetLockMode": [
+                        []
+                      ],
+                      "resetTrackMode": [
+                        []
+                      ],
+                      "setOLSSearchMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "command": [
+                    "acmSwitch"
+                  ],
+                  "stateFrom": [
+                    "OLSFromLookUpBoresightLock",
+                    "OLSFromLookUpBoresightTrack"
+                  ],
+                  "stateTo": [
+                    "OLSFromLookUpSearch"
+                  ]
+                }
+              ],
+              "returnToOLSFromLookUpStandbyMode": [
+                {
+                  "actions": [
+                    {
+                      "resetLockMode": [
+                        []
+                      ],
+                      "resetTrackMode": [
+                        []
+                      ],
+                      "setOLSStandbyMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "command": [
+                    "selectTarget"
+                  ],
+                  "stateFrom": [
+                    "OLSFromLookUpBoresightLock",
+                    "OLSFromLookUpBoresightTrack"
+                  ],
+                  "stateTo": [
+                    "OLSFromLookUpStandby"
+                  ]
+                }
+              ],
+              "returnToSMVSearchMode": [
+                {
+                  "event": [
+                    "designationTypeNotEquals"
+                  ],
+                  "stateFrom": [
+                    "checkSMVDesignationType0"
+                  ],
+                  "stateTo": [
+                    "SMVSearch"
+                  ]
+                },
+                {
+                  "actions": [
+                    {
+                      "resetLockMode": [
+                        []
+                      ],
+                      "resetTrackMode": [
+                        []
+                      ],
+                      "setSMVSearchMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "command": [
+                    "acmSwitch"
+                  ],
+                  "stateFrom": [
+                    "SMVBoresightLock",
+                    "SMVBoresightTrack"
+                  ],
+                  "stateTo": [
+                    "SMVSearch"
+                  ]
+                }
+              ],
+              "returnToSMVStandbyMode": [
+                {
+                  "actions": [
+                    {
+                      "resetLockMode": [
+                        []
+                      ],
+                      "resetTrackMode": [
+                        []
+                      ],
+                      "setBSVStandbyMode": [
+                        []
+                      ]
+                    }
+                  ],
+                  "command": [
+                    "selectTarget"
+                  ],
+                  "stateFrom": [
+                    "SMVBoresightLock",
+                    "SMVBoresightTrack"
+                  ],
+                  "stateTo": [
+                    "SMVStandby"
+                  ]
+                }
+              ],
+              "switchScanPattern": [
+                {
+                  "actions": [
+                    {
+                      "setNextScanPattern": [
+                        []
+                      ]
+                    }
+                  ],
+                  "command": [
+                    "scanPatternSwitch"
+                  ],
+                  "stateFrom": [
+                    "BSVStandby",
+                    "BSVdHStandby",
+                    "SMVStandby",
+                    "MVStandby",
+                    "OLSFromLookUpStandby",
+                    "OLSFromLookDownStandby",
+                    "BSVSearch",
+                    "BSVdHSearch",
+                    "SMVSearch",
+                    "MVSearch",
+                    "OLSFromLookUpSearch",
+                    "OLSFromLookDownSearch"
+                  ]
+                }
+              ],
+              "switchScopeRange": [
+                {
+                  "actions": [
+                    {
+                      "setNextScopeRange": [
+                        []
+                      ]
+                    }
+                  ],
+                  "command": [
+                    "rangeSwitch"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "search": [
+        {
+          "stateInit": [
+            "search"
+          ],
+          "transitions": [
+            {
+              "addTarget": [
+                {
+                  "actions": [
+                    {
+                      "addTarget": [
+                        []
+                      ],
+                      "updateActiveDetectedTarget": [
+                        []
+                      ]
+                    }
+                  ],
+                  "event": [
+                    "targetDetected"
+                  ]
+                }
+              ],
+              "detect": [
+                {
+                  "actions": [
+                    {
+                      "detectTarget": [
+                        []
+                      ],
+                      "setDistGatePos": [
+                        {
+                          "source": [
+                            "continuousScale"
+                          ],
+                          "width": [
+                            0.0
+                          ]
+                        }
+                      ],
+                      "setRelSpeedGatePos": [
+                        {
+                          "source": [
+                            "continuousScale"
+                          ],
+                          "width": [
+                            0.0
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "event": [
+                    "targetInSight"
+                  ]
+                }
+              ],
+              "scan": [
+                {
+                  "actions": [
+                    {
+                      "scan": [
+                        []
+                      ],
+                      "setCenterAzimuth": [
+                        {
+                          "source": [
+                            "constant"
+                          ],
+                          "value": [
+                            0.0
+                          ]
+                        },
+                        {
+                          "source": [
+                            "designationCue"
+                          ]
+                        }
+                      ],
+                      "setCenterElevation": [
+                        {
+                          "source": [
+                            "constant"
+                          ],
+                          "value": [
+                            0.0
+                          ]
+                        },
+                        {
+                          "source": [
+                            "designationCue"
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "event": [
+                    "update"
+                  ]
+                }
+              ],
+              "setCueAzimuth": [
+                {
+                  "actions": [
+                    {
+                      "setCueAzimuth": [
+                        []
+                      ]
+                    }
+                  ],
+                  "command": [
+                    "cueAxisX"
+                  ]
+                }
+              ],
+              "setCueDist": [
+                {
+                  "actions": [
+                    {
+                      "setCueDist": [
+                        []
+                      ]
+                    }
+                  ],
+                  "command": [
+                    "cueAxisY"
+                  ]
+                }
+              ],
+              "setCueElevation": [
+                {
+                  "actions": [
+                    {
+                      "setCueElevation": [
+                        []
+                      ]
+                    }
+                  ],
+                  "command": [
+                    "cueAxisZ"
+                  ]
+                }
+              ],
+              "setSelectedTarget": [
+                {
+                  "actions": [
+                    {
+                      "setDetectedTargetActive": [
+                        []
+                      ]
+                    }
+                  ],
+                  "command": [
+                    "switchToTarget"
+                  ]
+                }
+              ],
+              "switchSelectedTarget": [
+                {
+                  "actions": [
+                    {
+                      "setNextDetectedTargetActive": [
+                        []
+                      ]
+                    }
+                  ],
+                  "command": [
+                    "switchTarget"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "track": [
+        {
+          "stateInit": [
+            "track"
+          ],
+          "transitions": [
+            {
+              "detect": [
+                {
+                  "actions": [
+                    {
+                      "detectTarget": [
+                        {
+                          "rangeMult": [
+                            1.0
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "event": [
+                    "update"
+                  ]
+                }
+              ],
+              "extrapolate": [
+                {
+                  "actions": [
+                    {
+                      "clearTargetsOfInterest": [
+                        {
+                          "timeOut": [
+                            1.0
+                          ]
+                        }
+                      ],
+                      "extrapolateTargetsOfInterest": [
+                        []
+                      ],
+                      "setCenterAzimuth": [
+                        {
+                          "source": [
+                            "activeTargetOfInterest"
+                          ]
+                        }
+                      ],
+                      "setCenterElevation": [
+                        {
+                          "source": [
+                            "activeTargetOfInterest"
+                          ]
+                        }
+                      ],
+                      "setDistGatePos": [
+                        {
+                          "source": [
+                            "activeTargetOfInterest"
+                          ],
+                          "width": [
+                            0.0
+                          ]
+                        }
+                      ],
+                      "setRelSpeedGatePos": [
+                        {
+                          "source": [
+                            "activeTargetOfInterest"
+                          ],
+                          "width": [
+                            0.0
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "event": [
+                    "targetNotDetected"
+                  ]
+                }
+              ],
+              "track": [
+                {
+                  "actions": [
+                    {
+                      "setCenterAzimuth": [
+                        {
+                          "source": [
+                            "activeTargetOfInterest"
+                          ]
+                        }
+                      ],
+                      "setCenterElevation": [
+                        {
+                          "source": [
+                            "activeTargetOfInterest"
+                          ]
+                        }
+                      ],
+                      "setDistGatePos": [
+                        {
+                          "source": [
+                            "activeTargetOfInterest"
+                          ],
+                          "width": [
+                            0.0
+                          ]
+                        }
+                      ],
+                      "setRelSpeedGatePos": [
+                        {
+                          "source": [
+                            "activeTargetOfInterest"
+                          ],
+                          "width": [
+                            0.0
+                          ]
+                        }
+                      ],
+                      "updateActiveTargetOfInterest": [
+                        {
+                          "dirFilter": [
+                            {
+                              "limTimeOut": [
+                                1.0
+                              ]
+                            }
+                          ],
+                          "distFilter": [
+                            {
+                              "limTimeOut": [
+                                1.0
+                              ]
+                            }
+                          ],
+                          "dopplerSpeedFilter": [
+                            {
+                              "limTimeOut": [
+                                1.0
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "event": [
+                    "targetDetected"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "illuminationTransmitter": [
+    {
+      "antenna": [
+        {
+          "angleHalfSens": [
+            10.0
+          ],
+          "sideLobesSensitivity": [
+            -30.0
+          ]
+        }
+      ],
+      "power": [
+        200.0
+      ]
+    }
+  ],
+  "name": [
+    "Sapphire-23ml_tp_23m"
+  ],
+  "scanPatternSets": [
+    {
+      "searchDown": [
+        {
+          "scanPattern1": [
+            "searchElev8DegDown"
+          ],
+          "scanPattern2": [
+            "searchElev12DegDown"
+          ]
+        }
+      ],
+      "searchLow": [
+        {
+          "scanPattern1": [
+            "searchElevLow4Deg"
+          ]
+        }
+      ],
+      "searchOLS": [
+        {
+          "scanPattern1": [
+            "searchOLST1"
+          ],
+          "scanPattern2": [
+            "searchOLST2"
+          ]
+        }
+      ],
+      "searchUp": [
+        {
+          "scanPattern1": [
+            "searchElev8DegUp"
+          ],
+          "scanPattern2": [
+            "searchElev12DegUp"
+          ]
+        }
+      ]
+    }
+  ],
+  "scanPatterns": [
+    {
+      "boresightLock": [
+        {
+          "azimuthLimits": [
+            [-66.0,66.0]
+          ],
+          "barHeight": [
+            2.0
+          ],
+          "barsCount": [
+            2
+          ],
+          "barsOneWay": [
+            false
+          ],
+          "elevationLimits": [
+            [-44.0,56.0]
+          ],
+          "indicate": [
+            true
+          ],
+          "period": [
+            0.3
+          ],
+          "rowMajor": [
+            false
+          ],
+          "type": [
+            "pyramide"
+          ],
+          "width": [
+            12.0
+          ]
+        }
+      ],
+      "boresightLockOLS": [
+        {
+          "azimuthLimits": [
+            [-30.0,30.0]
+          ],
+          "barHeight": [
+            2.15
+          ],
+          "barsCount": [
+            2
+          ],
+          "barsOneWay": [
+            false
+          ],
+          "centerElevation": [
+            -2.0
+          ],
+          "elevationLimits": [
+            [-30.0,5.0]
+          ],
+          "indicate": [
+            true
+          ],
+          "period": [
+            0.5
+          ],
+          "rowMajor": [
+            false
+          ],
+          "type": [
+            "pyramide"
+          ],
+          "width": [
+            12.0
+          ]
+        }
+      ],
+      "designationLockDown": [
+        {
+          "azimuthLimits": [
+            [-66.0,66.0]
+          ],
+          "barHeight": [
+            2.0
+          ],
+          "barsCount": [
+            4
+          ],
+          "barsOneWay": [
+            false
+          ],
+          "centerElevation": [
+            -4.0
+          ],
+          "elevationLimits": [
+            [-44.0,56.0]
+          ],
+          "indicate": [
+            true
+          ],
+          "period": [
+            0.3
+          ],
+          "pitchStabLimit": [
+            56.0
+          ],
+          "rollStabLimit": [
+            70.0
+          ],
+          "rowMajor": [
+            true
+          ],
+          "type": [
+            "pyramide"
+          ],
+          "width": [
+            4.0
+          ]
+        }
+      ],
+      "designationLockLow": [
+        {
+          "azimuthLimits": [
+            [-66.0,66.0]
+          ],
+          "barHeight": [
+            2.0
+          ],
+          "barsCount": [
+            4
+          ],
+          "barsOneWay": [
+            false
+          ],
+          "centerElevation": [
+            0.0
+          ],
+          "elevationLimits": [
+            [-44.0,56.0]
+          ],
+          "indicate": [
+            true
+          ],
+          "period": [
+            0.3
+          ],
+          "pitchStabLimit": [
+            56.0
+          ],
+          "rollStabLimit": [
+            70.0
+          ],
+          "rowMajor": [
+            true
+          ],
+          "type": [
+            "pyramide"
+          ],
+          "width": [
+            4.0
+          ]
+        }
+      ],
+      "designationLockOLS": [
+        {
+          "azimuthLimits": [
+            [-30.0,30.0]
+          ],
+          "barHeight": [
+            2.15
+          ],
+          "barsCount": [
+            3
+          ],
+          "barsOneWay": [
+            false
+          ],
+          "centerElevation": [
+            -2.0
+          ],
+          "elevationLimits": [
+            [-30.0,5.0]
+          ],
+          "indicate": [
+            true
+          ],
+          "period": [
+            0.2
+          ],
+          "rollStabLimit": [
+            70.0
+          ],
+          "rowMajor": [
+            true
+          ],
+          "type": [
+            "pyramide"
+          ],
+          "width": [
+            2.5
+          ]
+        }
+      ],
+      "designationLockUp": [
+        {
+          "azimuthLimits": [
+            [-66.0,66.0]
+          ],
+          "barHeight": [
+            2.0
+          ],
+          "barsCount": [
+            4
+          ],
+          "barsOneWay": [
+            false
+          ],
+          "centerElevation": [
+            4.0
+          ],
+          "elevationLimits": [
+            [-44.0,56.0]
+          ],
+          "indicate": [
+            true
+          ],
+          "period": [
+            0.3
+          ],
+          "pitchStabLimit": [
+            56.0
+          ],
+          "rollStabLimit": [
+            70.0
+          ],
+          "rowMajor": [
+            true
+          ],
+          "type": [
+            "pyramide"
+          ],
+          "width": [
+            4.0
+          ]
+        }
+      ],
+      "searchElev12DegDown": [
+        {
+          "azimuthLimits": [
+            [-66.0,66.0]
+          ],
+          "barHeight": [
+            2.0
+          ],
+          "barsCount": [
+            6
+          ],
+          "barsOneWay": [
+            false
+          ],
+          "centerElevation": [
+            -4.0
+          ],
+          "elevationLimits": [
+            [-44.0,56.0]
+          ],
+          "period": [
+            3.5
+          ],
+          "pitchStabLimit": [
+            56.0
+          ],
+          "rollStabLimit": [
+            70.0
+          ],
+          "rowMajor": [
+            true
+          ],
+          "type": [
+            "pyramide"
+          ],
+          "width": [
+            30.0
+          ]
+        }
+      ],
+      "searchElev12DegUp": [
+        {
+          "azimuthLimits": [
+            [-66.0,66.0]
+          ],
+          "barHeight": [
+            2.0
+          ],
+          "barsCount": [
+            6
+          ],
+          "barsOneWay": [
+            false
+          ],
+          "centerElevation": [
+            4.0
+          ],
+          "elevationLimits": [
+            [-44.0,56.0]
+          ],
+          "period": [
+            3.5
+          ],
+          "pitchStabLimit": [
+            56.0
+          ],
+          "rollStabLimit": [
+            70.0
+          ],
+          "rowMajor": [
+            true
+          ],
+          "type": [
+            "pyramide"
+          ],
+          "width": [
+            30.0
+          ]
+        }
+      ],
+      "searchElev8DegDown": [
+        {
+          "azimuthLimits": [
+            [-66.0,66.0]
+          ],
+          "barHeight": [
+            2.0
+          ],
+          "barsCount": [
+            4
+          ],
+          "barsOneWay": [
+            false
+          ],
+          "centerElevation": [
+            -4.0
+          ],
+          "elevationLimits": [
+            [-44.0,56.0]
+          ],
+          "period": [
+            2.3
+          ],
+          "pitchStabLimit": [
+            56.0
+          ],
+          "rollStabLimit": [
+            70.0
+          ],
+          "rowMajor": [
+            true
+          ],
+          "type": [
+            "pyramide"
+          ],
+          "width": [
+            30.0
+          ]
+        }
+      ],
+      "searchElev8DegUp": [
+        {
+          "azimuthLimits": [
+            [-66.0,66.0]
+          ],
+          "barHeight": [
+            2.0
+          ],
+          "barsCount": [
+            4
+          ],
+          "barsOneWay": [
+            false
+          ],
+          "centerElevation": [
+            4.0
+          ],
+          "elevationLimits": [
+            [-44.0,56.0]
+          ],
+          "period": [
+            2.3
+          ],
+          "pitchStabLimit": [
+            56.0
+          ],
+          "rollStabLimit": [
+            70.0
+          ],
+          "rowMajor": [
+            true
+          ],
+          "type": [
+            "pyramide"
+          ],
+          "width": [
+            30.0
+          ]
+        }
+      ],
+      "searchElevLow4Deg": [
+        {
+          "azimuthLimits": [
+            [-66.0,66.0]
+          ],
+          "barHeight": [
+            1.0
+          ],
+          "barsCount": [
+            4
+          ],
+          "barsOneWay": [
+            false
+          ],
+          "centerElevation": [
+            0.0
+          ],
+          "elevationLimits": [
+            [-44.0,56.0]
+          ],
+          "period": [
+            2.3
+          ],
+          "pitchStabLimit": [
+            56.0
+          ],
+          "rollStabLimit": [
+            70.0
+          ],
+          "rowMajor": [
+            true
+          ],
+          "type": [
+            "pyramide"
+          ],
+          "width": [
+            30.0
+          ]
+        }
+      ],
+      "searchOLST1": [
+        {
+          "azimuthLimits": [
+            [-30.0,30.0]
+          ],
+          "barHeight": [
+            2.15
+          ],
+          "barsCount": [
+            7
+          ],
+          "barsOneWay": [
+            false
+          ],
+          "centerElevation": [
+            -7.0
+          ],
+          "elevationLimits": [
+            [-30.0,8.0]
+          ],
+          "period": [
+            2.0
+          ],
+          "rollStabLimit": [
+            70.0
+          ],
+          "rowMajor": [
+            true
+          ],
+          "type": [
+            "pyramide"
+          ],
+          "width": [
+            30.0
+          ]
+        }
+      ],
+      "searchOLST2": [
+        {
+          "azimuthLimits": [
+            [-30.0,30.0]
+          ],
+          "barHeight": [
+            2.15
+          ],
+          "barsCount": [
+            3
+          ],
+          "barsOneWay": [
+            false
+          ],
+          "centerElevation": [
+            -2.0
+          ],
+          "elevationLimits": [
+            [-30.0,8.0]
+          ],
+          "period": [
+            0.5
+          ],
+          "rollStabLimit": [
+            70.0
+          ],
+          "rowMajor": [
+            true
+          ],
+          "type": [
+            "pyramide"
+          ],
+          "width": [
+            7.5
+          ]
+        }
+      ],
+      "track": [
+        {
+          "azimuthLimits": [
+            [-66.0,66.0]
+          ],
+          "elevationLimits": [
+            [-44.0,56.0]
+          ],
+          "type": [
+            "no"
+          ]
+        }
+      ],
+      "trackOLS": [
+        {
+          "azimuthLimits": [
+            [-30.0,30.0]
+          ],
+          "elevationLimits": [
+            [-30.0,5.0]
+          ],
+          "type": [
+            "no"
+          ]
+        }
+      ]
+    }
+  ],
+  "scopeRangeSets": [
+    {
+      "searchHighAlt": [
+        {
+          "range1": [
+            30000.0
+          ],
+          "range2": [
+            60000.0
+          ],
+          "range3": [
+            90000.0
+          ]
+        }
+      ],
+      "searchLowAlt": [
+        {
+          "range1": [
+            30000.0
+          ]
+        }
+      ]
+    }
+  ],
+  "showMissileLaunchZone": [
+    true
+  ],
+  "signals": [
+    {
+      "MTI": [
+        {
+          "absDopplerSpeed": [
+            true
+          ],
+          "aircraftAsTarget": [
+            true
+          ],
+          "distance": [
+            {
+              "maxValue": [
+                90000.0
+              ],
+              "minValue": [
+                300.0
+              ],
+              "presents": [
+                true
+              ],
+              "width": [
+                300.0
+              ]
+            }
+          ],
+          "dopplerSpeed": [
+            {
+              "maxValue": [
+                1500.0
+              ],
+              "minValue": [
+                30.0
+              ],
+              "presents": [
+                true
+              ],
+              "signalWidthMin": [
+                2.0
+              ],
+              "width": [
+                0.0
+              ]
+            }
+          ],
+          "dynamicRange": [
+            [40.0,12.0]
+          ],
+          "friendFoeId": [
+            true
+          ],
+          "groundClutter": [
+            false
+          ],
+          "mainBeamDopplerSpeed": [
+            true
+          ]
+        }
+      ],
+      "MTITrack": [
+        {
+          "absDopplerSpeed": [
+            true
+          ],
+          "aircraftAsTarget": [
+            true
+          ],
+          "angularAccuracy": [
+            0.05
+          ],
+          "distance": [
+            {
+              "maxValue": [
+                90000.0
+              ],
+              "minValue": [
+                300.0
+              ],
+              "presents": [
+                true
+              ],
+              "width": [
+                300.0
+              ]
+            }
+          ],
+          "distanceAccuracy": [
+            15.0
+          ],
+          "dopplerSpeed": [
+            {
+              "maxValue": [
+                1500.0
+              ],
+              "minValue": [
+                20.0
+              ],
+              "presents": [
+                true
+              ],
+              "signalWidthMin": [
+                2.0
+              ],
+              "width": [
+                0.0
+              ]
+            }
+          ],
+          "dynamicRange": [
+            [40.0,12.0]
+          ],
+          "groundClutter": [
+            false
+          ],
+          "mainBeamDopplerSpeed": [
+            true
+          ],
+          "track": [
+            true
+          ]
+        }
+      ],
+      "OLS": [
+        {
+          "groundClutter": [
+            false
+          ],
+          "rangeFinder": [
+            false,
+            false
+          ],
+          "showBScope": [
+            false
+          ],
+          "showCScope": [
+            true
+          ]
+        }
+      ],
+      "pulseLong": [
+        {
+          "aircraftAsTarget": [
+            true
+          ],
+          "distance": [
+            {
+              "maxValue": [
+                90000.0
+              ],
+              "minValue": [
+                1200.0
+              ],
+              "presents": [
+                true
+              ],
+              "width": [
+                900.0
+              ]
+            }
+          ],
+          "dynamicRange": [
+            [40.0,15.0]
+          ],
+          "friendFoeId": [
+            true
+          ],
+          "groundClutter": [
+            true
+          ]
+        }
+      ],
+      "pulseShort": [
+        {
+          "aircraftAsTarget": [
+            true
+          ],
+          "distance": [
+            {
+              "maxValue": [
+                90000.0
+              ],
+              "minValue": [
+                300.0
+              ],
+              "presents": [
+                true
+              ],
+              "width": [
+                300.0
+              ]
+            }
+          ],
+          "dynamicRange": [
+            [40.0,15.0]
+          ],
+          "friendFoeId": [
+            true
+          ],
+          "groundClutter": [
+            true
+          ]
+        }
+      ],
+      "pulseTrack": [
+        {
+          "aircraftAsTarget": [
+            true
+          ],
+          "angularAccuracy": [
+            0.05
+          ],
+          "distance": [
+            {
+              "maxValue": [
+                90000.0
+              ],
+              "minValue": [
+                300.0
+              ],
+              "presents": [
+                true
+              ],
+              "width": [
+                300.0
+              ]
+            }
+          ],
+          "distanceAccuracy": [
+            15.0
+          ],
+          "dynamicRange": [
+            [40.0,15.0]
+          ],
+          "groundClutter": [
+            true
+          ],
+          "track": [
+            true
+          ]
+        }
+      ]
+    }
+  ],
+  "transivers": [
+    {
+      "MTI": [
+        {
+          "antenna": [
+            {
+              "angleHalfSens": [
+                1.5
+              ],
+              "sideLobesSensitivity": [
+                -30.0
+              ]
+            }
+          ],
+          "band": [
+            9
+          ],
+          "power": [
+            70000.0
+          ],
+          "prf": [
+            1000.0
+          ],
+          "pulseWidth": [
+            0.0
+          ],
+          "range": [
+            19000.0
+          ],
+          "rangeMax": [
+            30000.0
+          ],
+          "rcs": [
+            3.0
+          ],
+          "sideLobesAttenuation": [
+            -22.0
+          ],
+          "timeGainControl": [
+            true
+          ]
+        }
+      ],
+      "OLS": [
+        {
+          "antenna": [
+            {
+              "angleHalfSens": [
+                2.5
+              ],
+              "sideLobesSensitivity": [
+                -80.0
+              ]
+            }
+          ],
+          "band": [
+            1
+          ],
+          "power": [
+            50.0
+          ],
+          "range": [
+            20000.0
+          ],
+          "range1": [
+            6000.0
+          ],
+          "rangeMax": [
+            60000.0
+          ],
+          "rcs": [
+            24000.0
+          ],
+          "visibilityType": [
+            "infraRed"
+          ]
+        }
+      ],
+      "pulse": [
+        {
+          "antenna": [
+            {
+              "angleHalfSens": [
+                2.5
+              ],
+              "sideLobesSensitivity": [
+                -30.0
+              ]
+            }
+          ],
+          "band": [
+            9
+          ],
+          "prf": [
+            1000.0
+          ],
+          "pulsePower": [
+            60000.0
+          ],
+          "pulseWidth": [
+            0.0
+          ],
+          "range": [
+            54000.0
+          ],
+          "rangeMax": [
+            100000.0
+          ],
+          "rcs": [
+            3.0
+          ],
+          "sideLobesAttenuation": [
+            -22.0
+          ],
+          "timeGainControl": [
+            true
+          ]
+        }
+      ]
+    }
+  ],
+  "type": [
+    "radar"
+  ]
+}
