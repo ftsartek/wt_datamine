@@ -1,0 +1,1721 @@
+{
+  "airfields": {},
+  "areas": {
+    "bombers_point": {
+      "props": {},
+      "tm": [
+        [1.0,0.0,0.0],
+        [0.0,1.0,0.0],
+        [0.0,0.0,1.0],
+        [22885.0,3000.0,-23437.0]
+      ],
+      "type": "Point"
+    },
+    "briefing_point": {
+      "props": {},
+      "tm": [
+        [1.0,0.0,0.0],
+        [0.0,1.0,0.0],
+        [0.0,0.0,1.0],
+        [26069.9,3000.0,15859.5]
+      ],
+      "type": "Point"
+    },
+    "end_waypoint": {
+      "props": {},
+      "tm": [
+        [1.0,0.0,0.0],
+        [0.0,1.0,0.0],
+        [0.0,0.0,1.0],
+        [18444.8,3000.0,-12974.3]
+      ],
+      "type": "Point"
+    },
+    "patrol_point": {
+      "props": {},
+      "tm": [
+        [1.0,0.0,0.0],
+        [0.0,1.0,0.0],
+        [0.0,0.0,1.0],
+        [23660.4,3000.0,575.0]
+      ],
+      "type": "Point"
+    },
+    "waypoint": {
+      "props": {},
+      "tm": [
+        [1.0,0.0,0.0],
+        [0.0,1.0,0.0],
+        [0.0,0.0,1.0],
+        [10445.2,3000.0,13314.2]
+      ],
+      "type": "Point"
+    }
+  },
+  "bin_dump_file": "",
+  "dialogs": {},
+  "effects": {},
+  "imports": {
+    "import_record": {
+      "excludes": {},
+      "file": "gameData/missions/bridges/berlin_bridges.blk",
+      "importAreas": true,
+      "importTriggers": true,
+      "importUnits": true,
+      "showAreas": true,
+      "showTriggers": true,
+      "showUnits": true
+    }
+  },
+  "mission_objectives": {
+    "dlc_newbie_fight_newbie_alive": {
+      "comments": "",
+      "is_enabled": false,
+      "onFailed": {},
+      "onSuccess": {},
+      "props": {
+        "isPrimary": false,
+        "scoreConst": 100,
+        "scoreTime": 400,
+        "timeLimit": 1800
+      },
+      "type": "abstractMissionObjective"
+    },
+    "dlc_newbie_fight_return": {
+      "comments": "",
+      "is_enabled": false,
+      "onFailed": {},
+      "onSuccess": {},
+      "props": {
+        "isPrimary": true,
+        "scoreConst": 100,
+        "scoreTime": 400,
+        "timeLimit": 1800
+      },
+      "type": "abstractMissionObjective"
+    },
+    "dlc_newbie_fight_to_waypoint": {
+      "comments": "",
+      "is_enabled": false,
+      "onFailed": {},
+      "onSuccess": {},
+      "props": {
+        "isPrimary": true,
+        "scoreConst": 100,
+        "scoreTime": 400,
+        "timeLimit": 1800
+      },
+      "type": "abstractMissionObjective"
+    },
+    "dlc_newbie_fight_vip": {
+      "comments": "",
+      "is_enabled": false,
+      "onFailed": {},
+      "onSuccess": {},
+      "props": {
+        "isPrimary": true,
+        "scoreConst": 100,
+        "scoreTime": 400,
+        "timeLimit": 1800
+      },
+      "type": "abstractMissionObjective"
+    },
+    "isCategory": true,
+    "is_enabled": true
+  },
+  "mission_settings": {
+    "atmosphere": {
+      "pressure": 756.0,
+      "temperature": 14.0
+    },
+    "briefing": {
+      "date_loc": "",
+      "music": "action_01",
+      "objective_loc": "",
+      "part": {
+        "event": "",
+        "minTime": 0,
+        "slide": {
+          "arrow": {
+            "point": [
+              "vip_person",
+              "waypoint",
+              "end_waypoint",
+              "patrol_point",
+              "patrol_point"
+            ],
+            "side": "ally",
+            "width": 1
+          },
+          "icon": [
+            {
+              "icontype": "fighter",
+              "lookAt": "waypoint",
+              "side": "player",
+              "target": "briefing_point"
+            },
+            {
+              "icontype": "fighter",
+              "lookAt": "waypoint",
+              "side": "ally",
+              "target": "vip_person"
+            }
+          ],
+          "map": true,
+          "minTime": 4,
+          "picture": ""
+        }
+      },
+      "place_loc": ""
+    },
+    "mission": {
+      "environment": "Day",
+      "level": "levels/berlin.bin",
+      "optionalTakeOff": false,
+      "restoreType": "attempts",
+      "stars": {
+        "day": 20,
+        "month": 4,
+        "time": 12.0,
+        "year": 1945
+      },
+      "type": "singleMission",
+      "weather": "clear",
+      "windDirectionDeg": [238.0,242.0],
+      "windSpeed": [6.0,7.0]
+    },
+    "player": {
+      "army": 1,
+      "wing": "player_wing"
+    },
+    "player_teamB": {
+      "army": 2
+    }
+  },
+  "selected_tag": "",
+  "triggers": {
+    "bf109_escaped": {
+      "actions": {
+        "unitMoveTo": {
+          "follow_target": false,
+          "object": "bf109_01",
+          "shouldKeepFormation": false,
+          "target": "bombers_point",
+          "teleportHeightType": "absolute",
+          "teleportHeightValue": 1000.0,
+          "useUnitHeightForTele": true
+        },
+        "unitSetIndication": {
+          "set": false,
+          "target": "bf109_01"
+        },
+        "wait": {
+          "time": 20.0
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "unitWhenCountMatches": {
+          "func": "less",
+          "object": "bf109_01",
+          "object_marking": 0,
+          "object_type": "isAlive",
+          "value": 3
+        }
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "bf_109_01_killed": {
+      "actions": {
+        "unitAttackTarget": {
+          "object": "bf109_02",
+          "playerAttracted": true,
+          "playerAttractedCount": 2,
+          "playerAttractedEffRate": 0.7,
+          "target": [
+            "player_wing",
+            "vip_person"
+          ]
+        },
+        "unitSetIndication": {
+          "set": true,
+          "target": "bf109_02"
+        },
+        "unitWakeUp": {
+          "target": "bf109_02"
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "unitWhenCountMatches": {
+          "func": "less",
+          "object": "bf109_01",
+          "object_marking": 0,
+          "object_type": "isAlive",
+          "value": 3
+        }
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "check_real": {
+      "actions": {
+        "unitDamage": [
+          {
+            "doExplosion": true,
+            "part": 1,
+            "power": 1.0,
+            "randomTargetsCount": 10,
+            "target": "ju_88_02"
+          },
+          {
+            "doExplosion": true,
+            "part": 1,
+            "power": 1.0,
+            "randomTargetsCount": 6,
+            "target": "bf109_01"
+          },
+          {
+            "doExplosion": true,
+            "part": 1,
+            "power": 1.0,
+            "randomTargetsCount": 6,
+            "target": "bf109_02"
+          }
+        ]
+      },
+      "comments": "",
+      "conditions": {
+        "gameWhenDifficulty": {
+          "difficulty": "realistic",
+          "is": "equal"
+        }
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "check_simul": {
+      "actions": {
+        "unitDamage": [
+          {
+            "part": 1,
+            "power": 1.0,
+            "randomTargetsCount": 20,
+            "target": "ju_88_02"
+          },
+          {
+            "part": 1,
+            "power": 1.0,
+            "randomTargetsCount": 8,
+            "target": "bf109_01"
+          },
+          {
+            "part": 1,
+            "power": 1.0,
+            "randomTargetsCount": 8,
+            "target": "bf109_02"
+          }
+        ]
+      },
+      "comments": "",
+      "conditions": {
+        "gameWhenDifficulty": {
+          "difficulty": "simulator",
+          "is": "equal"
+        }
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "complete_mission": {
+      "actions": {
+        "missionCompleted": {
+          "timer": false
+        },
+        "missionDebriefing": {},
+        "moSetObjectiveStatus": {
+          "status": 2,
+          "target": "dlc_newbie_fight_return"
+        },
+        "triggerEnable": {
+          "target": "newbie_alive_succes"
+        },
+        "wait": [
+          {
+            "time": 3.0
+          },
+          {
+            "time": 3.0
+          },
+          {
+            "time": 3.0
+          }
+        ]
+      },
+      "comments": "",
+      "conditions": {
+        "unitDistanceBetween": {
+          "check_objects": "any",
+          "check_targets": "any",
+          "math": "2D",
+          "object": "vip_person",
+          "object_type": "isAlive",
+          "target": "patrol_point",
+          "target_type": "isAlive",
+          "value": 1500.0
+        }
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "fail_mission_ju88_02": {
+      "actions": {
+        "missionFailed": {},
+        "moSetObjectiveStatus": {
+          "status": 3,
+          "target": "dlc_newbie_fight_vip"
+        },
+        "wait": {
+          "time": 3.0
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "unitWhenStatus": {
+          "check_objects": "all",
+          "object": "vip_person",
+          "object_marking": 0,
+          "object_type": "isKilled"
+        }
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "fail_mission_waypoint": {
+      "actions": {
+        "missionFailed": {},
+        "moSetObjectiveStatus": {
+          "status": 3,
+          "target": "dlc_newbie_fight_to_waypoint"
+        },
+        "wait": {
+          "time": 3.0
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "unitWhenStatus": {
+          "check_objects": "all",
+          "object": "vip_person",
+          "object_marking": 0,
+          "object_type": "isKilled"
+        }
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "isCategory": true,
+    "is_enabled": true,
+    "ju88_02_damaged": {
+      "actions": {
+        "unitDropAmmo": {
+          "object": "ju_88_02"
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "unitWhenStatus": [
+          {
+            "check_objects": "any",
+            "object": "ju_88_02",
+            "object_marking": 0,
+            "object_type": "damaged"
+          },
+          {
+            "check_objects": "any",
+            "object": "ju_88_02",
+            "object_marking": 0,
+            "object_type": "isKilled"
+          }
+        ]
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ANY",
+        "enableAfterComplete": true
+      }
+    },
+    "ju88_02_killed": {
+      "actions": {
+        "moAddMissionObjective": {
+          "target": "dlc_newbie_fight_return"
+        },
+        "moSetObjectiveStatus": {
+          "status": 2,
+          "target": "dlc_newbie_fight_vip"
+        },
+        "triggerEnable": {
+          "target": [
+            "bf109_escaped",
+            "complete_mission"
+          ]
+        },
+        "unitMoveTo": [
+          {
+            "follow_offset": [-150.0,20.0,20.0],
+            "follow_target": true,
+            "object": "vip_person",
+            "shouldKeepFormation": false,
+            "target": "patrol_point",
+            "teleportHeightType": "absolute",
+            "teleportHeightValue": 1000.0,
+            "useUnitHeightForTele": true
+          },
+          {
+            "follow_target": false,
+            "object": [
+              "bf109_01",
+              "bf109_02"
+            ],
+            "shouldKeepFormation": false,
+            "target": "end_waypoint",
+            "teleportHeightType": "absolute",
+            "teleportHeightValue": 1000.0,
+            "useUnitHeightForTele": true
+          }
+        ],
+        "unitSetIndication": {
+          "set": false,
+          "target": [
+            "bf109_01",
+            "bf109_02"
+          ]
+        },
+        "wait": [
+          {
+            "time": 3.0
+          },
+          {
+            "time": 40.0
+          },
+          {
+            "time": 10.0
+          }
+        ]
+      },
+      "comments": "",
+      "conditions": {
+        "unitDistanceBetween": {
+          "check_objects": "any",
+          "check_targets": "any",
+          "math": "2D",
+          "object": "ju_88_02",
+          "object_type": "isAlive",
+          "target": "end_waypoint",
+          "target_type": "isAlive",
+          "value": 3500.0
+        },
+        "unitWhenCountMatches": {
+          "func": "less",
+          "object": "ju_88_02",
+          "object_marking": 0,
+          "object_type": "isAlive",
+          "value": 1
+        }
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ANY",
+        "enableAfterComplete": false
+      }
+    },
+    "newbie_alive_fail": {
+      "actions": {
+        "moSetObjectiveStatus": {
+          "status": 3,
+          "target": "dlc_newbie_fight_newbie_alive"
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "unitWhenStatus": {
+          "check_objects": "any",
+          "object": "vip_person",
+          "object_marking": 0,
+          "object_type": "isKilled"
+        }
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "newbie_alive_succes": {
+      "actions": {
+        "moSetObjectiveStatus": {
+          "status": 2,
+          "target": "dlc_newbie_fight_newbie_alive"
+        },
+        "triggerDisable": {
+          "target": "newbie_alive_fail"
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "unitWhenCountMatches": {
+          "func": "notLess",
+          "object": "vip_person",
+          "object_marking": 0,
+          "object_type": "isAlive",
+          "value": 4
+        }
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 0.1
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "start_mission": {
+      "actions": {
+        "moAddMissionObjective": {
+          "target": "dlc_newbie_fight_to_waypoint"
+        },
+        "triggerDisable": {
+          "target": [
+            "check_real",
+            "check_simul"
+          ]
+        },
+        "triggerEnable": [
+          {
+            "target": [
+              "check_real",
+              "check_simul"
+            ]
+          },
+          {
+            "target": [
+              "fail_mission_waypoint",
+              "to_waypoint",
+              "update_indicators"
+            ]
+          }
+        ],
+        "unitMoveTo": {
+          "follow_offset": [-150.0,20.0,20.0],
+          "follow_target": true,
+          "object": "vip_person",
+          "shouldKeepFormation": false,
+          "target": "waypoint",
+          "teleportHeightType": "absolute",
+          "teleportHeightValue": 1000.0,
+          "useUnitHeightForTele": true
+        },
+        "unitPutToSleep": {
+          "target": [
+            "ju_88_02",
+            "bf109_01",
+            "bf109_02"
+          ]
+        },
+        "unitSetIndication": {
+          "set": true,
+          "target": "vip_person"
+        },
+        "unitSetProperties": [
+          {
+            "effShootingRate": 0.4,
+            "object": "vip_person",
+            "plane": {
+              "targetDeviation": {
+                "defaultVal": 2.2,
+                "limits": [0.4,2.2],
+                "trigger": "machine gun"
+              }
+            }
+          },
+          {
+            "effShootingRate": 0.1,
+            "object": "berlin_aaa_squad"
+          },
+          {
+            "effShootingRate": 0.8,
+            "object": [
+              "bf109_01",
+              "bf109_02"
+            ],
+            "plane": {
+              "targetDeviation": {
+                "defaultVal": 0.4,
+                "limits": [0.4,1.4],
+                "trigger": "machine gun"
+              }
+            }
+          },
+          {
+            "effShootingRate": 0.2,
+            "object": "ju_88_02",
+            "plane": {
+              "targetDeviation": {
+                "defaultVal": 0.6,
+                "limits": [0.6,1.8],
+                "trigger": "gunner"
+              }
+            }
+          }
+        ],
+        "wait": {
+          "time": 3.0
+        }
+      },
+      "comments": "",
+      "conditions": {},
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "to_waypoint": {
+      "actions": {
+        "missionMarkAsWaypoint": {
+          "ignoreDifficulty": false,
+          "oriented": false,
+          "primary": true,
+          "scale": 1.0,
+          "target": "waypoint",
+          "visible": false
+        },
+        "moAddMissionObjective": [
+          {
+            "target": "dlc_newbie_fight_vip"
+          },
+          {
+            "target": "dlc_newbie_fight_newbie_alive"
+          }
+        ],
+        "moSetObjectiveStatus": {
+          "status": 2,
+          "target": "dlc_newbie_fight_to_waypoint"
+        },
+        "playHint": [
+          {
+            "action": "show",
+            "hintType": "custom",
+            "name": "hints/dlc_newbie_fight_hint",
+            "shouldFadeOut": true
+          },
+          {
+            "action": "hide",
+            "hintType": "custom",
+            "name": "hints/dlc_newbie_fight_hint",
+            "shouldFadeOut": true
+          }
+        ],
+        "triggerDisable": {
+          "target": "fail_mission_waypoint"
+        },
+        "triggerEnable": [
+          {
+            "target": [
+              "fail_mission_ju88_02",
+              "ju88_02_killed",
+              "ju88_02_damaged",
+              "bf_109_01_killed"
+            ]
+          },
+          {
+            "target": "newbie_alive_fail"
+          }
+        ],
+        "unitAttackTarget": [
+          {
+            "fireRandom": true,
+            "object": "vip_person",
+            "playerAttracted": false,
+            "target": "ju_88_02"
+          },
+          {
+            "fireRandom": true,
+            "object": "bf109_01",
+            "playerAttracted": true,
+            "playerAttractedCount": 2,
+            "playerAttractedEffRate": 0.7,
+            "target": [
+              "vip_person",
+              "player_wing"
+            ]
+          }
+        ],
+        "unitMoveTo": {
+          "follow_target": false,
+          "object": "ju_88_02",
+          "shouldKeepFormation": true,
+          "speed": 250.0,
+          "target": "bombers_point",
+          "teleportHeightType": "absolute",
+          "teleportHeightValue": 1000.0,
+          "useUnitHeightForTele": true
+        },
+        "unitSetIndication": {
+          "set": true,
+          "target": "bf109_01"
+        },
+        "unitWakeUp": [
+          {
+            "target": "ju_88_02"
+          },
+          {
+            "target": "bf109_01"
+          }
+        ],
+        "wait": [
+          {
+            "time": 3.0
+          },
+          {
+            "time": 3.0
+          },
+          {
+            "time": 10.0
+          },
+          {
+            "time": 5.0
+          },
+          {
+            "time": 1.0
+          }
+        ]
+      },
+      "comments": "",
+      "conditions": {
+        "unitDistanceBetween": {
+          "check_objects": "any",
+          "check_targets": "any",
+          "math": "2D",
+          "object": "vip_person",
+          "object_type": "isAlive",
+          "target": "waypoint",
+          "target_type": "isAlive",
+          "value": 2500.0
+        }
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "update_indicators": {
+      "actions": {
+        "missionSetTargetsIndicator": {
+          "delta": 0,
+          "icon": "air",
+          "icon army": 1,
+          "set": true,
+          "target": "vip_person",
+          "target_marking": 1,
+          "target_type": "isActive"
+        }
+      },
+      "comments": "",
+      "conditions": {},
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": true
+      }
+    },
+    "vip_killed": {
+      "actions": {
+        "unitMark": {
+          "target": "vip_person",
+          "target_marking": 0,
+          "useForTriggerFiltered": true
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "unitWhenStatus": {
+          "check_objects": "any",
+          "object": "vip_person",
+          "object_marking": 0,
+          "object_type": "isKilled"
+        }
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": true
+      }
+    }
+  },
+  "units": {
+    "air_defence": [
+      {
+        "closed_waypoints": false,
+        "name": "air_defence_01",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [21180.6,43.1876,-15606.2]
+        ],
+        "unit_class": "germ_88mm_flak36",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "closed_waypoints": false,
+        "name": "air_defence_02",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [21486.2,43.1926,-15190.6]
+        ],
+        "unit_class": "germ_37mm_flak43",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "closed_waypoints": false,
+        "name": "air_defence_03",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [21468.7,45.0166,-14688.0]
+        ],
+        "unit_class": "germ_37mm_flak43",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "closed_waypoints": false,
+        "name": "air_defence_04",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [21297.8,56.1573,-14415.0]
+        ],
+        "unit_class": "germ_88mm_flak36",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "closed_waypoints": false,
+        "name": "air_defence_05",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [20786.3,43.0479,-16348.2]
+        ],
+        "unit_class": "germ_37mm_flak43",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "closed_waypoints": false,
+        "name": "air_defence_06",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [20284.4,44.0723,-16641.4]
+        ],
+        "unit_class": "germ_88mm_flak36",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "closed_waypoints": false,
+        "name": "air_defence_07",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [19377.6,63.3792,-16723.0]
+        ],
+        "unit_class": "germ_37mm_flak43",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "closed_waypoints": false,
+        "name": "air_defence_08",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [18912.3,65.1001,-16431.4]
+        ],
+        "unit_class": "germ_88mm_flak36",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "closed_waypoints": false,
+        "name": "air_defence_17",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [21472.9,53.3956,-16088.5]
+        ],
+        "unit_class": "germ_88mm_flak36",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "closed_waypoints": false,
+        "name": "air_defence_18",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [21778.6,65.1279,-15672.9]
+        ],
+        "unit_class": "germ_37mm_flak43",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "closed_waypoints": false,
+        "name": "air_defence_19",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [21761.1,43.8754,-15170.3]
+        ],
+        "unit_class": "germ_88mm_flak36",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "closed_waypoints": false,
+        "name": "air_defence_20",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [21590.2,44.2826,-14897.3]
+        ],
+        "unit_class": "germ_88mm_flak36",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "closed_waypoints": false,
+        "name": "air_defence_21",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [21078.7,43.5135,-16830.5]
+        ],
+        "unit_class": "germ_88mm_flak36",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "closed_waypoints": false,
+        "name": "air_defence_22",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [20972.6,47.1494,-17909.9]
+        ],
+        "unit_class": "germ_37mm_flak43",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "closed_waypoints": false,
+        "name": "air_defence_23",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [19670.0,42.8878,-17205.2]
+        ],
+        "unit_class": "germ_37mm_flak43",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "closed_waypoints": false,
+        "name": "air_defence_16",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [19204.7,52.483,-16913.6]
+        ],
+        "unit_class": "germ_88mm_flak36",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "closed_waypoints": false,
+        "name": "berlin_aaa_01",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [3833.25,42.25,8465.6]
+        ],
+        "unit_class": "germ_88mm_flak36",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "closed_waypoints": false,
+        "name": "berlin_aaa_02",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [2886.8,42.25,7186.3]
+        ],
+        "unit_class": "germ_88mm_flak36",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "closed_waypoints": false,
+        "name": "berlin_aaa_03",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [3852.3,42.25,6404.6]
+        ],
+        "unit_class": "germ_88mm_flak36",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "closed_waypoints": false,
+        "name": "berlin_aaa_04",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [5839.55,42.25,5500.6]
+        ],
+        "unit_class": "germ_88mm_flak36",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "closed_waypoints": false,
+        "name": "berlin_aaa_05",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [6438.15,42.25,5295.6]
+        ],
+        "unit_class": "germ_88mm_flak36",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "closed_waypoints": false,
+        "name": "berlin_aaa_06",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [4960.4,42.25,5163.5]
+        ],
+        "unit_class": "germ_88mm_flak36",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "closed_waypoints": false,
+        "name": "berlin_aaa_07",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [5933.95,42.25,4358.6]
+        ],
+        "unit_class": "germ_88mm_flak36",
+        "way": {},
+        "weapons": ""
+      }
+    ],
+    "armada": [
+      {
+        "closed_waypoints": false,
+        "name": "player_wing",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 1,
+          "attack_type": "fire_at_will",
+          "count": 4,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "minimum_distance_to_earth": 20.0,
+          "numInWing": 2,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "skill": 4
+        },
+        "tm": [
+          [-0.573576,0.0,-0.819152],
+          [0.0,1.0,0.0],
+          [0.819152,0.0,-0.573576],
+          [21392.9,3453.4,10670.3]
+        ],
+        "unit_class": "yak-3",
+        "way": {},
+        "weapons": "Yak3_default"
+      },
+      {
+        "closed_waypoints": false,
+        "name": "vip_person",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 1,
+          "attack_type": "fire_at_will",
+          "count": 4,
+          "floating_distance": 100.0,
+          "free_distance": 120.0,
+          "minimum_distance_to_earth": 70.0,
+          "numInWing": 2,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "skill": 4,
+          "targetableByAi": false
+        },
+        "tm": [
+          [-0.573576,0.0,-0.819152],
+          [0.0,1.0,0.0],
+          [0.819152,0.0,-0.573576],
+          [21184.9,3453.4,10297.0]
+        ],
+        "unit_class": "yak-3",
+        "way": {},
+        "weapons": "Yak3_default"
+      },
+      {
+        "closed_waypoints": false,
+        "name": "ju_88_02",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 30,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "minimum_distance_to_earth": 20.0,
+          "numInWing": 9,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.5,
+            "row_distances": 3.5,
+            "super_col_distances": 2.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 2.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "skill": 4,
+          "targetableByAi": true
+        },
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [5106.45,3454.9,18918.3]
+        ],
+        "unit_class": "he-111h-6",
+        "way": {},
+        "weapons": "he-111h-6_8xSC250"
+      },
+      {
+        "closed_waypoints": false,
+        "name": "bf109_01",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 12,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "minimum_distance_to_earth": 20.0,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "skill": 4,
+          "targetableByAi": false
+        },
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [1774.25,4190.5,16193.0]
+        ],
+        "unit_class": "bf-109k-4",
+        "way": {},
+        "weapons": "Bf_109K4_default"
+      },
+      {
+        "closed_waypoints": false,
+        "name": "bf109_02",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 12,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "minimum_distance_to_earth": 20.0,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "skill": 4,
+          "targetableByAi": false
+        },
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [8569.8,5454.9,8391.5]
+        ],
+        "unit_class": "bf-109k-4",
+        "way": {},
+        "weapons": "Bf_109K4_default"
+      }
+    ],
+    "squad": [
+      {
+        "closed_waypoints": false,
+        "name": "berlin_aaa_squad",
+        "props": {
+          "squad_members": [
+            "berlin_aaa_01",
+            "berlin_aaa_02",
+            "berlin_aaa_03",
+            "berlin_aaa_04",
+            "berlin_aaa_05",
+            "berlin_aaa_06",
+            "berlin_aaa_07"
+          ]
+        },
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [3987.05,49.45,5775.55]
+        ],
+        "unit_class": "",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "closed_waypoints": false,
+        "name": "players_squad",
+        "props": {
+          "object_type": "isPlayer",
+          "squad_members": "players_squad"
+        },
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [9489.05,63.85,16012.1]
+        ],
+        "unit_class": "",
+        "way": {},
+        "weapons": ""
+      }
+    ]
+  },
+  "variables": {
+    "close_fight_success": 0,
+    "enemies_count": 0
+  }
+}

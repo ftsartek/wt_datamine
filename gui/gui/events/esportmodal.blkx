@@ -1,0 +1,44 @@
+{
+  "root": {
+    "bgrStyle": "fullScreenWnd",
+    "blur": {},
+    "blur_foreground": {},
+    "frame": {
+      "class": "wndNav",
+      "frame_header": {
+        "Breadcrumb": {
+          "Button_text": {
+            "_on_click": "goBack",
+            "btnText": {
+              "id": "back_scene_name"
+            },
+            "img": {},
+            "visualStyle": "noBgr"
+          }
+        },
+        "Button_close": {
+          "id": "btn_back"
+        }
+      },
+      "fullScreenSize": "yes",
+      "height": "sh-@bottomMenuPanelHeight",
+      "id": "wnd_eSport",
+      "pos": "0.5pw-0.5w, 0.5ph-0.5h-0.5@bottomMenuPanelHeight",
+      "position": "absolute",
+      "tdiv": {
+        "flow": "vertical",
+        "id": "eSport_container",
+        "max-width": "pw",
+        "padding": "1@scrollArrowsSize, 0",
+        "pos": "0.5pw-0.5w, 0.5ph-0.5h",
+        "position": "relative"
+      },
+      "width": "@rw"
+    }
+  },
+  "timer": {
+    "id": "update_timer",
+    "timer_handler_func": "onTimer",
+    "timer_interval_msec": "1000"
+  }
+}

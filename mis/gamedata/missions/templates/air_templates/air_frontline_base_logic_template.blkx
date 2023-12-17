@@ -1,0 +1,4851 @@
+{
+  "airfields": {},
+  "areas": {},
+  "bin_dump_file": "",
+  "dialogs": {},
+  "effects": {},
+  "imports": {},
+  "mission_objectives": {
+    "isCategory": true,
+    "is_enabled": true
+  },
+  "mission_settings": {
+    "atmosphere": {
+      "pressure": 760.0,
+      "temperature": 0.0
+    },
+    "mission": {
+      "environment": "Day",
+      "level": "levels/guadalcanal.bin",
+      "optionalTakeOff": false,
+      "restoreType": "attempts",
+      "scoreLimit": 5000,
+      "type": "domination",
+      "weather": "hazy"
+    },
+    "player": {
+      "army": 1,
+      "wing": [
+        "t1_player02",
+        "t1_player03",
+        "t1_player04",
+        "t1_player05",
+        "t1_player06",
+        "t1_player07",
+        "t1_player08",
+        "t1_player09",
+        "t1_player10",
+        "t1_player11",
+        "t1_player12",
+        "t1_player13",
+        "t1_player14",
+        "t1_player15",
+        "t1_player16"
+      ]
+    },
+    "player_teamB": {
+      "army": 2,
+      "wing": [
+        "t2_player01",
+        "t2_player02",
+        "t2_player03",
+        "t2_player04",
+        "t2_player05",
+        "t2_player06",
+        "t2_player07",
+        "t2_player08",
+        "t2_player09",
+        "t2_player10",
+        "t2_player11",
+        "t2_player12",
+        "t2_player13",
+        "t2_player14",
+        "t2_player15",
+        "t2_player16",
+        "t2_player17"
+      ]
+    },
+    "spectator_points": {}
+  },
+  "objLayers": {},
+  "selected_tag": "",
+  "triggers": {
+    "barabashka_init": {
+      "actions": {
+        "missionGetBalanceLevel": {
+          "input_var": "blt_balance_level"
+        },
+        "triggerActivate": [
+          {
+            "activate_type": "checkConidtions",
+            "after_activation": "disable",
+            "check_trigger_status": false,
+            "target": "barabashka_rank_0_2"
+          },
+          {
+            "activate_type": "checkConidtions",
+            "after_activation": "disable",
+            "check_trigger_status": false,
+            "target": "barabashka_rank_3_5"
+          },
+          {
+            "activate_type": "checkConidtions",
+            "after_activation": "disable",
+            "check_trigger_status": false,
+            "target": "barabashka_rank_6_8"
+          },
+          {
+            "activate_type": "checkConidtions",
+            "after_activation": "disable",
+            "check_trigger_status": false,
+            "target": "barabashka_rank_9_11"
+          },
+          {
+            "activate_type": "checkConidtions",
+            "after_activation": "disable",
+            "check_trigger_status": false,
+            "target": "barabashka_rank_12_14"
+          },
+          {
+            "activate_type": "checkConidtions",
+            "after_activation": "disable",
+            "check_trigger_status": false,
+            "target": "barabashka_rank_15_17"
+          },
+          {
+            "activate_type": "checkConidtions",
+            "after_activation": "disable",
+            "check_trigger_status": false,
+            "target": "barabashka_rank_18_20"
+          },
+          {
+            "activate_type": "checkConidtions",
+            "after_activation": "disable",
+            "check_trigger_status": false,
+            "target": "barabashka_rank_21_23"
+          },
+          {
+            "activate_type": "checkConidtions",
+            "after_activation": "disable",
+            "check_trigger_status": false,
+            "target": "barabashka_rank_24_26"
+          }
+        ],
+        "varSetReal": {
+          "value": 0.0,
+          "var": "destroy_timer_cur"
+        }
+      },
+      "comments": "",
+      "conditions": {},
+      "else_actions": {},
+      "events": {
+        "timeExpires": {
+          "time": 240.0
+        }
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "barabashka_rank_0_2": {
+      "actions": {
+        "comment": {
+          "value": "ne menyaem arcade_destroy_timer"
+        },
+        "triggerEnable": {
+          "target": [
+            "destroy_quest_units_by_timer_prepare",
+            "destroy_timer_cur_increase",
+            "recalculate_max_timer",
+            "updater_arcade_check",
+            "updater_non_arcade_check"
+          ]
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "varCompareInt": {
+          "comparasion_func": "less",
+          "value": 3,
+          "var_value": "blt_balance_level"
+        }
+      },
+      "else_actions": {},
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "barabashka_rank_12_14": {
+      "actions": {
+        "comment": {
+          "value": "dobavlyaem 60 sekund v arcade_destroy_timer"
+        },
+        "triggerEnable": {
+          "target": [
+            "destroy_quest_units_by_timer_prepare",
+            "destroy_timer_cur_increase",
+            "recalculate_max_timer",
+            "updater_arcade_check",
+            "updater_non_arcade_check"
+          ]
+        },
+        "varModify": {
+          "operator": "add",
+          "value": 90.0,
+          "var": "arcade_destroy_timer"
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "varCompareInt": [
+          {
+            "comparasion_func": "more",
+            "value": 11,
+            "var_value": "blt_balance_level"
+          },
+          {
+            "comparasion_func": "less",
+            "value": 15,
+            "var_value": "blt_balance_level"
+          }
+        ]
+      },
+      "else_actions": {},
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "barabashka_rank_15_17": {
+      "actions": {
+        "comment": {
+          "value": "dobavlyaem 60 sekund v arcade_destroy_timer"
+        },
+        "triggerEnable": {
+          "target": [
+            "destroy_quest_units_by_timer_prepare",
+            "destroy_timer_cur_increase",
+            "recalculate_max_timer",
+            "updater_arcade_check",
+            "updater_non_arcade_check"
+          ]
+        },
+        "varModify": {
+          "operator": "add",
+          "value": 90.0,
+          "var": "arcade_destroy_timer"
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "varCompareInt": [
+          {
+            "comparasion_func": "more",
+            "value": 14,
+            "var_value": "blt_balance_level"
+          },
+          {
+            "comparasion_func": "less",
+            "value": 18,
+            "var_value": "blt_balance_level"
+          }
+        ]
+      },
+      "else_actions": {},
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "barabashka_rank_18_20": {
+      "actions": {
+        "comment": {
+          "value": "dobavlyaem 60 sekund v arcade_destroy_timer"
+        },
+        "triggerEnable": {
+          "target": [
+            "destroy_quest_units_by_timer_prepare",
+            "destroy_timer_cur_increase",
+            "recalculate_max_timer",
+            "updater_arcade_check",
+            "updater_non_arcade_check"
+          ]
+        },
+        "varModify": {
+          "operator": "add",
+          "value": 120.0,
+          "var": "arcade_destroy_timer"
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "varCompareInt": [
+          {
+            "comparasion_func": "more",
+            "value": 17,
+            "var_value": "blt_balance_level"
+          },
+          {
+            "comparasion_func": "less",
+            "value": 21,
+            "var_value": "blt_balance_level"
+          }
+        ]
+      },
+      "else_actions": {},
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "barabashka_rank_21_23": {
+      "actions": {
+        "comment": {
+          "value": "dobavlyaem 60 sekund v arcade_destroy_timer"
+        },
+        "triggerEnable": {
+          "target": [
+            "destroy_quest_units_by_timer_prepare",
+            "destroy_timer_cur_increase",
+            "recalculate_max_timer",
+            "updater_arcade_check",
+            "updater_non_arcade_check"
+          ]
+        },
+        "varModify": {
+          "operator": "add",
+          "value": 120.0,
+          "var": "arcade_destroy_timer"
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "varCompareInt": [
+          {
+            "comparasion_func": "more",
+            "value": 20,
+            "var_value": "blt_balance_level"
+          },
+          {
+            "comparasion_func": "less",
+            "value": 24,
+            "var_value": "blt_balance_level"
+          }
+        ]
+      },
+      "else_actions": {},
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "barabashka_rank_24_26": {
+      "actions": {
+        "comment": {
+          "value": "dobavlyaem 60 sekund v arcade_destroy_timer"
+        },
+        "triggerEnable": {
+          "target": [
+            "destroy_quest_units_by_timer_prepare",
+            "destroy_timer_cur_increase",
+            "recalculate_max_timer",
+            "updater_arcade_check",
+            "updater_non_arcade_check"
+          ]
+        },
+        "varModify": {
+          "operator": "add",
+          "value": 120.0,
+          "var": "arcade_destroy_timer"
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "varCompareInt": {
+          "comparasion_func": "more",
+          "value": 23,
+          "var_value": "blt_balance_level"
+        }
+      },
+      "else_actions": {},
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "barabashka_rank_3_5": {
+      "actions": {
+        "comment": {
+          "value": "ne menyaem arcade_destroy_timer"
+        },
+        "triggerEnable": {
+          "target": [
+            "destroy_quest_units_by_timer_prepare",
+            "destroy_timer_cur_increase",
+            "recalculate_max_timer",
+            "updater_arcade_check",
+            "updater_non_arcade_check"
+          ]
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "varCompareInt": [
+          {
+            "comparasion_func": "more",
+            "value": 2,
+            "var_value": "blt_balance_level"
+          },
+          {
+            "comparasion_func": "less",
+            "value": 6,
+            "var_value": "blt_balance_level"
+          }
+        ]
+      },
+      "else_actions": {},
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "barabashka_rank_6_8": {
+      "actions": {
+        "comment": {
+          "value": "ne menyaem arcade_destroy_timer"
+        },
+        "triggerEnable": {
+          "target": [
+            "destroy_quest_units_by_timer_prepare",
+            "destroy_timer_cur_increase",
+            "recalculate_max_timer",
+            "updater_arcade_check",
+            "updater_non_arcade_check"
+          ]
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "varCompareInt": [
+          {
+            "comparasion_func": "more",
+            "value": 5,
+            "var_value": "blt_balance_level"
+          },
+          {
+            "comparasion_func": "less",
+            "value": 9,
+            "var_value": "blt_balance_level"
+          }
+        ]
+      },
+      "else_actions": {},
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "barabashka_rank_9_11": {
+      "actions": {
+        "comment": {
+          "value": "ne menyaem arcade_destroy_timer"
+        },
+        "triggerEnable": {
+          "target": [
+            "destroy_quest_units_by_timer_prepare",
+            "destroy_timer_cur_increase",
+            "recalculate_max_timer",
+            "updater_arcade_check",
+            "updater_non_arcade_check"
+          ]
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "varCompareInt": [
+          {
+            "comparasion_func": "more",
+            "value": 8,
+            "var_value": "blt_balance_level"
+          },
+          {
+            "comparasion_func": "less",
+            "value": 11,
+            "var_value": "blt_balance_level"
+          }
+        ]
+      },
+      "else_actions": {},
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "basic_logic_init_template": {
+      "actions": {
+        "unitSetProperties": {
+          "object": [
+            "t1_quest_units_squad",
+            "t2_quest_units_squad"
+          ],
+          "object_marking": 0,
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "object_var_value": 0,
+          "stealthRadius": 50000.0
+        }
+      },
+      "comments": "",
+      "conditions": {},
+      "else_actions": {},
+      "events": {
+        "timeExpires": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "blt_check_100_points": {
+      "actions": {
+        "comment": {
+          "value": "mozhno ubivat' tyazhelogo yunita"
+        },
+        "triggerEnable": {
+          "target": "destroy_100_points_units"
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "varCompareInt": {
+          "comparasion_func": "more",
+          "value": 100,
+          "var_value": "blt_100_points_rate"
+        }
+      },
+      "else_actions": {},
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "blt_check_20_points": {
+      "actions": {
+        "comment": {
+          "value": "mozhno ubivat' tyazhelogo yunita"
+        },
+        "triggerEnable": {
+          "target": "destroy_20_points_units"
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "varCompareInt": {
+          "comparasion_func": "more",
+          "value": 100,
+          "var_value": "blt_20_points_rate"
+        }
+      },
+      "else_actions": {},
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "blt_check_40_points": {
+      "actions": {
+        "comment": {
+          "value": "mozhno ubivat' tyazhelogo yunita"
+        },
+        "triggerEnable": {
+          "target": "destroy_40_points_units"
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "varCompareInt": {
+          "comparasion_func": "more",
+          "value": 100,
+          "var_value": "blt_40_points_rate"
+        }
+      },
+      "else_actions": {},
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "destroy_100_points_units": {
+      "actions": {
+        "unitDamage": [
+          {
+            "countEffects": 3,
+            "delay": [2.0,3.0],
+            "doExplosion": true,
+            "offset": [0.0,0.0,0.0],
+            "part": 0,
+            "power": 1.0,
+            "radiusOffset": [10.0,15.0],
+            "randomTargetsCount": 1,
+            "target": "t1_100_points_squad",
+            "useEffect": true,
+            "useForTriggerFiltered": true
+          },
+          {
+            "countEffects": 3,
+            "delay": [2.0,3.0],
+            "doExplosion": true,
+            "offset": [0.0,0.0,0.0],
+            "part": 0,
+            "power": 1.0,
+            "radiusOffset": [10.0,15.0],
+            "randomTargetsCount": 1,
+            "target": "t2_100_points_squad",
+            "useEffect": true,
+            "useForTriggerFiltered": true
+          }
+        ],
+        "varSetInt": {
+          "value": 0,
+          "var": "blt_100_points_rate"
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "unitDistanceBetween": [
+          {
+            "check_all_units": true,
+            "check_objects": "any",
+            "check_targets": "any",
+            "compareCenters": false,
+            "math": "2D",
+            "object": "t1_100_points_squad",
+            "object_marking": 0,
+            "object_type": "isActive",
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "object_var_value": 0,
+            "target": "t2_100_points_squad",
+            "target_marking": 0,
+            "target_type": "isActive",
+            "value": 1500.0,
+            "var": "distance_timer_destroy"
+          },
+          {
+            "check_all_units": true,
+            "check_objects": "any",
+            "check_targets": "any",
+            "compareCenters": false,
+            "math": "2D",
+            "object": "t2_100_points_squad",
+            "object_marking": 0,
+            "object_type": "isActive",
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "object_var_value": 0,
+            "target": "t1_100_points_squad",
+            "target_marking": 0,
+            "target_type": "isActive",
+            "value": 1500.0,
+            "var": "distance_timer_destroy"
+          }
+        ]
+      },
+      "else_actions": {},
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "destroy_20_points_units": {
+      "actions": {
+        "unitDamage": [
+          {
+            "countEffects": 3,
+            "delay": [2.0,3.0],
+            "doExplosion": true,
+            "offset": [0.0,0.0,0.0],
+            "part": 0,
+            "power": 1.0,
+            "radiusOffset": [10.0,15.0],
+            "randomTargetsCount": 1,
+            "target": "t1_20_points_squad",
+            "useEffect": true,
+            "useForTriggerFiltered": true
+          },
+          {
+            "countEffects": 3,
+            "delay": [2.0,3.0],
+            "doExplosion": true,
+            "offset": [0.0,0.0,0.0],
+            "part": 0,
+            "power": 1.0,
+            "radiusOffset": [10.0,15.0],
+            "randomTargetsCount": 1,
+            "target": "t2_20_points_squad",
+            "useEffect": true,
+            "useForTriggerFiltered": true
+          }
+        ],
+        "varSetInt": {
+          "value": 0,
+          "var": "blt_20_points_rate"
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "unitDistanceBetween": [
+          {
+            "check_all_units": true,
+            "check_objects": "any",
+            "check_targets": "any",
+            "compareCenters": false,
+            "math": "2D",
+            "object": "t1_20_points_squad",
+            "object_marking": 0,
+            "object_type": "isActive",
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "object_var_value": 0,
+            "target": "t2_20_points_squad",
+            "target_marking": 0,
+            "target_type": "isActive",
+            "value": 1500.0,
+            "var": "distance_timer_destroy"
+          },
+          {
+            "check_all_units": true,
+            "check_objects": "any",
+            "check_targets": "any",
+            "compareCenters": false,
+            "math": "2D",
+            "object": "t2_20_points_squad",
+            "object_marking": 0,
+            "object_type": "isActive",
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "object_var_value": 0,
+            "target": "t1_20_points_squad",
+            "target_marking": 0,
+            "target_type": "isActive",
+            "value": 1500.0,
+            "var": "distance_timer_destroy"
+          }
+        ]
+      },
+      "else_actions": {},
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "destroy_40_points_units": {
+      "actions": {
+        "unitDamage": [
+          {
+            "countEffects": 3,
+            "delay": [2.0,3.0],
+            "doExplosion": true,
+            "offset": [0.0,0.0,0.0],
+            "part": 0,
+            "power": 1.0,
+            "radiusOffset": [10.0,15.0],
+            "randomTargetsCount": 1,
+            "target": "t1_40_points_squad",
+            "useEffect": true,
+            "useForTriggerFiltered": true
+          },
+          {
+            "countEffects": 3,
+            "delay": [2.0,3.0],
+            "doExplosion": true,
+            "offset": [0.0,0.0,0.0],
+            "part": 0,
+            "power": 1.0,
+            "radiusOffset": [10.0,15.0],
+            "randomTargetsCount": 1,
+            "target": "t2_40_points_squad",
+            "useEffect": true,
+            "useForTriggerFiltered": true
+          }
+        ],
+        "varSetInt": {
+          "value": 0,
+          "var": "blt_40_points_rate"
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "unitDistanceBetween": [
+          {
+            "check_all_units": true,
+            "check_objects": "any",
+            "check_targets": "any",
+            "compareCenters": false,
+            "math": "2D",
+            "object": "t1_40_points_squad",
+            "object_marking": 0,
+            "object_type": "isActive",
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "object_var_value": 0,
+            "target": "t2_40_points_squad",
+            "target_marking": 0,
+            "target_type": "isActive",
+            "value": 1500.0,
+            "var": "distance_timer_destroy"
+          },
+          {
+            "check_all_units": true,
+            "check_objects": "any",
+            "check_targets": "any",
+            "compareCenters": false,
+            "math": "2D",
+            "object": "t2_40_points_squad",
+            "object_marking": 0,
+            "object_type": "isActive",
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "object_var_value": 0,
+            "target": "t1_40_points_squad",
+            "target_marking": 0,
+            "target_type": "isActive",
+            "value": 1500.0,
+            "var": "distance_timer_destroy"
+          }
+        ]
+      },
+      "else_actions": {},
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "destroy_quest_units_by_timer_prepare": {
+      "actions": {
+        "__triggerEnable": {
+          "target": [
+            "destroy_100_points_units",
+            "destroy_40_points_units",
+            "destroy_20_points_units"
+          ]
+        },
+        "triggerEnable": {
+          "target": [
+            "blt_check_100_points",
+            "blt_check_40_points",
+            "blt_check_20_points"
+          ]
+        },
+        "varModify": [
+          {
+            "operator": "add",
+            "value": 25.0,
+            "var": "blt_100_points_rate"
+          },
+          {
+            "operator": "add",
+            "value": 50.0,
+            "var": "blt_40_points_rate"
+          },
+          {
+            "operator": "add",
+            "value": 100.0,
+            "var": "blt_20_points_rate"
+          }
+        ],
+        "varSetReal": {
+          "value": 0.0,
+          "var": "destroy_timer_cur"
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "varCompareReal": {
+          "comparasion_func": "notLess",
+          "value": 0.0,
+          "var_value": "destroy_timer_cur",
+          "var_value_other": "destroy_timer_max"
+        }
+      },
+      "else_actions": {},
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": true
+      }
+    },
+    "destroy_timer_cur_increase": {
+      "actions": {
+        "varModify": {
+          "operator": "add",
+          "value": 1.0,
+          "var": "destroy_timer_cur"
+        }
+      },
+      "comments": "",
+      "conditions": {},
+      "else_actions": {},
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": true
+      }
+    },
+    "isCategory": true,
+    "is_enabled": true,
+    "long_time_arcade_checker": {
+      "actions": {
+        "varSetReal": {
+          "value": 25000.0,
+          "var": "distance_timer_destroy"
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "gameWhenDifficulty": {
+          "difficulty": "arcade",
+          "is": "equal"
+        }
+      },
+      "else_actions": {},
+      "events": {
+        "timeExpires": {
+          "time": 900.0
+        }
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "long_time_historical_checker": {
+      "actions": {
+        "varSetReal": {
+          "value": 25000.0,
+          "var": "distance_timer_destroy"
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "gameWhenDifficulty": {
+          "difficulty": "realistic",
+          "is": "equal"
+        }
+      },
+      "else_actions": {},
+      "events": {
+        "timeExpires": {
+          "time": 1200.0
+        }
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "long_time_preventer": {
+      "isCategory": true,
+      "is_enabled": true,
+      "long_time_arcade_init": {
+        "actions": {
+          "comment": {
+            "value": "predotvrashchenie dlinnyh sessij rabotaet tol'ko dlya arkady"
+          },
+          "triggerEnable": {
+            "target": "long_time_check"
+          }
+        },
+        "comments": "",
+        "conditions": {
+          "gameWhenDifficulty": {
+            "difficulty": "arcade",
+            "is": "equal"
+          }
+        },
+        "else_actions": {},
+        "events": {
+          "periodicEvent": {
+            "time": 1.0
+          }
+        },
+        "is_enabled": true,
+        "props": {
+          "actionsType": "PERFORM_ONE_BY_ONE",
+          "conditionsType": "ALL",
+          "enableAfterComplete": false
+        }
+      },
+      "long_time_check": {
+        "actions": {
+          "varModify": [
+            {
+              "operator": "add",
+              "use_variable": true,
+              "value": 300.0,
+              "var": "long_time_arcade_timer",
+              "var_value": "long_time_arcade_timer"
+            },
+            {
+              "operator": "add",
+              "use_variable": true,
+              "value": 4500.0,
+              "var": "distance_timer_destroy",
+              "var_value": "long_time_arcade_distance"
+            }
+          ],
+          "varSetReal": [
+            {
+              "value": 0.0,
+              "var": "arcade_destroy_timer"
+            },
+            {
+              "value": 0.0,
+              "var": "distance_timer_destroy"
+            }
+          ]
+        },
+        "comments": "",
+        "conditions": {},
+        "else_actions": {},
+        "events": {
+          "timeExpires": {
+            "time": 240.0,
+            "var": "long_time_is"
+          }
+        },
+        "is_enabled": false,
+        "props": {
+          "actionsType": "PERFORM_ONE_BY_ONE",
+          "conditionsType": "ALL",
+          "enableAfterComplete": false
+        }
+      }
+    },
+    "mission_timer_update": {
+      "actions": {
+        "varModify": {
+          "operator": "add",
+          "value": 1.0,
+          "var": "mission_timer"
+        }
+      },
+      "comments": "",
+      "conditions": {},
+      "else_actions": {},
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": true
+      }
+    },
+    "recalculate_max_timer": {
+      "actions": {
+        "triggerEnable": {
+          "target": [
+            "updater_arcade_check",
+            "updater_non_arcade_check"
+          ]
+        }
+      },
+      "comments": "",
+      "conditions": {},
+      "else_actions": {},
+      "events": {
+        "periodicEvent": {
+          "time": 30.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": true
+      }
+    },
+    "recalculate_max_timer_arcade": {
+      "actions": {
+        "varModify": [
+          {
+            "operator": "add",
+            "use_variable": true,
+            "value": 0.0,
+            "var": "destroy_timer_max",
+            "var_value": "arcade_destroy_timer"
+          },
+          {
+            "operator": "subAB",
+            "use_variable": true,
+            "value": 0.0,
+            "var": "destroy_timer_max",
+            "var_value": "mission_timer"
+          },
+          {
+            "operator": "add",
+            "use_variable": true,
+            "value": 0.0,
+            "var": "all_land_units_count",
+            "var_value": "t1_land_unit_count"
+          },
+          {
+            "operator": "add",
+            "use_variable": true,
+            "value": 0.0,
+            "var": "all_land_units_count",
+            "var_value": "t2_land_unit_count"
+          },
+          {
+            "operator": "add",
+            "value": 1.0,
+            "var": "all_land_units_count"
+          },
+          {
+            "operator": "divAB",
+            "use_variable": true,
+            "value": 1.0,
+            "var": "destroy_timer_max",
+            "var_value": "all_land_units_count"
+          }
+        ],
+        "varSetInt": {
+          "value": 0,
+          "var": "all_land_units_count"
+        },
+        "varSetReal": {
+          "value": 0.0,
+          "var": "destroy_timer_max"
+        }
+      },
+      "comments": "",
+      "conditions": {},
+      "else_actions": {},
+      "events": {
+        "periodicEvent": {
+          "time": 0.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "recalculate_max_timer_non_arcade": {
+      "actions": {
+        "varModify": [
+          {
+            "operator": "add",
+            "use_variable": true,
+            "value": 0.0,
+            "var": "destroy_timer_max",
+            "var_value": "historical_destroy_timer"
+          },
+          {
+            "operator": "subAB",
+            "use_variable": true,
+            "value": 0.0,
+            "var": "destroy_timer_max",
+            "var_value": "mission_timer"
+          },
+          {
+            "operator": "add",
+            "use_variable": true,
+            "value": 0.0,
+            "var": "all_land_units_count",
+            "var_value": "t1_land_unit_count"
+          },
+          {
+            "operator": "add",
+            "use_variable": true,
+            "value": 0.0,
+            "var": "all_land_units_count",
+            "var_value": "t2_land_unit_count"
+          },
+          {
+            "operator": "add",
+            "value": 1.0,
+            "var": "all_land_units_count"
+          },
+          {
+            "operator": "divAB",
+            "use_variable": true,
+            "value": 1.0,
+            "var": "destroy_timer_max",
+            "var_value": "all_land_units_count"
+          }
+        ],
+        "varSetInt": {
+          "value": 0,
+          "var": "all_land_units_count"
+        },
+        "varSetReal": {
+          "value": 0.0,
+          "var": "destroy_timer_max"
+        }
+      },
+      "comments": "",
+      "conditions": {},
+      "else_actions": {},
+      "events": {
+        "periodicEvent": {
+          "time": 0.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "t1_killing_land_units": {
+      "actions": {
+        "comment": {
+          "value": "esli shablon ustanavlivaet znachenie peremennoj v 1 - nachinaem mochit' yunitov po tajmer"
+        },
+        "unitDamage": {
+          "countEffects": 3,
+          "delay": [1.0,1.0],
+          "doExplosion": true,
+          "offset": [0.0,0.0,0.0],
+          "part": 0,
+          "power": 1.0,
+          "radiusOffset": [10.0,15.0],
+          "randomTargetsCount": 1,
+          "target": "t1_quest_units_squad",
+          "useEffect": true
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "varCompareReal": {
+          "comparasion_func": "notLess",
+          "value": 1.0,
+          "var_value": "is_killing_land_units_t1"
+        }
+      },
+      "else_actions": {},
+      "events": {
+        "periodicEvent": {
+          "time": 45.0
+        }
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "t1_land_units_minus_couning": {
+      "actions": {
+        "varModify": {
+          "operator": "add",
+          "value": -1.0,
+          "var": "t1_land_unit_count"
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "unitWhenCountMatches": {
+          "func": "less",
+          "object": "t1_quest_units_squad",
+          "object_marking": 0,
+          "object_type": "isActive",
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "object_var_value": 0,
+          "value": 0,
+          "var": "t1_land_unit_count"
+        }
+      },
+      "else_actions": {},
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": true
+      }
+    },
+    "t1_land_units_plus_couning": {
+      "actions": {
+        "varModify": {
+          "operator": "add",
+          "value": 1.0,
+          "var": "t1_land_unit_count"
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "unitWhenCountMatches": {
+          "func": "more",
+          "object": "t1_quest_units_squad",
+          "object_marking": 0,
+          "object_type": "isActive",
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "object_var_value": 0,
+          "value": 0,
+          "var": "t1_land_unit_count"
+        }
+      },
+      "else_actions": {},
+      "events": {
+        "periodicEvent": {
+          "time": 0.1
+        }
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": true
+      }
+    },
+    "t1_loose": {
+      "actions": {
+        "gameMPChangeScore": {
+          "team": "A",
+          "value": -1,
+          "valueSystem": "percentage"
+        }
+      },
+      "comments": "",
+      "conditions": {},
+      "else_actions": {},
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": true
+      }
+    },
+    "t1_task_completed": {
+      "actions": {
+        "gameMPChangeScore": {
+          "team": "B",
+          "value": -10,
+          "valueSystem": "percentage"
+        }
+      },
+      "comments": "",
+      "conditions": {},
+      "else_actions": {},
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "t2_killing_land_units": {
+      "actions": {
+        "comment": {
+          "value": "esli shablon ustanavlivaet znachenie peremennoj v 1 - nachinaem mochit' yunitov po tajmer"
+        },
+        "unitDamage": {
+          "countEffects": 3,
+          "delay": [1.0,1.0],
+          "doExplosion": true,
+          "offset": [0.0,0.0,0.0],
+          "part": 0,
+          "power": 1.0,
+          "radiusOffset": [10.0,15.0],
+          "randomTargetsCount": 1,
+          "target": "t2_quest_units_squad",
+          "useEffect": true
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "varCompareReal": {
+          "comparasion_func": "notLess",
+          "value": 1.0,
+          "var_value": "is_killing_land_units_t2"
+        }
+      },
+      "else_actions": {},
+      "events": {
+        "periodicEvent": {
+          "time": 45.0
+        }
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "t2_land_units_minus_couning": {
+      "actions": {
+        "varModify": {
+          "operator": "add",
+          "value": -1.0,
+          "var": "t2_land_unit_count"
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "unitWhenCountMatches": {
+          "func": "less",
+          "object": "t2_quest_units_squad",
+          "object_marking": 0,
+          "object_type": "isActive",
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "object_var_value": 0,
+          "value": 0,
+          "var": "t2_land_unit_count"
+        }
+      },
+      "else_actions": {},
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": true
+      }
+    },
+    "t2_land_units_plus_couning": {
+      "actions": {
+        "varModify": {
+          "operator": "add",
+          "value": 1.0,
+          "var": "t2_land_unit_count"
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "unitWhenCountMatches": {
+          "func": "more",
+          "object": "t2_quest_units_squad",
+          "object_marking": 0,
+          "object_type": "isActive",
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "object_var_value": 0,
+          "value": 0,
+          "var": "t2_land_unit_count"
+        }
+      },
+      "else_actions": {},
+      "events": {
+        "periodicEvent": {
+          "time": 0.1
+        }
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": true
+      }
+    },
+    "t2_loose": {
+      "actions": {
+        "gameMPChangeScore": {
+          "team": "B",
+          "value": -1,
+          "valueSystem": "percentage"
+        }
+      },
+      "comments": "",
+      "conditions": {},
+      "else_actions": {},
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": true
+      }
+    },
+    "t2_task_completed": {
+      "actions": {
+        "gameMPChangeScore": {
+          "team": "A",
+          "value": -10,
+          "valueSystem": "percentage"
+        }
+      },
+      "comments": "",
+      "conditions": {},
+      "else_actions": {},
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "updater_arcade_check": {
+      "actions": {
+        "triggerDisable": {
+          "target": "recalculate_max_timer_non_arcade"
+        },
+        "triggerEnable": {
+          "target": "recalculate_max_timer_arcade"
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "gameWhenDifficulty": {
+          "difficulty": "arcade",
+          "is": "equal"
+        }
+      },
+      "else_actions": {},
+      "events": {
+        "periodicEvent": {
+          "time": 0.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "updater_non_arcade_check": {
+      "actions": {
+        "triggerDisable": {
+          "target": "recalculate_max_timer_arcade"
+        },
+        "triggerEnable": {
+          "target": "recalculate_max_timer_non_arcade"
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "gameWhenDifficulty": {
+          "difficulty": "arcade",
+          "is": "notEqual"
+        }
+      },
+      "else_actions": {},
+      "events": {
+        "periodicEvent": {
+          "time": 0.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    }
+  },
+  "units": {
+    "armada": [
+      {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "t1_player02",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "isDelayed": true,
+          "minimum_distance_to_earth": 20.0,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "player": true,
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [29598.2,430.55,29619.7]
+        ],
+        "unit_class": "dummy_plane",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "t1_player03",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "isDelayed": true,
+          "minimum_distance_to_earth": 20.0,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "player": true,
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [29523.2,430.55,29619.7]
+        ],
+        "unit_class": "dummy_plane",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "t2_player01",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "isDelayed": true,
+          "minimum_distance_to_earth": 20.0,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "player": true,
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [29682.8,430.55,28971.3]
+        ],
+        "unit_class": "dummy_plane",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "t1_player04",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "isDelayed": true,
+          "minimum_distance_to_earth": 20.0,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "player": true,
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [29401.1,430.55,29619.7]
+        ],
+        "unit_class": "dummy_plane",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "t1_player05",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "isDelayed": true,
+          "minimum_distance_to_earth": 20.0,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "player": true,
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [29286.5,430.55,29619.7]
+        ],
+        "unit_class": "dummy_plane",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "t1_player06",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "isDelayed": true,
+          "minimum_distance_to_earth": 20.0,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "player": true,
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [29211.5,430.55,29619.7]
+        ],
+        "unit_class": "dummy_plane",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "t1_player07",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "isDelayed": true,
+          "minimum_distance_to_earth": 20.0,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "player": true,
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [29089.4,430.55,29619.7]
+        ],
+        "unit_class": "dummy_plane",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "t1_player08",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "isDelayed": true,
+          "minimum_distance_to_earth": 20.0,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "player": true,
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [29008.9,430.55,29619.7]
+        ],
+        "unit_class": "dummy_plane",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "t1_player09",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "isDelayed": true,
+          "minimum_distance_to_earth": 20.0,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "player": true,
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [28933.9,430.55,29619.7]
+        ],
+        "unit_class": "dummy_plane",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "t1_player10",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "isDelayed": true,
+          "minimum_distance_to_earth": 20.0,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "player": true,
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [28811.8,430.55,29619.7]
+        ],
+        "unit_class": "dummy_plane",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "t1_player11",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "isDelayed": true,
+          "minimum_distance_to_earth": 20.0,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "player": true,
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [28697.2,430.55,29619.7]
+        ],
+        "unit_class": "dummy_plane",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "t1_player12",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "isDelayed": true,
+          "minimum_distance_to_earth": 20.0,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "player": true,
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [28622.2,430.55,29619.7]
+        ],
+        "unit_class": "dummy_plane",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "t1_player13",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "isDelayed": true,
+          "minimum_distance_to_earth": 20.0,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "player": true,
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [28500.1,430.55,29619.7]
+        ],
+        "unit_class": "dummy_plane",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "t1_player14",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "isDelayed": true,
+          "minimum_distance_to_earth": 20.0,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "player": true,
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [28460.7,430.55,29619.7]
+        ],
+        "unit_class": "dummy_plane",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "t1_player15",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "isDelayed": true,
+          "minimum_distance_to_earth": 20.0,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "player": true,
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [28385.7,430.55,29619.7]
+        ],
+        "unit_class": "dummy_plane",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "t1_player16",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "isDelayed": true,
+          "minimum_distance_to_earth": 20.0,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "player": true,
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [28263.6,430.55,29619.7]
+        ],
+        "unit_class": "dummy_plane",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "t1_player17",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "isDelayed": true,
+          "minimum_distance_to_earth": 20.0,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "player": true,
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [28149.1,430.55,29619.7]
+        ],
+        "unit_class": "dummy_plane",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "t1_player18",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "isDelayed": true,
+          "minimum_distance_to_earth": 20.0,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "player": true,
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [28074.1,430.55,29619.7]
+        ],
+        "unit_class": "dummy_plane",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "t1_player19",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "isDelayed": true,
+          "minimum_distance_to_earth": 20.0,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "player": true,
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [27952.0,430.55,29619.7]
+        ],
+        "unit_class": "dummy_plane",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "t1_player20",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "isDelayed": true,
+          "minimum_distance_to_earth": 20.0,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "player": true,
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [27871.5,430.55,29619.7]
+        ],
+        "unit_class": "dummy_plane",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "t1_player21",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "isDelayed": true,
+          "minimum_distance_to_earth": 20.0,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "player": true,
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [27796.5,430.55,29619.7]
+        ],
+        "unit_class": "dummy_plane",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "t1_player22",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "isDelayed": true,
+          "minimum_distance_to_earth": 20.0,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "player": true,
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [27674.4,430.55,29619.7]
+        ],
+        "unit_class": "dummy_plane",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "t1_player23",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "isDelayed": true,
+          "minimum_distance_to_earth": 20.0,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "player": true,
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [27559.8,430.55,29619.7]
+        ],
+        "unit_class": "dummy_plane",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "t1_player24",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "isDelayed": true,
+          "minimum_distance_to_earth": 20.0,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "player": true,
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [27484.8,430.55,29619.7]
+        ],
+        "unit_class": "dummy_plane",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "t1_player25",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "isDelayed": true,
+          "minimum_distance_to_earth": 20.0,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "player": true,
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [27362.7,430.55,29619.7]
+        ],
+        "unit_class": "dummy_plane",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "t1_player26",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "isDelayed": true,
+          "minimum_distance_to_earth": 20.0,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "player": true,
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [27322.9,430.55,29619.7]
+        ],
+        "unit_class": "dummy_plane",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "t1_player27",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "isDelayed": true,
+          "minimum_distance_to_earth": 20.0,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "player": true,
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [27200.8,430.55,29619.7]
+        ],
+        "unit_class": "dummy_plane",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "t1_player28",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "isDelayed": true,
+          "minimum_distance_to_earth": 20.0,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "player": true,
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [27086.2,430.55,29619.7]
+        ],
+        "unit_class": "dummy_plane",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "t1_player29",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "isDelayed": true,
+          "minimum_distance_to_earth": 20.0,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "player": true,
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [27011.2,430.55,29619.7]
+        ],
+        "unit_class": "dummy_plane",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "t1_player30",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "isDelayed": true,
+          "minimum_distance_to_earth": 20.0,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "player": true,
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [26889.1,430.55,29619.7]
+        ],
+        "unit_class": "dummy_plane",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "t1_player31",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "isDelayed": true,
+          "minimum_distance_to_earth": 20.0,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "player": true,
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [26797.6,430.55,29619.7]
+        ],
+        "unit_class": "dummy_plane",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "t1_player32",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "isDelayed": true,
+          "minimum_distance_to_earth": 20.0,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "player": true,
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [26729.9,430.55,29619.7]
+        ],
+        "unit_class": "dummy_plane",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "t2_player02",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "isDelayed": true,
+          "minimum_distance_to_earth": 20.0,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "player": true,
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [29612.1,430.55,28971.3]
+        ],
+        "unit_class": "dummy_plane",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "t2_player03",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "isDelayed": true,
+          "minimum_distance_to_earth": 20.0,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "player": true,
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [29564.6,430.55,28971.3]
+        ],
+        "unit_class": "dummy_plane",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "t2_player04",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "isDelayed": true,
+          "minimum_distance_to_earth": 20.0,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "player": true,
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [29493.9,430.55,28971.3]
+        ],
+        "unit_class": "dummy_plane",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "t2_player05",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "isDelayed": true,
+          "minimum_distance_to_earth": 20.0,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "player": true,
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [29444.0,430.55,28971.3]
+        ],
+        "unit_class": "dummy_plane",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "t2_player06",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "isDelayed": true,
+          "minimum_distance_to_earth": 20.0,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "player": true,
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [29373.4,430.55,28971.3]
+        ],
+        "unit_class": "dummy_plane",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "t2_player07",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "isDelayed": true,
+          "minimum_distance_to_earth": 20.0,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "player": true,
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [29325.8,430.55,28971.3]
+        ],
+        "unit_class": "dummy_plane",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "t2_player08",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "isDelayed": true,
+          "minimum_distance_to_earth": 20.0,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "player": true,
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [29255.2,430.55,28971.3]
+        ],
+        "unit_class": "dummy_plane",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "t2_player09",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "isDelayed": true,
+          "minimum_distance_to_earth": 20.0,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "player": true,
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [28975.9,430.55,28971.3]
+        ],
+        "unit_class": "dummy_plane",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "t2_player10",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "isDelayed": true,
+          "minimum_distance_to_earth": 20.0,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "player": true,
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [28905.2,430.55,28971.3]
+        ],
+        "unit_class": "dummy_plane",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "t2_player11",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "isDelayed": true,
+          "minimum_distance_to_earth": 20.0,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "player": true,
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [28857.7,430.55,28971.3]
+        ],
+        "unit_class": "dummy_plane",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "t2_player12",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "isDelayed": true,
+          "minimum_distance_to_earth": 20.0,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "player": true,
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [28787.0,430.55,28971.3]
+        ],
+        "unit_class": "dummy_plane",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "t2_player13",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "isDelayed": true,
+          "minimum_distance_to_earth": 20.0,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "player": true,
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [29214.7,430.55,28971.3]
+        ],
+        "unit_class": "dummy_plane",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "t2_player14",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "isDelayed": true,
+          "minimum_distance_to_earth": 20.0,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "player": true,
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [29144.0,430.55,28971.3]
+        ],
+        "unit_class": "dummy_plane",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "t2_player15",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "isDelayed": true,
+          "minimum_distance_to_earth": 20.0,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "player": true,
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [29096.5,430.55,28971.3]
+        ],
+        "unit_class": "dummy_plane",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "t2_player16",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "isDelayed": true,
+          "minimum_distance_to_earth": 20.0,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "player": true,
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [29025.8,430.55,28971.3]
+        ],
+        "unit_class": "dummy_plane",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "t2_player17",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "isDelayed": true,
+          "minimum_distance_to_earth": 20.0,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "player": true,
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [28734.3,430.55,28971.3]
+        ],
+        "unit_class": "dummy_plane",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "t2_player18",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "isDelayed": true,
+          "minimum_distance_to_earth": 20.0,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "player": true,
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [28663.6,430.55,28971.3]
+        ],
+        "unit_class": "dummy_plane",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "t2_player19",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "isDelayed": true,
+          "minimum_distance_to_earth": 20.0,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "player": true,
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [28616.1,430.55,28971.3]
+        ],
+        "unit_class": "dummy_plane",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "t2_player20",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "isDelayed": true,
+          "minimum_distance_to_earth": 20.0,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "player": true,
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [28545.4,430.55,28971.3]
+        ],
+        "unit_class": "dummy_plane",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "t2_player21",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "isDelayed": true,
+          "minimum_distance_to_earth": 20.0,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "player": true,
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [28495.6,430.55,28971.3]
+        ],
+        "unit_class": "dummy_plane",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "t2_player22",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "isDelayed": true,
+          "minimum_distance_to_earth": 20.0,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "player": true,
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [28424.9,430.55,28971.3]
+        ],
+        "unit_class": "dummy_plane",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "t2_player23",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "isDelayed": true,
+          "minimum_distance_to_earth": 20.0,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "player": true,
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [28377.4,430.55,28971.3]
+        ],
+        "unit_class": "dummy_plane",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "t2_player24",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "isDelayed": true,
+          "minimum_distance_to_earth": 20.0,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "player": true,
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [28306.7,430.55,28971.3]
+        ],
+        "unit_class": "dummy_plane",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "t2_player25",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "isDelayed": true,
+          "minimum_distance_to_earth": 20.0,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "player": true,
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [28027.4,430.55,28971.3]
+        ],
+        "unit_class": "dummy_plane",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "t2_player26",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "isDelayed": true,
+          "minimum_distance_to_earth": 20.0,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "player": true,
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [27956.7,430.55,28971.3]
+        ],
+        "unit_class": "dummy_plane",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "t2_player27",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "isDelayed": true,
+          "minimum_distance_to_earth": 20.0,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "player": true,
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [27909.2,430.55,28971.3]
+        ],
+        "unit_class": "dummy_plane",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "t2_player28",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "isDelayed": true,
+          "minimum_distance_to_earth": 20.0,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "player": true,
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [27838.5,430.55,28971.3]
+        ],
+        "unit_class": "dummy_plane",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "t2_player29",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "isDelayed": true,
+          "minimum_distance_to_earth": 20.0,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "player": true,
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [28266.2,430.55,28971.3]
+        ],
+        "unit_class": "dummy_plane",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "t2_player30",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "isDelayed": true,
+          "minimum_distance_to_earth": 20.0,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "player": true,
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [28195.5,430.55,28971.3]
+        ],
+        "unit_class": "dummy_plane",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "t2_player31",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "isDelayed": true,
+          "minimum_distance_to_earth": 20.0,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "player": true,
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [28148.0,430.55,28971.3]
+        ],
+        "unit_class": "dummy_plane",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "t2_player32",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "isDelayed": true,
+          "minimum_distance_to_earth": 20.0,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "player": true,
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [28077.3,430.55,28971.3]
+        ],
+        "unit_class": "dummy_plane",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "isShipSpline": false,
+        "name": "t2_player33",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "isDelayed": true,
+          "minimum_distance_to_earth": 20.0,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "player": true,
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [27792.5,430.55,28971.3]
+        ],
+        "unit_class": "dummy_plane",
+        "way": {},
+        "weapons": ""
+      }
+    ],
+    "squad": [
+      {
+        "name": "all_players_squad",
+        "props": {
+          "squad_members": [
+            "t1_player01",
+            "t1_player02",
+            "t1_player03",
+            "t1_player04",
+            "t1_player05",
+            "t1_player06",
+            "t1_player07",
+            "t1_player08",
+            "t1_player09",
+            "t1_player10",
+            "t1_player11",
+            "t1_player12",
+            "t1_player13",
+            "t1_player14",
+            "t1_player15",
+            "t1_player16",
+            "t2_player01",
+            "t2_player02",
+            "t2_player03",
+            "t2_player04",
+            "t2_player05",
+            "t2_player06",
+            "t2_player07",
+            "t2_player08",
+            "t2_player09",
+            "t2_player10",
+            "t2_player11",
+            "t2_player12",
+            "t2_player13",
+            "t2_player14",
+            "t2_player15",
+            "t2_player16",
+            "t2_player17",
+            "t1_player17",
+            "t1_player18",
+            "t1_player19",
+            "t1_player20",
+            "t1_player21",
+            "t1_player22",
+            "t1_player23",
+            "t1_player24",
+            "t1_player25",
+            "t1_player26",
+            "t1_player27",
+            "t1_player28",
+            "t1_player29",
+            "t1_player30",
+            "t1_player31",
+            "t1_player32",
+            "t2_player18",
+            "t2_player19",
+            "t2_player20",
+            "t2_player21",
+            "t2_player22",
+            "t2_player23",
+            "t2_player24",
+            "t2_player25",
+            "t2_player26",
+            "t2_player27",
+            "t2_player28",
+            "t2_player29",
+            "t2_player30",
+            "t2_player31",
+            "t2_player32",
+            "t2_player33"
+          ]
+        },
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [30539.1,27.75,29793.9]
+        ]
+      },
+      {
+        "name": "t1_players_squad",
+        "props": {
+          "object_type": "isTeamA",
+          "squad_members": [
+            "t1_player01",
+            "t1_player02",
+            "t1_player03",
+            "t1_player04",
+            "t1_player05",
+            "t1_player06",
+            "t1_player07",
+            "t1_player08",
+            "t1_player09",
+            "t1_player10",
+            "t1_player11",
+            "t1_player12",
+            "t1_player13",
+            "t1_player14",
+            "t1_player15",
+            "t1_player16",
+            "t2_player01",
+            "t2_player02",
+            "t2_player03",
+            "t2_player04",
+            "t2_player05",
+            "t2_player06",
+            "t2_player07",
+            "t2_player08",
+            "t2_player09",
+            "t2_player10",
+            "t2_player11",
+            "t2_player12",
+            "t2_player13",
+            "t2_player14",
+            "t2_player15",
+            "t2_player16",
+            "t2_player17",
+            "t1_player17",
+            "t1_player18",
+            "t1_player19",
+            "t1_player20",
+            "t1_player21",
+            "t1_player22",
+            "t1_player23",
+            "t1_player24",
+            "t1_player25",
+            "t1_player26",
+            "t1_player27",
+            "t1_player28",
+            "t1_player29",
+            "t1_player30",
+            "t1_player31",
+            "t1_player32",
+            "t2_player18",
+            "t2_player19",
+            "t2_player20",
+            "t2_player21",
+            "t2_player22",
+            "t2_player23",
+            "t2_player24",
+            "t2_player25",
+            "t2_player26",
+            "t2_player27",
+            "t2_player28",
+            "t2_player29",
+            "t2_player30",
+            "t2_player31",
+            "t2_player32",
+            "t2_player33"
+          ]
+        },
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [30748.6,27.75,29390.4]
+        ]
+      },
+      {
+        "name": "t2_players_squad",
+        "props": {
+          "object_type": "isTeamB",
+          "squad_members": [
+            "t1_player01",
+            "t1_player02",
+            "t1_player03",
+            "t1_player04",
+            "t1_player05",
+            "t1_player06",
+            "t1_player07",
+            "t1_player08",
+            "t1_player09",
+            "t1_player10",
+            "t1_player11",
+            "t1_player12",
+            "t1_player13",
+            "t1_player14",
+            "t1_player15",
+            "t1_player16",
+            "t2_player01",
+            "t2_player02",
+            "t2_player03",
+            "t2_player04",
+            "t2_player05",
+            "t2_player06",
+            "t2_player07",
+            "t2_player08",
+            "t2_player09",
+            "t2_player10",
+            "t2_player11",
+            "t2_player12",
+            "t2_player13",
+            "t2_player14",
+            "t2_player15",
+            "t2_player16",
+            "t2_player17",
+            "t1_player17",
+            "t1_player18",
+            "t1_player19",
+            "t1_player20",
+            "t1_player21",
+            "t1_player22",
+            "t1_player23",
+            "t1_player24",
+            "t1_player25",
+            "t1_player26",
+            "t1_player27",
+            "t1_player28",
+            "t1_player29",
+            "t1_player30",
+            "t1_player31",
+            "t1_player32",
+            "t2_player18",
+            "t2_player19",
+            "t2_player20",
+            "t2_player21",
+            "t2_player22",
+            "t2_player23",
+            "t2_player24",
+            "t2_player25",
+            "t2_player26",
+            "t2_player27",
+            "t2_player28",
+            "t2_player29",
+            "t2_player30",
+            "t2_player31",
+            "t2_player32",
+            "t2_player33"
+          ]
+        },
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [31058.1,27.75,29346.8]
+        ]
+      }
+    ]
+  },
+  "variables": {
+    "all_land_units_count": 0,
+    "arcade_destroy_timer": 1200.0,
+    "blt_100_points_rate": 0,
+    "blt_20_points_rate": 0,
+    "blt_40_points_rate": 0,
+    "blt_balance_level": 0,
+    "destroy_timer_cur": 0.0,
+    "destroy_timer_max": 310.0,
+    "distance_timer_destroy": 2500.0,
+    "historical_destroy_timer": 1200.0,
+    "is_killing_land_units_t1": 0.0,
+    "is_killing_land_units_t2": 0.0,
+    "long_time_arcade_distance": 0,
+    "long_time_arcade_timer": 0,
+    "long_time_is": 0,
+    "mission_timer": 0,
+    "nearDamageDistance": 250.0,
+    "t1_land_unit_count": 0,
+    "t2_land_unit_count": 0
+  },
+  "wayPoints": {}
+}

@@ -1,0 +1,277 @@
+{
+  "id": "options-root",
+  "img": {
+    "background-image": "#ui/gameuiskin#optionlist_background_down",
+    "pos": "-sw,sh-h-1@bh",
+    "position": "absolute",
+    "size": "3sw - 3sw*@isInVr, sh/3+1"
+  },
+  "root": {
+    "blur": {},
+    "blur_foreground": {},
+    "menutitle": {
+      "id": "msgbox-title"
+    },
+    "optionlist_container": {
+      "flow": "vertical",
+      "height": "60*@scrn_tgt/100.0",
+      "id": "msg_box",
+      "padding": "5*@scrn_tgt/100.0",
+      "pos": "0.5(sw-w), 0.5(sh-h)",
+      "position": "absolute",
+      "table": {
+        "baseRow": "yes",
+        "behavior": "PosOptionsNavigator",
+        "class": "optionsTable",
+        "pos": "50%pw-50%w, ph-h-1*@scrn_tgt/100.0",
+        "position": "absolute",
+        "size": "pw",
+        "tr": {
+          "css-hier-invalidate": "all",
+          "td": [
+            {
+              "cellType": "left",
+              "optiontext": {
+                "text": "#difficulty_name"
+              },
+              "overflow-x": "hidden",
+              "width": "50%pw"
+            },
+            {
+              "cellType": "right",
+              "padding-left": "@optPad",
+              "spinnerListBox": {
+                "id": "controls_difficulty",
+                "on_select": "onControlsDifficulty",
+                "option": [
+                  {
+                    "max-width": "p.p.w-5*@scrn_tgt/100.0",
+                    "optiontext": {
+                      "text": "#difficulty0"
+                    },
+                    "pare-text": "yes",
+                    "selected": "yes"
+                  },
+                  {
+                    "max-width": "p.p.w-5*@scrn_tgt/100.0",
+                    "optiontext": {
+                      "text": "#difficulty1"
+                    },
+                    "pare-text": "yes"
+                  },
+                  {
+                    "max-width": "p.p.w-5*@scrn_tgt/100.0",
+                    "optiontext": {
+                      "text": "#difficulty2"
+                    },
+                    "pare-text": "yes"
+                  }
+                ],
+                "size": "pw, ph"
+              },
+              "width": "50%pw"
+            }
+          ],
+          "width": "pw"
+        }
+      },
+      "tdiv": [
+        {
+          "ButtonsLine": [
+            {
+              "ButtonImg": [
+                {
+                  "btnName": "DpadLeft"
+                },
+                {
+                  "btnName": "R3"
+                }
+              ],
+              "id": "line_combo_airBrakes",
+              "text": [
+                {
+                  "text": "+"
+                },
+                {
+                  "text": " = "
+                },
+                {
+                  "id": "combo_airBrakes",
+                  "text": "#controls/combo_airBrakes"
+                }
+              ]
+            },
+            {
+              "ButtonImg": [
+                {
+                  "btnName": "DpadRight"
+                },
+                {
+                  "btnName": "X"
+                }
+              ],
+              "id": "line_combo_resetTrim",
+              "text": [
+                {
+                  "text": "+"
+                },
+                {
+                  "text": " = "
+                },
+                {
+                  "id": "combo_resetTrim",
+                  "text": "#controls/combo_resetTrim_2"
+                }
+              ]
+            }
+          ],
+          "flow": "vertical",
+          "pos": "50%pw-50%w, 1*@scrn_tgt/100.0",
+          "position": "absolute",
+          "width": "@srw"
+        },
+        {
+          "id": "pictureHelp",
+          "img": {
+            "background-image": "ui/controller",
+            "id": "stick-help",
+            "pos": "50%pw-50%w, 50%ph-50%h",
+            "position": "absolute",
+            "size": "512/720*@scrn_tgt, 256/720*@scrn_tgt",
+            "textButtonHint": [
+              {
+                "id": "start",
+                "pos": "0.61pw, 0.085ph-h",
+                "position": "absolute",
+                "text": "#controls/start"
+              },
+              {
+                "id": "cross",
+                "min-width": "27%sw",
+                "pos": "0.86pw, 0.69ph-3.7*@scrn_tgt/100.0",
+                "position": "absolute",
+                "style": "behavior:textArea; re-type:textarea;",
+                "text": "#controls/cross"
+              },
+              {
+                "id": "triangle",
+                "pos": "0.84pw, 0.375ph-h",
+                "position": "absolute",
+                "text": "#controls/triangle"
+              },
+              {
+                "id": "R3",
+                "pos": "0.74pw, 0.99ph",
+                "position": "absolute",
+                "text": "#controls/R3"
+              },
+              {
+                "id": "R1",
+                "pos": "0.84pw, 0.25ph-h",
+                "position": "absolute",
+                "text": "#controls/R1"
+              },
+              {
+                "id": "R2",
+                "pos": "0.84pw, 0.16ph-h",
+                "position": "absolute",
+                "text": "#controls/R2"
+              },
+              {
+                "id": "RS",
+                "min-width": "30%sw",
+                "pos": "0.69pw, 1.0ph-h",
+                "position": "absolute",
+                "style": "behavior:textArea; re-type:textarea;",
+                "text": "#controls/RS"
+              },
+              {
+                "id": "select",
+                "pos": "0.41pw-w, 0.085ph-h",
+                "position": "absolute",
+                "text": "#controls/select"
+              },
+              {
+                "id": "L1",
+                "pos": "0.18pw-w, 0.25ph-h",
+                "position": "absolute",
+                "text": "#controls/L1"
+              },
+              {
+                "id": "L2",
+                "pos": "0.18pw-w, 0.16ph-h",
+                "position": "absolute",
+                "text": "#controls/L2"
+              },
+              {
+                "id": "square",
+                "pos": "0.84pw, 0.60ph-h",
+                "position": "absolute",
+                "text": "#controls/square"
+              },
+              {
+                "id": "circle",
+                "pos": "0.84pw, 0.49ph-h",
+                "position": "absolute",
+                "text": "#controls/circle"
+              },
+              {
+                "id": "L3",
+                "pos": "0.15pw-w, 0.40ph",
+                "position": "absolute",
+                "text": "#controls/L3"
+              },
+              {
+                "id": "LS",
+                "pos": "0.15pw-w, 0.40ph-h",
+                "position": "absolute",
+                "text": "#controls/LS"
+              },
+              {
+                "id": "dpad_up",
+                "pos": "0.15pw-w, 0.63ph-h",
+                "position": "absolute",
+                "text": "#controls/dpad_up"
+              },
+              {
+                "id": "dpad_left",
+                "pos": "0.15pw-w, 0.75ph-h",
+                "position": "absolute",
+                "text": "#controls/dpad_left"
+              },
+              {
+                "id": "dpad_right",
+                "pos": "0.15pw-w, 0.88ph-h",
+                "position": "absolute",
+                "text": "#controls/dpad_right"
+              },
+              {
+                "id": "dpad_down",
+                "pos": "0.32pw-w, 1.0ph-h",
+                "position": "absolute",
+                "text": "#controls/dpad_down"
+              }
+            ]
+          },
+          "max-height": "0.45w",
+          "max-width": "(0.6 + 0.4@isWide) * @rw",
+          "overflow": "visible",
+          "pos": "50%pw-50%w, 50%ph-50%h",
+          "position": "absolute",
+          "size": "2.0ph, 0.9ph"
+        }
+      ],
+      "textarea": {
+        "display": "hide",
+        "id": "textHelp",
+        "max-height": "ph",
+        "overflow-y": "auto",
+        "padding": "1*@scrn_tgt/100.0",
+        "pos": "50%pw-55%w, 40%ph-40%h",
+        "position": "relative",
+        "width": "90%pw"
+      }
+    },
+    "type": "big"
+  }
+}

@@ -1,0 +1,346 @@
+{
+  "frame": {
+    "class": "scaleable",
+    "div": {
+      "frame_header": {
+        "Button_close": {
+          "_on_click": "goBack",
+          "id": "close_chat",
+          "normalIcon": "yes"
+        },
+        "activateSelect": {
+          "activateBy": "Y",
+          "flow": "h-flow",
+          "id": "rooms_list",
+          "input-transparent": "yes",
+          "isTransparentBg": "yes",
+          "itemsWithCloseButtons": "yes",
+          "min-height": "1@buttonHeight",
+          "moveX": "linear",
+          "moveY": "closest",
+          "navigatorShortcuts": "cancel",
+          "on_cancel_edit": "goBack",
+          "on_dbl_click": "onRemoveRoom",
+          "on_r_click": "onRoomRClick",
+          "on_select": "onRoomChanged",
+          "smallFont": "yes",
+          "width": "pw - 3@buttonHeight"
+        },
+        "scaleable": "yes",
+        "top_right_holder": {
+          "Button_text": [
+            {
+              "class": "image",
+              "display": "hide",
+              "enable": "no",
+              "id": "btn_showSearchList",
+              "img": {
+                "background-image": "#ui/gameuiskin#btn_search.svg"
+              },
+              "on_click": "onShowSearchList",
+              "showConsoleImage": "no",
+              "tooltip": "#channel/search",
+              "visualStyle": "noFrame"
+            },
+            {
+              "class": "image",
+              "display": "hide",
+              "enable": "no",
+              "id": "btn_showPlayersList",
+              "img": {
+                "background-image": "#ui/gameuiskin#btn_room_list.svg"
+              },
+              "on_click": "onShowPlayersList",
+              "showConsoleImage": "no",
+              "tooltip": "#channel/showPlayersList",
+              "visualStyle": "noFrame"
+            },
+            {
+              "_on_click": "onRoomCreator",
+              "class": "image",
+              "id": "btn_create_room",
+              "img": {
+                "background-image": "#ui/gameuiskin#btn_create_room.svg"
+              },
+              "showConsoleImage": "no",
+              "tooltip": "#chat/createRoom",
+              "visualStyle": "noFrame"
+            }
+          ],
+          "id": "header_buttons",
+          "smallIcon": "yes"
+        }
+      },
+      "height": "0",
+      "input-transparent": "yes",
+      "min-height": "1@buttonHeight",
+      "padding": "-1@framePadding",
+      "position": "relative",
+      "total-input-transparent": "yes",
+      "width": "pw"
+    },
+    "dummy": [
+      {
+        "accessKey": "Alt Up",
+        "behaviour": "accesskey",
+        "on_click": "onPrevMsg"
+      },
+      {
+        "accessKey": "Alt Down",
+        "behaviour": "accesskey",
+        "on_click": "onNextMsg"
+      }
+    ],
+    "flow": "vertical",
+    "id": "menuchat",
+    "max-height": "80%sh",
+    "max-width": "70%sw",
+    "min-height": "30*@scrn_tgt/100.0",
+    "min-width": "55*@scrn_tgt/100.0",
+    "moveElem": {},
+    "not-input-transparent": "yes",
+    "on_mouse_enter": "onChatWindowMouseOver",
+    "on_mouse_leave": "onChatWindowMouseOver",
+    "pos": "0.5*(sw - 1@slotbarWidthFull), sh - 1@shopBottomOffset - 1@buttonHeight - 0.66@scrn_tgt",
+    "position": "absolute",
+    "size": "0.7@sf, 0.66@scrn_tgt",
+    "tdiv": {
+      "div": [
+        {
+          "behaviour": "window-size",
+          "border-offset": "@dp",
+          "frame": {
+            "flow": "vertical",
+            "groupList": {
+              "id": "users_list",
+              "imgType": "none",
+              "on_cancel_edit": "goBack",
+              "on_dbl_click": "onUsersListActivate",
+              "on_hover": "onChatListHover",
+              "on_unhover": "onChatListHover"
+            },
+            "size": "pw, ph",
+            "smallFont": "yes",
+            "tdiv": {
+              "Button_text": {
+                "_on_click": "squadReady",
+                "buttonWink": {},
+                "display": "hide",
+                "id": "btn_ready",
+                "style": "min-width:1; overflow:hidden; margin-right:0;",
+                "text": "#mainmenu/btnReady",
+                "visualStyle": "secondary",
+                "width": "pw"
+              },
+              "flow": "vertical",
+              "id": "buttons_list",
+              "pos": "0, ph-h",
+              "position": "absolute",
+              "textareaNoTab": {
+                "display": "hide",
+                "id": "battle_rating",
+                "inactive": "yes",
+                "max-width": "pw",
+                "overflow": "hidden",
+                "padding-bottom": "1@blockInterval",
+                "padding-left": "1@blockInterval"
+              },
+              "width": "pw"
+            },
+            "type": "dark"
+          },
+          "id": "middleLine",
+          "max-height": "ph",
+          "max-width": "30%pw",
+          "min-height": "ph",
+          "min-width": "15*@scrn_tgt/100.0",
+          "padding-right": "1@framePadding",
+          "padding-top": "1@blockInterval",
+          "size": "3@sIco + 0.26@sf, ph",
+          "window-size-border-mask": "R"
+        },
+        {
+          "behaviour": "window-size",
+          "display": "hide",
+          "frame": {
+            "Button_text": {
+              "_on_click": "onSearchRoomJoin",
+              "id": "btn_join_room",
+              "pos": "50%pw-50%w, 0",
+              "position": "relative",
+              "style": "margin-right:0; min-width:1; width:pw; overflow:hidden; pare-text:yes;",
+              "text": "#chat/btnJoin"
+            },
+            "flow": "vertical",
+            "groupList": {
+              "id": "searchList",
+              "imgType": "none",
+              "on_cancel_edit": "onCancelSearchRooms",
+              "on_dbl_click": "onSearchRoomJoin",
+              "on_hover": "onChatListHover",
+              "on_unhover": "onChatListHover"
+            },
+            "size": "pw, ph",
+            "smallFont": "yes",
+            "tdiv": {
+              "flow": "vertical",
+              "groupIns": {
+                "Button_text": {
+                  "class": "image",
+                  "img": {
+                    "background-image": "#ui/gameuiskin#btn_search.svg"
+                  },
+                  "noMargin": "yes",
+                  "on_click": "onSearchStart",
+                  "pos": "@blockInterval, 0.5ph-0.5h",
+                  "position": "relative",
+                  "showConsoleImage": "no",
+                  "tooltip": "#channel/search"
+                },
+                "EditBox": {
+                  "id": "search_edit",
+                  "noMargin": "yes",
+                  "on_activate": "onSearchStart",
+                  "on_cancel_edit": "onCancelSearchEdit",
+                  "on_set_focus": "onChatEditboxFocus",
+                  "text": ""
+                },
+                "noPadding": "yes"
+              },
+              "id": "search_channels_block",
+              "tdiv": {
+                "Button_text": {
+                  "class": "image",
+                  "id": "btn_mainChannels",
+                  "img": {
+                    "background-image": "#ui/gameuiskin#btn_undo.svg"
+                  },
+                  "imgSize": "small",
+                  "on_click": "onMainChannels",
+                  "pos": "pw-w, 50%ph-50%h",
+                  "position": "absolute",
+                  "showConsoleImage": "no",
+                  "tooltip": "#chat/backToMainChannels"
+                },
+                "activeText": {
+                  "min-height": "24",
+                  "pare-text": "yes",
+                  "smallFont": "yes",
+                  "text": "#channel/search",
+                  "width": "pw"
+                },
+                "overflow": "hidden",
+                "width": "pw"
+              },
+              "width": "pw"
+            },
+            "type": "dark"
+          },
+          "id": "searchDiv",
+          "max-height": "ph",
+          "max-width": "30%pw",
+          "min-height": "ph",
+          "min-width": "15*@scrn_tgt/100.0",
+          "padding-left": "1@blockInterval",
+          "padding-top": "1@blockInterval",
+          "size": "3@sIco + 0.26@sf, ph",
+          "window-size-border-mask": "L"
+        }
+      ],
+      "size": "pw, fh",
+      "tdiv": {
+        "chatBlock": [
+          {
+            "display": "hide",
+            "flow": "vertical",
+            "id": "menu_chat_custom_handler_block",
+            "paddingSize": "small",
+            "size": "pw, fh"
+          },
+          {
+            "chatScrollContainer": {
+              "auto-scroll": "yes",
+              "chatMessagesContainer": {
+                "flow": "vertical",
+                "id": "menu_chat_messages_container",
+                "max-width": "0.7@sf",
+                "pos": "0.5pw-0.5w, 0",
+                "position": "relative",
+                "width": "pw"
+              },
+              "max-height": "ph",
+              "overflow-y": "auto",
+              "pos": "0, ph-h",
+              "position": "relative",
+              "scrollbarShortcuts": "yes",
+              "width": "pw"
+            },
+            "id": "menu_chat_text_block",
+            "size": "pw, fh",
+            "tdiv": {
+              "id": "blocked_chat_msg",
+              "position": "relative",
+              "size": "pw, ph",
+              "textAreaCentered": {
+                "pos": "pw/2-w/2, ph/2-h/2",
+                "position": "relative",
+                "size": "w, h",
+                "text": "#chat/blocked_chat"
+              }
+            },
+            "total-input-transparent": "yes"
+          }
+        ],
+        "div": {
+          "display": "hide",
+          "enable": "no",
+          "id": "menu_chat_header_block",
+          "width": "pw"
+        },
+        "flow": "vertical",
+        "min-width": "20*@scrn_tgt/100.0",
+        "padding-top": "1@blockInterval",
+        "size": "fw, ph",
+        "tdiv": {
+          "Button_text": {
+            "id": "btn_send",
+            "noMargin": "yes",
+            "on_click": "onChatSend",
+            "pos": "1@blockInterval, 1@blockInterval",
+            "position": "relative",
+            "showConsoleImage": "no",
+            "text": "#chat/send"
+          },
+          "EditBox": {
+            "font": "@fontSmall",
+            "height": "1@buttonHeight",
+            "id": "menuchat_input",
+            "max-len": "250",
+            "navigatorShortcuts": "yes",
+            "noMargin": "yes",
+            "on_activate": "onChatEntered",
+            "on_cancel_edit": "onChatCancel",
+            "on_change_value": "onChatEdit",
+            "on_set_focus": "onChatEditboxFocus",
+            "on_wrap_right": "onChatInputWrapRight",
+            "pos": "0, 1@blockInterval",
+            "position": "relative",
+            "selected": "yes",
+            "text": "",
+            "width": "fw"
+          },
+          "id": "chat_input_place",
+          "pos": "0, 0",
+          "position": "relative",
+          "width": "pw"
+        }
+      }
+    },
+    "timer": {
+      "id": "menu_chat_update",
+      "timer_handler_func": "onUpdate",
+      "timer_interval_msec": "1000"
+    },
+    "window-panel": "yes"
+  }
+}

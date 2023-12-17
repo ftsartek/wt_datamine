@@ -1,0 +1,197 @@
+{
+  "fsms": {
+    "main": {
+      "actionsTemplates": {
+        "init": {
+          "setEnabled": {
+            "value": false
+          },
+          "setScanPattern": {
+            "scanPattern": "search"
+          },
+          "setSignal": {
+            "signal": "search"
+          },
+          "setTargetDesignationRange": {
+            "azimuthRange": [-8.0,8.0],
+            "distanceRange": [0.0,4000.0]
+          },
+          "setTransiver": {
+            "transiver": "search"
+          }
+        },
+        "resetSearchMode": {
+          "setFsmActive": {
+            "active": false,
+            "fsm": "search"
+          }
+        },
+        "setSearchMode": {
+          "clearTargets": {},
+          "setEnabled": {
+            "value": true
+          },
+          "setFsmActive": {
+            "active": true,
+            "fsm": "search"
+          },
+          "setModeName": {
+            "name": "search"
+          }
+        },
+        "setStandbyMode": {
+          "clearTargets": {},
+          "setCenterAzimuth": {
+            "source": "constant",
+            "value": 0.0
+          },
+          "setEnabled": {
+            "value": false
+          },
+          "setModeName": {
+            "name": "standby"
+          }
+        }
+      },
+      "stateInit": "init",
+      "transitions": {
+        "init": {
+          "actions": {
+            "init": {},
+            "setStandbyMode": {}
+          },
+          "event": "init",
+          "stateFrom": "init",
+          "stateTo": "standby"
+        },
+        "switchOff": {
+          "actions": {
+            "resetSearchMode": {},
+            "setStandbyMode": {}
+          },
+          "command": "switch",
+          "event": "disable",
+          "stateFrom": "search",
+          "stateTo": "standby"
+        },
+        "switchOn": {
+          "actions": {
+            "setSearchMode": {}
+          },
+          "command": "switch",
+          "event": "enable",
+          "stateFrom": "standby",
+          "stateTo": "search"
+        },
+        "switchScanPattern": {
+          "actions": {
+            "setNextScanPattern": {}
+          },
+          "command": "scanPatternSwitch",
+          "stateFrom": [
+            "standby",
+            "search"
+          ]
+        },
+        "switchScopeRange": {
+          "actions": {
+            "setNextScopeRange": {}
+          },
+          "command": "rangeSwitch"
+        }
+      }
+    },
+    "search": {
+      "stateInit": "search",
+      "transitions": {
+        "addTarget": {
+          "actions": {
+            "addTarget": {}
+          },
+          "event": "targetDetected"
+        },
+        "detect": {
+          "actions": {
+            "detectTarget": {},
+            "setDistGatePos": {
+              "source": "continuousScale",
+              "width": 0.0
+            },
+            "setRelSpeedGatePos": {
+              "source": "continuousScale",
+              "width": 0.0
+            }
+          },
+          "event": "targetInSight"
+        },
+        "scan": {
+          "actions": {
+            "scan": {}
+          },
+          "event": "update"
+        },
+        "setCueElevation": {
+          "actions": {
+            "setCueElevation": {}
+          },
+          "command": "cueAxisZ"
+        }
+      }
+    }
+  },
+  "name": [
+    "RP-1 TA",
+    "RP-5 TA"
+  ],
+  "scanPatterns": {
+    "search": {
+      "azimuthLimits": [-60.0,60.0],
+      "barHeight": 30.0,
+      "barsCount": 1,
+      "centerElevation": 5.0,
+      "elevationLimits": [-16.0,26.0],
+      "period": 1.33,
+      "rollStabLimit": 50.0,
+      "rowMajor": true,
+      "type": "pyramide",
+      "width": 60.0
+    }
+  },
+  "scopeRanges": {
+    "range1": 12000.0
+  },
+  "signals": {
+    "search": {
+      "distance": {
+        "maxValue": 12000.0,
+        "minValue": 300.0,
+        "presents": true
+      },
+      "groundClutter": true
+    }
+  },
+  "transivers": {
+    "search": {
+      "antenna": {
+        "azimuth": {
+          "angleHalfSens": 6.0,
+          "sideLobesSensitivity": -24.0
+        },
+        "elevation": {
+          "angleHalfSens": 30.0,
+          "sideLobesSensitivity": -24.0
+        }
+      },
+      "band": 8,
+      "power": 200.0,
+      "range": 8000.0,
+      "rangeMax": 15000.0,
+      "rcs": 3.0,
+      "sideLobesAttenuation": -15.0
+    }
+  },
+  "type": [
+    "radar",
+    "radar"
+  ]
+}

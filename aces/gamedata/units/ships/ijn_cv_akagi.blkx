@@ -1,0 +1,853 @@
+{
+  "DamageEffects": {
+    "part": [
+      {
+        "name": "body_dm",
+        "onHit": {
+          "fire": 0.01,
+          "smoke": 0.01
+        },
+        "onKill": {
+          "bodypart1_dm": 1.0,
+          "bodypart2_dm": 1.0,
+          "bodypart3_dm": 1.0,
+          "bodypart4_dm": 7.0
+        }
+      },
+      {
+        "name": "engine_dm",
+        "onHit": {
+          "fire": 0.01,
+          "smoke": 0.1
+        },
+        "onKill": {
+          "body_dm": 1.0
+        }
+      },
+      {
+        "name": [
+          "bodypart1_dm",
+          "bodypart2_dm",
+          "bodypart3_dm",
+          "bodypart4_dm"
+        ],
+        "onHit": {
+          "fire": 0.01,
+          "smoke": 0.1
+        },
+        "onKill": {
+          "expl": 1.0
+        }
+      }
+    ]
+  },
+  "DamageParts": {
+    "armor250": {
+      "gun4_dm": {
+        "hp": 2.0
+      },
+      "gun5_dm": {
+        "hp": 2.0
+      },
+      "gun6_dm": {
+        "hp": 2.0
+      },
+      "gun7_dm": {
+        "hp": 2.0
+      },
+      "gun9_dm": {
+        "hp": 2.0
+      }
+    },
+    "armor40": {
+      "body_dm": {
+        "hp": 18000.0
+      },
+      "bodypart1_dm": {
+        "hp": 18000.0
+      },
+      "bodypart2_dm": {
+        "hp": 18000.0
+      },
+      "bodypart3_dm": {
+        "hp": 18000.0
+      },
+      "bodypart4_dm": {
+        "hp": 18000.0
+      },
+      "engine_dm": {
+        "hp": 18000.0
+      }
+    },
+    "steel": {
+      "gun0_dm": {
+        "hp": 2.0
+      },
+      "gun1_dm": {
+        "hp": 2.0
+      },
+      "gun2_dm": {
+        "hp": 2.0
+      },
+      "gun3_dm": {
+        "hp": 2.0
+      }
+    }
+  },
+  "SoundMove": "models.Ship",
+  "airfield": {
+    "catapultAccel": 5.0,
+    "catapultLength": 1.0,
+    "runwayWidth": 20.0
+  },
+  "attach": {
+    "flag_back": "flag_jpn",
+    "flag_front": "flag_jpn",
+    "flag_middle": "flag_jpn"
+  },
+  "attachInc": {
+    "jpn_aagunner_ir": {
+      "model": {
+        "name": "inc_jpn_AAgunner_IR_01a",
+        "weight": 1.0
+      }
+    },
+    "jpn_aagunner_seat": {
+      "model": {
+        "name": "inc_jpn_AAgunner_seat_01a",
+        "weight": 1.0
+      }
+    },
+    "jpn_aagunner_stand": {
+      "model": {
+        "name": "inc_jpn_AAgunner_stand_01a",
+        "weight": 1.0
+      }
+    },
+    "jpn_flag_landing": {
+      "model": {
+        "animation": "carrier_flag_landing_idle",
+        "crewType": "landing",
+        "endpointAnimation": "carrier_flag_landing_idle",
+        "leftBankHigh": "carrier_flag_landing_left",
+        "leftBankLow": "carrier_flag_landing_left",
+        "name": "jpn_marshall_land_01c_char",
+        "noBank": "carrier_flag_landing_idle",
+        "rightBankHigh": "carrier_flag_landing_right",
+        "rightBankLow": "carrier_flag_landing_right",
+        "velocity": 3.0,
+        "weight": 1.0
+      }
+    },
+    "jpn_flag_on_start": {
+      "model": {
+        "crewType": "takeoff",
+        "endIdleAnimation": "carrier_sitdown_idle",
+        "endSingleAnimation": "carrier_sitdown_single",
+        "movingAnimation": "carrier_walk",
+        "name": "jpn_marshall_flag_01c_char",
+        "prestartIdleAnimation": "carrier_flag_loading_idle",
+        "start2IdleAnimation": "carrier_flag_rotate_idle",
+        "start2SingleAnimation": "carrier_flag_up_single",
+        "start2SingleRepeatAfter": 12.0,
+        "start3IdleAnimation": "carrier_flag_on_start_idle",
+        "start3SingleAnimation": "carrier_flag_on_start_single",
+        "start3SingleRepeatAfter": 12.0,
+        "startIdleAnimation": "carrier_flag_lefthand_idle",
+        "startSingleAnimation": "carrier_flag_lefthand_up",
+        "startSingleRepeatAfter": 12.0,
+        "stateAdvanceEventMove": "start_engine",
+        "stateAdvanceEventMove2": "move_little",
+        "stateAdvanceEventMove3": "takeoff",
+        "stateAdvanceEventStart": "ready_to_takeoff",
+        "velocity": 3.0,
+        "weight": 1.0
+      }
+    },
+    "jpn_navy_admiral_stand_left": {
+      "model": [
+        {
+          "crewType": "takeoff",
+          "endIdleAnimation": "carrier_seaman_stand_left_wave",
+          "movingAnimation": "carrier_seaman_stand_left_wave",
+          "name": "jpn_navy_admiral_01c_char",
+          "prestartIdleAnimation": "carrier_flag_loading_idle",
+          "start2IdleAnimation": "carrier_seaman_stand_left_wave",
+          "start2SingleAnimation": "carrier_seaman_stand_left",
+          "startIdleAnimation": "carrier_seaman_stand_left",
+          "startSingleAnimation": "carrier_flag_loading_idle",
+          "startSingleLoopDuration": 3.0,
+          "startSingleRepeatAfter": 3.0,
+          "stateAdvanceEventMove": "start_engine",
+          "stateAdvanceEventMove3": "takeoff",
+          "stateAdvanceEventStart": "ready_to_takeoff",
+          "velocity": 0.0,
+          "weight": 2.0
+        },
+        {
+          "crewType": "takeoff",
+          "endIdleAnimation": "carrier_seaman_stand_left_wave",
+          "movingAnimation": "carrier_seaman_stand_left_wave",
+          "name": "jpn_navy_officier_01c_char",
+          "prestartIdleAnimation": "carrier_flag_loading_idle",
+          "start2IdleAnimation": "carrier_seaman_stand_left_wave",
+          "start2SingleAnimation": "carrier_seaman_stand_left",
+          "startIdleAnimation": "carrier_seaman_stand_left",
+          "startSingleAnimation": "carrier_flag_loading_idle",
+          "startSingleLoopDuration": 3.0,
+          "startSingleRepeatAfter": 3.0,
+          "stateAdvanceEventMove": "start_engine",
+          "stateAdvanceEventMove3": "takeoff",
+          "stateAdvanceEventStart": "ready_to_takeoff",
+          "velocity": 0.0,
+          "weight": 1.0
+        }
+      ]
+    },
+    "jpn_navy_officier_stand_left": {
+      "model": {
+        "crewType": "takeoff",
+        "endIdleAnimation": "carrier_seaman_stand_left_wave",
+        "movingAnimation": "carrier_seaman_stand_left_wave",
+        "name": "jpn_navy_officier_01c_char",
+        "prestartIdleAnimation": "carrier_flag_loading_idle",
+        "start2IdleAnimation": "carrier_seaman_stand_left_wave",
+        "start2SingleAnimation": "carrier_seaman_stand_left",
+        "startIdleAnimation": "carrier_seaman_stand_left",
+        "startSingleAnimation": "carrier_flag_loading_idle",
+        "startSingleLoopDuration": 3.0,
+        "startSingleRepeatAfter": 3.0,
+        "stateAdvanceEventMove": "start_engine",
+        "stateAdvanceEventMove3": "takeoff",
+        "stateAdvanceEventStart": "ready_to_takeoff",
+        "velocity": 0.0,
+        "weight": 1.0
+      }
+    },
+    "jpn_seaman": {
+      "model": [
+        {
+          "name": "inc_jpn_hand_on_deck1_01a",
+          "weight": 1.0
+        },
+        {
+          "name": "inc_jpn_hand_on_deck1_01b",
+          "weight": 1.0
+        },
+        {
+          "name": "inc_jpn_hand_on_deck1_02a",
+          "weight": 1.0
+        },
+        {
+          "name": "inc_jpn_hand_on_deck1_02b",
+          "weight": 1.0
+        },
+        {
+          "name": "inc_jpn_hand_on_deck1_02c",
+          "weight": 1.0
+        }
+      ]
+    },
+    "jpn_seaman_stand_left": {
+      "model": [
+        {
+          "crewType": "takeoff",
+          "endIdleAnimation": "carrier_seaman_stand_left_wave",
+          "movingAnimation": "carrier_seaman_stand_left_wave",
+          "name": "jpn_seaman_01a_char",
+          "prestartIdleAnimation": "carrier_flag_loading_idle",
+          "start2IdleAnimation": "carrier_seaman_stand_left_wave",
+          "start2SingleAnimation": "carrier_seaman_stand_left",
+          "startIdleAnimation": "carrier_seaman_stand_left",
+          "startSingleAnimation": "carrier_flag_loading_idle",
+          "startSingleLoopDuration": 3.0,
+          "startSingleRepeatAfter": 3.0,
+          "stateAdvanceEventMove": "start_engine",
+          "stateAdvanceEventMove3": "takeoff",
+          "stateAdvanceEventStart": "ready_to_takeoff",
+          "velocity": 0.0,
+          "weight": 1.0
+        },
+        {
+          "crewType": "takeoff",
+          "endIdleAnimation": "carrier_seaman_stand_left_wave",
+          "movingAnimation": "carrier_seaman_stand_left_wave",
+          "name": "jpn_seaman_01b_char",
+          "prestartIdleAnimation": "carrier_flag_loading_idle",
+          "start2IdleAnimation": "carrier_seaman_stand_left_wave",
+          "start2SingleAnimation": "carrier_seaman_stand_left",
+          "startIdleAnimation": "carrier_seaman_stand_left",
+          "startSingleAnimation": "carrier_flag_loading_idle",
+          "startSingleLoopDuration": 3.0,
+          "startSingleRepeatAfter": 3.0,
+          "stateAdvanceEventMove": "start_engine",
+          "stateAdvanceEventMove3": "takeoff",
+          "stateAdvanceEventStart": "ready_to_takeoff",
+          "velocity": 0.0,
+          "weight": 1.0
+        },
+        {
+          "crewType": "takeoff",
+          "endIdleAnimation": "carrier_seaman_stand_left_wave",
+          "movingAnimation": "carrier_seaman_stand_left_wave",
+          "name": "jpn_seaman_02a_char",
+          "prestartIdleAnimation": "carrier_flag_loading_idle",
+          "start2IdleAnimation": "carrier_seaman_stand_left_wave",
+          "start2SingleAnimation": "carrier_seaman_stand_left",
+          "startIdleAnimation": "carrier_seaman_stand_left",
+          "startSingleAnimation": "carrier_flag_loading_idle",
+          "startSingleLoopDuration": 3.0,
+          "startSingleRepeatAfter": 3.0,
+          "stateAdvanceEventMove": "start_engine",
+          "stateAdvanceEventMove3": "takeoff",
+          "stateAdvanceEventStart": "ready_to_takeoff",
+          "velocity": 0.0,
+          "weight": 1.0
+        },
+        {
+          "crewType": "takeoff",
+          "endIdleAnimation": "carrier_seaman_stand_left_wave",
+          "movingAnimation": "carrier_seaman_stand_left_wave",
+          "name": "jpn_seaman_02b_char",
+          "prestartIdleAnimation": "carrier_flag_loading_idle",
+          "start2IdleAnimation": "carrier_seaman_stand_left_wave",
+          "start2SingleAnimation": "carrier_seaman_stand_left",
+          "startIdleAnimation": "carrier_seaman_stand_left",
+          "startSingleAnimation": "carrier_flag_loading_idle",
+          "startSingleLoopDuration": 3.0,
+          "startSingleRepeatAfter": 3.0,
+          "stateAdvanceEventMove": "start_engine",
+          "stateAdvanceEventMove3": "takeoff",
+          "stateAdvanceEventStart": "ready_to_takeoff",
+          "velocity": 0.0,
+          "weight": 5.0
+        }
+      ]
+    },
+    "jpn_seaman_stand_right": {
+      "model": [
+        {
+          "crewType": "takeoff",
+          "endIdleAnimation": "carrier_seaman_stand_right_wave",
+          "movingAnimation": "carrier_seaman_stand_right_wave",
+          "name": "jpn_seaman_01a_char",
+          "prestartIdleAnimation": "carrier_flag_loading_idle",
+          "start2IdleAnimation": "carrier_seaman_stand_right_wave",
+          "start2SingleAnimation": "carrier_seaman_stand_right",
+          "startIdleAnimation": "carrier_seaman_stand_right",
+          "startSingleAnimation": "carrier_flag_loading_idle",
+          "startSingleLoopDuration": 3.0,
+          "startSingleRepeatAfter": 3.0,
+          "stateAdvanceEventMove": "start_engine",
+          "stateAdvanceEventMove3": "takeoff",
+          "stateAdvanceEventStart": "ready_to_takeoff",
+          "velocity": 0.0,
+          "weight": 1.0
+        },
+        {
+          "crewType": "takeoff",
+          "endIdleAnimation": "carrier_seaman_stand_right_wave",
+          "movingAnimation": "carrier_seaman_stand_right_wave",
+          "name": "jpn_seaman_01b_char",
+          "prestartIdleAnimation": "carrier_flag_loading_idle",
+          "start2IdleAnimation": "carrier_seaman_stand_right_wave",
+          "start2SingleAnimation": "carrier_seaman_stand_right",
+          "startIdleAnimation": "carrier_seaman_stand_right",
+          "startSingleAnimation": "carrier_flag_loading_idle",
+          "startSingleLoopDuration": 3.0,
+          "startSingleRepeatAfter": 3.0,
+          "stateAdvanceEventMove": "start_engine",
+          "stateAdvanceEventMove3": "takeoff",
+          "stateAdvanceEventStart": "ready_to_takeoff",
+          "velocity": 0.0,
+          "weight": 1.0
+        },
+        {
+          "crewType": "takeoff",
+          "endIdleAnimation": "carrier_seaman_stand_right_wave",
+          "movingAnimation": "carrier_seaman_stand_right_wave",
+          "name": "jpn_seaman_02a_char",
+          "prestartIdleAnimation": "carrier_flag_loading_idle",
+          "start2IdleAnimation": "carrier_seaman_stand_right_wave",
+          "start2SingleAnimation": "carrier_seaman_stand_right",
+          "startIdleAnimation": "carrier_seaman_stand_right",
+          "startSingleAnimation": "carrier_flag_loading_idle",
+          "startSingleLoopDuration": 3.0,
+          "startSingleRepeatAfter": 3.0,
+          "stateAdvanceEventMove": "start_engine",
+          "stateAdvanceEventMove3": "takeoff",
+          "stateAdvanceEventStart": "ready_to_takeoff",
+          "velocity": 0.0,
+          "weight": 1.0
+        },
+        {
+          "animation": "carrier_seaman_stand_right",
+          "crewType": "takeoff",
+          "endIdleAnimation": "carrier_seaman_stand_right_wave",
+          "endpointAnimation": "carrier_seaman_stand_right",
+          "movingAnimation": "carrier_seaman_stand_right_wave",
+          "name": "jpn_seaman_02b_char",
+          "prestartIdleAnimation": "carrier_flag_loading_idle",
+          "start2IdleAnimation": "carrier_seaman_stand_right_wave",
+          "start2SingleAnimation": "carrier_seaman_stand_right",
+          "startIdleAnimation": "carrier_seaman_stand_right",
+          "startSingleAnimation": "carrier_flag_loading_idle",
+          "startSingleLoopDuration": 3.0,
+          "startSingleRepeatAfter": 3.0,
+          "stateAdvanceEventMove": "start_engine",
+          "stateAdvanceEventMove3": "takeoff",
+          "stateAdvanceEventStart": "ready_to_takeoff",
+          "velocity": 0.0,
+          "weight": 5.0
+        }
+      ]
+    },
+    "jpn_stoper_sit": {
+      "model": [
+        {
+          "animation": "carrier_sitdown_idle",
+          "crewType": "takeoff",
+          "endpointAnimation": "carrier_sitdown_idle",
+          "name": "jpn_seaman_01a_char",
+          "velocity": 0.0,
+          "weight": 1.0
+        },
+        {
+          "animation": "carrier_sitdown_idle",
+          "crewType": "takeoff",
+          "endpointAnimation": "carrier_sitdown_idle",
+          "name": "jpn_seaman_02b_char",
+          "velocity": 0.0,
+          "weight": 1.0
+        }
+      ]
+    },
+    "jpn_tech_runner": {
+      "model": [
+        {
+          "animation": "carrier_tech_run",
+          "crewType": "takeoff",
+          "endIdleAnimation": "carrier_sitdown_idle",
+          "endSingleAnimation": "carrier_sitdown_single",
+          "name": "jpn_seaman_02a_char",
+          "prestartIdleAnimation": "carrier_sitdown_idle",
+          "stateAdvanceEventStart": "ready_to_takeoff",
+          "velocity": 4.0,
+          "weight": 1.0
+        },
+        {
+          "animation": "carrier_tech_run",
+          "crewType": "takeoff",
+          "endIdleAnimation": "carrier_sitdown_idle",
+          "endSingleAnimation": "carrier_sitdown_single",
+          "name": "jpn_seaman_01b_char",
+          "prestartIdleAnimation": "carrier_sitdown_idle",
+          "stateAdvanceEventStart": "ready_to_takeoff",
+          "velocity": 4.0,
+          "weight": 1.0
+        }
+      ]
+    }
+  },
+  "class_tags": {
+    "carrier": true,
+    "country_japan": true,
+    "max_ratio": 0.5,
+    "pacific": true,
+    "year1940": true,
+    "year1941": true,
+    "year1942": true,
+    "year1943": true,
+    "year1944": true,
+    "year1945": true
+  },
+  "collisionMaterialName": "ships",
+  "createAirfield": true,
+  "customUpdateDiv": 5,
+  "damageableByGun": false,
+  "drownGFactor": 0.0,
+  "drownRollSpeed": 0.01,
+  "dustFx": "water_units_dust",
+  "dynCollisionGeom": true,
+  "expClass": "exp_cv_ship",
+  "explodeSpeed": [100.0,190.0],
+  "explosion": {
+    "expl": [
+      {
+        "explosionEffectName": "explosion_ship_large",
+        "node": "explosion1",
+        "partNo": 2,
+        "postEffectName": "ship_fire_large",
+        "preEffectName": "ship_fire_large",
+        "timeForPostEffect": 45.0,
+        "timeToExplode": 1.0
+      },
+      {
+        "explosionEffectName": "explosion_ship_large",
+        "node": "explosion2",
+        "partNo": 3,
+        "postEffectName": "ship_fire_large",
+        "preEffectName": "ship_fire_large",
+        "timeForPostEffect": 65.0,
+        "timeToExplode": 2.0
+      },
+      {
+        "explosionEffectName": "explosion_ship_large",
+        "node": "explosion3",
+        "partNo": 4,
+        "postEffectName": "ship_fire_large",
+        "preEffectName": "ship_fire_large",
+        "timeForPostEffect": 45.0,
+        "timeToExplode": 3.0
+      },
+      {
+        "explosionEffectName": "explosion_ship_large",
+        "node": "explosion4",
+        "partNo": 5,
+        "postEffectName": "ship_fire_large",
+        "preEffectName": "ship_fire_large",
+        "timeForPostEffect": 105.0,
+        "timeToExplode": 2.0
+      }
+    ]
+  },
+  "groundNormSmoothViscosity": 4.5,
+  "hasExpl": true,
+  "killAllParts": false,
+  "maxAccel": 0.5,
+  "maxAngAccel": 0.7,
+  "maxAngAccel0": 0.0,
+  "maxAngAccelV": 0.01,
+  "maxAngSpeed": 1.0,
+  "maxDecel": 0.5,
+  "maxFwdSpeed": 55.0,
+  "maxRevSpeed": 5.0,
+  "model": "akagi_a",
+  "moveType": "ship",
+  "sound": {
+    "engine": "boat",
+    "path": "sounds/engines",
+    "pathStudio": "aircraft/engines"
+  },
+  "subclass": "warShip",
+  "tailStartOffset": 0.0,
+  "timeToFire": 60.0,
+  "timeToSmoke": 600.0,
+  "useOldExplosion": false,
+  "weapon": [
+    {
+      "AttackMaxDistance": 10000.0,
+      "AttackMaxHeight": 10000.0,
+      "AttackMaxRadius": 10000.0,
+      "ChainfireTime": 0.0,
+      "DelayAfterShoot": 0.0,
+      "accuracyAir": 0.0,
+      "accuracyGnd": 0.1,
+      "blk": "gameData/weapons/groundModels_weapons/common_cannon200mm.blk",
+      "defaultPitch": 10.0,
+      "defaultYaw": 0.0,
+      "dm": "gun0_dm",
+      "emitter": "gun0",
+      "errExplTime": 0.5,
+      "errMeasureVel": 20.0,
+      "errMeasureVelDir": 3.0,
+      "errMeasureVelFwdShift": 0.9,
+      "errTargetting": 3.0,
+      "errTargettingOn100kmph": 3.0,
+      "fireConeAngle": 1.0,
+      "flash": "flame0",
+      "limits": {
+        "pitch": [-10.0,80.0],
+        "yaw": [-90.0,90.0]
+      },
+      "salvoAmount": 1.0,
+      "speedPitch": 4.0,
+      "speedYaw": 2.0,
+      "trigger": "gunner0",
+      "turret": {
+        "gun": "gun0",
+        "head": "turret0"
+      }
+    },
+    {
+      "AttackMaxDistance": 10000.0,
+      "AttackMaxHeight": 10000.0,
+      "AttackMaxRadius": 10000.0,
+      "ChainfireTime": 0.0,
+      "DelayAfterShoot": 0.0,
+      "accuracyAir": 0.0,
+      "accuracyGnd": 0.1,
+      "blk": "gameData/weapons/groundModels_weapons/common_cannon200mm.blk",
+      "defaultPitch": 10.0,
+      "defaultYaw": 0.0,
+      "dm": "gun1_dm",
+      "emitter": "gun1",
+      "errExplTime": 0.5,
+      "errMeasureVel": 20.0,
+      "errMeasureVelDir": 3.0,
+      "errMeasureVelFwdShift": 0.9,
+      "errTargetting": 3.0,
+      "errTargettingOn100kmph": 3.0,
+      "fireConeAngle": 1.0,
+      "flash": "flame1",
+      "limits": {
+        "pitch": [-10.0,80.0],
+        "yaw": [-90.0,90.0]
+      },
+      "salvoAmount": 1.0,
+      "speedPitch": 4.0,
+      "speedYaw": 2.0,
+      "trigger": "gunner1",
+      "turret": {
+        "gun": "gun1",
+        "head": "turret1"
+      }
+    },
+    {
+      "AttackMaxDistance": 10000.0,
+      "AttackMaxHeight": 10000.0,
+      "AttackMaxRadius": 5000.0,
+      "ChainfireTime": 0.0,
+      "DelayAfterShoot": 0.0,
+      "accuracyAir": 0.1,
+      "accuracyGnd": 0.0,
+      "blk": "gameData/weapons/groundModels_weapons/common_AAgun127mm.blk",
+      "defaultPitch": 10.0,
+      "defaultYaw": 0.0,
+      "dm": "gun2_dm",
+      "emitter": "gun2",
+      "errExplTime": 0.02,
+      "errMeasureVel": 0.0,
+      "errMeasureVelDir": 10.0,
+      "errMeasureVelFast": 120.0,
+      "errMeasureVelFwdShift": 1.0,
+      "errTargetting": 1.0,
+      "errTargettingOn100kmph": 0.0,
+      "fireConeAngle": 3.0,
+      "flash": "flame2",
+      "limits": {
+        "pitch": [-10.0,80.0],
+        "yaw": [-90.0,90.0]
+      },
+      "salvoAmount": 1.0,
+      "speedPitch": 20.0,
+      "speedYaw": 10.0,
+      "trigger": "gunner2",
+      "turret": {
+        "gun": "gun2",
+        "head": "turret2"
+      }
+    },
+    {
+      "AttackMaxDistance": 10000.0,
+      "AttackMaxHeight": 10000.0,
+      "AttackMaxRadius": 5000.0,
+      "ChainfireTime": 0.0,
+      "DelayAfterShoot": 0.0,
+      "accuracyAir": 0.1,
+      "accuracyGnd": 0.0,
+      "blk": "gameData/weapons/groundModels_weapons/common_AAgun127mm.blk",
+      "defaultPitch": 10.0,
+      "defaultYaw": 0.0,
+      "dm": "gun3_dm",
+      "emitter": "gun3",
+      "errExplTime": 0.02,
+      "errMeasureVel": 0.0,
+      "errMeasureVelDir": 10.0,
+      "errMeasureVelFast": 120.0,
+      "errMeasureVelFwdShift": 1.0,
+      "errTargetting": 1.0,
+      "errTargettingOn100kmph": 0.0,
+      "fireConeAngle": 3.0,
+      "flash": "flame3",
+      "limits": {
+        "pitch": [-10.0,80.0],
+        "yaw": [-90.0,90.0]
+      },
+      "salvoAmount": 1.0,
+      "speedPitch": 20.0,
+      "speedYaw": 10.0,
+      "trigger": "gunner3",
+      "turret": {
+        "gun": "gun3",
+        "head": "turret3"
+      }
+    },
+    {
+      "AttackMaxDistance": 5000.0,
+      "AttackMaxHeight": 5000.0,
+      "AttackMaxRadius": 3000.0,
+      "ChainfireTime": 5.0,
+      "DelayAfterShoot": 2.0,
+      "accuracyAir": 0.1,
+      "accuracyGnd": 0.0,
+      "blk": "gameData/weapons/groundModels_weapons/common_AAgun30mm.blk",
+      "defaultPitch": 10.0,
+      "defaultYaw": 0.0,
+      "dm": "gun4_dm",
+      "emitter": "gun4",
+      "errExplTime": 0.02,
+      "errMeasureVel": 0.0,
+      "errMeasureVelDir": 10.0,
+      "errMeasureVelFast": 80.0,
+      "errMeasureVelFwdShift": 1.0,
+      "errTargetting": 1.0,
+      "errTargettingOn100kmph": 0.0,
+      "fireConeAngle": 15.0,
+      "flash": "flame4",
+      "limits": {
+        "pitch": [-18.0,90.0],
+        "yaw": [-90.0,90.0]
+      },
+      "salvoAmount": 1.0,
+      "speedPitch": 24.0,
+      "speedYaw": 26.0,
+      "trigger": "gunner4",
+      "turret": {
+        "gun": "gun4",
+        "head": "turret4"
+      }
+    },
+    {
+      "AttackMaxDistance": 5000.0,
+      "AttackMaxHeight": 5000.0,
+      "AttackMaxRadius": 3000.0,
+      "ChainfireTime": 5.0,
+      "DelayAfterShoot": 2.0,
+      "accuracyAir": 0.1,
+      "accuracyGnd": 0.0,
+      "blk": "gameData/weapons/groundModels_weapons/common_AAgun30mm.blk",
+      "defaultPitch": 10.0,
+      "defaultYaw": 1.0,
+      "dm": "gun5_dm",
+      "emitter": "gun5",
+      "errExplTime": 0.02,
+      "errMeasureVel": 0.0,
+      "errMeasureVelDir": 10.0,
+      "errMeasureVelFast": 80.0,
+      "errMeasureVelFwdShift": 1.0,
+      "errTargetting": 1.0,
+      "errTargettingOn100kmph": 0.0,
+      "fireConeAngle": 15.0,
+      "flash": "flame5",
+      "limits": {
+        "pitch": [-18.0,90.0],
+        "yaw": [-90.0,90.0]
+      },
+      "salvoAmount": 1.0,
+      "speedPitch": 24.0,
+      "speedYaw": 26.0,
+      "trigger": "gunner5",
+      "turret": {
+        "gun": "gun5",
+        "head": "turret5"
+      }
+    },
+    {
+      "AttackMaxDistance": 1000.0,
+      "AttackMaxHeight": 1000.0,
+      "AttackMaxRadius": 1000.0,
+      "ChainfireTime": 3.0,
+      "DelayAfterShoot": 3.0,
+      "accuracyAir": 0.5,
+      "accuracyGnd": 0.1,
+      "allowableDelta": 1.0,
+      "blk": "gameData/weapons/groundModels_weapons/common_mGun12mm.blk",
+      "defaultPitch": 10.0,
+      "defaultYaw": 0.0,
+      "dm": "gun6_dm",
+      "emitter": "gun6",
+      "errExplTime": 0.0,
+      "errMeasureVel": 0.0,
+      "errMeasureVelDir": 3.0,
+      "errMeasureVelFast": 40.0,
+      "errMeasureVelFwdShift": 1.0,
+      "errTargetting": 1.0,
+      "errTargettingOn100kmph": 0.0,
+      "fireConeAngle": 20.0,
+      "flash": "flame6",
+      "limits": {
+        "pitch": [-10.0,90.0],
+        "yaw": [-90.0,90.0]
+      },
+      "salvoAmount": 100.0,
+      "speedPitch": 45.0,
+      "speedYaw": 45.0,
+      "trigger": "gunner6",
+      "turret": {
+        "gun": "gun6",
+        "head": "turret6"
+      }
+    },
+    {
+      "AttackMaxDistance": 1000.0,
+      "AttackMaxHeight": 1000.0,
+      "AttackMaxRadius": 1000.0,
+      "ChainfireTime": 3.0,
+      "DelayAfterShoot": 3.0,
+      "accuracyAir": 0.5,
+      "accuracyGnd": 0.1,
+      "allowableDelta": 1.0,
+      "blk": "gameData/weapons/groundModels_weapons/common_mGun12mm.blk",
+      "defaultPitch": 10.0,
+      "defaultYaw": 0.0,
+      "dm": "gun7_dm",
+      "emitter": "gun7",
+      "errExplTime": 0.0,
+      "errMeasureVel": 0.0,
+      "errMeasureVelDir": 3.0,
+      "errMeasureVelFast": 40.0,
+      "errMeasureVelFwdShift": 1.0,
+      "errTargetting": 1.0,
+      "errTargettingOn100kmph": 0.0,
+      "fireConeAngle": 20.0,
+      "flash": "flame7",
+      "limits": {
+        "pitch": [-10.0,90.0],
+        "yaw": [-90.0,90.0]
+      },
+      "salvoAmount": 100.0,
+      "speedPitch": 45.0,
+      "speedYaw": 45.0,
+      "trigger": "gunner7",
+      "turret": {
+        "gun": "gun7",
+        "head": "turret7"
+      }
+    },
+    {
+      "blk": "gameData/weapons/groundModels_weapons/searchLight_ship_gun.blk",
+      "defaultPitch": 10.0,
+      "defaultYaw": 0.0,
+      "dm": "gun8_dm",
+      "emitter": "gun8",
+      "flash": "flame8",
+      "limits": {
+        "pitch": [10.0,90.0],
+        "yaw": [-90.0,90.0]
+      },
+      "trigger": "gunner8",
+      "turret": {
+        "gun": "gun8",
+        "head": "turret8"
+      }
+    },
+    {
+      "blk": "gameData/weapons/groundModels_weapons/searchLight_ship_gun.blk",
+      "defaultPitch": 10.0,
+      "defaultYaw": 0.0,
+      "dm": "gun9_dm",
+      "emitter": "gun9",
+      "flash": "flame9",
+      "limits": {
+        "pitch": [10.0,90.0],
+        "yaw": [-90.0,90.0]
+      },
+      "trigger": "gunner9",
+      "turret": {
+        "gun": "gun9",
+        "head": "turret9"
+      }
+    }
+  ]
+}

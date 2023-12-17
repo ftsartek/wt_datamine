@@ -1,0 +1,31 @@
+{
+  "reaction": [
+    {
+      "event": "groundAhead",
+      "parallel": {
+        "stayAtSpeed": {
+          "speedMode": "boostOn"
+        },
+        "turnToEvasiveDir": {}
+      }
+    },
+    {
+      "event": "collisionAhead",
+      "parallel": {
+        "stayAtSpeed": {
+          "speedMode": "boostOn"
+        },
+        "turnToEvasiveDir": {}
+      }
+    },
+    {
+      "event": "outsideBattleField",
+      "flyToPos": {
+        "destType": "battleField",
+        "dist": -1.0,
+        "minAlt": 100.0,
+        "speed": 550.0
+      }
+    }
+  ]
+}

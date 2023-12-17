@@ -1,0 +1,4331 @@
+{
+  "airfields": {},
+  "areas": {
+    "area_01": {
+      "props": {},
+      "tm": [
+        [1400.0,0.0,0.0],
+        [0.0,1400.0,0.0],
+        [0.0,0.0,1400.0],
+        [6125.95,469.15,12862.0]
+      ],
+      "type": "Sphere"
+    },
+    "bastogne": {
+      "props": {},
+      "tm": [
+        [6280.7,0.0,0.0],
+        [0.0,6280.7,0.0],
+        [0.0,0.0,6280.7],
+        [1327.25,475.95,10598.7]
+      ],
+      "type": "Sphere"
+    },
+    "center_of_evil": {
+      "props": {},
+      "tm": [
+        [7044.5,0.0,0.0],
+        [0.0,7044.5,0.0],
+        [0.0,0.0,7044.5],
+        [10435.8,423.75,5566.75]
+      ],
+      "type": "Sphere"
+    },
+    "end_of_route": {
+      "props": {},
+      "tm": [
+        [935.5,0.0,0.0],
+        [0.0,935.5,0.0],
+        [0.0,0.0,935.5],
+        [13648.9,518.0,15527.2]
+      ],
+      "type": "Sphere"
+    },
+    "trap00": {
+      "props": {},
+      "tm": [
+        [163.9,0.0,0.0],
+        [0.0,163.9,0.0],
+        [0.0,0.0,163.9],
+        [7178.45,279.58,12813.2]
+      ],
+      "type": "Sphere"
+    },
+    "trap01": {
+      "props": {},
+      "tm": [
+        [92.7,0.0,0.0],
+        [0.0,92.7,0.0],
+        [0.0,0.0,92.7],
+        [9086.3,77.65,12740.3]
+      ],
+      "type": "Sphere"
+    },
+    "trap02": {
+      "props": {},
+      "tm": [
+        [119.99,0.0,0.0],
+        [0.0,119.99,0.0],
+        [0.0,0.0,119.99],
+        [10526.4,73.05,13673.8]
+      ],
+      "type": "Sphere"
+    },
+    "trap03": {
+      "props": {},
+      "tm": [
+        [173.1,0.0,0.0],
+        [0.0,173.1,0.0],
+        [0.0,0.0,173.1],
+        [12083.7,272.564,14142.4]
+      ],
+      "type": "Sphere"
+    }
+  },
+  "bin_dump_file": "",
+  "dialogs": {},
+  "effects": {},
+  "imports": {
+    "import_record": {
+      "excludes": {},
+      "file": "gameData/missions/bridges/bulge_bridges.blk",
+      "importAreas": true,
+      "importMissionObjectives": true,
+      "importTriggers": true,
+      "importUnits": true,
+      "importWayPoints": true,
+      "showAreas": true,
+      "showMissionObjectives": true,
+      "showTriggers": true,
+      "showUnits": true,
+      "showWayPoints": true
+    }
+  },
+  "mission_objectives": {
+    "isCategory": true,
+    "is_enabled": true,
+    "single_bulge_m02_def00": {
+      "comments": "",
+      "is_enabled": true,
+      "onFailed": {},
+      "onSuccess": {},
+      "props": {
+        "isPrimary": true,
+        "scoreConst": 100,
+        "scoreTime": 400,
+        "timeLimit": 1800
+      },
+      "type": "abstractMissionObjective"
+    },
+    "single_bulge_m02_secondary": {
+      "comments": "",
+      "is_enabled": false,
+      "onFailed": {},
+      "onSuccess": {},
+      "props": {
+        "isPrimary": false,
+        "scoreConst": 100,
+        "scoreTime": 400,
+        "timeLimit": 1800
+      },
+      "type": "abstractMissionObjective"
+    }
+  },
+  "mission_settings": {
+    "atmosphere": {
+      "pressure": 760.0,
+      "temperature": 0.0
+    },
+    "briefing": {
+      "date_loc": "",
+      "music": "action_01",
+      "objective_loc": "",
+      "part": {
+        "event": "",
+        "minTime": 0,
+        "slide": {
+          "arrow": {
+            "point": [
+              "target_vehicles",
+              "end_of_route"
+            ],
+            "side": "ally",
+            "width": 1
+          },
+          "icon": [
+            {
+              "icontype": "fighter",
+              "lookAt": "end_of_route",
+              "side": "player",
+              "target": "player"
+            },
+            {
+              "icontype": "truck",
+              "lookAt": "end_of_route",
+              "side": "ally",
+              "target": "target_vehicles"
+            },
+            {
+              "icontype": "artillery",
+              "side": "ally",
+              "target": "friendly_air_defence_00"
+            },
+            {
+              "icontype": "artillery",
+              "side": "ally",
+              "target": "friendly_air_defence_03"
+            }
+          ],
+          "map": true,
+          "minTime": 4,
+          "picture": "",
+          "showAirMap": false
+        }
+      },
+      "place_loc": ""
+    },
+    "mission": {
+      "environment": "Morning",
+      "gt_reload_explosives": true,
+      "level": "levels/bulge.bin",
+      "optionalTakeOff": false,
+      "restoreType": "attempts",
+      "type": "singleMission",
+      "weather": "poor"
+    },
+    "player": {
+      "army": 1,
+      "wing": "player"
+    },
+    "player_teamB": {
+      "army": 2
+    }
+  },
+  "objLayers": {
+    "layer": [
+      {
+        "enabled": true
+      },
+      {
+        "enabled": true
+      },
+      {
+        "enabled": true
+      },
+      {
+        "enabled": true
+      }
+    ]
+  },
+  "selected_tag": "",
+  "triggers": {
+    "debug_timer": {
+      "actions": {
+        "missionSetTimeIndicator": {
+          "var": "time"
+        },
+        "varModify": {
+          "operator": "add",
+          "value": 1.0,
+          "var": "time"
+        }
+      },
+      "comments": "",
+      "conditions": {},
+      "else_actions": {},
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": true
+      }
+    },
+    "initial": {
+      "actions": {
+        "moAddMissionObjective": {
+          "object_marking": 0,
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "target": "single_bulge_m02_secondary"
+        },
+        "unitAttackTarget": {
+          "object": "evil_fighters00",
+          "playerAttracted": true,
+          "playerAttractedCount": 1,
+          "playerAttractedEffRate": 0.1,
+          "target": "player"
+        },
+        "unitSetIndication": {
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "object_var_value": 0,
+          "set": true,
+          "target": "target_vehicles",
+          "target_marking": 0
+        },
+        "unitSetProperties": [
+          {
+            "isImmortal": true,
+            "object": [
+              "bridge_24",
+              "bridge_25"
+            ],
+            "object_marking": 0,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "object_var_value": 0
+          },
+          {
+            "effShootingRate": 0.05,
+            "object": "evil_fighters00",
+            "object_marking": 0,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "object_var_value": 0
+          },
+          {
+            "attack_type": "hold_fire",
+            "effShootingRate": 0.02,
+            "lockSpeed": true,
+            "object": [
+              "evil_vehicles_squad",
+              "light_evil_vehicles_squad"
+            ],
+            "object_marking": 0,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "object_var_value": 0,
+            "speed": 0.0,
+            "stealthRadius": 0.0
+          },
+          {
+            "effShootingRate": 0.02,
+            "object": "evil_artillery_squad",
+            "object_marking": 0,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "object_var_value": 0,
+            "stealthRadius": 2000.0
+          }
+        ],
+        "wait": {
+          "time": 3.0
+        }
+      },
+      "comments": "",
+      "conditions": {},
+      "else_actions": {},
+      "events": {
+        "initMission": {}
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "isCategory": true,
+    "is_enabled": true,
+    "mission_completed": {
+      "actions": {
+        "missionCompleted": {
+          "timer": false
+        },
+        "missionSetTargetsIndicator": {
+          "delta": 0,
+          "icon": "truck",
+          "icon army": 1,
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "object_var_value": 0,
+          "set": false,
+          "target": "target_vehicles",
+          "target_marking": 0,
+          "target_type": "isAlive"
+        },
+        "moSetObjectiveStatus": {
+          "object_marking": 0,
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "status": 2,
+          "target": "single_bulge_m02_def00"
+        },
+        "triggerDisable": {
+          "target": [
+            "still_alive_vehicles",
+            "mission_failed"
+          ]
+        },
+        "unitSetIndication": {
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "object_var_value": 0,
+          "set": false,
+          "target": "target_vehicles",
+          "target_marking": 0
+        },
+        "wait": {
+          "time": 2.0
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "unitWhenInArea": {
+          "check_objects": "any",
+          "math": "3D",
+          "object": "target_vehicles",
+          "object_marking": 0,
+          "object_type": "isAlive",
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "target": "end_of_route"
+        }
+      },
+      "else_actions": {},
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "mission_failed": {
+      "actions": {
+        "missionFailed": {},
+        "missionSetTargetsIndicator": {
+          "delta": 0,
+          "icon": "truck",
+          "icon army": 1,
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "object_var_value": 0,
+          "set": false,
+          "target": "target_vehicles",
+          "target_marking": 0,
+          "target_type": "isAlive"
+        },
+        "moSetObjectiveStatus": {
+          "object_marking": 0,
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "status": 3,
+          "target": "single_bulge_m02_def00"
+        },
+        "triggerDisable": {
+          "target": [
+            "secondary_completed",
+            "still_alive_vehicles",
+            "mission_completed"
+          ]
+        },
+        "wait": {
+          "time": 3.0
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "unitWhenCountMatches": {
+          "func": "more",
+          "object": "target_vehicles",
+          "object_marking": 0,
+          "object_type": "isKilled",
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "value": 6
+        }
+      },
+      "else_actions": {},
+      "events": {
+        "periodicEvent": {
+          "time": 0.01
+        }
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "offline_trigger": {
+      "actions": {
+        "unitSetProperties": {
+          "object": "player_himself",
+          "object_marking": 0,
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "object_var_value": 0,
+          "targetableByAi": true
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "unitWhenStatus": {
+          "check_objects": "all",
+          "check_period": 1.0,
+          "object": "player",
+          "object_marking": 0,
+          "object_type": "isOffline",
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "object_var_value": 0,
+          "target_type": "isAlive"
+        }
+      },
+      "else_actions": {},
+      "events": {
+        "initMission": {}
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "raise_evil": {
+      "actions": {
+        "unitSetProperties": {
+          "attack_type": "fire_at_will_gnd",
+          "lockSpeed": true,
+          "object": "light_evil_vehicles_squad",
+          "object_marking": 0,
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "object_var_value": 0,
+          "speed": 60.0,
+          "stealthRadius": 10000.0,
+          "useForTriggerFiltered": true
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "unitDistanceBetween": {
+          "check_objects": "any",
+          "check_targets": "any",
+          "math": "2D",
+          "object": "light_evil_vehicles_squad",
+          "object_marking": 0,
+          "object_type": "isAlive",
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "target": "target_vehicles",
+          "target_marking": 0,
+          "target_type": "isAlive",
+          "value": 700.0
+        }
+      },
+      "else_actions": {},
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": true
+      }
+    },
+    "secondary_completed": {
+      "actions": {
+        "moSetObjectiveStatus": {
+          "object_marking": 0,
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "status": 2,
+          "target": "single_bulge_m02_secondary"
+        },
+        "triggerDisable": {
+          "target": "secondary_failed"
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "unitWhenInArea": {
+          "check_objects": "any",
+          "math": "3D",
+          "object": "target_vehicles",
+          "object_marking": 0,
+          "object_type": "isAlive",
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "target": "end_of_route"
+        },
+        "unitWhenStatus": {
+          "check_objects": "all",
+          "check_period": 1.0,
+          "object": "target_vehicles",
+          "object_marking": 0,
+          "object_type": "isAlive",
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "object_var_value": 0,
+          "target_type": "isAlive"
+        }
+      },
+      "else_actions": {},
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "secondary_failed": {
+      "actions": {
+        "moSetObjectiveStatus": {
+          "object_marking": 0,
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "status": 3,
+          "target": "single_bulge_m02_secondary"
+        },
+        "triggerDisable": {
+          "target": "secondary_completed"
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "unitWhenStatus": {
+          "check_objects": "any",
+          "check_period": 1.0,
+          "object": "target_vehicles",
+          "object_marking": 0,
+          "object_type": "isKilled",
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "object_var_value": 0,
+          "target_type": "isAlive"
+        }
+      },
+      "else_actions": {},
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "still_alive_vehicles": {
+      "actions": {
+        "missionSetTargetsIndicator": {
+          "delta": 0,
+          "icon": "truck",
+          "icon army": 1,
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "object_var_value": 0,
+          "set": true,
+          "target": "target_vehicles",
+          "target_marking": 0,
+          "target_type": "isAlive"
+        }
+      },
+      "comments": "",
+      "conditions": {},
+      "else_actions": {},
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": true
+      }
+    },
+    "trap00": {
+      "actions": {
+        "triggerEnable": {
+          "target": "trap00_done"
+        },
+        "unitAttackTarget": {
+          "fireRandom": true,
+          "object": "trap00_evil_vehicles00",
+          "playerAttracted": false,
+          "target": "target_vehicles"
+        },
+        "unitSetIndication": [
+          {
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "object_var_value": 0,
+            "set": false,
+            "target": "target_vehicles",
+            "target_marking": 0
+          },
+          {
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "object_var_value": 0,
+            "set": true,
+            "target": "trap00_evil_vehicles00",
+            "target_marking": 0
+          }
+        ],
+        "unitSetProperties": [
+          {
+            "lockSpeed": true,
+            "object": "target_vehicles",
+            "object_marking": 0,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "object_var_value": 0,
+            "speed": 0.0
+          },
+          {
+            "attack_type": "fire_at_will_gnd",
+            "lockSpeed": true,
+            "object": "trap00_evil_vehicles00",
+            "object_marking": 0,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "object_var_value": 0,
+            "speed": 60.0,
+            "stealthRadius": 10000.0
+          }
+        ]
+      },
+      "comments": "",
+      "conditions": {
+        "unitWhenInArea": {
+          "check_objects": "any",
+          "math": "3D",
+          "object": "target_vehicles",
+          "object_marking": 0,
+          "object_type": "isAlive",
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "target": "trap00"
+        }
+      },
+      "else_actions": {},
+      "events": {
+        "periodicEvent": {
+          "time": 0.01
+        }
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "trap00_done": {
+      "actions": {
+        "triggerEnable": {
+          "target": "trap01"
+        },
+        "unitSetIndication": [
+          {
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "object_var_value": 0,
+            "set": false,
+            "target": "trap00_evil_vehicles00",
+            "target_marking": 0
+          },
+          {
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "object_var_value": 0,
+            "set": true,
+            "target": "target_vehicles",
+            "target_marking": 0
+          }
+        ],
+        "unitSetProperties": {
+          "lockSpeed": true,
+          "object": "target_vehicles",
+          "object_marking": 0,
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "object_var_value": 0,
+          "speed": 30.0
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "unitWhenStatus": {
+          "check_objects": "all",
+          "check_period": 1.0,
+          "object": "trap00_evil_vehicles00",
+          "object_marking": 0,
+          "object_type": "isKilled",
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "object_var_value": 0,
+          "target_type": "isAlive"
+        }
+      },
+      "else_actions": {},
+      "events": {
+        "periodicEvent": {
+          "time": 0.01
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "trap01": {
+      "actions": {
+        "triggerEnable": {
+          "target": "trap01_done"
+        },
+        "unitAttackTarget": {
+          "fireRandom": true,
+          "object": "trap01_evil_vehicles00",
+          "playerAttracted": false,
+          "target": "target_vehicles"
+        },
+        "unitSetIndication": [
+          {
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "object_var_value": 0,
+            "set": false,
+            "target": "target_vehicles",
+            "target_marking": 0
+          },
+          {
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "object_var_value": 0,
+            "set": true,
+            "target": "trap01_evil_vehicles00",
+            "target_marking": 0
+          }
+        ],
+        "unitSetProperties": [
+          {
+            "lockSpeed": true,
+            "object": "target_vehicles",
+            "object_marking": 0,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "object_var_value": 0,
+            "speed": 0.0
+          },
+          {
+            "attack_type": "fire_at_will_gnd",
+            "lockSpeed": true,
+            "object": "trap01_evil_vehicles00",
+            "object_marking": 0,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "object_var_value": 0,
+            "speed": 60.0,
+            "stealthRadius": 10000.0
+          }
+        ]
+      },
+      "comments": "",
+      "conditions": {
+        "unitWhenInArea": {
+          "check_objects": "any",
+          "math": "3D",
+          "object": "target_vehicles",
+          "object_marking": 0,
+          "object_type": "isAlive",
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "target": "trap01"
+        }
+      },
+      "else_actions": {},
+      "events": {
+        "periodicEvent": {
+          "time": 0.01
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "trap01_done": {
+      "actions": {
+        "triggerEnable": {
+          "target": "trap02"
+        },
+        "unitSetIndication": [
+          {
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "object_var_value": 0,
+            "set": false,
+            "target": "trap01_evil_vehicles00",
+            "target_marking": 0
+          },
+          {
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "object_var_value": 0,
+            "set": true,
+            "target": "target_vehicles",
+            "target_marking": 0
+          }
+        ],
+        "unitSetProperties": {
+          "lockSpeed": true,
+          "object": "target_vehicles",
+          "object_marking": 0,
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "object_var_value": 0,
+          "speed": 30.0
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "unitWhenStatus": {
+          "check_objects": "all",
+          "check_period": 1.0,
+          "object": "trap01_evil_vehicles00",
+          "object_marking": 0,
+          "object_type": "isKilled",
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "object_var_value": 0,
+          "target_type": "isAlive"
+        }
+      },
+      "else_actions": {},
+      "events": {
+        "periodicEvent": {
+          "time": 0.01
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "trap02": {
+      "actions": {
+        "triggerEnable": {
+          "target": "trap02_done"
+        },
+        "unitAttackTarget": {
+          "fireRandom": true,
+          "object": [
+            "trap02_evil_vehicles00",
+            "trap02_evil_vehicles01"
+          ],
+          "playerAttracted": false,
+          "target": "target_vehicles"
+        },
+        "unitSetIndication": [
+          {
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "object_var_value": 0,
+            "set": false,
+            "target": "target_vehicles",
+            "target_marking": 0
+          },
+          {
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "object_var_value": 0,
+            "set": true,
+            "target": "trap02_evil_vehicles00",
+            "target_marking": 0
+          },
+          {
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "object_var_value": 0,
+            "set": true,
+            "target": "trap02_evil_vehicles01",
+            "target_marking": 0
+          }
+        ],
+        "unitSetProperties": [
+          {
+            "lockSpeed": true,
+            "object": "target_vehicles",
+            "object_marking": 0,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "object_var_value": 0,
+            "speed": 0.0
+          },
+          {
+            "attack_type": "fire_at_will_gnd",
+            "lockSpeed": true,
+            "object": [
+              "trap02_evil_vehicles00",
+              "trap02_evil_vehicles01"
+            ],
+            "object_marking": 0,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "object_var_value": 0,
+            "speed": 60.0,
+            "stealthRadius": 10000.0
+          }
+        ],
+        "wait": {
+          "time": 10.0
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "unitWhenInArea": {
+          "check_objects": "any",
+          "math": "3D",
+          "object": "target_vehicles",
+          "object_marking": 0,
+          "object_type": "isAlive",
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "target": "trap02"
+        }
+      },
+      "else_actions": {},
+      "events": {
+        "periodicEvent": {
+          "time": 0.01
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "trap02_done": {
+      "actions": {
+        "triggerEnable": {
+          "target": "trap03"
+        },
+        "unitMoveTo": {
+          "destTimeMode": false,
+          "fastClimb": false,
+          "follow_target": true,
+          "horizontalDirectionForTeleport": true,
+          "object": "trap02_evil_vehicles01",
+          "object_marking": 0,
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "object_var_value": 0,
+          "recalculatePathDist": -1.0,
+          "shouldKeepFormation": false,
+          "target": "target_vehicles",
+          "target_marking": 0,
+          "target_var_comp_op": "equal",
+          "target_var_name": "",
+          "target_var_value": 0,
+          "teleportHeightType": "absolute",
+          "teleportHeightValue": 1000.0,
+          "useUnitHeightForTele": true,
+          "waypointReachedDist": 10.0
+        },
+        "unitSetIndication": [
+          {
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "object_var_value": 0,
+            "set": false,
+            "target": [
+              "trap02_evil_vehicles00",
+              "trap02_evil_vehicles01"
+            ],
+            "target_marking": 0
+          },
+          {
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "object_var_value": 0,
+            "set": true,
+            "target": "target_vehicles",
+            "target_marking": 0
+          }
+        ],
+        "unitSetProperties": {
+          "lockSpeed": true,
+          "object": "target_vehicles",
+          "object_marking": 0,
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "object_var_value": 0,
+          "speed": 30.0
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "unitWhenStatus": {
+          "check_objects": "all",
+          "check_period": 1.0,
+          "object": "trap02_evil_vehicles00",
+          "object_marking": 0,
+          "object_type": "isKilled",
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "object_var_value": 0,
+          "target_type": "isAlive"
+        }
+      },
+      "else_actions": {},
+      "events": {
+        "periodicEvent": {
+          "time": 0.01
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "trap03": {
+      "actions": {
+        "triggerEnable": {
+          "target": "trap03_done"
+        },
+        "unitAttackTarget": {
+          "object": [
+            "trap03_evil_vehicles00",
+            "trap03_evil_vehicles01",
+            "trap03_evil_vehicles02"
+          ],
+          "playerAttracted": false,
+          "target": "target_vehicles"
+        },
+        "unitSetIndication": [
+          {
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "object_var_value": 0,
+            "set": false,
+            "target": "target_vehicles",
+            "target_marking": 0
+          },
+          {
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "object_var_value": 0,
+            "set": true,
+            "target": "trap03_evil_vehicles00",
+            "target_marking": 0
+          }
+        ],
+        "unitSetProperties": [
+          {
+            "lockSpeed": true,
+            "object": "target_vehicles",
+            "object_marking": 0,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "object_var_value": 0,
+            "speed": 0.0
+          },
+          {
+            "attack_type": "fire_at_will_gnd",
+            "lockSpeed": true,
+            "object": [
+              "trap03_evil_vehicles00",
+              "trap03_evil_vehicles01",
+              "trap03_evil_vehicles02"
+            ],
+            "object_marking": 0,
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "object_var_value": 0,
+            "speed": 60.0,
+            "stealthRadius": 10000.0
+          }
+        ]
+      },
+      "comments": "",
+      "conditions": {
+        "unitWhenInArea": {
+          "check_objects": "any",
+          "math": "3D",
+          "object": "target_vehicles",
+          "object_marking": 0,
+          "object_type": "isAlive",
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "target": "trap03"
+        }
+      },
+      "else_actions": {},
+      "events": {
+        "periodicEvent": {
+          "time": 0.01
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "trap03_done": {
+      "actions": {
+        "unitMoveTo": {
+          "destTimeMode": false,
+          "fastClimb": false,
+          "follow_target": true,
+          "horizontalDirectionForTeleport": true,
+          "object": [
+            "trap03_evil_vehicles01",
+            "trap03_evil_vehicles02"
+          ],
+          "object_marking": 0,
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "object_var_value": 0,
+          "recalculatePathDist": -1.0,
+          "shouldKeepFormation": false,
+          "target": "target_vehicles",
+          "target_marking": 0,
+          "target_var_comp_op": "equal",
+          "target_var_name": "",
+          "target_var_value": 0,
+          "teleportHeightType": "absolute",
+          "teleportHeightValue": 1000.0,
+          "useUnitHeightForTele": true,
+          "waypointReachedDist": 10.0
+        },
+        "unitSetIndication": [
+          {
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "object_var_value": 0,
+            "set": false,
+            "target": "trap03_evil_vehicles00",
+            "target_marking": 0
+          },
+          {
+            "object_var_comp_op": "equal",
+            "object_var_name": "",
+            "object_var_value": 0,
+            "set": true,
+            "target": "target_vehicles",
+            "target_marking": 0
+          }
+        ],
+        "unitSetProperties": {
+          "lockSpeed": true,
+          "object": "target_vehicles",
+          "object_marking": 0,
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "object_var_value": 0,
+          "speed": 30.0
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "unitWhenStatus": {
+          "check_objects": "all",
+          "check_period": 1.0,
+          "object": "trap03_evil_vehicles00",
+          "object_marking": 0,
+          "object_type": "isKilled",
+          "object_var_comp_op": "equal",
+          "object_var_name": "",
+          "object_var_value": 0,
+          "target_type": "isAlive"
+        }
+      },
+      "else_actions": {},
+      "events": {
+        "periodicEvent": {
+          "time": 0.01
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    }
+  },
+  "units": {
+    "air_defence": [
+      {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "air_defence_01",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [-0.999048,0.0,-0.0436192],
+          [0.0,1.0,0.0],
+          [0.0436192,0.0,-0.999048],
+          [10947.6,236.995,11379.0]
+        ],
+        "unit_class": "germ_88mm_flak36",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "air_defence_02",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [0.382684,0.0,0.923879],
+          [0.0,1.0,0.0],
+          [-0.923879,0.0,0.382684],
+          [11131.0,248.037,11501.8]
+        ],
+        "unit_class": "germ_88mm_flak36",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "air_defence_03",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [1.0,0.0,-3.7998e-07],
+          [0.0,1.0,0.0],
+          [3.7998e-07,0.0,1.0],
+          [11161.8,279.3,11252.5]
+        ],
+        "unit_class": "germ_88mm_flak36",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "air_defence_04",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [-0.537299,0.0,0.843391],
+          [0.0,1.0,0.0],
+          [-0.843391,0.0,-0.537299],
+          [11881.5,238.251,12260.8]
+        ],
+        "unit_class": "germ_88mm_flak36",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "air_defence_05",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [0.21644,0.0,0.976296],
+          [0.0,1.0,0.0],
+          [-0.976296,0.0,0.21644],
+          [12318.4,279.464,12423.4]
+        ],
+        "unit_class": "germ_88mm_flak36",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "air_defence_06",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [0.642787,0.0,-0.766044],
+          [0.0,1.0,0.0],
+          [0.766044,0.0,0.642787],
+          [9516.25,273.761,15174.8]
+        ],
+        "unit_class": "germ_88mm_flak36",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "air_defence_07",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [0.642787,0.0,-0.766044],
+          [0.0,1.0,0.0],
+          [0.766044,0.0,0.642787],
+          [9184.3,309.406,15313.9]
+        ],
+        "unit_class": "germ_88mm_flak36",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "air_defence_08",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [0.642787,0.0,-0.766044],
+          [0.0,1.0,0.0],
+          [0.766044,0.0,0.642787],
+          [9366.3,311.545,15636.2]
+        ],
+        "unit_class": "germ_88mm_flak36",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "friendly_air_defence_00",
+        "props": {
+          "army": 1,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [-0.906308,0.0,-0.422618],
+          [0.0,1.0,0.0],
+          [0.422618,0.0,-0.906308],
+          [13423.9,285.364,15482.9]
+        ],
+        "unit_class": "us_90mm_m1",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "friendly_air_defence_01",
+        "props": {
+          "army": 1,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [-0.300706,0.0,-0.953717],
+          [0.0,1.0,0.0],
+          [0.953717,0.0,-0.300706],
+          [13488.7,288.68,15375.9]
+        ],
+        "unit_class": "us_90mm_m1",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "friendly_air_defence_02",
+        "props": {
+          "army": 1,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [-0.939692,0.0,0.34202],
+          [0.0,1.0,0.0],
+          [-0.34202,0.0,-0.939692],
+          [13464.5,284.464,15651.9]
+        ],
+        "unit_class": "us_90mm_m1",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "friendly_air_defence_03",
+        "props": {
+          "army": 1,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [0.707107,0.0,-0.707107],
+          [0.0,1.0,0.0],
+          [0.707107,0.0,0.707107],
+          [13849.9,276.108,15438.3]
+        ],
+        "unit_class": "us_90mm_m1",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "friendly_air_defence_04",
+        "props": {
+          "army": 1,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [-0.0871557,0.0,-0.996195],
+          [0.0,1.0,0.0],
+          [0.996195,0.0,-0.0871557],
+          [13726.0,276.806,15259.3]
+        ],
+        "unit_class": "us_90mm_m1",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "air_defence_09",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [0.707107,0.0,-0.707107],
+          [0.0,1.0,0.0],
+          [0.707107,0.0,0.707107],
+          [7415.1,287.0,14618.0]
+        ],
+        "unit_class": "germ_88mm_flak36",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "air_defence_10",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [0.0871555,0.0,-0.996195],
+          [0.0,1.0,0.0],
+          [0.996195,0.0,0.0871555],
+          [7368.05,283.561,14440.9]
+        ],
+        "unit_class": "germ_88mm_flak36",
+        "way": {},
+        "weapons": ""
+      }
+    ],
+    "armada": [
+      {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "player",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 1,
+          "attack_type": "fire_at_will",
+          "count": 4,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "minimum_distance_to_earth": 20.0,
+          "numInWing": 2,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "skill": 4,
+          "skin": "raf45",
+          "targetableByAi": false
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [0.5373,0.0,0.843391],
+          [0.0,1.0,0.0],
+          [-0.843391,0.0,0.5373],
+          [4922.75,908.1,10543.2]
+        ],
+        "unit_class": "p-51d-5",
+        "way": {},
+        "weapons": "p_51d_5_rockets"
+      },
+      {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "evil_fighters00",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 3,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "isDelayed": true,
+          "minimum_distance_to_earth": 20.0,
+          "numInWing": 2,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 3.0,
+            "row_distances": 3.0,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Diamond"
+          },
+          "skill": 4
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [-0.382683,0.0,0.92388],
+          [0.0,1.0,0.0],
+          [-0.92388,0.0,-0.382683],
+          [10504.0,1057.35,5461.05]
+        ],
+        "unit_class": "fw-190f-8",
+        "way": {},
+        "weapons": "Fw-190F-8_default"
+      }
+    ],
+    "squad": [
+      {
+        "name": "player_himself",
+        "props": {
+          "object_type": "isPlayer",
+          "squad_members": "player"
+        },
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [9057.35,318.15,13319.5]
+        ]
+      },
+      {
+        "name": "evil_vehicles_squad",
+        "props": {
+          "squad_members": [
+            "trap00_evil_vehicles00",
+            "trap01_evil_vehicles00",
+            "trap02_evil_vehicles00",
+            "trap02_evil_vehicles01",
+            "trap03_evil_vehicles00",
+            "trap03_evil_vehicles01",
+            "trap03_evil_vehicles02"
+          ]
+        },
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [5532.1,284.265,12836.6]
+        ]
+      },
+      {
+        "name": "light_evil_vehicles_squad",
+        "props": {
+          "squad_members": [
+            "trap00_evil_vehicles01",
+            "trap00_evil_vehicles02",
+            "trap00_evil_vehicles03",
+            "trap01_evil_vehicles01",
+            "trap01_evil_vehicles02",
+            "trap02_evil_vehicles02",
+            "trap02_evil_vehicles03",
+            "trap02_evil_vehicles04",
+            "trap03_evil_vehicles03",
+            "trap03_evil_vehicles04"
+          ]
+        },
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [8111.15,264.196,12056.0]
+        ]
+      },
+      {
+        "name": "evil_artillery_squad",
+        "props": {
+          "squad_members": [
+            "evil_artillery00",
+            "evil_artillery01",
+            "evil_artillery02",
+            "evil_artillery03",
+            "evil_artillery04",
+            "evil_artillery05",
+            "evil_artillery06",
+            "evil_artillery07",
+            "evil_artillery08",
+            "evil_artillery09",
+            "evil_artillery10",
+            "evil_artillery11",
+            "evil_artillery12",
+            "evil_artillery13"
+          ]
+        },
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [11586.0,182.196,13257.7]
+        ]
+      }
+    ],
+    "structures": [
+      {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "evil_artillery00",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 2,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "cols",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [-0.0871557,0.0,0.996195],
+          [0.0,1.0,0.0],
+          [-0.996195,0.0,-0.0871557],
+          [8517.1,214.425,12064.9]
+        ],
+        "unit_class": "germ_75mm_pak40",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "evil_artillery01",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 2,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "cols",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [-0.258819,0.0,0.965926],
+          [0.0,1.0,0.0],
+          [-0.965926,0.0,-0.258819],
+          [10122.8,208.695,12755.5]
+        ],
+        "unit_class": "germ_75mm_pak40",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "evil_artillery02",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 2,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "cols",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [0.5373,0.0,-0.843391],
+          [0.0,1.0,0.0],
+          [0.843391,0.0,0.5373],
+          [9815.25,265.162,13869.1]
+        ],
+        "unit_class": "germ_75mm_pak40",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "evil_artillery03",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 2,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "cols",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [-0.382683,0.0,-0.92388],
+          [0.0,1.0,0.0],
+          [0.92388,0.0,-0.382683],
+          [9346.75,269.746,13925.5]
+        ],
+        "unit_class": "germ_37mm_pak36",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "evil_artillery04",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 2,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "cols",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [-0.258819,0.0,0.965926],
+          [0.0,1.0,0.0],
+          [-0.965926,0.0,-0.258819],
+          [12392.0,281.919,12860.1]
+        ],
+        "unit_class": "germ_75mm_pak40",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "evil_artillery05",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 2,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "cols",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [-0.258819,0.0,0.965926],
+          [0.0,1.0,0.0],
+          [-0.965926,0.0,-0.258819],
+          [12549.0,284.987,13120.3]
+        ],
+        "unit_class": "germ_75mm_pak40",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "evil_artillery06",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "cols",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [-0.258819,0.0,0.965926],
+          [0.0,1.0,0.0],
+          [-0.965926,0.0,-0.258819],
+          [11941.5,233.977,13194.0]
+        ],
+        "unit_class": "germ_75mm_pak40",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "evil_artillery07",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "cols",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [-0.258819,0.0,0.965926],
+          [0.0,1.0,0.0],
+          [-0.965926,0.0,-0.258819],
+          [12099.5,243.986,13341.8]
+        ],
+        "unit_class": "germ_75mm_pak40",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "evil_artillery08",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 2,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "cols",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [-0.258819,0.0,0.965926],
+          [0.0,1.0,0.0],
+          [-0.965926,0.0,-0.258819],
+          [12562.6,272.834,13807.0]
+        ],
+        "unit_class": "germ_75mm_pak40",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "evil_artillery09",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 2,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "cols",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [0.34202,0.0,-0.939693],
+          [0.0,1.0,0.0],
+          [0.939693,0.0,0.34202],
+          [12028.5,278.379,15249.1]
+        ],
+        "unit_class": "germ_75mm_pak40",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "evil_artillery10",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 2,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "cols",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [0.34202,0.0,-0.939693],
+          [0.0,1.0,0.0],
+          [0.939693,0.0,0.34202],
+          [12409.9,312.157,14870.8]
+        ],
+        "unit_class": "germ_37mm_pak36",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "evil_artillery11",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "cols",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [0.707107,0.0,-0.707107],
+          [0.0,1.0,0.0],
+          [0.707107,0.0,0.707107],
+          [11999.7,276.047,14560.0]
+        ],
+        "unit_class": "germ_75mm_pak40",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "evil_artillery12",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 2,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "cols",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [-0.5373,0.0,-0.843391],
+          [0.0,1.0,0.0],
+          [0.843391,0.0,-0.5373],
+          [11553.0,248.396,14496.6]
+        ],
+        "unit_class": "germ_75mm_pak40",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "evil_artillery13",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 2,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "cols",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [-0.999048,0.0,0.0436195],
+          [0.0,1.0,0.0],
+          [-0.0436195,0.0,-0.999048],
+          [11359.3,199.86,13732.3]
+        ],
+        "unit_class": "germ_75mm_pak40",
+        "way": {},
+        "weapons": ""
+      }
+    ],
+    "tracked_vehicles": [
+      {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "trap00_evil_vehicles00",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 3,
+          "formation_div": 1,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [1.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [-0.525203,0.0,-0.850977],
+          [0.0,1.0,0.0],
+          [0.850977,0.0,-0.525203],
+          [7296.76,272.105,12977.8]
+        ],
+        "unit_class": "germ_hummel",
+        "way": {
+          "trap00_evil_vehicles00_wp_01": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [7259.21,283.412,12919.0]
+            ],
+            "type": "normal"
+          },
+          "trap00_evil_vehicles00_wp_02": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [6865.21,272.511,12779.4]
+            ],
+            "type": "normal"
+          }
+        },
+        "weapons": ""
+      },
+      {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "trap01_evil_vehicles00",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 4,
+          "formation_div": 2,
+          "formation_noise": [0.2,0.3],
+          "formation_step": [1.0,2.0],
+          "formation_type": "cols",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [-0.0436195,0.0,-0.999048],
+          [0.0,1.0,0.0],
+          [0.999048,0.0,-0.0436195],
+          [9416.7,120.349,13250.8]
+        ],
+        "unit_class": "germ_hummel",
+        "way": {
+          "trap01_evil_vehicles00_wp_01": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [9390.86,95.0184,13154.1]
+            ],
+            "type": "normal"
+          },
+          "trap01_evil_vehicles00_wp_02": {
+            "props": {
+              "moveType": "GATHER_TO",
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [9101.04,60.7468,12750.1]
+            ],
+            "type": "normal"
+          },
+          "trap01_evil_vehicles00_wp_03": {
+            "props": {
+              "moveType": "GATHER_TO",
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [9379.86,64.9889,13081.0]
+            ],
+            "type": "normal"
+          },
+          "trap01_evil_vehicles00_wp_04": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [9082.28,66.1082,12747.3]
+            ],
+            "type": "normal"
+          }
+        },
+        "weapons": ""
+      },
+      {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "trap02_evil_vehicles00",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 3,
+          "formation_div": 2,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [1.0,2.0],
+          "formation_type": "cols",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [-0.0436195,0.0,-0.999048],
+          [0.0,1.0,0.0],
+          [0.999048,0.0,-0.0436195],
+          [11028.0,104.154,13733.0]
+        ],
+        "unit_class": "germ_hummel",
+        "way": {
+          "trap02_evil_vehicles00_wp_01": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [11025.0,101.3,13691.2]
+            ],
+            "type": "normal"
+          },
+          "trap02_evil_vehicles00_wp_02": {
+            "props": {
+              "moveType": "GATHER_TO",
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [10986.2,79.8525,13659.6]
+            ],
+            "type": "normal"
+          },
+          "trap02_evil_vehicles00_wp_03": {
+            "props": {
+              "moveType": "USE_SPLINES",
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [10544.5,64.9094,13664.5]
+            ],
+            "type": "normal"
+          },
+          "trap02_evil_vehicles00_wp_04": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [10505.0,81.7736,13707.9]
+            ],
+            "type": "normal"
+          }
+        },
+        "weapons": ""
+      },
+      {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "trap02_evil_vehicles01",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 3,
+          "formation_div": 3,
+          "formation_noise": [-0.3,0.4],
+          "formation_step": [2.1,2.2],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [0.461748,0.0,-0.887011],
+          [0.0,1.0,0.0],
+          [0.887011,0.0,0.461748],
+          [10197.8,180.662,13913.4]
+        ],
+        "unit_class": "germ_hummel",
+        "way": {
+          "trap02_evil_vehicles01_wp_01": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [10241.8,171.608,13837.5]
+            ],
+            "type": "normal"
+          },
+          "trap02_evil_vehicles01_wp_02": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [10299.2,159.745,13745.2]
+            ],
+            "type": "normal"
+          },
+          "trap02_evil_vehicles01_wp_03": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [10337.7,146.592,13725.8]
+            ],
+            "type": "normal"
+          },
+          "trap02_evil_vehicles01_wp_04": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [10366.7,136.184,13714.4]
+            ],
+            "type": "normal"
+          }
+        },
+        "weapons": ""
+      },
+      {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "trap03_evil_vehicles00",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 4,
+          "formation_div": 2,
+          "formation_noise": [0.4,0.4],
+          "formation_step": [5.1,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [0.642787,0.0,0.766044],
+          [0.0,1.0,0.0],
+          [-0.766044,0.0,0.642787],
+          [11632.0,235.362,13661.7]
+        ],
+        "unit_class": "germ_hummel",
+        "way": {
+          "trap03_evil_vehicles00_wp_01": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [11683.0,257.181,13873.2]
+            ],
+            "type": "normal"
+          },
+          "trap03_evil_vehicles00_wp_02": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [11793.0,264.341,14001.5]
+            ],
+            "type": "normal"
+          },
+          "trap03_evil_vehicles00_wp_03": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [11832.2,266.293,14026.2]
+            ],
+            "type": "normal"
+          }
+        },
+        "weapons": ""
+      },
+      {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "trap03_evil_vehicles01",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 3,
+          "formation_div": 2,
+          "formation_noise": [-0.1,-0.3],
+          "formation_step": [3.4,2.0],
+          "formation_type": "cols",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [0.939692,0.0,-0.34202],
+          [0.0,1.0,0.0],
+          [0.34202,0.0,0.939692],
+          [11641.5,265.776,14886.1]
+        ],
+        "unit_class": "germ_hummel",
+        "way": {
+          "trap03_evil_vehicles01_wp_01": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [11870.3,274.888,14632.4]
+            ],
+            "type": "normal"
+          },
+          "trap03_evil_vehicles01_wp_02": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [12003.0,273.774,14422.2]
+            ],
+            "type": "normal"
+          },
+          "trap03_evil_vehicles01_wp_03": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [12045.0,272.425,14199.8]
+            ],
+            "type": "normal"
+          }
+        },
+        "weapons": ""
+      },
+      {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "trap03_evil_vehicles02",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 2,
+          "formation_div": 3,
+          "formation_noise": [-0.1,-0.3],
+          "formation_step": [2.0,2.0],
+          "formation_type": "cols",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [-0.642787,0.0,-0.766044],
+          [0.0,1.0,0.0],
+          [0.766044,0.0,-0.642787],
+          [12312.3,280.785,14443.4]
+        ],
+        "unit_class": "germ_hummel",
+        "way": {
+          "trap03_evil_vehicles02_wp_01": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [12260.7,276.395,14343.8]
+            ],
+            "type": "normal"
+          },
+          "trap03_evil_vehicles02_wp_02": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [12240.5,276.858,14280.6]
+            ],
+            "type": "normal"
+          },
+          "trap03_evil_vehicles02_wp_03": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [12195.8,275.527,14230.6]
+            ],
+            "type": "normal"
+          },
+          "trap03_evil_vehicles02_wp_04": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [12170.0,274.876,14213.3]
+            ],
+            "type": "normal"
+          }
+        },
+        "weapons": ""
+      }
+    ],
+    "wheeled_vehicles": [
+      {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "target_vehicles",
+        "props": {
+          "army": 1,
+          "attack_type": "fire_at_will",
+          "count": 9,
+          "formation_div": 1,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,3.0],
+          "formation_type": "cols",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [0.461749,0.0,0.887011],
+          [0.0,1.0,0.0],
+          [-0.887011,0.0,0.461749],
+          [5819.09,287.782,12032.2]
+        ],
+        "unit_class": "us_ambulance",
+        "way": {
+          "target_vehicles_wp_01": {
+            "props": {
+              "moveType": "GATHER_TO",
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [5849.68,287.031,12093.3]
+            ],
+            "type": "normal"
+          },
+          "target_vehicles_wp_100": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [13838.3,293.926,15508.9]
+            ],
+            "type": "normal"
+          },
+          "target_vehicles_wp_101": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [13804.7,298.765,15547.2]
+            ],
+            "type": "normal"
+          },
+          "target_vehicles_wp_28": {
+            "props": {
+              "moveType": "USE_SPLINES",
+              "shouldKeepFormation": false,
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [9503.75,143.433,13226.1]
+            ],
+            "type": "normal"
+          },
+          "target_vehicles_wp_79": {
+            "props": {
+              "moveType": "USE_SPLINES",
+              "shouldKeepFormation": false,
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [12760.4,269.561,14332.1]
+            ],
+            "type": "normal"
+          },
+          "target_vehicles_wp_99": {
+            "props": {
+              "moveType": "USE_SPLINES",
+              "shouldKeepFormation": false,
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [13839.9,285.583,15468.1]
+            ],
+            "type": "normal"
+          }
+        },
+        "weapons": ""
+      },
+      {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "trap00_evil_vehicles01",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 3,
+          "formation_div": 1,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "cols",
+          "isDelayed": true,
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [0.5,0.0,0.866026],
+          [0.0,1.0,0.0],
+          [-0.866026,0.0,0.5],
+          [5593.95,224.51,11619.1]
+        ],
+        "unit_class": "germ_sdKfz_222",
+        "way": {
+          "trap00_evil_vehicles01_wp_01": {
+            "props": {
+              "moveType": "GATHER_TO",
+              "speed": 35.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [5625.11,242.299,11677.6]
+            ],
+            "type": "normal"
+          },
+          "trap00_evil_vehicles01_wp_03": {
+            "props": {
+              "moveType": "USE_SPLINES",
+              "shouldKeepFormation": false,
+              "speed": 35.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [8634.88,198.847,12547.4]
+            ],
+            "type": "normal"
+          },
+          "trap00_evil_vehicles01_wp_05": {
+            "props": {
+              "moveType": "USE_SPLINES",
+              "speed": 35.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [5848.32,285.593,12088.9]
+            ],
+            "type": "normal"
+          },
+          "trap00_evil_vehicles01_wp_06": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [8756.16,155.58,12649.4]
+            ],
+            "type": "normal"
+          }
+        },
+        "weapons": ""
+      },
+      {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "trap00_evil_vehicles02",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 4,
+          "formation_div": 1,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [3.0,3.0],
+          "formation_type": "cols",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [0.945815,0.0,-0.324705],
+          [0.0,1.0,0.0],
+          [0.324705,0.0,0.945815],
+          [6641.8,277.667,12819.5]
+        ],
+        "unit_class": "germ_sdKfz_222",
+        "way": {
+          "trap00_evil_vehicles02_wp_01": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [6822.53,266.912,12737.9]
+            ],
+            "type": "normal"
+          },
+          "trap00_evil_vehicles02_wp_02": {
+            "props": {
+              "moveType": "GATHER_TO",
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [6879.5,263.969,12722.3]
+            ],
+            "type": "normal"
+          },
+          "trap00_evil_vehicles02_wp_08": {
+            "props": {
+              "moveType": "USE_SPLINES",
+              "shouldKeepFormation": false,
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [8481.67,212.539,12573.8]
+            ],
+            "type": "normal"
+          },
+          "trap00_evil_vehicles02_wp_09": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [8576.69,220.215,12475.5]
+            ],
+            "type": "normal"
+          }
+        },
+        "weapons": ""
+      },
+      {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "trap00_evil_vehicles03",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 3,
+          "formation_div": 1,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [3.0,3.0],
+          "formation_type": "cols",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [0.495364,0.0,0.868686],
+          [0.0,1.0,0.0],
+          [-0.868686,0.0,0.495364],
+          [8185.42,239.834,12403.0]
+        ],
+        "unit_class": "germ_sdKfz_222",
+        "way": {
+          "trap00_evil_vehicles03_wp_01": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [8272.62,221.673,12562.6]
+            ],
+            "type": "normal"
+          },
+          "trap00_evil_vehicles03_wp_02": {
+            "props": {
+              "moveType": "GATHER_TO",
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [8366.21,199.722,12616.0]
+            ],
+            "type": "normal"
+          },
+          "trap00_evil_vehicles03_wp_07": {
+            "props": {
+              "moveType": "USE_SPLINES",
+              "shouldKeepFormation": false,
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [8858.93,152.392,12613.6]
+            ],
+            "type": "normal"
+          },
+          "trap00_evil_vehicles03_wp_08": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [8966.8,105.066,12712.3]
+            ],
+            "type": "normal"
+          }
+        },
+        "weapons": ""
+      },
+      {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "trap01_evil_vehicles01",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 4,
+          "formation_div": 1,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [3.0,3.0],
+          "formation_type": "cols",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [-0.21644,0.0,0.976296],
+          [0.0,1.0,0.0],
+          [-0.976296,0.0,-0.21644],
+          [10199.8,210.67,12766.8]
+        ],
+        "unit_class": "germ_sdKfz_222",
+        "way": {
+          "trap01_evil_vehicles01_wp_01": {
+            "props": {
+              "moveType": "GATHER_TO",
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [10050.5,222.495,13051.8]
+            ],
+            "type": "normal"
+          },
+          "trap01_evil_vehicles01_wp_04": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [10063.0,232.508,12979.2]
+            ],
+            "type": "normal"
+          },
+          "trap01_evil_vehicles01_wp_05": {
+            "props": {
+              "moveType": "USE_SPLINES",
+              "shouldKeepFormation": false,
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [10285.0,167.689,13622.6]
+            ],
+            "type": "normal"
+          },
+          "trap01_evil_vehicles01_wp_06": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [10329.3,149.677,13722.2]
+            ],
+            "type": "normal"
+          }
+        },
+        "weapons": ""
+      },
+      {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "trap01_evil_vehicles02",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 3,
+          "formation_div": 1,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [3.0,3.0],
+          "formation_type": "cols",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [-0.043619,0.0,-0.999049],
+          [0.0,1.0,0.0],
+          [0.999049,0.0,-0.043619],
+          [9596.2,259.884,13708.0]
+        ],
+        "unit_class": "germ_sdKfz_222",
+        "way": {
+          "trap01_evil_vehicles02_wp_01": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [9650.8,218.951,13430.7]
+            ],
+            "type": "normal"
+          },
+          "trap01_evil_vehicles02_wp_02": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [9723.4,205.235,13303.2]
+            ],
+            "type": "normal"
+          },
+          "trap01_evil_vehicles02_wp_03": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [9748.3,196.112,13193.8]
+            ],
+            "type": "normal"
+          },
+          "trap01_evil_vehicles02_wp_04": {
+            "props": {
+              "moveType": "GATHER_TO",
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [9782.83,187.495,13130.4]
+            ],
+            "type": "normal"
+          },
+          "trap01_evil_vehicles02_wp_09": {
+            "props": {
+              "moveType": "USE_SPLINES",
+              "shouldKeepFormation": false,
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [10185.9,209.461,13317.6]
+            ],
+            "type": "normal"
+          },
+          "trap01_evil_vehicles02_wp_10": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [10180.9,195.084,13406.2]
+            ],
+            "type": "normal"
+          },
+          "trap01_evil_vehicles02_wp_11": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [10187.0,193.564,13455.8]
+            ],
+            "type": "normal"
+          },
+          "trap01_evil_vehicles02_wp_12": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [10129.3,208.126,13512.2]
+            ],
+            "type": "normal"
+          },
+          "trap01_evil_vehicles02_wp_13": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [10036.0,229.951,13558.0]
+            ],
+            "type": "normal"
+          },
+          "trap01_evil_vehicles02_wp_14": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [9919.25,249.385,13572.3]
+            ],
+            "type": "normal"
+          },
+          "trap01_evil_vehicles02_wp_15": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [9847.0,250.206,13504.5]
+            ],
+            "type": "normal"
+          }
+        },
+        "weapons": ""
+      },
+      {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "trap02_evil_vehicles02",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 4,
+          "formation_div": 1,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [3.0,3.0],
+          "formation_type": "cols",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [-0.21644,0.0,0.976296],
+          [0.0,1.0,0.0],
+          [-0.976296,0.0,-0.21644],
+          [11546.7,225.219,13665.5]
+        ],
+        "unit_class": "germ_sdKfz_222",
+        "way": {
+          "trap02_evil_vehicles02_wp_01": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [11459.3,236.819,13837.2]
+            ],
+            "type": "normal"
+          },
+          "trap02_evil_vehicles02_wp_02": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [11499.0,239.385,13943.5]
+            ],
+            "type": "normal"
+          },
+          "trap02_evil_vehicles02_wp_03": {
+            "props": {
+              "moveType": "GATHER_TO",
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [11551.0,238.835,14052.6]
+            ],
+            "type": "normal"
+          },
+          "trap02_evil_vehicles02_wp_07": {
+            "props": {
+              "moveType": "USE_SPLINES",
+              "shouldKeepFormation": false,
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [11940.8,266.535,14059.8]
+            ],
+            "type": "normal"
+          },
+          "trap02_evil_vehicles02_wp_08": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [12066.2,271.03,14086.0]
+            ],
+            "type": "normal"
+          }
+        },
+        "weapons": ""
+      },
+      {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "trap02_evil_vehicles03",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 4,
+          "formation_div": 1,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [3.0,3.0],
+          "formation_type": "cols",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [0.5373,0.0,-0.843392],
+          [0.0,1.0,0.0],
+          [0.843392,0.0,0.5373],
+          [12061.0,283.739,14739.2]
+        ],
+        "unit_class": "germ_sdKfz_222",
+        "way": {
+          "trap02_evil_vehicles03_wp_01": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [11996.8,280.707,14974.2]
+            ],
+            "type": "normal"
+          },
+          "trap02_evil_vehicles03_wp_02": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [12036.5,279.96,15080.5]
+            ],
+            "type": "normal"
+          },
+          "trap02_evil_vehicles03_wp_03": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [12117.2,283.228,15161.9]
+            ],
+            "type": "normal"
+          },
+          "trap02_evil_vehicles03_wp_04": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [12183.5,290.221,15168.1]
+            ],
+            "type": "normal"
+          },
+          "trap02_evil_vehicles03_wp_05": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [12281.6,300.227,15157.9]
+            ],
+            "type": "normal"
+          },
+          "trap02_evil_vehicles03_wp_06": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [12360.1,306.691,15157.0]
+            ],
+            "type": "normal"
+          },
+          "trap02_evil_vehicles03_wp_07": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [12439.7,307.065,15194.3]
+            ],
+            "type": "normal"
+          },
+          "trap02_evil_vehicles03_wp_08": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [12502.5,306.892,15232.5]
+            ],
+            "type": "normal"
+          },
+          "trap02_evil_vehicles03_wp_09": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [12148.2,280.34,14555.0]
+            ],
+            "type": "normal"
+          },
+          "trap02_evil_vehicles03_wp_10": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [12145.5,276.635,14441.0]
+            ],
+            "type": "normal"
+          },
+          "trap02_evil_vehicles03_wp_11": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [12137.5,275.309,14316.1]
+            ],
+            "type": "normal"
+          },
+          "trap02_evil_vehicles03_wp_12": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [12114.0,274.297,14258.8]
+            ],
+            "type": "normal"
+          },
+          "trap02_evil_vehicles03_wp_13": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [12123.7,274.197,14231.0]
+            ],
+            "type": "normal"
+          }
+        },
+        "weapons": ""
+      },
+      {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "trap02_evil_vehicles04",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 3,
+          "formation_div": 1,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [3.0,3.0],
+          "formation_type": "cols",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [0.5373,0.0,-0.843392],
+          [0.0,1.0,0.0],
+          [0.843392,0.0,0.5373],
+          [11282.5,202.692,14472.7]
+        ],
+        "unit_class": "germ_sdKfz_222",
+        "way": {
+          "trap02_evil_vehicles04_wp_01": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [11482.4,227.078,14301.7]
+            ],
+            "type": "normal"
+          },
+          "trap02_evil_vehicles04_wp_02": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [11592.5,240.169,14247.2]
+            ],
+            "type": "normal"
+          },
+          "trap02_evil_vehicles04_wp_03": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [11691.5,253.435,14105.7]
+            ],
+            "type": "normal"
+          },
+          "trap02_evil_vehicles04_wp_04": {
+            "props": {
+              "moveType": "GATHER_TO",
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [11758.0,261.875,14036.0]
+            ],
+            "type": "normal"
+          },
+          "trap02_evil_vehicles04_wp_07": {
+            "props": {
+              "moveType": "USE_SPLINES",
+              "shouldKeepFormation": false,
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [11938.4,266.308,14058.4]
+            ],
+            "type": "normal"
+          },
+          "trap02_evil_vehicles04_wp_08": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [12019.0,270.612,14146.5]
+            ],
+            "type": "normal"
+          }
+        },
+        "weapons": ""
+      },
+      {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "trap03_evil_vehicles03",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 4,
+          "formation_div": 1,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [3.0,3.0],
+          "formation_type": "cols",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [-0.130526,0.0,0.991445],
+          [0.0,1.0,0.0],
+          [-0.991445,0.0,-0.130526],
+          [12835.4,262.725,13934.0]
+        ],
+        "unit_class": "germ_sdKfz_222",
+        "way": {
+          "trap03_evil_vehicles03_wp_01": {
+            "props": {
+              "moveType": "GATHER_TO",
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [12828.4,255.16,13980.4]
+            ],
+            "type": "normal"
+          },
+          "trap03_evil_vehicles03_wp_02": {
+            "props": {
+              "moveType": "USE_SPLINES",
+              "shouldKeepFormation": false,
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [12773.1,268.934,14330.9]
+            ],
+            "type": "normal"
+          },
+          "trap03_evil_vehicles03_wp_10": {
+            "props": {
+              "moveType": "USE_SPLINES",
+              "shouldKeepFormation": false,
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [13157.0,279.182,14815.5]
+            ],
+            "type": "normal"
+          },
+          "trap03_evil_vehicles03_wp_13": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [13317.8,279.791,14806.0]
+            ],
+            "type": "normal"
+          }
+        },
+        "weapons": ""
+      },
+      {
+        "applyAllMods": false,
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "trap03_evil_vehicles04",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 3,
+          "formation_div": 1,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [3.0,3.0],
+          "formation_type": "cols",
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [0.422619,0.0,-0.906308],
+          [0.0,1.0,0.0],
+          [0.906308,0.0,0.422619],
+          [12543.1,298.98,14544.7]
+        ],
+        "unit_class": "germ_sdKfz_222",
+        "way": {
+          "trap03_evil_vehicles04_wp_01": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [12561.0,287.382,14427.9]
+            ],
+            "type": "normal"
+          },
+          "trap03_evil_vehicles04_wp_02": {
+            "props": {
+              "moveType": "MOVETO_STRAIGHT",
+              "shouldKeepFormation": false,
+              "speed": 30.0
+            },
+            "tm": [
+              [1.0,0.0,0.0],
+              [0.0,1.0,0.0],
+              [0.0,0.0,1.0],
+              [12563.5,282.668,14385.0]
+            ],
+            "type": "normal"
+          }
+        },
+        "weapons": ""
+      }
+    ]
+  },
+  "variables": {
+    "time": 0
+  },
+  "wayPoints": {}
+}

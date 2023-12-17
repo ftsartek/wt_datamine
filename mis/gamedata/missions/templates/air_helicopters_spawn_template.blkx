@@ -1,0 +1,568 @@
+{
+  "airfields": {},
+  "areas": {},
+  "bin_dump_file": "",
+  "dialogs": {},
+  "effects": {},
+  "imports": {},
+  "mission_objectives": {
+    "isCategory": true,
+    "is_enabled": true
+  },
+  "mission_settings": {
+    "mission": {
+      "environment": "Day",
+      "level": "levels/water.bin",
+      "optionalTakeOff": false,
+      "restoreType": "attempts",
+      "type": "singleMission",
+      "weather": "hazy"
+    },
+    "player": {
+      "army": 1,
+      "wing": ""
+    },
+    "player_teamB": {
+      "army": 2
+    },
+    "spectator_points": {}
+  },
+  "objLayers": {
+    "layer": [
+      {
+        "enabled": true
+      },
+      {
+        "enabled": true
+      },
+      {
+        "enabled": true
+      }
+    ]
+  },
+  "selected_tag": "",
+  "triggers": {
+    "isCategory": true,
+    "is_enabled": true,
+    "t1_heli_pad_check": {
+      "actions": {
+        "missionMarkAsRespawnPoint": [
+          {
+            "canSpawnOnNeutral": false,
+            "isAirfield": true,
+            "isIndividual": false,
+            "isStrictSpawn": false,
+            "isUnit": false,
+            "loc_name": "missions/helipad_spawn_random",
+            "onlyOnePlayerPerSpawnPoint": false,
+            "radius": -1.0,
+            "removeAreas": false,
+            "resetStrictSpawnIndex": false,
+            "showOnMap": true,
+            "spawnEffect": false,
+            "tags": {
+              "aaa": false,
+              "artillery": false,
+              "tank": false,
+              "type_attack_helicopter": true,
+              "type_utility_helicopter": true
+            },
+            "target": [
+              "@t1_helicopter_pad_01",
+              "@t1_helicopter_pad_02"
+            ],
+            "team": "A",
+            "useExisting": false
+          },
+          {
+            "canSpawnOnNeutral": false,
+            "isAirfield": true,
+            "isIndividual": false,
+            "isStrictSpawn": false,
+            "isUnit": false,
+            "loc_name": "missions/helipad_spawn1",
+            "onlyOnePlayerPerSpawnPoint": false,
+            "radius": -1.0,
+            "removeAreas": false,
+            "resetStrictSpawnIndex": false,
+            "showOnMap": true,
+            "spawnEffect": false,
+            "tags": {
+              "aaa": false,
+              "artillery": false,
+              "tank": false,
+              "type_attack_helicopter": true,
+              "type_utility_helicopter": true
+            },
+            "target": "@t1_helicopter_pad_01",
+            "team": "A",
+            "useExisting": false
+          },
+          {
+            "canSpawnOnNeutral": false,
+            "isAirfield": true,
+            "isIndividual": false,
+            "isStrictSpawn": false,
+            "isUnit": false,
+            "loc_name": "missions/helipad_spawn2",
+            "onlyOnePlayerPerSpawnPoint": false,
+            "radius": -1.0,
+            "removeAreas": false,
+            "resetStrictSpawnIndex": false,
+            "showOnMap": true,
+            "spawnEffect": false,
+            "tags": {
+              "aaa": false,
+              "artillery": false,
+              "tank": false,
+              "type_attack_helicopter": true,
+              "type_utility_helicopter": true
+            },
+            "target": "@t1_helicopter_pad_02",
+            "team": "A",
+            "useExisting": false
+          }
+        ]
+      },
+      "comments": "",
+      "conditions": {
+        "objectExists": [
+          {
+            "target": "@t1_helicopter_pad_01",
+            "type": "objectGroup"
+          },
+          {
+            "target": "@t1_helicopter_pad_02",
+            "type": "objectGroup"
+          }
+        ]
+      },
+      "else_actions": {},
+      "events": {
+        "initMission": {}
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "t1_heli_spawn_check": {
+      "actions": {
+        "missionMarkAsRespawnPoint": [
+          {
+            "canSpawnOnNeutral": false,
+            "isAirfield": false,
+            "isIndividual": true,
+            "isStrictSpawn": true,
+            "isUnit": false,
+            "loc_name": "missions/spawn_random",
+            "onlyOnePlayerPerSpawnPoint": true,
+            "radius": -1.0,
+            "removeAreas": false,
+            "resetStrictSpawnIndex": false,
+            "showOnMap": true,
+            "spawnEffect": false,
+            "tags": {
+              "aaa": false,
+              "artillery": false,
+              "tank": false,
+              "type_attack_helicopter": true,
+              "type_utility_helicopter": true
+            },
+            "target": [
+              "@t1_helicopter_spawn_01",
+              "@t1_helicopter_spawn_02"
+            ],
+            "team": "A",
+            "useExisting": false
+          },
+          {
+            "canSpawnOnNeutral": false,
+            "isAirfield": false,
+            "isIndividual": true,
+            "isStrictSpawn": true,
+            "isUnit": false,
+            "loc_name": "missions/air_spawn1",
+            "onlyOnePlayerPerSpawnPoint": true,
+            "radius": -1.0,
+            "removeAreas": false,
+            "resetStrictSpawnIndex": false,
+            "showOnMap": true,
+            "spawnEffect": false,
+            "tags": {
+              "aaa": false,
+              "artillery": false,
+              "tank": false,
+              "type_attack_helicopter": true,
+              "type_utility_helicopter": true
+            },
+            "target": "@t1_helicopter_spawn_01",
+            "team": "A",
+            "useExisting": false
+          },
+          {
+            "canSpawnOnNeutral": false,
+            "isAirfield": false,
+            "isIndividual": true,
+            "isStrictSpawn": true,
+            "isUnit": false,
+            "loc_name": "missions/air_spawn2",
+            "onlyOnePlayerPerSpawnPoint": true,
+            "radius": -1.0,
+            "removeAreas": false,
+            "resetStrictSpawnIndex": false,
+            "showOnMap": true,
+            "spawnEffect": false,
+            "tags": {
+              "aaa": false,
+              "artillery": false,
+              "tank": false,
+              "type_attack_helicopter": true,
+              "type_utility_helicopter": true
+            },
+            "target": "@t1_helicopter_spawn_02",
+            "team": "A",
+            "useExisting": false
+          }
+        ],
+        "triggerEnable": {
+          "target": "t1_heli_spawn_icon_check"
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "objectExists": [
+          {
+            "target": "@t1_helicopter_spawn_01",
+            "type": "squad"
+          },
+          {
+            "target": "@t1_helicopter_spawn_02",
+            "type": "squad"
+          }
+        ]
+      },
+      "else_actions": {},
+      "events": {
+        "initMission": {}
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "t1_heli_spawn_icon_check": {
+      "actions": {
+        "missionShowMapIcon": [
+          {
+            "areaName": "@t1_helicopter_spawn_icon_01",
+            "colorCode": "Team A",
+            "iconName": "ui/gameuiskin#objective_helicopter.svg",
+            "show": true
+          },
+          {
+            "areaName": "@t1_helicopter_spawn_icon_02",
+            "colorCode": "Team A",
+            "iconName": "ui/gameuiskin#objective_helicopter.svg",
+            "show": true
+          }
+        ]
+      },
+      "comments": "",
+      "conditions": {
+        "objectExists": [
+          {
+            "target": "@t1_helicopter_spawn_icon_01",
+            "type": "area"
+          },
+          {
+            "target": "@t1_helicopter_spawn_icon_02",
+            "type": "area"
+          }
+        ]
+      },
+      "else_actions": {},
+      "events": {
+        "initMission": {}
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "t2_heli_pad_check": {
+      "actions": {
+        "missionMarkAsRespawnPoint": [
+          {
+            "canSpawnOnNeutral": false,
+            "isAirfield": true,
+            "isIndividual": false,
+            "isStrictSpawn": false,
+            "isUnit": false,
+            "loc_name": "missions/helipad_spawn_random",
+            "onlyOnePlayerPerSpawnPoint": false,
+            "radius": -1.0,
+            "removeAreas": false,
+            "resetStrictSpawnIndex": false,
+            "showOnMap": true,
+            "spawnEffect": false,
+            "tags": {
+              "aaa": false,
+              "artillery": false,
+              "tank": false,
+              "type_attack_helicopter": true,
+              "type_utility_helicopter": true
+            },
+            "target": [
+              "@t2_helicopter_pad_01",
+              "@t2_helicopter_pad_02"
+            ],
+            "team": "B",
+            "useExisting": false
+          },
+          {
+            "canSpawnOnNeutral": false,
+            "isAirfield": true,
+            "isIndividual": false,
+            "isStrictSpawn": false,
+            "isUnit": false,
+            "loc_name": "missions/helipad_spawn1",
+            "onlyOnePlayerPerSpawnPoint": false,
+            "radius": -1.0,
+            "removeAreas": false,
+            "resetStrictSpawnIndex": false,
+            "showOnMap": true,
+            "spawnEffect": false,
+            "tags": {
+              "aaa": false,
+              "artillery": false,
+              "tank": false,
+              "type_attack_helicopter": true,
+              "type_utility_helicopter": true
+            },
+            "target": "@t2_helicopter_pad_01",
+            "team": "B",
+            "useExisting": false
+          },
+          {
+            "canSpawnOnNeutral": false,
+            "isAirfield": true,
+            "isIndividual": false,
+            "isStrictSpawn": false,
+            "isUnit": false,
+            "loc_name": "missions/helipad_spawn2",
+            "onlyOnePlayerPerSpawnPoint": false,
+            "radius": -1.0,
+            "removeAreas": false,
+            "resetStrictSpawnIndex": false,
+            "showOnMap": true,
+            "spawnEffect": false,
+            "tags": {
+              "aaa": false,
+              "artillery": false,
+              "tank": false,
+              "type_attack_helicopter": true,
+              "type_utility_helicopter": true
+            },
+            "target": "@t2_helicopter_pad_02",
+            "team": "B",
+            "useExisting": false
+          }
+        ]
+      },
+      "comments": "",
+      "conditions": {
+        "objectExists": [
+          {
+            "target": "@t2_helicopter_pad_01",
+            "type": "objectGroup"
+          },
+          {
+            "target": "@t2_helicopter_pad_02",
+            "type": "objectGroup"
+          }
+        ]
+      },
+      "else_actions": {},
+      "events": {
+        "initMission": {}
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "t2_heli_spawn_check": {
+      "actions": {
+        "missionMarkAsRespawnPoint": [
+          {
+            "canSpawnOnNeutral": false,
+            "isAirfield": false,
+            "isIndividual": true,
+            "isStrictSpawn": true,
+            "isUnit": false,
+            "loc_name": "missions/spawn_random",
+            "onlyOnePlayerPerSpawnPoint": true,
+            "radius": -1.0,
+            "removeAreas": false,
+            "resetStrictSpawnIndex": false,
+            "showOnMap": true,
+            "spawnEffect": false,
+            "tags": {
+              "aaa": false,
+              "artillery": false,
+              "tank": false,
+              "type_attack_helicopter": true,
+              "type_utility_helicopter": true
+            },
+            "target": [
+              "@t2_helicopter_spawn_01",
+              "@t2_helicopter_spawn_02"
+            ],
+            "team": "B",
+            "useExisting": false
+          },
+          {
+            "canSpawnOnNeutral": false,
+            "isAirfield": false,
+            "isIndividual": true,
+            "isStrictSpawn": true,
+            "isUnit": false,
+            "loc_name": "missions/air_spawn1",
+            "onlyOnePlayerPerSpawnPoint": true,
+            "radius": -1.0,
+            "removeAreas": false,
+            "resetStrictSpawnIndex": false,
+            "showOnMap": true,
+            "spawnEffect": false,
+            "tags": {
+              "aaa": false,
+              "artillery": false,
+              "tank": false,
+              "type_attack_helicopter": true,
+              "type_utility_helicopter": true
+            },
+            "target": "@t2_helicopter_spawn_01",
+            "team": "B",
+            "useExisting": false
+          },
+          {
+            "canSpawnOnNeutral": false,
+            "isAirfield": false,
+            "isIndividual": true,
+            "isStrictSpawn": true,
+            "isUnit": false,
+            "loc_name": "missions/air_spawn2",
+            "onlyOnePlayerPerSpawnPoint": true,
+            "radius": -1.0,
+            "removeAreas": false,
+            "resetStrictSpawnIndex": false,
+            "showOnMap": true,
+            "spawnEffect": false,
+            "tags": {
+              "aaa": false,
+              "artillery": false,
+              "tank": false,
+              "type_attack_helicopter": true,
+              "type_utility_helicopter": true
+            },
+            "target": "@t2_helicopter_spawn_02",
+            "team": "B",
+            "useExisting": false
+          }
+        ],
+        "triggerEnable": {
+          "target": "t2_heli_spawn_icon_check"
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "objectExists": [
+          {
+            "target": "@t2_helicopter_spawn_01",
+            "type": "squad"
+          },
+          {
+            "target": "@t2_helicopter_spawn_02",
+            "type": "squad"
+          }
+        ]
+      },
+      "else_actions": {},
+      "events": {
+        "initMission": {}
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "t2_heli_spawn_icon_check": {
+      "actions": {
+        "missionShowMapIcon": [
+          {
+            "areaName": "@t2_helicopter_spawn_icon_01",
+            "colorCode": "Team B",
+            "iconName": "ui/gameuiskin#objective_helicopter.svg",
+            "show": true
+          },
+          {
+            "areaName": "@t2_helicopter_spawn_icon_02",
+            "colorCode": "Team B",
+            "iconName": "ui/gameuiskin#objective_helicopter.svg",
+            "show": true
+          }
+        ]
+      },
+      "comments": "",
+      "conditions": {
+        "objectExists": [
+          {
+            "target": "@t2_helicopter_spawn_icon_01",
+            "type": "area"
+          },
+          {
+            "target": "@t2_helicopter_spawn_icon_02",
+            "type": "area"
+          }
+        ]
+      },
+      "else_actions": {},
+      "events": {
+        "initMission": {}
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    }
+  },
+  "units": {},
+  "variables": {
+    "t1_helicopter_pad_01": "t1_helicopter_pad_01",
+    "t1_helicopter_pad_02": "t1_helicopter_pad_02",
+    "t1_helicopter_spawn_01": "t1_helicopter_spawn_01",
+    "t1_helicopter_spawn_02": "t1_helicopter_spawn_02",
+    "t1_helicopter_spawn_icon_01": "helicopter_t1_spawn_icon_01",
+    "t1_helicopter_spawn_icon_02": "helicopter_t1_spawn_icon_02",
+    "t2_helicopter_pad_01": "t2_helicopter_pad_01",
+    "t2_helicopter_pad_02": "t2_helicopter_pad_02",
+    "t2_helicopter_spawn_01": "t2_helicopter_spawn_01",
+    "t2_helicopter_spawn_02": "t2_helicopter_spawn_02",
+    "t2_helicopter_spawn_icon_01": "helicopter_t2_spawn_icon_01",
+    "t2_helicopter_spawn_icon_02": "helicopter_t2_spawn_icon_02"
+  },
+  "wayPoints": {}
+}

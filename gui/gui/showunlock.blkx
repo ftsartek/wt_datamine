@@ -1,0 +1,129 @@
+{
+  "root": {
+    "blur": {},
+    "blur_foreground": {},
+    "frame": {
+      "class": "wndNav",
+      "frame_header": {
+        "Button_close": {
+          "id": "btn_close"
+        },
+        "activeText": {
+          "caption": "yes",
+          "id": "award_name",
+          "pare-text": "yes",
+          "width": "p.p.w-2@buttonHeight"
+        }
+      },
+      "img": {
+        "background-image": "#ui/images/login_reward?P1",
+        "dummy": {
+          "bqKey": "show_unlock_window",
+          "id": "award_image_button",
+          "link": "",
+          "on_click": "onMsgLink",
+          "size": "pw, ph"
+        },
+        "height": "0.75w",
+        "id": "award_image",
+        "max-height": "600*@sf/@pf_outdated",
+        "max-width": "800*@sf/@pf_outdated",
+        "pos": "50%pw-50%w, 0",
+        "position": "relative",
+        "width": "pw"
+      },
+      "max-height": "@rh",
+      "max-width": "800*@sf/@pf_outdated + 2@framePadding",
+      "navBar": {
+        "navLeft": {
+          "Button_text": {
+            "display": "hide",
+            "id": "btn_sendEmail",
+            "on_click": "sendInvitation",
+            "text": "#mainmenu/btnSendEmail"
+          }
+        },
+        "navRight": {
+          "Button_text": [
+            {
+              "ButtonImg": {},
+              "_on_click": "onUseDecorator",
+              "btnName": "Y",
+              "display": "hide",
+              "enable": "no",
+              "id": "btn_use_decorator",
+              "text": "#decorator/use/decal"
+            },
+            {
+              "ButtonImg": {},
+              "_on_click": "onOk",
+              "btnName": "X",
+              "id": "btn_ok",
+              "text": "#mainmenu/btnOk"
+            }
+          ]
+        }
+      },
+      "pos": "0.5pw-0.5w, 0.5ph-0.5h",
+      "position": "absolute",
+      "tdiv": {
+        "flow": "vertical",
+        "max-height": "fh",
+        "overflow-y": "auto",
+        "pos": "0, 1@framePadding",
+        "position": "relative",
+        "rankUpList": {
+          "flow": "h-flow",
+          "holdTooltipChildren": "yes",
+          "id": "reward_aircrafts",
+          "max-width": "pw",
+          "on_activate": "onUnitActivate",
+          "on_click": "onUnitActivate",
+          "on_r_click": "onUnitActivate",
+          "pos": "0.5pw-0.5w,0",
+          "position": "relative"
+        },
+        "tdiv": {
+          "display": "hide",
+          "flow": "vertical",
+          "id": "reward_markup",
+          "pos": "0.5pw-0.5w, 0",
+          "position": "relative"
+        },
+        "textAreaCentered": {
+          "id": "next_award",
+          "max-width": "pw",
+          "pos": "50%pw-50%w, 0.03@sf",
+          "position": "relative",
+          "text": "",
+          "textHide": "yes"
+        },
+        "textarea": [
+          {
+            "font-bold": "@fontMedium",
+            "id": "award_desc",
+            "max-width": "pw",
+            "on_link_click": "proccessLinkFromText",
+            "pos": "50%pw-50%w, 0",
+            "position": "relative",
+            "removeParagraphIndent": "yes",
+            "text": ""
+          },
+          {
+            "id": "award_reward",
+            "max-width": "pw",
+            "on_link_click": "proccessLinkFromText",
+            "overlayTextColor": "userlog",
+            "pos": "50%pw-50%w, 0",
+            "position": "relative",
+            "removeParagraphIndent": "yes",
+            "text": ""
+          }
+        ],
+        "width": "pw"
+      },
+      "width": "80%sh"
+    },
+    "type": "big"
+  }
+}

@@ -1,0 +1,132 @@
+{
+  "bomb": {
+    "DamageEffects": {
+      "part": {
+        "name": "body",
+        "onHit": [
+          {
+            "expl": 1.0,
+            "shellState": "inFlight"
+          },
+          {
+            "break": 0.8,
+            "damage": 3.0,
+            "damageType": "generic",
+            "expl": 0.2,
+            "fHitCritical": true,
+            "shellState": "onUnit"
+          },
+          {
+            "break": 0.5,
+            "damage": 30.0,
+            "damageType": "generic",
+            "expl": 0.5,
+            "fHitCritical": true,
+            "shellState": "onUnit"
+          },
+          {
+            "break": 0.2,
+            "damage": 50.0,
+            "damageType": "explosion",
+            "expl": 0.8,
+            "fHitCritical": true,
+            "shellState": "onUnit"
+          },
+          {
+            "damage": 100.0,
+            "damageType": "cumulative",
+            "expl": 1.0,
+            "fHitCritical": true,
+            "shellState": "onUnit"
+          }
+        ],
+        "onKill": [
+          {
+            "destruction": 1.0,
+            "shellState": "inFlight"
+          },
+          {
+            "expl": 1.0,
+            "fHitCritical": true,
+            "shellState": "onUnit"
+          }
+        ]
+      }
+    },
+    "DamageParts": {
+      "body": {
+        "armorClass": "tank_structural_steel",
+        "armorThickness": 15.0,
+        "explosionArmorQuality": 1.0,
+        "hp": 100.0,
+        "shatterArmorQuality": 1.0
+      }
+    },
+    "bombName": "uk_8000lb_hc_mkI_n33_bomb",
+    "bombType": "he_bomb",
+    "bulletType": "he_bomb",
+    "caliber": 0.965,
+    "distFromCmToStab": 1.62,
+    "dragCx": 0.085,
+    "endHitPower": [0.01,1500.0],
+    "explodeArmorPower": 400.0,
+    "explodeHitPower": 6300.0,
+    "explodeOnRendinst": true,
+    "explodeRadius": [80.0,200.0],
+    "explodeTreshold": 0.0,
+    "explosionFx": "bomb_expl_5000kg",
+    "explosionPatchHeightScale": 0.2,
+    "explosionPatchRadius": 26.0,
+    "explosiveMass": 2653.5,
+    "explosiveType": "torpex",
+    "farArmorPower": [0.2,700.0],
+    "farHitPower": [0.1,1000.0],
+    "fresnel": [0.23,0.1,2.0],
+    "fxConcreteDust": "dust_ground_explosions_wave_concrete_big",
+    "fxGrassDust": "dust_ground_explosions_wave_dirt_big",
+    "fxGroundDust": "dust_ground_explosions_wave_dirt_big",
+    "fxSandDust": "dust_ground_explosions_wave_sand_big",
+    "fxSnowDust": "dust_ground_explosions_wave_snow_big",
+    "fxWaterShockWave": "dust_waterwave_big",
+    "groundRicochetPreset": "he",
+    "hitPowerMult": 1.0,
+    "iconType": "bombs_heavy",
+    "length": 3.393,
+    "mass": 3787.04,
+    "mass_lbs": 8349.0,
+    "midArmorPower": [7.0,400.0],
+    "midHitPower": [0.9,400.0],
+    "nearArmorPower": [10.0,50.0],
+    "nearHitPower": [1.0,50.0],
+    "normalizationPreset": "heat",
+    "pressureDamage": {
+      "damageType": "pressure"
+    },
+    "relativeVelArmorShift": [200.0,1000.0],
+    "relativeVelHitShift": [300.0,1000.0],
+    "rendinstDamageRadius": 61.0,
+    "ricochetPreset": "he",
+    "secondaryShattersPreset": "ap",
+    "shutterAmount": 2600,
+    "shutterArmorPower": 28.0,
+    "shutterDamage": true,
+    "shutterDamageRadius": 210.0,
+    "shutterHit": 28.0,
+    "slopeEffectPreset": "ap",
+    "sound": "weapon.bomb_big",
+    "stabilityCaliberToArmorThreshold": 5.0,
+    "stabilityReductionAfterPenetration": 0.15,
+    "stabilityReductionAfterRicochet": 0.3,
+    "stabilityRicochetModifier": {
+      "mod1": [0.0,0.5],
+      "mod2": [15.0,0.7],
+      "mod3": [30.0,0.99]
+    },
+    "stabilityThreshold": 0.5,
+    "useEffectiveArmorThicknessForShatter": true
+  },
+  "bombGun": true,
+  "mesh": "uk_8000lb_hc_mkI_n33_bomb",
+  "preset_cost": 500,
+  "sound": "weapon.bombgun"
+}

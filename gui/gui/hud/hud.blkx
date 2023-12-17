@@ -1,0 +1,81 @@
+{
+  "hudFade": {
+    "behavior": "screenFade",
+    "id": "hud_fade",
+    "input-transparent": "yes",
+    "position": "root",
+    "size": "sw, sh"
+  },
+  "systemMsg": {
+    "dlDataStat": {
+      "animText": {
+        "color-factor": "0",
+        "fade": "out",
+        "font": "@fontTiny",
+        "text": ""
+      },
+      "behavior": "bhvUpdater",
+      "css-hier-invalidate": "yes",
+      "pos": "50%pw-50%w,0",
+      "position": "relative",
+      "value": "{\"viewId\": \"DL_DATA_STATE_TEXT\"}"
+    },
+    "flow": "vertical",
+    "pos": "1@systemMsgIndent, 0",
+    "position": "root"
+  },
+  "tdiv": {
+    "id": "hud_obj",
+    "pos": "@bwHud, @bhHud",
+    "position": "absolute",
+    "size": "@rwHud, @rhHud"
+  },
+  "textAreaCentered": {
+    "_blink": "no",
+    "_size-timer": "1",
+    "behaviour": "basicFontSizeTextArea",
+    "font-ht": "28",
+    "font-ht-base": "28",
+    "font-ht-end": "36",
+    "id": "time_to_kick_alert_text",
+    "pos": "50%sw-50%w, 40%sh-50%h",
+    "position": "root",
+    "size-func": "sin",
+    "size-time": "200",
+    "style": "color:@warningTextColor;",
+    "text": "",
+    "titleFont": "yes"
+  },
+  "textareaNoTab": [
+    {
+      "display": "hide",
+      "id": "unmapped_shortcuts_warning",
+      "pos": "50%sw-50%w, 60%sh-50%h",
+      "position": "root",
+      "shadeStyle": "HudHeader3D",
+      "style": "transp-time:750; color:@warningTextColor; font:@fontHudMedium; text-align:center;",
+      "text": "",
+      "width": "45%@rwHud",
+      "wink": "no"
+    },
+    {
+      "id": "server_message",
+      "pos": "50%sw-50%w, 60%sh-50%h",
+      "position": "root",
+      "style": "transp-time:750; color:@warningTextColor; font:@fontHudMedium; text-align:center;",
+      "text": "",
+      "timer": {
+        "id": "server_message_timer",
+        "timer_handler_func": "onServerMessageTimerUpdate",
+        "timer_interval_msec": "200"
+      },
+      "width": "45%@rwHud",
+      "wink": "no"
+    }
+  ],
+  "timer": {
+    "id": "hud_update",
+    "timer_handler_func": "onHudUpdate",
+    "timer_interval_msec": "1000"
+  }
+}

@@ -1,0 +1,201 @@
+{
+  "airfields": {},
+  "areas": {},
+  "bin_dump_file": "",
+  "dialogs": {},
+  "effects": {},
+  "imports": {},
+  "mission_objectives": {
+    "isCategory": true,
+    "is_enabled": true
+  },
+  "mission_settings": {
+    "mission": {
+      "environment": "Day",
+      "level": "levels/guam.bin",
+      "type": "domination",
+      "weather": "hazy"
+    },
+    "player": {
+      "army": 1
+    },
+    "player_teamB": {
+      "army": 2
+    }
+  },
+  "objLayers": {
+    "layer": [
+      {
+        "enabled": true
+      },
+      {
+        "enabled": true
+      },
+      {
+        "enabled": true
+      },
+      {
+        "enabled": true
+      }
+    ]
+  },
+  "selected_tag": "",
+  "triggers": {
+    "carriers_init_high": {
+      "actions": {
+        "missionMarkAsRespawnPoint": [
+          {
+            "canSpawnOnNeutral": false,
+            "forceCreate": false,
+            "isAirfield": true,
+            "isIndividual": false,
+            "isStrictSpawn": false,
+            "isUnit": false,
+            "loc_name": "missions/carriers_spawn",
+            "onlyOnePlayerPerSpawnPoint": false,
+            "radius": -1.0,
+            "removeAreas": false,
+            "replaceAreas": false,
+            "resetStrictSpawnIndex": false,
+            "showOnMap": true,
+            "spawnEffect": false,
+            "tags": {
+              "carrier_take_off": true,
+              "tank": false,
+              "type_aa_fighter": false,
+              "type_assault": false,
+              "type_frontline_bomber": false,
+              "type_interceptor": false,
+              "type_longrange_bomber": false
+            },
+            "target": "t1_carrier",
+            "team": "A",
+            "useExisting": false
+          },
+          {
+            "canSpawnOnNeutral": false,
+            "forceCreate": false,
+            "isAirfield": true,
+            "isIndividual": false,
+            "isStrictSpawn": false,
+            "isUnit": false,
+            "loc_name": "missions/carriers_spawn",
+            "onlyOnePlayerPerSpawnPoint": false,
+            "radius": -1.0,
+            "removeAreas": false,
+            "replaceAreas": false,
+            "resetStrictSpawnIndex": false,
+            "showOnMap": true,
+            "spawnEffect": false,
+            "tags": {
+              "carrier_take_off": true,
+              "tank": false,
+              "type_aa_fighter": false,
+              "type_assault": false,
+              "type_frontline_bomber": false,
+              "type_interceptor": false,
+              "type_longrange_bomber": false
+            },
+            "target": "t2_carrier",
+            "team": "B",
+            "useExisting": false
+          }
+        ]
+      },
+      "comments": "",
+      "conditions": {},
+      "else_actions": {},
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "isCategory": true,
+    "is_enabled": true
+  },
+  "units": {
+    "ships": [
+      {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": true,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "t1_carrier",
+        "props": {
+          "army": 1,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "setStealth": true,
+          "stealthRadius": 128000.0,
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [-0.422618,0.0,0.906308],
+          [0.0,1.0,0.0],
+          [-0.906308,0.0,-0.422618],
+          [-17478.9,-13.0,-21531.9]
+        ],
+        "unit_class": "uk_aircraftcarrier_ark_royal",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "bullets0": "",
+        "bullets1": "",
+        "bullets2": "",
+        "bullets3": "",
+        "bulletsCount0": 0,
+        "bulletsCount1": 0,
+        "bulletsCount2": 0,
+        "bulletsCount3": 0,
+        "closed_waypoints": false,
+        "crewSkillK": 0.0,
+        "isShipSpline": false,
+        "name": "t2_carrier",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 1,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "setStealth": true,
+          "stealthRadius": 128000.0,
+          "uniqueName": ""
+        },
+        "shipTurnRadius": 100.0,
+        "tm": [
+          [-0.21644,0.0,-0.976296],
+          [0.0,1.0,0.0],
+          [0.976296,0.0,-0.21644],
+          [16549.8,-13.0,10933.2]
+        ],
+        "unit_class": "us_aircraftcarrier_forrestal",
+        "way": {},
+        "weapons": ""
+      }
+    ]
+  },
+  "variables": {},
+  "wayPoints": {}
+}

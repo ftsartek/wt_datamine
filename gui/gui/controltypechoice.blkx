@@ -1,0 +1,119 @@
+{
+  "root": {
+    "blur": {},
+    "blur_foreground": {},
+    "frame": {
+      "Button_text": {
+        "ButtonImg": {},
+        "_on_click": "onChangePilotIcon",
+        "btnName": "X",
+        "class": "profileImg",
+        "div": {
+          "behavior": "bhvAvatar",
+          "id": "prefIcon",
+          "isFull": "yes",
+          "size": "pw,ph"
+        },
+        "id": "btn_pref_img",
+        "margin-bottom": "0.04@scrn_tgt",
+        "pos": "50%pw-50%w, 0.005@scrn_tgt",
+        "position": "relative",
+        "unseenIcon": {
+          "id": "unseen_avatar",
+          "pos": "4@dp, 4@dp",
+          "position": "absolute",
+          "unseenText": {}
+        }
+      },
+      "HorizontalListBox": {
+        "class": "choice3",
+        "height": "13.5*@scrn_tgt/100.0",
+        "id": "controlType",
+        "navigatorShortcuts": "noSelect",
+        "pos": "50%pw-50%w, 0.005@scrn_tgt",
+        "position": "relative",
+        "shopFilter": [
+          {
+            "id": "ct_mouse",
+            "selected": "yes",
+            "shopFilterImg": {
+              "background-image": "#ui/gameuiskin#ct_mouse"
+            },
+            "shopFilterText": {
+              "text": "#controlType/mouse"
+            },
+            "useParentHeight": "yes"
+          },
+          {
+            "id": "ct_xinput",
+            "shopFilterImg": {
+              "background-image": "#ui/gameuiskin#ct_xinput"
+            },
+            "shopFilterText": {
+              "text": "#controlType/xinput"
+            },
+            "useParentHeight": "yes"
+          },
+          {
+            "id": "ct_own",
+            "shopFilterImg": {
+              "background-image": "#ui/gameuiskin#ct_own"
+            },
+            "shopFilterText": {
+              "text": "#controlType/own"
+            },
+            "useParentHeight": "yes"
+          }
+        ]
+      },
+      "class": "wndNav",
+      "flow": "vertical",
+      "frame_header": {
+        "Button_close": {
+          "id": "btn_back"
+        }
+      },
+      "navBar": {
+        "navRight": {
+          "Button_text": [
+            {
+              "ButtonImg": {},
+              "btnName": "A",
+              "on_click": "onControlTypeApply",
+              "text": "#mainmenu/btnApply"
+            },
+            {
+              "ButtonImg": {},
+              "_on_click": "goBack",
+              "btnName": "B",
+              "id": "btn_cancel",
+              "text": "#msgbox/btn_cancel"
+            }
+          ]
+        }
+      },
+      "pos": "50%pw-50%w, 50%ph-50%h",
+      "position": "absolute",
+      "textAreaCentered": [
+        {
+          "display": "hide",
+          "id": "txt_icon",
+          "pos": "50%pw-50%w, 0",
+          "position": "relative",
+          "text": "#options/chooseProfileImage",
+          "width": "pw"
+        },
+        {
+          "pos": "50%pw-50%w, 0",
+          "position": "relative",
+          "text": "#options/chooseControllerType",
+          "width": "pw"
+        }
+      ],
+      "width": "1@scrn_tgt"
+    },
+    "menutitle": {
+      "id": "controlChoice-title"
+    }
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "root": {
+    "blur": {},
+    "blur_foreground": {},
+    "frame": {
+      "class": "wndNav",
+      "flow": "vertical",
+      "frame_header": {
+        "Button_close": {
+          "id": "btn_back"
+        },
+        "activeText": {
+          "caption": "yes",
+          "id": "clan_title_table",
+          "text": "#clan/candidatesList"
+        }
+      },
+      "isCenteredUnderLogo": "yes",
+      "navBar": {
+        "navLeft": {
+          "Button_text": [
+            {
+              "ButtonImg": {},
+              "_on_click": "onRequestReject",
+              "display": "hide",
+              "id": "btn_reject",
+              "text": "#clan/requestReject"
+            },
+            {
+              "ButtonImg": {},
+              "_on_click": "onUserAction",
+              "btnName": "X",
+              "display": "hide",
+              "id": "btn_user_options",
+              "text": "#mainmenu/btnUserAction"
+            }
+          ]
+        },
+        "navMiddle": {
+          "id": "paginator_place"
+        },
+        "navRight": {
+          "Button_text": [
+            {
+              "ButtonImg": {},
+              "_on_click": "onDeleteFromBlacklist",
+              "btnName": "A",
+              "display": "hide",
+              "id": "btn_removeBlacklist",
+              "text": "#msgbox/btn_delete"
+            },
+            {
+              "ButtonImg": {},
+              "_on_click": "onRequestApprove",
+              "buttonWink": {},
+              "display": "hide",
+              "id": "btn_approve",
+              "text": "#clan/requestApprove",
+              "visualStyle": "secondary"
+            }
+          ]
+        }
+      },
+      "size": "0.8*@scrn_tgt, 0.5@scrn_tgt",
+      "table": {
+        "_on_r_click": "onUserRClick",
+        "behavior": "PosNavigator",
+        "class": "lbTable",
+        "height": "fh",
+        "id": "candidatesList",
+        "navigatorShortcuts": "yes",
+        "on_click": "onSelect",
+        "on_dbl_click": "onUserCard",
+        "padding-bottom": "0.02*@scrn_tgt",
+        "selfFocusBorder": "yes",
+        "text-halign": "center",
+        "text-valign": "center",
+        "width": "pw"
+      }
+    },
+    "type": "big"
+  }
+}

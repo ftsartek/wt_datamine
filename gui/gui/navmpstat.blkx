@@ -1,0 +1,61 @@
+{
+  "navBottomLeft": {},
+  "navLeft": {
+    "Button_text": {
+      "ButtonImg": {},
+      "btnName": "X",
+      "id": "btn_user_options",
+      "on_click": "onUserOptions",
+      "text": "#mainmenu/btnUserAction"
+    }
+  },
+  "navMiddle": {
+    "activeText": {
+      "_blink": "no",
+      "_size-timer": "1",
+      "behaviour": "basicFontSize",
+      "font-ht": "28",
+      "font-ht-base": "28",
+      "font-ht-end": "36",
+      "id": "time_to_kick_alert_text",
+      "size-func": "sin",
+      "size-time": "200",
+      "style": "color:@warningTextColor;",
+      "text": "#respawn/timeToKickAlert",
+      "titleFont": "yes"
+    }
+  },
+  "navRight": {
+    "Button_text": [
+      {
+        "ButtonImg": {},
+        "_on_click": "onPersonalTasksOpen",
+        "btnName": "LT",
+        "display": "hide",
+        "enable": "no",
+        "id": "btn_personal_tasks",
+        "text": "#mainmenu/personalTasks/title"
+      },
+      {
+        "ButtonImg": {},
+        "_on_click": "onActivateOrder",
+        "behavior": "Timer",
+        "btnName": "R3",
+        "display": "hide",
+        "enable": "no",
+        "id": "btn_activateorder",
+        "text": "#flightmenu/btnActivateOrder",
+        "timer_handler_func": "onOrderTimerUpdate",
+        "timer_interval_msec": "1000"
+      },
+      {
+        "ButtonImg": {},
+        "_on_click": "goBack",
+        "btnName": "B",
+        "display": "hide",
+        "id": "btn_back",
+        "text": "#mainmenu/btnBack"
+      }
+    ]
+  }
+}

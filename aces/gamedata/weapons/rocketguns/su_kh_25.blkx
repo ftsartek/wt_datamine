@@ -1,0 +1,368 @@
+{
+  "bullets": 1,
+  "helicopterGroup": 2,
+  "mesh": "su_kh_25_missile",
+  "preset_cost": 20,
+  "rocket": {
+    "CxK": 1.65,
+    "DamageEffects": {
+      "part": {
+        "name": "body",
+        "onHit": [
+          {
+            "expl": 1.0,
+            "shellState": "inFlight"
+          },
+          {
+            "break": 0.5,
+            "damage": 3.0,
+            "damageType": "generic",
+            "expl": 0.05,
+            "fHitCritical": true,
+            "fire": 0.45,
+            "shellState": "onUnit"
+          },
+          {
+            "break": 0.2,
+            "damage": 30.0,
+            "damageType": "generic",
+            "expl": 0.5,
+            "fHitCritical": true,
+            "fire": 0.3,
+            "shellState": "onUnit"
+          },
+          {
+            "break": 0.1,
+            "damage": 50.0,
+            "damageType": "explosion",
+            "expl": 0.45,
+            "fHitCritical": true,
+            "fire": 0.45,
+            "shellState": "onUnit"
+          },
+          {
+            "break": 0.1,
+            "damage": 100.0,
+            "damageType": "cumulative",
+            "expl": 0.4,
+            "fHitCritical": true,
+            "fire": 0.4,
+            "shellState": "onUnit"
+          }
+        ],
+        "onKill": [
+          {
+            "destruction": 1.0,
+            "shellState": "inFlight"
+          },
+          {
+            "break": 0.9,
+            "expl": 0.05,
+            "fHitCritical": true,
+            "fire": 0.05,
+            "shellState": "onUnit"
+          }
+        ]
+      }
+    },
+    "DamageParts": {
+      "body": {
+        "armorClass": "tank_structural_steel",
+        "armorThickness": 1.0,
+        "hp": 50.0
+      }
+    },
+    "WdK": [0.1,0.1,0.1],
+    "amountPerTier": 1.0,
+    "arcadeProp": {
+      "finsAoaHor": 0.15,
+      "finsAoaVer": 0.15
+    },
+    "bulletName": "su_kh_25",
+    "bulletType": "rocket_tank",
+    "caliber": 0.275,
+    "collisions": {
+      "armor": {
+        "fx": "explosion_midair_small",
+        "ricochetFx": "hit_81_105mm_metal_ap"
+      },
+      "buildings": {
+        "fx": "explosion_midair_small",
+        "ricochetFx": "hit_106_132mm_stone_ap"
+      },
+      "steel": {
+        "fx": "explosion_midair_small",
+        "ricochetFx": "hit_81_105mm_metal_ap"
+      },
+      "wood": {
+        "fx": "explosion_midair_small",
+        "ricochetFx": "hit_106_132mm_wood_ap"
+      }
+    },
+    "damage": {
+      "explosive": {
+        "offset": 1.0
+      }
+    },
+    "distFromCmToStab": 0.065,
+    "distanceFuse": false,
+    "dragCx": 0.025,
+    "effectOffset": [-1.45,-0.16,0.0],
+    "endSpeed": 0.0,
+    "explodeOnRendinst": true,
+    "explodeTreshold": 0.1,
+    "explosionEffect": "explosion_midair_big",
+    "explosionPatchRadius": 5.0,
+    "explosiveMass": 93.0,
+    "explosiveType": "tg_40",
+    "finsAoaHor": 0.15,
+    "finsAoaVer": 0.15,
+    "fireDelay": 0.0,
+    "force": 24700.0,
+    "fresnel": [0.23,0.1,2.0],
+    "fuseDelayDist": 0.1,
+    "groundCollisionEffect": "bomb_expl_100kg",
+    "groundRicochetEffect": "hit_81_105mm_dirt_ap",
+    "groundRicochetPreset": "he",
+    "guidance": {
+      "breakLockMaxTime": 5.0,
+      "guidanceAutopilot": {
+        "accelControlDiff": 0.0021,
+        "accelControlIntg": 0.0425,
+        "accelControlIntgLim": 1.0,
+        "accelControlProp": 0.0045,
+        "baseIndSpeed": 1800.0,
+        "loftAngleToAccelMult": 8.0,
+        "loftElevation": 27.0,
+        "loftEnabled": true,
+        "loftTargetElevation": -35.0,
+        "loftTargetOmegaMax": 0.85,
+        "propNavMult": 4.0,
+        "reqAccelMax": 8.0,
+        "timeOut": 0.8
+      },
+      "laserSeeker": {
+        "angleMax": 30.0,
+        "designationSourceTypeMask": 9,
+        "filterAlpha": 0.85,
+        "filterBetta": 0.2,
+        "fov": 1.0,
+        "lockAngleMax": 30.0,
+        "prolongationTimeMax": 1.0,
+        "range": 8000.0,
+        "rangeMax": 12000.0,
+        "rateMax": 10.0
+      },
+      "uncageBeforeLaunch": true,
+      "warmUpTime": 1.0,
+      "workTime": 3600.0
+    },
+    "guidanceType": "laser",
+    "hasTracerTrail": [
+      true,
+      true
+    ],
+    "hazeEffect": "haze_missile",
+    "hitPowerMult": 400.0,
+    "iconType": "missile_air_to_uni_middle",
+    "launchZoneDistance": 100.0,
+    "length": 3.83,
+    "loadFactorMax": 8.0,
+    "machMax": 2.0,
+    "mass": 318.0,
+    "massEnd": 255.5,
+    "maxDeltaAngle": 0.02,
+    "maxDistance": 10000.0,
+    "maxSpeed": 400.0,
+    "minDistance": 500.0,
+    "normalizationPreset": "heat",
+    "pressureDamage": {
+      "damageType": "pressure"
+    },
+    "price": 3000.0,
+    "rangeMax": 7000.0,
+    "rendinstDamageRadius": 9.0,
+    "ricochetEffect": "hit_59_80mm_metal_ap",
+    "ricochetPreset": "he",
+    "secondaryShattersPreset": "ap_rocket",
+    "shatterCollisions": {
+      "aluminum_armor": {
+        "fx": "hit_12_18mm_metal_ap"
+      },
+      "armorNPHiCal": {
+        "fx": "hit_12_18mm_metal_ap"
+      },
+      "armorNPLowCal": {
+        "fx": "hit_12_18mm_metal_ap"
+      },
+      "armorNPMedCal": {
+        "fx": "hit_12_18mm_metal_ap"
+      },
+      "armorPierceHiCal": {
+        "fx": "hit_12_18mm_metal_ap"
+      },
+      "armorPierceLowCal": {
+        "fx": "hit_12_18mm_metal_ap"
+      },
+      "armorPierceMedCal": {
+        "fx": "hit_12_18mm_metal_ap"
+      },
+      "bricks_red": {
+        "fx": "hit_12_18mm_red_brick_ap"
+      },
+      "buildings": {
+        "fx": "hit_12_18mm_stone_ap"
+      },
+      "concrete": {
+        "fx": "hit_12_18mm_stone_ap"
+      },
+      "default": {
+        "fx": "hit_12_18mm_dirt_ap"
+      },
+      "dirt": {
+        "fx": "hit_12_18mm_dirt_ap"
+      },
+      "duneSand": {
+        "fx": "hit_12_18mm_sand_ap"
+      },
+      "fabric": {
+        "fx": "hit_12_18mm_stone_ap"
+      },
+      "glass": {
+        "fx": "hit_12_18mm_metal_ap"
+      },
+      "groundCollisionEffect": "hit_12_18mm_dirt_ap",
+      "horLandMesh": {
+        "fx": "hit_12_18mm_dirt_ap"
+      },
+      "ice": {
+        "fx": "hit_12_18mm_snow_ap"
+      },
+      "metal": {
+        "fx": "hit_12_18mm_metal_ap"
+      },
+      "quickSand": {
+        "fx": "hit_12_18mm_sand_ap"
+      },
+      "road": {
+        "fx": "hit_12_18mm_dirt_ap"
+      },
+      "roadSand": {
+        "fx": "hit_12_18mm_sand_ap"
+      },
+      "roadSnow": {
+        "fx": "hit_12_18mm_snow_ap"
+      },
+      "roadSoil": {
+        "fx": "hit_12_18mm_dirt_ap"
+      },
+      "rocks": {
+        "fx": "hit_12_18mm_stone_ap"
+      },
+      "rocksSlippery": {
+        "fx": "hit_12_18mm_stone_ap"
+      },
+      "sand": {
+        "fx": "hit_12_18mm_sand_ap"
+      },
+      "snow": {
+        "fx": "hit_12_18mm_snow_ap"
+      },
+      "snowLower": {
+        "fx": "hit_12_18mm_snow_ap"
+      },
+      "soil": {
+        "fx": "hit_12_18mm_dirt_ap"
+      },
+      "steel": {
+        "fx": "hit_12_18mm_metal_ap"
+      },
+      "stone_snow": {
+        "fx": "hit_12_18mm_snow_ap"
+      },
+      "tank_rubber_screens": {
+        "fx": "hit_12_18mm_stone_ap"
+      },
+      "tank_structural_steel": {
+        "fx": "hit_12_18mm_metal_ap"
+      },
+      "verLandMesh": {
+        "fx": "hit_12_18mm_stone_ap"
+      },
+      "waterCollisionEffect": "hit_8_11mm_water",
+      "wood": {
+        "fx": "hit_12_18mm_wood_ap"
+      }
+    },
+    "slopeEffectPreset": "ap",
+    "spawnExplosionFx": false,
+    "spawnExplosionWreckage": false,
+    "stabilityCaliberToArmorThreshold": 5.0,
+    "stabilityReductionAfterPenetration": 0.15,
+    "stabilityReductionAfterRicochet": 0.5,
+    "stabilityRicochetModifier": {
+      "mod1": [0.0,0.5],
+      "mod2": [20.0,0.6],
+      "mod3": [30.0,1.0]
+    },
+    "stabilityThreshold": 0.05,
+    "startSpeed": 0.0,
+    "statType": "hydra",
+    "timeFire": 4.9,
+    "timeLife": 25.0,
+    "tracerTrail": [
+      {
+        "endSmokeViscosity": 0.05,
+        "fireEffect": "fires_exhaust_jet_early_small",
+        "hasTracerTrail": true,
+        "rocketTailName": "emtr_jet_1",
+        "smokeEffect": "smoke_rocket_tail_doubleside_light",
+        "smokeEffect2": ""
+      },
+      {
+        "endSmokeViscosity": 0.05,
+        "fireEffect": "fires_exhaust_jet_early_small",
+        "hasTracerTrail": true,
+        "rocketTailName": "emtr_jet_2",
+        "smokeEffect": "smoke_rocket_tail_doubleside_light",
+        "smokeEffect2": ""
+      },
+      {
+        "endSmokeViscosity": 0.05,
+        "fireEffect": "fires_exhaust_jet_early_small",
+        "hasTracerTrail": true,
+        "rocketTailName": "emtr_jet_3",
+        "smokeEffect": "smoke_rocket_tail_doubleside_light",
+        "smokeEffect2": ""
+      },
+      {
+        "endSmokeViscosity": 0.05,
+        "fireEffect": "fires_exhaust_jet_early_small",
+        "hasTracerTrail": true,
+        "rocketTailName": "emtr_jet_4",
+        "smokeEffect": "smoke_rocket_tail_doubleside_light",
+        "smokeEffect2": ""
+      },
+      {
+        "smokeEffect": "",
+        "visual": {
+          "traceFreq": 1,
+          "tracer": "tracers_rocket_med_red_sparks",
+          "trail": "noTrail"
+        }
+      }
+    ],
+    "tracerTrailEmitter": [0.0,0.0,0.0],
+    "useEffectiveArmorThicknessForShatter": true,
+    "useStartSpeed": true,
+    "visualShattersGroundOffset": 1.2,
+    "visualShattersWaterOffset": 1.2,
+    "waterCollisionEffect": "hit_59_80mm_water",
+    "waterRicochetEffect": "hit_81_105mm_water_ap",
+    "wingAreaMult": 1.15
+  },
+  "rocketGun": true,
+  "shotFreq": 1000.25,
+  "sound": "weapon.rocketgun_132",
+  "tags": {}
+}

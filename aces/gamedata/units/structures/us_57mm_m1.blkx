@@ -1,0 +1,112 @@
+{
+  "DamageEffects": {
+    "part": {
+      "name": "body_dm",
+      "onHit": {
+        "smoke": 0.01
+      },
+      "onKill": {
+        "expl": 1.0
+      }
+    }
+  },
+  "DamageParts": {
+    "armor50_tanks": {
+      "armor1_dm": {
+        "hp": 99999.0
+      }
+    },
+    "steel": {
+      "body_dm": {
+        "hp": 240.0,
+        "napalmDamageMult": 1.0
+      }
+    }
+  },
+  "attach": {
+    "inc_gunner00": "usa_young_gunner_stand",
+    "inc_gunner01": "usa_young_gunner_stand2"
+  },
+  "bulletHitFx": "ground_model_hit",
+  "class_tags": {
+    "anti_tank": true,
+    "country_australia": true,
+    "country_usa": true,
+    "mediterran": true,
+    "westernfront": true,
+    "year1942": true,
+    "year1943": true,
+    "year1944": true,
+    "year1945": true
+  },
+  "collisionSphere0": [0.0,-1.5,0.0,5.0],
+  "collisionSphere1": [5.0,2.0,0.0,1.0],
+  "expClass": "exp_fortification",
+  "explosion": {
+    "expl": {
+      "explosionEffectName": "explosion_midair_medium",
+      "node": "body",
+      "partNo": 0,
+      "postEffectName": "smoke_ground_black_fx",
+      "postScale": 1.0,
+      "preScale": 1.0,
+      "timeForPostEffect": 60.0,
+      "timeToExplode": 0.5
+    }
+  },
+  "explosionFx": "ground_model_expl",
+  "fireFx": [
+    "fire_ground_black_fx",
+    "ground_model_fire"
+  ],
+  "groundNormSmoothViscosity": 0.1,
+  "hasDmg2": true,
+  "hasExpl": true,
+  "maxAccel": 0.0,
+  "maxAngAccel": 0.0,
+  "maxAngAccel0": 0.0,
+  "maxAngAccelV": 0.0,
+  "maxAngSpeed": 0.0,
+  "maxDecel": 0.0,
+  "maxFwdSpeed": 0.0,
+  "maxRevSpeed": 0.0,
+  "model": "57mm_m1_a",
+  "onRadarAs": "aam",
+  "partDamageFx": "part_damage",
+  "subclass": "fortification",
+  "timeToFire": 5.0,
+  "toGround": true,
+  "weapon": {
+    "AttackMaxDistance": 1500.0,
+    "AttackMaxHeight": 1500.0,
+    "AttackMaxRadius": 1500.0,
+    "ChainfireTime": 0.0,
+    "DelayAfterShoot": 0.0,
+    "accuracyAir": 0.0,
+    "accuracyGnd": 0.6,
+    "blk": "gameData/Weapons/groundModels_weapons/common_cannon50mm.blk",
+    "defaultPitch": 10.0,
+    "defaultYaw": 0.0,
+    "emitter": "gun1",
+    "errMeasureVel": 0.0,
+    "errMeasureVelDir": 3.0,
+    "errMeasureVelFast": 20.0,
+    "errMeasureVelFwdShift": 0.7,
+    "errTargetting": 60.0,
+    "errTargettingOn100kmph": 0.0,
+    "fireConeAngle": 1.0,
+    "flash": "flame1",
+    "limits": {
+      "pitch": [-10.0,30.0],
+      "yaw": [-180.0,180.0]
+    },
+    "salvoAmount": 100.0,
+    "speedPitch": 24.0,
+    "speedYaw": 24.0,
+    "trigger": "gunner0",
+    "turret": {
+      "gun": "gun1",
+      "head": "turret1"
+    }
+  }
+}

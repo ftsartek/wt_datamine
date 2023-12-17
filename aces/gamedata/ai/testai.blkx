@@ -1,0 +1,92 @@
+{
+  "selector": [
+    {
+      "name": "testFighterVsFighter",
+      "reaction": [
+        {
+          "event": "groundAhead",
+          "parallel": {
+            "stayAtSpeed": {
+              "speedMode": "boostOn"
+            },
+            "turnToEvasiveDir": {}
+          }
+        },
+        {
+          "event": "collisionAhead",
+          "parallel": {
+            "stayAtSpeed": {
+              "speedMode": "boostOn"
+            },
+            "turnToEvasiveDir": {}
+          }
+        },
+        {
+          "event": "outsideBattleField",
+          "flyToPos": {
+            "destType": "battleField",
+            "dist": -1.0,
+            "minAlt": 100.0,
+            "speed": 550.0
+          }
+        }
+      ],
+      "selectStrategy": "ordered",
+      "sequencer": {
+        "energyAttack": {
+          "allowSpeedCheat": false
+        },
+        "findUnit": {
+          "onlyMissionTargets": false,
+          "radius": 100000.0,
+          "searchForAir": true
+        }
+      }
+    },
+    {
+      "name": "testFighterVsFighterDM",
+      "reaction": [
+        {
+          "event": "groundAhead",
+          "parallel": {
+            "stayAtSpeed": {
+              "speedMode": "boostOn"
+            },
+            "turnToEvasiveDir": {}
+          }
+        },
+        {
+          "event": "collisionAhead",
+          "parallel": {
+            "stayAtSpeed": {
+              "speedMode": "boostOn"
+            },
+            "turnToEvasiveDir": {}
+          }
+        },
+        {
+          "event": "outsideBattleField",
+          "flyToPos": {
+            "destType": "battleField",
+            "dist": -1.0,
+            "minAlt": 100.0,
+            "speed": 550.0
+          }
+        }
+      ],
+      "selectStrategy": "ordered",
+      "sequencer": {
+        "fighterAttackFighter": {
+          "allowSpeedCheat": false,
+          "avoidCollisions": false,
+          "ignoreDistance": true
+        },
+        "findUnit": {
+          "onlyMissionTargets": false,
+          "radius": 100000.0,
+          "searchForAir": true
+        }
+      }
+    }
+  ]
+}

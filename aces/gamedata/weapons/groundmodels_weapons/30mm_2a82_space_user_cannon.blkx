@@ -1,0 +1,106 @@
+{
+  "aimMaxDist": 4000.0,
+  "aimMinDist": 0.1,
+  "bEnablePause": false,
+  "bUseHookAsRel": true,
+  "bullet": {
+    "DamageEffects": {
+      "part": {
+        "name": "body",
+        "onHit": {
+          "break_fuse": 1.0
+        },
+        "onKill": {
+          "destruction": 1.0
+        }
+      }
+    },
+    "DamageParts": {
+      "body": {
+        "armorClass": "tank_structural_steel",
+        "armorThickness": 1.0,
+        "hp": 5.0
+      }
+    },
+    "bulletCount": 30,
+    "bulletName": "30mm_m789",
+    "bulletType": "heat_fs_tank",
+    "caliber": 0.03,
+    "cumulativeDamage": {
+      "armorPower": 150.0,
+      "damage": 500.0,
+      "distance": 2.5,
+      "onHitChanceMultFire": 10.0
+    },
+    "cumulativeSecondaryShattersPreset": "heat_fs",
+    "effectiveDistance": 2500.0,
+    "explodeOnRendinst": true,
+    "explosiveMass": 0.9,
+    "explosiveType": "pbxn_5",
+    "fresnel": [0.23,0.1,2.0],
+    "groundRicochetPreset": "heat_fs",
+    "hitPowerMult": 10.0,
+    "hitpower": {
+      "HitPower0m": [1.0,500.0],
+      "HitPower1000m": [0.9,1000.0],
+      "HitPower1500m": [0.65,1500.0],
+      "HitPower2500m": [0.5,2500.0],
+      "HitPower7000m": [0.0,7000.0]
+    },
+    "mass": 1.2,
+    "maxDistance": 1500.0,
+    "normalizationPreset": "heat",
+    "pressureDamage": {
+      "damageType": "pressure"
+    },
+    "relativeVelHitShift": [300.0,1000.0],
+    "ricochetPreset": "heat_fs",
+    "secondaryShattersPreset": "ap",
+    "shellAnimation": "video/shells_animations/heat_fs.ivf",
+    "shutterAmount": 40,
+    "shutterArmorPower": 4.0,
+    "shutterDamage": true,
+    "shutterDamageRadius": 3.0,
+    "shutterHit": 20.0,
+    "speed": 1500.0,
+    "stabilityCaliberToArmorThreshold": 5.0,
+    "stabilityReductionAfterPenetration": 0.15,
+    "stabilityReductionAfterRicochet": 0.3,
+    "stabilityRicochetModifier": {
+      "mod1": [0.0,0.5],
+      "mod2": [15.0,0.7],
+      "mod3": [30.0,0.99]
+    },
+    "stabilityThreshold": 0.5,
+    "visual": {
+      "range_percent_of_ammo": [100.0,0.0],
+      "traceFreq": 1,
+      "tracer": "76mmGreen",
+      "trail": "black"
+    }
+  },
+  "bullets": 400,
+  "bulletsCartridge": 20,
+  "bulletsCluster": 1,
+  "cannon": true,
+  "emitColor": [1.0,1.0,0.0],
+  "emitI": 10.0,
+  "emitR": 3.0,
+  "emitTime": 0.03,
+  "fxMultipleSpawn": true,
+  "isBulletBelt": true,
+  "maxDeltaAngle": 0.02,
+  "maxDeltaAngleVertical": 0.02,
+  "reloadTime": 5.0,
+  "sfxReloadBullet": "suit_cannon_reload",
+  "shotFreq": 0.25,
+  "shotFreqRndK": 0.0,
+  "shouldCollideWithRendinsts": true,
+  "sound": "cannon_mk1",
+  "soundLoop": false,
+  "sound_inside": "cannon_mk1_interior",
+  "sound_path": "tanks/weapon_tanks/cannons",
+  "sound_pathStudio": "space_program/weapon/cannons",
+  "traceFreq": 3,
+  "weaponType": 3
+}

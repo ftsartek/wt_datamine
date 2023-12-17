@@ -1,0 +1,167 @@
+{
+  "DummyButton": {
+    "blur": {},
+    "blur_foreground": {
+      "isRoot": "yes"
+    },
+    "btnName": "B",
+    "id": "slotb-aircraft-choose-root",
+    "on_click": "onCancelSlotChoose",
+    "position": "root",
+    "size": "sw, sh",
+    "tooltip": ""
+  },
+  "div": {
+    "behaviour": "basicSize",
+    "blend-time": "0",
+    "css-hier-invalidate": "yes",
+    "id": "tablePlace",
+    "max-height": "@rh",
+    "position": "root",
+    "size-func": "squareInv",
+    "size-time": "300",
+    "slotsScrollDiv": {
+      "background-color": "@commonTextColor",
+      "background-image": "#ui/gameuiskin#item_table_block_bg_grad",
+      "background-position": "4",
+      "background-repeat": "expand",
+      "class": "shopDiv",
+      "flow": "vertical",
+      "height": "ph",
+      "id": "slots_scroll_div",
+      "overflow": "hidden",
+      "padding": "4,4",
+      "pos": "0, -h-1*@scrn_tgt/100.0",
+      "position": "relative",
+      "shopTable": {
+        "alwaysShowBorder": "yes",
+        "behavior": "posNavigator",
+        "flow": "vertical",
+        "id": "airs_table",
+        "left": "50%pw-50%w",
+        "margin": "0,1",
+        "navigatorShortcuts": "SpaceA",
+        "on_activate": "onUnitActivate",
+        "on_click": "onUnitClick",
+        "on_dbl_click": "onUnitDblClick",
+        "on_hold_start": "::gcb.delayedTooltipListHoldStart",
+        "on_hold_stop": "::gcb.delayedTooltipListHoldStop",
+        "on_pushed": "::gcb.delayedTooltipListPush",
+        "on_r_click": "onUnitRightClick",
+        "on_select": "onUnitSelect",
+        "position": "relative",
+        "slotDiscountsPos": "rightInside"
+      },
+      "tdiv": {
+        "id": "arrows_nest",
+        "pos": "0.5*pw - 0.5*w, 2*@sf/@pf_outdated",
+        "position": "absolute",
+        "size": "@shop_width, ph"
+      },
+      "tooltip": ""
+    }
+  },
+  "focusFrameAnimBlock": {
+    "focusFrameAnimObj": {}
+  },
+  "group": "",
+  "navBar": {
+    "navLeft": {
+      "tdiv": {
+        "height": "1@buttonHeight",
+        "textareaNoTab": {
+          "caption": "yes",
+          "id": "excess_exp_text",
+          "pos": "1@buttonMargin, ph/2-h/2",
+          "position": "absolute"
+        }
+      }
+    },
+    "navRight": {
+      "Button_text": [
+        {
+          "ButtonImg": {},
+          "_on_click": "onRepairAll",
+          "btnName": "L3",
+          "buttonGlance": {},
+          "buttonWink": {},
+          "display": "hide",
+          "hideText": "yes",
+          "id": "btn_repairall",
+          "textarea": {
+            "class": "buttonText",
+            "id": "btn_repairall_text",
+            "text": "#mainmenu/btnRepairAll"
+          },
+          "visualStyle": "purchase"
+        },
+        {
+          "ButtonImg": {},
+          "_on_click": "onSpendExcessExp",
+          "btnName": "X",
+          "buttonWink": {},
+          "css-hier-invalidate": [
+            "yes",
+            "yes"
+          ],
+          "display": "hide",
+          "hideText": "yes",
+          "id": "btn_spend_exp",
+          "navButtonFont": "yes",
+          "textarea": {
+            "class": "buttonText",
+            "id": "btn_spend_exp_text",
+            "text": "#weaponry/research"
+          },
+          "visualStyle": "secondary"
+        },
+        {
+          "ButtonImg": {},
+          "_on_click": "onBuy",
+          "btnName": "X",
+          "buttonGlance": {},
+          "buttonWink": {},
+          "css-hier-invalidate": "yes",
+          "display": "hide",
+          "id": "btn_buy_unit",
+          "navButtonFont": "yes",
+          "text": "#shop/btnOrderUnit",
+          "visualStyle": "purchase"
+        }
+      ],
+      "CheckBox": {
+        "CheckBoxImg": {},
+        "display": "hide",
+        "id": "move_exp_to_helicopters",
+        "inactiveColor": "no",
+        "on_change_value": "onMoveExpToHelicoptersChange",
+        "padding-right": "40@sf/@pf",
+        "text": "#shop/research_helicopters_by_ground_vehicles",
+        "tooltip": "#shop/research_helicopters_by_ground_vehicles_tooltip",
+        "type": "rightSideCb",
+        "valign": "center"
+      },
+      "tdiv": {
+        "ComboBox": [
+          {
+            "display": "hide",
+            "id": "dev_options_select",
+            "margin-right": "1@buttonMargin",
+            "on_select": "onChangeDevMode",
+            "width": "250@sf/@pf"
+          },
+          {
+            "btnName": "R3",
+            "id": "show_mode",
+            "on_select": "onChangeShowMode",
+            "tooltip": "#mainmenu/showModesInfo/tooltip",
+            "width": "300@sf/@pf"
+          }
+        ],
+        "margin": "1@buttonMargin"
+      }
+    },
+    "style": "id:nav-help-group;",
+    "type": "shop"
+  }
+}

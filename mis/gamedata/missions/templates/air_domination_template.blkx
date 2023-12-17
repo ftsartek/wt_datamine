@@ -1,0 +1,461 @@
+{
+  "airfields": {},
+  "areas": {},
+  "bin_dump_file": "",
+  "dialogs": {},
+  "effects": {},
+  "imports": {},
+  "mission_objectives": {
+    "isCategory": true,
+    "is_enabled": true
+  },
+  "mission_settings": {
+    "mission": {
+      "country_allies": "ussr",
+      "country_axis": "germany",
+      "deathPenaltyMul": 0.0,
+      "environment": "Day",
+      "level": "levels/stalingrad_w.bin",
+      "optionalTakeOff": false,
+      "restoreType": "attempts",
+      "scoreLimit": 5000,
+      "timeLimit": 20,
+      "type": "domination",
+      "weather": "hazy"
+    },
+    "player": {
+      "army": 1,
+      "wing": ""
+    },
+    "player_teamB": {
+      "army": 2
+    },
+    "spectator_points": {}
+  },
+  "objLayers": {
+    "layer": [
+      {
+        "enabled": true
+      },
+      {
+        "enabled": true
+      },
+      {
+        "enabled": true
+      },
+      {
+        "enabled": true
+      }
+    ]
+  },
+  "selected_tag": "",
+  "triggers": {
+    "ad_mp_cost_update": {
+      "actions": {
+        "comment": {
+          "value": "srabatyvaet raz v 3 minuty"
+        },
+        "varModify": {
+          "operator": "add",
+          "value": -1.0,
+          "var": "ad_mp_cost"
+        }
+      },
+      "comments": "",
+      "conditions": {},
+      "else_actions": {},
+      "events": {
+        "periodicEvent": {
+          "time": 10.0,
+          "var": "ad_delay_timer"
+        }
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": true
+      }
+    },
+    "ad_t1_have_zone": {
+      "actions": {
+        "gameMPChangeScore": {
+          "team": "B",
+          "value": 0,
+          "valueSystem": "amount",
+          "var": "ad_mp_cost"
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "missionIsZoneCaptured": {
+          "army": 1,
+          "target": "@capture_area_name"
+        }
+      },
+      "else_actions": {},
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": true
+      }
+    },
+    "ad_t2_have_zone": {
+      "actions": {
+        "gameMPChangeScore": {
+          "team": "A",
+          "value": 0,
+          "valueSystem": "amount",
+          "var": "ad_mp_cost"
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "missionIsZoneCaptured": {
+          "army": 2,
+          "target": "@capture_area_name"
+        }
+      },
+      "else_actions": {},
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": true
+      }
+    },
+    "arcade_zone_far": {
+      "actions": {
+        "comment": {
+          "value": "rang 7-14"
+        },
+        "missionMarkAsCaptureZone": {
+          "army": 0,
+          "canCaptureByGM": false,
+          "canCaptureInAir": true,
+          "canCaptureOnGround": false,
+          "captureNoPenalty": true,
+          "disableZone": false,
+          "name_for_respawn_base": "",
+          "onlyPlayersCanCapture": false,
+          "target": "@capture_area_name",
+          "timeMultiplier": 4.0
+        },
+        "triggerDisable": {
+          "target": [
+            "arcade_zone_near",
+            "arcade_zone_middle",
+            "arcade_zone_huge"
+          ]
+        },
+        "varSetBool": {
+          "value": true,
+          "var": "isZoneSuccess"
+        },
+        "varSetString": {
+          "value": "capture_area_far",
+          "var": "capture_area_name"
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "objectExists": {
+          "target": "capture_area_far",
+          "type": "area"
+        },
+        "varCompareInt": [
+          {
+            "comparasion_func": "less",
+            "value": 15,
+            "var_value": "ad_zone_matcher"
+          },
+          {
+            "comparasion_func": "more",
+            "value": 6,
+            "var_value": "ad_zone_matcher"
+          }
+        ]
+      },
+      "else_actions": {},
+      "events": {
+        "initMission": {}
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "arcade_zone_huge": {
+      "actions": {
+        "comment": {
+          "value": "rang 15+"
+        },
+        "missionMarkAsCaptureZone": {
+          "army": 0,
+          "canCaptureByGM": false,
+          "canCaptureInAir": true,
+          "canCaptureOnGround": false,
+          "captureNoPenalty": true,
+          "disableZone": false,
+          "name_for_respawn_base": "",
+          "onlyPlayersCanCapture": false,
+          "target": "@capture_area_name",
+          "timeMultiplier": 4.0
+        },
+        "triggerDisable": {
+          "target": [
+            "arcade_zone_near",
+            "arcade_zone_middle",
+            "arcade_zone_far"
+          ]
+        },
+        "varSetBool": {
+          "value": true,
+          "var": "isZoneSuccess"
+        },
+        "varSetString": {
+          "value": "capture_area_huge",
+          "var": "capture_area_name"
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "objectExists": {
+          "target": "capture_area_huge",
+          "type": "area"
+        },
+        "varCompareInt": {
+          "comparasion_func": "notLess",
+          "value": 15,
+          "var_value": "ad_zone_matcher"
+        }
+      },
+      "else_actions": {},
+      "events": {
+        "initMission": {}
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "arcade_zone_init": {
+      "actions": {
+        "missionGetBalanceLevel": {
+          "input_var": "ad_zone_matcher"
+        },
+        "triggerEnable": {
+          "target": [
+            "arcade_zone_near",
+            "arcade_zone_middle",
+            "arcade_zone_far",
+            "arcade_zone_huge",
+            "no_balance_zone_found"
+          ]
+        }
+      },
+      "comments": "",
+      "conditions": {},
+      "else_actions": {},
+      "events": {
+        "initMission": {}
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "arcade_zone_middle": {
+      "actions": {
+        "comment": {
+          "value": "rang 4-6"
+        },
+        "missionMarkAsCaptureZone": {
+          "army": 0,
+          "canCaptureByGM": false,
+          "canCaptureInAir": true,
+          "canCaptureOnGround": false,
+          "captureNoPenalty": true,
+          "disableZone": false,
+          "name_for_respawn_base": "",
+          "onlyPlayersCanCapture": false,
+          "target": "@capture_area_name",
+          "timeMultiplier": 4.0
+        },
+        "triggerDisable": {
+          "target": [
+            "arcade_zone_near",
+            "arcade_zone_far",
+            "arcade_zone_huge"
+          ]
+        },
+        "varSetBool": {
+          "value": true,
+          "var": "isZoneSuccess"
+        },
+        "varSetString": {
+          "value": "capture_area_middle",
+          "var": "capture_area_name"
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "objectExists": {
+          "target": "capture_area_middle",
+          "type": "area"
+        },
+        "varCompareInt": [
+          {
+            "comparasion_func": "less",
+            "value": 7,
+            "var_value": "ad_zone_matcher"
+          },
+          {
+            "comparasion_func": "more",
+            "value": 3,
+            "var_value": "ad_zone_matcher"
+          }
+        ]
+      },
+      "else_actions": {},
+      "events": {
+        "initMission": {}
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "arcade_zone_near": {
+      "actions": {
+        "comment": {
+          "value": "rang 0-3"
+        },
+        "missionMarkAsCaptureZone": {
+          "army": 0,
+          "canCaptureByGM": false,
+          "canCaptureInAir": true,
+          "canCaptureOnGround": false,
+          "captureNoPenalty": true,
+          "disableZone": false,
+          "name_for_respawn_base": "",
+          "onlyPlayersCanCapture": false,
+          "playAirfieldSound": false,
+          "target": "@capture_area_name",
+          "timeMultiplier": 4.0
+        },
+        "triggerDisable": {
+          "target": [
+            "arcade_zone_middle",
+            "arcade_zone_far",
+            "arcade_zone_huge"
+          ]
+        },
+        "varSetBool": {
+          "value": true,
+          "var": "isZoneSuccess"
+        },
+        "varSetString": {
+          "value": "capture_area_near",
+          "var": "capture_area_name"
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "objectExists": {
+          "target": "capture_area_near",
+          "type": "area"
+        },
+        "varCompareInt": {
+          "comparasion_func": "less",
+          "value": 4,
+          "var_value": "ad_zone_matcher"
+        }
+      },
+      "else_actions": {},
+      "events": {
+        "initMission": {}
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "isCategory": true,
+    "is_enabled": true,
+    "no_balance_zone_found": {
+      "actions": {
+        "missionMarkAsCaptureZone": {
+          "army": 0,
+          "canCaptureByGM": false,
+          "canCaptureInAir": true,
+          "canCaptureOnGround": false,
+          "captureNoPenalty": true,
+          "disableZone": false,
+          "name_for_respawn_base": "",
+          "onlyPlayersCanCapture": false,
+          "target": "@capture_area_name",
+          "timeMultiplier": 4.0
+        },
+        "varSetString": {
+          "value": "capture_area",
+          "var": "capture_area_name"
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "objectExists": {
+          "target": "capture_area",
+          "type": "area"
+        },
+        "varCompareBool": {
+          "comparasion_func": "equal",
+          "value": false,
+          "var_value": "isZoneSuccess"
+        }
+      },
+      "else_actions": {},
+      "events": {
+        "periodicEvent": {
+          "time": 3.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    }
+  },
+  "units": {},
+  "variables": {
+    "ad_delay_timer": 15,
+    "ad_mp_cost": -1,
+    "ad_zone_matcher": 0,
+    "capture_area_name": "capture_area",
+    "isZoneSuccess": false
+  },
+  "wayPoints": {}
+}

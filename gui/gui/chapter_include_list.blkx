@@ -1,0 +1,52 @@
+{
+  "chapterListPlace": {
+    "flow": "vertical",
+    "height": "ph",
+    "id": "chapter_place",
+    "tdiv": [
+      {
+        "display": "hide",
+        "id": "div_before_chapters_list",
+        "width": "pw"
+      },
+      {
+        "animated_wait_icon": {
+          "background-rotation": "0",
+          "display": "hide",
+          "id": "items_list_wait_icon",
+          "pos": "50%pw-50%w, 40%ph-40%h",
+          "position": "absolute"
+        },
+        "flow": "vertical",
+        "id": "chapters_list_place",
+        "listbox": {
+          "_on_dbl_click": "onItemDblClick",
+          "flow": "vertical",
+          "id": "items_list",
+          "move-only-hover": "yes",
+          "navigatorShortcuts": "yes",
+          "on_select": "onItemSelect",
+          "size": "pw, fh"
+        },
+        "popupFilter": {
+          "margin-left": "1@buttonMargin"
+        },
+        "size": "pw, fh",
+        "tdiv": {
+          "id": "listbox_filter_holder",
+          "pos": "1@blockInterval, 0",
+          "position": "relative",
+          "width": "pw"
+        },
+        "textAreaCentered": {
+          "hideEmptyText": "yes",
+          "id": "items_list_msg",
+          "pos": "50%pw-50%w, 40%ph-40%h",
+          "position": "absolute",
+          "text": "",
+          "width": "80%pw"
+        }
+      }
+    ]
+  }
+}

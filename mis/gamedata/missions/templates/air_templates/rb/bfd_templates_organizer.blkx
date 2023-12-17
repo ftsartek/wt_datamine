@@ -1,0 +1,663 @@
+{
+  "airfields": {},
+  "areas": {},
+  "bin_dump_file": "",
+  "dialogs": {},
+  "effects": {},
+  "imports": {},
+  "mission_objectives": {
+    "isCategory": true,
+    "is_enabled": true
+  },
+  "mission_settings": {
+    "mission": {
+      "environment": "Day",
+      "level": "levels/water.bin",
+      "optionalTakeOff": false,
+      "restoreType": "attempts",
+      "timeLimit": 240,
+      "type": "singleMission",
+      "weather": "hazy"
+    },
+    "player": {
+      "army": 1,
+      "wing": "t1_player01"
+    },
+    "player_teamB": {
+      "army": 2
+    },
+    "spectator_points": {}
+  },
+  "objLayers": {
+    "layer": [
+      {
+        "enabled": true
+      },
+      {
+        "enabled": true
+      },
+      {
+        "enabled": true
+      },
+      {
+        "enabled": true
+      }
+    ]
+  },
+  "selected_tag": "",
+  "triggers": {
+    "01 - lookup_plane": {
+      "isCategory": true,
+      "is_enabled": true,
+      "to_template_01_lpt_check": {
+        "actions": {
+          "comment": [
+            {
+              "value": "naznachaem armiyu"
+            },
+            {
+              "value": "zapuskaem starter shablona"
+            }
+          ],
+          "triggerEnable": {
+            "target": "to_template_01_lpt_choose"
+          },
+          "varSetInt": {
+            "value": 0,
+            "var": "lpt_army_both_zero"
+          }
+        },
+        "comments": "",
+        "conditions": {
+          "triggerStatus": {
+            "status": "disabled",
+            "target": "to_template_01_lpt_end"
+          },
+          "varCompareBool": [
+            {
+              "comparasion_func": "equal",
+              "value": true,
+              "var_value": "lpt_is_launch_alowed"
+            },
+            {
+              "comparasion_func": "equal",
+              "value": false,
+              "var_value": "lpt_is_template_active"
+            }
+          ],
+          "varCompareInt": {
+            "comparasion_func": "equal",
+            "value": 1,
+            "var_value": "to_randomizer"
+          }
+        },
+        "else_actions": {},
+        "events": {
+          "periodicEvent": {
+            "time": 5.0
+          }
+        },
+        "is_enabled": false,
+        "props": {
+          "actionsType": "PERFORM_ONE_BY_ONE",
+          "conditionsType": "ALL",
+          "enableAfterComplete": false
+        }
+      },
+      "to_template_01_lpt_choose": {
+        "actions": {
+          "comment": [
+            {
+              "value": "stavim flag, chto shablon zapustilsya"
+            },
+            {
+              "value": "zadaem sluchajnoe vremya starta"
+            },
+            {
+              "value": "zapuskaem sobytie"
+            }
+          ],
+          "triggerEnable": {
+            "target": "lpt_start"
+          },
+          "varModify": {
+            "operator": "add",
+            "value": 1.0,
+            "var": "to_cur_launched_templates"
+          },
+          "varSetBool": {
+            "value": true,
+            "var": "lpt_is_template_active"
+          },
+          "varSetRandomInt": {
+            "from": 10,
+            "to_not_including": 30,
+            "var": "lpt_delay_timer"
+          }
+        },
+        "comments": "",
+        "conditions": {},
+        "else_actions": {},
+        "events": {
+          "periodicEvent": {
+            "time": 1.0
+          }
+        },
+        "is_enabled": false,
+        "props": {
+          "actionsType": "PERFORM_ONE_BY_ONE",
+          "conditionsType": "ANY",
+          "enableAfterComplete": false
+        }
+      },
+      "to_template_01_lpt_end": {
+        "actions": {
+          "comment": {
+            "value": "shablon razvedchikov zavershil rabotu"
+          },
+          "varModify": {
+            "operator": "add",
+            "value": -1.0,
+            "var": "to_cur_launched_templates"
+          }
+        },
+        "comments": "",
+        "conditions": {
+          "varCompareBool": {
+            "comparasion_func": "equal",
+            "value": false,
+            "var_value": "lpt_is_template_active"
+          }
+        },
+        "else_actions": {},
+        "events": {
+          "periodicEvent": {
+            "time": 1.0
+          }
+        },
+        "is_enabled": false,
+        "props": {
+          "actionsType": "PERFORM_ONE_BY_ONE",
+          "conditionsType": "ALL",
+          "enableAfterComplete": false
+        }
+      },
+      "to_template_01_lpt_run": {
+        "actions": {
+          "comment": {
+            "value": "vklyuchaem proverku vyklyucheniya shablona"
+          },
+          "triggerEnable": {
+            "target": "to_template_01_lpt_end"
+          }
+        },
+        "comments": "",
+        "conditions": {},
+        "else_actions": {},
+        "events": {
+          "periodicEvent": {
+            "time": 1.0
+          }
+        },
+        "is_enabled": false,
+        "props": {
+          "actionsType": "PERFORM_ONE_BY_ONE",
+          "conditionsType": "ALL",
+          "enableAfterComplete": false
+        }
+      }
+    },
+    "02 - boombers": {
+      "isCategory": true,
+      "is_enabled": true,
+      "to_template_02_bt_check": {
+        "actions": {
+          "comment": {
+            "value": "launching bombers template for both armies"
+          },
+          "triggerEnable": {
+            "target": "to_template_02_bt_choose"
+          },
+          "varSetInt": {
+            "value": 0,
+            "var": "bt_army_both_zero"
+          }
+        },
+        "comments": "",
+        "conditions": {
+          "triggerStatus": {
+            "status": "disabled",
+            "target": "to_template_02_bt_end"
+          },
+          "varCompareBool": [
+            {
+              "comparasion_func": "equal",
+              "value": true,
+              "var_value": "bt_is_launch_alowed"
+            },
+            {
+              "comparasion_func": "equal",
+              "value": false,
+              "var_value": "bt_is_template_active"
+            }
+          ],
+          "varCompareInt": {
+            "comparasion_func": "equal",
+            "value": 2,
+            "var_value": "to_randomizer"
+          }
+        },
+        "else_actions": {},
+        "events": {
+          "periodicEvent": {
+            "time": 5.0
+          }
+        },
+        "is_enabled": false,
+        "props": {
+          "actionsType": "PERFORM_ONE_BY_ONE",
+          "conditionsType": "ALL",
+          "enableAfterComplete": false
+        }
+      },
+      "to_template_02_bt_choose": {
+        "actions": {
+          "comment": [
+            {
+              "value": "setting flag that template is active"
+            },
+            {
+              "value": "setting random delay"
+            },
+            {
+              "value": "start event"
+            }
+          ],
+          "triggerEnable": {
+            "target": "bt_start"
+          },
+          "varModify": {
+            "operator": "add",
+            "value": 1.0,
+            "var": "to_cur_launched_templates"
+          },
+          "varSetBool": {
+            "value": true,
+            "var": "bt_is_template_active"
+          },
+          "varSetRandomInt": {
+            "from": 10,
+            "to_not_including": 30,
+            "var": "bt_delay_timer"
+          }
+        },
+        "comments": "",
+        "conditions": {},
+        "else_actions": {},
+        "events": {
+          "periodicEvent": {
+            "time": 1.0
+          }
+        },
+        "is_enabled": false,
+        "props": {
+          "actionsType": "PERFORM_ONE_BY_ONE",
+          "conditionsType": "ANY",
+          "enableAfterComplete": false
+        }
+      },
+      "to_template_02_bt_end": {
+        "actions": {
+          "varModify": {
+            "operator": "add",
+            "value": -1.0,
+            "var": "to_cur_launched_templates"
+          }
+        },
+        "comments": "",
+        "conditions": {
+          "varCompareBool": {
+            "comparasion_func": "equal",
+            "value": false,
+            "var_value": "bt_is_template_active"
+          }
+        },
+        "else_actions": {},
+        "events": {
+          "periodicEvent": {
+            "time": 1.0
+          }
+        },
+        "is_enabled": false,
+        "props": {
+          "actionsType": "PERFORM_ONE_BY_ONE",
+          "conditionsType": "ALL",
+          "enableAfterComplete": false
+        }
+      },
+      "to_template_02_bt_run": {
+        "actions": {
+          "triggerEnable": {
+            "target": "to_template_02_bt_end"
+          }
+        },
+        "comments": "",
+        "conditions": {},
+        "else_actions": {},
+        "events": {
+          "periodicEvent": {
+            "time": 1.0
+          }
+        },
+        "is_enabled": false,
+        "props": {
+          "actionsType": "PERFORM_ONE_BY_ONE",
+          "conditionsType": "ALL",
+          "enableAfterComplete": false
+        }
+      }
+    },
+    "03 - assaults": {
+      "isCategory": true,
+      "is_enabled": true,
+      "to_template_03_at_check": {
+        "actions": {
+          "comment": {
+            "value": "launching assaults template for both armies"
+          },
+          "triggerEnable": {
+            "target": "to_template_03_at_choose"
+          },
+          "varSetInt": {
+            "value": 0,
+            "var": "at_army_both_zero"
+          }
+        },
+        "comments": "",
+        "conditions": {
+          "triggerStatus": {
+            "status": "disabled",
+            "target": "to_template_03_at_end"
+          },
+          "varCompareBool": [
+            {
+              "comparasion_func": "equal",
+              "value": true,
+              "var_value": "at_is_launch_alowed"
+            },
+            {
+              "comparasion_func": "equal",
+              "value": false,
+              "var_value": "at_is_template_active"
+            }
+          ],
+          "varCompareInt": {
+            "comparasion_func": "equal",
+            "value": 3,
+            "var_value": "to_randomizer"
+          }
+        },
+        "else_actions": {},
+        "events": {
+          "periodicEvent": {
+            "time": 5.0
+          }
+        },
+        "is_enabled": false,
+        "props": {
+          "actionsType": "PERFORM_ONE_BY_ONE",
+          "conditionsType": "ALL",
+          "enableAfterComplete": false
+        }
+      },
+      "to_template_03_at_choose": {
+        "actions": {
+          "comment": [
+            {
+              "value": "setting flag that template is active"
+            },
+            {
+              "value": "setting random delay"
+            },
+            {
+              "value": "start event"
+            }
+          ],
+          "triggerEnable": {
+            "target": "to_template_03_at_run"
+          },
+          "varModify": {
+            "operator": "add",
+            "value": 1.0,
+            "var": "to_cur_launched_templates"
+          },
+          "varSetBool": {
+            "value": true,
+            "var": "at_is_template_active"
+          },
+          "varSetRandomInt": {
+            "from": 10,
+            "to_not_including": 30,
+            "var": "at_assaults_delay_timer"
+          }
+        },
+        "comments": "",
+        "conditions": {},
+        "else_actions": {},
+        "events": {
+          "periodicEvent": {
+            "time": 1.0
+          }
+        },
+        "is_enabled": false,
+        "props": {
+          "actionsType": "PERFORM_ONE_BY_ONE",
+          "conditionsType": "ANY",
+          "enableAfterComplete": false
+        }
+      },
+      "to_template_03_at_end": {
+        "actions": {
+          "varModify": {
+            "operator": "add",
+            "value": -1.0,
+            "var": "to_cur_launched_templates"
+          }
+        },
+        "comments": "",
+        "conditions": {
+          "varCompareBool": {
+            "comparasion_func": "equal",
+            "value": false,
+            "var_value": "at_is_template_active"
+          }
+        },
+        "else_actions": {},
+        "events": {
+          "periodicEvent": {
+            "time": 1.0
+          }
+        },
+        "is_enabled": false,
+        "props": {
+          "actionsType": "PERFORM_ONE_BY_ONE",
+          "conditionsType": "ALL",
+          "enableAfterComplete": false
+        }
+      },
+      "to_template_03_at_run": {
+        "actions": {
+          "comment": [
+            {
+              "value": "setting game type"
+            },
+            {
+              "value": "starting event"
+            }
+          ],
+          "triggerEnable": {
+            "target": [
+              "at_start",
+              "to_template_03_at_end"
+            ]
+          },
+          "varSetString": {
+            "value": "jip",
+            "var": "at_assault_game_type"
+          }
+        },
+        "comments": "",
+        "conditions": {},
+        "else_actions": {},
+        "events": {
+          "periodicEvent": {
+            "time": 1.0
+          }
+        },
+        "is_enabled": false,
+        "props": {
+          "actionsType": "PERFORM_ONE_BY_ONE",
+          "conditionsType": "ALL",
+          "enableAfterComplete": false
+        }
+      }
+    },
+    "isCategory": true,
+    "is_enabled": true,
+    "to_init": {
+      "actions": {
+        "triggerEnable": {
+          "target": "to_template_delay_start"
+        },
+        "varSetInt": {
+          "value": 0,
+          "var": [
+            "to_randomizer",
+            "to_prev_template"
+          ]
+        }
+      },
+      "comments": "",
+      "conditions": {},
+      "else_actions": {},
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "to_template_choosing": {
+      "actions": {
+        "comment": [
+          {
+            "value": "choosing random event"
+          },
+          {
+            "value": "storing choosen template"
+          },
+          {
+            "value": "starting templates"
+          }
+        ],
+        "triggerActivate": [
+          {
+            "activate_type": "checkConidtions",
+            "after_activation": "disable",
+            "check_trigger_status": false,
+            "target": "to_template_01_lpt_check"
+          },
+          {
+            "activate_type": "checkConidtions",
+            "after_activation": "disable",
+            "check_trigger_status": false,
+            "target": "to_template_02_bt_check"
+          },
+          {
+            "activate_type": "checkConidtions",
+            "after_activation": "disable",
+            "check_trigger_status": false,
+            "target": "to_template_03_at_check"
+          }
+        ],
+        "varSetInt": {
+          "input_var": "to_randomizer",
+          "value": 5,
+          "var": "to_prev_template"
+        },
+        "varSetRandomInt": {
+          "check_prev_value": "to_prev_template",
+          "from": 1,
+          "to_not_including": 10,
+          "var": "to_randomizer",
+          "var_to_not_including": "to_templates_quantity"
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "varCompareInt": {
+          "comparasion_func": "less",
+          "value": 0,
+          "var_value": "to_cur_launched_templates",
+          "var_value_other": "to_max_templates_to_launch"
+        }
+      },
+      "else_actions": {},
+      "events": {
+        "periodicEvent": {
+          "time": 30.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": true
+      }
+    },
+    "to_template_delay_start": {
+      "actions": {
+        "triggerEnable": {
+          "target": "to_template_choosing"
+        }
+      },
+      "comments": "",
+      "conditions": {},
+      "else_actions": {},
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": false,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    }
+  },
+  "units": {},
+  "variables": {
+    "ad_is_launch_alowed": false,
+    "at_is_launch_alowed": false,
+    "bdt_is_launch_alowed": false,
+    "bt_is_launch_alowed": false,
+    "ft_is_launch_alowed": false,
+    "lbt_is_launch_alowed": false,
+    "lpt_is_launch_alowed": false,
+    "sbt_is_launch_alowed": false,
+    "to_cur_launched_templates": 0,
+    "to_delay_timer": 30,
+    "to_max_templates_to_launch": 3,
+    "to_prev_template": 0,
+    "to_randomizer": 0,
+    "to_templates_quantity": 4
+  },
+  "wayPoints": {}
+}

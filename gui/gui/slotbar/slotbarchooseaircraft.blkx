@@ -1,0 +1,102 @@
+{
+  "DummyButton": {
+    "blur": {},
+    "blur_foreground": {
+      "isRoot": "yes"
+    },
+    "btnName": "B",
+    "id": "slotb-aircraft-choose-root",
+    "on_click": "goBack",
+    "position": "root",
+    "size": "sw, sh"
+  },
+  "group": "",
+  "tdiv": {
+    "frame": {
+      "Button_text": {
+        "ButtonImg": {},
+        "_on_click": "onEmptyCrew",
+        "btnName": "Y",
+        "display": "hide",
+        "enable": "no",
+        "id": "btn_emptyCrew",
+        "pos": "pw-w, 0",
+        "position": "relative",
+        "text": "#shop/emptyCrew"
+      },
+      "activeText": {
+        "id": "choose_options_header",
+        "margin": "5*@sf/@pf_outdated",
+        "pos": "50%pw-50%w, 0",
+        "position": "relative",
+        "text": "#filter_option/choose_units_filter_title",
+        "width": "pw"
+      },
+      "div": {
+        "flow": "vertical",
+        "id": "choose_options_nest",
+        "margin-bottom": "0.5@slotBtnIco"
+      },
+      "id": "choose_popup_menu",
+      "position": "relative",
+      "tdiv": {
+        "display": "hide",
+        "id": "legend_nest",
+        "margin": "0, 0.5@slotBtnIco"
+      },
+      "textareaNoTab": [
+        {
+          "display": "hide",
+          "id": "filtered_units_text",
+          "margin": "0, 0.5@slotBtnIco",
+          "pos": "pw-w, 0",
+          "position": "relative",
+          "smallFont": "yes"
+        },
+        {
+          "display": "hide",
+          "id": "units_group_text",
+          "margin": "0, 0.5@slotBtnIco",
+          "pos": "pw-w, 0",
+          "position": "relative",
+          "smallFont": "yes"
+        }
+      ]
+    },
+    "id": "tablePlace",
+    "position": "root",
+    "slotsScrollDiv": {
+      "background-color": "@frameDarkBackgroundColor",
+      "border": "yes",
+      "border-color": "@frameDarkMenuBorderColor",
+      "flow": "vertical",
+      "id": "slots_scroll_div",
+      "overflow-y": "auto",
+      "padding": "4,4",
+      "pos": "0, -h-1*@scrn_tgt/100.0",
+      "position": "relative",
+      "slotbarTable": {
+        "behavior": "posNavigator",
+        "flow": "vertical",
+        "id": "airs_table",
+        "left": "50%pw-50%w",
+        "margin": "0,1",
+        "navigatorShortcuts": "yes",
+        "on_click": "onDoneSlotChoose",
+        "on_dbl_click": "onDoneSlotChoose",
+        "on_hold_start": "::gcb.delayedTooltipListHoldStart",
+        "on_hold_stop": "::gcb.delayedTooltipListHoldStop",
+        "on_pushed": "::gcb.delayedTooltipListPush",
+        "on_select": "onSlotSelect",
+        "position": "relative",
+        "slotDiscountsPos": "rightInside"
+      },
+      "tdiv": {
+        "id": "arrows_nest",
+        "pos": "0.5*pw - 0.5*w, 2@lines_pad",
+        "position": "absolute",
+        "size": "@shop_width, ph"
+      }
+    }
+  }
+}

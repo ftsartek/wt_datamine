@@ -1,0 +1,130 @@
+{
+  "frame": {
+    "class": "scaleable",
+    "div": {
+      "background-color": "@frameDarkBackgroundColor",
+      "flow": "vertical",
+      "groupBox": {
+        "id": "contacts_groups",
+        "on_cancel_edit": "onGroupCancel",
+        "on_dbl_click": "onGroupActivate",
+        "on_hover": "onContactsFocus",
+        "on_select": "onGroupSelect",
+        "on_unhover": "onContactsFocus",
+        "size": "pw, fh"
+      },
+      "padding": "@blockInterval",
+      "size": "pw, fh",
+      "tdiv": [
+        {
+          "Button_text": {
+            "ButtonImg": {},
+            "_on_click": "onBtnSelect",
+            "btnName": "A",
+            "display": "hide",
+            "enable": "no",
+            "id": "btn_contactsSelect",
+            "inactive": "yes",
+            "margin-top": "1@blockInterval",
+            "pos": "pw-w, 0",
+            "position": "relative",
+            "skip-navigation": "yes",
+            "text": "#mainmenu/btnSelect"
+          },
+          "flow": "vertical",
+          "height": "1@buttonHeight",
+          "id": "contacts_buttons_console",
+          "width": "pw"
+        },
+        {
+          "Button_text": {
+            "display": "hide",
+            "enable": "no",
+            "id": "btn_squadInvite_bottom",
+            "inactiveColor": "no",
+            "margin-top": "1@blockInterval",
+            "noMargin": "yes",
+            "on_click": "onSquadInvite",
+            "skip-navigation": "yes",
+            "text": "#squad/invite_player",
+            "tooltip": "#contacts/invite",
+            "width": "pw"
+          },
+          "width": "pw"
+        }
+      ]
+    },
+    "frame_header": {
+      "Button_close": {
+        "id": "close_contacts"
+      },
+      "activeText": {
+        "id": "title",
+        "input-transparent": "yes",
+        "text": "#mainmenu/contacts"
+      },
+      "input-transparent": "yes",
+      "smallIcon": "yes"
+    },
+    "id": "contacts_wnd",
+    "max-height": "80%sh",
+    "max-width": "60%sw",
+    "min-height": "30*@scrn_tgt/100.0",
+    "min-width": "0.05@sf + 6 * (1@sIco + 10*@sf/@pf_outdated)",
+    "moveElem": {},
+    "padding-top": "1@frameTopPadding",
+    "pos": "0.5*(sw - 1@slotbarWidthFull) + 0.7@sf + 1*@sf/@pf_outdated, sh - 1@shopBottomOffset - 1@buttonHeight - 0.66@scrn_tgt",
+    "position": "absolute",
+    "size": "0.30@sf, 0.66@scrn_tgt",
+    "tdiv": {
+      "Button_text": {
+        "behaviour": "wrapBroadcast",
+        "class": "image",
+        "img": {
+          "background-image": "#ui/gameuiskin#btn_search.svg"
+        },
+        "navigatorShortcuts": "SpaceA",
+        "noMargin": "yes",
+        "on_click": "onSearchButtonClick",
+        "on_wrap_down": "selectCurContactGroup",
+        "pos": "@blockInterval, 0.5ph-0.5h",
+        "position": "relative",
+        "showConsoleImage": "no",
+        "tooltip": "#contacts/search"
+      },
+      "EditBox": {
+        "edit-hint": "#contacts/search_placeholder",
+        "id": "search_edit_box",
+        "noMargin": "yes",
+        "on_activate": "onSearchEditBoxActivate",
+        "on_cancel_edit": "onSearchEditBoxCancelEdit",
+        "on_change_value": "onSearchEditBoxChangeValue",
+        "on_hover": "onContactsFocus",
+        "on_unhover": "onContactsFocus",
+        "on_wrap_down": "selectCurContactGroup",
+        "text": "",
+        "width": "fw"
+      },
+      "flow": "horizontal",
+      "padding-bottom": "1@dp",
+      "width": "pw"
+    },
+    "timer": {
+      "id": "contacts_update",
+      "timer_handler_func": "onUpdate"
+    }
+  },
+  "tdiv": {
+    "behaviour": "button",
+    "blur": {},
+    "blur_foreground": {
+      "isRoot": "yes"
+    },
+    "class": "button",
+    "display": "hide",
+    "id": "contacts_backShade",
+    "on_click": "goBack",
+    "position": "root",
+    "size": "sw, sh"
+  }
+}

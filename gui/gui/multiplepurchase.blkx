@@ -1,0 +1,132 @@
+{
+  "root": {
+    "blur": {},
+    "blur_foreground": {},
+    "frame": {
+      "class": "wndNav",
+      "frame_header": {
+        "Button_close": {},
+        "activeText": {
+          "caption": "yes",
+          "id": "item_name_header",
+          "pare-text": "yes",
+          "text": "#shop/multiplePurchaseHeader",
+          "width": "pw-1@cIco-16"
+        }
+      },
+      "isCenteredUnderLogo": "yes",
+      "navBar": {
+        "navLeft": {
+          "Button_text": {
+            "ButtonImg": {},
+            "btnName": "Y",
+            "id": "buttonMax",
+            "on_click": "onButtonMax",
+            "text": "#profile/maximumExp",
+            "tooltip": "#shop/setMaxValue"
+          }
+        },
+        "navRight": {
+          "Button_text": {
+            "ButtonImg": {},
+            "btnName": "X",
+            "buttonGlance": {},
+            "buttonWink": {},
+            "discount": {
+              "id": "multPurch_discount",
+              "pos": "pw-30%w, -50%h",
+              "position": "absolute",
+              "rotation": "-30",
+              "text": "-300%"
+            },
+            "hideText": "yes",
+            "id": "item_price",
+            "on_click": "onBuy",
+            "textarea": {
+              "class": "buttonText",
+              "id": "item_price_text"
+            },
+            "visualStyle": "purchase"
+          }
+        }
+      },
+      "tdiv": {
+        "size": "pw, 1@modCellHeight",
+        "tdiv": [
+          {
+            "id": "icon",
+            "size": "1@modCellWidth, 1@modCellHeight"
+          },
+          {
+            "Button_text": [
+              {
+                "id": "buttonDec",
+                "on_click": "onButtonDec",
+                "square": "yes",
+                "text": "-",
+                "tooltip": "#weaponry/descreaseValue"
+              },
+              {
+                "id": "buttonInc",
+                "on_click": "onButtonInc",
+                "square": "yes",
+                "text": "+",
+                "tooltip": "#weaponry/increaseValue"
+              }
+            ],
+            "invisSlider": {
+              "expProgress": [
+                {
+                  "id": "newSkillProgress",
+                  "pos": "50%pw-50%w, 50%ph-50%h",
+                  "position": "absolute",
+                  "type": "new",
+                  "value": "70",
+                  "width": "pw"
+                },
+                {
+                  "id": "oldSkillProgress",
+                  "pos": "50%pw-50%w, 50%ph-50%h",
+                  "position": "absolute",
+                  "type": "old",
+                  "value": "30",
+                  "width": "pw"
+                }
+              ],
+              "focus_border": {},
+              "id": "skillSlider",
+              "margin": "0.5@sliderThumbWidth + 1@blockInterval, 0",
+              "max": "100",
+              "min": "0",
+              "on_change_value": "onProgressChanged",
+              "pos": "0, 50%ph-50%h",
+              "position": "relative",
+              "size": "fw, 2*@scrn_tgt/100.0",
+              "sliderButton": {
+                "activeText": {
+                  "id": "text_buyingValue",
+                  "input-transparent": "yes",
+                  "overlayTextColor": "userlog",
+                  "pos": "50%pw-50%w, -h",
+                  "position": "absolute",
+                  "talign": "left",
+                  "valign": "center"
+                },
+                "id": "weaponry_slider_button",
+                "img": {},
+                "type": "various"
+              },
+              "total-input-transparent": "yes",
+              "value": "0"
+            },
+            "pos": "0, ph -h -1@modPadSize",
+            "position": "relative",
+            "width": "fw"
+          }
+        ]
+      },
+      "width": "0.7@sf"
+    },
+    "type": "big"
+  }
+}

@@ -1,0 +1,1222 @@
+{
+  "parallel": {
+    "name": "shipBot",
+    "selector": {
+      "selectStrategy": "ordered",
+      "selector": {
+        "selectOnSuccess": true,
+        "selectStrategy": "ordered",
+        "sequencer": [
+          {
+            "findShipLeader": {},
+            "followShipLeader": {}
+          },
+          {
+            "doesntHaveLeader": {},
+            "selector": {
+              "checkIfShipHasDestination": {},
+              "findCapturePointToSail": {
+                "canCapture": true
+              },
+              "findNextShipWaypoint": {},
+              "recalculatePathToTarget": {},
+              "selectOnSuccess": true,
+              "selectStrategy": "ordered",
+              "transferLeader": {}
+            },
+            "shipSail": {}
+          }
+        ]
+      },
+      "stopShipEngine": {}
+    },
+    "sendSupportAircraft": {
+      "attackersPerTargetMax": 1,
+      "attacksMax": 3,
+      "timeOutRange": [10.0,30.0]
+    }
+  },
+  "selector": [
+    {
+      "name": "defaultCTABot",
+      "reaction": [
+        {
+          "event": "groundAhead",
+          "parallel": {
+            "stayAtSpeed": {
+              "speedMode": "boostOn"
+            },
+            "turnToEvasiveDir": {}
+          }
+        },
+        {
+          "event": "collisionAhead",
+          "parallel": {
+            "stayAtSpeed": {
+              "speedMode": "boostOn"
+            },
+            "turnToEvasiveDir": {}
+          }
+        },
+        {
+          "event": "outsideBattleField",
+          "flyToPos": {
+            "destType": "battleField",
+            "dist": -1.0,
+            "minAlt": 100.0,
+            "speed": 550.0
+          }
+        },
+        {
+          "event": "almostBeenHit",
+          "setNodeWithName": {
+            "nodeName": "doPanic"
+          }
+        },
+        {
+          "event": "almostBeenHitFront",
+          "setNodeWithName": {
+            "nodeName": "doFrontalPanic"
+          }
+        }
+      ],
+      "selectStrategy": "ordered",
+      "selector": [
+        {
+          "name": "taxi_and_takeoff",
+          "reaction": [
+            {
+              "event": "groundAhead"
+            },
+            {
+              "event": "collisionAhead"
+            },
+            {
+              "event": "outsideBattleField"
+            }
+          ],
+          "selectStrategy": "ordered",
+          "sequencer": {
+            "findClosestAirfield": {},
+            "isOnAirfield": {},
+            "takeoff": {},
+            "taxiOnAirfield": {},
+            "waitForAirfieldClearance": {}
+          },
+          "waitOnLand": {}
+        },
+        {
+          "selectStrategy": "random",
+          "sequencer": [
+            {
+              "findUnit": {
+                "onlyMissionTargets": false,
+                "radius": 100000.0,
+                "searchForAir": false,
+                "searchForGround": true
+              },
+              "reaction": {
+                "event": "regularCheck",
+                "sequencer": {
+                  "not": {
+                    "isInOuterFightArea": {}
+                  },
+                  "recalculateTree": {}
+                }
+              },
+              "selector": {
+                "bombTarget": {},
+                "fighterAttackGround": {},
+                "selectStrategy": "ordered",
+                "torpedoTarget": {}
+              },
+              "setSuitableFightArea": {
+                "innerRad": 2500.0,
+                "outerRad": 4000.0,
+                "tagToCheck": "fighter"
+              },
+              "stayInFightArea": {}
+            },
+            {
+              "parallel": {
+                "ifThenElse": {
+                  "fighterAttackGround": {},
+                  "or": {
+                    "isTargetType": [
+                      {
+                        "type": "fighter"
+                      },
+                      {
+                        "type": "bomber"
+                      }
+                    ]
+                  },
+                  "selector": {
+                    "fighterAttackFighter": {
+                      "allowSpeedCheat": false
+                    }
+                  }
+                },
+                "updateTarget": {
+                  "distanceDifferenceToMaxSpeedRatio": 9.0,
+                  "onlyMissionTargets": false,
+                  "radius": 100000.0,
+                  "searchForAir": true
+                }
+              },
+              "reaction": {
+                "event": "regularCheck",
+                "sequencer": {
+                  "not": {
+                    "isInOuterFightArea": {}
+                  },
+                  "recalculateTree": {}
+                }
+              },
+              "setSuitableFightArea": {
+                "innerRad": 2500.0,
+                "outerRad": 4000.0,
+                "tagToCheck": "fighter"
+              },
+              "stayInFightArea": {}
+            }
+          ]
+        },
+        {
+          "bellManeuver": {},
+          "name": "doPanic",
+          "roll180Man": {},
+          "rollManeuver": {},
+          "sinus": {},
+          "waveout": {},
+          "zigzagSplit": {}
+        },
+        {
+          "name": "doFrontalPanic",
+          "roll180Man": {},
+          "rollManeuver": {},
+          "sinus": {},
+          "turn": [
+            {
+              "direction": "right",
+              "maxRoll": 60.0,
+              "timeToTurn": 1.3
+            },
+            {
+              "direction": "left",
+              "maxRoll": 60.0,
+              "timeToTurn": 1.3
+            },
+            {
+              "direction": "right",
+              "maxRoll": 60.0,
+              "timeToTurn": 0.4
+            },
+            {
+              "direction": "left",
+              "maxRoll": 60.0,
+              "timeToTurn": 0.4
+            },
+            {
+              "direction": "right",
+              "maxRoll": 60.0,
+              "timeToTurn": 0.5
+            },
+            {
+              "direction": "left",
+              "maxRoll": 60.0,
+              "timeToTurn": 0.5
+            }
+          ]
+        }
+      ],
+      "sequencer": {
+        "orbitHere": {
+          "alt": 3000.0,
+          "maxTime": 10.0,
+          "rollFactor": 0.2,
+          "speed": 260.0
+        }
+      }
+    },
+    {
+      "name": "assaultBot",
+      "parallel": {
+        "ifThenElse": {
+          "fighterAttackGround": {},
+          "or": {
+            "isTargetType": [
+              {
+                "type": "fighter"
+              },
+              {
+                "type": "bomber"
+              }
+            ]
+          },
+          "selector": {
+            "fighterAttackFighter": {
+              "allowSpeedCheat": false
+            }
+          }
+        },
+        "updateTarget": {
+          "distanceDifferenceToMaxSpeedRatio": 9.0,
+          "onlyMissionTargets": false,
+          "radius": 100000.0,
+          "searchForAir": true
+        }
+      },
+      "reaction": [
+        {
+          "event": "groundAhead",
+          "parallel": {
+            "stayAtSpeed": {
+              "speedMode": "boostOn"
+            },
+            "turnToEvasiveDir": {}
+          }
+        },
+        {
+          "event": "collisionAhead",
+          "parallel": {
+            "stayAtSpeed": {
+              "speedMode": "boostOn"
+            },
+            "turnToEvasiveDir": {}
+          }
+        },
+        {
+          "event": "outsideBattleField",
+          "flyToPos": {
+            "destType": "battleField",
+            "dist": -1.0,
+            "minAlt": 100.0,
+            "speed": 550.0
+          }
+        }
+      ],
+      "selectStrategy": "ordered",
+      "selector": {
+        "name": "taxi_and_takeoff",
+        "reaction": [
+          {
+            "event": "groundAhead"
+          },
+          {
+            "event": "collisionAhead"
+          },
+          {
+            "event": "outsideBattleField"
+          }
+        ],
+        "selectStrategy": "ordered",
+        "sequencer": {
+          "findClosestAirfield": {},
+          "isOnAirfield": {},
+          "takeoff": {},
+          "taxiOnAirfield": {},
+          "waitForAirfieldClearance": {}
+        },
+        "waitOnLand": {}
+      },
+      "sequencer": {
+        "findUnit": {
+          "onlyMissionTargets": false,
+          "radius": 100000.0,
+          "searchForAir": false,
+          "searchForGround": true
+        },
+        "selector": {
+          "bombTarget": {},
+          "fighterAttackGround": {},
+          "selectStrategy": "ordered",
+          "torpedoTarget": {}
+        }
+      }
+    },
+    {
+      "name": "captureBot",
+      "reaction": [
+        {
+          "event": "groundAhead",
+          "parallel": {
+            "stayAtSpeed": {
+              "speedMode": "boostOn"
+            },
+            "turnToEvasiveDir": {}
+          }
+        },
+        {
+          "event": "collisionAhead",
+          "parallel": {
+            "stayAtSpeed": {
+              "speedMode": "boostOn"
+            },
+            "turnToEvasiveDir": {}
+          }
+        },
+        {
+          "event": "outsideBattleField",
+          "flyToPos": {
+            "destType": "battleField",
+            "dist": -1.0,
+            "minAlt": 100.0,
+            "speed": 550.0
+          }
+        },
+        {
+          "event": "almostBeenHit",
+          "setNodeWithName": {
+            "nodeName": "doPanic"
+          }
+        },
+        {
+          "event": "almostBeenHitFront",
+          "setNodeWithName": {
+            "nodeName": "doFrontalPanic"
+          }
+        }
+      ],
+      "selectStrategy": "ordered",
+      "selector": [
+        {
+          "name": "taxi_and_takeoff",
+          "reaction": [
+            {
+              "event": "groundAhead"
+            },
+            {
+              "event": "collisionAhead"
+            },
+            {
+              "event": "outsideBattleField"
+            }
+          ],
+          "selectStrategy": "ordered",
+          "sequencer": {
+            "findClosestAirfield": {},
+            "isOnAirfield": {},
+            "takeoff": {},
+            "taxiOnAirfield": {},
+            "waitForAirfieldClearance": {}
+          },
+          "waitOnLand": {}
+        },
+        {
+          "bellManeuver": {},
+          "name": "doPanic",
+          "roll180Man": {},
+          "rollManeuver": {},
+          "sinus": {},
+          "waveout": {},
+          "zigzagSplit": {}
+        },
+        {
+          "name": "doFrontalPanic",
+          "roll180Man": {},
+          "rollManeuver": {},
+          "sinus": {},
+          "turn": [
+            {
+              "direction": "right",
+              "extremeElevator": true,
+              "maxRoll": 60.0,
+              "timeToTurn": 1.3
+            },
+            {
+              "direction": "left",
+              "extremeElevator": true,
+              "maxRoll": 60.0,
+              "timeToTurn": 1.3
+            },
+            {
+              "direction": "right",
+              "extremeElevator": true,
+              "maxRoll": 60.0,
+              "timeToTurn": 0.4
+            },
+            {
+              "direction": "left",
+              "extremeElevator": true,
+              "maxRoll": 60.0,
+              "timeToTurn": 0.4
+            },
+            {
+              "direction": "right",
+              "extremeElevator": true,
+              "maxRoll": 60.0,
+              "timeToTurn": 0.5
+            },
+            {
+              "direction": "left",
+              "extremeElevator": true,
+              "maxRoll": 60.0,
+              "timeToTurn": 0.5
+            }
+          ]
+        }
+      ],
+      "sequencer": {
+        "ifThenElse": {
+          "and": {
+            "checkCaptureZone": {
+              "cond": "landOnly",
+              "varName": "zoneToCapture"
+            },
+            "findAirportAtCZ": {
+              "varName": "zoneToCapture"
+            }
+          },
+          "sequencer": [
+            {
+              "findApproachPos": [
+                {
+                  "dist": 2600.0
+                },
+                {
+                  "dist": 900.0
+                }
+              ],
+              "flyToPos": [
+                {
+                  "dist": 1250.0,
+                  "minAlt": 100.0,
+                  "speed": 350.0
+                },
+                {
+                  "dist": 350.0,
+                  "minAlt": 20.0,
+                  "speed": 200.0
+                }
+              ],
+              "sequencer": {
+                "afterLanding": {},
+                "land": {},
+                "reaction": [
+                  {
+                    "event": "groundAhead"
+                  },
+                  {
+                    "event": "collisionAhead"
+                  }
+                ]
+              }
+            },
+            {
+              "flyToPos": {
+                "dist": 350.0,
+                "minAlt": 200.0,
+                "speed": 350.0
+              },
+              "setCaptureZoneAsDestination": {
+                "varName": "zoneToCapture"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "followTarget": {
+        "offset": [-20.0,10.0,30.0],
+        "useTarget": false
+      },
+      "name": "assistCaptureBot",
+      "reaction": [
+        {
+          "event": "groundAhead",
+          "parallel": {
+            "stayAtSpeed": {
+              "speedMode": "boostOn"
+            },
+            "turnToEvasiveDir": {}
+          }
+        },
+        {
+          "event": "collisionAhead",
+          "parallel": {
+            "stayAtSpeed": {
+              "speedMode": "boostOn"
+            },
+            "turnToEvasiveDir": {}
+          }
+        },
+        {
+          "event": "outsideBattleField",
+          "flyToPos": {
+            "destType": "battleField",
+            "dist": -1.0,
+            "minAlt": 100.0,
+            "speed": 550.0
+          }
+        },
+        {
+          "event": "almostBeenHit",
+          "setNodeWithName": {
+            "nodeName": "doPanic"
+          }
+        },
+        {
+          "event": "almostBeenHitFront",
+          "setNodeWithName": {
+            "nodeName": "doFrontalPanic"
+          }
+        },
+        {
+          "event": "regularCheck",
+          "findUnit": {
+            "degreesToCheck": 50.0,
+            "onlyMissionTargets": false,
+            "radius": 2000.0,
+            "searchForAir": true
+          },
+          "isTargetDist": {
+            "dist": 2000.0,
+            "op": "greater",
+            "useTarget": true
+          },
+          "recalculateTree": {}
+        }
+      ],
+      "selectStrategy": "ordered",
+      "selector": [
+        {
+          "name": "taxi_and_takeoff",
+          "reaction": [
+            {
+              "event": "groundAhead"
+            },
+            {
+              "event": "collisionAhead"
+            },
+            {
+              "event": "outsideBattleField"
+            }
+          ],
+          "selectStrategy": "ordered",
+          "sequencer": {
+            "findClosestAirfield": {},
+            "isOnAirfield": {},
+            "takeoff": {},
+            "taxiOnAirfield": {},
+            "waitForAirfieldClearance": {}
+          },
+          "waitOnLand": {}
+        },
+        {
+          "bellManeuver": {},
+          "name": "doPanic",
+          "roll180Man": {},
+          "rollManeuver": {},
+          "sinus": {},
+          "waveout": {},
+          "zigzagSplit": {}
+        },
+        {
+          "name": "doFrontalPanic",
+          "roll180Man": {},
+          "rollManeuver": {},
+          "sinus": {},
+          "turn": [
+            {
+              "direction": "right",
+              "extremeElevator": true,
+              "maxRoll": 60.0,
+              "timeToTurn": 1.3
+            },
+            {
+              "direction": "left",
+              "extremeElevator": true,
+              "maxRoll": 60.0,
+              "timeToTurn": 1.3
+            },
+            {
+              "direction": "right",
+              "extremeElevator": true,
+              "maxRoll": 60.0,
+              "timeToTurn": 0.4
+            },
+            {
+              "direction": "left",
+              "extremeElevator": true,
+              "maxRoll": 60.0,
+              "timeToTurn": 0.4
+            },
+            {
+              "direction": "right",
+              "extremeElevator": true,
+              "maxRoll": 60.0,
+              "timeToTurn": 0.5
+            },
+            {
+              "direction": "left",
+              "extremeElevator": true,
+              "maxRoll": 60.0,
+              "timeToTurn": 0.5
+            }
+          ]
+        }
+      ],
+      "sequencer": {
+        "findUnit": {
+          "degreesToCheck": 50.0,
+          "onlyMissionTargets": false,
+          "radius": 2000.0,
+          "searchForAir": true
+        },
+        "isTargetDist": {
+          "dist": 2000.0,
+          "op": "less",
+          "useTarget": false
+        },
+        "reaction": {
+          "event": "regularCheck",
+          "sequencer": {
+            "or": {
+              "isTargetDist": [
+                {
+                  "dist": 2000.0,
+                  "op": "greater",
+                  "useTarget": false
+                },
+                {
+                  "dist": 2000.0,
+                  "op": "greater",
+                  "useTarget": true
+                }
+              ]
+            },
+            "recalculateTree": {}
+          }
+        },
+        "selector": {
+          "fighterAttackFighter": {
+            "allowSpeedCheat": false
+          }
+        }
+      },
+      "setAsLeader": {
+        "varName": "planeToAssist"
+      }
+    },
+    {
+      "name": "defenderBot",
+      "reaction": [
+        {
+          "event": "groundAhead",
+          "parallel": {
+            "stayAtSpeed": {
+              "speedMode": "boostOn"
+            },
+            "turnToEvasiveDir": {}
+          }
+        },
+        {
+          "event": "collisionAhead",
+          "parallel": {
+            "stayAtSpeed": {
+              "speedMode": "boostOn"
+            },
+            "turnToEvasiveDir": {}
+          }
+        },
+        {
+          "event": "outsideBattleField",
+          "flyToPos": {
+            "destType": "battleField",
+            "dist": -1.0,
+            "minAlt": 100.0,
+            "speed": 550.0
+          }
+        },
+        {
+          "event": "almostBeenHit",
+          "setNodeWithName": {
+            "nodeName": "doPanic"
+          }
+        },
+        {
+          "event": "almostBeenHitFront",
+          "setNodeWithName": {
+            "nodeName": "doFrontalPanic"
+          }
+        }
+      ],
+      "selectStrategy": "ordered",
+      "selector": [
+        {
+          "name": "taxi_and_takeoff",
+          "reaction": [
+            {
+              "event": "groundAhead"
+            },
+            {
+              "event": "collisionAhead"
+            },
+            {
+              "event": "outsideBattleField"
+            }
+          ],
+          "selectStrategy": "ordered",
+          "sequencer": {
+            "findClosestAirfield": {},
+            "isOnAirfield": {},
+            "takeoff": {},
+            "taxiOnAirfield": {},
+            "waitForAirfieldClearance": {}
+          },
+          "waitOnLand": {}
+        },
+        {
+          "selectStrategy": "ordered",
+          "sequencer": [
+            {
+              "isDistToDest": {
+                "dist": 2000.0,
+                "op": "less"
+              },
+              "or": {
+                "findEnemyInZone": {},
+                "findUnit": {
+                  "onlyMissionTargets": false,
+                  "radius": 2000.0,
+                  "searchForAir": true
+                }
+              },
+              "reaction": {
+                "event": "regularCheck",
+                "sequencer": {
+                  "or": {
+                    "isDistToDest": {
+                      "dist": 4000.0,
+                      "op": "greater"
+                    },
+                    "isTargetDist": {
+                      "dist": 6000.0,
+                      "op": "greater",
+                      "useTarget": true
+                    }
+                  },
+                  "recalculateTree": {}
+                }
+              },
+              "selector": {
+                "fighterAttackFighter": {
+                  "allowSpeedCheat": false
+                }
+              }
+            },
+            {
+              "flyToPos": [
+                {
+                  "dist": 1500.0,
+                  "maxTime": 5.0,
+                  "minAlt": 200.0,
+                  "speed": 750.0
+                },
+                {
+                  "dist": 50.0,
+                  "maxTime": 5.0,
+                  "minAlt": 200.0,
+                  "speed": 260.0
+                }
+              ],
+              "setCaptureZoneAsDestination": {
+                "varName": "zoneToDefend"
+              }
+            }
+          ]
+        },
+        {
+          "bellManeuver": {},
+          "name": "doPanic",
+          "roll180Man": {},
+          "rollManeuver": {},
+          "sinus": {},
+          "waveout": {},
+          "zigzagSplit": {}
+        },
+        {
+          "name": "doFrontalPanic",
+          "roll180Man": {},
+          "rollManeuver": {},
+          "sinus": {},
+          "turn": [
+            {
+              "direction": "right",
+              "extremeElevator": true,
+              "maxRoll": 60.0,
+              "timeToTurn": 1.3
+            },
+            {
+              "direction": "left",
+              "extremeElevator": true,
+              "maxRoll": 60.0,
+              "timeToTurn": 1.3
+            },
+            {
+              "direction": "right",
+              "extremeElevator": true,
+              "maxRoll": 60.0,
+              "timeToTurn": 0.4
+            },
+            {
+              "direction": "left",
+              "extremeElevator": true,
+              "maxRoll": 60.0,
+              "timeToTurn": 0.4
+            },
+            {
+              "direction": "right",
+              "extremeElevator": true,
+              "maxRoll": 60.0,
+              "timeToTurn": 0.5
+            },
+            {
+              "direction": "left",
+              "extremeElevator": true,
+              "maxRoll": 60.0,
+              "timeToTurn": 0.5
+            }
+          ]
+        }
+      ],
+      "setCaptureZoneAsDestination": {
+        "varName": "zoneToDefend"
+      }
+    },
+    {
+      "name": "seekerBot",
+      "orbitHere": {
+        "alt": 3000.0,
+        "maxTime": 10.0,
+        "rollFactor": 0.2,
+        "speed": 260.0
+      },
+      "parallel": {
+        "ifThenElse": {
+          "fighterAttackGround": {},
+          "or": {
+            "isTargetType": [
+              {
+                "type": "fighter"
+              },
+              {
+                "type": "bomber"
+              }
+            ]
+          },
+          "selector": {
+            "fighterAttackFighter": {
+              "allowSpeedCheat": false
+            }
+          }
+        },
+        "updateTarget": {
+          "distanceDifferenceToMaxSpeedRatio": 9.0,
+          "onlyMissionTargets": false,
+          "radius": 200000.0,
+          "searchForAir": true
+        }
+      },
+      "reaction": [
+        {
+          "event": "groundAhead",
+          "parallel": {
+            "stayAtSpeed": {
+              "speedMode": "boostOn"
+            },
+            "turnToEvasiveDir": {}
+          }
+        },
+        {
+          "event": "collisionAhead",
+          "parallel": {
+            "stayAtSpeed": {
+              "speedMode": "boostOn"
+            },
+            "turnToEvasiveDir": {}
+          }
+        },
+        {
+          "event": "outsideBattleField",
+          "flyToPos": {
+            "destType": "battleField",
+            "dist": -1.0,
+            "minAlt": 100.0,
+            "speed": 550.0
+          }
+        },
+        {
+          "event": "almostBeenHit",
+          "setNodeWithName": {
+            "nodeName": "doPanic"
+          }
+        },
+        {
+          "event": "almostBeenHitFront",
+          "setNodeWithName": {
+            "nodeName": "doFrontalPanic"
+          }
+        }
+      ],
+      "selectStrategy": "ordered",
+      "selector": [
+        {
+          "name": "taxi_and_takeoff",
+          "reaction": [
+            {
+              "event": "groundAhead"
+            },
+            {
+              "event": "collisionAhead"
+            },
+            {
+              "event": "outsideBattleField"
+            }
+          ],
+          "selectStrategy": "ordered",
+          "sequencer": {
+            "findClosestAirfield": {},
+            "isOnAirfield": {},
+            "takeoff": {},
+            "taxiOnAirfield": {},
+            "waitForAirfieldClearance": {}
+          },
+          "waitOnLand": {}
+        },
+        {
+          "bellManeuver": {},
+          "name": "doPanic",
+          "roll180Man": {},
+          "rollManeuver": {},
+          "sinus": {},
+          "waveout": {},
+          "zigzagSplit": {}
+        },
+        {
+          "name": "doFrontalPanic",
+          "roll180Man": {},
+          "rollManeuver": {},
+          "sinus": {},
+          "turn": [
+            {
+              "direction": "right",
+              "maxRoll": 60.0,
+              "timeToTurn": 1.3
+            },
+            {
+              "direction": "left",
+              "maxRoll": 60.0,
+              "timeToTurn": 1.3
+            },
+            {
+              "direction": "right",
+              "maxRoll": 60.0,
+              "timeToTurn": 0.4
+            },
+            {
+              "direction": "left",
+              "maxRoll": 60.0,
+              "timeToTurn": 0.4
+            },
+            {
+              "direction": "right",
+              "maxRoll": 60.0,
+              "timeToTurn": 0.5
+            },
+            {
+              "direction": "left",
+              "maxRoll": 60.0,
+              "timeToTurn": 0.5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "idleBot",
+      "reaction": [
+        {
+          "event": "groundAhead",
+          "parallel": {
+            "stayAtSpeed": {
+              "speedMode": "boostOn"
+            },
+            "turnToEvasiveDir": {}
+          }
+        },
+        {
+          "event": "collisionAhead",
+          "parallel": {
+            "stayAtSpeed": {
+              "speedMode": "boostOn"
+            },
+            "turnToEvasiveDir": {}
+          }
+        },
+        {
+          "event": "outsideBattleField",
+          "flyToPos": {
+            "destType": "battleField",
+            "dist": -1.0,
+            "minAlt": 100.0,
+            "speed": 550.0
+          }
+        }
+      ],
+      "selectStrategy": "ordered",
+      "selector": {
+        "name": "taxi_and_takeoff",
+        "reaction": [
+          {
+            "event": "groundAhead"
+          },
+          {
+            "event": "collisionAhead"
+          },
+          {
+            "event": "outsideBattleField"
+          }
+        ],
+        "selectStrategy": "ordered",
+        "sequencer": {
+          "findClosestAirfield": {},
+          "isOnAirfield": {},
+          "takeoff": {},
+          "taxiOnAirfield": {},
+          "waitForAirfieldClearance": {}
+        },
+        "waitOnLand": {}
+      },
+      "sequencer": {
+        "findCaptureZone": {
+          "varName": "zoneToCapture",
+          "zoneType": "enemy"
+        },
+        "flyToPos": {
+          "dist": 350.0,
+          "minAlt": 200.0,
+          "speed": 350.0
+        },
+        "setCaptureZoneAsDestination": {
+          "varName": "zoneToCapture"
+        }
+      }
+    },
+    {
+      "name": "rearmingBot",
+      "reaction": [
+        {
+          "event": "groundAhead",
+          "parallel": {
+            "stayAtSpeed": {
+              "speedMode": "boostOn"
+            },
+            "turnToEvasiveDir": {}
+          }
+        },
+        {
+          "event": "collisionAhead",
+          "parallel": {
+            "stayAtSpeed": {
+              "speedMode": "boostOn"
+            },
+            "turnToEvasiveDir": {}
+          }
+        },
+        {
+          "event": "outsideBattleField",
+          "flyToPos": {
+            "destType": "battleField",
+            "dist": -1.0,
+            "minAlt": 100.0,
+            "speed": 550.0
+          }
+        }
+      ],
+      "selectStrategy": "ordered",
+      "selector": {
+        "name": "taxi_and_takeoff",
+        "reaction": [
+          {
+            "event": "groundAhead"
+          },
+          {
+            "event": "collisionAhead"
+          },
+          {
+            "event": "outsideBattleField"
+          }
+        ],
+        "selectStrategy": "ordered",
+        "sequencer": {
+          "findClosestAirfield": {},
+          "isOnAirfield": {},
+          "takeoff": {},
+          "taxiOnAirfield": {},
+          "waitForAirfieldClearance": {}
+        },
+        "waitOnLand": {}
+      },
+      "sequencer": {
+        "orbitHere": {
+          "alt": 1500.0,
+          "maxTime": 60.0,
+          "rollFactor": 0.2,
+          "speed": 260.0
+        },
+        "restore": {
+          "rearm": true
+        }
+      }
+    },
+    {
+      "name": "tankBot",
+      "selectStrategy": "ordered",
+      "sequencer": {
+        "driveToPos": {
+          "dist": 10.0
+        },
+        "selector": {
+          "selectExplicitDestination": {
+            "minDist": 20.0
+          },
+          "selectOnSuccess": true,
+          "selectStrategy": "ordered",
+          "setCapturePointAsDest": {
+            "dist": 20.0
+          }
+        }
+      }
+    },
+    {
+      "name": "shipMissionUnit",
+      "selectStrategy": "ordered",
+      "selector": {
+        "selectOnSuccess": true,
+        "selectStrategy": "ordered",
+        "sequencer": [
+          {
+            "findShipLeader": {},
+            "followShipLeader": {}
+          },
+          {
+            "doesntHaveLeader": {},
+            "selector": {
+              "checkIfShipHasDestination": {},
+              "findNextShipWaypoint": {},
+              "recalculatePathToTarget": {},
+              "selectOnSuccess": true,
+              "selectStrategy": "ordered",
+              "transferLeader": {}
+            },
+            "shipSail": {}
+          }
+        ]
+      },
+      "stopShipEngine": {}
+    }
+  ]
+}

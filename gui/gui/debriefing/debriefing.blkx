@@ -1,0 +1,1377 @@
+{
+  "div": {
+    "behavior": "Timer",
+    "id": "debriefing_timer",
+    "timer_handler_func": "onUpdate"
+  },
+  "root": {
+    "bgrStyle": "fullScreenWnd",
+    "blur": {},
+    "blur_foreground": {},
+    "gamercard_div": {
+      "gamercard": {
+        "BottomMenuPanel": {
+          "shadowSafeArea": {},
+          "tdiv": [
+            {
+              "background-color": "#90909090",
+              "background-image": "#ui/gameuiskin#optionlist_background_top",
+              "background-position": "0, 0.25h, 0, 0",
+              "background-repeat": "expand",
+              "pos": "0, ph",
+              "position": "absolute",
+              "size": "pw, 0.02@sf"
+            },
+            {
+              "gcButtonsHolder": {
+                "Button_text": [
+                  {
+                    "_on_click": "onGC_invites",
+                    "class": "image",
+                    "id": "gc_invites_btn",
+                    "img": [
+                      {
+                        "background-image": "#ui/gameuiskin#invites.svg",
+                        "id": "icon"
+                      },
+                      {
+                        "background-image": "#ui/gameuiskin#invites_new.svg",
+                        "display": "hide",
+                        "id": "iconNew",
+                        "style": "background-color:@textureGlowColor"
+                      },
+                      {
+                        "_transp-timer": "0",
+                        "background-image": "#ui/gameuiskin#mail_new_glow",
+                        "display": "hide",
+                        "id": "iconGlow",
+                        "style": "background-color:@textureGlowColor; size:110%ph, 110%ph"
+                      }
+                    ],
+                    "tooltip": "#mainmenu/invites"
+                  },
+                  {
+                    "_on_click": "onGC_contacts",
+                    "class": "image",
+                    "id": "gc_contacts",
+                    "img": {
+                      "background-image": "#ui/gameuiskin#friends.svg"
+                    },
+                    "text": {
+                      "id": "gc_friends_online",
+                      "pos": "pw - w, ph - h - 2",
+                      "position": "absolute",
+                      "shadeStyle": "outline33pct",
+                      "style": "font:@fontTiny; color:@userlogColoredText",
+                      "text": ""
+                    },
+                    "tooltip": "#mainmenu/contacts"
+                  },
+                  {
+                    "_on_click": "onGC_chat",
+                    "class": "image",
+                    "id": "gc_chat_btn",
+                    "img": [
+                      {
+                        "background-image": "#ui/gameuiskin#chat.svg",
+                        "id": "icon"
+                      },
+                      {
+                        "background-image": "#ui/gameuiskin#chat_new.svg",
+                        "display": "hide",
+                        "id": "iconNew",
+                        "style": "background-color:@textureGlowColor"
+                      },
+                      {
+                        "_transp-timer": "0",
+                        "background-image": "#ui/gameuiskin#mail_new_glow",
+                        "display": "hide",
+                        "id": "iconGlow",
+                        "style": "background-color:@textureGlowColor; size:110%ph, 110%ph"
+                      }
+                    ],
+                    "text": {
+                      "id": "gc_new_chat_messages",
+                      "pos": "pw - w, ph - h",
+                      "position": "absolute",
+                      "style": "font:@fontTiny; color:@userlogColoredText",
+                      "text": ""
+                    },
+                    "tooltip": "#mainmenu/chat"
+                  },
+                  {
+                    "_on_click": "onUserLog",
+                    "class": "image",
+                    "id": "gc_userlog_btn",
+                    "img": [
+                      {
+                        "background-image": "#ui/gameuiskin#mail.svg",
+                        "id": "icon"
+                      },
+                      {
+                        "background-image": "#ui/gameuiskin#mail_new.svg",
+                        "display": "hide",
+                        "id": "iconNew",
+                        "style": "background-color:@textureGlowColor"
+                      },
+                      {
+                        "_transp-timer": "0",
+                        "background-image": "#ui/gameuiskin#mail_new_glow",
+                        "display": "hide",
+                        "id": "iconGlow",
+                        "style": "background-color:@textureGlowColor; size:110%ph, 110%ph"
+                      }
+                    ],
+                    "tooltip": "#userlog/no_new_messages"
+                  }
+                ],
+                "class": "header",
+                "id": "gamercard_bottom_right",
+                "position": "relative",
+                "top": "0.5(ph-h)"
+              },
+              "gcButtonsSquadHolder": {
+                "class": "header",
+                "css-hier-invalidate": "yes",
+                "id": "gamercard_squad_widget",
+                "margin-right": "2@buttonTextPadding",
+                "position": "relative",
+                "top": "0.5(ph-h)"
+              },
+              "height": "ph",
+              "pos": "pw/2 - w/2, ph/2 - h/2",
+              "position": "absolute",
+              "tdiv": {
+                "bottomNavPlace": {
+                  "id": "gamercard_bottom_navbar_place",
+                  "pos": "0, 0.5(ph-h)",
+                  "position": "absolute",
+                  "size": "pw - ph, ph"
+                },
+                "class": "header",
+                "height": "1@gamercardHeight",
+                "id": "gamercard_bottom_left",
+                "tdiv": {
+                  "display": "hide",
+                  "id": "slotbar-presetsPlace",
+                  "position": "absolute",
+                  "size": "pw, ph"
+                },
+                "width": "fw"
+              },
+              "voiceChatWidgetNest": {
+                "blockSeparator": [
+                  {
+                    "display": "hide"
+                  },
+                  {
+                    "display": "hide"
+                  }
+                ],
+                "emptyVoiceChat": {
+                  "tooltip": "#clan/voice_chat/widget",
+                  "usertalk": {
+                    "_size-timer": "0",
+                    "activeText": {
+                      "color-factor": "255",
+                      "position": "relative",
+                      "text": "..."
+                    },
+                    "fade": "in",
+                    "height-end": "1",
+                    "id": "voice_chat_no_activity",
+                    "img": {
+                      "color-factor": "255",
+                      "inacive": "yes",
+                      "position": "relative"
+                    },
+                    "type": "noTalk"
+                  }
+                },
+                "isClanOnly": "no",
+                "voiceChatWidgetContainer": {
+                  "isSmall": "no",
+                  "voiceChatWidget": {
+                    "value": "{\"viewId\": \"VOICE_CHAT\"}"
+                  }
+                }
+              },
+              "width": "1@bottomGcWidth"
+            }
+          ]
+        },
+        "id": "gamercard_bottom",
+        "systemMsg": {
+          "dlDataStat": {
+            "animText": {
+              "color-factor": "0",
+              "fade": "out",
+              "font": "@fontTiny",
+              "text": ""
+            },
+            "behavior": "bhvUpdater",
+            "css-hier-invalidate": "yes",
+            "pos": "50%pw-50%w,0",
+            "position": "relative",
+            "value": "{\"viewId\": \"DL_DATA_STATE_TEXT\"}"
+          },
+          "flow": "vertical",
+          "pos": "1@systemMsgIndent, 0",
+          "position": "root"
+        },
+        "tdiv": {
+          "pos": "sw - w, 0",
+          "position": "root",
+          "versionText": {}
+        }
+      },
+      "type": "top"
+    },
+    "tdiv": [
+      {
+        "flow": "vertical",
+        "frame": {
+          "class": "wndNav",
+          "debrBlock": {
+            "debrWndSeparator": {
+              "top": "-0.5h"
+            },
+            "dummy": [
+              {
+                "_on_click": "onNext",
+                "accessKey": "Enter",
+                "behavior": "accesskey"
+              },
+              {
+                "_on_click": "goBack",
+                "behavior": "accesskey",
+                "btnName": "B"
+              }
+            ],
+            "id": "wnd_navbar_block",
+            "padding": "2@debrWndPad",
+            "size": "pw, 1@navBarBattleButtonHeight +4@debrWndPad",
+            "tdiv": {
+              "id": "gc_navbar_sizer",
+              "navLeft": {
+                "Button_text": [
+                  {
+                    "ButtonImg": {},
+                    "_on_click": "onViewReplay",
+                    "btnName": "start",
+                    "display": "hide",
+                    "id": "btn_view_replay",
+                    "text": "#mainmenu/btnViewReplay"
+                  },
+                  {
+                    "ButtonImg": {},
+                    "_on_click": "onSaveReplay",
+                    "display": "hide",
+                    "id": "btn_save_replay",
+                    "text": "#mainmenu/btnSaveReplay"
+                  },
+                  {
+                    "ButtonImg": {},
+                    "_on_click": "onViewHighlights",
+                    "class": "image",
+                    "display": "hide",
+                    "enable": "no",
+                    "id": "btn_view_highlights",
+                    "img": {
+                      "background-image": "#ui/gameuiskin#nv_icon"
+                    },
+                    "isColoredImg": "yes",
+                    "text": "#mainmenu/btnViewHighlights"
+                  },
+                  {
+                    "ButtonImg": {},
+                    "_on_click": "onViewBattleTaskRequirements",
+                    "display": "hide",
+                    "enable": "no",
+                    "id": "btn_requirements_list",
+                    "text": "#unlocks/requirements"
+                  },
+                  {
+                    "ButtonImg": {},
+                    "btnName": "RB",
+                    "id": "btn_user_options",
+                    "on_click": "onUserOptions",
+                    "text": "#mainmenu/btnUserAction"
+                  }
+                ]
+              },
+              "navMiddle": {
+                "Button_text": [
+                  {
+                    "ButtonImg": {},
+                    "_on_click": "onNext",
+                    "btnName": "X",
+                    "btnText": {
+                      "id": "btn_next_text",
+                      "text": "#mainmenu/btnOk"
+                    },
+                    "buttonGlance": {},
+                    "buttonWink": {
+                      "_transp-timer": "0"
+                    },
+                    "class": "battle",
+                    "css-hier-invalidate": "yes",
+                    "display": "hide",
+                    "id": "btn_next",
+                    "navButtonFont": "yes",
+                    "pattern": {
+                      "type": "bright_texture"
+                    },
+                    "text": "#mainmenu/btnOk"
+                  },
+                  {
+                    "ButtonImg": {},
+                    "_on_click": "goBack",
+                    "btnName": "B",
+                    "id": "btn_skip",
+                    "text": "#msgbox/btn_skip"
+                  }
+                ],
+                "id": "nav_middle"
+              },
+              "navRight": {
+                "Button_text": {
+                  "ButtonImg": {},
+                  "_on_click": "goBack",
+                  "btnName": "B",
+                  "buttonWink": {},
+                  "display": "hide",
+                  "id": "btn_back",
+                  "text": "#mainmenu/btnQuit",
+                  "visualStyle": "secondary"
+                }
+              },
+              "size": "pw, ph"
+            }
+          },
+          "div": {
+            "debriefingTab": [
+              {
+                "debrBlock": {
+                  "id": "players_stats_scroll_block",
+                  "overflow-y": "auto",
+                  "padding": "0.5@debrPad",
+                  "position": "absolute",
+                  "scrollbarShortcuts": "yes",
+                  "size": "pw, ph",
+                  "tdiv": {
+                    "size": "pw, ph",
+                    "tdiv": {
+                      "height": "ph",
+                      "pos": "pw/2-w/2, 0",
+                      "position": "relative",
+                      "tdiv": [
+                        {
+                          "flow": "vertical",
+                          "id": "team1-root",
+                          "size": "50%p.p.w, ph",
+                          "tdiv": [
+                            {
+                              "activeText": {
+                                "id": "team_text",
+                                "padding-right": "0.01@scrn_tgt",
+                                "position": "relative",
+                                "top": "50%ph-50%h"
+                              },
+                              "css-hier-invalidate": "yes",
+                              "id": "team1_info",
+                              "left": "pw-w-@tablePad",
+                              "position": "relative",
+                              "tdiv": {
+                                "id": "countries_block",
+                                "position": "relative"
+                              },
+                              "teamIco": "allies",
+                              "teamImg": {
+                                "background-svg-size": "0.04@scrn_tgt, 0.04@scrn_tgt",
+                                "id": "team_img",
+                                "pos": "0, 50%ph-50%h",
+                                "position": "relative",
+                                "size": "0.04@scrn_tgt, 0.04@scrn_tgt"
+                              }
+                            },
+                            {
+                              "margin-bottom": "0.0025@scrn_tgt",
+                              "margin-left": "1@scrollBarSize",
+                              "min-height": "0.037@scrn_tgt",
+                              "table": {
+                                "baseRow": "rows16",
+                                "class": "headerTable",
+                                "display": "hide",
+                                "id": "team_table_1",
+                                "pos": "0, 50%ph-50%h",
+                                "position": "absolute",
+                                "width": "pw"
+                              },
+                              "width": "pw"
+                            },
+                            {
+                              "overflow-y": "auto",
+                              "padding-right": "-1@scrollBarSize",
+                              "scroll-align": "left",
+                              "scroll-padding": "no",
+                              "size": "pw, fh",
+                              "table": {
+                                "baseRow": "rows16",
+                                "behavior": "PosNavigator",
+                                "canSelectNone": "yes",
+                                "class": "mpTable",
+                                "css-hier-invalidate": "yes",
+                                "id": "table_kills_team1",
+                                "navigatorShortcuts": "yes",
+                                "on_dbl_click": "onUserCard",
+                                "on_hover": "onStatTblFocus",
+                                "on_r_click": "onUserRClick",
+                                "on_select": "onStatsTblSelect",
+                                "on_unhover": "onStatTblFocus",
+                                "pos": "1@scrollBarSize, 1",
+                                "position": "relative",
+                                "selfFocusBorder": "yes",
+                                "width": "fw - 1@scrollBarSize - @tablePad"
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "flow": "vertical",
+                          "id": "team2-root",
+                          "size": "50%p.p.w, ph",
+                          "tdiv": [
+                            {
+                              "activeText": {
+                                "id": "team_text",
+                                "padding-left": "0.01@scrn_tgt",
+                                "position": "relative",
+                                "top": "50%ph-50%h"
+                              },
+                              "css-hier-invalidate": "yes",
+                              "id": "team2_info",
+                              "left": "@tablePad",
+                              "position": "relative",
+                              "tdiv": {
+                                "id": "countries_block",
+                                "position": "relative"
+                              },
+                              "teamIco": "axis",
+                              "teamImg": {
+                                "background-svg-size": "0.04@scrn_tgt, 0.04@scrn_tgt",
+                                "id": "team_img",
+                                "pos": "0, 50%ph-50%h",
+                                "position": "relative",
+                                "size": "0.04@scrn_tgt, 0.04@scrn_tgt"
+                              }
+                            },
+                            {
+                              "margin-bottom": "0.0025@scrn_tgt",
+                              "margin-right": "1@scrollBarSize",
+                              "min-height": "0.037@scrn_tgt",
+                              "table": {
+                                "baseRow": "rows16",
+                                "class": "headerTable",
+                                "display": "hide",
+                                "id": "team_table_2",
+                                "pos": "@tablePad, 50%ph-50%h",
+                                "position": "absolute",
+                                "width": "pw"
+                              },
+                              "width": "pw"
+                            },
+                            {
+                              "overflow-y": "auto",
+                              "size": "pw, fh",
+                              "table": {
+                                "baseRow": "rows16",
+                                "behavior": "PosNavigator",
+                                "canSelectNone": "yes",
+                                "class": "mpTable",
+                                "css-hier-invalidate": "yes",
+                                "id": "table_kills_team2",
+                                "navigatorShortcuts": "yes",
+                                "on_dbl_click": "onUserCard",
+                                "on_hover": "onStatTblFocus",
+                                "on_r_click": "onUserRClick",
+                                "on_select": "onStatsTblSelect",
+                                "on_unhover": "onStatTblFocus",
+                                "pos": "@tablePad, 1",
+                                "position": "relative",
+                                "selfFocusBorder": "yes",
+                                "width": "fw - 1@scrollBarSize"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                },
+                "id": "players_stats_tab"
+              },
+              {
+                "flow": "vertical",
+                "id": "my_stats_tab",
+                "overflow-y": "auto",
+                "tdiv": {
+                  "debrBlock": {
+                    "debrBlock": {
+                      "flow": "vertical",
+                      "id": "battle_tasks_block",
+                      "listbox": {
+                        "background-color": "@frameDarkTransparentBgColor",
+                        "flow": "vertical",
+                        "id": "current_battle_tasks",
+                        "overflow-y": "auto",
+                        "padding-left": "1@debrPad",
+                        "scrollbarShortcuts": "left",
+                        "width": "pw"
+                      },
+                      "margin-bottom": "1@debrPad",
+                      "max-height": "0.5ph",
+                      "tdiv": {
+                        "activeText": {
+                          "pos": "1@debrPad, 0.5ph-0.5h",
+                          "position": "relative",
+                          "text": "#userlog/page/battletasks",
+                          "width": "pw"
+                        },
+                        "background-color": "@separatorBlockColor",
+                        "size": "pw, 1@buttonHeight"
+                      },
+                      "width": "pw"
+                    },
+                    "display": "hide",
+                    "flow": "vertical",
+                    "id": "right_block",
+                    "margin-left": "@debrBigGap",
+                    "pos": "0, 1@debrMyPlaceBlockOffset",
+                    "position": "relative",
+                    "size": "2@slot_width+1@scrollBarSize, ph",
+                    "tdiv": {
+                      "id": "researches_scroll_block",
+                      "overflow-y": "auto",
+                      "scrollbarShortcuts": "left",
+                      "size": "pw, fh",
+                      "tdiv": {
+                        "flow": "vertical",
+                        "min-height": "ph",
+                        "tdiv": [
+                          {
+                            "activeText": {
+                              "pos": "1@debrPad, 0.5ph-0.5h",
+                              "position": "relative",
+                              "text": "#debriefing/researched_unit",
+                              "width": "pw"
+                            },
+                            "background-color": "@separatorBlockColor",
+                            "size": "pw, 1@buttonHeight"
+                          },
+                          {
+                            "background-color": "@frameDarkTransparentBgColor",
+                            "margin-bottom": "1@debrPad",
+                            "rankUpList": {
+                              "flow": "h-flow",
+                              "holdTooltipChildren": "yes",
+                              "id": "air_item_place",
+                              "max-width": "pw-2@debrPad",
+                              "min-height": "@slot_height+2@slot_vert_pad",
+                              "pos": "0.5pw-0.5w, 0",
+                              "position": "relative"
+                            },
+                            "textAreaCentered": [
+                              {
+                                "id": "no_air_text",
+                                "pos": "0.5pw-0.5w, 0.5ph-0.5h",
+                                "position": "absolute",
+                                "smallFont": "yes",
+                                "text": "",
+                                "width": "pw"
+                              },
+                              {
+                                "id": "air_item_text",
+                                "pos": "0.5pw-0.5w, 0.5ph-0.5h",
+                                "position": "absolute",
+                                "smallFont": "yes",
+                                "text": "",
+                                "width": "pw"
+                              }
+                            ],
+                            "width": "pw"
+                          },
+                          {
+                            "activeText": {
+                              "pos": "1@debrPad, 0.5ph-0.5h",
+                              "position": "relative",
+                              "text": "#debriefing/research_list",
+                              "width": "pw"
+                            },
+                            "background-color": "@separatorBlockColor",
+                            "size": "pw, 1@buttonHeight"
+                          },
+                          {
+                            "background-color": "@frameDarkTransparentBgColor",
+                            "flow": "vertical",
+                            "id": "research_list",
+                            "tdiv": {
+                              "flow": "vertical",
+                              "id": "modifications_objects_place",
+                              "interactiveChildren": "yes",
+                              "margin-left": "1@debrPad",
+                              "min-height": "1@slot_height + 2@slot_vert_pad",
+                              "width": "pw"
+                            },
+                            "textAreaCentered": {
+                              "id": "research_list_text",
+                              "pos": "0.5pw-0.5w, 0.5(@slot_height + 2@slot_vert_pad)-0.5h",
+                              "position": "absolute",
+                              "smallFont": "yes",
+                              "text": "",
+                              "width": "pw"
+                            },
+                            "width": "pw"
+                          }
+                        ],
+                        "width": "pw"
+                      }
+                    }
+                  },
+                  "flow": "horizontal",
+                  "size": "pw, fh",
+                  "tdiv": {
+                    "debrBlock": {
+                      "background-color": "@separatorBlockColor",
+                      "id": "top_bar_nest",
+                      "padding": "1@debrPad, 0.5@debrPad",
+                      "pos": "0, 1@debrMyPlaceBlockOffset",
+                      "position": "relative",
+                      "tdiv": [
+                        {
+                          "activeText": [
+                            {
+                              "animateFontSize": "yes",
+                              "id": "my_place_label",
+                              "mediumFont": "yes",
+                              "text": "#debriefing/placeInMyTeam"
+                            },
+                            {
+                              "animateFontSize": "yes",
+                              "id": "my_place_in_mptable",
+                              "mediumFont": "yes",
+                              "overlayTextColor": "userlog",
+                              "text": "0"
+                            }
+                          ],
+                          "css-hier-invalidate": "yes",
+                          "display": "hide",
+                          "id": "my_place_move_box",
+                          "pos": "0, 0.5ph-0.5h",
+                          "position": "relative",
+                          "total-input-transparent": "yes"
+                        },
+                        {
+                          "debriefingBonusIconNest": {
+                            "css-hier-invalidate": "yes",
+                            "display": "hide",
+                            "focus_border": {
+                              "class": "expanded"
+                            },
+                            "id": "bonus_ico_place",
+                            "img": {
+                              "background-svg-size": "@debrBonusIcoSize, @debrBonusIcoSize",
+                              "id": "bonus_ico",
+                              "pos": "pw/2-w/2, ph/2-h/2",
+                              "position": "absolute",
+                              "size": "@debrBonusIcoSize, @debrBonusIcoSize"
+                            },
+                            "interactive": "yes",
+                            "pos": "1@debrPad, 0.5ph-0.5h",
+                            "position": "relative",
+                            "size": "1@debrBonusWidth, 1@debrBonusHeight",
+                            "tdiv": {
+                              "id": "start_bonus_place",
+                              "pos": "0.5pw-0.5w, 0.5ph-0.5h",
+                              "position": "absolute",
+                              "size": "2.5@debrBonusIcoSize, 2.5@debrBonusIcoSize"
+                            }
+                          },
+                          "id": "my_stats_top_bar",
+                          "position": "relative",
+                          "tdiv": [
+                            {
+                              "id": "wnd_total",
+                              "position": "relative",
+                              "top": "0.5ph-0.5h"
+                            },
+                            {
+                              "Button_text": {
+                                "ButtonImg": {},
+                                "btnName": "Y",
+                                "buttonGlance": {},
+                                "buttonWink": {
+                                  "_transp-timer": "0"
+                                },
+                                "class": "buyPremAward",
+                                "id": "btn_buy_premium_award",
+                                "on_click": "onBuyPremiumAward",
+                                "style": "margin-right:0;",
+                                "textarea": {
+                                  "id": "label",
+                                  "input-transparent": "yes",
+                                  "min-width": "pw",
+                                  "overlayTextColor": "premiumNotEarned",
+                                  "pos": "0, 0.5ph-0.5h",
+                                  "position": "relative",
+                                  "text": "",
+                                  "text-align": "center"
+                                },
+                                "tooltip": "",
+                                "visualStyle": "purchase"
+                              },
+                              "display": "hide",
+                              "id": "buy_premium",
+                              "pos": "1@debrPad, 0.5ph-0.5h",
+                              "position": "relative",
+                              "textareaNoTab": {
+                                "max-width": "150@sf/@pf",
+                                "overlayTextColor": "userlog",
+                                "pos": "0.3@sIco, 0.5ph-0.5h",
+                                "position": "relative",
+                                "smallFont": "yes",
+                                "text": "#mainmenu/notEarnedPremiumReward"
+                              }
+                            },
+                            {
+                              "css-hier-invalidate": "yes",
+                              "display": "hide",
+                              "focus_border": {},
+                              "id": "active_wager_container",
+                              "interactive": "yes",
+                              "pos": "1@debrPad, 0.5ph-0.5h",
+                              "position": "relative",
+                              "smallFont": "yes",
+                              "tdiv": {
+                                "img": {
+                                  "background-image": "",
+                                  "background-repeat": "aspect-ratio",
+                                  "background-svg-size": "0.5ph, 0.5ph",
+                                  "id": "active_wager_result_icon",
+                                  "pos": "pw-0.7w, ph-h",
+                                  "position": "absolute",
+                                  "size": "0.5ph, 0.5ph"
+                                },
+                                "itemIconBlock": {
+                                  "debriefingSize": "yes",
+                                  "id": "active_wager_icon",
+                                  "overflow": "hidden",
+                                  "pos": "0.5pw-0.5w, 0.5ph-0.5h",
+                                  "position": "absolute"
+                                },
+                                "size": "70%@debrWagerHeight, 1@debrWagerHeight"
+                              },
+                              "textareaNoTab": {
+                                "id": "active_wager_text",
+                                "overlayTextColor": "userlog",
+                                "pos": "10@sf/@pf, 0.5ph-0.5h",
+                                "position": "relative",
+                                "smallFont": "yes",
+                                "text": ""
+                              },
+                              "title": "$tooltipObj",
+                              "tooltipObj": {
+                                "display": "hide",
+                                "enable": "no",
+                                "id": "active_wager_tooltip",
+                                "on_tooltip_close": "onTooltipObjClose",
+                                "on_tooltip_open": "onWagerTooltipOpen"
+                              }
+                            }
+                          ],
+                          "top": "0.5ph-0.5h"
+                        }
+                      ],
+                      "width": "pw"
+                    },
+                    "flow": "vertical",
+                    "size": "fw, ph",
+                    "tdiv": {
+                      "size": "pw, fh",
+                      "tdiv": [
+                        {
+                          "debrBlock": [
+                            {
+                              "debrSeparator": {
+                                "class": "bottom"
+                              },
+                              "display": "hide",
+                              "id": "inventory_gift_block",
+                              "padding": "0, 1@debrPad",
+                              "tdiv": {
+                                "Button_text": {
+                                  "ButtonImg": {},
+                                  "_on_click": "onInventoryGiftAction",
+                                  "btnName": "LT",
+                                  "btnText": {
+                                    "id": "btn_inventory_gift_action_text"
+                                  },
+                                  "buttonGlance": {},
+                                  "buttonWink": {
+                                    "_transp-timer": "0"
+                                  },
+                                  "class": "battle",
+                                  "css-hier-invalidate": "yes",
+                                  "display": "hide",
+                                  "enable": "no",
+                                  "id": "btn_inventory_gift_action",
+                                  "margin-top": "1@buttonMargin",
+                                  "max-width": "1@buttonWidth",
+                                  "navButtonFont": "yes",
+                                  "pattern": {},
+                                  "pos": "0.5pw-0.5w, 0",
+                                  "position": "relative"
+                                },
+                                "div": {
+                                  "Button_text": {
+                                    "ButtonImg": {},
+                                    "btnName": "R3",
+                                    "display": "hide",
+                                    "enable": "no",
+                                    "id": "btn_show_all",
+                                    "margin-bottom": "0",
+                                    "on_click": "onViewRewards",
+                                    "pos": "0.5pw-0.5w",
+                                    "text": "#mainmenu/showMore"
+                                  },
+                                  "flow": "h-flow",
+                                  "flow-align": "center",
+                                  "tdiv": {
+                                    "flow": "h-flow",
+                                    "flow-align": "center",
+                                    "id": "inventory_gift_icon",
+                                    "smallItems": "no",
+                                    "width": "pw"
+                                  },
+                                  "width": "pw"
+                                },
+                                "flow": "vertical",
+                                "width": "pw"
+                              },
+                              "width": "pw"
+                            },
+                            {
+                              "behaviour": "button",
+                              "class": "button",
+                              "id": "my_stats_awards_block",
+                              "margin-top": "1@blockInterval",
+                              "on_click": "onViewAwards",
+                              "size": "pw, fh",
+                              "skip-navigation": "yes",
+                              "tdiv": {
+                                "div": {
+                                  "Button_text": {
+                                    "ButtonImg": {},
+                                    "_on_click": "onGotoChallenge",
+                                    "btnText": {
+                                      "id": "btn_next_text",
+                                      "text": "#mainmenu/btnUnlockChallenge"
+                                    },
+                                    "buttonGlance": {},
+                                    "buttonWink": {
+                                      "_transp-timer": "0"
+                                    },
+                                    "class": "battle",
+                                    "css-hier-invalidate": "yes",
+                                    "id": "btn_challenge",
+                                    "max-width": "1@buttonWidth",
+                                    "navButtonFont": "yes",
+                                    "pattern": {
+                                      "type": "bright_texture"
+                                    },
+                                    "pos": "pw/2 - w/2, 0",
+                                    "position": "relative"
+                                  },
+                                  "display": "hide",
+                                  "flow": "vertical",
+                                  "id": "btn_challenge_div",
+                                  "margin": "0, 1@blockInterval",
+                                  "pos": "pw/2 - w/2, 0",
+                                  "rowSeparator": {
+                                    "margin-top": "1@blockInterval"
+                                  },
+                                  "width": "pw"
+                                },
+                                "flow": "vertical",
+                                "pos": "0.5pw-0.5w, 0",
+                                "position": "relative",
+                                "size": "pw, ph",
+                                "tdiv": [
+                                  {
+                                    "behavior": "PosNavigator",
+                                    "display": "hide",
+                                    "id": "awards_list_challenges",
+                                    "navigatorShortcuts": "active",
+                                    "on_activate": "onViewAwards",
+                                    "overflow": "visible",
+                                    "pos": "0.5pw - 0.5w, 0",
+                                    "position": "relative",
+                                    "size": "pw, 1@debriefingUnlockIconSize"
+                                  },
+                                  {
+                                    "flow": "horizontal",
+                                    "position": "relative",
+                                    "size": "pw, fh",
+                                    "tdiv": [
+                                      {
+                                        "behavior": "PosNavigator",
+                                        "display": "hide",
+                                        "flow": "vertical",
+                                        "id": "awards_list_unlocks",
+                                        "margin-left": "pw/4 - 0.5w",
+                                        "navigatorShortcuts": "active",
+                                        "on_activate": "onViewAwards",
+                                        "overflow": "visible",
+                                        "position": "relative",
+                                        "size": "1@debriefingUnlockIconSize, ph"
+                                      },
+                                      {
+                                        "behavior": "PosNavigator",
+                                        "display": "hide",
+                                        "flow": "vertical",
+                                        "id": "awards_list_streaks",
+                                        "margin-left": "pw/2 - w",
+                                        "navigatorShortcuts": "active",
+                                        "on_activate": "onViewAwards",
+                                        "overflow": "visible",
+                                        "position": "relative",
+                                        "size": "1@debriefingUnlockIconSize, ph"
+                                      }
+                                    ]
+                                  }
+                                ]
+                              },
+                              "total-input-transparent": "yes"
+                            }
+                          ],
+                          "flow": "vertical",
+                          "id": "left_block",
+                          "margin-right": "@debrBigGap",
+                          "min-width": "1@navBarBattleButtonMinWidth",
+                          "size": "2@debriefingUnlockIconSize+1@debrPad, ph"
+                        },
+                        {
+                          "debrBlock": [
+                            {
+                              "activeText": {
+                                "display": "hide",
+                                "id": "pve_award_already_received",
+                                "pos": "pw-w-1@debrPad, 50%ph",
+                                "position": "absolute",
+                                "text": "#debriefing/awardHasAlreadyBeenReceived"
+                              },
+                              "debrSeparator": {
+                                "class": "bottom"
+                              },
+                              "display": "hide",
+                              "id": "pve_trophy_block",
+                              "padding": "0, 1@debrPad",
+                              "size": "pw, 0.75@itemHeight",
+                              "tdiv": [
+                                {
+                                  "id": "pve_trophy_progress",
+                                  "pos": "0, 0.5ph-0.5h",
+                                  "position": "relative",
+                                  "width": "75%pw"
+                                },
+                                {
+                                  "id": "pve_trophy_chest",
+                                  "pos": "pw-w, 0.5ph-0.5h",
+                                  "position": "absolute",
+                                  "size": "0.75@itemHeight, 0.75@itemHeight"
+                                },
+                                {
+                                  "pos": "pw-w-0.25w, 0.5ph-0.5h",
+                                  "position": "absolute",
+                                  "size": "0.75@itemHeight, 0.75@itemHeight",
+                                  "tdiv": {
+                                    "id": "pve_trophy_content",
+                                    "pos": "0.5pw-0.5w, 0.5ph-0.5h",
+                                    "position": "absolute",
+                                    "size": "1@itemHeight, 1@itemHeight"
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "debrSeparator": {
+                                "class": "bottom"
+                              },
+                              "display": "hide",
+                              "id": "no_awards_block",
+                              "padding": "0, 1@debrPad",
+                              "size": "pw, 0.12@scrn_tgt",
+                              "tdiv": {
+                                "Button_text": {
+                                  "ButtonImg": {},
+                                  "activeText": {
+                                    "css-hier-invalidate": "yes",
+                                    "text": "#msgbox/btn_more",
+                                    "underline": {}
+                                  },
+                                  "btnName": "L3",
+                                  "display": "hide",
+                                  "enable": "no",
+                                  "externalLink": "yes",
+                                  "id": "btn_no_awards_info",
+                                  "noMargin": "yes",
+                                  "on_click": "onNoAwardsInfoBtn",
+                                  "position": "relative",
+                                  "text": ""
+                                },
+                                "flow": "vertical",
+                                "pos": "0, 0.5ph-0.5h",
+                                "position": "relative",
+                                "textareaNoTab": {
+                                  "id": "no_awards_caption",
+                                  "overlayTextColor": "userlog",
+                                  "position": "relative",
+                                  "text": "",
+                                  "width": "pw"
+                                },
+                                "width": "pw"
+                              }
+                            }
+                          ],
+                          "flow": "vertical",
+                          "size": "fw, ph",
+                          "tdiv": {
+                            "debrBlock": {
+                              "css-hier-invalidate": "yes",
+                              "flow": "vertical",
+                              "id": "my_stats_scroll_block",
+                              "overflow-y": "auto",
+                              "scrollbarShortcuts": "yes",
+                              "size": "fw, ph",
+                              "tdiv": {
+                                "flow": "vertical",
+                                "margin": "0, 1@debrPad",
+                                "min-height": "ph",
+                                "table": {
+                                  "baseRow": "rows16",
+                                  "behavior": "PosNavigator",
+                                  "flow": "vertical",
+                                  "id": "stat_table",
+                                  "navigatorShortcuts": "noSelect",
+                                  "selfFocusBorder": "yes",
+                                  "total-input-transparent": "yes",
+                                  "width": "pw"
+                                },
+                                "tdiv": {
+                                  "display": "hide",
+                                  "flow": "h-flow",
+                                  "id": "leaderbord_stats",
+                                  "pos": "0, 1@debrPad",
+                                  "position": "relative",
+                                  "width": "pw"
+                                },
+                                "textareaNoTab": {
+                                  "display": "hide",
+                                  "id": "stat_info_text",
+                                  "overlayTextColor": "",
+                                  "pos": "0, 3@debrPad",
+                                  "position": "relative",
+                                  "text": "",
+                                  "text-align": "right",
+                                  "width": "pw"
+                                },
+                                "width": "pw"
+                              }
+                            },
+                            "padding-top": "1@dp",
+                            "size": "pw, fh"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              },
+              {
+                "id": "battle_log_tab",
+                "tdiv": {
+                  "debrBlock": [
+                    {
+                      "RadioButtonList": {
+                        "id": "battle_log_filter",
+                        "navigatorShortcuts": "yes",
+                        "on_select": "onChangeBattlelogFilter"
+                      },
+                      "debrSeparator": {
+                        "class": "bottom"
+                      },
+                      "padding": "1@debrPad",
+                      "width": "pw"
+                    },
+                    {
+                      "id": "battle_log_div",
+                      "overflow-y": "auto",
+                      "scrollbarShortcuts": "yes",
+                      "size": "pw, fh",
+                      "tdiv": {
+                        "chatLog": {
+                          "id": "battle_log",
+                          "on_link_click": "onChatLinkClick",
+                          "on_link_rclick": "onChatLinkRClick",
+                          "style": "color:@white",
+                          "text": "",
+                          "width": "pw"
+                        },
+                        "margin": "1@debrPad",
+                        "min-height": "ph",
+                        "width": "pw"
+                      }
+                    }
+                  ],
+                  "flow": "vertical",
+                  "size": "pw, ph"
+                }
+              },
+              {
+                "debrBlock": {
+                  "id": "chat_history_scroll_block",
+                  "overflow-y": "auto",
+                  "scrollbarShortcuts": "yes",
+                  "size": "pw, ph",
+                  "tdiv": {
+                    "chatLog": {
+                      "id": "chat_log",
+                      "on_link_click": "onChatLinkClick",
+                      "on_link_rclick": "onChatLinkRClick",
+                      "style": "color:@white",
+                      "text": "",
+                      "width": "pw"
+                    },
+                    "id": "chat_history_div",
+                    "margin": "1@debrPad",
+                    "min-height": "ph",
+                    "width": "pw"
+                  }
+                },
+                "flow": "vertical",
+                "id": "chat_history_tab"
+              },
+              {
+                "debrBlock": {
+                  "id": "awards_list_scroll_block",
+                  "overflow-y": "auto",
+                  "scrollbarShortcuts": "yes",
+                  "size": "pw, ph",
+                  "tdiv": {
+                    "margin": "0.3@debrPad",
+                    "tdiv": {
+                      "flow": "h-flow",
+                      "id": "awards_list_tab_div",
+                      "width": "pw"
+                    },
+                    "width": "pw"
+                  }
+                },
+                "id": "awards_list_tab"
+              },
+              {
+                "debrBlock": {
+                  "size": "pw, ph",
+                  "tdiv": {
+                    "flow": "vertical",
+                    "id": "battle_tasks_list_div",
+                    "listbox": {
+                      "flow": "vertical",
+                      "id": "battle_tasks_list_scroll_block",
+                      "navigatorShortcuts": "yes",
+                      "on_select": "onSelectTask",
+                      "overflow-y": "auto",
+                      "scrollBox-dontResendShortcut": "yes",
+                      "selImgType": "gamepadFocused",
+                      "size": "pw, fh"
+                    },
+                    "position": "relative",
+                    "size": "pw, fh",
+                    "textAreaCentered": {
+                      "hideEmptyText": "yes",
+                      "id": "battle_tasks_list_msg",
+                      "pos": "50%pw-50%w, 40%ph-40%h",
+                      "position": "absolute",
+                      "text": "#mainmenu/battleTasks/noBattleTasks",
+                      "width": "80%pw"
+                    }
+                  }
+                },
+                "id": "battle_tasks_list_tab"
+              },
+              {
+                "id": "ww_casualties_tab",
+                "tdiv": {
+                  "debrBlock": {
+                    "size": "pw, ph"
+                  },
+                  "id": "ww_casualties_div",
+                  "overflow-y": "auto",
+                  "size": "pw, ph"
+                }
+              }
+            ],
+            "id": "tabs_content",
+            "pos": "0, 1@frameHeaderHeight +1@debrWndPad",
+            "position": "relative",
+            "size": "pw, fh"
+          },
+          "frame_header": {
+            "HorizontalListBox": {
+              "class": "header",
+              "display": "hide",
+              "height": "ph",
+              "id": "tabs_list",
+              "navigatorShortcuts": "yes",
+              "normalFont": "yes",
+              "on_select": "onChangeTab",
+              "withImages": "yes"
+            }
+          },
+          "fullScreenSize": "yes",
+          "id": "wnd_frame",
+          "position": "relative",
+          "rowSeparator": {
+            "top": "1@frameHeaderHeight-@listboxPad-1@listboxItemsInterval-1@dp"
+          },
+          "size": "pw, fh",
+          "style": "padding-top:1@debrWndPad"
+        },
+        "height": "@rh",
+        "id": "content_frame",
+        "max-width": "1@rw",
+        "pos": "0.5pw-0.5w, 0.5ph-0.5h",
+        "position": "relative",
+        "tdiv": {
+          "debriefingTitle": {
+            "id": "result_title",
+            "padding-bottom": "-0.003@sf",
+            "pos": "0.5pw-0.5w, 0",
+            "position": "relative",
+            "text": ""
+          },
+          "flow": "vertical",
+          "pos": "0.5pw-0.5w, 0",
+          "position": "relative",
+          "tdiv": {
+            "pos": "0.5pw-0.5w, 0",
+            "position": "relative",
+            "tdiv": [
+              {
+                "id": "result_reward_rp",
+                "img": {
+                  "background-image": "#ui/gameuiskin#item_type_RP.svg",
+                  "background-svg-size": "1@sIco, 1@sIco",
+                  "position": "relative",
+                  "size": "1@sIco, 1@sIco",
+                  "top": "0.5ph-0.5h"
+                },
+                "textareaNoTab": {
+                  "id": "text",
+                  "overlayTextColor": "active",
+                  "shadeStyle": "HudTinyLight",
+                  "text": ""
+                }
+              },
+              {
+                "id": "result_reward_wp",
+                "img": {
+                  "background-image": "#ui/gameuiskin#item_type_warpoints.svg",
+                  "background-svg-size": "1@sIco, 1@sIco",
+                  "position": "relative",
+                  "size": "1@sIco, 1@sIco",
+                  "top": "0.5ph-0.5h"
+                },
+                "textareaNoTab": {
+                  "id": "text",
+                  "overlayTextColor": "active",
+                  "shadeStyle": "HudTinyLight",
+                  "text": ""
+                }
+              }
+            ],
+            "textareaNoTab": [
+              {
+                "id": "result_reward_title",
+                "overlayTextColor": "active",
+                "shadeStyle": "HudTinyLight",
+                "text": ""
+              },
+              {
+                "id": "result_reward_comma",
+                "overlayTextColor": "active",
+                "shadeStyle": "HudTinyLight",
+                "text": "#ui/comma"
+              },
+              {
+                "id": "result_reward_wp",
+                "overlayTextColor": "active",
+                "shadeStyle": "HudTinyLight",
+                "text": ""
+              }
+            ]
+          },
+          "textareaNoTab": {
+            "id": "dbf_title",
+            "overlayTextColor": "active",
+            "pos": "0.5pw-0.5w, 0",
+            "position": "relative",
+            "text": ""
+          },
+          "width": "pw"
+        },
+        "width": "1.4@sf"
+      },
+      {
+        "id": "start_award_place_streaks",
+        "pos": "sw, sh",
+        "position": "root",
+        "size": "5@debriefingUnlockIconSize, 5@debriefingUnlockIconSize"
+      },
+      {
+        "id": "start_award_place_unlocks",
+        "pos": "-w, -h",
+        "position": "root",
+        "size": "10@debriefingUnlockIconSize, 10@debriefingUnlockIconSize"
+      },
+      {
+        "activeText": {
+          "caption": "yes",
+          "font-ht": "ph",
+          "text": "..."
+        },
+        "id": "my_place_move_box_start",
+        "pos": "50%sw-50%w, sh",
+        "position": "root",
+        "size": "0.2@sf, 0.2@sf"
+      },
+      {
+        "behaviour": "button",
+        "class": "button",
+        "id": "skip_button",
+        "on_click": "onSkip",
+        "position": "absolute",
+        "size": "pw, ph"
+      }
+    ],
+    "text": {
+      "id": "txt_session_id",
+      "input-transparent": "yes",
+      "overlayTextColor": "faded",
+      "pos": "0.08@sf, sh-0.015@sf",
+      "position": "root",
+      "text": "",
+      "tinyFont": "yes"
+    }
+  }
+}

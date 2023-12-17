@@ -1,0 +1,472 @@
+{
+  "root": {
+    "bgrStyle": "fullScreenWnd",
+    "blur": {},
+    "blur_foreground": {},
+    "frame": {
+      "HorizontalListBox": {
+        "activeAccesskeys": "RS",
+        "class": "header",
+        "height": "1@frameHeaderHeight",
+        "id": "controls_groups_list",
+        "on_select": "onControlsGroupChange"
+      },
+      "class": "wndNav",
+      "frame_header": {
+        "Breadcrumb": {
+          "Button_text": {
+            "_on_click": "goBack",
+            "btnText": {
+              "id": "back_scene_name"
+            },
+            "img": {},
+            "text": {
+              "text": " | "
+            },
+            "textareaNoTab": {
+              "text": "#mainmenu/btnControls"
+            },
+            "visualStyle": "noBgr"
+          }
+        },
+        "Button_close": {
+          "id": "btn_back"
+        }
+      },
+      "fullScreenSize": "yes",
+      "height": "sh-@bottomMenuPanelHeight",
+      "id": "wnd_frame",
+      "navBar": {
+        "navLeft": {
+          "Button_text": [
+            {
+              "ButtonImg": {},
+              "_on_click": "onSwitchModeButton",
+              "btnName": "X",
+              "id": "btn_switchMode",
+              "text": "#mainmenu/switchToSimplifiedControls"
+            },
+            {
+              "ButtonImg": {},
+              "_on_click": "onControlsWizard",
+              "btnName": "Y",
+              "id": "btn_controlsWizard",
+              "text": "#mainmenu/btnControlsWizard"
+            },
+            {
+              "ButtonImg": {},
+              "_on_click": "onControlsHelp",
+              "btnName": "LT",
+              "class": "image",
+              "id": "btn_controlsHelp",
+              "img": {
+                "background-image": "#ui/gameuiskin#btn_current_assigned_buttons.svg"
+              },
+              "tooltip": "#options/help"
+            },
+            {
+              "ButtonImg": {},
+              "_on_click": "onClearAll",
+              "btnName": "L3",
+              "changeButtonStyleDependingOnPlatformTo": "image",
+              "id": "btn_clearAll",
+              "img": {
+                "background-image": "#ui/gameuiskin#btn_clear_all.svg"
+              },
+              "text": "#options/clearAll",
+              "tooltip": "#options/clearAll"
+            },
+            {
+              "_on_click": "onExportToFile",
+              "class": "image",
+              "id": "btn_exportToFile",
+              "img": {
+                "background-image": "#ui/gameuiskin#btn_save_to_file.svg"
+              },
+              "showConsoleImage": "no",
+              "tooltip": "#options/exportToFile"
+            },
+            {
+              "_on_click": "onImportFromFile",
+              "class": "image",
+              "id": "btn_importFromFile",
+              "img": {
+                "background-image": "#ui/gameuiskin#btn_load_from_file.svg"
+              },
+              "showConsoleImage": "no",
+              "tooltip": "#options/importFromFile"
+            },
+            {
+              "ButtonImg": {},
+              "_on_click": "onManageBackup",
+              "btnName": "RB",
+              "class": "image",
+              "id": "btn_backupManager",
+              "img": {
+                "background-image": "#ui/gameuiskin#btn_save_to_file.svg"
+              }
+            },
+            {
+              "ButtonImg": {},
+              "btnName": "LB",
+              "btnText": {
+                "css-hier-invalidate": "yes",
+                "text": "#controls/workshop",
+                "underline": {}
+              },
+              "externalLink": "yes",
+              "hideText": "yes",
+              "id": "btn_controls_workshop_online",
+              "on_click": "onControlsWorkshop",
+              "text": "#controls/workshop"
+            }
+          ]
+        },
+        "navRight": {
+          "Button_text": [
+            {
+              "ButtonImg": {},
+              "btnName": "R3",
+              "changeButtonStyleDependingOnPlatformTo": "image",
+              "display": "hide",
+              "id": "btn_reset_shortcut",
+              "img": {
+                "background-image": "#ui/gameuiskin#btn_reset_shortcut.svg"
+              },
+              "on_click": "onButtonReset",
+              "text": "#mainmenu/btnResetButton",
+              "tooltip": "#mainmenu/btnResetButton"
+            },
+            {
+              "ButtonImg": {},
+              "btnName": "R3",
+              "changeButtonStyleDependingOnPlatformTo": "image",
+              "display": "hide",
+              "id": "btn_reset_axis",
+              "img": {
+                "background-image": "#ui/gameuiskin#btn_reset_axis.svg"
+              },
+              "on_click": "onButtonReset",
+              "text": "#mainmenu/btnResetAxis",
+              "tooltip": "#mainmenu/btnResetAxis"
+            },
+            {
+              "ButtonImg": {},
+              "btnName": "A",
+              "display": "hide",
+              "id": "btn_assign",
+              "on_click": "onTblDblClick",
+              "text": "#mainmenu/btnAssign"
+            },
+            {
+              "ButtonImg": {},
+              "_on_click": "onApply",
+              "btnName": "B",
+              "id": "btn_apply",
+              "text": "#mainmenu/btnClose"
+            }
+          ]
+        }
+      },
+      "pos": "0.5pw-0.5w, 0.5ph-0.5h-0.5@bottomMenuPanelHeight",
+      "position": "absolute",
+      "rowSeparator": {
+        "top": "-1@dp"
+      },
+      "tdiv": {
+        "div": {
+          "height": "ph",
+          "id": "control_navigation"
+        },
+        "flow": "horizontal",
+        "size": "pw, fh",
+        "tdiv": {
+          "HorizontalListBox": {
+            "id": "helpers_mode",
+            "margin": "0, 0.015@sf",
+            "move-only-hover": "yes",
+            "navigatorShortcuts": "yes",
+            "on_select": "onOptionsFilter",
+            "pos": "50%pw-50%w, 0",
+            "position": "relative",
+            "type": "transparent"
+          },
+          "div": {
+            "Button_text": {
+              "class": "image",
+              "display": "hide",
+              "id": "filter_edit_cancel_btn",
+              "img": {
+                "background-image": "#ui/gameuiskin#btn_close.svg"
+              },
+              "noMargin": "yes",
+              "on_click": "onFilterEditBoxCancel",
+              "pos": "0, ph/2-h/2",
+              "position": "relative",
+              "showConsoleImage": "no",
+              "tooltip": "#mainmenu/btnReset"
+            },
+            "EditBox": {
+              "edit-hint": "#contacts/search_placeholder",
+              "id": "filter_edit_box",
+              "on_activate": "onFilterEditBoxActivate",
+              "on_cancel_edit": "onFilterEditBoxCancel",
+              "on_change_value": "onFilterEditBoxChangeValue",
+              "pos": "0, ph/2-h/2",
+              "position": "relative",
+              "text": "",
+              "width": "fw"
+            },
+            "id": "listbox_filter_holder",
+            "padding": "2@blockInterval",
+            "pos": "50%pw-50%w, 0",
+            "position": "relative",
+            "width": "pw-0.15@sf"
+          },
+          "flow": "vertical",
+          "height": "ph",
+          "optionsBoxRightScroll": {
+            "margin-top": "0.015@sf",
+            "optionsList": {
+              "baseRow": "yes",
+              "behavior": "PosOptionsNavigator",
+              "class": "optionsTable",
+              "disableFixedCoord": "yes",
+              "id": "controls_tbl",
+              "on_click": "onTblSelect",
+              "on_dbl_click": "onTblDblClick",
+              "pos": "0.5pw-0.5w, 0",
+              "position": "relative",
+              "width": "pw"
+            }
+          },
+          "width": "fw"
+        }
+      },
+      "type": "big",
+      "width": "1@rw"
+    },
+    "gamercard_div": {
+      "gamercard": {
+        "BottomMenuPanel": {
+          "shadowSafeArea": {},
+          "tdiv": [
+            {
+              "background-color": "#90909090",
+              "background-image": "#ui/gameuiskin#optionlist_background_top",
+              "background-position": "0, 0.25h, 0, 0",
+              "background-repeat": "expand",
+              "pos": "0, ph",
+              "position": "absolute",
+              "size": "pw, 0.02@sf"
+            },
+            {
+              "gcButtonsHolder": {
+                "Button_text": [
+                  {
+                    "_on_click": "onGC_invites",
+                    "class": "image",
+                    "id": "gc_invites_btn",
+                    "img": [
+                      {
+                        "background-image": "#ui/gameuiskin#invites.svg",
+                        "id": "icon"
+                      },
+                      {
+                        "background-image": "#ui/gameuiskin#invites_new.svg",
+                        "display": "hide",
+                        "id": "iconNew",
+                        "style": "background-color:@textureGlowColor"
+                      },
+                      {
+                        "_transp-timer": "0",
+                        "background-image": "#ui/gameuiskin#mail_new_glow",
+                        "display": "hide",
+                        "id": "iconGlow",
+                        "style": "background-color:@textureGlowColor; size:110%ph, 110%ph"
+                      }
+                    ],
+                    "tooltip": "#mainmenu/invites"
+                  },
+                  {
+                    "_on_click": "onGC_contacts",
+                    "class": "image",
+                    "id": "gc_contacts",
+                    "img": {
+                      "background-image": "#ui/gameuiskin#friends.svg"
+                    },
+                    "text": {
+                      "id": "gc_friends_online",
+                      "pos": "pw - w, ph - h - 2",
+                      "position": "absolute",
+                      "shadeStyle": "outline33pct",
+                      "style": "font:@fontTiny; color:@userlogColoredText",
+                      "text": ""
+                    },
+                    "tooltip": "#mainmenu/contacts"
+                  },
+                  {
+                    "_on_click": "onGC_chat",
+                    "class": "image",
+                    "id": "gc_chat_btn",
+                    "img": [
+                      {
+                        "background-image": "#ui/gameuiskin#chat.svg",
+                        "id": "icon"
+                      },
+                      {
+                        "background-image": "#ui/gameuiskin#chat_new.svg",
+                        "display": "hide",
+                        "id": "iconNew",
+                        "style": "background-color:@textureGlowColor"
+                      },
+                      {
+                        "_transp-timer": "0",
+                        "background-image": "#ui/gameuiskin#mail_new_glow",
+                        "display": "hide",
+                        "id": "iconGlow",
+                        "style": "background-color:@textureGlowColor; size:110%ph, 110%ph"
+                      }
+                    ],
+                    "text": {
+                      "id": "gc_new_chat_messages",
+                      "pos": "pw - w, ph - h",
+                      "position": "absolute",
+                      "style": "font:@fontTiny; color:@userlogColoredText",
+                      "text": ""
+                    },
+                    "tooltip": "#mainmenu/chat"
+                  },
+                  {
+                    "_on_click": "onUserLog",
+                    "class": "image",
+                    "id": "gc_userlog_btn",
+                    "img": [
+                      {
+                        "background-image": "#ui/gameuiskin#mail.svg",
+                        "id": "icon"
+                      },
+                      {
+                        "background-image": "#ui/gameuiskin#mail_new.svg",
+                        "display": "hide",
+                        "id": "iconNew",
+                        "style": "background-color:@textureGlowColor"
+                      },
+                      {
+                        "_transp-timer": "0",
+                        "background-image": "#ui/gameuiskin#mail_new_glow",
+                        "display": "hide",
+                        "id": "iconGlow",
+                        "style": "background-color:@textureGlowColor; size:110%ph, 110%ph"
+                      }
+                    ],
+                    "tooltip": "#userlog/no_new_messages"
+                  }
+                ],
+                "class": "header",
+                "id": "gamercard_bottom_right",
+                "position": "relative",
+                "top": "0.5(ph-h)"
+              },
+              "gcButtonsSquadHolder": {
+                "class": "header",
+                "css-hier-invalidate": "yes",
+                "id": "gamercard_squad_widget",
+                "margin-right": "2@buttonTextPadding",
+                "position": "relative",
+                "top": "0.5(ph-h)"
+              },
+              "height": "ph",
+              "pos": "pw/2 - w/2, ph/2 - h/2",
+              "position": "absolute",
+              "tdiv": {
+                "bottomNavPlace": {
+                  "id": "gamercard_bottom_navbar_place",
+                  "pos": "0, 0.5(ph-h)",
+                  "position": "absolute",
+                  "size": "pw - ph, ph"
+                },
+                "class": "header",
+                "height": "1@gamercardHeight",
+                "id": "gamercard_bottom_left",
+                "tdiv": {
+                  "display": "hide",
+                  "id": "slotbar-presetsPlace",
+                  "position": "absolute",
+                  "size": "pw, ph"
+                },
+                "width": "fw"
+              },
+              "voiceChatWidgetNest": {
+                "blockSeparator": [
+                  {
+                    "display": "hide"
+                  },
+                  {
+                    "display": "hide"
+                  }
+                ],
+                "emptyVoiceChat": {
+                  "tooltip": "#clan/voice_chat/widget",
+                  "usertalk": {
+                    "_size-timer": "0",
+                    "activeText": {
+                      "color-factor": "255",
+                      "position": "relative",
+                      "text": "..."
+                    },
+                    "fade": "in",
+                    "height-end": "1",
+                    "id": "voice_chat_no_activity",
+                    "img": {
+                      "color-factor": "255",
+                      "inacive": "yes",
+                      "position": "relative"
+                    },
+                    "type": "noTalk"
+                  }
+                },
+                "isClanOnly": "no",
+                "voiceChatWidgetContainer": {
+                  "isSmall": "no",
+                  "voiceChatWidget": {
+                    "value": "{\"viewId\": \"VOICE_CHAT\"}"
+                  }
+                }
+              },
+              "width": "1@bottomGcWidth"
+            }
+          ]
+        },
+        "id": "gamercard_bottom",
+        "systemMsg": {
+          "dlDataStat": {
+            "animText": {
+              "color-factor": "0",
+              "fade": "out",
+              "font": "@fontTiny",
+              "text": ""
+            },
+            "behavior": "bhvUpdater",
+            "css-hier-invalidate": "yes",
+            "pos": "50%pw-50%w,0",
+            "position": "relative",
+            "value": "{\"viewId\": \"DL_DATA_STATE_TEXT\"}"
+          },
+          "flow": "vertical",
+          "pos": "1@systemMsgIndent, 0",
+          "position": "root"
+        },
+        "tdiv": {
+          "pos": "sw - w, 0",
+          "position": "root",
+          "versionText": {}
+        }
+      }
+    }
+  },
+  "timer": {
+    "id": "hotkeys_update",
+    "timer_handler_func": "onUpdate"
+  }
+}

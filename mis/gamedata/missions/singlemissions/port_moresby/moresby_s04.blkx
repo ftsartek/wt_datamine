@@ -1,0 +1,952 @@
+{
+  "airfields": {},
+  "areas": {
+    "dogfight_point": {
+      "props": {},
+      "tm": [
+        [1.0,0.0,0.0],
+        [0.0,1.0,0.0],
+        [0.0,0.0,1.0],
+        [-4684.7,1000.0,-5469.1]
+      ],
+      "type": "Point"
+    }
+  },
+  "bin_dump_file": "",
+  "dialogs": {},
+  "effects": {},
+  "imports": {},
+  "mission_objectives": {
+    "isCategory": true,
+    "is_enabled": true,
+    "moresby_s04_m01_destroyFighters": {
+      "comments": "",
+      "is_enabled": false,
+      "onFailed": {},
+      "onSuccess": {},
+      "props": {
+        "isPrimary": true,
+        "scoreConst": 100,
+        "scoreTime": 400,
+        "timeLimit": 1800
+      },
+      "type": "abstractMissionObjective"
+    }
+  },
+  "mission_settings": {
+    "atmosphere": {
+      "pressure": 760.0,
+      "temperature": 0.0
+    },
+    "briefing": {
+      "date_loc": "",
+      "music": "usa_main_theme",
+      "objective_loc": "",
+      "part": {
+        "event": "",
+        "minTime": 0,
+        "slide": {
+          "arrow": {
+            "point": [
+              "player_f6f3",
+              "enemy_ki_61_1a_otsu"
+            ],
+            "side": "player",
+            "width": 1
+          },
+          "icon": [
+            {
+              "icontype": "fighter",
+              "lookAt": "enemy_ki_61_1a_otsu",
+              "side": "player",
+              "target": "player_f6f3"
+            },
+            {
+              "icontype": "fighter",
+              "lookAt": "enemy_ki_61_1a_otsu",
+              "side": "ally",
+              "target": "allied_f6f3"
+            },
+            {
+              "icontype": "fighter",
+              "lookAt": "player_f6f3",
+              "side": "enemy",
+              "target": "enemy_ki_61_1a_otsu"
+            },
+            {
+              "icontype": "tank",
+              "side": "ally",
+              "target": "USA_tanks_01"
+            },
+            {
+              "icontype": "tank",
+              "side": "ally",
+              "target": "USA_Tanks_07"
+            },
+            {
+              "icontype": "tank",
+              "side": "ally",
+              "target": "USA_Tanks_03"
+            },
+            {
+              "icontype": "tank",
+              "side": "enemy",
+              "target": "JPN_Tanks_07"
+            },
+            {
+              "icontype": "tank",
+              "side": "enemy",
+              "target": "JPN_Tanks_01"
+            },
+            {
+              "icontype": "tank",
+              "side": "enemy",
+              "target": "JPN_Tanks_03"
+            }
+          ],
+          "map": true,
+          "minTime": 4,
+          "picture": ""
+        }
+      },
+      "place_loc": ""
+    },
+    "mission": {
+      "environment": "Evening",
+      "gt_cooperative": true,
+      "level": "levels/port_moresby.bin",
+      "optionalTakeOff": false,
+      "restoreType": "tactical control",
+      "type": "singleMission",
+      "weather": "hazy",
+      "windDirection": [1.0,0.0,0.0]
+    },
+    "player": {
+      "army": 1,
+      "wing": "player_f6f3"
+    },
+    "player_teamB": {
+      "army": 2
+    }
+  },
+  "selected_tag": "",
+  "triggers": {
+    "2players_online": {
+      "actions": {
+        "varModify": [
+          {
+            "operator": "mul",
+            "value": 3.0,
+            "var": "count_to_kill"
+          },
+          {
+            "operator": "divAB",
+            "value": 2.0,
+            "var": "count_to_kill"
+          }
+        ]
+      },
+      "comments": "",
+      "conditions": {
+        "unitWhenCountMatches": {
+          "func": "equal",
+          "object": "player_f6f3",
+          "object_marking": 0,
+          "object_type": "isOnline",
+          "value": 2
+        }
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "3players_online": {
+      "actions": {
+        "varModify": {
+          "operator": "mul",
+          "value": 2.0,
+          "var": "count_to_kill"
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "unitWhenCountMatches": {
+          "func": "equal",
+          "object": "player_f6f3",
+          "object_marking": 0,
+          "object_type": "isOnline",
+          "value": 3
+        }
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "4players_online": {
+      "actions": {
+        "varModify": {
+          "operator": "mul",
+          "value": 3.0,
+          "var": "count_to_kill"
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "unitWhenCountMatches": {
+          "func": "equal",
+          "object": "player_f6f3",
+          "object_marking": 0,
+          "object_type": "isOnline",
+          "value": 4
+        }
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "Init": {
+      "actions": {
+        "moAddMissionObjective": {
+          "target": "moresby_s04_m01_destroyFighters"
+        },
+        "triggerDisable": {
+          "target": [
+            "2players_online",
+            "3players_online",
+            "4players_online"
+          ]
+        },
+        "unitAttackTarget": [
+          {
+            "fightAreaOuterRadius": 15000.0,
+            "fightAreaRadius": 10000.0,
+            "fightInArea": "dogfight_point",
+            "fireRandom": true,
+            "object": "allied_f6f3",
+            "playerAttracted": false,
+            "target": "enemy_ki_61_1a_otsu"
+          },
+          {
+            "fightAreaOuterRadius": 15000.0,
+            "fightAreaRadius": 10000.0,
+            "fightInArea": "dogfight_point",
+            "fireRandom": true,
+            "object": "enemy_ki_61_1a_otsu",
+            "playerAttracted": true,
+            "playerAttractedCount": 2,
+            "target": [
+              "allied_f6f3",
+              "player_f6f3"
+            ]
+          }
+        ],
+        "unitSetIndication": {
+          "set": true,
+          "target": "enemy_ki_61_1a_otsu"
+        },
+        "unitSetProperties": [
+          {
+            "object": "squad_player",
+            "plane": {
+              "targetDeviation": {
+                "defaultVal": 3.0,
+                "limits": [0.0,3.0],
+                "trigger": "machine gun"
+              }
+            },
+            "targetableByAi": true
+          },
+          {
+            "object": "enemy_ki_61_1a_otsu",
+            "plane": {
+              "targetDeviation": {
+                "defaultVal": 0.0,
+                "limits": [0.0,2.0],
+                "trigger": "machine gun"
+              }
+            }
+          },
+          {
+            "effShootingRate": 0.5,
+            "object": "allied_f6f3",
+            "plane": {
+              "targetDeviation": {
+                "defaultVal": 4.0,
+                "limits": [0.0,4.0],
+                "trigger": "machine gun"
+              }
+            }
+          }
+        ],
+        "wait": {
+          "time": 3.0
+        }
+      },
+      "comments": "",
+      "conditions": {},
+      "events": {
+        "initMission": {}
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": false
+      }
+    },
+    "MissionCompleted": {
+      "actions": {
+        "missionCompleted": {
+          "debriefingTimer": 5,
+          "timer": false
+        },
+        "missionSetTargetsIndicator": {
+          "delta": 0,
+          "icon": "air",
+          "icon army": 2,
+          "set": false,
+          "target": "enemy_ki_61_1a_otsu",
+          "target_marking": 0,
+          "target_type": "isAlive"
+        },
+        "moSetObjectiveStatus": {
+          "status": 2,
+          "target": "moresby_s04_m01_destroyFighters"
+        },
+        "triggerDisable": {
+          "target": "UpdateMissionTargetIndicator"
+        },
+        "wait": {
+          "time": 2.0
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "unitDistanceBetween": {
+          "check_objects": "all",
+          "check_targets": "all",
+          "math": "notNear2D",
+          "object": "enemy_ki_61_1a_otsu",
+          "object_type": "isAlive",
+          "target": [
+            "dogfight_point",
+            "squad_player"
+          ],
+          "target_type": "isAlive",
+          "value": 20000.0
+        },
+        "unitWhenCountMatches": {
+          "func": "less",
+          "object": "enemy_ki_61_1a_otsu",
+          "object_marking": 0,
+          "object_type": "isAlive",
+          "value": 1
+        },
+        "varCompareInt": {
+          "comparasion_func": "less",
+          "value": 1,
+          "var_value": "count_to_kill"
+        }
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ANY",
+        "enableAfterComplete": false
+      }
+    },
+    "UpdateMissionTargetIndicator": {
+      "actions": {
+        "missionSetTargetsIndicator": {
+          "delta": 0,
+          "icon": "air",
+          "icon army": 2,
+          "set": true,
+          "target": "enemy_ki_61_1a_otsu",
+          "target_marking": 0,
+          "target_type": "isAlive",
+          "var": "count_to_kill"
+        }
+      },
+      "comments": "",
+      "conditions": {},
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": true
+      }
+    },
+    "indicator_max": {
+      "actions": {
+        "triggerDisable": {
+          "target": "kill_count_calc"
+        },
+        "varModify": {
+          "operator": "subAB",
+          "value": 1.0,
+          "var": "count_to_kill"
+        }
+      },
+      "comments": "",
+      "conditions": {
+        "unitWhenCountMatches": {
+          "func": "less",
+          "object": "enemy_ki_61_1a_otsu",
+          "object_marking": 0,
+          "object_type": "isAlive",
+          "value": 1,
+          "var": "count_to_kill"
+        }
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": true
+      }
+    },
+    "isCategory": true,
+    "is_enabled": true,
+    "kill_count_calc": {
+      "actions": {
+        "varModify": [
+          {
+            "operator": "add",
+            "value": 1.0,
+            "var": "kill_count"
+          },
+          {
+            "operator": "subAB",
+            "value": 1.0,
+            "var": "count_to_kill"
+          }
+        ]
+      },
+      "comments": "",
+      "conditions": {
+        "unitWhenCountMatches": [
+          {
+            "func": "more",
+            "object": "enemy_ki_61_1a_otsu",
+            "object_marking": 0,
+            "object_type": "isKilledByPlayer",
+            "value": 1,
+            "var": "kill_count"
+          },
+          {
+            "func": "notLess",
+            "object": "enemy_ki_61_1a_otsu",
+            "object_marking": 0,
+            "object_type": "isAlive",
+            "value": 1,
+            "var": "count_to_kill"
+          }
+        ]
+      },
+      "events": {
+        "periodicEvent": {
+          "time": 1.0
+        }
+      },
+      "is_enabled": true,
+      "props": {
+        "actionsType": "PERFORM_ONE_BY_ONE",
+        "conditionsType": "ALL",
+        "enableAfterComplete": true
+      }
+    }
+  },
+  "units": {
+    "armada": [
+      {
+        "closed_waypoints": false,
+        "name": "player_f6f3",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 1,
+          "attack_type": "fire_at_will",
+          "count": 4,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "minimum_distance_to_earth": 20.0,
+          "numInWing": 4,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 1.5,
+            "row_distances": 1.5,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Finger"
+          },
+          "skill": 4,
+          "skin": "us_navy",
+          "targetableByAi": false
+        },
+        "tm": [
+          [-0.642788,0.0,0.766044],
+          [0.0,1.0,0.0],
+          [-0.766044,0.0,-0.642788],
+          [-2262.0,700.0,-8197.2]
+        ],
+        "unit_class": "f6f-3",
+        "way": {},
+        "weapons": "f6f-5_default"
+      },
+      {
+        "closed_waypoints": false,
+        "name": "allied_f6f3",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 1,
+          "attack_type": "fire_at_will",
+          "count": 8,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "minimum_distance_to_earth": 20.0,
+          "numInWing": 4,
+          "plane": {
+            "ai_skill": "NORMAL",
+            "col_distances": 1.5,
+            "row_distances": 1.5,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "FLY_WAYPOINT",
+            "wing_formation": "Finger"
+          },
+          "skill": 4
+        },
+        "tm": [
+          [-0.573577,0.0,0.819152],
+          [0.0,1.0,0.0],
+          [-0.819152,0.0,-0.573577],
+          [-2283.2,700.0,-7938.6]
+        ],
+        "unit_class": "f6f-3",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "closed_waypoints": false,
+        "name": "enemy_ki_61_1a_otsu",
+        "props": {
+          "altLimit": 6000.0,
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 16,
+          "floating_distance": 50.0,
+          "free_distance": 70.0,
+          "minimum_distance_to_earth": 20.0,
+          "numInWing": 4,
+          "plane": {
+            "ai_skill": "ACE",
+            "col_distances": 1.5,
+            "row_distances": 1.5,
+            "super_col_distances": 1.5,
+            "super_formation": "Diamond",
+            "super_row_distances": 1.5,
+            "task": "STAY_FROMATION",
+            "wing_formation": "Finger"
+          },
+          "skill": 4
+        },
+        "tm": [
+          [0.500001,0.0,-0.866025],
+          [0.0,1.0,0.0],
+          [0.866025,0.0,0.500001],
+          [-6057.95,703.85,-3453.3]
+        ],
+        "unit_class": "ki_61_1a_otsu",
+        "way": {},
+        "weapons": "ki_61_otsu_default"
+      }
+    ],
+    "squad": {
+      "closed_waypoints": false,
+      "name": "squad_player",
+      "props": {
+        "object_type": "isPlayer",
+        "squad_members": "player_f6f3"
+      },
+      "tm": [
+        [1.0,0.0,0.0],
+        [0.0,1.0,0.0],
+        [0.0,0.0,1.0],
+        [-2281.9,693.3,-8111.25]
+      ],
+      "unit_class": "",
+      "way": {},
+      "weapons": ""
+    },
+    "tracked_vehicles": [
+      {
+        "closed_waypoints": false,
+        "name": "USA_tanks_01",
+        "props": {
+          "army": 1,
+          "attack_type": "fire_at_will",
+          "count": 3,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "tm": [
+          [-0.939693,0.0,0.34202],
+          [0.0,1.0,0.0],
+          [-0.34202,0.0,-0.939693],
+          [-3600.2,70.25,-6606.95]
+        ],
+        "unit_class": "us_m4a1",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "closed_waypoints": false,
+        "name": "JPN_Tanks_03",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 3,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "tm": [
+          [0.976296,0.0,0.21644],
+          [0.0,1.0,0.0],
+          [-0.21644,0.0,0.976296],
+          [-4326.4,29.45,-6173.0]
+        ],
+        "unit_class": "jpn_t95_HaGo",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "closed_waypoints": false,
+        "name": "USA_Tanks_03",
+        "props": {
+          "army": 1,
+          "attack_type": "fire_at_will",
+          "count": 2,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [-5255.2,58.8,-4757.75]
+        ],
+        "unit_class": "us_m4a2",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "closed_waypoints": false,
+        "name": "JPN_Tanks_04",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 3,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "tm": [
+          [0.819152,0.0,0.573576],
+          [0.0,1.0,0.0],
+          [-0.573576,0.0,0.819152],
+          [-4140.85,75.85,-5897.2]
+        ],
+        "unit_class": "jpn_t89_IGo",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "closed_waypoints": false,
+        "name": "JPN_Tanks_02",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 6,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "tm": [
+          [0.0436195,0.0,0.999048],
+          [0.0,1.0,0.0],
+          [-0.999048,0.0,0.0436195],
+          [-4312.85,97.75,-5875.55]
+        ],
+        "unit_class": "jpn_t95_HaGo",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "closed_waypoints": false,
+        "name": "USA_Tanks_05",
+        "props": {
+          "army": 1,
+          "attack_type": "fire_at_will",
+          "count": 2,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "tm": [
+          [0.422618,0.0,0.906308],
+          [0.0,1.0,0.0],
+          [-0.906308,0.0,0.422618],
+          [-3708.95,33.7,-6444.85]
+        ],
+        "unit_class": "us_m4a2",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "closed_waypoints": false,
+        "name": "USA_tanks_02",
+        "props": {
+          "army": 1,
+          "attack_type": "fire_at_will",
+          "count": 3,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [-4987.8,34.35,-4610.95]
+        ],
+        "unit_class": "us_m5a1_stuart6",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "closed_waypoints": false,
+        "name": "JPN_Tanks_01",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 5,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [-4402.0,101.8,-5654.5]
+        ],
+        "unit_class": "jpn_t97_ChiHa",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "closed_waypoints": false,
+        "name": "JPN_Tanks_05",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 6,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [-4608.8,112.25,-5647.0]
+        ],
+        "unit_class": "jpn_t97_ChiHa",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "closed_waypoints": false,
+        "name": "USA_Tanks_04",
+        "props": {
+          "army": 1,
+          "attack_type": "fire_at_will",
+          "count": 2,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "cols",
+          "uniqueName": ""
+        },
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [-3663.6,35.65,-6298.55]
+        ],
+        "unit_class": "us_m3_lee",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "closed_waypoints": false,
+        "name": "JPN_Tanks_06",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 4,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [-4798.3,112.25,-5561.6]
+        ],
+        "unit_class": "jpn_t97_ChiHa",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "closed_waypoints": false,
+        "name": "USA_tanks_06",
+        "props": {
+          "army": 1,
+          "attack_type": "fire_at_will",
+          "count": 2,
+          "formation_div": 2,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [-5306.5,44.5,-4139.35]
+        ],
+        "unit_class": "us_m5a1_stuart6",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "closed_waypoints": false,
+        "name": "USA_Tanks_07",
+        "props": {
+          "army": 1,
+          "attack_type": "fire_at_will",
+          "count": 2,
+          "formation_div": 3,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "cols",
+          "uniqueName": ""
+        },
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [-4683.15,35.65,-4606.35]
+        ],
+        "unit_class": "us_m3_lee",
+        "way": {},
+        "weapons": ""
+      },
+      {
+        "closed_waypoints": false,
+        "name": "JPN_Tanks_07",
+        "props": {
+          "army": 2,
+          "attack_type": "fire_at_will",
+          "count": 6,
+          "formation_div": 2,
+          "formation_noise": [0.1,0.1],
+          "formation_step": [2.5,2.0],
+          "formation_type": "rows",
+          "uniqueName": ""
+        },
+        "tm": [
+          [1.0,0.0,0.0],
+          [0.0,1.0,0.0],
+          [0.0,0.0,1.0],
+          [-4965.75,112.25,-5697.45]
+        ],
+        "unit_class": "jpn_t89_IGo",
+        "way": {},
+        "weapons": ""
+      }
+    ]
+  },
+  "variables": {
+    "count_to_kill": 4,
+    "kill_count": 0
+  }
+}

@@ -1,0 +1,260 @@
+{
+  "frame": {
+    "div": {
+      "behavior": "Timer",
+      "id": "queue_table_timer",
+      "timer_handler_func": "onUpdate",
+      "timer_interval_msec": "1000"
+    },
+    "id": "queue_table",
+    "position": "relative",
+    "tdiv": {
+      "id": "ia_tooltip",
+      "pos": "0.5pw-0.5w, 0",
+      "position": "relative",
+      "tdiv": {
+        "padding": "2",
+        "pos": "pw-w, 0",
+        "position": "relative",
+        "tdiv": {
+          "HorizontalListBox": {
+            "class": "tabs",
+            "flow": "h-flow",
+            "id": "ia_table_clusters_list",
+            "input-transparent": "yes",
+            "min-height": "1@buttonHeight",
+            "navigatorShortcuts": "yes",
+            "on_select": "onClustersTabChange",
+            "smallFont": "yes",
+            "width": "pw"
+          },
+          "div": {
+            "id": "queue_box_container",
+            "width": "pw"
+          },
+          "flow": "vertical",
+          "loadingTip": {
+            "behaviour": "bhvLoadingTip",
+            "id": "queue_tip",
+            "loadingHint": {
+              "behaviour": "bhvHint",
+              "commonTextColor": "yes",
+              "id": "tip_hint",
+              "isWrapInRowAllowed": "yes",
+              "smallFont": "yes",
+              "width": "pw"
+            },
+            "padding": "0, 0.5*@scrn_tgt/100.0",
+            "width": "pw"
+          },
+          "table": {
+            "display": "hide",
+            "id": "ia_tooltip_table",
+            "pos": "50%pw-50%w",
+            "position": "relative",
+            "width": "pw"
+          },
+          "tdiv": [
+            {
+              "activeText": [
+                {
+                  "display": "hide",
+                  "hideEmptyText": "yes",
+                  "id": "inQueue-topmenu-text",
+                  "pos": "50%pw-50%w, 10*@sf/@pf_outdated",
+                  "position": "relative",
+                  "style": "color:@userlogColoredText;",
+                  "text": [
+                    "#yn1/waiting_for_game_query",
+                    ""
+                  ],
+                  "wink": "no"
+                },
+                {
+                  "hideEmptyText": "yes",
+                  "id": "queue_players_total",
+                  "pos": "50%pw-50%w, 10*@sf/@pf_outdated",
+                  "position": "relative",
+                  "smallFont": "yes",
+                  "style": "color:@commonMenuButtonColor;",
+                  "text": [
+                    "",
+                    ""
+                  ]
+                }
+              ],
+              "flow": "vertical",
+              "id": "waiting_time",
+              "padding": "10*@sf/@pf_outdated",
+              "tdiv": [
+                {
+                  "activeText": {
+                    "id": "countries_header",
+                    "pos": "50%pw-50%w, 0",
+                    "position": "relative",
+                    "smallFont": "yes",
+                    "text": "",
+                    "text-align": "center"
+                  },
+                  "flow": "vertical",
+                  "id": "available_countries",
+                  "padding-bottom": "0.01@scrn_tgt",
+                  "pos": "50%pw-50%w, 0",
+                  "position": "relative",
+                  "tdiv": {
+                    "id": "countries_icons",
+                    "pos": "50%pw-50%w, 0",
+                    "position": "relative"
+                  }
+                },
+                {
+                  "centerBlock": {
+                    "activeText": {
+                      "smallFont": "yes",
+                      "style": "color:@commonMenuButtonColor;",
+                      "text": "#multiplayer/currentWaitTime"
+                    },
+                    "flow": "vertical",
+                    "pos": "50%pw-50%w, 50%ph-50%h",
+                    "position": "absolute",
+                    "textAreaCentered": {
+                      "class": "active",
+                      "id": "msgText",
+                      "pos": "50%pw-50%w,0",
+                      "position": "relative",
+                      "text": "00:00:00",
+                      "text-halign": "center",
+                      "titleFont": "yes"
+                    }
+                  },
+                  "pos": "pw/2-w/2, 0",
+                  "position": "relative",
+                  "size": "180@sf/@pf, 180@sf/@pf",
+                  "tdiv": {
+                    "id": "queue_wait_icon_block",
+                    "position": "absolute",
+                    "size": "pw, ph"
+                  }
+                }
+              ],
+              "width": "pw"
+            },
+            {
+              "activeText": [
+                {
+                  "commonButtonColor": "yes",
+                  "hideEmptyText": "yes",
+                  "id": "battle_rating_label",
+                  "pos": "0, 50%ph-50%h",
+                  "position": "relative",
+                  "smallFont": "yes"
+                },
+                {
+                  "hideEmptyText": "yes",
+                  "id": "battle_rating",
+                  "normalBoldFont": "yes",
+                  "overlayTextColor": "userlog",
+                  "pos": "1@blockInterval, 50%ph-50%h-2@dp",
+                  "position": "relative"
+                }
+              ],
+              "flow": "horizontal",
+              "margin-bottom": "14@sf/@pf",
+              "pos": "50%pw-50%w, 0",
+              "position": "relative"
+            },
+            {
+              "activeText": {
+                "commonButtonColor": "yes",
+                "pos": "0.5pw-0.5w, 0.5ph-0.5h",
+                "position": "absolute",
+                "smallFont": "yes",
+                "text": "#multiplayer/hint"
+              },
+              "flow": "horizontal",
+              "height": "0.02@sf",
+              "tdiv": [
+                {
+                  "bgcolor": "#0E1114",
+                  "position": "absolute",
+                  "size": "0.35pw, 3@sf/@pf",
+                  "top": "0.5ph-0.5h"
+                },
+                {
+                  "bgcolor": "#0E1114",
+                  "position": "absolute",
+                  "right": "0",
+                  "size": "0.35pw, 3@sf/@pf",
+                  "top": "0.5ph-0.5h"
+                }
+              ],
+              "width": "pw"
+            },
+            {
+              "display": "hide",
+              "flow": "vertical",
+              "id": "crossplay_tip",
+              "tdiv": {
+                "activeText": {
+                  "overlayTextColor": "warning",
+                  "pos": "0.5pw-0.5w, 0.5ph-0.5h",
+                  "position": "absolute",
+                  "smallFont": "yes",
+                  "text": "#options/ps4_crossplay"
+                },
+                "flow": "horizontal",
+                "height": "0.02@sf",
+                "tdiv": [
+                  {
+                    "bgcolor": "#0E1114",
+                    "position": "absolute",
+                    "size": "0.2pw, 3@sf/@pf",
+                    "top": "0.5ph-0.5h"
+                  },
+                  {
+                    "bgcolor": "#0E1114",
+                    "position": "absolute",
+                    "right": "0",
+                    "size": "0.2pw, 3@sf/@pf",
+                    "top": "0.5ph-0.5h"
+                  }
+                ],
+                "width": "pw"
+              },
+              "textareaNoTab": {
+                "overflow-y": "auto",
+                "overlayTextColor": "warning",
+                "padding": "0.01@scrn_tgt, 0.005@scrn_tgt",
+                "smallFont": "yes",
+                "text": "#queue/crossPlay",
+                "width": "pw"
+              },
+              "width": "pw"
+            }
+          ],
+          "textAreaCentered": {
+            "display": "hide",
+            "id": "unstable_cluster_warning",
+            "max-width": "pw",
+            "overlayTextColor": "bad",
+            "pos": "50%pw-50%w, 6@sf/@pf",
+            "position": "relative",
+            "smallFont": "yes",
+            "text": "#multiplayer/cluster_connection_unstable",
+            "text-halign": "center",
+            "wink": "no"
+          },
+          "timer": {
+            "id": "queue_update_timer",
+            "timer_handler_func": "onUpdate",
+            "timer_interval_msec": "1000"
+          },
+          "width": "pw"
+        },
+        "width": "pw"
+      },
+      "width": "((1@slotbarCountries $max 6)+1) * 1@queueTableColumnWidth"
+    },
+    "text-halign": "center"
+  }
+}
